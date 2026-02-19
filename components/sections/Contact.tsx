@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Phone, ChevronDown, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import Link from 'next/link';
 
 const countryCodes = [
    { code: '+91', flag: '🇮🇳', country: 'IN' },
@@ -274,26 +275,23 @@ phone: `PHONE_${selectedCountry.code.replace('+','')}_${formData.phone}`,
   </label>
 
   {/* Links */}
-  <p className="mt-2 text-xs text-slate-400">
-    By continuing, you agree to our{" "}
-    <a
-      href="https://docs.google.com/document/d/1r5-iIcTzly3mp_1P9wp2Hf0FtbrAQg2JgR3BWjb0rSU/edit?usp=drive_link"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-400 underline hover:text-blue-300"
-    >
-      Terms of Service
-    </a>{" "}
-    and{" "}
-    <a
-      href="https://docs.google.com/document/d/1kjYlAlZLLMBcAPWCrznlURVYzi3iHweQ_RJX409sao0/edit?usp=drive_link"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-400 underline hover:text-blue-300"
-    >
-      Privacy Policy
-    </a>.
-  </p>
+<p className="mt-2 text-xs text-slate-400 leading-relaxed">
+  By continuing, you agree to our{" "}
+  <Link
+    href="/terms-of-service"
+    className="text-blue-400 underline hover:text-blue-300"
+  >
+    Terms of Service
+  </Link>{" "}
+  and{" "}
+  <Link
+    href="/privacy-policy"
+    className="text-blue-400 underline hover:text-blue-300"
+  >
+    Privacy Policy
+  </Link>.
+</p>
+
 </div>
 
 
