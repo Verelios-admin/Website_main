@@ -65,7 +65,7 @@ export function About() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Why Choose Verelios?
+            Why Choose Verelios Labs?
           </h2>
           <p className="text-xl text-slate-400 leading-relaxed">
             We are a dedicated team of developers, designers, and strategists committed to transforming your digital vision into reality. With years of experience and a passion for innovation, we deliver solutions that drive success.

@@ -59,7 +59,7 @@ export function Navigation() {
                   isScrolled ? 'text-white' : 'text-white'
                 }`}
               >
-                Verelios
+                Verelios Labs
               </span>
             </div>
 

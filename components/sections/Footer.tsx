@@ -17,7 +17,7 @@ export function Footer() {
                 height={32}
                 className="w-8 h-8 object-contain"
               />
-              <span className="text-2xl font-bold">Verelios</span>
+              <span className="text-2xl font-bold">Verelios Labs</span>
             </div>
             <p className="text-slate-400 mb-4 max-w-md">
               Transforming ideas into exceptional digital experiences. We specialize in app and web development that drives business growth.
@@ -131,7 +131,7 @@ export function Footer() {
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-400 text-sm">
-            © {currentYear} Verelios. All rights reserved.
+            © {currentYear} Verelios Labs. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-slate-400">
             <a href="https://docs.google.com/document/d/1kjYlAlZLLMBcAPWCrznlURVYzi3iHweQ_RJX409sao0/edit?usp=sharing" className="hover:text-blue-400 transition-colors">
