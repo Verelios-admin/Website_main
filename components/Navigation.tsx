@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -17,6 +18,9 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -26,10 +30,18 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (hash: string) => {
     setIsMobileMenuOpen(false);
+
+    // CASE 1: Already on Home page → smooth scroll
+    if (pathname === '/') {
+      const element = document.querySelector(hash);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    // CASE 2: On Privacy / Terms / Cookie page → redirect to Home with hash
+    router.push(`/${hash}`);
   };
 
   return (
@@ -43,46 +55,45 @@ export function Navigation() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
+
+            {/* LOGO */}
             <div
               className="flex items-center gap-2 cursor-pointer"
-              onClick={() => scrollToSection('#home')}
+              onClick={() => handleNavClick('#home')}
             >
               <Image
                 src="/logo.png"
                 alt="Verelios Logo"
                 width={32}
                 height={32}
-                className="w-8 h-8  object-contain"
+                className="w-8 h-8 object-contain"
               />
-              <span
-                className={`text-xl font-bold transition-colors pt-2 ${
-                  isScrolled ? 'text-white' : 'text-white'
-                }`}
-              >
+              <span className="text-xl font-bold text-white pt-2">
                 Verelios Labs
               </span>
             </div>
 
+            {/* DESKTOP MENU */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-medium transition-colors hover:text-blue-400 ${
-                    isScrolled ? 'text-slate-300' : 'text-slate-300'
-                  }`}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
                 >
                   {link.name}
                 </button>
               ))}
+
               <Button
-                onClick={() => scrollToSection('#contact')}
+                onClick={() => handleNavClick('#contact')}
                 className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105"
               >
                 Get Started
               </Button>
             </div>
 
+            {/* MOBILE MENU TOGGLE */}
             <button
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -98,21 +109,23 @@ export function Navigation() {
         </div>
       </nav>
 
+      {/* MOBILE MENU */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-slate-900 md:hidden">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link.href)}
                 className="text-2xl font-medium text-white hover:text-blue-400 transition-colors"
               >
                 {link.name}
               </button>
             ))}
+
             <Button
               size="lg"
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => handleNavClick('#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-lg px-8"
             >
               Get Started
