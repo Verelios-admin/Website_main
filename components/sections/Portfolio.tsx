@@ -83,26 +83,26 @@ const projects = [
   image: '/images/serene.png',
 },
 
-{
-  title: 'Vilvah Store',
-  category: 'E-commerce Website',
-  description:
-    'A full-scale, conversion-optimized e-commerce platform developed for a fast-growing natural skincare brand. The website supports secure payments, smooth checkout, order tracking, and hassle-free returns, delivering a reliable shopping experience across all devices.',
-  tags: [
-    'Next.js',
-    'React',
-    'Tailwind CSS',
-    'E-commerce Platform',
-    'Secure Payment Gateway',
-    'Cart & Checkout',
-    'Order & Delivery Tracking',
-    'Returns & Refund Management',
-    'SEO & Performance Optimization',
-  ],
-  link: 'https://www.vilvahstore.com/',
-  gradient: 'from-pink-500 via-rose-500 to-red-500',
-  image: '/images/vilvah.png',
-},
+// {
+//   title: 'Vilvah Store',
+//   category: 'E-commerce Website',
+//   description:
+//     'A full-scale, conversion-optimized e-commerce platform developed for a fast-growing natural skincare brand. The website supports secure payments, smooth checkout, order tracking, and hassle-free returns, delivering a reliable shopping experience across all devices.',
+//   tags: [
+//     'Next.js',
+//     'React',
+//     'Tailwind CSS',
+//     'E-commerce Platform',
+//     'Secure Payment Gateway',
+//     'Cart & Checkout',
+//     'Order & Delivery Tracking',
+//     'Returns & Refund Management',
+//     'SEO & Performance Optimization',
+//   ],
+//   link: 'https://www.vilvahstore.com/',
+//   gradient: 'from-pink-500 via-rose-500 to-red-500',
+//   image: '/images/vilvah.png',
+// },
 {
   title: 'RMPD Jewellers',
   category: 'Handcrafted Jewellery Collection',
@@ -151,22 +151,22 @@ const projects = [
   gradient: 'from-blue-600 via-cyan-500 to-teal-400',
   image: '/images/EPPL.png',
 },
-{
-  title: 'Screener',
-  category: 'Excel Automation & Financial Data Analytics Dashboard',
-  description:
-    'Screener is a powerful web-based platform that automates financial data collection and analysis. It scrapes large volumes of market data, processes and alters it according to user-defined requirements, and presents actionable insights through interactive dashboards and structured Excel-style reports. The platform helps users analyze companies, track financial metrics, and make data-driven investment decisions efficiently.',
-  tags: [
-    'Excel Automation',
-    'Financial Data Scraping',
-    'Analytics Dashboard',
-    'Stock Market Analysis',
-    'Data Processing',
-  ],
-  link: 'https://www.screener.in/',
-  gradient: 'from-slate-700 via-gray-700 to-zinc-600',
-  image: '/images/screener.png',
-},
+// {
+//   title: 'Screener',
+//   category: 'Excel Automation & Financial Data Analytics Dashboard',
+//   description:
+//     'Screener is a powerful web-based platform that automates financial data collection and analysis. It scrapes large volumes of market data, processes and alters it according to user-defined requirements, and presents actionable insights through interactive dashboards and structured Excel-style reports. The platform helps users analyze companies, track financial metrics, and make data-driven investment decisions efficiently.',
+//   tags: [
+//     'Excel Automation',
+//     'Financial Data Scraping',
+//     'Analytics Dashboard',
+//     'Stock Market Analysis',
+//     'Data Processing',
+//   ],
+//   link: 'https://www.screener.in/',
+//   gradient: 'from-slate-700 via-gray-700 to-zinc-600',
+//   image: '/images/screener.png',
+// },
 {
   title: 'PuneAIJobs',
   category: 'Job Portal Platform with Intelligent Filters',

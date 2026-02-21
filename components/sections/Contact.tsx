@@ -49,11 +49,18 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+  // ✅ DEBUG LINE
+      console.log(
+    "PHONE SENT 👉",
+    `${selectedCountry.code} ${formData.phone}`
+  );
+
+
     try {
       const payload = {
         name: formData.name,
         email: formData.email,
-        phone: `PHONE_${selectedCountry.code.replace('+', '')}_${formData.phone}`,
+        phone: `${selectedCountry.code} ${formData.phone}`,
         message: formData.message,
         source: 'Verelios Website - Contact Us',
         date: new Date().toISOString(),
@@ -85,9 +92,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-0 overflow-x-hidden bg-gradient-to-br from-slate-900 to-slate-800"
+      className="relative py-0 overflow-x-hidden bg-gradient-to-br from-slate-900 to-slate-800"
     >
-      {/* TOP BAR */}
+      {/* TOP CONTACT BAR */}
       <div className="bg-slate-900 border-b border-gray-800">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-6 py-3 text-white text-sm">
@@ -105,9 +112,10 @@ export function Contact() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-          {/* LEFT */}
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
+
+          {/* LEFT CONTENT */}
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl font-bold text-white uppercase mb-3">
@@ -117,8 +125,7 @@ export function Contact() {
             </div>
 
             <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Want to do a <span className="text-[#FF5733]">Project</span> with
-              us?
+              Want to do a <span className="text-[#FF5733]">Project</span> with us?
             </h3>
 
             <p className="text-gray-400 text-lg">
@@ -134,17 +141,17 @@ export function Contact() {
             </Button>
           </div>
 
-          {/* RIGHT FORM */}
-          <div className="bg-white rounded-lg p-8 shadow-xl">
+          {/* FORM CARD */}
+          <div className="bg-white rounded-lg p-8 shadow-xl relative z-20">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <Input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name"
-                required
-                className="h-12"
-              />
+             <Input
+  name="name"
+  value={formData.name}
+  onChange={handleChange}
+  placeholder="Name"
+  required
+  className="h-12 bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
+/>
 
               <Input
                 name="email"
@@ -153,7 +160,8 @@ export function Contact() {
                 onChange={handleChange}
                 placeholder="Email"
                 required
-                className="h-12"
+                className="h-12 bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
+
               />
 
               {/* PHONE */}
@@ -164,7 +172,7 @@ export function Contact() {
                     onClick={() =>
                       setIsCountryDropdownOpen(!isCountryDropdownOpen)
                     }
-                    className="flex items-center gap-2 px-2 py-1 border rounded bg-white"
+                    className="flex items-center gap-2 px-2 py-1 border border-gray-300 rounded bg-white text-gray-900"
                   >
                     <span>{selectedCountry.flag}</span>
                     <span className="text-sm">{selectedCountry.code}</span>
@@ -186,7 +194,7 @@ export function Contact() {
                               setSelectedCountry(c);
                               setIsCountryDropdownOpen(false);
                             }}
-                            className="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-100"
+                            className="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-100 text-gray-900"
                           >
                             <span>{c.flag}</span>
                             <span>{c.code}</span>
@@ -200,61 +208,72 @@ export function Contact() {
                   )}
                 </div>
 
-                <Input
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Contact Number"
-                  className="h-12 pl-24 sm:pl-28"
-                />
+               <Input
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+  placeholder="Contact Number"
+  className="
+    h-12
+    pl-[7.5rem] sm:pl-[8.5rem]
+    bg-white
+    text-gray-900
+    placeholder:text-gray-400
+    border border-gray-300
+    focus:border-[#FF5733]
+    focus:ring-[#FF5733]
+  "
+/>
               </div>
 
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Project Description"
-                rows={5}
-                required
-              />
+             <Textarea
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  placeholder="Project Description"
+  rows={5}
+  required
+  className="
+    resize-none
+    bg-white
+    text-gray-900
+    placeholder:text-gray-400
+    border border-gray-300
+    focus:border-[#FF5733]
+    focus:ring-[#FF5733]
+  "
+/>
 
               {/* CONSENTS */}
-              <div className="text-sm text-slate-500 space-y-3">
-                <label className="flex gap-3 max-w-full">
-                  <input type="checkbox" required className="mt-1" />
-                  <span className="break-words">
-                    I consent to receive <strong>marketing text messages</strong>{' '}
-                    from Verelios Labs. Reply <strong>STOP</strong> to opt out.
-                  </span>
-                </label>
+           
+<div className="space-y-4 text-sm text-slate-700">
 
-                <label className="flex gap-3 max-w-full">
-                  <input type="checkbox" className="mt-1" />
-                  <span className="break-words">
-                    I consent to receive <strong>non-marketing messages</strong>{' '}
-                    such as updates & reminders.
-                  </span>
-                </label>
+  {/* Marketing Consent */}
+  <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
+    <input
+      type="checkbox"
+      required
+      className="mt-1 accent-[#FF5733] scale-110"
+    />
+    <span className="leading-relaxed">
+      I consent to receive <strong>marketing text messages</strong> from
+      Verelios Labs. Reply <strong>STOP</strong> to opt out.
+    </span>
+  </label>
 
-                <p className="text-xs">
-                  By continuing, you agree to our{' '}
-                  <Link
-                    href="/terms-of-service"
-                    className="text-blue-500 underline"
-                  >
-                    Terms of Service
-                  </Link>{' '}
-                  and{' '}
-                  <Link
-                    href="/privacy-policy"
-                    className="text-blue-500 underline"
-                  >
-                    Privacy Policy
-                  </Link>
-                  .
-                </p>
-              </div>
+  {/* Non-Marketing Consent */}
+  <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
+    <input
+      type="checkbox"
+      className="mt-1 accent-[#FF5733] scale-110"
+    />
+    <span className="leading-relaxed">
+      I consent to receive <strong>non-marketing messages</strong> such as
+      updates & reminders.
+    </span>
+  </label>
 
+</div>
               <Button
                 type="submit"
                 disabled={isSubmitting}
