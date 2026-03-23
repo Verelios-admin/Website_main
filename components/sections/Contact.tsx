@@ -9,21 +9,21 @@ import { useToast } from '@/hooks/use-toast';
 import Link from 'next/link';
 
 const countryCodes = [
-  { code: '+91', flag: '🇮🇳', country: 'IN' },
-  { code: '+1', flag: '🇺🇸', country: 'US' },
-  { code: '+44', flag: '🇬🇧', country: 'GB' },
-  { code: '+61', flag: '🇦🇺', country: 'AU' },
-  { code: '+86', flag: '🇨🇳', country: 'CN' },
-  { code: '+81', flag: '🇯🇵', country: 'JP' },
-  { code: '+49', flag: '🇩🇪', country: 'DE' },
-  { code: '+33', flag: '🇫🇷', country: 'FR' },
-  { code: '+39', flag: '🇮🇹', country: 'IT' },
-  { code: '+34', flag: '🇪🇸', country: 'ES' },
-  { code: '+7', flag: '🇷🇺', country: 'RU' },
-  { code: '+82', flag: '🇰🇷', country: 'KR' },
-  { code: '+971', flag: '🇦🇪', country: 'AE' },
-  { code: '+966', flag: '🇸🇦', country: 'SA' },
-  { code: '+65', flag: '🇸🇬', country: 'SG' },
+  { code: '+91', flag: '\u{1F1EE}\u{1F1F3}', country: 'IN' },
+  { code: '+1', flag: '\u{1F1FA}\u{1F1F8}', country: 'US' },
+  { code: '+44', flag: '\u{1F1EC}\u{1F1E7}', country: 'GB' },
+  { code: '+61', flag: '\u{1F1E6}\u{1F1FA}', country: 'AU' },
+  { code: '+86', flag: '\u{1F1E8}\u{1F1F3}', country: 'CN' },
+  { code: '+81', flag: '\u{1F1EF}\u{1F1F5}', country: 'JP' },
+  { code: '+49', flag: '\u{1F1E9}\u{1F1EA}', country: 'DE' },
+  { code: '+33', flag: '\u{1F1EB}\u{1F1F7}', country: 'FR' },
+  { code: '+39', flag: '\u{1F1EE}\u{1F1F9}', country: 'IT' },
+  { code: '+34', flag: '\u{1F1EA}\u{1F1F8}', country: 'ES' },
+  { code: '+7', flag: '\u{1F1F7}\u{1F1FA}', country: 'RU' },
+  { code: '+82', flag: '\u{1F1F0}\u{1F1F7}', country: 'KR' },
+  { code: '+971', flag: '\u{1F1E6}\u{1F1EA}', country: 'AE' },
+  { code: '+966', flag: '\u{1F1F8}\u{1F1E6}', country: 'SA' },
+  { code: '+65', flag: '\u{1F1F8}\u{1F1EC}', country: 'SG' },
 ];
 
 export function Contact() {
@@ -37,6 +37,8 @@ export function Contact() {
   const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(true);
+  const [nonMarketingConsent, setNonMarketingConsent] = useState(true);
   const { toast } = useToast();
 
   const handleChange = (
@@ -45,25 +47,31 @@ export function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Check if all required fields are filled
+  const isFormValid =
+    formData.name.trim() !== '' &&
+    formData.email.trim() !== '' &&
+    formData.phone.trim() !== '' &&
+    formData.message.trim() !== '';
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFormValid) return;
     setIsSubmitting(true);
 
-  // ✅ DEBUG LINE
-      console.log(
-    "PHONE SENT 👉",
-    `${selectedCountry.code} ${formData.phone}`
-  );
-
-
     try {
+      // Send phone with country code as plain text
+      const fullPhone = `${selectedCountry.code} ${formData.phone}`;
+
       const payload = {
         name: formData.name,
         email: formData.email,
-        phone: `${selectedCountry.code} ${formData.phone}`,
+        phone: fullPhone,
         message: formData.message,
         source: 'Verelios Website - Contact Us',
         date: new Date().toISOString(),
+        marketingConsent: marketingConsent,
+        nonMarketingConsent: nonMarketingConsent,
       };
 
       await fetch('https://hook.us2.make.com/wv8ueoroa8mwfgk3gn6v2da68hcsd35x', {
@@ -78,6 +86,8 @@ export function Contact() {
       });
 
       setFormData({ name: '', email: '', phone: '', message: '' });
+      setMarketingConsent(true);
+      setNonMarketingConsent(true);
     } catch {
       toast({
         title: 'Something went wrong',
@@ -99,7 +109,7 @@ export function Contact() {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-6 py-3 text-white text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-lg">🇮🇳</span>
+              <span className="text-lg">{'\u{1F1EE}\u{1F1F3}'}</span>
               <Phone className="w-4 h-4" />
               <span>+91 8299522798, +91 8471094125</span>
             </div>
@@ -132,26 +142,32 @@ export function Contact() {
               Get in touch with our team to discuss your next project.
             </p>
 
-            <Button
-              size="lg"
-              className="bg-[#FF5733] hover:bg-[#FF6B47] text-white px-8 py-6"
+            <a
+              href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20book%20a%20meeting%20to%20discuss%20my%20project."
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Book a Meeting
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+              <Button
+                size="lg"
+                className="bg-[#FF5733] hover:bg-[#FF6B47] text-white px-8 py-6"
+              >
+                Book a Meeting
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
           </div>
 
           {/* FORM CARD */}
           <div className="bg-white rounded-lg p-8 shadow-xl relative z-20">
             <form onSubmit={handleSubmit} className="space-y-6">
-             <Input
-  name="name"
-  value={formData.name}
-  onChange={handleChange}
-  placeholder="Name"
-  required
-  className="h-12 bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
-/>
+              <Input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                required
+                className="h-12 bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
+              />
 
               <Input
                 name="email"
@@ -161,7 +177,6 @@ export function Contact() {
                 placeholder="Email"
                 required
                 className="h-12 bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
-
               />
 
               {/* PHONE */}
@@ -208,78 +223,68 @@ export function Contact() {
                   )}
                 </div>
 
-               <Input
-  name="phone"
-  value={formData.phone}
-  onChange={handleChange}
-  placeholder="Contact Number"
-  className="
-    h-12
-    pl-[7.5rem] sm:pl-[8.5rem]
-    bg-white
-    text-gray-900
-    placeholder:text-gray-400
-    border border-gray-300
-    focus:border-[#FF5733]
-    focus:ring-[#FF5733]
-  "
-/>
+                <Input
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Contact Number"
+                  required
+                  className="h-12 pl-[7.5rem] sm:pl-[8.5rem] bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
+                />
               </div>
 
-             <Textarea
-  name="message"
-  value={formData.message}
-  onChange={handleChange}
-  placeholder="Project Description"
-  rows={5}
-  required
-  className="
-    resize-none
-    bg-white
-    text-gray-900
-    placeholder:text-gray-400
-    border border-gray-300
-    focus:border-[#FF5733]
-    focus:ring-[#FF5733]
-  "
-/>
+              <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Project Description"
+                rows={5}
+                required
+                className="resize-none bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
+              />
 
               {/* CONSENTS */}
-           
-<div className="space-y-4 text-sm text-slate-700">
+              <div className="space-y-4 text-sm text-slate-700">
+                {/* Marketing Consent */}
+                <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
+                  <input
+                    type="checkbox"
+                    checked={marketingConsent}
+                    onChange={(e) => setMarketingConsent(e.target.checked)}
+                    className="mt-1 accent-[#FF5733] scale-110"
+                  />
+                  <span className="leading-relaxed">
+                    I consent to receive <strong>marketing text messages</strong> from
+                    Verelios Labs. Reply <strong>STOP</strong> to opt out.
+                  </span>
+                </label>
 
-  {/* Marketing Consent */}
-  <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
-    <input
-      type="checkbox"
-      required
-      className="mt-1 accent-[#FF5733] scale-110"
-    />
-    <span className="leading-relaxed">
-      I consent to receive <strong>marketing text messages</strong> from
-      Verelios Labs. Reply <strong>STOP</strong> to opt out.
-    </span>
-  </label>
+                {/* Non-Marketing Consent */}
+                <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
+                  <input
+                    type="checkbox"
+                    checked={nonMarketingConsent}
+                    onChange={(e) => setNonMarketingConsent(e.target.checked)}
+                    className="mt-1 accent-[#FF5733] scale-110"
+                  />
+                  <span className="leading-relaxed">
+                    I consent to receive <strong>non-marketing messages</strong> such as
+                    updates & reminders.
+                  </span>
+                </label>
+              </div>
 
-  {/* Non-Marketing Consent */}
-  <label className="flex items-start gap-4 p-3 rounded-md border border-gray-200 cursor-pointer hover:border-[#FF5733] hover:bg-[#FFF5F2] transition">
-    <input
-      type="checkbox"
-      className="mt-1 accent-[#FF5733] scale-110"
-    />
-    <span className="leading-relaxed">
-      I consent to receive <strong>non-marketing messages</strong> such as
-      updates & reminders.
-    </span>
-  </label>
-
-</div>
               <Button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full py-6 bg-[#FFE5E0] hover:bg-[#FFD4CC] text-gray-800"
+                disabled={isSubmitting || !isFormValid}
+                className={`w-full py-6 transition-all duration-300 ${
+                  isFormValid
+                    ? 'bg-[#FF5733] hover:bg-[#FF6B47] text-white shadow-lg hover:shadow-xl hover:scale-[1.02]'
+                    : 'bg-[#FFE5E0] text-gray-400 cursor-not-allowed'
+                }`}
               >
-                {isSubmitting ? 'Submitting…' : 'Enquire Now'}
+                {isSubmitting ? 'Submitting\u2026' : 'Enquire Now'}
               </Button>
             </form>
           </div>
