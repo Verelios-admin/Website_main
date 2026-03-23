@@ -62,7 +62,7 @@ export function Navigation() {
               onClick={() => handleNavClick('#home')}
             >
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Verelios Logo"
                 width={32}
                 height={32}

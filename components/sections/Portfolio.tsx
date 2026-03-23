@@ -34,7 +34,7 @@ const projects = [
     ],
     link: '#',
     gradient: 'from-yellow-500 via-orange-500 to-red-500',
-    image: '/images/news.png',
+    image: '/images/news.webp',
   },
 {
   title: 'Rivali Park',
@@ -56,7 +56,7 @@ const projects = [
   ],
   link: 'https://www.rivalipark2.com/',
   gradient: 'from-orange-500 via-red-500 to-pink-500',
-  image: '/images/rivali.png',
+  image: '/images/rivali.webp',
 },
 
 
@@ -83,7 +83,7 @@ const projects = [
   ],
   link: 'https://www.serenehomes.co.in/',
   gradient: 'from-green-500 via-emerald-500 to-teal-500',
-  image: '/images/serene.png',
+  image: '/images/serene.webp',
 },
 
 // {
@@ -104,7 +104,7 @@ const projects = [
 //   ],
 //   link: 'https://www.vilvahstore.com/',
 //   gradient: 'from-pink-500 via-rose-500 to-red-500',
-//   image: '/images/vilvah.png',
+//   image: '/images/vilvah.webp',
 // },
 {
   title: 'RMPD Jewellers',
@@ -121,7 +121,7 @@ const projects = [
   ],
   link: 'https://www.rmpdjewellers.com/',
   gradient: 'from-pink-500 via-rose-400 to-red-400',
-  image: '/images/rmpd2.png',
+  image: '/images/rmpd2.webp',
 },
 {
   title: 'ChainShots',
@@ -138,7 +138,7 @@ const projects = [
   ],
   link: 'https://chainshots.com/',
   gradient: 'from-emerald-500 via-teal-500 to-cyan-500',
-  image: '/images/chainshots.png',
+  image: '/images/chainshots.webp',
 },
 {
   title: 'Envirofluent ERP Software',
@@ -155,7 +155,7 @@ const projects = [
   ],
   link: 'https://www.envirofluent.com/',
   gradient: 'from-blue-600 via-cyan-500 to-teal-400',
-  image: '/images/EPPL.png',
+  image: '/images/EPPL.webp',
 },
 // {
 //   title: 'Screener',
@@ -171,7 +171,7 @@ const projects = [
 //   ],
 //   link: 'https://www.screener.in/',
 //   gradient: 'from-slate-700 via-gray-700 to-zinc-600',
-//   image: '/images/screener.png',
+//   image: '/images/screener.webp',
 // },
 {
   title: 'PuneAIJobs',
@@ -188,7 +188,7 @@ const projects = [
   ],
   link: 'https://www.puneaijobs.com/',
   gradient: 'from-indigo-500 via-purple-500 to-pink-500',
-  image: '/images/puneaijobs.png',
+  image: '/images/puneaijobs.webp',
 },
 {
   title: 'MyBiniyog',
@@ -205,7 +205,7 @@ const projects = [
   ],
   link: 'https://www.mybiniyog.com/',
   gradient: 'from-green-500 via-lime-400 to-yellow-400',
-  image: '/images/mybiniyog.png',
+  image: '/images/mybiniyog.webp',
 }
 
 

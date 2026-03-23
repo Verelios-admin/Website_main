@@ -1,0 +1,5 @@
+# Robots.txt for Verelios Labs
+User-agent: *
+Allow: /
+
+Sitemap: https://www.verelios.com/sitemap.xml

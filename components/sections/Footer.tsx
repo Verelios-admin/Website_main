@@ -13,7 +13,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Verelios Logo"
                 width={32}
                 height={32}
