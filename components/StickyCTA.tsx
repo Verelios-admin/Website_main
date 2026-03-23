@@ -24,9 +24,11 @@ export function StickyCTA() {
     setIsVisible(false);
   };
 
-  const scrollToContact = () => {
-    const el = document.getElementById('contact');
-    el?.scrollIntoView({ behavior: 'smooth' });
+  const openWhatsApp = () => {
+    window.open(
+      'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',
+      '_blank'
+    );
   };
 
   if (!isVisible) return null;
@@ -45,7 +47,7 @@ export function StickyCTA() {
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">
             <button
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
               className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-blue-700 text-sm font-semibold hover:bg-blue-50 transition-all duration-200 hover:scale-105 shadow-md"
             >
               Get Free Quote

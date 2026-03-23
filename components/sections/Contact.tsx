@@ -60,8 +60,9 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send phone with country code as plain text
-      const fullPhone = `${selectedCountry.code} ${formData.phone}`;
+      // Format: "91 8471094125" — no leading + to prevent Google Sheets formula error
+      const countryDigits = selectedCountry.code.replace('+', '');
+      const fullPhone = `${countryDigits} ${formData.phone}`;
 
       const payload = {
         name: formData.name,
