@@ -55,14 +55,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Welcome to{' '}
+            We Build Websites & Apps That{' '}
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
-              Verelios Labs
+              Grow Your Business
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            We craft exceptional digital experiences through innovative app and web development solutions that drive your business forward.
+            From idea to launch in under 3 weeks. Custom websites, mobile apps & software — built to convert visitors into customers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -87,10 +87,9 @@ export function Hero() {
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
             {[
-              { value: '50+', label: 'Projects Delivered' },
-              { value: '40+', label: 'Happy Clients' },
-              // { value: '5+', label: 'Years Experience' },
-              { value: '100K+', label: 'Users Impacted' },
+              { value: '10+', label: 'Projects Delivered' },
+              { value: '8+', label: 'Happy Clients' },
+              { value: '<3 Weeks', label: 'Avg. Delivery Time' },
               { value: '100%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <div

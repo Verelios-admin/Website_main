@@ -8,6 +8,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { CursorEffect } from '@/components/CursorEffect';
 import { FloatingElements } from '@/components/FloatingElements';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Portfolio />
       <Contact />
       <Footer />
+      <WhatsAppButton />
       <Toaster />
     </main>
   );

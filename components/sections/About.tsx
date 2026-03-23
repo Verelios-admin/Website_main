@@ -6,34 +6,34 @@ import { useEffect, useRef, useState } from 'react';
 
 const values = [
   {
-    icon: Award,
-    title: 'Excellence',
-    description: 'We deliver exceptional quality in every project we undertake.',
+    icon: Clock,
+    title: 'Under 3-Week Delivery',
+    description: 'Most projects go from kickoff to launch in under 21 days. No endless timelines.',
   },
   {
     icon: Users,
-    title: 'Collaboration',
-    description: 'We work closely with clients to ensure their vision comes to life.',
+    title: 'Dedicated Project Manager',
+    description: 'A single point of contact on WhatsApp — get updates, share feedback, and resolve queries instantly.',
   },
   {
     icon: Target,
-    title: 'Results-Driven',
-    description: 'Our focus is on delivering measurable business outcomes.',
+    title: 'Built to Convert',
+    description: 'Every site and app we build is optimized for one thing: turning your visitors into paying customers.',
   },
   {
     icon: TrendingUp,
-    title: 'Innovation',
-    description: 'We stay ahead with the latest technologies and best practices.',
-  },
-  {
-    icon: Clock,
-    title: 'Timely Delivery',
-    description: 'We respect deadlines and deliver projects on schedule.',
+    title: 'Pay in Milestones',
+    description: 'No full upfront payments. Pay 30% to start, 30% at mid-delivery, and 40% at launch.',
   },
   {
     icon: Heart,
-    title: 'Passionate Team',
-    description: 'Our team is dedicated and passionate about what we do.',
+    title: '7-Day Free Post-Launch Support',
+    description: 'After launch, we stick around. Bug fixes, tweaks, and support — on us for the first week.',
+  },
+  {
+    icon: Award,
+    title: 'Free SEO & Speed Optimization',
+    description: 'Every project includes basic SEO setup and performance tuning so you rank faster on Google.',
   },
 ];
 
@@ -68,7 +68,7 @@ export function About() {
             Why Choose Verelios Labs?
           </h2>
           <p className="text-xl text-slate-400 leading-relaxed">
-            We are a dedicated team of developers, designers, and strategists committed to transforming your digital vision into reality. With years of experience and a passion for innovation, we deliver solutions that drive success.
+            We don&apos;t just build websites — we build growth engines. Here&apos;s what makes working with us different from every other agency.
           </p>
         </div>
 
@@ -110,28 +110,28 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-4">
-                Ready to Build Something Amazing?
+                Got an Idea? Let&apos;s Make It Real.
               </h3>
               <p className="text-blue-100 text-lg">
-                Let's collaborate to create digital solutions that exceed your expectations and drive your business growth.
+                Tell us what you need — we&apos;ll show you a free mockup within 48 hours. No commitment, no strings attached.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">100%</div>
-                <div className="text-sm text-blue-100">Success Rate</div>
+                <div className="text-3xl font-bold mb-1">48 hrs</div>
+                <div className="text-sm text-blue-100">Free Mockup Delivery</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">24/7</div>
-                <div className="text-sm text-blue-100">Support Available</div>
+                <div className="text-3xl font-bold mb-1">WhatsApp</div>
+                <div className="text-sm text-blue-100">Direct Communication</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">Fast</div>
-                <div className="text-sm text-blue-100">Turnaround Time</div>
+                <div className="text-3xl font-bold mb-1">&lt;3 Weeks</div>
+                <div className="text-sm text-blue-100">Average Delivery</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">Agile</div>
-                <div className="text-sm text-blue-100">Development Process</div>
+                <div className="text-3xl font-bold mb-1">EMI</div>
+                <div className="text-sm text-blue-100">Milestone Payments</div>
               </div>
             </div>
           </div>

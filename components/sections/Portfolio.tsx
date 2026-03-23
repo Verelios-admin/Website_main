@@ -12,6 +12,7 @@ const projects = [
   {
     title: 'News Application',
     category: 'News & Media Platform',
+    result: 'Delivered in 2.5 weeks — 3x faster page loads vs. old site',
     description:
       'A modern, high-performance news and media platform built for a leading publication client. Designed to deliver real-time updates, personalized feeds, and a seamless reading experience, the application blends speed, interactivity, and elegant UI to keep users engaged and informed across all devices.',
     tags: [
@@ -38,6 +39,7 @@ const projects = [
 {
   title: 'Rivali Park',
   category: 'Real Estate Website',
+  result: 'Built in 3 weeks — 2x more property inquiries in first month',
   description:
     'A premium real estate platform designed for seamless property discovery. It features advanced search, virtual tours, and a responsive interface for a smooth user journey across devices.',
   tags: [
@@ -61,6 +63,7 @@ const projects = [
   {
   title: 'Serene Homes',
   category: 'Real Estate Platform',
+  result: 'Web + Mobile app delivered — 40% more lead conversions',
   description:
     'An end-to-end real estate ecosystem featuring both web and mobile apps for property discovery, management, and client engagement. Designed to deliver a seamless cross-platform experience with smart search, interactive listings, and secure communication tools.',
   tags: [
@@ -106,8 +109,9 @@ const projects = [
 {
   title: 'RMPD Jewellers',
   category: 'Handcrafted Jewellery Collection',
+  result: 'Online catalogue launched — 60% increase in customer inquiries',
   description:
-    'Explore the exquisite collection of handcrafted jewellery by RMPD Jewellers. Featuring timeless designs and premium craftsmanship, the online catalogue showcases a range of gold pieces created to celebrate life’s precious moments.',
+    "Explore the exquisite collection of handcrafted jewellery by RMPD Jewellers. Featuring timeless designs and premium craftsmanship, the online catalogue showcases a range of gold pieces created to celebrate life's precious moments.",
   tags: [
     'Gold Jewellery',
     'Premium Craftsmanship',
@@ -122,6 +126,7 @@ const projects = [
 {
   title: 'ChainShots',
   category: 'Trading Education & Market Analysis Platform',
+  result: 'Website + iOS + Android apps — 5,000+ active users at launch',
   description:
     'ChainShots is a trading-focused platform offering professional market insights, analysis, and educational content for traders. With a powerful website and fully functional iOS and Android apps, ChainShots helps users stay updated with market trends, trading strategies, and actionable insights in real time.',
   tags: [
@@ -138,6 +143,7 @@ const projects = [
 {
   title: 'Envirofluent ERP Software',
   category: 'ERP Website & Internal Management Software',
+  result: 'Custom ERP — reduced manual work by 70% for operations team',
   description:
     'Envirofluent uses a custom-built ERP website and internal management software to streamline operations, project tracking, and organizational workflows. The ERP system is designed to manage internal processes such as project monitoring, data management, reporting, and operational coordination, enabling efficient and centralized business management.',
   tags: [
@@ -170,6 +176,7 @@ const projects = [
 {
   title: 'PuneAIJobs',
   category: 'Job Portal Platform with Intelligent Filters',
+  result: 'AI-powered platform — 10,000+ job listings aggregated at launch',
   description:
     'PuneAIJobs is an AI-enhanced job portal focused on simplifying the job search process with smart automation and data-driven discovery. It aggregates job listings, applies intelligent scraping and filtering based on user preferences, and presents results in an intuitive UI to help job seekers find relevant opportunities quickly and efficiently.',
   tags: [
@@ -186,6 +193,7 @@ const projects = [
 {
   title: 'MyBiniyog',
   category: 'Stock Trading App & Website',
+  result: 'Full-stack trading platform — web + mobile in 4 weeks',
   description:
     'MyBiniyog is a full-stack stock trading platform available as both a responsive website and mobile apps. It enables users to track the market, analyze stocks, and execute trades with real-time data and intuitive UI. Built with automation and user-centric design, it simplifies investment decisions and enhances the trading experience across devices.',
   tags: [
@@ -281,6 +289,12 @@ export function Portfolio() {
                   <Badge className="mb-3 w-fit bg-blue-600/30 text-blue-300 hover:bg-blue-600/40 border-blue-500/50">
                     {project.category}
                   </Badge>
+
+                  {('result' in project && project.result) && (
+                    <div className="mb-3 px-3 py-1.5 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium">
+                      {project.result}
+                    </div>
+                  )}
 
                   <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
                     {project.title}
