@@ -262,7 +262,7 @@ export function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -272,12 +272,12 @@ export function Portfolio() {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              <Card className="group relative h-full overflow-hidden border-slate-700 bg-slate-800/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
+              <Card className="group relative overflow-hidden border-slate-700 bg-slate-800/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}
                 />
 
-                <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                <CardContent className="p-6 relative z-10 flex flex-col">
                   <div className="relative mb-6 h-32 rounded-lg overflow-hidden">
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`}
@@ -306,7 +306,7 @@ export function Portfolio() {
                     {project.title}
                   </h3>
 
-                  <div className="mb-4 flex-grow">
+                  <div className="mb-4">
                     <p className={`text-slate-400 transition-all duration-300 ${expandedProject === index ? '' : 'line-clamp-3'}`}>
                       {project.description}
                     </p>
