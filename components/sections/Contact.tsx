@@ -75,7 +75,7 @@ export function Contact() {
         nonMarketingConsent: nonMarketingConsent,
       };
 
-      await fetch('https://hook.us2.make.com/wv8ueoroa8mwfgk3gn6v2da68hcsd35x', {
+      await fetch('https://hook.us2.make.com/sqedcdetgz0wvevhfem1z0e6mcitx6m9', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
