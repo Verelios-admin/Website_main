@@ -3,12 +3,14 @@ import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
 import { About } from '@/components/sections/About';
 import { Portfolio } from '@/components/sections/Portfolio';
+import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { CursorEffect } from '@/components/CursorEffect';
 import { FloatingElements } from '@/components/FloatingElements';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { StickyCTA } from '@/components/StickyCTA';
 
 export default function Home() {
   return (
@@ -20,9 +22,11 @@ export default function Home() {
       <Services />
       <About />
       <Portfolio />
+      <FAQ />
       <Contact />
       <Footer />
       <WhatsAppButton />
+      <StickyCTA />
       <Toaster />
     </main>
   );

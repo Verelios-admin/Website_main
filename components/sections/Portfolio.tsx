@@ -217,6 +217,7 @@ const projects = [
 
 export function Portfolio() {
   const [visibleProjects, setVisibleProjects] = useState<number[]>([]);
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -246,10 +247,15 @@ export function Portfolio() {
       className="py-20 bg-gradient-to-b from-slate-900 to-slate-950"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${
+          visibleProjects.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our Portfolio
           </h2>
+          <div className={`mx-auto h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4 transition-all duration-1000 ease-out ${
+            visibleProjects.length > 0 ? 'w-20' : 'w-0'
+          }`} />
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Explore our recent projects that showcase our expertise and
             commitment to excellence
@@ -266,7 +272,7 @@ export function Portfolio() {
                   : 'opacity-0 translate-y-10'
               }`}
             >
-              <Card className="group relative h-full overflow-hidden border-slate-700 bg-slate-800/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+              <Card className="group relative h-full overflow-hidden border-slate-700 bg-slate-800/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2">
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}
                 />
@@ -300,9 +306,19 @@ export function Portfolio() {
                     {project.title}
                   </h3>
 
-                  <p className="text-slate-400 mb-4 line-clamp-3 flex-grow">
-                    {project.description}
-                  </p>
+                  <div className="mb-4 flex-grow">
+                    <p className={`text-slate-400 transition-all duration-300 ${expandedProject === index ? '' : 'line-clamp-3'}`}>
+                      {project.description}
+                    </p>
+                    {project.description.length > 150 && (
+                      <button
+                        onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                        className="text-blue-400 hover:text-blue-300 text-sm mt-1 transition-colors"
+                      >
+                        {expandedProject === index ? 'Show less' : 'Read more'}
+                      </button>
+                    )}
+                  </div>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (

@@ -185,6 +185,42 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <Script
+          id="faq-jsonld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How long does it take to build a website or app?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Most projects go from kickoff to launch in under 3 weeks. Simple websites can be done in 7–10 days, while complex apps with custom backends may take 4–6 weeks.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'What is your pricing model?',
+                acceptedAnswer: { '@type': 'Answer', text: 'We work on a milestone-based payment model — 30% to start, 30% at mid-delivery, and 40% at launch. No hidden charges.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you build mobile apps for both iOS and Android?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Yes! We build cross-platform apps using React Native and Flutter, so your app works on both iOS and Android from a single codebase.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I see a mockup before committing?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. We provide a free mockup or prototype within 48 hours of our first conversation. No payment or commitment required.' },
+              },
+              {
+                '@type': 'Question',
+                name: 'What happens after my project launches?',
+                acceptedAnswer: { '@type': 'Answer', text: 'Every project comes with 7 days of free post-launch support for bug fixes and tweaks. After that, we offer affordable monthly maintenance plans.' },
+              },
+            ],
+          }) }}
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

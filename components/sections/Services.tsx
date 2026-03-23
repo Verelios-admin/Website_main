@@ -73,10 +73,15 @@ export function Services() {
   return (
     <section id="services" ref={sectionRef} className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${
+          visibleCards.length > 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our Services
           </h2>
+          <div className={`mx-auto h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4 transition-all duration-1000 ease-out ${
+            visibleCards.length > 0 ? 'w-20' : 'w-0'
+          }`} />
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Comprehensive digital solutions tailored to elevate your business
           </p>
