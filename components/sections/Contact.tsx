@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, Phone, ChevronDown, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { trackMetaLead } from '@/components/MetaPixel';
 import Link from 'next/link';
 
 const countryCodes = [
@@ -80,6 +81,9 @@ export function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+
+      // Track lead conversion in Meta Pixel
+      trackMetaLead();
 
       toast({
         title: 'Message Sent!',
