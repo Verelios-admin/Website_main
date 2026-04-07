@@ -122,21 +122,21 @@ export function About() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">48 hrs</div>
-                <div className="text-sm text-blue-100">Free Mockup Delivery</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold mb-1">48 hrs</div>
+                <div className="text-xs sm:text-sm text-blue-100">Free Mockup Delivery</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">WhatsApp</div>
-                <div className="text-sm text-blue-100">Direct Communication</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold mb-1">24/7</div>
+                <div className="text-xs sm:text-sm text-blue-100">WhatsApp Support</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">&lt;3 Weeks</div>
-                <div className="text-sm text-blue-100">Average Delivery</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold mb-1">&lt;3 Weeks</div>
+                <div className="text-xs sm:text-sm text-blue-100">Average Delivery</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold mb-1">EMI</div>
-                <div className="text-sm text-blue-100">Milestone Payments</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl font-bold mb-1">EMI</div>
+                <div className="text-xs sm:text-sm text-blue-100">Milestone Payments</div>
               </div>
             </div>
           </div>
