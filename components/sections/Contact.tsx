@@ -32,6 +32,8 @@ export function Contact() {
     name: '',
     email: '',
     phone: '',
+    serviceType: '',
+    budgetRange: '',
     message: '',
   });
 
@@ -43,7 +45,7 @@ export function Contact() {
   const { toast } = useToast();
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -53,6 +55,8 @@ export function Contact() {
     formData.name.trim() !== '' &&
     formData.email.trim() !== '' &&
     formData.phone.trim() !== '' &&
+    formData.serviceType !== '' &&
+    formData.budgetRange !== '' &&
     formData.message.trim() !== '';
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,11 +73,13 @@ export function Contact() {
         name: formData.name,
         email: formData.email,
         phone: fullPhone,
+        serviceType: formData.serviceType,
+        budgetRange: formData.budgetRange,
         message: formData.message,
         source: 'Verelios Website - Contact Us',
         date: new Date().toISOString(),
-        marketingConsent: marketingConsent,
-        nonMarketingConsent: nonMarketingConsent,
+        marketingConsent: marketingConsent ? 'Yes' : 'No',
+        nonMarketingConsent: nonMarketingConsent ? 'Yes' : 'No',
       };
 
       await fetch('https://hook.us2.make.com/sqedcdetgz0wvevhfem1z0e6mcitx6m9', {
@@ -85,12 +91,21 @@ export function Contact() {
       // Track lead conversion in Meta Pixel
       trackMetaLead();
 
+      // Track lead conversion in Google Analytics
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'Contact Form',
+          event_label: formData.serviceType || 'General',
+          value: formData.budgetRange || 'Not specified',
+        });
+      }
+
       toast({
         title: 'Message Sent!',
         description: "We'll get back to you as soon as possible.",
       });
 
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', serviceType: '', budgetRange: '', message: '' });
       setMarketingConsent(true);
       setNonMarketingConsent(true);
     } catch {
@@ -237,6 +252,42 @@ export function Contact() {
                   required
                   className="h-12 pl-[7.5rem] sm:pl-[8.5rem] bg-white text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733]"
                 />
+              </div>
+
+              {/* Service Type & Budget */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <select
+                  name="serviceType"
+                  value={formData.serviceType}
+                  onChange={handleChange}
+                  required
+                  className="h-12 px-3 rounded-md bg-white text-gray-900 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733] focus:outline-none text-sm"
+                >
+                  <option value="" disabled>Service Type</option>
+                  <option value="Business Website">Business Website</option>
+                  <option value="E-commerce Website">E-commerce Website</option>
+                  <option value="Mobile App">Mobile App (iOS/Android)</option>
+                  <option value="Custom Software">Custom Software / CRM / ERP</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Website Redesign">Website Redesign</option>
+                  <option value="Other">Other</option>
+                </select>
+
+                <select
+                  name="budgetRange"
+                  value={formData.budgetRange}
+                  onChange={handleChange}
+                  required
+                  className="h-12 px-3 rounded-md bg-white text-gray-900 border border-gray-300 focus:border-[#FF5733] focus:ring-[#FF5733] focus:outline-none text-sm"
+                >
+                  <option value="" disabled>Budget Range</option>
+                  <option value="Under ₹25K">Under ₹25,000</option>
+                  <option value="₹25K - ₹50K">₹25,000 – ₹50,000</option>
+                  <option value="₹50K - ₹1L">₹50,000 – ₹1,00,000</option>
+                  <option value="₹1L - ₹3L">₹1,00,000 – ₹3,00,000</option>
+                  <option value="₹3L+">₹3,00,000+</option>
+                  <option value="Not Sure">Not sure yet</option>
+                </select>
               </div>
 
               <Textarea
