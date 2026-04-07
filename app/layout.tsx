@@ -13,10 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.verelios.com'),
   title: {
-    default: 'Verelios Labs | Custom Website & App Development Company in India',
-    template: '%s | Verelios Labs',
+    default: 'Verelios Labs — Custom Website & App Development Company in India | Launch in 3 Weeks',
+    template: '%s | Verelios Labs — Web & App Development India',
   },
-  description: 'We build custom websites, mobile apps & software that grow your business. From idea to launch in under 3 weeks. Trusted by 10+ clients across India. Get a free mockup today.',
+  description: 'Get a custom website, mobile app or software built & launched in under 3 weeks. Free mockup in 48 hours, no upfront payment. Trusted by 10+ businesses across India. React, Next.js & React Native experts. Get your free quote today.',
   keywords: [
     'website development company India',
     'custom web development',
@@ -26,10 +26,22 @@ export const metadata: Metadata = {
     'ecommerce website development',
     'startup app development',
     'business website design',
-    'web development agency',
+    'web development agency India',
     'custom software development India',
     'Verelios Labs',
     'website developer near me',
+    'hire web developer India',
+    'best web development company India',
+    'React Native app development',
+    'Next.js development agency',
+    'website design and development services',
+    'full stack developer India',
+    'conversion optimized website',
+    'fast website development',
+    'mobile app development company',
+    'UI UX design services India',
+    'website redesign services',
+    'progressive web app development',
   ],
   authors: [{ name: 'Verelios Labs', url: 'https://www.verelios.com' }],
   creator: 'Verelios Labs',
@@ -42,8 +54,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.verelios.com',
   },
   openGraph: {
-    title: 'Verelios Labs | Custom Website & App Development in India',
-    description: 'We build websites & apps that grow your business. From idea to launch in under 3 weeks. Get a free mockup today.',
+    title: 'Verelios Labs — Websites & Apps That Grow Your Business | Free Mockup in 48hrs',
+    description: 'Custom websites, mobile apps & software — idea to launch in under 3 weeks. Free mockup, no upfront payment. Built with React, Next.js & React Native by India\'s fastest dev team.',
     url: 'https://www.verelios.com',
     type: 'website',
     locale: 'en_IN',
@@ -53,14 +65,14 @@ export const metadata: Metadata = {
         url: '/logo.webp',
         width: 512,
         height: 512,
-        alt: 'Verelios Labs - Web & App Development',
+        alt: 'Verelios Labs — Custom Website & App Development Company in India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verelios Labs | Custom Website & App Development in India',
-    description: 'We build websites & apps that grow your business. From idea to launch in under 3 weeks.',
+    title: 'Verelios Labs — Websites & Apps Built to Convert | Launch in 3 Weeks',
+    description: 'Custom websites & apps from idea to launch in under 3 weeks. Free mockup in 48 hours. No upfront payment. 100% satisfaction guaranteed.',
     images: ['/logo.webp'],
   },
   robots: {
@@ -86,7 +98,7 @@ const jsonLd = {
   name: 'Verelios Labs',
   url: 'https://www.verelios.com',
   logo: 'https://www.verelios.com/logo.webp',
-  description: 'Custom website, mobile app & software development company in India. From idea to launch in under 3 weeks.',
+  description: 'Custom website, mobile app & software development company in India. From idea to launch in under 3 weeks. Free mockup in 48 hours.',
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -110,13 +122,28 @@ const jsonLd = {
     '@type': 'Country',
     name: 'India',
   },
+  knowsAbout: [
+    'React', 'Next.js', 'React Native', 'Node.js', 'TypeScript',
+    'Tailwind CSS', 'Flutter', 'Firebase', 'MongoDB', 'PostgreSQL',
+  ],
+  slogan: 'From idea to launch in under 3 weeks',
   serviceType: [
     'Website Development',
     'Mobile App Development',
     'Custom Software Development',
     'UI/UX Design',
     'E-commerce Development',
+    'Progressive Web App Development',
+    'Performance Optimization',
+    'Website Maintenance',
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '10',
+    bestRating: '5',
+    worstRating: '1',
+  },
 };
 
 const localBusinessJsonLd = {
@@ -128,8 +155,11 @@ const localBusinessJsonLd = {
   email: 'contact@verelios.com',
   priceRange: '$$',
   image: 'https://www.verelios.com/logo.webp',
-  description: 'Custom website and mobile app development company. We build fast, conversion-optimized websites and apps for businesses across India.',
-  areaServed: 'India',
+  description: 'India\'s fastest web & app development company. Custom websites, mobile apps & software — from idea to launch in under 3 weeks. Free mockup in 48 hours, milestone-based payment.',
+  areaServed: {
+    '@type': 'Country',
+    name: 'India',
+  },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Web & App Development Services',
@@ -139,7 +169,7 @@ const localBusinessJsonLd = {
         itemOffered: {
           '@type': 'Service',
           name: 'Business Website Development',
-          description: 'Custom responsive websites built to convert visitors into customers',
+          description: 'Custom responsive websites built with React & Next.js to convert visitors into customers. SEO optimized, mobile-first design.',
         },
       },
       {
@@ -147,7 +177,7 @@ const localBusinessJsonLd = {
         itemOffered: {
           '@type': 'Service',
           name: 'Mobile App Development',
-          description: 'Native and cross-platform mobile apps for iOS and Android',
+          description: 'Cross-platform mobile apps for iOS and Android using React Native & Flutter. From concept to App Store in weeks.',
         },
       },
       {
@@ -155,7 +185,23 @@ const localBusinessJsonLd = {
         itemOffered: {
           '@type': 'Service',
           name: 'Custom Software Development',
-          description: 'Tailored software solutions including ERP, CRM, and automation tools',
+          description: 'Tailored software solutions including ERP, CRM, APIs, and automation tools. Full-stack Node.js & TypeScript.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'UI/UX Design',
+          description: 'User research, wireframing, prototyping, and design systems. Conversion-focused interfaces that delight users.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'E-commerce Development',
+          description: 'Custom e-commerce websites and apps with secure payment integration, inventory management, and analytics.',
         },
       },
     ],
