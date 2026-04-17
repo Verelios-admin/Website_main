@@ -66,3 +66,5 @@ export function StickyCTA() {
     </div>
   );
 }
+
+export default StickyCTA;

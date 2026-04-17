@@ -16,3 +16,5 @@ export function WhatsAppButton() {
     </a>
   );
 }
+
+export default WhatsAppButton;

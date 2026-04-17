@@ -130,7 +130,7 @@ const Typewriter = memo(function Typewriter() {
 
   return (
     <>
-      <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent animate-headline-gradient">
         {displayText}
       </span>
       <span className="animate-blink-caret ml-0.5">&nbsp;</span>

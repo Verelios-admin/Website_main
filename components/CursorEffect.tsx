@@ -1,65 +1,89 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function CursorEffect() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseRef = useRef({ x: -100, y: -100 });
+  const currentRef = useRef({ x: -100, y: -100 });
+  const rafRef = useRef<number | null>(null);
+  const [enabled, setEnabled] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
-    const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+    // Skip on coarse pointers (touch devices) — no cursor visible there anyway
+    const mql = window.matchMedia('(pointer: fine)');
+    if (!mql.matches) return;
+    setEnabled(true);
+
+    const handleMove = (e: MouseEvent) => {
+      mouseRef.current.x = e.clientX;
+      mouseRef.current.y = e.clientY;
+    };
+    const handleDown = () => setIsClicking(true);
+    const handleUp = () => setIsClicking(false);
+
+    const tick = () => {
+      // Lerp toward target for smooth trailing motion
+      currentRef.current.x += (mouseRef.current.x - currentRef.current.x) * 0.2;
+      currentRef.current.y += (mouseRef.current.y - currentRef.current.y) * 0.2;
+
+      const el = containerRef.current;
+      if (el) {
+        el.style.setProperty('--cx', `${currentRef.current.x}px`);
+        el.style.setProperty('--cy', `${currentRef.current.y}px`);
+      }
+      rafRef.current = requestAnimationFrame(tick);
     };
 
-    const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = () => setIsClicking(false);
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    window.addEventListener('mousemove', updatePosition);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    window.addEventListener('mousedown', handleDown);
+    window.addEventListener('mouseup', handleUp);
+    rafRef.current = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('mousemove', updatePosition);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('mousedown', handleDown);
+      window.removeEventListener('mouseup', handleUp);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [isVisible]);
+  }, []);
+
+  if (!enabled) return null;
 
   return (
-    <>
+    <div
+      ref={containerRef}
+      aria-hidden="true"
+      className="fixed inset-0 pointer-events-none z-50 hidden md:block"
+      style={{ '--cx': '-100px', '--cy': '-100px' } as React.CSSProperties}
+    >
+      {/* Outer ring */}
       <div
-        className={`fixed pointer-events-none z-50 mix-blend-difference transition-transform duration-100 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        } ${isClicking ? 'scale-75' : 'scale-100'}`}
+        className={`absolute w-8 h-8 border-2 border-white rounded-full mix-blend-difference transition-[width,height,opacity] duration-200 ${
+          isClicking ? 'scale-75' : 'scale-100'
+        }`}
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
+          left: 'var(--cx)',
+          top: 'var(--cy)',
           transform: 'translate(-50%, -50%)',
+          willChange: 'transform',
         }}
-      >
-        <div className="w-8 h-8 border-2 border-white rounded-full" />
-      </div>
-
+      />
+      {/* Soft glow */}
       <div
-        className={`fixed pointer-events-none z-50 transition-all duration-500 ease-out ${
-          isVisible ? 'opacity-30' : 'opacity-0'
-        } ${isClicking ? 'scale-50' : 'scale-100'}`}
+        className={`absolute w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 blur-2xl transition-opacity duration-500 ${
+          isClicking ? 'opacity-60' : 'opacity-25'
+        }`}
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
+          left: 'var(--cx)',
+          top: 'var(--cy)',
           transform: 'translate(-50%, -50%)',
+          willChange: 'transform',
         }}
-      >
-        <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl" />
-      </div>
-    </>
+      />
+    </div>
   );
 }
+
+export default CursorEffect;

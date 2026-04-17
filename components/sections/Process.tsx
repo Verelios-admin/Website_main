@@ -114,3 +114,5 @@ export function Process() {
     </section>
   );
 }
+
+export default Process;
