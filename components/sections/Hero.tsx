@@ -264,7 +264,10 @@ export function Hero() {
                 className="group relative p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-500/30 hover:bg-blue-500/[0.05] transition-all duration-500 hover:scale-105"
               >
                 <stat.icon className="w-5 h-5 text-blue-400 mx-auto mb-2 opacity-60 group-hover:opacity-100 transition-opacity" />
-                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+                <div
+                  className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1 tabular-nums"
+                  style={{ minHeight: '1.2em' }}
+                >
                   {stat.value}
                 </div>
                 <div className="text-xs sm:text-sm text-slate-400">{stat.label}</div>

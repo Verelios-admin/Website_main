@@ -486,26 +486,28 @@ section {
 }
 
 /* Mobile: kill non-composited (background-position) animations — they repaint
-   every frame on weaker CPUs, tanking TBT. Transform/opacity stay. */
+   every frame on weaker CPUs, tanking TBT. Also kill blurred-blob animations —
+   transform is composited, but blur-3xl forces expensive re-blurs per frame. */
 @media (max-width: 768px) {
   .animate-bg-sweep,
   .animate-grid-pan,
   .animate-headline-gradient,
-  .animate-shimmer {
+  .animate-shimmer,
+  .animate-blob,
+  .animate-drift-1,
+  .animate-drift-2,
+  .animate-drift-3,
+  .animate-pulse-glow,
+  .animate-pulse-ring {
     animation: none !important;
     background-size: auto !important;
     background-position: 0 0 !important;
   }
-  /* Drift blobs stay (GPU-composited) but slow down to reduce work */
-  .animate-drift-1 { animation-duration: 30s; }
-  .animate-drift-2 { animation-duration: 36s; }
-  .animate-drift-3 { animation-duration: 42s; }
 }
 
-/* content-visibility: below-fold sections skip paint work until near viewport.
-   Big LCP/CLS win on mobile. */
-section[id="services"],
-section[id="process"],
+/* content-visibility: skip paint work for far-below-fold sections.
+   Intentionally exclude Services/Process — they're close to the fold on mobile
+   and the intrinsic-size approximation would cause CLS. */
 section[id="about"],
 section[id="portfolio"],
 section[id="testimonials"],
@@ -513,7 +515,7 @@ section[id="pricing"],
 section[id="faq"],
 section[id="contact"] {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+  contain-intrinsic-size: 1px 1600px;
 }
 
 /* Tilted underline accent for light section headlines */
