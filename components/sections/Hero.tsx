@@ -32,7 +32,7 @@ function useCountUp(end: number, duration: number = 2000, startCounting: boolean
   return count;
 }
 
-/* ── Mouse-tracking orbs — zero React re-renders ── */
+/* ── Mouse-tracking orbs — zero React re-renders, desktop only ── */
 function Orbs() {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -40,6 +40,9 @@ function Orbs() {
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Skip the entire rAF loop on touch devices — they don't need parallax
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };

@@ -2,19 +2,18 @@ import dynamic from 'next/dynamic';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
+import { Process } from '@/components/sections/Process';
+import { About } from '@/components/sections/About';
+import { Portfolio } from '@/components/sections/Portfolio';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { Pricing } from '@/components/sections/Pricing';
+import { FAQ } from '@/components/sections/FAQ';
+import { Contact } from '@/components/sections/Contact';
+import { Footer } from '@/components/sections/Footer';
 
-// Below-fold: code-split so initial JS bundle stays small.
-// ssr stays on (default) so static export still pre-renders HTML for SEO.
-const Process = dynamic(() => import('@/components/sections/Process'));
-const About = dynamic(() => import('@/components/sections/About'));
-const Portfolio = dynamic(() => import('@/components/sections/Portfolio'));
-const Testimonials = dynamic(() => import('@/components/sections/Testimonials'));
-const Pricing = dynamic(() => import('@/components/sections/Pricing'));
-const FAQ = dynamic(() => import('@/components/sections/FAQ'));
-const Contact = dynamic(() => import('@/components/sections/Contact'));
-const Footer = dynamic(() => import('@/components/sections/Footer'));
-
-// Non-essential UI — load after paint, no SSR needed
+// Non-essential UI — load after paint, no SSR needed.
+// (With static export, dynamic imports on content sections cause mobile
+// hydration bursts without saving bytes, so we keep those static.)
 const Toaster = dynamic(() => import('@/components/ui/toaster'), { ssr: false });
 const CursorEffect = dynamic(() => import('@/components/CursorEffect'), { ssr: false });
 const FloatingElements = dynamic(() => import('@/components/FloatingElements'), { ssr: false });

@@ -473,10 +473,47 @@ section {
   .animate-headline-gradient,
   .animate-pulse-ring,
   .animate-shimmer,
-  .animate-rotate {
+  .animate-rotate,
+  .animate-bg-sweep,
+  .animate-grid-pan,
+  .animate-drift-1,
+  .animate-drift-2,
+  .animate-drift-3,
+  .animate-particle {
     animation: none !important;
   }
   html { scroll-behavior: auto; }
+}
+
+/* Mobile: kill non-composited (background-position) animations — they repaint
+   every frame on weaker CPUs, tanking TBT. Transform/opacity stay. */
+@media (max-width: 768px) {
+  .animate-bg-sweep,
+  .animate-grid-pan,
+  .animate-headline-gradient,
+  .animate-shimmer {
+    animation: none !important;
+    background-size: auto !important;
+    background-position: 0 0 !important;
+  }
+  /* Drift blobs stay (GPU-composited) but slow down to reduce work */
+  .animate-drift-1 { animation-duration: 30s; }
+  .animate-drift-2 { animation-duration: 36s; }
+  .animate-drift-3 { animation-duration: 42s; }
+}
+
+/* content-visibility: below-fold sections skip paint work until near viewport.
+   Big LCP/CLS win on mobile. */
+section[id="services"],
+section[id="process"],
+section[id="about"],
+section[id="portfolio"],
+section[id="testimonials"],
+section[id="pricing"],
+section[id="faq"],
+section[id="contact"] {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
 }
 
 /* Tilted underline accent for light section headlines */
