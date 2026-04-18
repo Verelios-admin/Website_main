@@ -223,7 +223,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0f172a" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        {/* Google Analytics 4 — lazyOnload to avoid blocking TBT */}
+        {/* Google Analytics 4 + Google Ads conversion tracking — lazyOnload to avoid blocking TBT */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-96F7T65XWE"
           strategy="lazyOnload"
@@ -240,6 +240,7 @@ export default function RootLayout({
                 page_title: document.title,
                 page_location: window.location.href,
               });
+              gtag('config', 'AW-18037984640');
             `,
           }}
         />

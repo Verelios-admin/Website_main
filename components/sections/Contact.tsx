@@ -91,12 +91,19 @@ export function Contact() {
       // Track lead conversion in Meta Pixel
       trackMetaLead();
 
-      // Track lead conversion in Google Analytics
+      // Track lead conversion in Google Analytics + Google Ads
       if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
         (window as any).gtag('event', 'generate_lead', {
           event_category: 'Contact Form',
           event_label: formData.serviceType || 'General',
           value: formData.budgetRange || 'Not specified',
+        });
+
+        // Google Ads conversion — "Submit lead form"
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-18037984640/lFtBCOjnxJscEICbl5lD',
+          value: 1.0,
+          currency: 'INR',
         });
       }
 
