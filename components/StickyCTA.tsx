@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowRight, X } from 'lucide-react';
+import { trackGoogleAdsLead } from '@/lib/gtag';
+import { trackMetaLead } from '@/components/MetaPixel';
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +27,8 @@ export function StickyCTA() {
   };
 
   const openWhatsApp = () => {
+    trackGoogleAdsLead();
+    trackMetaLead();
     window.open(
       'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',
       '_blank'

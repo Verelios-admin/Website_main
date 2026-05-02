@@ -3,6 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2, Clock, Shield, Star, Zap } from 'lucide-react';
 import { useEffect, useState, useRef, memo } from 'react';
+import { trackGoogleAdsLead } from '@/lib/gtag';
+import { trackMetaLead } from '@/components/MetaPixel';
 
 const ROTATING_WORDS = ['Grow Your Business', 'Convert More Leads', 'Dominate Online', 'Scale Faster'];
 
@@ -232,6 +234,8 @@ export function Hero() {
               variant="outline"
               className="text-lg px-8 py-7 border-2 border-emerald-500/50 bg-emerald-500/10 hover:bg-emerald-500/20 hover:border-emerald-400/70 text-white transition-all duration-300 group shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_35px_rgba(16,185,129,0.3)] rounded-xl"
               onClick={() => {
+                trackGoogleAdsLead();
+                trackMetaLead();
                 window.open(
                   'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project.',
                   '_blank'

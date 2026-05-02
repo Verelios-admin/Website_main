@@ -7,6 +7,7 @@ import { ArrowRight, Phone, ChevronDown, Mail } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { trackMetaLead } from '@/components/MetaPixel';
+import { trackGoogleAdsLead } from '@/lib/gtag';
 import Link from 'next/link';
 
 const countryCodes = [
@@ -91,21 +92,47 @@ export function Contact() {
       // Track lead conversion in Meta Pixel
       trackMetaLead();
 
-      // Track lead conversion in Google Analytics + Google Ads
-      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'generate_lead', {
+      // Track lead conversion in Google Analytics + Google Ads.
+      // Wrapped in a retry in case gtag.js hasn't finished loading yet
+      // (can happen on slow mobile connections), since without gtag the
+      // Google Ads "Submit lead form" conversion would silently never fire.
+      const fireGtagConversion = (retriesLeft = 5) => {
+        const gtag = typeof window !== 'undefined' ? (window as any).gtag : undefined;
+        if (typeof gtag !== 'function') {
+          if (retriesLeft > 0) {
+            setTimeout(() => fireGtagConversion(retriesLeft - 1), 400);
+          }
+          return;
+        }
+
+        // GA4 lead event (for analytics reporting)
+        gtag('event', 'generate_lead', {
           event_category: 'Contact Form',
           event_label: formData.serviceType || 'General',
           value: formData.budgetRange || 'Not specified',
         });
 
+        // Enhanced conversions — email & phone are auto-SHA256-hashed by
+        // gtag.js before leaving the browser. Improves match rate ~20–30%.
+        gtag('set', 'user_data', {
+          email: formData.email,
+          phone_number: `+${countryDigits}${formData.phone}`,
+        });
+
         // Google Ads conversion — "Submit lead form"
-        (window as any).gtag('event', 'conversion', {
+        gtag('event', 'conversion', {
           send_to: 'AW-18037984640/lFtBCOjnxJscEICbl5lD',
           value: 1.0,
           currency: 'INR',
+          event_callback: () => {
+            if (process.env.NODE_ENV !== 'production') {
+              // eslint-disable-next-line no-console
+              console.log('[Ads] Submit lead form conversion fired');
+            }
+          },
         });
-      }
+      };
+      fireGtagConversion();
 
       toast({
         title: 'Message Sent!',
@@ -173,6 +200,10 @@ export function Contact() {
               href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20book%20a%20meeting%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackGoogleAdsLead();
+                trackMetaLead();
+              }}
             >
               <Button
                 size="lg"
