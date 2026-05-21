@@ -1,138 +1,179 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 
-const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'Services', href: '#services' },
-  { name: 'About', href: '#about' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' },
+const links = [
+  { id: 'services', label: 'Services' },
+  { id: 'work', label: 'Work' },
+  { id: 'process', label: 'Process' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'faq', label: 'FAQ' },
 ];
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNavClick = (hash: string) => {
-    setIsMobileMenuOpen(false);
-
-    // CASE 1: Already on Home page → smooth scroll
+  const go = (hash: string) => {
+    setOpen(false);
     if (pathname === '/') {
-      const element = document.querySelector(hash);
-      element?.scrollIntoView({ behavior: 'smooth' });
-      return;
+      const el = document.getElementById(hash);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`/#${hash}`);
     }
-
-    // CASE 2: On Privacy / Terms / Cookie page → redirect to Home with hash
-    router.push(`/${hash}`);
   };
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-blue-500/10 border-b border-slate-700'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+      <header className={`topnav ${scrolled ? 'scrolled' : ''}`}>
+        <a
+          href="#top"
+          onClick={(e) => { e.preventDefault(); go('top'); }}
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 10,
+            textDecoration: 'none', color: 'inherit',
+          }}
+        >
+          <span
+            style={{
+              width: 30, height: 30, borderRadius: 8,
+              background: scrolled ? 'var(--color-ink)' : '#fff',
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              color: scrolled ? '#fff' : 'var(--color-ink)',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700, fontSize: 16, letterSpacing: '-0.04em',
+              transition: 'background 240ms ease, color 240ms ease',
+            }}
+          >
+            V
+          </span>
+          <span
+            style={{
+              fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 17,
+              letterSpacing: '-0.015em',
+            }}
+          >
+            Verelios{' '}
+            <span style={{ color: scrolled ? 'var(--color-ink-muted-48)' : 'rgba(255,255,255,0.6)', fontWeight: 400 }}>
+              Labs
+            </span>
+          </span>
+        </a>
 
-            {/* LOGO */}
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => handleNavClick('#home')}
-            >
-              <Image
-                src="/logo.webp"
-                alt="Verelios Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8 object-contain"
-              />
-              <span className="text-xl font-bold text-white pt-2">
-                Verelios Labs
-              </span>
-            </div>
-
-            {/* DESKTOP MENU */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
-                >
-                  {link.name}
-                </button>
-              ))}
-
-              <Button
-                onClick={() => handleNavClick('#contact')}
-                className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105"
-              >
-                Get Started
-              </Button>
-            </div>
-
-            {/* MOBILE MENU TOGGLE */}
+        <nav
+          className="topnav-links"
+          style={{
+            display: 'flex', gap: 26, marginLeft: 40,
+            fontSize: 14, letterSpacing: '-0.01em',
+          }}
+        >
+          {links.map((l) => (
             <button
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              key={l.id}
+              onClick={() => go(l.id)}
+              style={{
+                color: scrolled ? 'var(--color-ink-muted-80)' : 'rgba(255,255,255,0.75)',
+                background: 'transparent',
+                border: 0,
+                padding: 0,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                fontSize: 14,
+                transition: 'color 240ms ease',
+              }}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-white" />
-              )}
+              {l.label}
             </button>
-          </div>
+          ))}
+        </nav>
+
+        <div style={{ flex: 1 }} />
+
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          <button
+            onClick={() => go('contact')}
+            className="btn-pill press"
+            style={{ padding: '8px 16px', fontSize: 14 }}
+          >
+            Get a free mockup
+          </button>
+          <button
+            className="topnav-burger press"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            style={{
+              background: 'transparent',
+              border: 0,
+              cursor: 'pointer',
+              padding: 4,
+              color: 'inherit',
+              display: 'none',
+            }}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-      </nav>
+      </header>
 
-      {/* MOBILE MENU */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-slate-900 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-2xl font-medium text-white hover:text-blue-400 transition-colors"
-              >
-                {link.name}
-              </button>
-            ))}
-
-            <Button
-              size="lg"
-              onClick={() => handleNavClick('#contact')}
-              className="bg-blue-600 hover:bg-blue-700 text-lg px-8"
+      {open && (
+        <div
+          style={{
+            position: 'fixed', inset: 0, zIndex: 49,
+            background: 'rgba(10,10,12,0.97)',
+            backdropFilter: 'saturate(180%) blur(20px)',
+            WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center', gap: 22,
+            paddingTop: 64,
+            color: '#fff',
+          }}
+        >
+          {links.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => go(l.id)}
+              style={{
+                background: 'transparent',
+                border: 0,
+                fontFamily: 'var(--font-display)',
+                fontSize: 28, fontWeight: 500,
+                letterSpacing: '-0.02em',
+                color: '#fff',
+                cursor: 'pointer',
+              }}
             >
-              Get Started
-            </Button>
-          </div>
+              {l.label}
+            </button>
+          ))}
+          <button onClick={() => go('contact')} className="btn-pill press" style={{ marginTop: 12 }}>
+            Get a free mockup
+          </button>
         </div>
       )}
+
+      <style jsx>{`
+        @media (max-width: 820px) {
+          :global(.topnav-links) { display: none !important; }
+          :global(.topnav-burger) { display: inline-flex !important; }
+        }
+      `}</style>
     </>
   );
 }

@@ -1,31 +1,31 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Check, Sparkles } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useGsap } from '@/hooks/useGsap';
 
-const plans = [
+const PLANS = [
   {
-    name: 'Business Website',
-    startingAt: '14,999',
-    description: 'Perfect for startups, small businesses & personal brands',
-    timeline: '7–14 days',
+    name: 'Business website',
+    sub: 'For startups, small businesses & personal brands',
+    price: '₹14,999',
+    cents: '/onwards',
+    eta: 'Delivery: 7–14 days',
+    featured: false,
     features: [
       'Up to 5 pages (Home, About, Services, Contact, etc.)',
       'Mobile-responsive design',
-      'SEO optimized & fast loading',
+      'SEO optimised & fast loading',
       'Contact form with WhatsApp integration',
       'Free domain & hosting setup assistance',
       '7-day post-launch support',
     ],
-    popular: false,
-    cta: 'Get Started',
   },
   {
-    name: 'Mobile App',
-    startingAt: '49,999',
-    description: 'Cross-platform apps for iOS & Android from a single codebase',
-    timeline: '3–5 weeks',
+    name: 'Mobile app',
+    sub: 'Cross-platform iOS & Android from a single codebase',
+    price: '₹49,999',
+    cents: '/onwards',
+    eta: 'Delivery: 3–5 weeks',
+    featured: true,
     features: [
       'iOS + Android from one codebase',
       'Custom UI/UX design',
@@ -34,14 +34,14 @@ const plans = [
       'App Store & Play Store submission',
       '7-day post-launch support',
     ],
-    popular: true,
-    cta: 'Get Started',
   },
   {
-    name: 'Custom Software',
-    startingAt: '99,999',
-    description: 'Tailored solutions — CRM, ERP, dashboards, automation & more',
-    timeline: '4–8 weeks',
+    name: 'Custom software',
+    sub: 'CRMs, ERPs, dashboards, automations & more',
+    price: '₹99,999',
+    cents: '/onwards',
+    eta: 'Delivery: 4–8 weeks',
+    featured: false,
     features: [
       'Fully custom-built to your requirements',
       'Admin dashboard & analytics',
@@ -50,122 +50,172 @@ const plans = [
       'Scalable cloud architecture',
       'Dedicated project manager',
     ],
-    popular: false,
-    cta: 'Get Started',
   },
 ];
 
 export function Pricing() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const ref = useGsap<HTMLElement>(({ gsap, scope }) => {
+    gsap.from(scope.querySelectorAll('.section-head > *'), {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'expo.out',
+      stagger: 0.08,
+      scrollTrigger: { trigger: scope, start: 'top 78%' },
+    });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setIsVisible(true);
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
+    gsap.from(scope.querySelectorAll('.price-card'), {
+      y: 36,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'expo.out',
+      stagger: 0.12,
+      scrollTrigger: { trigger: scope.querySelector('.three-up'), start: 'top 80%' },
+    });
+  });
 
   return (
-    <section id="pricing" ref={sectionRef} className="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Transparent Pricing
+    <section ref={ref} id="pricing" className="tile" style={{ background: 'var(--color-canvas)' }}>
+      <div className="wrap">
+        <div
+          className="section-head"
+          style={{ textAlign: 'center', margin: '0 auto 56px', justifyItems: 'center' }}
+        >
+          <div className="eyebrow" style={{ textAlign: 'center' }}>Pricing</div>
+          <h2 className="display-section" style={{ textAlign: 'center' }}>
+            Transparent pricing. <br />
+            <span style={{ color: 'var(--color-ink-muted-48)' }}>Pay as you see progress.</span>
           </h2>
-          <div className={`mx-auto h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-6 transition-all duration-1000 ease-out ${
-            isVisible ? 'w-20' : 'w-0'
-          }`} />
-          <p className="text-xl text-slate-400 leading-relaxed">
-            No hidden charges. Pay in milestones — 30% to start, 30% at mid-delivery, 40% at launch.
+          <p className="lead" style={{ marginTop: 6, maxWidth: 620, textAlign: 'center' }}>
+            No hidden charges. 30% to start, 30% at mid-delivery, 40% at launch.
           </p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:-translate-y-1 ${
-                plan.popular
-                  ? 'bg-gradient-to-b from-blue-600/20 to-slate-800/80 border-2 border-blue-500/50 shadow-lg shadow-blue-500/10'
-                  : 'bg-slate-800/50 border border-slate-700 hover:border-blue-500/30'
-              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              {/* Popular badge */}
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full bg-blue-500 text-white text-xs font-semibold">
-                    <Sparkles className="w-3 h-3" />
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              {/* Plan name */}
-              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-              <p className="text-slate-400 text-sm mb-6">{plan.description}</p>
-
-              {/* Price */}
-              <div className="mb-2">
-                <span className="text-sm text-slate-400">Starting at</span>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">&#8377;{plan.startingAt}</span>
-                </div>
+        <div className="three-up">
+          {PLANS.map((p) => (
+            <article key={p.name} className={'price-card ' + (p.featured ? 'featured' : '')}>
+              {p.featured && <span className="price-feature-badge">Most popular</span>}
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 24,
+                  fontWeight: 600,
+                  letterSpacing: '-0.015em',
+                  margin: '0 0 6px',
+                }}
+              >
+                {p.name}
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'var(--font-text)',
+                  fontSize: 14,
+                  color: 'var(--color-ink-muted-48)',
+                  margin: '0 0 22px',
+                  letterSpacing: '-0.005em',
+                }}
+              >
+                {p.sub}
+              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  gap: 8,
+                  paddingBottom: 18,
+                  borderBottom: '1px solid var(--color-hairline)',
+                  marginBottom: 22,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 38,
+                    fontWeight: 600,
+                    letterSpacing: '-0.025em',
+                  }}
+                >
+                  {p.price}
+                </span>
+                <span style={{ color: 'var(--color-ink-muted-48)', fontSize: 14 }}>{p.cents}</span>
               </div>
-
-              {/* Timeline */}
-              <p className="text-sm text-blue-400 mb-6">Delivery: {plan.timeline}</p>
-
-              {/* Features */}
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                    <Check className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                    {feature}
+              <div style={{ color: 'var(--color-ink-muted-48)', fontSize: 13, marginBottom: 22 }}>{p.eta}</div>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                }}
+              >
+                {p.features.map((f) => (
+                  <li
+                    key={f}
+                    style={{
+                      display: 'flex',
+                      gap: 10,
+                      alignItems: 'flex-start',
+                      fontFamily: 'var(--font-text)',
+                      fontSize: 14.5,
+                      lineHeight: 1.5,
+                      color: 'var(--color-ink)',
+                    }}
+                  >
+                    <span
+                      style={{
+                        flexShrink: 0,
+                        marginTop: 2,
+                        color: 'var(--color-primary)',
+                      }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
-
-              {/* CTA */}
-              <Button
-                onClick={scrollToContact}
-                className={`w-full py-6 group transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/20'
-                    : 'bg-slate-700 hover:bg-slate-600 text-white'
-                }`}
-              >
-                {plan.cta}
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+              <div style={{ marginTop: 'auto' }}>
+                <a
+                  href="#contact"
+                  className="btn-pill press"
+                  style={
+                    p.featured
+                      ? { background: 'var(--color-ink)', width: '100%', justifyContent: 'center' }
+                      : {
+                          background: 'var(--color-canvas)',
+                          color: 'var(--color-ink)',
+                          border: '1px solid var(--color-ink)',
+                          width: '100%',
+                          justifyContent: 'center',
+                        }
+                  }
+                >
+                  Get started
+                </a>
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* Bottom note */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <p className="text-slate-400 text-sm">
-            Every project includes <strong className="text-slate-200">free SEO setup</strong>, <strong className="text-slate-200">speed optimization</strong>, and <strong className="text-slate-200">7-day post-launch support</strong>.
-            <br className="hidden sm:block" />
-            Need something custom? <button onClick={scrollToContact} className="text-blue-400 hover:text-blue-300 underline underline-offset-4">Let&apos;s talk</button>.
-          </p>
+        <div
+          style={{
+            marginTop: 36,
+            textAlign: 'center',
+            color: 'var(--color-ink-muted-80)',
+            fontSize: 15,
+          }}
+        >
+          Every project includes{' '}
+          <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>free SEO setup</strong>,{' '}
+          <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>speed optimization</strong>, and{' '}
+          <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>7-day post-launch support</strong>.{' '}
+          <a href="#contact" className="link-arrow">
+            Need something custom? Let&apos;s talk <span className="arrow">→</span>
+          </a>
         </div>
       </div>
     </section>

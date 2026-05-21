@@ -1,116 +1,185 @@
 'use client';
 
-import { MessageSquare, Palette, Code2, Rocket } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useGsap } from '@/hooks/useGsap';
 
-const steps = [
+const STEPS = [
   {
-    icon: MessageSquare,
-    step: '01',
-    title: 'Free Consultation',
-    description: 'Tell us about your project on WhatsApp or a quick call. We understand your goals, audience, and timeline — no commitment needed.',
-    duration: 'Day 1',
-    color: 'from-blue-500 to-blue-600',
+    n: 'Step 01',
+    day: 'Day 1',
+    title: 'Free consultation',
+    body: 'Tell us about your project on WhatsApp or a quick call. We understand your goals, audience, and timeline — no commitment needed.',
   },
   {
-    icon: Palette,
-    step: '02',
-    title: 'Free Mockup in 48 Hours',
-    description: 'We design a visual mockup or prototype of your project within 48 hours. You review, give feedback, and approve before we write a single line of code.',
-    duration: 'Day 2–3',
-    color: 'from-cyan-500 to-cyan-600',
+    n: 'Step 02',
+    day: 'Day 2–3',
+    title: 'Free mockup in 48 hours',
+    body: 'We design a visual mockup or prototype within 48 hours. You review, give feedback, and approve before we write a single line of code.',
   },
   {
-    icon: Code2,
-    step: '03',
-    title: 'Development & Updates',
-    description: 'Our team builds your project with regular WhatsApp updates. You see progress in real-time and can request changes at any milestone.',
-    duration: 'Day 4–18',
-    color: 'from-violet-500 to-violet-600',
+    n: 'Step 03',
+    day: 'Day 4–18',
+    title: 'Development & updates',
+    body: 'We build with regular WhatsApp updates. Progress in real time, change requests at any milestone, no waiting for scheduled standups.',
   },
   {
-    icon: Rocket,
-    step: '04',
-    title: 'Launch & Support',
-    description: 'We deploy your project live, handle all the technical setup, and provide 7 days of free post-launch support for any tweaks or bug fixes.',
-    duration: 'Day 19–21',
-    color: 'from-emerald-500 to-emerald-600',
+    n: 'Step 04',
+    day: 'Day 19–21',
+    title: 'Launch & support',
+    body: 'We deploy live, handle all the technical setup, and stick around for seven days of free post-launch support — tweaks, fixes, anything.',
   },
 ];
 
 export function Process() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const ref = useGsap<HTMLElement>(({ gsap, scope }) => {
+    gsap.from(scope.querySelectorAll('.section-head > *'), {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'expo.out',
+      stagger: 0.08,
+      scrollTrigger: { trigger: scope, start: 'top 75%' },
+    });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setIsVisible(true);
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+    gsap.from(scope.querySelectorAll('.process-step'), {
+      y: 30,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'expo.out',
+      stagger: 0.12,
+      scrollTrigger: { trigger: scope.querySelector('.process-grid'), start: 'top 80%' },
+    });
+
+    const line = scope.querySelector('.process-line') as HTMLElement | null;
+    if (line) {
+      gsap.fromTo(
+        line,
+        { scaleX: 0, transformOrigin: 'left center' },
+        {
+          scaleX: 1,
+          duration: 1.4,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: scope.querySelector('.process-grid'), start: 'top 80%' },
+        }
+      );
+    }
+  });
 
   return (
-    <section id="process" ref={sectionRef} className="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            How It Works
+    <section
+      ref={ref}
+      id="process"
+      className="tile"
+      style={{ background: 'var(--color-surface-tile-1)', color: '#fff' }}
+    >
+      <div className="wrap">
+        <div className="section-head">
+          <div className="eyebrow eyebrow-on-dark">How it works</div>
+          <h2 className="display-section" style={{ color: '#fff' }}>
+            First message to live launch <br />
+            <span style={{ color: 'rgba(255,255,255,0.6)' }}>in four steps.</span>
           </h2>
-          <div className={`mx-auto h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-6 transition-all duration-1000 ease-out ${
-            isVisible ? 'w-20' : 'w-0'
-          }`} />
-          <p className="text-xl text-slate-400 leading-relaxed">
-            From first message to live launch in 4 simple steps. No surprises, no delays.
+          <p className="lead lead-on-dark" style={{ marginTop: 6, maxWidth: 620 }}>
+            No surprises, no delays. You see progress every day, you approve every milestone, and you pay only as the work lands.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="max-w-4xl mx-auto">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={index}
-                className={`relative flex gap-6 sm:gap-8 pb-12 last:pb-0 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+        <div
+          className="process-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 24,
+            position: 'relative',
+          }}
+        >
+          <div
+            className="process-line"
+            style={{
+              position: 'absolute',
+              left: '8%',
+              right: '8%',
+              top: 9,
+              height: 1,
+              background: 'rgba(255,255,255,0.15)',
+            }}
+          />
+
+          {STEPS.map((s) => (
+            <div key={s.n} className="process-step" style={{ position: 'relative', paddingTop: 28 }}>
+              <span
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: 18,
+                  height: 18,
+                  borderRadius: '50%',
+                  background: 'var(--color-surface-tile-1)',
+                  border: '2px solid var(--color-primary-on-dark)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
               >
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="absolute left-[27px] sm:left-[31px] top-16 bottom-0 w-px bg-gradient-to-b from-slate-600 to-transparent" />
-                )}
-
-                {/* Icon circle */}
-                <div className="flex-shrink-0">
-                  <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
-                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 pt-1">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Step {step.step}</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-700/50 text-slate-400">{step.duration}</span>
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{step.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{step.description}</p>
-                </div>
+                <span
+                  style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: '50%',
+                    background: 'var(--color-primary-on-dark)',
+                  }}
+                />
+              </span>
+              <div style={{ display: 'flex', gap: 10, alignItems: 'baseline' }}>
+                <span className="step-num step-num-on-dark">{s.n}</span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-text)',
+                    fontSize: 12,
+                    color: 'rgba(255,255,255,0.5)',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  · {s.day}
+                </span>
               </div>
-            );
-          })}
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 22,
+                  fontWeight: 600,
+                  letterSpacing: '-0.015em',
+                  margin: '10px 0 12px',
+                  color: '#fff',
+                }}
+              >
+                {s.title}
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'var(--font-text)',
+                  fontSize: 15,
+                  lineHeight: 1.55,
+                  color: 'var(--color-body-muted)',
+                  letterSpacing: '-0.01em',
+                  margin: 0,
+                }}
+              >
+                {s.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 980px) {
+          :global(.process-grid) { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          :global(.process-grid) { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }

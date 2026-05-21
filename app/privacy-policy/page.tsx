@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Verelios Labs collects, uses and safeguards your personal information when you interact with our website or services.",
+  alternates: { canonical: "https://www.verelios.com/privacy-policy" },
+  robots: { index: true, follow: true },
+};
 
 export default function PrivacyPolicyPage() {
   return (

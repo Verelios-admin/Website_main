@@ -1,72 +1,109 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { ArrowRight, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { X } from 'lucide-react';
 import { trackGoogleAdsLead } from '@/lib/gtag';
 import { trackMetaLead } from '@/components/MetaPixel';
 
 export function StickyCTA() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show after scrolling past the hero (approx 600px)
-      if (window.scrollY > 600 && !isDismissed) {
-        setIsVisible(true);
-      }
+    const onScroll = () => {
+      if (window.scrollY > 700 && !dismissed) setVisible(true);
     };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [dismissed]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isDismissed]);
-
-  const handleDismiss = () => {
-    setIsDismissed(true);
-    setIsVisible(false);
-  };
-
-  const openWhatsApp = () => {
-    trackGoogleAdsLead();
-    trackMetaLead();
-    window.open(
-      'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',
-      '_blank'
-    );
-  };
-
-  if (!isVisible) return null;
+  if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 slide-up">
-      <div className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 border-t border-blue-500/30 shadow-lg shadow-blue-900/40">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="hidden sm:block w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
-            <p className="text-white text-sm sm:text-base font-medium truncate">
-              <span className="hidden sm:inline">Get a free mockup in 48 hours — </span>
-              <span className="sm:hidden">Free mockup in 48hrs — </span>
-              <span className="text-blue-200">no commitment needed</span>
-            </p>
-          </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <button
-              onClick={openWhatsApp}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-blue-700 text-sm font-semibold hover:bg-blue-50 transition-all duration-200 hover:scale-105 shadow-md"
-            >
-              Get Free Quote
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={handleDismiss}
-              className="p-1.5 rounded-lg text-blue-200 hover:text-white hover:bg-white/10 transition-colors"
-              aria-label="Dismiss banner"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
+    <div
+      style={{
+        position: 'fixed',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 40,
+        background: 'var(--color-surface-black)',
+        color: '#fff',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        animation: 'cta-slide 480ms cubic-bezier(0.22, 1, 0.36, 1) forwards',
+      }}
+    >
+      <div
+        className="wrap"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 16,
+          padding: '12px 28px',
+          flexWrap: 'wrap',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
+          <span
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: '50%',
+              background: 'var(--color-primary-on-dark)',
+              flexShrink: 0,
+            }}
+          />
+          <p style={{ margin: 0, fontSize: 14, letterSpacing: '-0.01em' }}>
+            <strong style={{ fontWeight: 600 }}>Get a free mockup in 48 hours</strong>{' '}
+            <span style={{ color: 'rgba(255,255,255,0.55)' }}>— no commitment needed.</span>
+          </p>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button
+            onClick={() => {
+              trackGoogleAdsLead();
+              trackMetaLead();
+              window.open(
+                'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',
+                '_blank'
+              );
+            }}
+            className="btn-pill press"
+            style={{ padding: '8px 16px', fontSize: 13 }}
+          >
+            Get free quote →
+          </button>
+          <button
+            onClick={() => {
+              setDismissed(true);
+              setVisible(false);
+            }}
+            aria-label="Dismiss banner"
+            style={{
+              background: 'transparent',
+              border: 0,
+              color: 'rgba(255,255,255,0.6)',
+              padding: 6,
+              cursor: 'pointer',
+            }}
+          >
+            <X size={16} />
+          </button>
         </div>
       </div>
+      <style jsx>{`
+        @keyframes cta-slide {
+          from {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,5 +1,41 @@
-# Robots.txt for Verelios Labs
+# robots.txt for Verelios Labs (https://www.verelios.com)
+# Allow all reputable search engines and AI assistants to crawl.
+
 User-agent: *
 Allow: /
+Disallow: /api/
 
+# Common crawlers — explicit allow for clarity
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI / answer-engine crawlers — opt in (helps brand surface in AI answers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemaps
 Sitemap: https://www.verelios.com/sitemap.xml

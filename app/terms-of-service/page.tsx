@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "The terms governing your use of Verelios Labs' website and our delivery of website, mobile app and software development services.",
+  alternates: { canonical: "https://www.verelios.com/terms-of-service" },
+  robots: { index: true, follow: true },
+};
 
 export default function TermsOfServicePage() {
   return (

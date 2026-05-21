@@ -1,298 +1,886 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle2, Clock, Shield, Star, Zap } from 'lucide-react';
-import { useEffect, useState, useRef, memo } from 'react';
+import { useGsap } from '@/hooks/useGsap';
 import { trackGoogleAdsLead } from '@/lib/gtag';
 import { trackMetaLead } from '@/components/MetaPixel';
 
-const ROTATING_WORDS = ['Grow Your Business', 'Convert More Leads', 'Dominate Online', 'Scale Faster'];
-
-/* ── Animated counter hook (runs once, no re-render storms) ── */
-function useCountUp(end: number, duration: number = 2000, startCounting: boolean = false) {
-  const [count, setCount] = useState(0);
-  const frameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    if (!startCounting) return;
-    const startTime = performance.now();
-
-    const animate = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * end));
-      if (progress < 1) {
-        frameRef.current = requestAnimationFrame(animate);
-      }
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-    return () => { if (frameRef.current) cancelAnimationFrame(frameRef.current); };
-  }, [end, duration, startCounting]);
-
-  return count;
-}
-
-/* ── Mouse-tracking orbs — zero React re-renders, desktop only ── */
-function Orbs() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const currentRef = useRef({ x: 0, y: 0 });
-  const rafRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    // Skip the entire rAF loop on touch devices — they don't need parallax
-    if (!window.matchMedia('(pointer: fine)').matches) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const tick = () => {
-      // Lerp toward target for buttery smooth movement
-      currentRef.current.x += (mouseRef.current.x - currentRef.current.x) * 0.04;
-      currentRef.current.y += (mouseRef.current.y - currentRef.current.y) * 0.04;
-
-      const el = containerRef.current;
-      if (el) {
-        el.style.setProperty('--mx', `${currentRef.current.x}`);
-        el.style.setProperty('--my', `${currentRef.current.y}`);
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    rafRef.current = requestAnimationFrame(tick);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
-
+/* --------------------------------------------------------------
+   Helpers — word + char wrappers that animate cleanly.
+   The outer span is inline-block / overflow hidden so the inner
+   span can mask-slide from below. Spaces between siblings (placed
+   in JSX as `{' '}` between sibling elements) survive the masking.
+   -------------------------------------------------------------- */
+function Word({ children, accent }: { children: React.ReactNode; accent?: boolean }) {
   return (
-    <div ref={containerRef} className="absolute inset-0 pointer-events-none" style={{ '--mx': '0', '--my': '0' } as React.CSSProperties}>
-      <div
-        className="absolute top-10 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply blur-3xl opacity-15 animate-blob will-change-transform"
-        style={{ transform: 'translate(calc(var(--mx) * 0.02px), calc(var(--my) * 0.02px))' }}
-      />
-      <div
-        className="absolute top-40 right-10 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply blur-3xl opacity-15 animate-blob animation-delay-2000 will-change-transform"
-        style={{ transform: 'translate(calc(var(--mx) * -0.015px), calc(var(--my) * 0.015px))' }}
-      />
-      <div
-        className="absolute bottom-10 left-1/3 w-96 h-96 bg-violet-500 rounded-full mix-blend-multiply blur-3xl opacity-10 animate-blob animation-delay-4000 will-change-transform"
-        style={{ transform: 'translate(calc(var(--mx) * 0.01px), calc(var(--my) * -0.01px))' }}
-      />
-    </div>
-  );
-}
-
-/* ── Typewriter — ref-driven loop, no nested setState ── */
-const Typewriter = memo(function Typewriter() {
-  const [displayText, setDisplayText] = useState('');
-  const stateRef = useRef({ wordIndex: 0, charIndex: 0, isDeleting: false });
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const tick = () => {
-      const s = stateRef.current;
-      const word = ROTATING_WORDS[s.wordIndex];
-
-      if (!s.isDeleting) {
-        s.charIndex++;
-        setDisplayText(word.slice(0, s.charIndex));
-
-        if (s.charIndex === word.length) {
-          // Pause on complete word, then start deleting
-          s.isDeleting = true;
-          timeoutRef.current = setTimeout(tick, 2500);
-          return;
-        }
-        // Typing speed — varied for natural feel
-        const speed = 100 + Math.random() * 40;
-        timeoutRef.current = setTimeout(tick, speed);
-      } else {
-        s.charIndex--;
-        setDisplayText(word.slice(0, s.charIndex));
-
-        if (s.charIndex === 0) {
-          // Move to next word after a pause
-          s.isDeleting = false;
-          s.wordIndex = (s.wordIndex + 1) % ROTATING_WORDS.length;
-          timeoutRef.current = setTimeout(tick, 400);
-          return;
-        }
-        timeoutRef.current = setTimeout(tick, 50);
-      }
-    };
-
-    // Initial delay before typing starts
-    timeoutRef.current = setTimeout(tick, 800);
-    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
-  }, []);
-
-  return (
-    <>
-      <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent animate-headline-gradient">
-        {displayText}
+    <span
+      className="hero-word"
+      style={{
+        display: 'inline-block',
+        overflow: 'hidden',
+        lineHeight: 1.06,
+        paddingBottom: '0.08em',
+      }}
+    >
+      <span
+        className="hero-word-inner"
+        style={{
+          display: 'inline-block',
+          willChange: 'transform',
+          ...(accent
+            ? {
+                backgroundImage: 'linear-gradient(135deg, #2997ff 0%, #7cc1ff 60%, #b794ff 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }
+            : {}),
+        }}
+      >
+        {children}
       </span>
-      <span className="animate-blink-caret ml-0.5">&nbsp;</span>
-    </>
+    </span>
   );
-});
+}
 
-/* ── Main Hero ── */
 export function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [startCounting, setStartCounting] = useState(false);
+  const ref = useGsap<HTMLElement>(({ gsap, scope }) => {
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
-  const projects = useCountUp(50, 2000, startCounting);
-  const clients = useCountUp(50, 2000, startCounting);
-  const satisfaction = useCountUp(100, 2500, startCounting);
+    tl.from('.hero-eyebrow', { y: 16, opacity: 0, duration: 0.7 })
+      .from('.hero-word-inner', { yPercent: 115, duration: 1.05, stagger: 0.07 }, '-=0.4')
+      .from('.hero-lead', { y: 16, opacity: 0, duration: 0.7 }, '-=0.6')
+      .from('.hero-cta > *', { y: 14, opacity: 0, duration: 0.55, stagger: 0.08 }, '-=0.4')
+      .from('.hero-stat', { y: 12, opacity: 0, duration: 0.55, stagger: 0.1 }, '-=0.3')
+      .from(
+        '.hero-scene',
+        { opacity: 0, scale: 0.92, duration: 1.2, ease: 'expo.out' },
+        '-=1.1'
+      )
+      .from(
+        '.device-laptop',
+        { opacity: 0, y: 30, scale: 0.92, duration: 0.9, ease: 'expo.out' },
+        '-=0.9'
+      )
+      .from(
+        '.device-phone',
+        { opacity: 0, y: 30, x: 14, scale: 0.85, duration: 0.9, ease: 'expo.out' },
+        '-=0.7'
+      )
+      .from(
+        '.hero-card',
+        { opacity: 0, y: 20, scale: 0.9, duration: 0.8, stagger: 0.12, ease: 'expo.out' },
+        '-=0.9'
+      )
+      .from('.hero-watermark', { opacity: 0, duration: 1.6 }, '-=0.6');
 
-  useEffect(() => {
-    setIsVisible(true);
-    const timer = setTimeout(() => setStartCounting(true), 800);
-    return () => clearTimeout(timer);
-  }, []);
+    // Orbital rings — keep rotating behind the devices
+    gsap.to('.ring-outer', {
+      rotation: 360, duration: 60, repeat: -1, ease: 'none', transformOrigin: '50% 50%',
+    });
+    gsap.to('.ring-mid', {
+      rotation: -360, duration: 45, repeat: -1, ease: 'none', transformOrigin: '50% 50%',
+    });
+    gsap.to('.ring-inner', {
+      rotation: 360, duration: 32, repeat: -1, ease: 'none', transformOrigin: '50% 50%',
+    });
+    gsap.to('.ring-dot', {
+      rotation: 360, duration: 8, repeat: -1, ease: 'none', transformOrigin: '50% 50%',
+    });
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+    // Breathing core glow
+    gsap.to('.orb-glow', {
+      scale: 1.15, opacity: 0.85, duration: 3, yoyo: true, repeat: -1, ease: 'sine.inOut',
+    });
+
+    // Subtle device float
+    gsap.to('.device-laptop', {
+      y: -6, duration: 4.5, yoyo: true, repeat: -1, ease: 'sine.inOut',
+    });
+    gsap.to('.device-phone', {
+      y: -10, duration: 3.5, yoyo: true, repeat: -1, ease: 'sine.inOut',
+    });
+
+    // Laptop screen: cards stagger in, hold, fade out, restart
+    const laptopLoop = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
+    laptopLoop
+      .set('.lc-card', { opacity: 0, y: 8 })
+      .to('.lc-card', { opacity: 1, y: 0, duration: 0.55, stagger: 0.12, ease: 'expo.out' })
+      .to({}, { duration: 1.6 })
+      .to('.lc-card', { opacity: 0, y: -6, duration: 0.45, stagger: 0.06, ease: 'expo.in' });
+
+    // Progress bar fills + retracts
+    gsap.fromTo(
+      '.lc-progress-fill',
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 2.6,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        transformOrigin: 'left center',
+      }
+    );
+
+    // Typing-cursor blink on the address bar
+    gsap.to('.lc-caret', {
+      opacity: 0,
+      duration: 0.5,
+      yoyo: true,
+      repeat: -1,
+      ease: 'steps(1)',
+    });
+
+    // Phone screen: list items slide in, hold, slide out
+    const phoneLoop = gsap.timeline({ repeat: -1, repeatDelay: 0.8 });
+    phoneLoop
+      .set('.pc-row', { opacity: 0, x: -16 })
+      .to('.pc-row', { opacity: 1, x: 0, duration: 0.55, stagger: 0.14, ease: 'expo.out' })
+      .to({}, { duration: 1.8 })
+      .to('.pc-row', { opacity: 0, x: 12, duration: 0.4, stagger: 0.06, ease: 'expo.in' });
+
+    // Phone bottom-tab active dot — slides across tabs
+    gsap.fromTo(
+      '.pc-tab-indicator',
+      { x: 0 },
+      {
+        x: 56,
+        duration: 2.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'expo.inOut',
+      }
+    );
+
+    // Phone notification badge — soft pulse
+    gsap.to('.pc-badge', {
+      scale: 1.15,
+      duration: 1.2,
+      yoyo: true,
+      repeat: -1,
+      ease: 'sine.inOut',
+      transformOrigin: '50% 50%',
+    });
+
+    // Subtle background drift
+    gsap.to('.amb-1', { x: 30, y: -20, duration: 14, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+    gsap.to('.amb-2', { x: -40, y: 20, duration: 18, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+
+    // Mouse parallax — runs only on devices with a real pointer
+    if (typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches) {
+      const sceneEl = scope.querySelector('.hero-scene') as HTMLElement | null;
+      if (sceneEl) {
+        const onMove = (e: MouseEvent) => {
+          const r = sceneEl.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const dx = (e.clientX - cx) / r.width;
+          const dy = (e.clientY - cy) / r.height;
+
+          gsap.to('.parallax-1', { x: dx * 14, y: dy * 14, duration: 0.8, ease: 'power3.out' });
+          gsap.to('.parallax-2', { x: dx * -22, y: dy * -18, duration: 0.9, ease: 'power3.out' });
+          gsap.to('.parallax-3', { x: dx * 10, y: dy * 12, duration: 1.0, ease: 'power3.out' });
+          gsap.to('.parallax-4', { x: dx * -8, y: dy * 8, duration: 1.0, ease: 'power3.out' });
+          gsap.to('.rings-rig', { x: dx * 6, y: dy * 6, duration: 1.2, ease: 'power3.out' });
+          gsap.to('.device-laptop', {
+            rotateY: dx * 6,
+            rotateX: dy * -4,
+            duration: 0.9,
+            ease: 'power3.out',
+          });
+          gsap.to('.device-phone', {
+            rotateY: dx * 10,
+            rotateX: dy * -6,
+            x: dx * 8,
+            duration: 0.9,
+            ease: 'power3.out',
+          });
+        };
+        window.addEventListener('mousemove', onMove, { passive: true });
+        return () => window.removeEventListener('mousemove', onMove);
+      }
+    }
+  });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
-      {/* Dot grid background */}
-      <div className="absolute inset-0 bg-dot-grid [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,black_40%,transparent_100%)] -z-10" />
+    <section
+      ref={ref}
+      id="top"
+      aria-label="Website and app development agency in India — Verelios Labs"
+      className="hero-section"
+      style={{
+        position: 'relative',
+        background:
+          'radial-gradient(120% 80% at 85% 0%, rgba(41,151,255,0.16) 0%, transparent 55%), radial-gradient(80% 60% at 10% 100%, rgba(124,58,237,0.14) 0%, transparent 60%), linear-gradient(180deg, #0a0a0c 0%, #131316 100%)',
+        color: '#fff',
+        overflow: 'hidden',
+        paddingTop: 120,
+        paddingBottom: 0,
+      }}
+    >
+      {/* Ambient drifting blobs */}
+      <div
+        className="amb amb-1"
+        style={{
+          position: 'absolute', top: '-15%', left: '-10%',
+          width: 620, height: 620, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(41,151,255,0.28), transparent 60%)',
+          filter: 'blur(40px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        className="amb amb-2"
+        style={{
+          position: 'absolute', bottom: '-25%', right: '-10%',
+          width: 720, height: 720, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(124,58,237,0.22), transparent 60%)',
+          filter: 'blur(40px)',
+          pointerEvents: 'none',
+        }}
+      />
 
-      {/* Mouse-tracking orbs (zero re-renders) */}
-      <Orbs />
+      {/* Faint dot grid */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          maskImage: 'radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 100%)',
+          pointerEvents: 'none',
+        }}
+      />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative z-10">
-        <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-
-          {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium mb-8 animate-fade-in backdrop-blur-sm">
-            <div className="relative flex items-center justify-center">
-              <span className="absolute w-5 h-5 rounded-full bg-emerald-400/30 animate-pulse-ring" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-            </div>
-            <span>Trusted by 50+ Businesses Across India</span>
-            <div className="flex -space-x-1 ml-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
+      <div className="wrap hero-grid" style={{ position: 'relative', zIndex: 2, minHeight: '72vh' }}>
+        {/* LEFT — copy */}
+        <div>
+          <div
+            className="hero-eyebrow chip"
+            style={{
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              color: '#fff',
+              backdropFilter: 'blur(10px)',
+              fontWeight: 500,
+            }}
+          >
+            <span className="dot dot-pulse" style={{ background: 'var(--color-primary-on-dark)' }} />
+            3 slots open this month · Currently accepting
           </div>
 
-          {/* Main headline with typewriter */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            We Build Websites & Apps
+          <h1
+            className="hero-headline display-hero"
+            style={{ marginTop: 28, color: '#fff', fontWeight: 600 }}
+          >
+            <Word>Idea</Word>{' '}<Word>to</Word>{' '}<Word>launch</Word>
             <br />
-            That <Typewriter />
+            <Word>in</Word>{' '}<Word accent>three weeks.</Word>
           </h1>
 
-          {/* Subheading */}
-          <p className="text-lg sm:text-xl text-slate-300 mb-4 max-w-2xl mx-auto leading-relaxed">
-            From idea to launch in under <strong className="text-white">3 weeks</strong>. Custom websites, mobile apps & software — engineered to turn visitors into paying customers.
+          <p
+            className="hero-lead lead lead-on-dark"
+            style={{ marginTop: 26, maxWidth: 520, color: 'rgba(255,255,255,0.7)' }}
+          >
+            Verelios Labs designs and ships custom websites, mobile apps, and software for founders who need to move now — not next quarter.
           </p>
 
-          {/* Micro value props */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm text-slate-400">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              Free mockup in 48hrs
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              No upfront payment
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              100% satisfaction guarantee
-            </span>
-          </div>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <Button
-              size="lg"
-              className="relative text-lg px-10 py-7 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] group overflow-hidden rounded-xl"
-              onClick={() => scrollToSection('contact')}
-            >
-              <span className="relative z-10 flex items-center font-semibold">
-                Get Your Free Mockup
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-              </span>
-              <span className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12" style={{ animation: 'shine-sweep 3s ease-in-out infinite' }} />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-7 border-2 border-emerald-500/50 bg-emerald-500/10 hover:bg-emerald-500/20 hover:border-emerald-400/70 text-white transition-all duration-300 group shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_35px_rgba(16,185,129,0.3)] rounded-xl"
+          <div
+            className="hero-cta"
+            style={{ display: 'flex', gap: 12, marginTop: 34, flexWrap: 'wrap' }}
+          >
+            <a
+              href="#contact"
+              className="btn-pill press"
               onClick={() => {
                 trackGoogleAdsLead();
                 trackMetaLead();
-                window.open(
-                  'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project.',
-                  '_blank'
-                );
               }}
             >
-              <svg className="mr-2 w-5 h-5 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              Get a free mockup in 48 hours
+            </a>
+            <a
+              href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                trackGoogleAdsLead();
+                trackMetaLead();
+              }}
+              className="btn-pill btn-wa press"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488" />
               </svg>
               Chat on WhatsApp
-            </Button>
+            </a>
           </div>
 
-          {/* Urgency nudge */}
-          <p className="text-xs text-slate-500 mb-14 flex items-center justify-center gap-1.5">
-            <Clock className="w-3.5 h-3.5" />
-            Limited slots — Currently accepting only 3 new projects this month
-          </p>
-
-          {/* Stats with animated counters */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          {/* Inline stats row */}
+          <div
+            className="hero-stats"
+            style={{
+              marginTop: 56,
+              display: 'flex',
+              gap: 48,
+              flexWrap: 'wrap',
+              paddingTop: 28,
+              borderTop: '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
             {[
-              { value: `${projects}+`, label: 'Projects Delivered', icon: Zap },
-              { value: `${clients}+`, label: 'Happy Clients', icon: Star },
-              { value: '<3 Weeks', label: 'Avg. Delivery', icon: Clock },
-              { value: `${satisfaction}%`, label: 'Satisfaction Rate', icon: Shield },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="group relative p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-blue-500/30 hover:bg-blue-500/[0.05] transition-all duration-500 hover:scale-105"
-              >
-                <stat.icon className="w-5 h-5 text-blue-400 mx-auto mb-2 opacity-60 group-hover:opacity-100 transition-opacity" />
+              { num: '10+',    label: 'Projects delivered' },
+              { num: '<3 wks', label: 'Avg. delivery time' },
+              { num: '48 hrs', label: 'Free mockup' },
+              { num: '100%',   label: 'Satisfaction' },
+            ].map((s) => (
+              <div key={s.label} className="hero-stat">
                 <div
-                  className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1 tabular-nums"
-                  style={{ minHeight: '1.2em' }}
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 40,
+                    fontWeight: 600,
+                    letterSpacing: '-0.03em',
+                    lineHeight: 1.0,
+                    color: '#fff',
+                  }}
                 >
-                  {stat.value}
+                  {s.num}
                 </div>
-                <div className="text-xs sm:text-sm text-slate-400">{stat.label}</div>
+                <div
+                  style={{
+                    marginTop: 8,
+                    fontSize: 12,
+                    color: 'rgba(255,255,255,0.55)',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Tech stack strip */}
-          <div className="mt-14 pt-8 border-t border-white/[0.06]">
-            <p className="text-xs uppercase tracking-widest text-slate-500 mb-5">Built with technologies trusted by millions</p>
-            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-slate-500">
-              {['React', 'Next.js', 'React Native', 'Node.js', 'TypeScript', 'Tailwind CSS'].map((tech) => (
-                <span key={tech} className="text-sm font-medium hover:text-slate-300 transition-colors cursor-default">
-                  {tech}
-                </span>
-              ))}
+        {/* RIGHT — animated scene with orbital rings + laptop + phone */}
+        <div
+          className="hero-scene"
+          style={{
+            position: 'relative',
+            aspectRatio: '1 / 1',
+            width: '100%',
+            maxWidth: 560,
+            justifySelf: 'end',
+            perspective: 1200,
+          }}
+        >
+          {/* Orbital rings rig (background of devices) */}
+          <div
+            className="rings-rig"
+            style={{ position: 'absolute', inset: 0, willChange: 'transform' }}
+          >
+            <svg
+              viewBox="0 0 600 600"
+              style={{ width: '100%', height: '100%', overflow: 'visible' }}
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="ring-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#2997ff" stopOpacity="0.9" />
+                  <stop offset="55%" stopColor="#7cc1ff" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#b794ff" stopOpacity="0.1" />
+                </linearGradient>
+                <radialGradient id="orb-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#2997ff" stopOpacity="0.5" />
+                  <stop offset="60%" stopColor="#2997ff" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#2997ff" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+
+              {/* Glowing core behind devices */}
+              <circle
+                className="orb-glow"
+                cx="300"
+                cy="300"
+                r="170"
+                fill="url(#orb-grad)"
+                style={{ transformOrigin: '300px 300px', willChange: 'transform, opacity' }}
+              />
+
+              {/* Outer ring */}
+              <g className="ring-outer" style={{ transformOrigin: '300px 300px' }}>
+                <circle
+                  cx="300" cy="300" r="275"
+                  fill="none"
+                  stroke="url(#ring-grad)"
+                  strokeWidth="1"
+                  strokeDasharray="2 8"
+                />
+                <circle cx="300" cy="25"  r="4" fill="#2997ff" />
+                <circle cx="575" cy="300" r="3" fill="#7cc1ff" />
+                <circle cx="300" cy="575" r="5" fill="#b794ff" />
+              </g>
+
+              {/* Mid ring */}
+              <g className="ring-mid" style={{ transformOrigin: '300px 300px' }}>
+                <circle
+                  cx="300" cy="300" r="225"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.16)"
+                  strokeWidth="1"
+                />
+                <circle cx="525" cy="300" r="4" fill="#fff" />
+                <circle cx="75"  cy="300" r="3" fill="rgba(255,255,255,0.5)" />
+              </g>
+
+              {/* Inner ring */}
+              <g className="ring-inner" style={{ transformOrigin: '300px 300px' }}>
+                <circle
+                  cx="300" cy="300" r="180"
+                  fill="none"
+                  stroke="rgba(41,151,255,0.45)"
+                  strokeWidth="1.4"
+                  strokeDasharray="80 320"
+                />
+              </g>
+
+              {/* Fast orbiting dot */}
+              <g className="ring-dot" style={{ transformOrigin: '300px 300px' }}>
+                <circle cx="300" cy="115" r="6" fill="#2997ff" />
+                <circle cx="300" cy="115" r="14" fill="#2997ff" opacity="0.25" />
+              </g>
+            </svg>
+          </div>
+
+          {/* LAPTOP — center of the scene */}
+          <div
+            className="device-laptop"
+            style={{
+              position: 'absolute',
+              top: '40%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '78%',
+              transformStyle: 'preserve-3d',
+              willChange: 'transform',
+              filter: 'drop-shadow(0 30px 50px rgba(0,0,0,0.5))',
+            }}
+          >
+            <svg viewBox="0 0 480 320" style={{ width: '100%', display: 'block', overflow: 'visible' }} aria-hidden="true">
+              <defs>
+                <linearGradient id="lap-body" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"  stopColor="#1d1d20" />
+                  <stop offset="100%" stopColor="#111114" />
+                </linearGradient>
+                <linearGradient id="lap-screen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"  stopColor="#0c1018" />
+                  <stop offset="100%" stopColor="#0b0f17" />
+                </linearGradient>
+                <linearGradient id="lap-hero" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"  stopColor="#2997ff" />
+                  <stop offset="100%" stopColor="#7cc1ff" />
+                </linearGradient>
+              </defs>
+
+              {/* Laptop chassis */}
+              <rect x="10"  y="10"  width="460" height="280" rx="14" fill="url(#lap-body)" stroke="rgba(255,255,255,0.12)" />
+              {/* Screen background */}
+              <rect x="22"  y="22"  width="436" height="256" rx="6"  fill="url(#lap-screen)" />
+
+              {/* Browser chrome */}
+              <rect x="22"  y="22"  width="436" height="26" rx="6" fill="#0a0d14" />
+              <circle cx="38"  cy="35" r="4" fill="#ff5f57" />
+              <circle cx="52"  cy="35" r="4" fill="#febc2e" />
+              <circle cx="66"  cy="35" r="4" fill="#28c840" />
+              {/* URL pill */}
+              <rect x="160" y="28" width="220" height="14" rx="7" fill="rgba(255,255,255,0.07)" />
+              <text x="178" y="38" fontFamily="ui-monospace,monospace" fontSize="9" fill="rgba(255,255,255,0.55)">
+                verelios.com
+              </text>
+              <rect className="lc-caret" x="240" y="30" width="1" height="10" fill="rgba(255,255,255,0.7)" />
+
+              {/* Hero band (gradient) */}
+              <rect x="34" y="60" width="412" height="74" rx="6" fill="rgba(41,151,255,0.08)" stroke="rgba(41,151,255,0.18)" />
+              <rect x="50" y="74"  width="120" height="8" rx="4" fill="url(#lap-hero)" />
+              <rect x="50" y="92"  width="260" height="6" rx="3" fill="rgba(255,255,255,0.22)" />
+              <rect x="50" y="106" width="200" height="6" rx="3" fill="rgba(255,255,255,0.14)" />
+              <rect x="320" y="92" width="78" height="22" rx="11" fill="#2997ff" />
+              <text x="359" y="107" textAnchor="middle" fontFamily="var(--font-display)" fontSize="9" fontWeight="600" fill="#fff">
+                Get mockup
+              </text>
+
+              {/* 3 service cards — animated */}
+              <g>
+                <rect className="lc-card lc-c1" x="34"  y="148" width="135" height="86" rx="7" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" />
+                <rect className="lc-card lc-c1" x="46"  y="160" width="22"  height="22" rx="6" fill="rgba(41,151,255,0.4)" />
+                <rect className="lc-card lc-c1" x="46"  y="190" width="80"  height="6"  rx="3" fill="rgba(255,255,255,0.5)" />
+                <rect className="lc-card lc-c1" x="46"  y="202" width="100" height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+                <rect className="lc-card lc-c1" x="46"  y="212" width="60"  height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+              </g>
+
+              <g>
+                <rect className="lc-card lc-c2" x="175" y="148" width="135" height="86" rx="7" fill="rgba(255,255,255,0.05)" stroke="rgba(124,58,237,0.25)" />
+                <rect className="lc-card lc-c2" x="187" y="160" width="22"  height="22" rx="6" fill="rgba(124,58,237,0.45)" />
+                <rect className="lc-card lc-c2" x="187" y="190" width="80"  height="6"  rx="3" fill="rgba(255,255,255,0.5)" />
+                <rect className="lc-card lc-c2" x="187" y="202" width="100" height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+                <rect className="lc-card lc-c2" x="187" y="212" width="60"  height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+              </g>
+
+              <g>
+                <rect className="lc-card lc-c3" x="316" y="148" width="130" height="86" rx="7" fill="rgba(255,255,255,0.05)" stroke="rgba(52,211,153,0.25)" />
+                <rect className="lc-card lc-c3" x="328" y="160" width="22"  height="22" rx="6" fill="rgba(52,211,153,0.45)" />
+                <rect className="lc-card lc-c3" x="328" y="190" width="80"  height="6"  rx="3" fill="rgba(255,255,255,0.5)" />
+                <rect className="lc-card lc-c3" x="328" y="202" width="100" height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+                <rect className="lc-card lc-c3" x="328" y="212" width="60"  height="5"  rx="2.5" fill="rgba(255,255,255,0.2)" />
+              </g>
+
+              {/* Bottom progress bar */}
+              <rect x="34" y="250" width="412" height="4" rx="2" fill="rgba(255,255,255,0.06)" />
+              <rect
+                className="lc-progress-fill"
+                x="34" y="250" width="412" height="4" rx="2"
+                fill="url(#lap-hero)"
+                style={{ transformOrigin: 'left center' }}
+              />
+              <text x="34"  y="270" fontFamily="ui-monospace,monospace" fontSize="8" fill="rgba(255,255,255,0.4)">
+                Build · Deploy · Live
+              </text>
+              <text x="446" y="270" textAnchor="end" fontFamily="ui-monospace,monospace" fontSize="8" fill="rgba(52,211,153,0.85)">
+                ● ONLINE
+              </text>
+
+              {/* Laptop hinge */}
+              <rect x="-18" y="290" width="516" height="14" rx="6" fill="#15161a" stroke="rgba(255,255,255,0.06)" />
+              <rect x="210" y="294" width="60"  height="4"  rx="2" fill="#0a0a0c" />
+            </svg>
+          </div>
+
+          {/* PHONE — in front, lower-right of laptop */}
+          <div
+            className="device-phone"
+            style={{
+              position: 'absolute',
+              top: '36%',
+              right: '-2%',
+              width: '24%',
+              transformStyle: 'preserve-3d',
+              willChange: 'transform',
+              filter: 'drop-shadow(0 25px 40px rgba(0,0,0,0.55))',
+            }}
+          >
+            <svg viewBox="0 0 140 280" style={{ width: '100%', display: 'block', overflow: 'visible' }} aria-hidden="true">
+              <defs>
+                <linearGradient id="ph-body" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"  stopColor="#1d1d20" />
+                  <stop offset="100%" stopColor="#0c0c0e" />
+                </linearGradient>
+                <linearGradient id="ph-screen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"  stopColor="#0d1018" />
+                  <stop offset="100%" stopColor="#0a0d16" />
+                </linearGradient>
+                <linearGradient id="ph-hero" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"  stopColor="#2997ff" />
+                  <stop offset="100%" stopColor="#b794ff" />
+                </linearGradient>
+              </defs>
+
+              {/* Phone chassis */}
+              <rect x="2"  y="2"  width="136" height="276" rx="22" fill="url(#ph-body)" stroke="rgba(255,255,255,0.18)" strokeWidth="1.4" />
+              {/* Screen */}
+              <rect x="8"  y="10" width="124" height="260" rx="17" fill="url(#ph-screen)" />
+              {/* Dynamic Island */}
+              <rect x="50" y="14" width="40"  height="10"  rx="5" fill="#000" />
+              <circle cx="84" cy="19" r="2" fill="rgba(41,151,255,0.6)" />
+
+              {/* Status bar */}
+              <text x="16"  y="36" fontFamily="var(--font-display)" fontSize="9"  fontWeight="600" fill="#fff">9:41</text>
+              <text x="124" y="36" textAnchor="end" fontFamily="var(--font-display)" fontSize="9" fontWeight="500" fill="rgba(255,255,255,0.75)">●●●</text>
+
+              {/* App header */}
+              <text x="14" y="58" fontFamily="var(--font-display)" fontSize="12" fontWeight="600" fill="#fff">Verelios</text>
+              <text x="14" y="72" fontFamily="var(--font-text)" fontSize="8" fill="rgba(255,255,255,0.55)">Your projects · 4 active</text>
+
+              {/* Notification badge — top right */}
+              <g className="pc-badge" style={{ transformOrigin: '116px 56px' }}>
+                <circle cx="120" cy="56" r="9" fill="rgba(41,151,255,0.18)" />
+                <circle cx="120" cy="56" r="5" fill="#2997ff" />
+                <text x="120" y="59" textAnchor="middle" fontFamily="var(--font-display)" fontSize="6" fontWeight="700" fill="#fff">3</text>
+              </g>
+
+              {/* Hero gradient strip */}
+              <rect x="12" y="86" width="116" height="44" rx="8" fill="rgba(41,151,255,0.1)" stroke="rgba(41,151,255,0.25)" />
+              <rect x="20" y="96" width="50" height="6" rx="3" fill="url(#ph-hero)" />
+              <rect x="20" y="108" width="78" height="4" rx="2" fill="rgba(255,255,255,0.4)" />
+              <rect x="20" y="116" width="50" height="4" rx="2" fill="rgba(255,255,255,0.2)" />
+
+              {/* List rows — animated */}
+              <g className="pc-row pc-row-1">
+                <rect x="12" y="142" width="116" height="32" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" />
+                <rect x="20" y="150" width="14"  height="14" rx="4" fill="rgba(41,151,255,0.45)" />
+                <rect x="40" y="151" width="56"  height="5" rx="2.5" fill="rgba(255,255,255,0.55)" />
+                <rect x="40" y="160" width="72"  height="4" rx="2"   fill="rgba(255,255,255,0.22)" />
+                <text x="120" y="165" textAnchor="end" fontFamily="var(--font-display)" fontSize="7" fontWeight="600" fill="rgba(52,211,153,0.85)">+12%</text>
+              </g>
+
+              <g className="pc-row pc-row-2">
+                <rect x="12" y="180" width="116" height="32" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" />
+                <rect x="20" y="188" width="14"  height="14" rx="4" fill="rgba(124,58,237,0.5)" />
+                <rect x="40" y="189" width="56"  height="5" rx="2.5" fill="rgba(255,255,255,0.55)" />
+                <rect x="40" y="198" width="72"  height="4" rx="2"   fill="rgba(255,255,255,0.22)" />
+                <text x="120" y="203" textAnchor="end" fontFamily="var(--font-display)" fontSize="7" fontWeight="600" fill="rgba(52,211,153,0.85)">+8%</text>
+              </g>
+
+              <g className="pc-row pc-row-3">
+                <rect x="12" y="218" width="116" height="32" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" />
+                <rect x="20" y="226" width="14"  height="14" rx="4" fill="rgba(52,211,153,0.5)" />
+                <rect x="40" y="227" width="56"  height="5" rx="2.5" fill="rgba(255,255,255,0.55)" />
+                <rect x="40" y="236" width="72"  height="4" rx="2"   fill="rgba(255,255,255,0.22)" />
+                <text x="120" y="241" textAnchor="end" fontFamily="var(--font-display)" fontSize="7" fontWeight="600" fill="rgba(52,211,153,0.85)">+24%</text>
+              </g>
+
+              {/* Bottom tab bar */}
+              <rect x="10" y="256" width="120" height="2" rx="1" fill="rgba(255,255,255,0.06)" />
+              <rect className="pc-tab-indicator" x="22" y="255" width="14" height="3" rx="1.5" fill="#2997ff" />
+              <circle cx="29" cy="266" r="2.5" fill="rgba(255,255,255,0.6)" />
+              <circle cx="55" cy="266" r="2.5" fill="rgba(255,255,255,0.3)" />
+              <circle cx="85" cy="266" r="2.5" fill="rgba(255,255,255,0.3)" />
+              <circle cx="111" cy="266" r="2.5" fill="rgba(255,255,255,0.3)" />
+            </svg>
+          </div>
+
+          {/* Floating glassy cards (orbit the scene) */}
+          <div
+            className="hero-card hero-card-1 parallax-1"
+            style={{
+              position: 'absolute',
+              top: '4%',
+              left: '-10%',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 14,
+              padding: '12px 16px',
+              backdropFilter: 'blur(14px)',
+              WebkitBackdropFilter: 'blur(14px)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              boxShadow: '0 18px 40px -16px rgba(0,0,0,0.5)',
+              willChange: 'transform',
+            }}
+          >
+            <div
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: 10,
+                background: 'linear-gradient(135deg, #2997ff, #7cc1ff)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#0a0a0c',
+                fontWeight: 700,
+                fontSize: 13,
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              ✓
             </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                Shipping
+              </div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, marginTop: 2 }}>
+                10+ projects live
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="hero-card hero-card-2 parallax-2"
+            style={{
+              position: 'absolute',
+              top: '4%',
+              right: '-8%',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 14,
+              padding: '14px 18px',
+              backdropFilter: 'blur(14px)',
+              WebkitBackdropFilter: 'blur(14px)',
+              boxShadow: '0 18px 40px -16px rgba(0,0,0,0.5)',
+              willChange: 'transform',
+              minWidth: 160,
+            }}
+          >
+            <div
+              style={{
+                fontSize: 11,
+                color: 'rgba(255,255,255,0.55)',
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Up to
+            </div>
+            <div
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 30,
+                fontWeight: 600,
+                letterSpacing: '-0.025em',
+                color: '#fff',
+                marginTop: 2,
+              }}
+            >
+              40%
+            </div>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>
+              more conversions
+            </div>
+          </div>
+
+          <div
+            className="hero-card hero-card-3 parallax-3"
+            style={{
+              position: 'absolute',
+              bottom: '12%',
+              left: '-6%',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 14,
+              padding: '12px 16px',
+              backdropFilter: 'blur(14px)',
+              WebkitBackdropFilter: 'blur(14px)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              boxShadow: '0 18px 40px -16px rgba(0,0,0,0.5)',
+              willChange: 'transform',
+            }}
+          >
+            <div
+              style={{
+                width: 30,
+                height: 30,
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #25D366, #128C7E)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488" />
+              </svg>
+            </div>
+            <div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 13 }}>
+                Your project manager
+              </div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.55)' }}>
+                Always on WhatsApp
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="hero-card hero-card-4 parallax-4"
+            style={{
+              position: 'absolute',
+              bottom: '4%',
+              right: '-4%',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 999,
+              padding: '8px 14px',
+              backdropFilter: 'blur(14px)',
+              WebkitBackdropFilter: 'blur(14px)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              fontSize: 12,
+              color: '#fff',
+              boxShadow: '0 18px 40px -16px rgba(0,0,0,0.5)',
+              willChange: 'transform',
+            }}
+          >
+            <span
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
+                background: '#34d399',
+                boxShadow: '0 0 12px #34d399',
+              }}
+            />
+            Live · All systems shipping
           </div>
         </div>
       </div>
 
+      {/* Giant brand watermark */}
+      <div
+        className="hero-watermark"
+        aria-hidden="true"
+        style={{
+          position: 'relative',
+          marginTop: 64,
+          textAlign: 'center',
+          fontFamily: 'var(--font-display)',
+          fontWeight: 800,
+          fontSize: 'clamp(80px, 18vw, 240px)',
+          letterSpacing: '-0.06em',
+          lineHeight: 0.9,
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(255,255,255,0.08)',
+          background:
+            'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.0) 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          userSelect: 'none',
+          pointerEvents: 'none',
+          paddingBottom: 8,
+        }}
+      >
+        VERELIOS
+      </div>
+
+      <style jsx>{`
+        :global(.hero-section .hero-grid) {
+          display: grid;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 56px;
+          align-items: center;
+        }
+        @media (max-width: 980px) {
+          :global(.hero-section .hero-grid) {
+            grid-template-columns: 1fr;
+            gap: 64px;
+            align-items: stretch;
+            min-height: auto;
+          }
+          :global(.hero-section .hero-scene) {
+            justify-self: center !important;
+            max-width: 460px !important;
+          }
+          :global(.hero-section .hero-stats) {
+            gap: 28px !important;
+          }
+        }
+        @media (max-width: 560px) {
+          :global(.hero-section .hero-stats) {
+            gap: 22px !important;
+          }
+          :global(.hero-section .hero-stat) > div:first-child {
+            font-size: 30px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
+
+export default Hero;

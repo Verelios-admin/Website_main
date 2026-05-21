@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+  description:
+    "How Verelios Labs uses cookies and similar technologies to power our website, analytics and advertising.",
+  alternates: { canonical: "https://www.verelios.com/cookie-policy" },
+  robots: { index: true, follow: true },
+};
 
 export default function CookiePolicyPage() {
   return (
