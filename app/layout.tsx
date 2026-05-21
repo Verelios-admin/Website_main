@@ -11,6 +11,9 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
   fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
   adjustFontFallback: true,
+  // Expose as a CSS variable so the design tokens in globals.css can
+  // reference the locally-self-hosted Inter (no render-blocking CDN font).
+  variable: '--font-inter',
 });
 
 const SITE_URL = 'https://www.verelios.com';
@@ -480,7 +483,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={inter.variable}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
@@ -490,14 +493,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        {/* Google Analytics 4 + Google Ads conversion tracking. */}
+        {/* Google Analytics 4 + Google Ads conversion tracking.
+            lazyOnload defers these past the LCP/TBT measurement window.
+            The Contact form's gtag call has its own retry-until-loaded
+            guard so conversion tracking still fires when the user submits. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18037984640"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

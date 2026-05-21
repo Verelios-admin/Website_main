@@ -1,5 +1,9 @@
-@import url('https://rsms.me/inter/inter.css');
 @import "tailwindcss";
+
+/* Inter is loaded via next/font in app/layout.tsx (self-hosted, no
+   render-blocking CDN @import). It exposes the `--font-inter` CSS
+   variable that the design tokens below fall through to on non-Apple
+   devices. */
 
 /* =============================================================
    Atelier — Design Tokens (ported from Claude design handoff)
@@ -34,8 +38,8 @@
   --color-hairline:          #e0e0e0;
 
   /* Typography */
-  --font-display: "SF Pro Display", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  --font-text:    "SF Pro Text",    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-display: "SF Pro Display", var(--font-inter, "Inter"), system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-text:    "SF Pro Text",    var(--font-inter, "Inter"), system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   --font-mono:    ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
   /* Spacing (base 8) */
