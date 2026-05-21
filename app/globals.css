@@ -75,7 +75,14 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Safety net so no overflowing absolute-positioned element ever
+     creates a horizontal scroll bar on mobile. */
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 html { scroll-behavior: smooth; }
 
 html, body {
@@ -569,4 +576,60 @@ hr.hair {
   .marquee, .dot-pulse::after { animation: none !important; }
   .project-frame img { transition: none !important; }
   html { scroll-behavior: auto; }
+}
+
+/* =============================================================
+   Global mobile responsiveness
+   ============================================================= */
+
+/* Phones — tighten section paddings, soften display sizes */
+@media (max-width: 640px) {
+  .tile { padding: 56px 18px !important; }
+  .tile-pad-tight { padding: 40px 18px !important; }
+
+  .section-head {
+    margin-bottom: 36px !important;
+    gap: 12px !important;
+  }
+  .display-hero {
+    font-size: clamp(36px, 10vw, 52px) !important;
+    line-height: 1.06 !important;
+  }
+  .display-section {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    line-height: 1.1 !important;
+  }
+  .lead {
+    font-size: clamp(15px, 4vw, 20px) !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Two-col grids stack with smaller gaps */
+  .two-col { gap: 28px !important; }
+  .three-up { gap: 16px !important; }
+  .six-up { gap: 14px !important; }
+  .four-up { gap: 14px !important; }
+
+  /* Card padding tightens on phones */
+  .card { padding: 22px !important; }
+  .price-card { padding: 24px !important; }
+
+  /* FAQ */
+  .faq-item { padding: 18px 0 !important; }
+  .faq-q { font-size: 17px !important; }
+  .faq-a { font-size: 15px !important; }
+
+  /* Buttons sit comfortably under text */
+  .btn-pill,
+  .btn-pill-ghost {
+    padding: 11px 18px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .tile { padding: 48px 14px !important; }
+  .card { padding: 18px !important; }
+  .stat-num { font-size: 28px !important; }
 }

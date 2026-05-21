@@ -855,27 +855,86 @@ export function Hero() {
           gap: 56px;
           align-items: center;
         }
+
+        /* Tablet — stack copy above scene, keep cards visible but contained */
         @media (max-width: 980px) {
+          :global(.hero-section) {
+            padding-top: 96px !important;
+          }
           :global(.hero-section .hero-grid) {
             grid-template-columns: 1fr;
-            gap: 64px;
+            gap: 56px;
             align-items: stretch;
             min-height: auto;
           }
           :global(.hero-section .hero-scene) {
             justify-self: center !important;
-            max-width: 460px !important;
+            max-width: 380px !important;
           }
           :global(.hero-section .hero-stats) {
             gap: 28px !important;
           }
+          /* Pull floating cards inside the visible area */
+          :global(.hero-section .hero-card-1) { left: 0 !important; right: auto !important; }
+          :global(.hero-section .hero-card-2) { right: 0 !important; left: auto !important; }
+          :global(.hero-section .hero-card-3) { left: 0 !important; right: auto !important; }
+          :global(.hero-section .hero-card-4) { right: 0 !important; left: auto !important; }
         }
-        @media (max-width: 560px) {
+
+        /* Phone — hide decorative chips, shrink scene, switch stats to 2-up grid */
+        @media (max-width: 640px) {
+          :global(.hero-section) {
+            padding-top: 88px !important;
+          }
+          :global(.hero-section .hero-scene) {
+            max-width: 320px !important;
+          }
+          /* Decorative floating chips contain redundant info — hide on phones
+             so the laptop+phone composition has room to breathe. */
+          :global(.hero-section .hero-card) {
+            display: none !important;
+          }
+          /* Stats: 2-up grid, smaller numbers */
           :global(.hero-section .hero-stats) {
-            gap: 22px !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 22px 18px !important;
+            margin-top: 40px !important;
           }
           :global(.hero-section .hero-stat) > div:first-child {
-            font-size: 30px !important;
+            font-size: 28px !important;
+          }
+          :global(.hero-section .hero-stat) > div:last-child {
+            font-size: 11px !important;
+            letter-spacing: 0.03em !important;
+          }
+          /* Lead + buttons: tighter spacing on phones */
+          :global(.hero-section .hero-lead) {
+            margin-top: 20px !important;
+            font-size: 17px !important;
+            line-height: 1.4 !important;
+          }
+          :global(.hero-section .hero-cta) {
+            margin-top: 26px !important;
+            gap: 10px !important;
+          }
+          :global(.hero-section .hero-cta) > a {
+            padding: 12px 18px !important;
+            font-size: 14px !important;
+          }
+          :global(.hero-section .hero-watermark) {
+            font-size: clamp(56px, 20vw, 100px) !important;
+            margin-top: 40px !important;
+          }
+        }
+
+        /* Very small phones (≤ 380px) — extra compact */
+        @media (max-width: 380px) {
+          :global(.hero-section .hero-scene) {
+            max-width: 280px !important;
+          }
+          :global(.hero-section .hero-stat) > div:first-child {
+            font-size: 24px !important;
           }
         }
       `}</style>

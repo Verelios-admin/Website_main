@@ -21,6 +21,7 @@ export function StickyCTA() {
 
   return (
     <div
+      className="sticky-cta"
       style={{
         position: 'fixed',
         left: 0,
@@ -34,17 +35,21 @@ export function StickyCTA() {
       }}
     >
       <div
-        className="wrap"
+        className="sticky-cta-inner"
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: 16,
-          padding: '12px 28px',
-          flexWrap: 'wrap',
+          gap: 12,
+          padding: '12px 22px',
+          maxWidth: 1440,
+          margin: '0 auto',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
+        <div
+          className="sticky-cta-text"
+          style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0, flex: 1 }}
+        >
           <span
             style={{
               width: 8,
@@ -54,12 +59,24 @@ export function StickyCTA() {
               flexShrink: 0,
             }}
           />
-          <p style={{ margin: 0, fontSize: 14, letterSpacing: '-0.01em' }}>
-            <strong style={{ fontWeight: 600 }}>Get a free mockup in 48 hours</strong>{' '}
-            <span style={{ color: 'rgba(255,255,255,0.55)' }}>— no commitment needed.</span>
+          <p
+            style={{
+              margin: 0,
+              fontSize: 14,
+              letterSpacing: '-0.01em',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              minWidth: 0,
+            }}
+          >
+            <strong style={{ fontWeight: 600 }}>Free mockup in 48 hours</strong>{' '}
+            <span style={{ color: 'rgba(255,255,255,0.55)' }} className="sticky-cta-tail">
+              — no commitment needed.
+            </span>
           </p>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
           <button
             onClick={() => {
               trackGoogleAdsLead();
@@ -70,9 +87,9 @@ export function StickyCTA() {
               );
             }}
             className="btn-pill press"
-            style={{ padding: '8px 16px', fontSize: 13 }}
+            style={{ padding: '8px 14px', fontSize: 13, whiteSpace: 'nowrap' }}
           >
-            Get free quote →
+            Get quote →
           </button>
           <button
             onClick={() => {
@@ -86,6 +103,7 @@ export function StickyCTA() {
               color: 'rgba(255,255,255,0.6)',
               padding: 6,
               cursor: 'pointer',
+              flexShrink: 0,
             }}
           >
             <X size={16} />
@@ -94,14 +112,19 @@ export function StickyCTA() {
       </div>
       <style jsx>{`
         @keyframes cta-slide {
-          from {
-            transform: translateY(100%);
-            opacity: 0;
+          from { transform: translateY(100%); opacity: 0; }
+          to   { transform: translateY(0);    opacity: 1; }
+        }
+        @media (max-width: 560px) {
+          :global(.sticky-cta-inner) {
+            padding: 10px 14px !important;
+            gap: 8px !important;
           }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
+          :global(.sticky-cta-tail) { display: none; }
+          :global(.sticky-cta-text) p { font-size: 13px !important; }
+        }
+        @media (max-width: 380px) {
+          :global(.sticky-cta-text) p { font-size: 12px !important; }
         }
       `}</style>
     </div>
