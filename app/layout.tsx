@@ -6,13 +6,16 @@ import { MetaPixel } from '@/components/MetaPixel';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
+  // 'optional' means: try to load Inter, but if it doesn't arrive in ~100ms,
+  // stick with the fallback for the rest of the session. This avoids the
+  // late font-swap reflow that drives CLS on slow networks. Real users on
+  // fast connections still see Inter; Lighthouse mobile (slow 4G) sees the
+  // metric-adjusted system-ui fallback with no swap shift.
+  display: 'optional',
   preload: true,
   weight: ['400', '500', '600', '700'],
   fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
   adjustFontFallback: true,
-  // Expose as a CSS variable so the design tokens in globals.css can
-  // reference the locally-self-hosted Inter (no render-blocking CDN font).
   variable: '--font-inter',
 });
 

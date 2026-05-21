@@ -44,34 +44,11 @@ function Word({ children, accent }: { children: React.ReactNode; accent?: boolea
 
 export function Hero() {
   const ref = useGsap<HTMLElement>(({ gsap, scope }) => {
-    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-
-    tl.from('.hero-eyebrow', { y: 16, opacity: 0, duration: 0.7 })
-      .from('.hero-word-inner', { yPercent: 115, duration: 1.05, stagger: 0.07 }, '-=0.4')
-      .from('.hero-lead', { y: 16, opacity: 0, duration: 0.7 }, '-=0.6')
-      .from('.hero-cta > *', { y: 14, opacity: 0, duration: 0.55, stagger: 0.08 }, '-=0.4')
-      .from('.hero-stat', { y: 12, opacity: 0, duration: 0.55, stagger: 0.1 }, '-=0.3')
-      .from(
-        '.hero-scene',
-        { opacity: 0, scale: 0.92, duration: 1.2, ease: 'expo.out' },
-        '-=1.1'
-      )
-      .from(
-        '.device-laptop',
-        { opacity: 0, y: 30, scale: 0.92, duration: 0.9, ease: 'expo.out' },
-        '-=0.9'
-      )
-      .from(
-        '.device-phone',
-        { opacity: 0, y: 30, x: 14, scale: 0.85, duration: 0.9, ease: 'expo.out' },
-        '-=0.7'
-      )
-      .from(
-        '.hero-card',
-        { opacity: 0, y: 20, scale: 0.9, duration: 0.8, stagger: 0.12, ease: 'expo.out' },
-        '-=0.9'
-      )
-      .from('.hero-watermark', { opacity: 0, duration: 1.6 }, '-=0.6');
+    // Entrance animations run as CSS keyframes (see <style jsx> below) — they
+    // start at first paint with no late-frame snap from a deferred JS callback,
+    // which keeps Cumulative Layout Shift at zero. GSAP only drives the
+    // *continuous* loops (rings, glow, card bobs) and the mouse parallax —
+    // none of which run until well after the LCP measurement window.
 
     // Orbital rings — keep rotating behind the devices
     gsap.to('.ring-outer', {
@@ -855,6 +832,80 @@ export function Hero() {
           gap: 56px;
           align-items: center;
         }
+
+        /* ===== CSS-driven entrance — runs at first paint, no layout shift =====
+           These use 'backwards' fill-mode so the element renders in the start
+           keyframe state during the delay window (invisible / translated), then
+           animates into the natural state. No CLS because there's no late
+           opacity-1 → opacity-0 snap from a deferred JS callback. */
+        @keyframes hero-fade-rise {
+          from { opacity: 0; transform: translate3d(0, 16px, 0); }
+          to   { opacity: 1; transform: translate3d(0, 0,    0); }
+        }
+        @keyframes hero-scale-in {
+          from { opacity: 0; transform: scale(0.94); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes hero-fade {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+
+        :global(.hero-section .hero-eyebrow) {
+          animation: hero-fade-rise 0.7s 0.0s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        :global(.hero-section .hero-lead) {
+          animation: hero-fade-rise 0.7s 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        :global(.hero-section .hero-cta) > * {
+          animation: hero-fade-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        :global(.hero-section .hero-cta) > *:nth-child(1) { animation-delay: 0.7s; }
+        :global(.hero-section .hero-cta) > *:nth-child(2) { animation-delay: 0.8s; }
+
+        :global(.hero-section .hero-stat) {
+          animation: hero-fade-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        :global(.hero-section .hero-stat):nth-child(1) { animation-delay: 0.95s; }
+        :global(.hero-section .hero-stat):nth-child(2) { animation-delay: 1.05s; }
+        :global(.hero-section .hero-stat):nth-child(3) { animation-delay: 1.15s; }
+        :global(.hero-section .hero-stat):nth-child(4) { animation-delay: 1.25s; }
+
+        :global(.hero-section .hero-scene) {
+          animation: hero-scale-in 1.1s 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        :global(.hero-section .device-laptop),
+        :global(.hero-section .device-phone) {
+          animation: hero-fade 0.9s 0.7s ease-out backwards;
+        }
+        :global(.hero-section .hero-card) {
+          animation: hero-fade 0.8s ease-out backwards;
+        }
+        :global(.hero-section .hero-card-1) { animation-delay: 0.95s; }
+        :global(.hero-section .hero-card-2) { animation-delay: 1.05s; }
+        :global(.hero-section .hero-card-3) { animation-delay: 1.15s; }
+        :global(.hero-section .hero-card-4) { animation-delay: 1.25s; }
+
+        :global(.hero-section .hero-watermark) {
+          animation: hero-fade 1.6s 0.9s ease-out backwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          :global(.hero-section .hero-eyebrow),
+          :global(.hero-section .hero-lead),
+          :global(.hero-section .hero-cta) > *,
+          :global(.hero-section .hero-stat),
+          :global(.hero-section .hero-scene),
+          :global(.hero-section .device-laptop),
+          :global(.hero-section .device-phone),
+          :global(.hero-section .hero-card),
+          :global(.hero-section .hero-watermark) {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        }
+
 
         /* Tablet — stack copy above scene, keep cards visible but contained */
         @media (max-width: 980px) {
