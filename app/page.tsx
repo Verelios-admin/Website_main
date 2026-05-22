@@ -20,10 +20,14 @@ const Footer        = dynamic(() => import('@/components/sections/Footer'));
 const Toaster        = dynamic(() => import('@/components/ui/toaster'), { ssr: false });
 const WhatsAppButton = dynamic(() => import('@/components/WhatsAppButton'), { ssr: false });
 const StickyCTA      = dynamic(() => import('@/components/StickyCTA'), { ssr: false });
+const ScrollProgress = dynamic(() => import('@/components/ScrollProgress'), { ssr: false });
+const CursorGlow     = dynamic(() => import('@/components/CursorGlow'), { ssr: false });
 
 export default function Home() {
   return (
     <main id="home">
+      <ScrollProgress />
+      <CursorGlow />
       <Navigation />
       <Hero />
       <TechMarquee />

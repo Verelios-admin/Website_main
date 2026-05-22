@@ -109,10 +109,26 @@ export function Navigation() {
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <button
             onClick={() => go('contact')}
-            className="btn-pill press"
-            style={{ padding: '8px 16px', fontSize: 14 }}
+            className="btn-pill press topnav-cta"
+            style={{
+              padding: '8px 16px',
+              fontSize: 14,
+              whiteSpace: 'nowrap',
+              gap: 6,
+            }}
           >
-            Get a free mockup
+            <span className="topnav-cta-full">Get a free mockup</span>
+            <span className="topnav-cta-short">Free mockup</span>
+            <svg
+              width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="2.4"
+              strokeLinecap="round" strokeLinejoin="round"
+              aria-hidden="true"
+              style={{ display: 'inline-block' }}
+            >
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
           </button>
           <button
             className="topnav-burger press"
@@ -169,9 +185,22 @@ export function Navigation() {
       )}
 
       <style jsx>{`
+        :global(.topnav-cta-short) { display: none; }
         @media (max-width: 820px) {
-          :global(.topnav-links) { display: none !important; }
-          :global(.topnav-burger) { display: inline-flex !important; }
+          :global(.topnav-links)      { display: none !important; }
+          :global(.topnav-burger)     { display: inline-flex !important; }
+          :global(.topnav-cta-full)   { display: none !important; }
+          :global(.topnav-cta-short)  { display: inline !important; }
+          :global(.topnav-cta) {
+            padding: 7px 13px !important;
+            font-size: 13px !important;
+          }
+        }
+        @media (max-width: 380px) {
+          :global(.topnav-cta) {
+            padding: 6px 11px !important;
+            font-size: 12px !important;
+          }
         }
       `}</style>
     </>

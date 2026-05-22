@@ -263,10 +263,11 @@ hr.hair {
 
 /* Buttons */
 .btn-pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--color-primary);
+  background: linear-gradient(135deg, #2997ff 0%, var(--color-primary) 55%, #0057b3 100%);
   color: #fff;
   border: 0;
   padding: 13px 24px;
@@ -277,9 +278,61 @@ hr.hair {
   letter-spacing: -0.01em;
   cursor: pointer;
   text-decoration: none;
-  transition: transform var(--transition-press), background var(--transition-fast), box-shadow var(--transition-fast);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
+    0 8px 22px -10px rgba(41, 151, 255, 0.5);
+  transition:
+    transform var(--transition-press),
+    box-shadow 220ms ease,
+    filter 220ms ease;
 }
-.btn-pill:hover { box-shadow: 0 10px 28px -10px rgba(0,102,204,0.45); text-decoration: none; }
+.btn-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 55%);
+  pointer-events: none;
+}
+.btn-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 35%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4) 50%, transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+  animation: btn-shine 4.2s ease-in-out infinite;
+}
+.btn-pill > * { position: relative; z-index: 1; }
+.btn-pill:hover {
+  filter: brightness(1.05);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
+    0 14px 34px -10px rgba(41, 151, 255, 0.65);
+  text-decoration: none;
+}
+@keyframes btn-shine {
+  0%, 70%, 100% { left: -40%; }
+  85%           { left: 130%; }
+}
+
+.cta-arrow {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-pill:hover .cta-arrow { transform: translateX(4px); }
+.btn-pill:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 3px;
+}
 .btn-pill-ghost {
   display: inline-flex;
   align-items: center;
@@ -312,10 +365,39 @@ hr.hair {
   color: var(--color-ink);
 }
 .btn-wa {
-  background: #25D366;
+  background: linear-gradient(135deg, #25D366 0%, #1eb358 55%, #128C7E 100%);
   color: #fff;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
+    0 8px 22px -10px rgba(37, 211, 102, 0.55);
 }
-.btn-wa:hover { filter: brightness(0.95); }
+.btn-wa::after {
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.32) 50%, transparent);
+  animation-delay: 1.4s; /* offset so the two CTAs don't shimmer in sync */
+}
+.btn-wa:hover {
+  filter: brightness(1.05);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
+    0 14px 34px -10px rgba(37, 211, 102, 0.7);
+}
+
+/* Tiny pulsing dot — used as a "live" indicator next to button labels */
+.cta-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+  animation: cta-live 2s ease-in-out infinite;
+}
+@keyframes cta-live {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
+  50%      { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+}
 
 /* Cards */
 .card {
