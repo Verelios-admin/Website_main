@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/custom-software-development';
 const SITE = 'https://www.verelios.com';
@@ -171,6 +172,8 @@ export default function CustomSoftwarePage() {
             </Prose>
           </div>
         </section>
+
+        <RelatedServices exclude="custom-software-development" />
 
         <ClosingCta
           heading="Ready to replace those spreadsheets?"

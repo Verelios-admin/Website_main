@@ -58,10 +58,12 @@ const darkInputStyle: React.CSSProperties = {
   boxSizing: 'border-box',
 };
 
-function Lbl({ children }: { children: React.ReactNode }) {
+function Lbl({ htmlFor, children }: { htmlFor?: string; children: React.ReactNode }) {
   return (
-    <div
+    <label
+      htmlFor={htmlFor}
       style={{
+        display: 'block',
         fontSize: 11,
         color: 'rgba(255,255,255,0.5)',
         letterSpacing: '0.08em',
@@ -71,7 +73,7 @@ function Lbl({ children }: { children: React.ReactNode }) {
       }}
     >
       {children}
-    </div>
+    </label>
   );
 }
 
@@ -372,8 +374,11 @@ export function Contact() {
               </div>
 
               <div>
-                <Lbl>Name</Lbl>
+                <Lbl htmlFor="contact-name">Name</Lbl>
                 <input
+                  id="contact-name"
+                  name="name"
+                  autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
@@ -383,9 +388,12 @@ export function Contact() {
               </div>
 
               <div>
-                <Lbl>Email</Lbl>
+                <Lbl htmlFor="contact-email">Email</Lbl>
                 <input
+                  id="contact-email"
+                  name="email"
                   type="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@company.com"
@@ -395,7 +403,7 @@ export function Contact() {
               </div>
 
               <div>
-                <Lbl>Phone</Lbl>
+                <Lbl htmlFor="contact-phone">Phone</Lbl>
                 <div style={{ position: 'relative' }}>
                   <button
                     type="button"
@@ -476,22 +484,29 @@ export function Contact() {
                     </>
                   )}
                   <input
+                    id="contact-phone"
+                    name="phone"
                     type="tel"
+                    autoComplete="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="Contact number"
                     required
+                    aria-label="Contact phone number"
                     style={{ ...darkInputStyle, paddingLeft: 116 }}
                   />
                 </div>
               </div>
 
               <div>
-                <Lbl>Service type</Lbl>
+                <Lbl htmlFor="contact-service">Service type</Lbl>
                 <select
+                  id="contact-service"
+                  name="serviceType"
                   value={service}
                   onChange={(e) => setService(e.target.value)}
                   required
+                  aria-label="Service type"
                   style={{
                     ...darkInputStyle,
                     appearance: 'none',
@@ -514,11 +529,14 @@ export function Contact() {
               </div>
 
               <div>
-                <Lbl>Budget range</Lbl>
+                <Lbl htmlFor="contact-budget">Budget range</Lbl>
                 <select
+                  id="contact-budget"
+                  name="budgetRange"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   required
+                  aria-label="Budget range"
                   style={{
                     ...darkInputStyle,
                     appearance: 'none',
@@ -541,8 +559,10 @@ export function Contact() {
               </div>
 
               <div>
-                <Lbl>Project notes</Lbl>
+                <Lbl htmlFor="contact-message">Project notes</Lbl>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={3}

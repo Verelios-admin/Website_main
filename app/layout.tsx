@@ -77,6 +77,7 @@ export const metadata: Metadata = {
     apple: '/logo.png',
     shortcut: '/favicon.svg',
   },
+  manifest: '/site.webmanifest',
   alternates: {
     canonical: SITE_URL,
     languages: {
@@ -107,6 +108,8 @@ export const metadata: Metadata = {
     description:
       'Custom websites & apps shipped in under 3 weeks. Free mockup in 48 hours. No upfront payment. 100% satisfaction guaranteed.',
     images: ['/logo.webp'],
+    creator: '@verelioslabs',
+    site: '@verelioslabs',
   },
   robots: {
     index: true,
@@ -549,6 +552,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <a href="#home" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
         {children}
       </body>

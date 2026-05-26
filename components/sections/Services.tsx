@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useGsap } from '@/hooks/useGsap';
 
 const SERVICES = [
@@ -7,31 +8,37 @@ const SERVICES = [
     title: 'App development',
     body: 'Native iOS and Android apps, or cross-platform from a single React Native / Flutter codebase. Shipped to both stores.',
     bullets: ['iOS & Android', 'React Native', 'Flutter', 'Native modules'],
+    href: '/services/mobile-app-development',
   },
   {
     title: 'Web development',
     body: 'Responsive, fast, scalable web apps with the same stack the best product teams use. Built to convert, not just to look pretty.',
     bullets: ['React & Next.js', 'Full-stack', 'Progressive web apps', 'E-commerce'],
+    href: '/services/website-development',
   },
   {
     title: 'Custom software',
     body: "Internal tools, CRMs, ERPs, dashboards — tailored to your workflow, not someone else's idea of one.",
     bullets: ['Enterprise solutions', 'API development', 'System integration', 'Cloud architecture'],
+    href: '/services/custom-software-development',
   },
   {
     title: 'UI / UX design',
     body: 'Considered design that earns user trust on the first screen. Research, wireframes, prototypes, and a system you can hand to your team.',
     bullets: ['User research', 'Wireframing', 'Prototyping', 'Design systems'],
+    href: '/services/ui-ux-design',
   },
   {
     title: 'Performance',
     body: 'Make what you already have faster. Speed audits, refactors, SEO setup, and analytics that tell you what to fix next.',
     bullets: ['Speed optimization', 'SEO enhancement', 'Code refactoring', 'Analytics setup'],
+    href: '/#contact',
   },
   {
     title: 'Maintenance & support',
     body: 'Ongoing care so your product keeps shipping. Bug fixes, feature updates, security patches, and a human on WhatsApp.',
     bullets: ['24/7 monitoring', 'Security updates', 'Bug fixes', 'Feature updates'],
+    href: '/#contact',
   },
 ];
 
@@ -122,7 +129,7 @@ export function Services() {
                 style={{
                   listStyle: 'none',
                   padding: 0,
-                  margin: '20px 0 0',
+                  margin: '20px 0 18px',
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: 6,
@@ -144,6 +151,16 @@ export function Services() {
                   </li>
                 ))}
               </ul>
+              <div style={{ marginTop: 'auto', paddingTop: 4 }}>
+                <Link
+                  href={s.href}
+                  className="link-arrow"
+                  aria-label={`Learn more about ${s.title}`}
+                  style={{ fontSize: 14 }}
+                >
+                  Learn more <span className="arrow">→</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>

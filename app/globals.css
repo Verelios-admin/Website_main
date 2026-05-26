@@ -649,6 +649,26 @@ hr.hair {
   clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
+/* Skip-to-content — visible only when keyboard-focused */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: top 180ms ease-out;
+}
+.skip-to-content:focus {
+  top: 16px;
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
 /* GSAP entrance helpers — set initial state hidden, GSAP reveals */
 .reveal-from-below,
 .reveal-stagger > *,

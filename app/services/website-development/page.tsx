@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/website-development';
 const SITE = 'https://www.verelios.com';
@@ -192,6 +193,8 @@ export default function WebsiteDevelopmentPage() {
             </Prose>
           </div>
         </section>
+
+        <RelatedServices exclude="website-development" />
 
         <ClosingCta
           heading="Ready to ship your website?"

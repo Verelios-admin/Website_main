@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/mobile-app-development';
 const SITE = 'https://www.verelios.com';
@@ -188,6 +189,8 @@ export default function MobileAppDevelopmentPage() {
             </Prose>
           </div>
         </section>
+
+        <RelatedServices exclude="mobile-app-development" />
 
         <ClosingCta
           heading="Ready to ship your app?"

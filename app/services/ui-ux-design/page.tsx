@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/ui-ux-design';
 const SITE = 'https://www.verelios.com';
@@ -149,6 +150,8 @@ export default function UiUxDesignPage() {
             </Prose>
           </div>
         </section>
+
+        <RelatedServices exclude="ui-ux-design" />
 
         <ClosingCta
           heading="Start with a free 48-hour mockup"

@@ -28,24 +28,27 @@ export const metadata: Metadata = {
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
   '@id': `${SITE}${URL_PATH}#article`,
   headline: 'How We Ship Custom Websites in Under 3 Weeks',
   description:
-    'The exact 21-day process Verelios Labs runs on every website project.',
+    'The exact 21-day process Verelios Labs runs on every website project — tools, tight feedback loops, and the principle that "no" is a feature.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
   dateModified: `${PUBLISHED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
-  author: { '@type': 'Organization', name: 'Verelios Labs', url: SITE },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Verelios Labs',
-    url: SITE,
-    logo: { '@type': 'ImageObject', url: `${SITE}/logo.webp` },
-  },
+  wordCount: 1180,
+  articleSection: 'Process',
+  keywords: 'website development process, 3-week website launch, fast website development India, Next.js website agency',
+  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
-  image: `${SITE}/logo.webp`,
+  image: {
+    '@type': 'ImageObject',
+    url: `${SITE}/logo.webp`,
+    width: 1200,
+    height: 630,
+  },
 };
 
 const breadcrumbJsonLd = {
