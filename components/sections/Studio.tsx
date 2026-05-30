@@ -53,7 +53,7 @@ export function Studio() {
             <span style={{ color: 'var(--color-ink-muted-48)' }}>actually ships.</span>
           </h2>
           <p className="lead" style={{ marginTop: 22, color: 'var(--color-ink-muted-80)' }}>
-            Verelios Labs is a two-person studio based in India. We design and build custom websites, mobile apps and software for founders who&apos;ve heard too many quotes that started with &ldquo;we&apos;ll need 8 weeks&rdquo; and ended somewhere around 6 months.
+            We design and build custom websites, mobile apps and software for founders who&apos;ve heard too many quotes that started with &ldquo;we&apos;ll need 8 weeks&rdquo; and ended somewhere around 6 months.
           </p>
           <p
             style={{
