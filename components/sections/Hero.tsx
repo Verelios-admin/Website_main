@@ -252,7 +252,7 @@ export function Hero() {
           'radial-gradient(120% 80% at 85% 0%, rgba(41,151,255,0.16) 0%, transparent 55%), radial-gradient(80% 60% at 10% 100%, rgba(124,58,237,0.14) 0%, transparent 60%), linear-gradient(180deg, #0a0a0c 0%, #131316 100%)',
         color: '#fff',
         overflow: 'hidden',
-        paddingTop: 120,
+        paddingTop: 152,
         paddingBottom: 0,
       }}
     >
@@ -1019,7 +1019,7 @@ export function Hero() {
         /* Tablet — stack copy above scene, keep cards visible but contained */
         @media (max-width: 980px) {
           :global(.hero-section) {
-            padding-top: 96px !important;
+            padding-top: 128px !important;
           }
           :global(.hero-section .hero-grid) {
             grid-template-columns: 1fr;
@@ -1044,7 +1044,7 @@ export function Hero() {
         /* Phone — hide decorative chips, shrink scene, switch stats to 2-up grid */
         @media (max-width: 640px) {
           :global(.hero-section) {
-            padding-top: 88px !important;
+            padding-top: 118px !important;
           }
           :global(.hero-section .hero-scene) {
             max-width: 320px !important;

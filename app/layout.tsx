@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/MetaPixel';
+import { TopContactBar } from '@/components/TopContactBar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -554,6 +555,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <a href="#home" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
+        <TopContactBar />
         {children}
       </body>
     </html>

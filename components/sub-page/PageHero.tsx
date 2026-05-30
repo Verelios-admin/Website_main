@@ -23,7 +23,7 @@ export function PageHero({
     <section
       className="tile"
       style={{
-        paddingTop: 132,
+        paddingTop: 168,
         paddingBottom: 56,
         position: 'relative',
         overflow: 'hidden',

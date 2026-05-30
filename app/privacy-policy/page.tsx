@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-32 pb-16 px-6 text-center">
+      <section className="pt-40 pb-16 px-6 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">
           Privacy Policy
         </h1>

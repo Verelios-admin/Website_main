@@ -456,9 +456,10 @@ hr.hair {
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
 
-/* Sticky nav — frosted dark over hero, frosted light after scroll */
+/* Sticky nav — frosted dark over hero, frosted light after scroll.
+   Sits below the TopContactBar (which is 36px tall). */
 .topnav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  position: fixed; top: 36px; left: 0; right: 0; z-index: 50;
   height: 64px;
   background: rgba(10, 10, 12, 0.65);
   -webkit-backdrop-filter: var(--backdrop-frosted);
@@ -469,6 +470,9 @@ hr.hair {
   padding: 0 28px;
   color: #fff;
   transition: background 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+@media (max-width: 760px) {
+  .topnav { top: 34px; }
 }
 .topnav.scrolled {
   background: var(--bg-frosted-parchment);
