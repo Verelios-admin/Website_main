@@ -254,6 +254,8 @@ export function Hero() {
         overflow: 'hidden',
         paddingTop: 152,
         paddingBottom: 0,
+        paddingLeft: 32,
+        paddingRight: 32,
       }}
     >
       {/* Ambient drifting blobs */}
@@ -1019,7 +1021,10 @@ export function Hero() {
         /* Tablet — stack copy above scene, keep cards visible but contained */
         @media (max-width: 980px) {
           :global(.hero-section) {
-            padding-top: 128px !important;
+            /* Clear both fixed bars: contact bar (--tcb-h) + 64px nav + gap. */
+            padding-top: calc(var(--tcb-h, 36px) + 88px) !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
           }
           :global(.hero-section .hero-grid) {
             grid-template-columns: 1fr;
@@ -1044,7 +1049,11 @@ export function Hero() {
         /* Phone — hide decorative chips, shrink scene, switch stats to 2-up grid */
         @media (max-width: 640px) {
           :global(.hero-section) {
-            padding-top: 118px !important;
+            /* Clear both fixed bars: contact bar (--tcb-h) + 64px nav + gap.
+               --tcb-h falls back to 58px (two-row bar) before JS measures. */
+            padding-top: calc(var(--tcb-h, 58px) + 80px) !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
           :global(.hero-section .hero-scene) {
             max-width: 320px !important;

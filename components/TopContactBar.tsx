@@ -1,13 +1,39 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+
 /**
  * Slim contact bar above the main navigation — country flag + phone numbers
  * + email. Real-business agencies (Antino, Mindtree, every Indian dev house)
  * have one; design-portfolio templates don't. That's the point.
+ *
+ * On narrow phones the row wraps to two (or three) lines, so its height isn't
+ * a fixed number. We measure the rendered height and publish it as the
+ * `--tcb-h` CSS variable on <html>; the fixed nav reads that variable for its
+ * `top` offset, so it always sits flush below this bar instead of overlapping
+ * the logo.
  */
 export function TopContactBar() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const setVar = () =>
+      document.documentElement.style.setProperty('--tcb-h', `${el.offsetHeight}px`);
+    setVar();
+    const ro = new ResizeObserver(setVar);
+    ro.observe(el);
+    window.addEventListener('orientationchange', setVar);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('orientationchange', setVar);
+    };
+  }, []);
+
   return (
     <div
+      ref={ref}
       className="top-contact-bar"
       style={{
         position: 'fixed',
