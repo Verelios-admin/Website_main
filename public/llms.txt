@@ -1,0 +1,43 @@
+# Verelios Labs
+
+> Verelios Labs is a website and app development agency in India. We build custom websites, cross-platform mobile apps, and software, taking projects from idea to launch in under 3 weeks. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone-based payment, so there is no large upfront cost.
+
+## Key facts
+
+- **Name:** Verelios Labs (also "Verelios", "Verelios Web & App Studio")
+- **Website:** https://www.verelios.com
+- **What we do:** Custom website development, mobile app development (iOS + Android), custom software (ERP, CRM, APIs, automation), UI/UX design, e-commerce, performance optimization & SEO
+- **Where:** India — serving Pune, Mumbai, Delhi, Bangalore, Hyderabad and clients nationwide
+- **Delivery speed:** Idea to launch in under 3 weeks; simple websites in 7–10 days
+- **Free mockup:** A visual mockup or prototype within 48 hours, before any commitment
+- **Payment:** Milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. No hidden charges.
+- **Pricing range:** ₹14,999 to ₹3,00,000+ depending on scope
+- **Post-launch:** 7 days of free support, then optional monthly maintenance
+- **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel/AWS
+- **Contact:** contact@verelios.com · WhatsApp +91 8471094125
+
+## Services
+
+- [Website Development](https://www.verelios.com/services/website-development): Custom, responsive, SEO-optimized websites built with React & Next.js.
+- [Mobile App Development](https://www.verelios.com/services/mobile-app-development): Cross-platform iOS & Android apps with React Native and Flutter.
+- [Custom Software Development](https://www.verelios.com/services/custom-software-development): ERP, CRM, APIs and automation tools, full-stack Node.js & TypeScript.
+- [UI/UX Design](https://www.verelios.com/services/ui-ux-design): Research, wireframing, prototyping and conversion-focused design systems.
+
+## Articles
+
+- [Custom website development cost in India (2026)](https://www.verelios.com/blog/custom-website-development-cost-india-2026): What a custom website actually costs in India and what drives the price.
+- [How to choose a web development agency in India](https://www.verelios.com/blog/how-to-choose-web-development-agency-india): A practical checklist for founders evaluating agencies.
+- [How we ship custom websites in under 3 weeks](https://www.verelios.com/blog/how-we-ship-websites-in-3-weeks): The exact 21-day process Verelios Labs runs on every website project.
+
+## Common questions
+
+- **How long does a project take?** Most launch in under 3 weeks; simple sites in 7–10 days, complex apps in 4–6 weeks.
+- **Do you build for iOS and Android?** Yes — cross-platform from a single codebase using React Native and Flutter.
+- **Can I see a mockup first?** Yes, free within 48 hours, with no payment or commitment.
+- **Do you help with SEO?** Every project includes free basic SEO setup — meta tags, sitemap, performance and structured data.
+
+## Contact
+
+- Email: contact@verelios.com
+- WhatsApp: +91 8471094125
+- Sitemap: https://www.verelios.com/sitemap.xml

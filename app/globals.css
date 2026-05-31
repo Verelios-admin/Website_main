@@ -474,6 +474,9 @@ hr.hair {
 @media (max-width: 760px) {
   .topnav { top: 34px; }
 }
+@media (max-width: 480px) {
+  .topnav { padding: 0 16px; }
+}
 .topnav.scrolled {
   background: var(--bg-frosted-parchment);
   border-bottom-color: var(--color-divider-soft);

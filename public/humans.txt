@@ -13,7 +13,7 @@ Next.js, TypeScript, Tailwind CSS, GSAP, Vercel.
 
 /* SITE */
 
-Last update: 2026-05-26
+Last update: 2026-05-31
 Standards: HTML5, CSS3, JSON-LD
 Components: React 18
 Software: VS Code, Figma

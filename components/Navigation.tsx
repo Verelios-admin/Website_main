@@ -196,11 +196,12 @@ export function Navigation() {
             font-size: 13px !important;
           }
         }
-        @media (max-width: 380px) {
-          :global(.topnav-cta) {
-            padding: 6px 11px !important;
-            font-size: 12px !important;
-          }
+        /* On phones the logo + inline CTA + burger collide. The burger menu
+           and the persistent bottom "Get quote" bar already expose the CTA,
+           so drop the redundant inline pill here and let the logo + burger
+           sit at opposite ends with clean spacing. */
+        @media (max-width: 480px) {
+          :global(.topnav-cta) { display: none !important; }
         }
       `}</style>
     </>
