@@ -83,23 +83,13 @@ export function Footer() {
         >
           <div>
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 14 }}>
-              <span
-                style={{
-                  width: 30,
-                  height: 30,
-                  borderRadius: 8,
-                  background: 'var(--color-ink)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#fff',
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: 16,
-                }}
-              >
-                V
-              </span>
+              <img
+                src="/verelios-mark.png"
+                alt="Verelios Labs"
+                width={30}
+                height={30}
+                style={{ width: 30, height: 30, objectFit: 'contain', display: 'block' }}
+              />
               <span
                 style={{
                   fontFamily: 'var(--font-display)',

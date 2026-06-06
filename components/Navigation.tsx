@@ -51,19 +51,13 @@ export function Navigation() {
             textDecoration: 'none', color: 'inherit',
           }}
         >
-          <span
-            style={{
-              width: 30, height: 30, borderRadius: 8,
-              background: scrolled ? 'var(--color-ink)' : '#fff',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              color: scrolled ? '#fff' : 'var(--color-ink)',
-              fontFamily: 'var(--font-display)',
-              fontWeight: 700, fontSize: 16, letterSpacing: '-0.04em',
-              transition: 'background 240ms ease, color 240ms ease',
-            }}
-          >
-            V
-          </span>
+          <img
+            src="/verelios-mark.png"
+            alt="Verelios Labs"
+            width={30}
+            height={30}
+            style={{ width: 30, height: 30, objectFit: 'contain', display: 'block' }}
+          />
           <span
             style={{
               fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 17,
