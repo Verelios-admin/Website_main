@@ -246,7 +246,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-18037984640');
+              gtag('config', 'AW-18037984640', { 'allow_enhanced_conversions': true });
               gtag('config', 'G-96F7T65XWE', {
                 page_title: document.title,
                 page_location: window.location.href,

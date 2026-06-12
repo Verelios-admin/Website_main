@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useGsap } from '@/hooks/useGsap';
-import { trackGoogleAdsLead } from '@/lib/gtag';
 import { trackMetaLead } from '@/components/MetaPixel';
 
 /* Count-up component — animates from 0 to the target when scrolled into view.
@@ -334,7 +333,6 @@ export function Hero() {
               href="#contact"
               className="btn-pill press"
               onClick={() => {
-                trackGoogleAdsLead();
                 trackMetaLead();
               }}
               style={{ padding: '14px 26px', fontSize: 16, fontWeight: 600 }}
@@ -358,7 +356,6 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                trackGoogleAdsLead();
                 trackMetaLead();
               }}
               className="btn-pill btn-wa press"

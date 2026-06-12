@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
-import { trackGoogleAdsLead } from '@/lib/gtag';
 import { trackMetaLead } from '@/components/MetaPixel';
 
 export function StickyCTA() {
@@ -79,7 +78,6 @@ export function StickyCTA() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
           <button
             onClick={() => {
-              trackGoogleAdsLead();
               trackMetaLead();
               window.open(
                 'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { trackGoogleAdsLead } from '@/lib/gtag';
 import { trackMetaLead } from '@/components/MetaPixel';
 
 export function WhatsAppButton() {
@@ -50,7 +49,6 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => {
-        trackGoogleAdsLead();
         trackMetaLead();
       }}
       aria-label="Chat on WhatsApp"

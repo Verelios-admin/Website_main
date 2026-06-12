@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { useGsap } from '@/hooks/useGsap';
 import { useToast } from '@/hooks/use-toast';
 import { trackMetaLead } from '@/components/MetaPixel';
-import { trackGoogleAdsLead } from '@/lib/gtag';
+import { trackGoogleAdsLead, resetLeadConversionGuard } from '@/lib/gtag';
 
 const COUNTRY_CODES = [
   { code: '+91',  flag: '\u{1F1EE}\u{1F1F3}', country: 'IN' },
@@ -134,37 +134,26 @@ export function Contact() {
         nonMarketingConsent: nonMarketingConsent ? 'Yes' : 'No',
       };
 
-      await fetch('https://hook.us2.make.com/sqedcdetgz0wvevhfem1z0e6mcitx6m9', {
+      const res = await fetch('https://hook.us2.make.com/sqedcdetgz0wvevhfem1z0e6mcitx6m9', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
+      // Only count this as a lead if the webhook genuinely accepted it.
+      // A non-2xx means the lead wasn't delivered — fall through to the catch.
+      if (!res.ok) throw new Error(`Lead webhook returned HTTP ${res.status}`);
+
       trackMetaLead();
 
-      // Google Ads conversion — retry until gtag.js is ready
-      const fireGtag = (retriesLeft = 5) => {
-        const gtag = typeof window !== 'undefined' ? (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag : undefined;
-        if (typeof gtag !== 'function') {
-          if (retriesLeft > 0) setTimeout(() => fireGtag(retriesLeft - 1), 400);
-          return;
-        }
-        gtag('event', 'generate_lead', {
-          event_category: 'Contact Form',
-          event_label: service || 'General',
-          value: budget || 'Not specified',
-        });
-        gtag('set', 'user_data', {
-          email,
-          phone_number: `+${countryDigits}${phone}`,
-        });
-        gtag('event', 'conversion', {
-          send_to: 'AW-18037984640/lFtBCOjnxJscEICbl5lD',
-          value: 1.0,
-          currency: 'INR',
-        });
-      };
-      fireGtag();
+      // Google Ads conversion + Enhanced Conversions — fires once, here only,
+      // because the submission actually succeeded.
+      trackGoogleAdsLead({
+        email,
+        phone: `+${countryDigits}${phone}`,
+        service,
+        budget,
+      });
 
       toast({ title: 'Message Sent!', description: "We'll get back to you as soon as possible." });
       setSent(true);
@@ -189,6 +178,8 @@ export function Contact() {
     setMarketingConsent(true);
     setNonMarketingConsent(true);
     setSent(false);
+    // Allow the conversion to fire again for a fresh, separate submission.
+    resetLeadConversionGuard();
   };
 
   return (
@@ -225,7 +216,7 @@ export function Contact() {
               href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => { trackGoogleAdsLead(); trackMetaLead(); }}
+              onClick={() => { trackMetaLead(); }}
               className="btn-pill btn-wa press"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
