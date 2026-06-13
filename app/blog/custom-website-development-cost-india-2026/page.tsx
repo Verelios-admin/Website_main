@@ -205,10 +205,13 @@ export default function Post() {
 
               <h2>What we charge (and why)</h2>
               <p>
-                At Verelios Labs, our base website tier is <strong>₹14,999</strong> for a 5-page custom-coded site. We can hit that price because we&apos;ve built ~50 sites on the same stack (Next.js, Tailwind, Vercel) and have a tight, repeatable process. We don&apos;t lose money — we trade margin per project for volume and direct WhatsApp-based ops with zero account-management overhead.
+                At Verelios Labs, our base website tier starts at <strong>₹49,999</strong> for a 5-page custom-coded site. That isn&apos;t a template you could buy for ₹10,000 — it&apos;s a hand-built, conversion-focused site that ships in 7–14 days, is engineered to load fast and rank, and is yours to own outright. We&apos;ve built ~50 sites on the same stack (Next.js, Tailwind, Vercel), so we move fast without cutting corners.
               </p>
               <p>
-                For bigger projects (e-commerce, real estate, custom platforms) we charge between <strong>₹50,000 and ₹3,00,000</strong> with a fixed quote up-front and milestone payments. See <a href="/services/website-development">our website development page</a> for the full breakdown, or <a href="/#contact">request a quote</a> directly.
+                We price on the outcome and the speed, not on hours — and we don&apos;t compete on being the cheapest. If a quote sounds too good to be true, it usually means a templated build, surprise add-ons later, or code you never actually own.
+              </p>
+              <p>
+                For bigger projects (e-commerce, real estate, custom platforms) we charge between <strong>₹1,00,000 and ₹3,00,000+</strong> with a fixed quote up-front and milestone payments. See <a href="/services/website-development">our website development page</a> for the full breakdown, or <a href="/#contact">request a quote</a> directly.
               </p>
 
               <h2>How to spot agencies that will overcharge you</h2>
