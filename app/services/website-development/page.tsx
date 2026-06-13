@@ -61,8 +61,8 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '14999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '14999' },
+    price: '49999',
+    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -144,10 +144,10 @@ export default function WebsiteDevelopmentPage() {
 
               <h2>Pricing for custom website development in India</h2>
               <p>
-                Our base business-website tier starts at <strong>₹14,999</strong> and covers up to 5 pages (Home, About, Services, Contact, plus one more), mobile-responsive design, contact form with WhatsApp integration, SEO setup, free domain &amp; hosting setup assistance, and 7 days of post-launch support.
+                Our base business-website tier starts at <strong>₹49,999</strong> and covers up to 5 pages (Home, About, Services, Contact, plus one more), mobile-responsive design, contact form with WhatsApp integration, SEO setup, free domain &amp; hosting setup assistance, and 7 days of post-launch support.
               </p>
               <p>
-                More complex projects — e-commerce, real estate, custom CMS, integrations — range from <strong>₹49,999 to ₹3,00,000+</strong> depending on scope. We share a fixed quote with a timeline before any work begins.
+                More complex projects — e-commerce, real estate, custom CMS, integrations — range from <strong>₹1,00,000 to ₹3,00,000+</strong> depending on scope. We share a fixed quote with a timeline before any work begins.
               </p>
               <div className="callout">
                 <p>
@@ -176,7 +176,7 @@ export default function WebsiteDevelopmentPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom website development cost in India?</h3>
               <p>
-                A simple business website with 5 pages starts at <strong>₹14,999</strong>. A more involved site (custom CMS, multilingual, complex search, payments) typically lands between <strong>₹50,000 and ₹3,00,000</strong>. We quote each project after a 15-minute scoping call.
+                A simple business website with 5 pages starts at <strong>₹49,999</strong>. A more involved site (custom CMS, multilingual, complex search, payments) typically lands between <strong>₹1,00,000 and ₹3,00,000</strong>. We quote each project after a 15-minute scoping call.
               </p>
               <h3>How long does it take to build a custom website?</h3>
               <p>

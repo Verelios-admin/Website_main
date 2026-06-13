@@ -5,30 +5,28 @@ import { useGsap } from '@/hooks/useGsap';
 const PLANS = [
   {
     name: 'Business website',
-    sub: 'For startups, small businesses & personal brands',
-    price: '₹14,999',
-    cents: '/onwards',
+    sub: 'Conversion-focused sites that turn visitors into enquiries',
+    price: '₹49,999',
     eta: 'Delivery: 7–14 days',
     featured: false,
     features: [
-      'Up to 5 pages (Home, About, Services, Contact, etc.)',
-      'Mobile-responsive design',
-      'SEO optimised & fast loading',
-      'Contact form with WhatsApp integration',
-      'Free domain & hosting setup assistance',
+      'Up to 5 pages — Home, About, Services, Contact & more',
+      'Mobile-first, responsive design',
+      'SEO-optimised & built to load fast',
+      'Lead-capture form with WhatsApp integration',
+      'Domain & hosting setup handled for you',
       '7-day post-launch support',
     ],
   },
   {
     name: 'Mobile app',
     sub: 'Cross-platform iOS & Android from a single codebase',
-    price: '₹49,999',
-    cents: '/onwards',
+    price: '₹99,999',
     eta: 'Delivery: 3–5 weeks',
     featured: true,
     features: [
-      'iOS + Android from one codebase',
-      'Custom UI/UX design',
+      'One codebase, shipped to iOS + Android',
+      'Custom UI/UX designed for retention',
       'Push notifications & real-time updates',
       'Backend API & database setup',
       'App Store & Play Store submission',
@@ -37,9 +35,8 @@ const PLANS = [
   },
   {
     name: 'Custom software',
-    sub: 'CRMs, ERPs, dashboards, automations & more',
-    price: '₹99,999',
-    cents: '/onwards',
+    sub: 'CRMs, ERPs, dashboards & automations built around your workflow',
+    price: '₹1,49,999',
     eta: 'Delivery: 4–8 weeks',
     featured: false,
     features: [
@@ -119,14 +116,23 @@ export function Pricing() {
               </p>
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  gap: 8,
                   paddingBottom: 18,
                   borderBottom: '1px solid var(--color-hairline)',
                   marginBottom: 22,
                 }}
               >
+                <div
+                  style={{
+                    fontSize: 11,
+                    color: 'var(--color-ink-muted-48)',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    fontWeight: 600,
+                    marginBottom: 6,
+                  }}
+                >
+                  Projects typically start at
+                </div>
                 <span
                   style={{
                     fontFamily: 'var(--font-display)',
@@ -137,7 +143,6 @@ export function Pricing() {
                 >
                   {p.price}
                 </span>
-                <span style={{ color: 'var(--color-ink-muted-48)', fontSize: 14 }}>{p.cents}</span>
               </div>
               <div style={{ color: 'var(--color-ink-muted-48)', fontSize: 13, marginBottom: 22 }}>{p.eta}</div>
               <ul

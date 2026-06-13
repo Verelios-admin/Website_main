@@ -49,7 +49,7 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: '+91-8471094125',
   email: 'contact@verelios.com',
-  priceRange: '₹14,999 – ₹3,00,000+',
+  priceRange: '₹49,999 – ₹3,00,000+',
   image: `${SITE_URL}/logo.webp`,
   logo:  `${SITE_URL}/logo.webp`,
   description:
@@ -123,7 +123,7 @@ const localBusinessJsonLd = {
       {
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '14999',
+        price: '49999',
         itemOffered: {
           '@type': 'Service',
           name: 'Business Website Development',
