@@ -77,17 +77,59 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Mirrors the visible "Frequently asked questions" Q&A below, verbatim, so the
+// page is eligible for FAQ rich results and AI-answer citation.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does custom website development cost in India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A simple business website with 5 pages starts at ₹49,999. A more involved site (custom CMS, multilingual, complex search, payments) typically lands between ₹1,00,000 and ₹3,00,000. We quote each project after a 15-minute scoping call.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to build a custom website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most projects ship in 7–21 days. A static 5-page site can be done in a week; a custom e-commerce or real-estate platform might take 4–6 weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you handle hosting and domain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — we handle domain registration assistance (GoDaddy, Namecheap, Hostinger), DNS setup, and hosting on Vercel (or AWS / Cloudflare if you prefer). Hosting is typically free for small sites on Vercel\'s hobby tier.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer maintenance after launch?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The first 7 days post-launch are free. After that, we offer monthly maintenance plans starting at ₹3,000/month covering bug fixes, content updates, security patches, and performance monitoring.',
+      },
+    },
+  ],
+};
+
 export default function WebsiteDevelopmentPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <SubPageLayout>
         <PageHero
           eyebrow="Website development · India"
           title="Custom website development"
           highlight="in three weeks."
-          lead="Verelios Labs is a Pune-based custom website development company building React and Next.js sites for founders across India. Free 48-hour mockup, milestone-based payment, launched in under three weeks."
+          lead="Verelios Labs is a Kanpur-based custom website development company building React and Next.js sites for founders across India. Free 48-hour mockup, milestone-based payment, launched in under three weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: '/#services' },

@@ -76,11 +76,53 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Mirrors the visible "Frequently asked questions" Q&A below, verbatim, so the
+// page is eligible for FAQ rich results and AI-answer citation.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why is custom software cheaper than SaaS over time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A 50-seat Salesforce subscription costs roughly ₹1,50,000/month (~₹18,00,000/year). A custom CRM with similar features costs ₹3,00,000 once + ₹5,000/month hosting. After year one, you\'ve broken even. After year five, you\'ve saved ₹85,00,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will we be locked in to you for maintenance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The code is yours, it\'s in your GitHub. Any TypeScript / Next.js / Node.js developer can pick it up — that\'s why we use a popular mainstream stack. We offer ongoing maintenance if you want it, but you\'re not forced.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can the software integrate with our existing systems (Tally, Zoho, etc.)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — Tally, Zoho, GST portal APIs, Razorpay, Cashfree, WhatsApp Business API, email (Resend / SES), SMS (Twilio / MSG91), and just about anything else with a REST / webhook interface. We\'ve done all of these before.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you sign an NDA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Before we receive any sensitive information about your business, we sign a mutual NDA. Standard practice.',
+      },
+    },
+  ],
+};
+
 export default function CustomSoftwarePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <SubPageLayout>
         <PageHero
           eyebrow="Custom software · India"

@@ -1,20 +1,25 @@
 # Verelios Labs
 
-> Verelios Labs is a website and app development agency in India. We build custom websites, cross-platform mobile apps, and software, taking projects from idea to launch in under 3 weeks. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone-based payment, so there is no large upfront cost.
+> Verelios Labs is a website, app and AI-automation agency based in Kanpur, India. We build custom websites, cross-platform mobile apps, and software, taking projects from idea to launch in under 3 weeks. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone-based payment, so there is no large upfront cost.
+
+Last updated: 2026-06-16
 
 ## Key facts
 
 - **Name:** Verelios Labs (also "Verelios", "Verelios Web & App Studio")
 - **Website:** https://www.verelios.com
 - **What we do:** Custom website development, mobile app development (iOS + Android), custom software (ERP, CRM, APIs, automation), UI/UX design, e-commerce, performance optimization & SEO
-- **Where:** India — serving Pune, Mumbai, Delhi, Bangalore, Hyderabad and clients nationwide
+- **Where:** Based in Kanpur, Uttar Pradesh — 126/58 G Block, Govind Nagar, Kanpur 208006. Also serves clients in Bangalore, Lucknow and across India.
 - **Delivery speed:** Idea to launch in under 3 weeks; simple websites in 7–10 days
 - **Free mockup:** A visual mockup or prototype within 48 hours, before any commitment
 - **Payment:** Milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. No hidden charges.
-- **Pricing range:** ₹14,999 to ₹3,00,000+ depending on scope
+- **Pricing range:** ₹49,999 to ₹3,00,000+ depending on scope (websites from ₹49,999, mobile apps from ₹99,999, custom software from ₹99,999)
 - **Post-launch:** 7 days of free support, then optional monthly maintenance
 - **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel/AWS
 - **Contact:** contact@verelios.com · WhatsApp +91 8471094125
+- **Hours:** Open every day, 8am–11pm IST
+- **Rating:** 5.0 stars from 23 Google reviews
+- **Founded:** 2024
 
 ## Services
 
@@ -40,4 +45,6 @@
 
 - Email: contact@verelios.com
 - WhatsApp: +91 8471094125
+- Address: 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
+- Hours: Open every day, 8am–11pm IST
 - Sitemap: https://www.verelios.com/sitemap.xml

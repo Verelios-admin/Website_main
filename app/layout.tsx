@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | Verelios Labs — Website & App Development India',
   },
   description:
-    'India\'s fastest website & app development agency. Custom sites, mobile apps & software launched in 3 weeks. Free 48-hour mockup. No upfront payment.',
+    'Kanpur-based website & app development agency serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup, no upfront payment.',
   keywords: [
     // Primary intent
     'website development agency India',
@@ -61,6 +61,13 @@ export const metadata: Metadata = {
     'website development company Delhi',
     'website development company Bangalore',
     'website development company Hyderabad',
+    // Local intent — Kanpur / Uttar Pradesh (our home base)
+    'website development company in Kanpur',
+    'app development company Kanpur',
+    'AI automation company Kanpur',
+    'software company Kanpur',
+    'web development company Lucknow',
+    'website development Uttar Pradesh',
     // Brand
     'Verelios',
     'Verelios Labs',
@@ -79,13 +86,10 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
   },
   manifest: '/site.webmanifest',
-  alternates: {
-    canonical: SITE_URL,
-    languages: {
-      'en-IN': SITE_URL,
-      'en':    SITE_URL,
-    },
-  },
+  // NOTE: no site-wide `alternates.canonical` here on purpose. A layout-level
+  // canonical is inherited by every page and was forcing all subpages to point
+  // at the homepage. Each page now declares its OWN canonical via its metadata
+  // (and the homepage declares its own in app/page.tsx).
   openGraph: {
     title: 'Website & App Development Agency India | Verelios Labs',
     description:
@@ -130,10 +134,10 @@ export const metadata: Metadata = {
     // other: { 'msvalidate.01': 'add-your-bing-token-here' },
   },
   other: {
-    'geo.region':    'IN',
-    'geo.placename': 'India',
-    'geo.position':  '20.5937;78.9629',
-    'ICBM':          '20.5937, 78.9629',
+    'geo.region':    'IN-UP',
+    'geo.placename': 'Kanpur, Uttar Pradesh',
+    'geo.position':  '26.4382;80.3010',
+    'ICBM':          '26.4382, 80.3010',
     'apple-mobile-web-app-capable':        'yes',
     'mobile-web-app-capable':              'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -186,6 +190,14 @@ const orgJsonLd = {
     },
   ],
   email: 'contact@verelios.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '126/58 G Block, Govind Nagar',
+    addressLocality: 'Kanpur',
+    addressRegion: 'Uttar Pradesh',
+    postalCode: '208006',
+    addressCountry: 'IN',
+  },
   sameAs: SOCIAL_LINKS,
   foundingDate: '2024',
   areaServed: { '@type': 'Country', name: 'India' },
@@ -225,7 +237,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <link rel="canonical" href={SITE_URL} />
+        {/* No hard-coded canonical here — it would stamp the homepage URL onto
+            every page. Canonicals are emitted per-page by the Next Metadata API. */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

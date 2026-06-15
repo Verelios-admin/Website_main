@@ -68,11 +68,45 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Mirrors the visible "Frequently asked questions" Q&A below, verbatim, so the
+// page is eligible for FAQ rich results and AI-answer citation.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does "conversion-focused" actually mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It means we design with measurable success in mind — a target conversion rate, a target task-completion time, a target user-satisfaction score. We use established best practice (Apple HIG, Material guidelines, NN/g research) but tailor everything to your specific audience and goal.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you do brand identity / logos?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For projects where it makes sense (e.g. you\'re a new startup with no brand). We don\'t do "logo only" engagements — we do brand as part of a product design.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you redesign an existing product?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. We start with an audit — what works, what doesn\'t, where users are dropping off — and redesign the high-impact screens. Often we leave 60–70% of the product alone and focus on the screens that actually move metrics.',
+      },
+    },
+  ],
+};
+
 export default function UiUxDesignPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <SubPageLayout>
         <PageHero
           eyebrow="UI/UX design · India"

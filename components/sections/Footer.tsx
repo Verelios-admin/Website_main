@@ -112,6 +112,23 @@ export function Footer() {
             >
               Transforming ideas into exceptional digital experiences. We specialise in app and web development that drives business growth.
             </p>
+            <address
+              style={{
+                marginTop: 18,
+                fontStyle: 'normal',
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: 'var(--color-ink-muted-80)',
+              }}
+            >
+              <strong style={{ fontWeight: 600 }}>Verelios Labs</strong><br />
+              126/58 G Block, Govind Nagar<br />
+              Kanpur, Uttar Pradesh 208006, India<br />
+              <a href="tel:+918471094125" style={{ color: 'inherit', textDecoration: 'none' }}>+91&nbsp;84710&nbsp;94125</a>
+              {' · '}
+              <a href="mailto:contact@verelios.com" style={{ color: 'inherit', textDecoration: 'none' }}>contact@verelios.com</a><br />
+              <span style={{ color: 'var(--color-ink-muted-48)' }}>Open every day · 8am–11pm</span>
+            </address>
             <div style={{ marginTop: 22, display: 'flex', gap: 10, alignItems: 'center' }}>
               <SocialIcon href="https://www.linkedin.com/in/verelios-4a1483387/" label="LinkedIn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

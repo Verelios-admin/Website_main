@@ -61,8 +61,8 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '49999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    price: '99999',
+    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -77,11 +77,61 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Mirrors the visible "Frequently asked questions" Q&A below, verbatim, so the
+// page is eligible for FAQ rich results and AI-answer citation.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does it cost to develop a custom mobile app in India?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most apps we ship cost between ₹99,999 and ₹5,00,000. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to build an app?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typical timeline is 3–5 weeks from kickoff to both stores. Simple MVPs can ship in 2 weeks; complex apps with custom backends and integrations land at 6–8 weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you handle App Store and Play Store submission?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — we set up your developer accounts (or use ours initially), prepare screenshots and descriptions, submit for review, and handle any rejections. Apple developer fee (US$99/year) and Google developer fee (one-time US$25) are billed at cost.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will the app work offline?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If you need offline mode, we build it in. Most B2C apps require connectivity; field-operations / data-collection apps usually need offline-first with sync.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who owns the code?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You do. Source code is pushed to a GitHub repository under your account on day one, with full commit history. No vendor lock-in.',
+      },
+    },
+  ],
+};
+
 export default function MobileAppDevelopmentPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <SubPageLayout>
         <PageHero
           eyebrow="App development · India"
@@ -157,7 +207,7 @@ export default function MobileAppDevelopmentPage() {
 
               <h2>Pricing for custom mobile app development in India</h2>
               <p>
-                Our base mobile-app tier starts at <strong>₹49,999</strong> and covers a 5–8 screen app with onboarding, auth, a core flow, push notifications, and submission to both stores. Apps with more screens, advanced backends, real-time features, or external integrations land between <strong>₹1,00,000 and ₹5,00,000</strong> depending on scope. Quoted up-front, no surprises.
+                Our base mobile-app tier starts at <strong>₹99,999</strong> and covers a 5–8 screen app with onboarding, auth, a core flow, push notifications, and submission to both stores. Apps with more screens, advanced backends, real-time features, or external integrations land between <strong>₹1,50,000 and ₹5,00,000</strong> depending on scope. Quoted up-front, no surprises.
               </p>
               <div className="callout">
                 <p>
@@ -168,7 +218,7 @@ export default function MobileAppDevelopmentPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does it cost to develop a custom mobile app in India?</h3>
               <p>
-                Most apps we ship cost between <strong>₹49,999 and ₹3,00,000</strong>. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.
+                Most apps we ship cost between <strong>₹99,999 and ₹5,00,000</strong>. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.
               </p>
               <h3>How long does it take to build an app?</h3>
               <p>

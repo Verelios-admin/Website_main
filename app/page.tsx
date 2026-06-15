@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import type { Metadata } from 'next';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/sections/Hero';
 
@@ -34,6 +35,13 @@ const StickyCTA      = dynamic(() => import('@/components/StickyCTA'), { ssr: fa
 // ============================================================
 const SITE_URL = 'https://www.verelios.com';
 
+// The homepage declares its OWN canonical (with trailing slash, matching the
+// sitemap). This replaces the old layout-level canonical that used to be
+// stamped onto every page. Title/description are inherited from app/layout.tsx.
+export const metadata: Metadata = {
+  alternates: { canonical: `${SITE_URL}/` },
+};
+
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
@@ -50,16 +58,45 @@ const localBusinessJsonLd = {
   telephone: '+91-8471094125',
   email: 'contact@verelios.com',
   priceRange: '₹49,999 – ₹3,00,000+',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '126/58 G Block, Govind Nagar',
+    addressLocality: 'Kanpur',
+    addressRegion: 'Uttar Pradesh',
+    postalCode: '208006',
+    addressCountry: 'IN',
+  },
+  geo: {
+    // Govind Nagar, Kanpur. Replace with the exact lat/long of your Google
+    // Business Profile map pin if you want pinpoint accuracy.
+    '@type': 'GeoCoordinates',
+    latitude: '26.4382',
+    longitude: '80.3010',
+  },
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '08:00',
+      closes: '23:00',
+    },
+  ],
   image: `${SITE_URL}/logo.webp`,
   logo:  `${SITE_URL}/logo.webp`,
   description:
     'India\'s fastest website & app development agency. Custom websites, mobile apps & software — from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
   areaServed: [
+    // Home base — Kanpur + Uttar Pradesh.
+    { '@type': 'City',    name: 'Kanpur' },
+    { '@type': 'City',    name: 'Lucknow' },
+    { '@type': 'State',   name: 'Uttar Pradesh' },
+    // Bangalore — served on-site too — plus clients across the rest of India.
+    { '@type': 'City',    name: 'Bangalore' },
     { '@type': 'Country', name: 'India' },
     { '@type': 'City',    name: 'Pune' },
     { '@type': 'City',    name: 'Mumbai' },
     { '@type': 'City',    name: 'Delhi' },
-    { '@type': 'City',    name: 'Bangalore' },
     { '@type': 'City',    name: 'Hyderabad' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
@@ -68,7 +105,7 @@ const localBusinessJsonLd = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '10',
+    reviewCount: '23',
     bestRating:  '5',
     worstRating: '1',
   },
@@ -136,7 +173,7 @@ const localBusinessJsonLd = {
       {
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '49999',
+        price: '99999',
         itemOffered: {
           '@type': 'Service',
           name: 'Mobile App Development',
