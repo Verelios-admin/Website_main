@@ -199,9 +199,9 @@ export function Hero() {
       transformOrigin: '50% 50%',
     });
 
-    // Subtle background drift
-    gsap.to('.amb-1', { x: 30, y: -20, duration: 14, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-    gsap.to('.amb-2', { x: -40, y: 20, duration: 18, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+    // (Removed the .amb-1/.amb-2 background-blob drift: animating the transform
+    // of a blur(40px) layer forces a per-frame blur re-raster — costly on mobile
+    // GPUs and a main-thread/compositor drag for a barely-perceptible effect.)
 
     // Mouse parallax — runs only on devices with a real pointer
     if (typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches) {
@@ -1046,9 +1046,8 @@ export function Hero() {
         /* Phone — hide decorative chips, shrink scene, switch stats to 2-up grid */
         @media (max-width: 640px) {
           :global(.hero-section) {
-            /* Clear both fixed bars: contact bar (--tcb-h) + 64px nav + gap.
-               --tcb-h falls back to 58px (two-row bar) before JS measures. */
-            padding-top: calc(var(--tcb-h, 58px) + 80px) !important;
+            /* Clear both fixed bars: contact bar (--tcb-h, fixed 36px) + nav + gap. */
+            padding-top: calc(var(--tcb-h, 36px) + 80px) !important;
             padding-left: 20px !important;
             padding-right: 20px !important;
           }

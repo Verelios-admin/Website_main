@@ -41,9 +41,13 @@ export function TopContactBar() {
         left: 0,
         right: 0,
         zIndex: 51,
-        minHeight: 36,
+        // FIXED height (not min-height) so the measured --tcb-h always equals
+        // the CSS fallback — this is what kills the mobile layout shift. The
+        // hairline is an inset shadow instead of a border so it adds 0 to
+        // offsetHeight (border would make it 37px and reintroduce a 1px shift).
+        height: 36,
         background: '#050507',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        boxShadow: 'inset 0 -1px 0 rgba(255,255,255,0.06)',
         color: 'rgba(255,255,255,0.78)',
         fontSize: 13,
         letterSpacing: '-0.005em',
@@ -68,10 +72,10 @@ export function TopContactBar() {
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
           <span>+91 84710 94125</span>
         </a>
-        <span className="tcb-sep" aria-hidden="true">·</span>
+        <span className="tcb-sep tcb-hidden-sm" aria-hidden="true">·</span>
         <a
           href="tel:+918299522798"
-          className="tcb-item"
+          className="tcb-item tcb-hidden-sm"
           aria-label="Call Verelios Labs in India (secondary)"
         >
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>

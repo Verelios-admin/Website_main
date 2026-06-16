@@ -52,7 +52,7 @@ export function Navigation() {
           }}
         >
           <img
-            src="/verelios-mark.png"
+            src="/verelios-mark-sm.png"
             alt="Verelios Labs"
             width={30}
             height={30}

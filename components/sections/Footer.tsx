@@ -84,7 +84,7 @@ export function Footer() {
           <div>
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 14 }}>
               <img
-                src="/verelios-mark.png"
+                src="/verelios-mark-sm.png"
                 alt="Verelios Labs"
                 width={30}
                 height={30}

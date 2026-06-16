@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
 import { trackMetaLead } from '@/components/MetaPixel';
 
 export function WhatsAppButton() {
   const ref = useRef<HTMLAnchorElement>(null);
   const [visible, setVisible] = useState(false);
+  // Tracks whether the pill has ever been shown, so we only load GSAP to
+  // animate it OUT if it was previously animated IN — never on first mount.
+  const shownRef = useRef(false);
 
   // Only show the floating WhatsApp pill after the user scrolls past the hero
   // (otherwise it overlaps the in-hero stats row on small phones).
@@ -20,25 +22,35 @@ export function WhatsAppButton() {
   }, []);
 
   useEffect(() => {
-    if (!ref.current) return;
-    if (!visible) {
-      gsap.to(ref.current, { autoAlpha: 0, y: 20, duration: 0.3, ease: 'power2.in' });
-      return;
-    }
-    gsap.fromTo(
-      ref.current,
-      { autoAlpha: 0, y: 16 },
-      { autoAlpha: 1, y: 0, duration: 0.55, ease: 'expo.out' }
-    );
-    const float = gsap.to(ref.current, {
-      y: -4,
-      duration: 2.2,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
+    const el = ref.current;
+    if (!el) return;
+    // On first mount the pill is hidden (inline opacity/visibility) and not yet
+    // scrolled into view — so we do NOTHING and never load GSAP. GSAP is only
+    // imported once the user scrolls past the hero (visible=true), or to animate
+    // out again afterwards.
+    if (!visible && !shownRef.current) return;
+
+    let cancelled = false;
+    let float: { kill: () => void } | null = null;
+
+    import('gsap').then(({ default: gsap }) => {
+      if (cancelled || !el) return;
+      if (!visible) {
+        gsap.to(el, { autoAlpha: 0, y: 20, duration: 0.3, ease: 'power2.in' });
+        return;
+      }
+      shownRef.current = true;
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0, y: 16 },
+        { autoAlpha: 1, y: 0, duration: 0.55, ease: 'expo.out' }
+      );
+      float = gsap.to(el, { y: -4, duration: 2.2, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     });
+
     return () => {
-      float.kill();
+      cancelled = true;
+      if (float) float.kill();
     };
   }, [visible]);
 

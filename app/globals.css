@@ -9,6 +9,11 @@
    Atelier — Design Tokens (ported from Claude design handoff)
    ============================================================= */
 :root {
+  /* Height of the fixed TopContactBar. Defined here so it has a concrete value
+     at first paint (before TopContactBar's effect runs), matching the bar's
+     fixed 36px height — this prevents the hero from shifting after hydration. */
+  --tcb-h: 36px;
+
   /* Brand & accent */
   --color-primary:           #0066cc;
   --color-primary-focus:     #0071e3;
@@ -475,9 +480,9 @@ hr.hair {
   transition: background 240ms ease, border-color 240ms ease, color 240ms ease;
 }
 @media (max-width: 760px) {
-  /* Pre-JS fallback assumes the contact bar wraps to two rows (~58px);
-     TopContactBar refines --tcb-h to the exact measured height on mount. */
-  .topnav { top: var(--tcb-h, 58px); }
+  /* The contact bar is a fixed 36px tall (one row) on mobile too, so the
+     fallback matches the real height and the nav never has to reposition. */
+  .topnav { top: var(--tcb-h, 36px); }
 }
 @media (max-width: 480px) {
   .topnav { padding: 0 16px; }

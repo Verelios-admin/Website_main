@@ -239,8 +239,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         {/* No hard-coded canonical here — it would stamp the homepage URL onto
             every page. Canonicals are emitted per-page by the Next Metadata API. */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        {/* No fonts.googleapis.com hints: next/font self-hosts Inter (its woff2
+            is already preloaded), so the Google Fonts CDN is never contacted —
+            the hints only burned an early connection slot on slow mobile links. */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         {/* Google Analytics 4 + Google Ads conversion tracking.

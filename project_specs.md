@@ -62,6 +62,16 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 - [ ] Blog cluster: Kanpur-local pricing post, AI-automation-for-SMBs, AI chatbot/WhatsApp, "Next.js vs WordPress", "get your business on Google in India". Each links up to a service page + cross-links pillars.
 - [ ] (Ask before adding a top-level `/locations` folder per CLAUDE.md) Kanpur + Lucknow local landing pages.
 
+### Phase 5 — Mobile performance ✓ COMPLETED 2026-06-16 (build-verified). Mobile PSI was 74 (LCP 3.5s / TBT 360ms / CLS 0.11); desktop 95.
+- [x] **Lazy-load GSAP** (`hooks/useGsap.ts`, `components/WhatsAppButton.tsx`) via dynamic `import()` — moved off the first-paint path. Homepage First Load JS **188 kB → 143 kB**.
+- [x] **Modern `browserslist`** (`package.json`) → drops the "legacy JavaScript" polyfills.
+- [x] **CLS fix:** TopContactBar now fixed 36px (hairline via inset shadow, not border); `--tcb-h:36px` defined in CSS `:root` + matching fallbacks in `globals.css`/`Hero.tsx`; 2nd phone hidden ≤760px so the bar stays one row → no post-hydration jump.
+- [x] **Logo:** 453×453 (54 KB) → `verelios-mark-sm.png` 64×64 (3.9 KB), repointed navbar + footer; big PNG no longer preloaded. Original kept for `pitch-deck.html`.
+- [x] **Removed dead `fonts.googleapis.com` preconnect/dns-prefetch** (next/font self-hosts Inter).
+- [x] **Stopped animating the `blur(40px)` hero blobs** (per-frame re-raster cost).
+- [x] **`vercel.json`** far-future immutable cache headers for static images/fonts.
+- [~] **doNext (second pass, not yet done):** gate Hero's ~14 always-running decorative GSAP loops behind IntersectionObserver; pause off-screen Portfolio SVG keyframes; coalesce desktop mouse-parallax tweens; tighten Tailwind CSS purge to shrink the 66 KB render-blocking sheet.
+
 ### Off-site — owner actions (I can't do these; highest ROI first)
 1. **Claim + verify Google Business Profile** for the Gujaini, Kanpur address (wins the map pack — the single biggest local lever).
 2. Get 5+ real Google reviews from past clients.
