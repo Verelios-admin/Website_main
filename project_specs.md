@@ -63,7 +63,7 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 - [ ] (Ask before adding a top-level `/locations` folder per CLAUDE.md) Kanpur + Lucknow local landing pages.
 
 ### Phase 5 — Mobile performance ✓ COMPLETED 2026-06-16 (build-verified). Mobile PSI was 74 (LCP 3.5s / TBT 360ms / CLS 0.11); desktop 95.
-- [x] **Lazy-load GSAP** (`hooks/useGsap.ts`, `components/WhatsAppButton.tsx`) via dynamic `import()` — moved off the first-paint path. Homepage First Load JS **188 kB → 143 kB**.
+- [x] **Lazy-load GSAP** (`hooks/useGsap.ts`, `components/WhatsAppButton.tsx`) via dynamic `import()` — moved off the first-paint path. Homepage First Load JS **188 kB → 143 kB**. First PSI re-test: mobile **74 → 88**, LCP **3.5s → 2.1s** (green). BUT lazy GSAP caused a CLS regression (desktop 0.008 → 0.217) because all sections' `gsap.from()` entrance tweens snapped *after* paint. **Fixed** by gating each section's GSAP init behind an IntersectionObserver (`rootMargin 150px`), so below-the-fold `.from()` tweens never snap during the load CLS window. (Re-measure pending.)
 - [x] **Modern `browserslist`** (`package.json`) → drops the "legacy JavaScript" polyfills.
 - [x] **CLS fix:** TopContactBar now fixed 36px (hairline via inset shadow, not border); `--tcb-h:36px` defined in CSS `:root` + matching fallbacks in `globals.css`/`Hero.tsx`; 2nd phone hidden ≤760px so the bar stays one row → no post-hydration jump.
 - [x] **Logo:** 453×453 (54 KB) → `verelios-mark-sm.png` 64×64 (3.9 KB), repointed navbar + footer; big PNG no longer preloaded. Original kept for `pitch-deck.html`.
