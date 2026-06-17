@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Website & App Development Agency India | Verelios Labs',
-    template: '%s | Verelios Labs — Website & App Development India',
+    template: '%s | Verelios Labs',
   },
   description:
     'Kanpur-based website & app development agency serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup, no upfront payment.',
@@ -234,7 +234,9 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={inter.variable}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* No hardcoded viewport meta — Next.js App Router already emits the
+            default `width=device-width, initial-scale=1`. A second one here
+            produced a duplicate <meta name="viewport"> in the output. */}
         <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         {/* No hard-coded canonical here — it would stamp the homepage URL onto
