@@ -13,7 +13,14 @@ const inter = Inter({
   // fast connections still see Inter; Lighthouse mobile (slow 4G) sees the
   // metric-adjusted system-ui fallback with no swap shift.
   display: 'optional',
-  preload: true,
+  // preload:false on purpose. Preloading Inter made it arrive inside the font
+  // block window on slow 4G, so it would swap in AFTER first paint and re-wrap
+  // the large hero headline — a ~71px post-paint shift that was ~96% of the
+  // page's CLS. With no preload + display:optional, slow connections keep the
+  // metric-adjusted fallback (no swap, no shift); Apple users see SF Pro (first
+  // in the stack) and fast/cached visitors still get Inter. No LCP cost — with
+  // 'optional' the text never blocks on the font regardless.
+  preload: false,
   weight: ['400', '500', '600', '700'],
   fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
   adjustFontFallback: true,
