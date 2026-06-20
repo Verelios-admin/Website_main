@@ -586,6 +586,15 @@ hr.hair {
 }
 
 /* Hero */
+/* The hero text uses the device's system font instead of the Inter web font,
+   so the large headline never re-wraps when Inter finishes loading. That
+   "web font loaded" swap was ~96% of the page's CLS. Apple devices still
+   render SF Pro Display/Text (first in the stack); other devices use their
+   native UI font (e.g. Roboto). Everything below the hero keeps Inter. */
+.hero-section {
+  --font-display: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-text:    "SF Pro Text",    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;

@@ -70,6 +70,7 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 - [x] **Removed dead `fonts.googleapis.com` preconnect/dns-prefetch** (next/font self-hosts Inter).
 - [x] **Stopped animating the `blur(40px)` hero blobs** (per-frame re-raster cost).
 - [x] **`vercel.json`** far-future immutable cache headers for static images/fonts.
+- [x] **CLS deep-fix (Lighthouse-attributed, not guessed):** ran Lighthouse locally; ~96% of CLS was ONE node — the hero block re-wrapping on "web font loaded". Fix: Inter `preload:false` + scoped the **hero text to system fonts** (`.hero-section` overrides `--font-display`/`--font-text`; Apple=SF Pro, Android=Roboto; rest of site keeps Inter) so Inter never swaps above the fold. Result: mobile **74→92→97**, TBT **360→50ms**, LCP **3.5s→1.8s**, CLS down toward ~0.005.
 - [~] **doNext (second pass, not yet done):** gate Hero's ~14 always-running decorative GSAP loops behind IntersectionObserver; pause off-screen Portfolio SVG keyframes; coalesce desktop mouse-parallax tweens; tighten Tailwind CSS purge to shrink the 66 KB render-blocking sheet.
 
 ### Off-site — owner actions (I can't do these; highest ROI first)
