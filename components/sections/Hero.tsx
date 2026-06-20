@@ -20,48 +20,61 @@ function CountUp({
   startDelay?: number;
 }) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [done, setDone] = useState(false);
+  // SSR + first paint render the REAL number, so visitors with JS disabled,
+  // search-engine crawlers, and anyone who doesn't scroll always see the true
+  // value — never "0" (which read as "0 projects delivered").
+  const [val, setVal] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || done) return;
+    if (!el) return;
+    if (typeof window !== 'undefined' &&
+        window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Only play the count-up when the element scrolls INTO view from below. If
+    // it's already on screen at load (the hero stats are above the fold), leave
+    // the real number in place — no reset-to-0 flash, no "0" first impression.
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (alreadyVisible) return;
+
+    let rafId = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let cancelled = false;
 
     const startCount = () => {
       const start = performance.now();
-      let rafId = 0;
+      setVal(0);
       const tick = (now: number) => {
+        if (cancelled) return;
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
-        const val = Math.round(eased * to);
-        el.textContent = `${prefix}${val}${suffix}`;
+        setVal(Math.round(eased * to));
         if (t < 1) rafId = requestAnimationFrame(tick);
-        else setDone(true);
       };
       rafId = requestAnimationFrame(tick);
-      return () => cancelAnimationFrame(rafId);
     };
 
-    let cancel: (() => void) | undefined;
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setTimeout(() => { cancel = startCount(); }, startDelay);
-            io.disconnect();
-          }
-        });
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          timer = setTimeout(startCount, startDelay);
+        }
       },
       { threshold: 0.4 }
     );
     io.observe(el);
 
     return () => {
+      cancelled = true;
       io.disconnect();
-      cancel?.();
+      if (timer) clearTimeout(timer);
+      cancelAnimationFrame(rafId);
     };
-  }, [to, suffix, prefix, duration, startDelay, done]);
+  }, [to, duration, startDelay]);
 
-  return <span ref={ref}>{prefix}0{suffix}</span>;
+  return <span ref={ref}>{prefix}{val}{suffix}</span>;
 }
 
 /* --------------------------------------------------------------
@@ -322,7 +335,7 @@ export function Hero() {
             className="hero-lead lead lead-on-dark"
             style={{ marginTop: 26, maxWidth: 520, color: 'rgba(255,255,255,0.7)' }}
           >
-            Verelios Labs designs and ships custom websites, mobile apps, and software for founders who need to move now — not next quarter.
+            Verelios Labs is a Kanpur-based studio designing and shipping custom websites, mobile apps, software, and AI automation for founders across India who need to move now — not next quarter.
           </p>
 
           <div
