@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { trackMetaLead } from '@/components/MetaPixel';
+import { trackWhatsAppClick } from '@/lib/gtag';
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -79,6 +80,7 @@ export function StickyCTA() {
           <button
             onClick={() => {
               trackMetaLead();
+              trackWhatsAppClick('Sticky CTA — Get quote');
               window.open(
                 'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20a%20free%20quote%20for%20my%20project.',
                 '_blank'

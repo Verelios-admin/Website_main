@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+import { trackCtaClick } from '@/lib/gtag';
 
 const links = [
   { id: 'services', label: 'Services' },
@@ -102,7 +103,7 @@ export function Navigation() {
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <button
-            onClick={() => go('contact')}
+            onClick={() => { trackCtaClick('Nav bar — Get a free mockup'); go('contact'); }}
             className="btn-pill press topnav-cta"
             style={{
               padding: '8px 16px',
@@ -172,7 +173,7 @@ export function Navigation() {
               {l.label}
             </button>
           ))}
-          <button onClick={() => go('contact')} className="btn-pill press" style={{ marginTop: 12 }}>
+          <button onClick={() => { trackCtaClick('Mobile menu — Get a free mockup'); go('contact'); }} className="btn-pill press" style={{ marginTop: 12 }}>
             Get a free mockup
           </button>
         </div>

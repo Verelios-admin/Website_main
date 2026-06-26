@@ -61,3 +61,46 @@ export function trackGoogleAdsLead(data: LeadData = {}) {
 
   fire();
 }
+
+// ---------------------------------------------------------------------------
+// Lightweight GA4 engagement events (NOT Google Ads conversions).
+// These fire on button / link clicks so GA4 actually records key events —
+// previously the only GA4 event was generate_lead on a successful form submit,
+// which is rare, so GA4 showed ~0 events. CTA + WhatsApp clicks give real
+// volume to mark as "key events" in the GA4 admin.
+//
+// gtag.js is loaded lazily (lazyOnload in app/layout.tsx), so it may not exist
+// yet at click time — retry a few times until it's ready. No once-only guard
+// here: unlike a conversion, a user can legitimately click a CTA many times.
+// ---------------------------------------------------------------------------
+function sendGtagEvent(
+  event: string,
+  params: Record<string, unknown>,
+  retriesLeft = 5,
+) {
+  if (typeof window === 'undefined') return;
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof gtag !== 'function') {
+    if (retriesLeft > 0) setTimeout(() => sendGtagEvent(event, params, retriesLeft - 1), 400);
+    return;
+  }
+  gtag('event', event, params);
+}
+
+/** Primary CTA button clicks ("Get a free mockup", "Book a call", etc.). */
+export function trackCtaClick(label: string) {
+  sendGtagEvent('cta_click', {
+    event_category: 'Engagement',
+    event_label: label,
+    value: 1,
+  });
+}
+
+/** WhatsApp button / link clicks. */
+export function trackWhatsAppClick(label: string) {
+  sendGtagEvent('whatsapp_click', {
+    event_category: 'Contact',
+    event_label: label,
+    value: 1,
+  });
+}

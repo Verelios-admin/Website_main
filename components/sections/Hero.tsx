@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useGsap } from '@/hooks/useGsap';
 import { trackMetaLead } from '@/components/MetaPixel';
+import { trackCtaClick, trackWhatsAppClick } from '@/lib/gtag';
 
 /* Count-up component — animates from 0 to the target when scrolled into view.
    Uses a single rAF loop so it doesn't re-render React on every frame. */
@@ -347,6 +348,7 @@ export function Hero() {
               className="btn-pill press"
               onClick={() => {
                 trackMetaLead();
+                trackCtaClick('Hero — Get a free mockup');
               }}
               style={{ padding: '14px 26px', fontSize: 16, fontWeight: 600 }}
               aria-label="Get a free mockup in 48 hours"
@@ -370,6 +372,7 @@ export function Hero() {
               rel="noopener noreferrer"
               onClick={() => {
                 trackMetaLead();
+                trackWhatsAppClick('Hero — Chat on WhatsApp');
               }}
               className="btn-pill btn-wa press"
               style={{ padding: '14px 22px', fontSize: 16, fontWeight: 600 }}

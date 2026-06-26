@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { trackMetaLead } from '@/components/MetaPixel';
+import { trackWhatsAppClick } from '@/lib/gtag';
 
 export function WhatsAppButton() {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -62,6 +63,7 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       onClick={() => {
         trackMetaLead();
+        trackWhatsAppClick('Floating button');
       }}
       aria-label="Chat on WhatsApp"
       className="wa-float"

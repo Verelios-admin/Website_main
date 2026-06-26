@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { useGsap } from '@/hooks/useGsap';
 import { useToast } from '@/hooks/use-toast';
 import { trackMetaLead } from '@/components/MetaPixel';
-import { trackGoogleAdsLead, resetLeadConversionGuard } from '@/lib/gtag';
+import { trackGoogleAdsLead, resetLeadConversionGuard, trackWhatsAppClick } from '@/lib/gtag';
 
 const COUNTRY_CODES = [
   { code: '+91',  flag: '\u{1F1EE}\u{1F1F3}', country: 'IN' },
@@ -215,7 +215,7 @@ export function Contact() {
               href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => { trackMetaLead(); }}
+              onClick={() => { trackMetaLead(); trackWhatsAppClick('Contact section'); }}
               className="btn-pill btn-wa press"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
