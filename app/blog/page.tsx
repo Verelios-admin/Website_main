@@ -33,6 +33,22 @@ const breadcrumbJsonLd = {
 
 const posts = [
   {
+    slug: 'ai-automation-for-indian-businesses-2026',
+    title: 'AI automation for Indian businesses (2026)',
+    excerpt:
+      'A no-hype guide to AI automation — what to automate first, what it actually costs in INR, and how to tell if a process in your business is ready for it.',
+    readTime: '9 min read',
+    date: '2026-06-26',
+  },
+  {
+    slug: 'ai-chatbot-for-business-india',
+    title: 'Should your business get an AI chatbot?',
+    excerpt:
+      'What a good AI chatbot actually does in 2026, what it costs to build and run in India, where they go wrong, and a simple test for whether you need one.',
+    readTime: '8 min read',
+    date: '2026-06-26',
+  },
+  {
     slug: 'custom-website-development-cost-india-2026',
     title: 'Custom website development cost in India (2026)',
     excerpt:
