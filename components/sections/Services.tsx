@@ -23,6 +23,12 @@ const SERVICES = [
     href: '/services/custom-software-development',
   },
   {
+    title: 'AI automation',
+    body: 'Workflow automation, AI chatbots and document processing that take the repetitive work off your team — built on the tools you already use.',
+    bullets: ['Workflow automation', 'AI chatbots', 'Document processing', 'LLM integrations'],
+    href: '/services/ai-automation',
+  },
+  {
     title: 'UI / UX design',
     body: 'Considered design that earns user trust on the first screen. Research, wireframes, prototypes, and a system you can hand to your team.',
     bullets: ['User research', 'Wireframing', 'Prototyping', 'Design systems'],
@@ -76,7 +82,7 @@ export function Services() {
         <div className="section-head">
           <div className="eyebrow">What we do</div>
           <h2 className="display-section">
-            Six practices. <br />
+            Seven practices. <br />
             <span style={{ color: 'var(--color-ink-muted-48)' }}>One team, end-to-end.</span>
           </h2>
           <p className="lead" style={{ marginTop: 6, maxWidth: 640 }}>

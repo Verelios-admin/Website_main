@@ -20,6 +20,12 @@ const ALL_SERVICES = [
     accent: '#06b6d4',
   },
   {
+    slug: 'ai-automation',
+    title: 'AI Automation',
+    blurb: 'Workflow automation, AI chatbots and document processing that take the repetitive work off your team.',
+    accent: '#f59e0b',
+  },
+  {
     slug: 'ui-ux-design',
     title: 'UI/UX Design',
     blurb: 'Conversion-focused design — research, wireframes, prototypes and design systems.',

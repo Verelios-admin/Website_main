@@ -62,6 +62,14 @@ export const metadata: Metadata = {
     'website redesign services India',
     'conversion-optimized website',
     'SEO website development',
+    // AI automation intent
+    'AI automation company India',
+    'AI automation agency India',
+    'custom AI automation services',
+    'business process automation India',
+    'AI chatbot development India',
+    'workflow automation India',
+    'LLM integration India',
     // Local intent
     'website development company Pune',
     'website development company Mumbai',
