@@ -32,11 +32,11 @@ const SITE_URL = 'https://www.verelios.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Website & App Development Agency India | Verelios Labs',
+    default: 'Website, App & Software Developers in Kanpur | Verelios Labs',
     template: '%s | Verelios Labs',
   },
   description:
-    'Kanpur-based website & app development agency serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup, no upfront payment.',
+    'Website, app & custom software developers in Govind Nagar, Kanpur — serving Kanpur and all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup, no upfront payment.',
   keywords: [
     // Primary intent
     'website development agency India',
@@ -76,11 +76,21 @@ export const metadata: Metadata = {
     'website development company Delhi',
     'website development company Bangalore',
     'website development company Hyderabad',
-    // Local intent — Kanpur / Uttar Pradesh (our home base)
+    // Local intent — Kanpur / Govind Nagar (our home base)
+    'website developers in Kanpur',
+    'app developers in Kanpur',
+    'custom software developers in Kanpur',
+    'website developers in Govind Nagar Kanpur',
+    'app developers in Govind Nagar Kanpur',
+    'software developers in Govind Nagar Kanpur',
+    'web development company in Govind Nagar Kanpur',
     'website development company in Kanpur',
     'app development company Kanpur',
+    'custom software development company Kanpur',
     'AI automation company Kanpur',
     'software company Kanpur',
+    'web design company Kanpur',
+    'website developers near me Kanpur',
     'web development company Lucknow',
     'website development Uttar Pradesh',
     // Brand

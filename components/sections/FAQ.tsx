@@ -36,6 +36,14 @@ const FAQS = [
     q: 'How do we communicate during the project?',
     a: 'You get a dedicated project manager on WhatsApp for instant communication. We share daily / weekly progress updates and you can give feedback in real time — no waiting for scheduled meetings.',
   },
+  {
+    q: 'Where in Kanpur is Verelios Labs located?',
+    a: 'We\'re based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We\'re open every day, 8am–11pm, and you\'re welcome to meet us in person or talk over WhatsApp before starting a project.',
+  },
+  {
+    q: 'Do you work with local businesses in Kanpur?',
+    a: 'Yes. As website, app and custom software developers based in Govind Nagar, we work with local businesses right across Kanpur — shops, clinics, schools, real-estate firms and startups — as well as founders across India. Local clients can meet us face to face; everyone gets the same free 48-hour mockup and milestone-based payment.',
+  },
 ];
 
 function FaqItem({ q, a }: { q: string; a: string }) {

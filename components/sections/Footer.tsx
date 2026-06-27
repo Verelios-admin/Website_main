@@ -110,7 +110,7 @@ export function Footer() {
                 margin: 0,
               }}
             >
-              Transforming ideas into exceptional digital experiences. We specialise in app and web development that drives business growth.
+              Website, app &amp; custom software developers in Govind Nagar, Kanpur — building websites, mobile apps and software that drive business growth for clients in Kanpur and across India.
             </p>
             <address
               style={{

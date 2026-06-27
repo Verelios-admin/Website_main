@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     'conversion-optimized website',
     'fast website development',
     'website developer near me',
+    'website developers in Kanpur',
+    'website development company in Kanpur',
+    'website developers in Govind Nagar Kanpur',
+    'web design company Kanpur Uttar Pradesh',
   ],
   openGraph: {
     title: 'Custom Website Development Company in India | Verelios Labs',
@@ -129,7 +133,7 @@ export default function WebsiteDevelopmentPage() {
           eyebrow="Website development · India"
           title="Custom website development"
           highlight="in three weeks."
-          lead="Verelios Labs is a Kanpur-based custom website development company building React and Next.js sites for founders across India. Free 48-hour mockup, milestone-based payment, launched in under three weeks."
+          lead="Verelios Labs is a team of website developers in Govind Nagar, Kanpur, building custom React and Next.js sites for local Kanpur businesses and founders across India. Free 48-hour mockup, milestone-based payment, launched in under three weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: '/#services' },

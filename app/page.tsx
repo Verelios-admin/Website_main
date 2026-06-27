@@ -347,6 +347,22 @@ const faqJsonLd = {
         text: 'You get a dedicated project manager on WhatsApp for instant communication. Daily/weekly progress updates and real-time feedback.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Where in Kanpur is Verelios Labs located?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We are based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open every day, 8am–11pm, and you are welcome to meet us in person or talk over WhatsApp before starting a project.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work with local businesses in Kanpur?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. As website, app and custom software developers based in Govind Nagar, we work with local businesses right across Kanpur — shops, clinics, schools, real-estate firms and startups — as well as founders across India. Local clients can meet us face to face; everyone gets the same free 48-hour mockup and milestone-based payment.',
+      },
+    },
   ],
 };
 

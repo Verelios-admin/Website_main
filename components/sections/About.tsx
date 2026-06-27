@@ -165,6 +165,61 @@ export function About() {
             </div>
           ))}
         </div>
+
+        <div
+          className="local-band"
+          style={{
+            marginTop: 32,
+            background: 'var(--color-canvas)',
+            border: '1px solid var(--color-hairline)',
+            borderRadius: 'var(--radius-lg)',
+            padding: 36,
+          }}
+        >
+          <h3
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 24,
+              fontWeight: 600,
+              letterSpacing: '-0.015em',
+              margin: '0 0 12px',
+            }}
+          >
+            Website, app &amp; custom software developers in Govind Nagar, Kanpur
+          </h3>
+          <p
+            style={{
+              fontFamily: 'var(--font-text)',
+              fontSize: 16,
+              lineHeight: 1.6,
+              color: 'var(--color-ink-muted-80)',
+              letterSpacing: '-0.01em',
+              margin: '0 0 12px',
+              maxWidth: 760,
+            }}
+          >
+            We&apos;re based at 126/58 G Block, Govind Nagar, Kanpur — and we work with local
+            businesses across the city, from Govind Nagar and Kakadeo to Swaroop Nagar, Civil Lines
+            and Kidwai Nagar. If you&apos;re searching for website developers, app developers or
+            custom software developers in Kanpur, you can meet us in person, talk over WhatsApp, or
+            get a free 48-hour mockup before you commit to anything.
+          </p>
+          <p
+            style={{
+              fontFamily: 'var(--font-text)',
+              fontSize: 16,
+              lineHeight: 1.6,
+              color: 'var(--color-ink-muted-80)',
+              letterSpacing: '-0.01em',
+              margin: 0,
+              maxWidth: 760,
+            }}
+          >
+            Kanpur is our home base, but our work isn&apos;t limited to it — we ship custom websites,
+            mobile apps and software for founders in Lucknow and across India, all managed remotely
+            on WhatsApp with daily updates.
+          </p>
+        </div>
       </div>
 
       <style jsx>{`

@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     'SaaS development India',
     'enterprise software India',
     'business process automation India',
+    'custom software developers in Kanpur',
+    'software development company in Kanpur',
+    'custom software developers in Govind Nagar Kanpur',
+    'software developers Kanpur Uttar Pradesh',
   ],
   openGraph: {
     title: 'Custom Software Development Company in India | Verelios Labs',
@@ -128,7 +132,7 @@ export default function CustomSoftwarePage() {
           eyebrow="Custom software · India"
           title="Custom software, ERPs &amp; internal tools"
           highlight="that fit your workflow."
-          lead="Verelios Labs builds custom software for Indian businesses — ERPs, CRMs, admin dashboards, internal tools and APIs. Tailored to your workflow, not someone else's template. Launched in 4–8 weeks."
+          lead="Verelios Labs is a team of custom software developers in Govind Nagar, Kanpur, building ERPs, CRMs, admin dashboards, internal tools and APIs for local Kanpur businesses and founders across India. Tailored to your workflow, not someone else's template. Launched in 4–8 weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: '/#services' },

@@ -257,7 +257,7 @@ export function Hero() {
     <section
       ref={ref}
       id="top"
-      aria-label="Website and app development agency in India — Verelios Labs"
+      aria-label="Website, app and custom software developers in Govind Nagar, Kanpur — Verelios Labs"
       className="hero-section"
       style={{
         position: 'relative',
@@ -336,7 +336,7 @@ export function Hero() {
             className="hero-lead lead lead-on-dark"
             style={{ marginTop: 26, maxWidth: 520, color: 'rgba(255,255,255,0.7)' }}
           >
-            Verelios Labs is a Kanpur-based studio designing and shipping custom websites, mobile apps, software, and AI automation for founders across India who need to move now — not next quarter.
+            Verelios Labs is a Govind Nagar, Kanpur–based studio of website, app and custom software developers — building for local Kanpur businesses and founders across India who need to move now, not next quarter.
           </p>
 
           <div

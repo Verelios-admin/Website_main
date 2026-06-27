@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     'startup app development India',
     'hire app developer India',
     'app developer near me',
+    'app developers in Kanpur',
+    'app development company in Kanpur',
+    'app developers in Govind Nagar Kanpur',
+    'mobile app developers Kanpur Uttar Pradesh',
   ],
   openGraph: {
     title: 'Custom Mobile App Development Company in India | Verelios Labs',
@@ -137,7 +141,7 @@ export default function MobileAppDevelopmentPage() {
           eyebrow="App development · India"
           title="Custom mobile app development"
           highlight="for iOS and Android."
-          lead="Verelios Labs builds custom mobile apps for Indian founders — one React Native or Flutter codebase, shipped to the App Store and Play Store in three to five weeks. Free 48-hour mockup, no upfront payment."
+          lead="Verelios Labs is a team of app developers in Govind Nagar, Kanpur, building custom mobile apps for local Kanpur businesses and founders across India — one React Native or Flutter codebase, shipped to the App Store and Play Store in three to five weeks. Free 48-hour mockup, no upfront payment."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: '/#services' },
