@@ -41,8 +41,8 @@ const COLS = [
       ['Website development', '/services/website-development'],
       ['Mobile app development', '/services/mobile-app-development'],
       ['Custom software', '/services/custom-software-development'],
+      ['AI automation', '/services/ai-automation'],
       ['UI/UX design', '/services/ui-ux-design'],
-      ['Maintenance', '/#services'],
     ],
   },
   {
