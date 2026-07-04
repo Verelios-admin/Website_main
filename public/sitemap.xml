@@ -88,23 +88,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Legal -->
-  <url>
-    <loc>https://www.verelios.com/privacy-policy</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.verelios.com/terms-of-service</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.verelios.com/cookie-policy</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <!-- Legal pages (privacy-policy, terms-of-service, cookie-policy) are
+       intentionally omitted: they are set to noindex and carry no search
+       value, so they should not appear in the sitemap. -->
 </urlset>

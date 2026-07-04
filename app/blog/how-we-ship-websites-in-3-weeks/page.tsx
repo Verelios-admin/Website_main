@@ -10,14 +10,14 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: 'How We Ship Custom Websites in Under 3 Weeks',
+  title: 'Custom Website Development in Under 3 Weeks — Our Exact Process',
   description:
-    'The exact 21-day process Verelios Labs runs on every website project — the tools, the tight feedback loops, and the principle that "no" is a feature.',
+    'Need a website fast? See exactly how Verelios Labs designs, builds and launches a custom website in under 3 weeks — the 21-day process, the tools, and what you get at each step.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
-    title: 'How We Ship Custom Websites in Under 3 Weeks | Verelios Labs',
+    title: 'Custom Website Development in Under 3 Weeks — Our Exact Process | Verelios Labs',
     description:
-      'The exact 21-day process — tools, feedback loops, and the principle that "no" is a feature.',
+      'See exactly how we design, build and launch a custom website in under 3 weeks — the 21-day process, the tools, and what you get at each step.',
     url: `${SITE}${URL_PATH}`,
     type: 'article',
     locale: 'en_IN',

@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   description:
     "How Verelios Labs uses cookies and similar technologies to power our website, analytics and advertising.",
   alternates: { canonical: "https://www.verelios.com/cookie-policy" },
-  robots: { index: true, follow: true },
+  // Legal boilerplate carries no search value. Keep it out of the index but
+  // still let Google follow its links so no link equity is lost.
+  robots: { index: false, follow: true },
 };
 
 export default function CookiePolicyPage() {

@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   description:
     "The terms governing your use of Verelios Labs' website and our delivery of website, mobile app and software development services.",
   alternates: { canonical: "https://www.verelios.com/terms-of-service" },
-  robots: { index: true, follow: true },
+  // Legal boilerplate carries no search value. Keep it out of the index but
+  // still let Google follow its links so no link equity is lost.
+  robots: { index: false, follow: true },
 };
 
 export default function TermsOfServicePage() {
