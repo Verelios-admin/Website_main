@@ -20,10 +20,22 @@ const ALL_SERVICES = [
     accent: '#06b6d4',
   },
   {
+    slug: 'erp',
+    title: 'Custom ERP Software',
+    blurb: 'Inventory, manufacturing, accounting, HR & payroll in one system built around your workflow. You own the code.',
+    accent: '#14b8a6',
+  },
+  {
     slug: 'ai-automation',
     title: 'AI Automation',
     blurb: 'Workflow automation, AI chatbots and document processing that take the repetitive work off your team.',
     accent: '#f59e0b',
+  },
+  {
+    slug: 'web-hosting',
+    title: 'Web Hosting & Maintenance',
+    blurb: 'Fully managed hosting — 99.9% uptime, backups, SSL, security patches and speed monitoring. No lock-in.',
+    accent: '#ec4899',
   },
   {
     slug: 'ui-ux-design',

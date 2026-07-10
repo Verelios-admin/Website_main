@@ -221,6 +221,17 @@ export function Pricing() {
           <a href="#contact" className="link-arrow">
             Need something custom? Let&apos;s talk <span className="arrow">→</span>
           </a>
+          <div style={{ marginTop: 14, fontSize: 14.5, color: 'var(--color-ink-muted-80)' }}>
+            New to this? Read our honest breakdown of{' '}
+            <a href="/blog/custom-website-development-cost-india-2026" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+              custom website development cost in India
+            </a>{' '}
+            and{' '}
+            <a href="/blog/how-to-choose-web-development-agency-india" style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+              how to choose a web development agency
+            </a>{' '}
+            before you commit.
+          </div>
         </div>
       </div>
     </section>

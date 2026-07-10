@@ -83,7 +83,7 @@ export default function Post() {
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
               <p>
-                There are hundreds of agencies in India that will build you a website. Picking the wrong one costs you 2–6 months of delay and 1.5–3× the price you actually should have paid. Here are the questions that separate the ones who&apos;ll ship from the ones who won&apos;t.
+                There are hundreds of agencies in India that will build you a website. Picking the wrong one costs you 2–6 months of delay and 1.5–3× the price you actually should have paid — so it helps to know <a href="/blog/custom-website-development-cost-india-2026">what custom website development actually costs in India</a> before you start comparing quotes. Here are the questions that separate the ones who&apos;ll ship from the ones who won&apos;t.
               </p>
 
               <h2>The 10 questions to ask before signing</h2>

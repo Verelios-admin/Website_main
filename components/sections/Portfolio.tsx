@@ -16,7 +16,7 @@ interface Project {
 }
 
 type ProjectId =
-  | 'chainshots' | 'rivali' | 'serene' | 'news'
+  | 'chainshots' | 'supersquad' | 'rivali' | 'serene' | 'news'
   | 'rmpd' | 'epp' | 'pune' | 'biniyog';
 
 const PROJECTS: Project[] = [
@@ -31,6 +31,18 @@ const PROJECTS: Project[] = [
     chips: ['Crypto news', 'Daily brief', 'iOS', 'Android'],
     accent: '#2997ff',
     accentBg: 'rgba(41,151,255,0.18)',
+  },
+  {
+    id: 'supersquad',
+    eyebrow: 'Travel & wellness · Web',
+    title: 'SuperSquad',
+    tagline: 'Travel to transform — fitness & wellness retreats, from Muay Thai in Thailand to padel in Bali.',
+    metric: 'Booking-ready platform for a VC-backed travel brand',
+    href: 'https://supersquad.club/',
+    surface: 'Web',
+    chips: ['Retreats', 'Bookings', 'Community'],
+    accent: '#f43f5e',
+    accentBg: 'rgba(244,63,94,0.16)',
   },
   {
     id: 'rivali',
@@ -649,8 +661,61 @@ function BiniyogMockup() {
   );
 }
 
+function SuperSquadMockup() {
+  // Laptop — travel & wellness retreat listings
+  return (
+    <svg viewBox="0 0 480 280" style={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }} aria-hidden="true">
+      <LaptopChrome url="supersquad.club" />
+
+      {/* hero band */}
+      <rect x="34" y="56" width="412" height="50" rx="7" fill="rgba(244,63,94,0.08)" stroke="rgba(244,63,94,0.22)" />
+      <text x="50" y="78" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#fff">Travel to transform.</text>
+      <text x="50" y="92" fontFamily="var(--font-text)" fontSize="8" fill="rgba(255,255,255,0.55)">Fitness &amp; wellness retreats · Body · Soul · Mind</text>
+      <rect className="pm-pulse" x="330" y="72" width="102" height="18" rx="9" fill="#f43f5e" />
+      <text x="381" y="84" textAnchor="middle" fontFamily="var(--font-display)" fontSize="8" fontWeight="600" fill="#fff">Explore retreats</text>
+
+      {/* travelling highlight ring across the 3 retreat cards */}
+      <rect className="pm-highlight-3-h" x="34" y="120" width="132" height="110" rx="7" fill="none" stroke="#f43f5e" strokeWidth="1.5" opacity="0.6" />
+
+      {/* retreat card 1 — Muay Thai */}
+      <g>
+        <rect x="34" y="120" width="132" height="110" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" />
+        <rect x="42" y="128" width="116" height="50" rx="5" fill="rgba(244,63,94,0.2)" />
+        <text x="100" y="158" textAnchor="middle" fontFamily="var(--font-display)" fontSize="16" fontWeight="700" fill="rgba(244,63,94,0.4)">MUAY THAI</text>
+        <text x="42" y="194" fontFamily="var(--font-display)" fontSize="9" fontWeight="600" fill="#fff">Thailand</text>
+        <text x="42" y="206" fontFamily="ui-monospace,monospace" fontSize="8" fill="rgba(255,255,255,0.55)">5-day camp · Body</text>
+        <rect className="pm-pulse" x="42" y="212" width="44" height="12" rx="6" fill="rgba(244,63,94,0.5)" />
+        <text x="64" y="220" textAnchor="middle" fontFamily="var(--font-display)" fontSize="6" fontWeight="600" fill="#fff">Popular</text>
+      </g>
+
+      {/* retreat card 2 — Padel */}
+      <g className="pm-fade pm-d1">
+        <rect x="174" y="120" width="132" height="110" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" />
+        <rect x="182" y="128" width="116" height="50" rx="5" fill="rgba(244,63,94,0.2)" />
+        <text x="240" y="158" textAnchor="middle" fontFamily="var(--font-display)" fontSize="18" fontWeight="700" fill="rgba(244,63,94,0.4)">PADEL</text>
+        <text x="182" y="194" fontFamily="var(--font-display)" fontSize="9" fontWeight="600" fill="#fff">Bali</text>
+        <text x="182" y="206" fontFamily="ui-monospace,monospace" fontSize="8" fill="rgba(255,255,255,0.55)">Camp + stay · Soul</text>
+        <rect className="pm-pulse" x="182" y="212" width="56" height="12" rx="6" fill="rgba(34,197,94,0.55)" style={{ animationDelay: '0.4s' }} />
+        <text x="210" y="220" textAnchor="middle" fontFamily="var(--font-display)" fontSize="6" fontWeight="600" fill="#fff">Filling up</text>
+      </g>
+
+      {/* retreat card 3 — Surf */}
+      <g className="pm-fade pm-d2">
+        <rect x="314" y="120" width="132" height="110" rx="7" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" />
+        <rect x="322" y="128" width="116" height="50" rx="5" fill="rgba(244,63,94,0.2)" />
+        <text x="380" y="158" textAnchor="middle" fontFamily="var(--font-display)" fontSize="18" fontWeight="700" fill="rgba(244,63,94,0.4)">SURF</text>
+        <text x="322" y="194" fontFamily="var(--font-display)" fontSize="9" fontWeight="600" fill="#fff">Indonesia</text>
+        <text x="322" y="206" fontFamily="ui-monospace,monospace" fontSize="8" fill="rgba(255,255,255,0.55)">Nomad games · Mind</text>
+        <rect className="pm-pulse" x="322" y="212" width="48" height="12" rx="6" fill="rgba(255,255,255,0.22)" style={{ animationDelay: '0.8s' }} />
+        <text x="346" y="220" textAnchor="middle" fontFamily="var(--font-display)" fontSize="6" fontWeight="600" fill="#fff">New</text>
+      </g>
+    </svg>
+  );
+}
+
 const MOCKUPS: Record<ProjectId, () => JSX.Element> = {
   chainshots: ChainShotsMockup,
+  supersquad: SuperSquadMockup,
   rivali: RivaliMockup,
   serene: SereneMockup,
   news: NewsMockup,

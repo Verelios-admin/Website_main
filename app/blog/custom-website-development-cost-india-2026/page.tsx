@@ -215,6 +215,9 @@ export default function Post() {
               </p>
 
               <h2>How to spot agencies that will overcharge you</h2>
+              <p>
+                Price is only half the decision — the other half is <a href="/blog/how-to-choose-web-development-agency-india">how to choose a web development agency</a> you can actually trust. A few pricing-specific warning signs:
+              </p>
               <ul>
                 <li><strong>They refuse to give a fixed quote.</strong> "Time and materials" is fine for very large projects, but on websites under ₹3 lakh it usually means the price will inflate.</li>
                 <li><strong>They quote in hours, not deliverables.</strong> You don&apos;t want to pay for hours — you want to pay for a website.</li>
