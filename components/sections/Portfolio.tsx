@@ -994,18 +994,64 @@ export function Portfolio() {
           ))}
         </div>
 
-        <p
-          style={{
-            marginTop: 40,
-            textAlign: 'center',
-            fontFamily: 'var(--font-text)',
-            fontSize: 15,
-            color: 'rgba(255,255,255,0.55)',
-            letterSpacing: '-0.01em',
-          }}
-        >
-          …and 50+ more projects shipped across fintech, real estate, healthcare, e-commerce and more.
-        </p>
+        <div style={{ marginTop: 48, textAlign: 'center' }}>
+          <div
+            className="more-work-pill"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 14,
+              maxWidth: 560,
+              padding: '14px 24px',
+              borderRadius: 'var(--radius-pill)',
+              background: 'rgba(41,151,255,0.06)',
+              border: '1px solid rgba(41,151,255,0.22)',
+              textAlign: 'left',
+            }}
+          >
+            <span
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                fontSize: 26,
+                lineHeight: 1,
+                letterSpacing: '-0.02em',
+                backgroundImage: 'linear-gradient(135deg, #2997ff 0%, #7cc1ff 60%, #b794ff 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+                flexShrink: 0,
+              }}
+            >
+              50+
+            </span>
+            <span
+              style={{
+                fontFamily: 'var(--font-text)',
+                fontSize: 14.5,
+                lineHeight: 1.45,
+                color: 'rgba(255,255,255,0.72)',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              more projects shipped across fintech, real estate, healthcare &amp; e-commerce.
+            </span>
+          </div>
+          <div style={{ marginTop: 18 }}>
+            <a
+              href="#contact"
+              style={{
+                color: '#2997ff',
+                fontWeight: 500,
+                fontSize: 14,
+                textDecoration: 'none',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Start your project →
+            </a>
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
