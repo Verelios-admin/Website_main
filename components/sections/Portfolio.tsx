@@ -973,7 +973,7 @@ export function Portfolio() {
         >
           <div className="eyebrow eyebrow-on-dark">Selected work</div>
           <h2 className="display-section" style={{ color: '#fff' }}>
-            Eight clients. <br />
+            50+ clients. <br />
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>One studio, shipping.</span>
           </h2>
           <p className="lead lead-on-dark" style={{ marginTop: 6, maxWidth: 640 }}>
@@ -993,6 +993,19 @@ export function Portfolio() {
             <ProjectCard key={p.id} p={p} />
           ))}
         </div>
+
+        <p
+          style={{
+            marginTop: 40,
+            textAlign: 'center',
+            fontFamily: 'var(--font-text)',
+            fontSize: 15,
+            color: 'rgba(255,255,255,0.55)',
+            letterSpacing: '-0.01em',
+          }}
+        >
+          …and 50+ more projects shipped across fintech, real estate, healthcare, e-commerce and more.
+        </p>
       </div>
 
       <style jsx>{`
