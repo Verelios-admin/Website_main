@@ -994,29 +994,31 @@ export function Portfolio() {
           ))}
         </div>
 
-        <div style={{ marginTop: 48, textAlign: 'center' }}>
-          <div
-            className="more-work-pill"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 14,
-              maxWidth: 560,
-              padding: '14px 24px',
-              borderRadius: 'var(--radius-pill)',
-              background: 'rgba(41,151,255,0.06)',
-              border: '1px solid rgba(41,151,255,0.22)',
-              textAlign: 'left',
-            }}
-          >
+        <div
+          className="more-work-card"
+          style={{
+            marginTop: 40,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 28,
+            flexWrap: 'wrap',
+            background:
+              'radial-gradient(80% 140% at 0% 0%, rgba(41,151,255,0.14) 0%, transparent 55%), linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: 'var(--radius-lg)',
+            padding: '30px 36px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, minWidth: 0 }}>
             <span
               style={{
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
-                fontSize: 26,
+                fontSize: 56,
                 lineHeight: 1,
-                letterSpacing: '-0.02em',
-                backgroundImage: 'linear-gradient(135deg, #2997ff 0%, #7cc1ff 60%, #b794ff 100%)',
+                letterSpacing: '-0.03em',
+                backgroundImage: 'linear-gradient(135deg, #2997ff 0%, #7cc1ff 55%, #b794ff 100%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
@@ -1025,32 +1027,36 @@ export function Portfolio() {
             >
               50+
             </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-text)',
-                fontSize: 14.5,
-                lineHeight: 1.45,
-                color: 'rgba(255,255,255,0.72)',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              more projects shipped across fintech, real estate, healthcare &amp; e-commerce.
-            </span>
+            <span aria-hidden="true" style={{ width: 1, height: 52, background: 'rgba(255,255,255,0.12)', flexShrink: 0 }} />
+            <div style={{ minWidth: 0 }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 600,
+                  fontSize: 19,
+                  letterSpacing: '-0.015em',
+                  color: '#fff',
+                  marginBottom: 4,
+                }}
+              >
+                More projects shipped
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--font-text)',
+                  fontSize: 14.5,
+                  lineHeight: 1.5,
+                  color: 'rgba(255,255,255,0.6)',
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                Across fintech, real estate, healthcare, e-commerce &amp; more.
+              </div>
+            </div>
           </div>
-          <div style={{ marginTop: 18 }}>
-            <a
-              href="#contact"
-              style={{
-                color: '#2997ff',
-                fontWeight: 500,
-                fontSize: 14,
-                textDecoration: 'none',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              Start your project →
-            </a>
-          </div>
+          <a href="#contact" className="btn-pill press" style={{ fontWeight: 600, flexShrink: 0 }}>
+            Start your project →
+          </a>
         </div>
       </div>
 
@@ -1059,6 +1065,14 @@ export function Portfolio() {
           :global(.project-grid) {
             grid-template-columns: 1fr !important;
             gap: 22px !important;
+          }
+        }
+
+        @media (max-width: 620px) {
+          :global(.more-work-card) {
+            justify-content: center !important;
+            text-align: center;
+            padding: 26px 24px !important;
           }
         }
 
