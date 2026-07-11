@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/MetaPixel';
 import { TopContactBar } from '@/components/TopContactBar';
+import { JsonLdDedupe } from '@/components/JsonLdDedupe';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -158,6 +159,12 @@ export const metadata: Metadata = {
     // google: 'add-your-google-site-verification-token-here',
     // other: { 'msvalidate.01': 'add-your-bing-token-here' },
   },
+  // Relocated out of a manual <head> element (which was causing React to
+  // re-inject <head> children on hydration). Next emits these <meta> tags for us.
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0c' },
+  ],
   other: {
     'geo.region':    'IN-UP',
     'geo.placename': 'Kanpur, Uttar Pradesh',
@@ -258,23 +265,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-IN" className={inter.variable}>
-      <head>
-        {/* No hardcoded viewport meta — Next.js App Router already emits the
-            default `width=device-width, initial-scale=1`. A second one here
-            produced a duplicate <meta name="viewport"> in the output. */}
-        <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        {/* No hard-coded canonical here — it would stamp the homepage URL onto
-            every page. Canonicals are emitted per-page by the Next Metadata API. */}
-        {/* No fonts.googleapis.com hints: next/font self-hosts Inter (its woff2
-            is already preloaded), so the Google Fonts CDN is never contacted —
-            the hints only burned an early connection slot on slow mobile links. */}
+      {/* No manual <head> element. In the App Router a hand-written <head> in
+          the layout made React re-inject its children (JSON-LD, scripts) during
+          hydration, so the rendered page ended up with TWO of each JSON-LD block
+          — two aggregateRatings on /locations/kanpur, which is what tripped the
+          GSC "Review has multiple aggregate ratings" error. <meta>/<title>/etc.
+          now come from the Metadata API; the scripts below render in <body>,
+          which Next hydrates cleanly. */}
+      <body className={inter.className}>
+        {/* Safety net: strips any exact-duplicate JSON-LD the client might still
+            add on hydration, so Google's renderer only ever sees one of each.
+            See components/JsonLdDedupe.tsx. */}
+        <JsonLdDedupe />
+
+        {/* Pre-resolve DNS for the deferred analytics/pixel origins. */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+        {/* Site-wide structured data (Organization + WebSite). Google reads
+            JSON-LD from the <body> just as well as the <head>. Page-specific
+            schema (LocalBusiness + reviews, FAQ, breadcrumbs) lives on each
+            page, per Google's guidelines. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+
         {/* Google Analytics 4 + Google Ads conversion tracking.
-            lazyOnload defers these past the LCP/TBT measurement window.
-            The Contact form's gtag call has its own retry-until-loaded
-            guard so conversion tracking still fires when the user submits. */}
+            lazyOnload defers these past the LCP/TBT measurement window. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18037984640"
           strategy="lazyOnload"
@@ -295,23 +317,7 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* JSON-LD must be in the initial HTML so search-engine crawlers
-            (which don't always execute JS) pick it up — use plain <script>
-            tags, not next/script with afterInteractive. */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
-        {/* Page-specific schema (LocalBusiness + reviews, HowTo, FAQPage,
-            homepage BreadcrumbList) lives on the homepage (app/page.tsx),
-            not here — it should only appear on the page whose content it
-            describes, per Google's structured-data guidelines. */}
-      </head>
-      <body className={inter.className}>
+
         <a href="#home" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
         <TopContactBar />
