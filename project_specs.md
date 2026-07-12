@@ -46,14 +46,14 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 - [x] **Bonus:** "Pune-based" → "Kanpur-based" on website-development page (false-claim fix; owner confirmed Kanpur).
 - [~] **app/sitemap.ts:** deferred — the existing static `public/sitemap.xml` already lists all pages; refreshed `lastmod` to 2026-06-16 for the 6 changed pages. (Deleting the static file to switch to `app/sitemap.ts` would need your OK per the "ask before deleting" rule; we'll do it when adding the AI/local pages.)
 
-### Phase 2 — Local SEO (Kanpur) ✓ COMPLETED 2026-06-16 (build-verified). Real NAP: **Verelios Labs, 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006 · +91 8471094125 · open daily 8am–11pm**. GBP already verified (5.0 from 23 reviews).
+### Phase 2 — Local SEO (Kanpur) ✓ COMPLETED 2026-06-16 (build-verified). Real NAP: **Verelios Labs, 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006 · +91 8299522798 (primary) · open 24 hours, daily**. WhatsApp remains +91 8471094125. GBP verified (5.0 from 42 reviews).
 - [x] "Pune-based" → "Kanpur-based" (website-development page).
-- [x] Added `PostalAddress` + `GeoCoordinates` (26.4382, 80.3010 — Govind Nagar approx; refine to exact GBP pin if desired) + `openingHoursSpecification` (08:00–23:00 daily) to `localBusinessJsonLd`; mirrored `PostalAddress` into Organization schema.
+- [x] Added `PostalAddress` + `GeoCoordinates` (26.4382, 80.3010 — Govind Nagar approx; refine to exact GBP pin if desired) + `openingHoursSpecification` (open 24 hours, daily) to `localBusinessJsonLd`; mirrored `PostalAddress` into Organization schema.
 - [x] geo meta → region `IN-UP`, placename Kanpur, Kanpur coordinates.
 - [x] `areaServed` now leads Kanpur/Lucknow/UP, then Bangalore (served on-site) + India + metros. No "no office"/"remote" wording anywhere public.
 - [x] Visible `<address>` NAP block in Footer; Kanpur/Lucknow local keywords added; `llms.txt` location + hours + 5.0/23-review rating + "Last updated" + Kanpur address updated.
-- [x] `aggregateRating` reviewCount → 23 (matches real verified Google reviews).
-- **Owner to-do:** GBP hours currently show "Open 24 hours" — change to daily 8am–11pm so it matches the site.
+- [x] `aggregateRating` reviewCount → 42 (matches real verified Google reviews as of 2026-07-12).
+- [x] Resolved 2026-07-12: business is genuinely 24 hours; site hours updated to 24/7 to match GBP. Primary phone set to +91 8299522798 sitewide (schema + display); WhatsApp links stay on +91 8471094125. reviewCount updated 23 → 42.
 
 ### Phase 3 — AI automation service page (net-new content). DONE = `/services/ai-automation` live, wired into nav/footer/related, with Service + Breadcrumb + FAQPage schema. *(Needs owner data: what AI automation you actually offer + starting price.)*
 

@@ -17,8 +17,8 @@ Last updated: 2026-06-16
 - **Post-launch:** 7 days of free support, then optional monthly maintenance
 - **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel/AWS
 - **Contact:** contact@verelios.com · WhatsApp +91 8471094125
-- **Hours:** Open every day, 8am–11pm IST
-- **Rating:** 5.0 stars from 23 Google reviews
+- **Hours:** Open 24 hours, every day (IST)
+- **Rating:** 5.0 stars from 42 Google reviews
 - **Founded:** 2024
 
 ## Services
@@ -46,5 +46,5 @@ Last updated: 2026-06-16
 - Email: contact@verelios.com
 - WhatsApp: +91 8471094125
 - Address: 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
-- Hours: Open every day, 8am–11pm IST
+- Hours: Open 24 hours, every day (IST)
 - Sitemap: https://www.verelios.com/sitemap.xml

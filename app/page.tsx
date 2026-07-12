@@ -55,7 +55,7 @@ const localBusinessJsonLd = {
   name: 'Verelios Labs',
   alternateName: ['Verelios', 'Verelios Web & App Studio'],
   url: SITE_URL,
-  telephone: '+91-8471094125',
+  telephone: '+91-8299522798',
   email: 'contact@verelios.com',
   priceRange: '₹49,999 – ₹3,00,000+',
   address: {
@@ -78,8 +78,8 @@ const localBusinessJsonLd = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '08:00',
-      closes: '23:00',
+      opens: '00:00',
+      closes: '23:59',
     },
   ],
   image: `${SITE_URL}/logo.webp`,
@@ -105,7 +105,7 @@ const localBusinessJsonLd = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '23',
+    reviewCount: '42',
     bestRating:  '5',
     worstRating: '1',
   },
@@ -352,7 +352,7 @@ const faqJsonLd = {
       name: 'Where in Kanpur is Verelios Labs located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We are based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open every day, 8am–11pm, and you are welcome to meet us in person or talk over WhatsApp before starting a project.',
+        text: 'We are based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours, every day, and you are welcome to meet us in person or talk over WhatsApp before starting a project.',
       },
     },
     {

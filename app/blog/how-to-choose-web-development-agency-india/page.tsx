@@ -175,7 +175,7 @@ export default function Post() {
 
               <h3>Indian agency vs Indian freelance on Upwork</h3>
               <p>
-                Upwork is cheaper hourly but has higher risk: no NDA enforcement, no Indian-law contract, no recourse if work isn&apos;t delivered. A registered Indian agency with a GST number and a physical office is meaningfully safer for projects above ₹50k.
+                Upwork is cheaper hourly but has higher risk: no NDA enforcement, no Indian-law contract, no recourse if work isn&apos;t delivered. A registered Indian agency with a GST number and a physical office you can actually visit — like <a href="/locations/kanpur">our studio in Kanpur</a> — is meaningfully safer for projects above ₹50k.
               </p>
 
               <h2>Final checklist before you sign</h2>

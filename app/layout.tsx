@@ -208,14 +208,14 @@ const orgJsonLd = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+91-8471094125',
+      telephone: '+91-8299522798',
       contactType: 'sales',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi'],
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+91-8299522798',
+      telephone: '+91-8471094125',
       contactType: 'customer service',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi'],

@@ -65,21 +65,21 @@ export function TopContactBar() {
         }}
       >
         <a
-          href="tel:+918471094125"
+          href="tel:+918299522798"
           className="tcb-item"
           aria-label="Call Verelios Labs in India (primary)"
         >
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
-          <span>+91 84710 94125</span>
+          <span>+91 82995 22798</span>
         </a>
         <span className="tcb-sep tcb-hidden-sm" aria-hidden="true">·</span>
         <a
-          href="tel:+918299522798"
+          href="tel:+918471094125"
           className="tcb-item tcb-hidden-sm"
           aria-label="Call Verelios Labs in India (secondary)"
         >
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
-          <span>+91 82995 22798</span>
+          <span>+91 84710 94125</span>
         </a>
         <span className="tcb-sep" aria-hidden="true">·</span>
         <a

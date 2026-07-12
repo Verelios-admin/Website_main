@@ -51,7 +51,7 @@ const serviceJsonLd = {
     '@type': 'ProfessionalService',
     name: 'Verelios Labs',
     url: SITE,
-    telephone: '+91-8471094125',
+    telephone: '+91-8299522798',
     email: 'contact@verelios.com',
     areaServed: { '@type': 'Country', name: 'India' },
   },

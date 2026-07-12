@@ -62,7 +62,7 @@ const localBusinessJsonLd = {
   name: 'Verelios Labs',
   alternateName: ['Verelios', 'Verelios Labs Kanpur'],
   url: `${SITE}${URL_PATH}`,
-  telephone: '+91-8471094125',
+  telephone: '+91-8299522798',
   email: 'contact@verelios.com',
   priceRange: '₹49,999 – ₹10,00,000+',
   address: {
@@ -83,8 +83,8 @@ const localBusinessJsonLd = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '08:00',
-      closes: '23:00',
+      opens: '00:00',
+      closes: '23:59',
     },
   ],
   image: `${SITE}/logo.webp`,
@@ -110,7 +110,7 @@ const localBusinessJsonLd = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
-    reviewCount: '23',
+    reviewCount: '42',
     bestRating: '5',
     worstRating: '1',
   },
@@ -152,7 +152,7 @@ const faqJsonLd = {
       name: 'Where is Verelios Labs located in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open every day from 8am to 11pm, and you are welcome to visit us in person or talk over WhatsApp before starting a project.',
+        text: 'We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.',
       },
     },
     {
@@ -250,8 +250,8 @@ export default function KanpurLocationPage() {
                   Open
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  Every day · 8am–11pm<br />
-                  <a href="tel:+918471094125" style={{ color: '#2997ff', textDecoration: 'none' }}>+91 84710 94125</a>
+                  Open 24 hours · Every day<br />
+                  <a href="tel:+918299522798" style={{ color: '#2997ff', textDecoration: 'none' }}>+91 82995 22798</a>
                 </div>
               </div>
               <div>
@@ -259,12 +259,71 @@ export default function KanpurLocationPage() {
                   Rated 5.0 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  23 client reviews<br />
+                  42 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Client reviews — visible on-page and mirrored 1:1 by the Review
+            schema in localBusinessJsonLd above, per Google's rich-results
+            guidelines (review markup must reflect content users can see). We
+            render straight from the same array so the two can never drift. */}
+        <section className="tile" style={{ paddingTop: 8, paddingBottom: 24 }}>
+          <div className="wrap" style={{ maxWidth: 900, margin: '0 auto' }}>
+            <Prose>
+              <h2>What our Kanpur clients say</h2>
+            </Prose>
+
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
+              <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
+              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 42 verified client reviews</span>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: 16,
+              }}
+            >
+              {localBusinessJsonLd.review.map((r) => (
+                <figure
+                  key={r.author.name}
+                  style={{
+                    margin: 0,
+                    padding: 22,
+                    borderRadius: 'var(--radius-lg)',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  <div aria-hidden="true" style={{ color: '#f5a623', fontSize: 15, letterSpacing: 2, marginBottom: 10 }}>★★★★★</div>
+                  <blockquote style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.82)' }}>
+                    &ldquo;{r.reviewBody}&rdquo;
+                  </blockquote>
+                  <figcaption style={{ marginTop: 14, fontSize: 14, fontWeight: 600, color: '#fff' }}>
+                    {r.author.name}
+                    <span style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}> · Kanpur</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+
+            <div style={{ marginTop: 20 }}>
+              <a
+                href={GBP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#2997ff', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
+              >
+                Read all our reviews on Google →
+              </a>
             </div>
           </div>
         </section>
@@ -283,9 +342,9 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 5.0★</strong> across 23 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 5.0★</strong> across 42 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
-                <li><strong>Open every day, 8am–11pm</strong>, with a real human on WhatsApp.</li>
+                <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 
               <h2>What we build for Kanpur businesses</h2>
@@ -367,7 +426,7 @@ export default function KanpurLocationPage() {
               <h2>Frequently asked questions</h2>
               <h3>Where is Verelios Labs located in Kanpur?</h3>
               <p>
-                We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open every day from 8am to 11pm, and you are welcome to visit us in person or talk over WhatsApp before starting a project.
+                We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.
               </p>
               <h3>What software services do you offer in Kanpur?</h3>
               <p>
@@ -391,7 +450,7 @@ export default function KanpurLocationPage() {
 
         <ClosingCta
           heading="Let's build it together, in Kanpur."
-          body="Tell us what you need — a website, an app, an ERP or payroll system. We'll send a free 48-hour mockup and a fixed quote, and you're welcome to visit our Govind Nagar office any day, 8am–11pm."
+          body="Tell us what you need — a website, an app, an ERP or payroll system. We'll send a free 48-hour mockup and a fixed quote, and you're welcome to visit our Govind Nagar office any day — we're open 24 hours."
         />
       </SubPageLayout>
     </>
