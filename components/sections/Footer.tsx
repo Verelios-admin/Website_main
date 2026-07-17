@@ -55,8 +55,17 @@ const COLS = [
       ['Process', '/#process'],
       ['Pricing', '/#pricing'],
       ['Blog', '/blog'],
-      ['Software company in Kanpur', '/locations/kanpur'],
       ['Contact', '/#contact'],
+    ],
+  },
+  {
+    head: 'Kanpur',
+    links: [
+      ['Software company in Kanpur', '/locations/kanpur'],
+      ['Website development in Kanpur', '/locations/kanpur/website-development'],
+      ['App development in Kanpur', '/locations/kanpur/mobile-app-development'],
+      ['AI development in Kanpur', '/locations/kanpur/ai-development'],
+      ['ERP software in Kanpur', '/locations/kanpur/erp-software'],
     ],
   },
   {
@@ -79,7 +88,7 @@ export function Footer() {
           className="footer-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.4fr 1fr 1fr 1fr',
+            gridTemplateColumns: '1.4fr 1fr 1fr 1fr 1fr',
             gap: 32,
             marginBottom: 36,
           }}

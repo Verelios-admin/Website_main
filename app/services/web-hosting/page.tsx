@@ -9,9 +9,9 @@ const URL_PATH = '/services/web-hosting';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Managed Web Hosting & Maintenance Company in India',
+  title: 'Managed Web Hosting & Website Maintenance — 99.9% Uptime, No Lock-In',
   description:
-    'Fully managed web hosting & website maintenance for Indian businesses — 99.9% uptime, daily backups, free SSL, security patches, speed monitoring and a human on WhatsApp. Quoted per project, no lock-in.',
+    'Never worry about your website going down again. Fully managed hosting & maintenance for Indian businesses — 99.9% uptime, daily backups, free SSL, security patches and a real human on WhatsApp. From ₹3,000/mo, no lock-in.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   keywords: [
     'managed web hosting India',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     'fast web hosting for business',
   ],
   openGraph: {
-    title: 'Managed Web Hosting & Maintenance Company in India | Verelios Labs',
+    title: 'Managed Web Hosting & Website Maintenance — 99.9% Uptime | Verelios Labs',
     description:
-      'Fully managed hosting & maintenance — 99.9% uptime, daily backups, free SSL, security patches and speed monitoring, with a human on WhatsApp. Quoted per project.',
+      'Never worry about downtime again. Managed hosting & maintenance — 99.9% uptime, daily backups, free SSL, security patches, with a human on WhatsApp. From ₹3,000/mo, no lock-in.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verelios Labs — Studio Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --ink-80: #333333;
+    --ink-48: #7a7a7a;
+    --canvas: #ffffff;
+    --parchment: #f5f5f7;
+    --pearl: #fafafc;
+    --blue: #0066cc;
+    --blue-bright: #2997ff;
+    --blue-deep: #0057b3;
+    --hairline: #e0e0e0;
+    --divider: rgba(0, 0, 0, 0.06);
+    --dark: #0a0a0b;
+    --grad-blue: linear-gradient(135deg, #2997ff 0%, #0066cc 55%, #0057b3 100%);
+    --font: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: #e9e9ec;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ---------- SCREEN: stacked, centered, scaled ---------- */
+  .deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 96px 24px 80px;
+  }
+
+  /* A4 landscape: 297mm x 210mm */
+  .slide {
+    position: relative;
+    width: 297mm;
+    height: 210mm;
+    background: var(--canvas);
+    overflow: hidden;
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 22mm 24mm;
+  }
+
+  /* ---------- Toolbar ---------- */
+  .toolbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: rgba(245, 245, 247, 0.82);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--divider);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    z-index: 100;
+  }
+  .toolbar .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; font-size: 15px; letter-spacing: -0.2px;
+  }
+  .toolbar .brand .dot {
+    width: 24px; height: 24px;
+    background: url("verelios-mark.png") center/contain no-repeat;
+  }
+  .toolbar .hint { color: var(--ink-48); font-size: 13px; font-weight: 500; }
+  .btn-download {
+    appearance: none; border: none; cursor: pointer;
+    background: var(--grad-blue); color: #fff;
+    font-family: var(--font); font-weight: 600; font-size: 14px;
+    padding: 10px 20px; border-radius: 9999px;
+    letter-spacing: -0.1px;
+    transition: transform 100ms ease-out, box-shadow 180ms ease-out;
+    box-shadow: 0 8px 20px -8px rgba(0, 102, 204, 0.6);
+  }
+  .btn-download:hover { box-shadow: 0 12px 26px -8px rgba(0, 102, 204, 0.7); }
+  .btn-download:active { transform: scale(0.96); }
+
+  /* ---------- Shared type ---------- */
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--blue);
+  }
+  .eyebrow.muted { color: var(--ink-48); }
+  .display-hero {
+    font-size: 76px; font-weight: 700; line-height: 1.02; letter-spacing: -0.03em;
+  }
+  .display-section {
+    font-size: 46px; font-weight: 700; line-height: 1.06; letter-spacing: -0.025em;
+  }
+  .lead {
+    font-size: 21px; font-weight: 400; line-height: 1.4; color: var(--ink-80);
+    letter-spacing: -0.01em;
+  }
+  .small { font-size: 14px; line-height: 1.5; color: var(--ink-48); }
+
+  /* page number / footer chrome */
+  .slide-foot {
+    position: absolute;
+    bottom: 14mm; left: 24mm; right: 24mm;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--ink-48); text-transform: uppercase;
+  }
+  .slide-foot .v { display: flex; align-items: center; gap: 7px; }
+  .slide-foot .v .mk {
+    width: 18px; height: 18px;
+    background: url("verelios-mark.png") center/contain no-repeat;
+  }
+  .section-head { margin-bottom: 8mm; }
+  .section-head .display-section { margin-top: 12px; max-width: 88%; }
+
+  /* ---------- DARK slides ---------- */
+  .slide.dark {
+    background: var(--dark); color: #fff;
+  }
+  .slide.dark .lead { color: #c7c7cc; }
+  .slide.dark .small { color: #8e8e93; }
+  .slide.dark .slide-foot { color: #6e6e73; }
+  .slide.dark .eyebrow { color: var(--blue-bright); }
+
+  /* ===== Slide 1 — Cover ===== */
+  .cover { justify-content: center; }
+  .cover .glow {
+    position: absolute; width: 720px; height: 720px; border-radius: 50%;
+    filter: blur(120px); opacity: 0.5;
+    background: radial-gradient(circle, rgba(41,151,255,0.55), transparent 65%);
+    top: -260px; right: -180px;
+  }
+  .cover .glow2 {
+    position: absolute; width: 560px; height: 560px; border-radius: 50%;
+    filter: blur(130px); opacity: 0.4;
+    background: radial-gradient(circle, rgba(183,148,255,0.5), transparent 65%);
+    bottom: -240px; left: -160px;
+  }
+  .cover .logo-row { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; z-index: 2; }
+  .cover .logo-row .mark {
+    width: 48px; height: 48px;
+    background: url("verelios-mark.png") center/contain no-repeat;
+  }
+  .cover .logo-row .name { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; }
+  .cover .kicker {
+    z-index: 2; display: inline-flex; align-items: center; gap: 9px;
+    align-self: flex-start; margin-bottom: 22px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: #d6d6db;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 15px; border-radius: 9999px;
+  }
+  .cover .kicker .pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: #34d399;
+    box-shadow: 0 0 0 4px rgba(52,211,153,0.18);
+  }
+  .cover h1 { z-index: 2; max-width: 15ch; }
+  .cover h1 .accent {
+    background: linear-gradient(120deg, #7cc1ff 0%, #2997ff 50%, #b794ff 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .cover .sub { z-index: 2; margin-top: 24px; max-width: 62ch; font-size: 22px; color: #c7c7cc; line-height: 1.42; }
+  .cover .caps {
+    z-index: 2; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 9px; align-self: flex-start;
+  }
+  .cover .caps span {
+    font-size: 13.5px; font-weight: 500; color: #e6e6eb;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 16px; border-radius: 10px; letter-spacing: -0.01em;
+  }
+  .cover .caps span.hot {
+    color: #fff; border-color: rgba(41,151,255,0.55);
+    background: linear-gradient(135deg, rgba(41,151,255,0.22), rgba(0,102,204,0.14));
+  }
+  .cover .meta {
+    z-index: 2; margin-top: 44px; display: flex; gap: 40px;
+  }
+  .cover .meta .item .k { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
+  .cover .meta .item .l { font-size: 13px; color: #8e8e93; margin-top: 4px; letter-spacing: 0.02em; }
+  .cover .meta .item .k .b { color: var(--blue-bright); }
+
+  /* ===== Generic grids ===== */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+  .card {
+    border: 1px solid var(--hairline); border-radius: 14px;
+    padding: 22px 22px; background: var(--pearl);
+    display: flex; flex-direction: column;
+  }
+  .card .num {
+    font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: 0.08em;
+  }
+  .card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 10px 0 8px; }
+  .card p { font-size: 14px; line-height: 1.46; color: var(--ink-80); }
+  .card .tags { margin-top: auto; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .card .tags span {
+    font-size: 11px; font-weight: 500; color: var(--ink-48);
+    border: 1px solid var(--hairline); border-radius: 9999px; padding: 4px 10px;
+    background: #fff;
+  }
+
+  /* ===== Problem slide ===== */
+  .problem { justify-content: center; }
+  .problem .quote {
+    font-size: 40px; font-weight: 700; line-height: 1.16; letter-spacing: -0.025em; max-width: 20ch;
+  }
+  .problem .quote .strike { color: var(--ink-48); text-decoration: line-through; text-decoration-thickness: 2px; }
+  .problem .quote .hl { color: var(--blue); }
+  .problem .answer { margin-top: 34px; max-width: 56ch; }
+
+  /* ===== Who we are ===== */
+  .who { flex-direction: row; gap: 40px; align-items: center; }
+  .who .left { flex: 1.1; }
+  .who .right { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .who .stat-line {
+    border-left: 3px solid var(--blue); padding: 6px 0 6px 18px;
+  }
+  .who .stat-line .k { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+  .who .stat-line .l { font-size: 14px; color: var(--ink-48); margin-top: 2px; }
+
+  /* ===== Tech partner (dark) ===== */
+  .partner .grid-3 { margin-top: auto; }
+  .partner .card {
+    background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);
+  }
+  .partner .card h3 { color: #fff; }
+  .partner .card p { color: #b8b8bd; }
+  .partner .card .tags span { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); color: #c7c7cc; }
+  .partner .lead { max-width: 64ch; }
+
+  /* ===== Process ===== */
+  .process .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 6mm; flex: 1; }
+  .process .step { position: relative; padding: 0 22px 0 0; }
+  .process .step:not(:last-child)::after {
+    content: ""; position: absolute; top: 22px; right: 14px; width: 1px; height: calc(100% - 30px);
+    background: var(--divider);
+  }
+  .process .step .day {
+    display: inline-block; font-size: 11px; font-weight: 600; color: var(--blue);
+    background: rgba(0,102,204,0.08); border-radius: 9999px; padding: 4px 11px; letter-spacing: 0.04em;
+  }
+  .process .step .n {
+    font-size: 13px; font-weight: 700; color: var(--ink-48); letter-spacing: 0.1em; margin-top: 18px;
+  }
+  .process .step h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 8px 0 10px; }
+  .process .step p { font-size: 13.5px; line-height: 1.46; color: var(--ink-80); }
+  .process .closer {
+    margin-top: 6mm; padding: 16px 22px; border-radius: 12px; background: var(--parchment);
+    font-size: 15px; font-weight: 500; color: var(--ink-80); letter-spacing: -0.01em;
+  }
+  .process .closer b { color: var(--ink); }
+
+  /* ===== Why us ===== */
+  .why .grid-3 { gap: 14px; }
+  .why .card { background: #fff; }
+  .why .card h3 { margin-top: 0; }
+
+  /* ===== Numbers ===== */
+  .numbers .body { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+  .numbers .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .numbers .nb {
+    position: relative; overflow: hidden;
+    border: 1px solid var(--hairline); border-radius: 16px; padding: 30px 26px;
+    background: var(--pearl); display: flex; flex-direction: column; min-height: 178px;
+  }
+  .numbers .nb::before {
+    content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--grad-blue);
+  }
+  .numbers .nb .k { font-size: 56px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .numbers .nb .k .b { color: var(--blue); }
+  .numbers .nb .l { font-size: 14.5px; color: var(--ink-48); margin-top: auto; padding-top: 18px; line-height: 1.42; }
+  .numbers .trusted { text-align: center; }
+  .numbers .trusted .lbl {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-48);
+  }
+  .numbers .trusted .names {
+    margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 9px 20px;
+  }
+  .numbers .trusted .names span { font-size: 17px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; }
+  .numbers .trusted .names .sep { color: var(--hairline); font-weight: 400; }
+  .numbers .industries { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .numbers .industries span {
+    font-size: 13px; font-weight: 500; color: var(--ink-80);
+    border: 1px solid var(--hairline); border-radius: 9999px; padding: 7px 16px;
+  }
+
+  /* ===== Work / portfolio ===== */
+  .work .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 1; }
+  .work .pcard {
+    border: 1px solid var(--hairline); border-radius: 14px; padding: 18px;
+    background: var(--pearl); display: flex; flex-direction: column;
+  }
+  .work .pcard .cat { font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.04em; }
+  .work .pcard h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 8px 0 6px; }
+  .work .pcard .plat { font-size: 12px; color: var(--ink-48); }
+  .work .pcard .metric {
+    margin-top: auto; padding-top: 14px; font-size: 13.5px; font-weight: 500;
+    color: var(--ink); line-height: 1.4;
+  }
+  .work .pcard .metric .arrow { color: var(--blue); font-weight: 700; }
+
+  /* ===== Testimonials ===== */
+  .quotes .grid-3 { gap: 14px; }
+  .quotes .qcard {
+    border: 1px solid var(--hairline); border-radius: 14px; padding: 22px;
+    background: #fff; display: flex; flex-direction: column;
+  }
+  .quotes .stars { color: #f5a623; font-size: 15px; letter-spacing: 2px; }
+  .quotes .qcard p { font-size: 14px; line-height: 1.5; color: var(--ink-80); margin: 12px 0 16px; }
+  .quotes .who2 { margin-top: auto; }
+  .quotes .who2 .nm { font-size: 14px; font-weight: 600; }
+  .quotes .who2 .rl { font-size: 12px; color: var(--ink-48); margin-top: 2px; }
+
+  /* ===== Pricing ===== */
+  .pricing .grid-3 { gap: 16px; flex: 1; align-items: stretch; }
+  .pricing .pc {
+    border: 1px solid var(--hairline); border-radius: 16px; padding: 28px 24px;
+    display: flex; flex-direction: column; background: var(--pearl);
+  }
+  .pricing .pc.feature { background: var(--dark); color: #fff; border-color: var(--dark); position: relative; }
+  .pricing .pc.feature .badge {
+    position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #fff;
+    background: var(--grad-blue); padding: 5px 11px; border-radius: 9999px;
+  }
+  .pricing .pc .tier { font-size: 14px; font-weight: 600; color: var(--blue); letter-spacing: 0.02em; }
+  .pricing .pc.feature .tier { color: var(--blue-bright); }
+  .pricing .pc .from {
+    font-size: 12px; font-weight: 500; color: var(--ink-48); letter-spacing: 0.04em;
+    text-transform: uppercase; margin-top: 16px;
+  }
+  .pricing .pc.feature .from { color: #8e8e93; }
+  .pricing .pc .price { font-size: 38px; font-weight: 700; letter-spacing: -0.03em; margin: 4px 0 4px; }
+  .pricing .pc .price small { font-size: 18px; font-weight: 600; color: var(--ink-48); }
+  .pricing .pc.feature .price small { color: #8e8e93; }
+  .pricing .pc .time { font-size: 13px; color: var(--ink-48); }
+  .pricing .pc.feature .time { color: #8e8e93; }
+  .pricing .pc ul { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .pricing .pc li { font-size: 13.5px; color: var(--ink-80); display: flex; gap: 9px; align-items: flex-start; line-height: 1.4; }
+  .pricing .pc.feature li { color: #c7c7cc; }
+  .pricing .pc li .ck { color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .pricing .pc.feature li .ck { color: var(--blue-bright); }
+  .pricing .terms { margin-top: 7mm; font-size: 14px; color: var(--ink-48); text-align: center; }
+  .pricing .terms b { color: var(--ink); }
+
+  /* ===== Stack ===== */
+  .stack .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
+  .stack .group h4 { font-size: 13px; font-weight: 600; color: var(--ink-48); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .stack .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .stack .chips span {
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    border: 1px solid var(--hairline); border-radius: 10px; padding: 9px 15px; background: var(--pearl);
+  }
+  .stack .chips span.ai {
+    color: var(--blue-deep); border-color: rgba(0,102,204,0.35);
+    background: linear-gradient(135deg, rgba(41,151,255,0.10), rgba(0,102,204,0.06));
+  }
+
+  /* ===== CTA close (dark) ===== */
+  .close { justify-content: center; align-items: flex-start; }
+  .close .glow {
+    position: absolute; width: 700px; height: 700px; border-radius: 50%;
+    filter: blur(130px); opacity: 0.45;
+    background: radial-gradient(circle, rgba(41,151,255,0.6), transparent 65%);
+    bottom: -300px; right: -160px;
+  }
+  .close .biglogo { z-index: 2; width: 230px; height: auto; margin-bottom: 38px; }
+  .close h2 { z-index: 2; font-size: 60px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; max-width: 16ch; }
+  .close .lead { z-index: 2; margin-top: 24px; max-width: 52ch; font-size: 21px; }
+  .close .contacts { z-index: 2; margin-top: 52px; display: flex; gap: 56px; }
+  .close .contacts .c .l { font-size: 12px; color: #8e8e93; letter-spacing: 0.06em; text-transform: uppercase; }
+  .close .contacts .c .v { font-size: 20px; font-weight: 600; margin-top: 8px; color: #fff; }
+  .close .contacts .c .v.b { color: var(--blue-bright); }
+
+  /* ---------- PRINT ---------- */
+  @page { size: A4 landscape; margin: 0; }
+
+  @media print {
+    html, body { background: #fff; }
+    .toolbar { display: none !important; }
+    .deck { padding: 0; gap: 0; display: block; }
+    .slide {
+      box-shadow: none; border-radius: 0;
+      width: 297mm; height: 209.8mm;
+      page-break-after: always; break-after: page;
+      page-break-inside: avoid; break-inside: avoid;
+      margin: 0 !important; transform: none !important;
+    }
+    .slide:last-child { page-break-after: auto; }
+    /* keep dark backgrounds in PDF */
+    .slide, .slide * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ---------- responsive screen scaling (screen only — must NOT affect print) ---------- */
+  @media screen and (max-width: 1200px) {
+    .deck { padding: 80px 0 60px; }
+    .slide { transform: scale(0.62); transform-origin: top center; margin-bottom: -80mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="brand"><span class="dot"></span> Verelios Labs — Studio Deck</div>
+  <div class="hint">Click download, then choose <b>“Save as PDF”</b> as the destination</div>
+  <button class="btn-download" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="deck">
+
+  <!-- ============ 1. COVER ============ -->
+  <section class="slide dark cover">
+    <div class="glow"></div>
+    <div class="glow2"></div>
+    <div class="logo-row">
+      <span class="mark"></span>
+      <span class="name">Verelios Labs</span>
+    </div>
+    <span class="kicker"><span class="pulse"></span> Your product &amp; engineering team — without the headcount</span>
+    <h1 class="display-hero">Idea to launch in <span class="accent">three weeks.</span></h1>
+    <p class="sub">We design, build and automate custom websites, mobile apps, software and AI workflows — then stay on as the long-term tech partner founders and CTOs build around.</p>
+    <div class="caps">
+      <span>Websites</span>
+      <span>Mobile Apps</span>
+      <span>Custom Software</span>
+      <span class="hot">AI Automation</span>
+      <span class="hot">Tech Partner</span>
+    </div>
+    <div class="meta">
+      <div class="item"><div class="k">10<span class="b">+</span></div><div class="l">Projects delivered</div></div>
+      <div class="item"><div class="k">&lt;3<span class="b"> wks</span></div><div class="l">Avg. delivery time</div></div>
+      <div class="item"><div class="k">48<span class="b"> hrs</span></div><div class="l">Free mockup</div></div>
+      <div class="item"><div class="k">5.0<span class="b">/5</span></div><div class="l">Client rating</div></div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>Web &amp; App Studio · Made in India</div>
+    </div>
+  </section>
+
+  <!-- ============ 2. THE PROBLEM ============ -->
+  <section class="slide problem">
+    <div class="eyebrow">The problem</div>
+    <p class="quote" style="margin-top:16px;">
+      Most founders hear <span class="strike">“we’ll need eight weeks”</span> and watch it become <span class="strike">six months.</span><br/>
+      <span class="hl">We don’t work that way.</span>
+    </p>
+    <p class="lead answer">
+      Agencies stack account managers, project coordinators, and offshore chains between you and the people writing your code. Timelines balloon, costs creep, and the metric you actually care about never moves. Verelios Labs is the opposite of that — a small studio built to ship fast, communicate directly, and charge only as the work lands.
+    </p>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>02</div>
+    </div>
+  </section>
+
+  <!-- ============ 3. WHO WE ARE ============ -->
+  <section class="slide who">
+    <div class="left">
+      <div class="eyebrow">Who we are</div>
+      <h2 class="display-section" style="margin:14px 0 0;">A studio that actually ships.</h2>
+      <p class="lead" style="margin-top:22px; max-width:46ch;">
+        We’re a small Indian studio that designs and builds custom websites, mobile apps and software. We stay small on purpose — no account managers, no coordinators, no offshore-to-offshore chains.
+      </p>
+      <p class="lead" style="margin-top:16px; max-width:46ch;">
+        You message us on WhatsApp and the people writing your code reply. That’s the entire stack.
+      </p>
+    </div>
+    <div class="right">
+      <div class="stat-line"><div class="k">One team</div><div class="l">Designers + engineers, start to finish</div></div>
+      <div class="stat-line"><div class="k">One channel</div><div class="l">Direct WhatsApp — replies in under an hour</div></div>
+      <div class="stat-line"><div class="k">One promise</div><div class="l">Live in under three weeks, no scope creep</div></div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>03</div>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHAT WE DO (services) ============ -->
+  <section class="slide work">
+    <div class="section-head">
+      <div class="eyebrow">What we do</div>
+      <h2 class="display-section">Six services. One team. End to end.</h2>
+    </div>
+    <div class="grid-3" style="flex:1;">
+      <div class="card">
+        <span class="num">01</span><h3>App Development</h3>
+        <p>Native iOS and Android, or cross-platform from a single React Native / Flutter codebase. Shipped to both stores.</p>
+        <div class="tags"><span>iOS &amp; Android</span><span>React Native</span><span>Flutter</span></div>
+      </div>
+      <div class="card">
+        <span class="num">02</span><h3>Web Development</h3>
+        <p>Fast, scalable web apps on the same stack the best product teams use. Built to convert, not just to look pretty.</p>
+        <div class="tags"><span>React &amp; Next.js</span><span>Full-stack</span><span>E-commerce</span></div>
+      </div>
+      <div class="card">
+        <span class="num">03</span><h3>Custom Software</h3>
+        <p>Internal tools, CRMs, ERPs, dashboards — tailored to your workflow, not someone else’s idea of one.</p>
+        <div class="tags"><span>APIs</span><span>Integrations</span><span>Cloud</span></div>
+      </div>
+      <div class="card">
+        <span class="num">04</span><h3>UI / UX Design</h3>
+        <p>Design that earns user trust on the first screen. Research, wireframes, prototypes, and a system you can hand to your team.</p>
+        <div class="tags"><span>Research</span><span>Prototyping</span><span>Design systems</span></div>
+      </div>
+      <div class="card">
+        <span class="num">05</span><h3>Performance</h3>
+        <p>Make what you already have faster. Speed audits, refactors, SEO setup, and analytics that tell you what to fix next.</p>
+        <div class="tags"><span>Speed</span><span>SEO</span><span>Analytics</span></div>
+      </div>
+      <div class="card">
+        <span class="num">06</span><h3>Maintenance &amp; Support</h3>
+        <p>Ongoing care so your product keeps shipping. Bug fixes, feature updates, security patches, and a human on WhatsApp.</p>
+        <div class="tags"><span>Monitoring</span><span>Security</span><span>Updates</span></div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>04</div>
+    </div>
+  </section>
+
+  <!-- ============ 5. TECH PARTNER (dark) ============ -->
+  <section class="slide dark partner">
+    <div class="eyebrow">Beyond projects</div>
+    <h2 class="display-section" style="margin:14px 0 22px; color:#fff;">We don’t just deliver. We become your tech partner.</h2>
+    <p class="lead">
+      Most clients come for one project and stay because we work like an in-house team — without the headcount. When you partner with Verelios, your product roadmap gets a dedicated engineering and design team on call: shaping what to build next, owning the technical decisions, and shipping continuously as your business grows.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Embedded team, on demand</h3>
+        <p>Treat us as your engineering department. Scale up for a launch, scale down between sprints — no hiring, no overhead.</p>
+        <div class="tags"><span>Dedicated devs</span><span>Design + build</span></div>
+      </div>
+      <div class="card">
+        <h3>Product &amp; roadmap support</h3>
+        <p>We advise on what to build, the right stack, and how to sequence releases so each one moves a metric that matters.</p>
+        <div class="tags"><span>Strategy</span><span>Architecture</span></div>
+      </div>
+      <div class="card">
+        <h3>Long-term ownership</h3>
+        <p>Continuous improvements, monitoring, security, and a direct line on WhatsApp. The same people, every release.</p>
+        <div class="tags"><span>Retainers</span><span>24/7 monitoring</span></div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>05</div>
+    </div>
+  </section>
+
+  <!-- ============ 6. PROCESS ============ -->
+  <section class="slide process">
+    <div class="section-head">
+      <div class="eyebrow">How we work</div>
+      <h2 class="display-section">First message to live launch in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="day">Day 1</span>
+        <div class="n">01 · Consultation</div>
+        <h3>Free consultation</h3>
+        <p>Tell us about your project on WhatsApp or a quick call. We understand your goals, audience, and timeline — no commitment.</p>
+      </div>
+      <div class="step">
+        <span class="day">Day 2–3</span>
+        <div class="n">02 · Mockup</div>
+        <h3>Free mockup in 48h</h3>
+        <p>We design a visual mockup within 48 hours. You review and approve before we write a single line of code.</p>
+      </div>
+      <div class="step">
+        <span class="day">Day 4–18</span>
+        <div class="n">03 · Build</div>
+        <h3>Development &amp; updates</h3>
+        <p>We build with regular WhatsApp updates. Progress in real time, change requests at any milestone, no waiting.</p>
+      </div>
+      <div class="step">
+        <span class="day">Day 19–21</span>
+        <div class="n">04 · Launch</div>
+        <h3>Launch &amp; support</h3>
+        <p>We deploy live, handle the technical setup, and stick around for seven days of free post-launch support.</p>
+      </div>
+    </div>
+    <div class="closer">
+      <b>No surprises, no delays.</b> You see progress every day, you approve every milestone, and you pay only as the work lands.
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>06</div>
+    </div>
+  </section>
+
+  <!-- ============ 7. WHY US ============ -->
+  <section class="slide why">
+    <div class="section-head">
+      <div class="eyebrow">Why Verelios</div>
+      <h2 class="display-section">What you get that agencies don’t give you.</h2>
+    </div>
+    <div class="grid-3" style="flex:1;">
+      <div class="card"><h3>Under 3-week delivery</h3><p>Most projects go from kickoff to launch in under 21 days. No endless timelines, no scope creep dressed up as a feature.</p></div>
+      <div class="card"><h3>A dedicated human</h3><p>One person on WhatsApp — updates, feedback, queries, all resolved without scheduling a single call.</p></div>
+      <div class="card"><h3>Built to convert</h3><p>Every site and app we ship is engineered around one thing: turning your visitors into paying customers.</p></div>
+      <div class="card"><h3>Pay in milestones</h3><p>30% to start, 30% at mid-delivery, 40% at launch. You pay as the work lands, not before it begins.</p></div>
+      <div class="card"><h3>7-day post-launch support</h3><p>Bug fixes, copy tweaks, last-mile changes — on us, for the first week after we ship.</p></div>
+      <div class="card"><h3>SEO &amp; speed included</h3><p>Meta tags, sitemap, structured data, performance tuning. Every project ships ready to rank.</p></div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>07</div>
+    </div>
+  </section>
+
+  <!-- ============ 8. NUMBERS ============ -->
+  <section class="slide numbers">
+    <div class="section-head">
+      <div class="eyebrow">The proof</div>
+      <h2 class="display-section">Numbers that earn the first reply.</h2>
+    </div>
+    <div class="body">
+      <div class="stats">
+        <div class="nb"><div class="k">10<span class="b">+</span></div><div class="l">Projects shipped across web, mobile &amp; software</div></div>
+        <div class="nb"><div class="k">&lt;3<span class="b">w</span></div><div class="l">Average time from first message to live launch</div></div>
+        <div class="nb"><div class="k">100<span class="b">%</span></div><div class="l">Client satisfaction rate to date</div></div>
+        <div class="nb"><div class="k">5.0<span class="b">★</span></div><div class="l">Average rating across 50+ clients</div></div>
+      </div>
+      <div class="trusted">
+        <div class="lbl">Trusted by founders &amp; teams at</div>
+        <div class="names">
+          <span>ChainShots</span><span class="sep">·</span>
+          <span>Rivali Park</span><span class="sep">·</span>
+          <span>Serene Homes</span><span class="sep">·</span>
+          <span>RMPD Jewellers</span><span class="sep">·</span>
+          <span>Envirofluent</span><span class="sep">·</span>
+          <span>PuneAIJobs</span><span class="sep">·</span>
+          <span>MyBiniyog</span>
+        </div>
+      </div>
+      <div class="industries">
+        <span>Fintech</span><span>Real Estate</span><span>News &amp; Media</span><span>Jobs &amp; Careers</span>
+        <span>Retail &amp; Jewellery</span><span>Manufacturing &amp; ERP</span><span>Stock Advisory</span><span>E-commerce</span>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>08</div>
+    </div>
+  </section>
+
+  <!-- ============ 9. SELECTED WORK ============ -->
+  <section class="slide work">
+    <div class="section-head">
+      <div class="eyebrow">Selected work</div>
+      <h2 class="display-section">Shipped, live, and moving metrics.</h2>
+    </div>
+    <div class="grid-4">
+      <div class="pcard">
+        <div class="cat">Crypto news</div><h3>ChainShots</h3><div class="plat">iOS · Android · Web</div>
+        <div class="metric"><span class="arrow">↑</span> 5,000+ active users at launch</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Real estate</div><h3>Rivali Park</h3><div class="plat">Web</div>
+        <div class="metric"><span class="arrow">2×</span> more property inquiries in month one</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Real estate</div><h3>Serene Homes</h3><div class="plat">Web · Mobile</div>
+        <div class="metric"><span class="arrow">↑</span> 40% more lead conversions after launch</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Retail</div><h3>RMPD Jewellers</h3><div class="plat">Web</div>
+        <div class="metric"><span class="arrow">↑</span> 60% increase in customer inquiries</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">ERP</div><h3>Envirofluent</h3><div class="plat">Internal software</div>
+        <div class="metric"><span class="arrow">↓</span> 70% less manual work for the ops team</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Jobs · AI</div><h3>PuneAIJobs</h3><div class="plat">Web</div>
+        <div class="metric"><span class="arrow">↑</span> 10,000+ job listings at launch</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Stock advisory</div><h3>MyBiniyog</h3><div class="plat">Web · Mobile</div>
+        <div class="metric"><span class="arrow">⚡</span> Web + mobile in four weeks</div>
+      </div>
+      <div class="pcard">
+        <div class="cat">Media</div><h3>News &amp; Media</h3><div class="plat">Web</div>
+        <div class="metric"><span class="arrow">⚡</span> Delivered in 2.5 weeks · 3× faster loads</div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>09</div>
+    </div>
+  </section>
+
+  <!-- ============ 10. TESTIMONIALS ============ -->
+  <section class="slide quotes">
+    <div class="section-head">
+      <div class="eyebrow">What clients say</div>
+      <h2 class="display-section">Founders who bet on speed — and won.</h2>
+    </div>
+    <div class="grid-3" style="flex:1;">
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“They delivered our website in just 2.5 weeks and we saw double the inquiries within the first month. Didn’t expect this quality at this price.”</p>
+        <div class="who2"><div class="nm">Rajesh M.</div><div class="rl">Real Estate Business Owner</div></div>
+      </div>
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“They built our website and mobile app at the same time. Quality was outstanding and our conversions jumped 40% after launch.”</p>
+        <div class="who2"><div class="nm">Priya S.</div><div class="rl">Entrepreneur, Property Business</div></div>
+      </div>
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“The milestone-based payment model made it risk-free for us. Felt like having an in-house team. Best tech team we’ve worked with.”</p>
+        <div class="who2"><div class="nm">Vikram Singh</div><div class="rl">CTO, HealthFirst Clinics</div></div>
+      </div>
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“Skeptical about the 3-week timeline — but they shipped my store in 18 days. My online sales have tripled since launch.”</p>
+        <div class="who2"><div class="nm">Neha Gupta</div><div class="rl">Founder, StyleCart</div></div>
+      </div>
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“The news app handles thousands of daily readers flawlessly. Real-time updates and push notifications just work.”</p>
+        <div class="who2"><div class="nm">Amit Patel</div><div class="rl">Director, FastNews Media</div></div>
+      </div>
+      <div class="qcard">
+        <div class="stars">★★★★★</div>
+        <p>“The new site loads in under 2 seconds and our bounce rate dropped 60%. Free SEO setup helped us rank on page one.”</p>
+        <div class="who2"><div class="nm">Ananya Krishnan</div><div class="rl">Marketing Head, TravelBuddy</div></div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>10</div>
+    </div>
+  </section>
+
+  <!-- ============ 11. PRICING ============ -->
+  <section class="slide pricing">
+    <div class="section-head">
+      <div class="eyebrow">Investment</div>
+      <h2 class="display-section">Transparent pricing. Pay as it ships.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="pc">
+        <div class="tier">Business Website</div>
+        <div class="from">Starting from</div>
+        <div class="price">₹14,999</div>
+        <div class="time">Live in 7–14 days</div>
+        <ul>
+          <li><span class="ck">✓</span> Responsive, conversion-focused design</li>
+          <li><span class="ck">✓</span> SEO &amp; speed setup included</li>
+          <li><span class="ck">✓</span> Free 48-hour mockup</li>
+          <li><span class="ck">✓</span> 7-day post-launch support</li>
+        </ul>
+      </div>
+      <div class="pc feature">
+        <div class="badge">Most popular</div>
+        <div class="tier">Mobile App</div>
+        <div class="from">Starting from</div>
+        <div class="price">₹49,999</div>
+        <div class="time">Live in 3–5 weeks</div>
+        <ul>
+          <li><span class="ck">✓</span> iOS + Android, both stores</li>
+          <li><span class="ck">✓</span> React Native / Flutter build</li>
+          <li><span class="ck">✓</span> Push notifications &amp; analytics</li>
+          <li><span class="ck">✓</span> Milestone-based payment</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="tier">Custom Software</div>
+        <div class="from">Starting from</div>
+        <div class="price">₹99,999</div>
+        <div class="time">Live in 4–8 weeks</div>
+        <ul>
+          <li><span class="ck">✓</span> CRMs, ERPs, dashboards, tools</li>
+          <li><span class="ck">✓</span> API development &amp; integrations</li>
+          <li><span class="ck">✓</span> Cloud architecture &amp; scaling</li>
+          <li><span class="ck">✓</span> Dedicated project lead</li>
+        </ul>
+      </div>
+    </div>
+    <div class="terms">
+      Final quote is tailored to your scope. <b>Milestone payment:</b> 30% to start · 30% mid-delivery · 40% at launch. No upfront commitment, free mockup first.
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>11</div>
+    </div>
+  </section>
+
+  <!-- ============ 12. STACK ============ -->
+  <section class="slide stack">
+    <div class="section-head">
+      <div class="eyebrow">Under the hood</div>
+      <h2 class="display-section">A tight, modern stack — on every project.</h2>
+    </div>
+    <div class="cols">
+      <div class="group">
+        <h4>Web &amp; Frontend</h4>
+        <div class="chips"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Astro</span><span>shadcn/ui</span></div>
+        <h4 style="margin-top:28px;">Mobile</h4>
+        <div class="chips"><span>React Native</span><span>Flutter</span><span>Expo</span><span>Swift</span><span>Kotlin</span></div>
+        <h4 style="margin-top:28px;">AI &amp; Automation</h4>
+        <div class="chips"><span class="ai">OpenAI / GPT</span><span class="ai">Claude</span><span class="ai">LangChain</span><span class="ai">RAG &amp; Vector DB</span><span class="ai">n8n</span></div>
+      </div>
+      <div class="group">
+        <h4>Backend &amp; Data</h4>
+        <div class="chips"><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span><span>Prisma</span><span>Redis</span><span>GraphQL</span></div>
+        <h4 style="margin-top:28px;">Cloud &amp; DevOps</h4>
+        <div class="chips"><span>Vercel</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Cloudflare</span><span>GitHub Actions</span></div>
+        <h4 style="margin-top:28px;">Payments &amp; Integrations</h4>
+        <div class="chips"><span>Stripe</span><span>Razorpay</span><span>Twilio</span><span>WhatsApp API</span></div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>12</div>
+    </div>
+  </section>
+
+  <!-- ============ 13. CLOSE / CTA (dark) ============ -->
+  <section class="slide dark close">
+    <div class="glow"></div>
+    <img class="biglogo" src="verelios-logo.png" alt="Verelios Labs" />
+    <h2>Got an idea? Let’s make it real.</h2>
+    <p class="lead">Tell us about your project on WhatsApp or a quick call. We’ll send a free mockup within 48 hours — no upfront payment, no commitment.</p>
+    <div class="contacts">
+      <div class="c"><div class="l">WhatsApp / Call</div><div class="v b">+91 82995 22798</div></div>
+      <div class="c"><div class="l">Email</div><div class="v">contact@verelios.com</div></div>
+      <div class="c"><div class="l">Studio</div><div class="v">verelios.com · India</div></div>
+    </div>
+    <div class="slide-foot">
+      <div class="v"><span class="mk"></span> Verelios Labs</div>
+      <div>Usually replies in under an hour</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

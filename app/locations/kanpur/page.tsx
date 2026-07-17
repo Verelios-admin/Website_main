@@ -191,11 +191,11 @@ const faqJsonLd = {
 };
 
 const LOCAL_SERVICES = [
-  { title: 'Website development', desc: 'Fast, conversion-focused sites for Kanpur businesses. From ₹49,999, live in 7–14 days.', href: '/services/website-development' },
-  { title: 'Mobile app development', desc: 'iOS & Android apps from one codebase, shipped to both stores in 3–5 weeks.', href: '/services/mobile-app-development' },
-  { title: 'Custom ERP software', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/services/erp' },
-  { title: 'HR & payroll software', desc: 'Attendance, salary structures, payslips and PF / ESI / TDS — built into your custom software.', href: '/services/custom-software-development' },
-  { title: 'AI automation', desc: 'Chatbots, workflow automation and document processing that take busywork off your team.', href: '/services/ai-automation' },
+  { title: 'Website development in Kanpur', desc: 'Fast, conversion-focused sites for Kanpur businesses. From ₹49,999, live in 7–14 days.', href: '/locations/kanpur/website-development' },
+  { title: 'Mobile app development in Kanpur', desc: 'iOS & Android apps from one codebase, shipped to both stores in 3–5 weeks.', href: '/locations/kanpur/mobile-app-development' },
+  { title: 'AI development in Kanpur', desc: 'AI agents, chatbots, machine learning and workflow automation that take busywork off your team.', href: '/locations/kanpur/ai-development' },
+  { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
+  { title: 'HR & payroll software', desc: 'Attendance, salary structures, payslips and PF / ESI / TDS — built into your custom software.', href: '/locations/kanpur/erp-software' },
   { title: 'Web hosting & maintenance', desc: 'Managed hosting with 99.9% uptime, backups, SSL and a human on WhatsApp.', href: '/services/web-hosting' },
 ];
 
@@ -391,7 +391,7 @@ export default function KanpurLocationPage() {
             <Prose>
               <h2>ERP &amp; payroll software, built in Kanpur</h2>
               <p>
-                A lot of Kanpur businesses — especially in manufacturing, leather, textiles, trading and distribution — are still run on a patchwork of Tally, Excel and registers. We build <a href="/services/erp">custom ERP software</a> that pulls inventory, production, purchase, sales, accounting and reporting into one system that matches how you actually work. Add <strong>HR &amp; payroll</strong> — attendance, salary structures, payslips, and PF / ESI / TDS calculations — and month-end stops being a week-long spreadsheet marathon. It integrates cleanly with Tally and the GST portal, so your CA&apos;s workflow doesn&apos;t change.
+                A lot of Kanpur businesses — especially in manufacturing, leather, textiles, trading and distribution — are still run on a patchwork of Tally, Excel and registers. We build <a href="/locations/kanpur/erp-software">custom ERP software in Kanpur</a> that pulls inventory, production, purchase, sales, accounting and reporting into one system that matches how you actually work. Add <strong>HR &amp; payroll</strong> — attendance, salary structures, payslips, and PF / ESI / TDS calculations — and month-end stops being a week-long spreadsheet marathon. It integrates cleanly with Tally and the GST portal, so your CA&apos;s workflow doesn&apos;t change.
               </p>
 
               <h2>Areas we serve across Kanpur</h2>

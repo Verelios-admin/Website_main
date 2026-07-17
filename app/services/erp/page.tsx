@@ -210,6 +210,9 @@ export default function ERPPage() {
               <p>
                 A focused single-module ERP starts at <strong>₹99,999</strong>. A full multi-module system — inventory, manufacturing, sales, accounting, HR and reporting — typically lands between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40). We always show the monthly hosting cost before you commit, so there are no surprises after launch. For CRMs, dashboards and other internal tools, see our broader <a href="/services/custom-software-development">custom software development</a> service.
               </p>
+              <p>
+                Based in Kanpur? See our dedicated <a href="/locations/kanpur/erp-software">ERP software company in Kanpur</a> page — we build manufacturing, leather, textile and trading ERP for local units and can visit your shop floor.
+              </p>
 
               <h2>Frequently asked questions</h2>
               <h3>What is custom ERP software and how is it different from SAP or Tally?</h3>

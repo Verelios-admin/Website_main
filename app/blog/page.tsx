@@ -33,6 +33,38 @@ const breadcrumbJsonLd = {
 
 const posts = [
   {
+    slug: 'best-ai-development-companies-kanpur-2026',
+    title: 'Best AI development companies in Kanpur (2026)',
+    excerpt:
+      'AI is the newest and thinnest field in Kanpur’s tech scene. An honest look at who’s actually building AI locally — and how to tell a real partner from a reseller.',
+    readTime: '7 min read',
+    date: '2026-07-17',
+  },
+  {
+    slug: 'best-website-development-companies-kanpur-2026',
+    title: 'Best website development companies in Kanpur (2026)',
+    excerpt:
+      'A fair, up-to-date roundup of the website development companies worth knowing in Kanpur this year — what each does well, and the questions that help you choose.',
+    readTime: '7 min read',
+    date: '2026-07-17',
+  },
+  {
+    slug: 'best-app-development-companies-kanpur-2026',
+    title: 'Best mobile app development companies in Kanpur (2026)',
+    excerpt:
+      'Who builds iOS and Android apps well in Kanpur in 2026, and how to pick the right partner for a product you’ll maintain for years.',
+    readTime: '7 min read',
+    date: '2026-07-17',
+  },
+  {
+    slug: 'best-erp-software-companies-kanpur-2026',
+    title: 'Best ERP software companies in Kanpur (2026)',
+    excerpt:
+      'Kanpur runs on manufacturing and trade, and ERP is how the good units stay in control. Who builds ERP locally, custom vs off-the-shelf, and how to choose.',
+    readTime: '7 min read',
+    date: '2026-07-17',
+  },
+  {
     slug: 'ai-automation-for-indian-businesses-2026',
     title: 'AI automation for Indian businesses (2026)',
     excerpt:

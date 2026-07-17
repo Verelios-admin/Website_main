@@ -218,6 +218,9 @@ export default function WebsiteDevelopmentPage() {
               <p>
                 We work remotely with founders across <strong>Pune, Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Ahmedabad, Jaipur, Lucknow, Patna, Indore</strong> and the rest of India. Communication is on WhatsApp + weekly Google Meet so location doesn&apos;t matter — we&apos;ve shipped projects without ever meeting the client in person.
               </p>
+              <p>
+                Based in Kanpur and want to meet in person? See our dedicated <a href="/locations/kanpur/website-development">website development company in Kanpur</a> page — we&apos;re a real team in Govind Nagar you can sit across from.
+              </p>
 
               <h2>Frequently asked questions</h2>
               <h3>How much does custom website development cost in India?</h3>

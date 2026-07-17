@@ -190,6 +190,9 @@ export default function AIAutomationPage() {
               <p>
                 A focused automation — one workflow or one bot — starts at <strong>₹49,999</strong>, with a fixed quote up front and milestone payments (30/30/40). Larger assistants and multi-system workflows are scoped per project. We&apos;ll always tell you the monthly running cost (model and hosting usage) before you commit, so there are no surprises after launch.
               </p>
+              <p>
+                Based in Kanpur and want to meet in person? See our dedicated <a href="/locations/kanpur/ai-development">AI development company in Kanpur</a> page — a real AI team in Govind Nagar you can sit across from.
+              </p>
 
               <h2>Frequently asked questions</h2>
               <h3>What kinds of AI automation do you build?</h3>
