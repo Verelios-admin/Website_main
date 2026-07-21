@@ -240,7 +240,7 @@ export default function KanpurMobileAppDevelopmentPage() {
                 <li><strong>Free 48-hour mockup</strong> — see your app designed before you pay a rupee.</li>
                 <li><strong>One codebase, both stores</strong> — iOS and Android together, not billed twice.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 42 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 5.0★</strong> across 37 client reviews. <strong>You own the code.</strong></li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 

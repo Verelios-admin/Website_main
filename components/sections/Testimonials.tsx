@@ -142,7 +142,7 @@ export function Testimonials() {
               5.0 / 5.0
             </div>
             <div style={{ color: 'var(--color-ink-muted-48)', fontSize: 13, marginTop: 6 }}>
-              Average rating from 50+ clients
+              5.0 average rating from 37 Google reviews
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ const articleJsonLd = {
   wordCount: 1300,
   articleSection: 'AI Automation',
   keywords: 'AI chatbot for business India, AI chatbot development India, WhatsApp chatbot India, AI chatbot cost India',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -89,8 +89,9 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
-                Every business owner has been pitched an AI chatbot in the last year. Some need one; many don&apos;t. The difference comes down to whether you&apos;re answering the same questions over and over, and losing customers when you&apos;re slow to reply. Here&apos;s an honest look at what a modern chatbot does, what it costs, and how to decide.
+                Every business owner has been pitched an AI chatbot in the last year. Some need one; many don&apos;t. The difference comes down to whether you&apos;re answering the same questions over and over, and losing customers when you&apos;re slow to reply. Here&apos;s an honest look at what a modern chatbot does, what it costs, and how to decide. A chatbot is just one slice of the bigger picture &mdash; for everything else worth automating, see our broader <a href="/blog/ai-automation-for-indian-businesses-2026">guide to AI automation for Indian businesses</a>.
               </p>
 
               <h2>What a good AI chatbot actually does in 2026</h2>

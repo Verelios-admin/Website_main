@@ -48,7 +48,7 @@ const articleJsonLd = {
   wordCount: 1300,
   articleSection: 'ERP Software',
   keywords: 'best ERP software company in Kanpur, top ERP companies in Kanpur',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: { '@type': 'ImageObject', url: `${SITE}/logo.webp`, width: 1200, height: 630 },
@@ -85,6 +85,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Kanpur&apos;s economy runs on leather, textiles, engineering, FMCG, chemicals and trade — and the units that stay in control of stock, production and month-end accounts almost always run on a proper ERP rather than a pile of spreadsheets. Choosing the right ERP company locally is a big decision. Here&apos;s an honest roundup for 2026.
               </p>
@@ -96,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                An ERP software company in <strong>Govind Nagar, Kanpur</strong> that builds <strong>custom ERP</strong> around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting, reporting and HR &amp; payroll, with <strong>Tally and GST integration</strong>. Rather than forcing you into a rigid product, Verelios maps the system to your process, delivers module by module, and lets you own the code. Add a real local office, a <strong>5.0★ rating across 42 reviews</strong>, and on-site shop-floor discovery, and it&apos;s a strong fit for Kanpur&apos;s manufacturers and traders. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
+                An ERP software company in <strong>Govind Nagar, Kanpur</strong> that builds <strong>custom ERP</strong> around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting, reporting and HR &amp; payroll, with <strong>Tally and GST integration</strong>. Rather than forcing you into a rigid product, Verelios maps the system to your process, delivers module by module, and lets you own the code. Add a real local office, a <strong>5.0★ rating across 37 reviews</strong>, and on-site shop-floor discovery, and it&apos;s a strong fit for Kanpur&apos;s manufacturers and traders. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
               </p>
 
               <h2>2. SigmaIT Software Designers</h2>

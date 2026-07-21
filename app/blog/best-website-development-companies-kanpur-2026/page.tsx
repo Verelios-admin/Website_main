@@ -48,7 +48,7 @@ const articleJsonLd = {
   wordCount: 1300,
   articleSection: 'Website Development',
   keywords: 'best website development company in Kanpur, top website development companies in Kanpur',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: { '@type': 'ImageObject', url: `${SITE}/logo.webp`, width: 1200, height: 630 },
@@ -85,6 +85,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Kanpur has a healthy crop of website development companies in 2026 — from decade-old IT firms to newer, engineering-first studios. This roundup covers the ones we think are genuinely worth talking to, what each is known for, and the questions that separate a good partner from a cheap one.
               </p>
@@ -96,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                A website development company based in <strong>Govind Nagar, Kanpur</strong>, Verelios Labs builds fast, SEO-ready websites on a modern React and Next.js stack. What sets it apart locally: a real office you can visit, a <strong>free 48-hour mockup</strong> before you pay, milestone-based payments (30/30/40), a <strong>5.0★ rating across 42 reviews</strong>, and a firm rule that you own your code and hosting outright. Sites ship in 7–21 days with on-page SEO built in. Best for businesses that want world-class engineering, local accountability and no lock-in. See the <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> page for details.
+                A website development company based in <strong>Govind Nagar, Kanpur</strong>, Verelios Labs builds fast, SEO-ready websites on a modern React and Next.js stack. What sets it apart locally: a real office you can visit, a <strong>free 48-hour mockup</strong> before you pay, milestone-based payments (30/30/40), a <strong>5.0★ rating across 37 reviews</strong>, and a firm rule that you own your code and hosting outright. Sites ship in 7–21 days with on-page SEO built in. Best for businesses that want world-class engineering, local accountability and no lock-in. See the <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> page for details.
               </p>
 
               <h2>2. Riveyra Infotech</h2>

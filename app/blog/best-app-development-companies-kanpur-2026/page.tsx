@@ -48,7 +48,7 @@ const articleJsonLd = {
   wordCount: 1300,
   articleSection: 'Mobile App Development',
   keywords: 'best app development company in Kanpur, top mobile app development companies in Kanpur',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: { '@type': 'ImageObject', url: `${SITE}/logo.webp`, width: 1200, height: 630 },
@@ -85,6 +85,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Building a mobile app is a bigger commitment than a website — it&apos;s a product you&apos;ll maintain for years. So the company you choose in Kanpur matters even more. Here&apos;s an honest roundup of the app development companies worth considering in 2026, and how to choose between them.
               </p>
@@ -96,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                A mobile app development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds iOS and Android apps from a single <strong>React Native or Flutter codebase</strong> — so you get both platforms for close to the cost and time of one. Highlights: a real office you can visit, a <strong>free 48-hour mockup</strong>, milestone payments, a <strong>5.0★ rating across 42 reviews</strong>, full store submission handled for you, and code and developer accounts you own. Apps typically ship to both stores in 3–5 weeks. See the <Link href="/locations/kanpur/mobile-app-development">mobile app development in Kanpur</Link> page.
+                A mobile app development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds iOS and Android apps from a single <strong>React Native or Flutter codebase</strong> — so you get both platforms for close to the cost and time of one. Highlights: a real office you can visit, a <strong>free 48-hour mockup</strong>, milestone payments, a <strong>5.0★ rating across 37 reviews</strong>, full store submission handled for you, and code and developer accounts you own. Apps typically ship to both stores in 3–5 weeks. See the <Link href="/locations/kanpur/mobile-app-development">mobile app development in Kanpur</Link> page.
               </p>
 
               <h2>2. Encoders</h2>

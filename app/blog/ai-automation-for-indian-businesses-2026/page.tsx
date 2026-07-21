@@ -47,7 +47,7 @@ const articleJsonLd = {
   wordCount: 1400,
   articleSection: 'AI Automation',
   keywords: 'AI automation for business India, AI automation cost India, workflow automation India, business process automation',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -89,6 +89,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 &quot;AI automation&quot; has become a phrase people use to sell almost anything. Stripped of the hype, it means one simple thing: getting software — sometimes with a language model attached — to do repetitive work your team currently does by hand. The useful question isn&apos;t &quot;should we use AI?&quot; It&apos;s &quot;which specific task in my business is costing me hours every week, and can a machine do it reliably?&quot; This guide answers that for Indian small and mid-sized businesses.
               </p>
@@ -100,7 +101,7 @@ export default function Post() {
               <ul>
                 <li><strong>Lead capture and follow-up.</strong> A lead fills your form or messages on WhatsApp; an automation tags it, logs it to your sheet or CRM, and sends an instant reply — so no enquiry sits unseen for hours.</li>
                 <li><strong>Document data entry.</strong> Invoices, purchase orders, forms and bills get read automatically and the key fields land in a spreadsheet or your accounting tool, instead of someone typing them in.</li>
-                <li><strong>Customer FAQ handling.</strong> An AI chatbot trained on your own pricing, policies and catalogue answers the same routine questions on your website or WhatsApp, and hands off to a human only when it&apos;s actually needed.</li>
+                <li><strong>Customer FAQ handling.</strong> An <a href="/blog/ai-chatbot-for-business-india">AI chatbot</a> trained on your own pricing, policies and catalogue answers the same routine questions on your website or WhatsApp, and hands off to a human only when it&apos;s actually needed. Chatbots are their own decision, so we cover them in a separate, dedicated guide rather than repeat it here.</li>
                 <li><strong>Reports and alerts.</strong> A daily or weekly summary of the numbers that matter — sales, stock, collections — delivered to the right person automatically, plus an alert when something crosses a threshold.</li>
                 <li><strong>App-to-app sync.</strong> When two tools you already use don&apos;t talk to each other (say, your store and your accounting software), an automation moves the data so no one reconciles it by hand.</li>
               </ul>

@@ -240,7 +240,7 @@ export default function KanpurErpSoftwarePage() {
                 <li><strong>Built around your workflow</strong> — not a rigid product you bend your business to fit.</li>
                 <li><strong>Tally &amp; GST integration</strong> — your CA&apos;s workflow doesn&apos;t change.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 42 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 5.0★</strong> across 37 client reviews. <strong>You own the code.</strong></li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 

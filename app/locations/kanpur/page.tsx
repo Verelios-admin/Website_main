@@ -256,7 +256,7 @@ export default function KanpurLocationPage() {
                   Rated 5.0 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  42 client reviews<br />
+                  37 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
@@ -287,7 +287,7 @@ export default function KanpurLocationPage() {
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
               <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 42 verified client reviews</span>
+              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 37 verified client reviews</span>
             </div>
 
             <div
@@ -347,7 +347,7 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 5.0★</strong> across 42 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 5.0★</strong> across 37 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

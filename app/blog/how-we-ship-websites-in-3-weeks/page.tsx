@@ -40,7 +40,7 @@ const articleJsonLd = {
   wordCount: 1180,
   articleSection: 'Process',
   keywords: 'website development process, 3-week website launch, fast website development India, Next.js website agency',
-  author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Verelios Labs', url: SITE },
+  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -82,6 +82,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Most agencies in India take 8–12 weeks to build a custom website. We average 14–21 days. Same scope, same quality, same React + Next.js stack. The difference isn&apos;t speed of typing — it&apos;s the process.
               </p>
