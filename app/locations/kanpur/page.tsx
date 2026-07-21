@@ -4,6 +4,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { LocalMap } from '@/components/sub-page/LocalMap';
 
 const URL_PATH = '/locations/kanpur';
 const SITE = 'https://www.verelios.com';
@@ -78,7 +79,7 @@ const localBusinessJsonLd = {
     latitude: '26.4382',
     longitude: '80.3010',
   },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -107,30 +108,26 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Rajesh M.' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Delivered our website in just 2.5 weeks and we saw double the inquiries within the first month. Being able to meet the team in Kanpur made it much easier to trust.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Priya S.' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'They built our website and a mobile app at the same time. Conversions jumped 40% after launch. A genuinely professional software team right here in Kanpur.',
-    },
-  ],
+  // NOTE: aggregateRating + review markup intentionally removed — Google forbids
+  // self-authored review markup and it risks a site-wide manual action. Re-add
+  // only from a verified GBP review source. The quotes below stay as visible
+  // on-page testimonials (no schema wrapper).
 };
+
+// Visible client testimonials (plain content, NOT review schema). Rendered on
+// the page as social proof only.
+const CLIENT_TESTIMONIALS = [
+  {
+    author: 'Rajesh M.',
+    body:
+      'Delivered our website in just 2.5 weeks and we saw double the inquiries within the first month. Being able to meet the team in Kanpur made it much easier to trust.',
+  },
+  {
+    author: 'Priya S.',
+    body:
+      'They built our website and a mobile app at the same time. Conversions jumped 40% after launch. A genuinely professional software team right here in Kanpur.',
+  },
+];
 
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
@@ -269,10 +266,18 @@ export default function KanpurLocationPage() {
           </div>
         </section>
 
-        {/* Client reviews — visible on-page and mirrored 1:1 by the Review
-            schema in localBusinessJsonLd above, per Google's rich-results
-            guidelines (review markup must reflect content users can see). We
-            render straight from the same array so the two can never drift. */}
+        {/* Map of the Govind Nagar office — strong local-trust + relevance
+            signal. Swap the embed src for the exact GBP "Embed a map" code when
+            available (see components/sub-page/LocalMap.tsx). */}
+        <section className="tile" style={{ paddingTop: 8, paddingBottom: 24 }}>
+          <div className="wrap" style={{ maxWidth: 900, margin: '0 auto' }}>
+            <LocalMap />
+          </div>
+        </section>
+
+        {/* Client testimonials — visible on-page social proof only. NOTE: the
+            Review/AggregateRating schema was removed (self-authored review
+            markup risks a manual action); these quotes carry no schema. */}
         <section className="tile" style={{ paddingTop: 8, paddingBottom: 24 }}>
           <div className="wrap" style={{ maxWidth: 900, margin: '0 auto' }}>
             <Prose>
@@ -292,9 +297,9 @@ export default function KanpurLocationPage() {
                 gap: 16,
               }}
             >
-              {localBusinessJsonLd.review.map((r) => (
+              {CLIENT_TESTIMONIALS.map((r) => (
                 <figure
-                  key={r.author.name}
+                  key={r.author}
                   style={{
                     margin: 0,
                     padding: 22,
@@ -305,10 +310,10 @@ export default function KanpurLocationPage() {
                 >
                   <div aria-hidden="true" style={{ color: '#f5a623', fontSize: 15, letterSpacing: 2, marginBottom: 10 }}>★★★★★</div>
                   <blockquote style={{ margin: 0, fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.82)' }}>
-                    &ldquo;{r.reviewBody}&rdquo;
+                    &ldquo;{r.body}&rdquo;
                   </blockquote>
                   <figcaption style={{ marginTop: 14, fontSize: 14, fontWeight: 600, color: '#fff' }}>
-                    {r.author.name}
+                    {r.author}
                     <span style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}> · Kanpur</span>
                   </figcaption>
                 </figure>

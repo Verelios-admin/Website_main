@@ -243,7 +243,7 @@ export default function ERPPage() {
 
         <ClosingCta
           heading="Ready to run your business on one system?"
-          body="Tell us what your team currently juggles across Tally, Excel and WhatsApp. We'll come back with a free 48-hour plan of your ERP and a fixed quote."
+          body="Tell us what your team currently juggles across Tally, Excel and WhatsApp. We'll set up a free ERP scoping call to map your systems, then follow up with a fixed quote."
         />
       </SubPageLayout>
     </>

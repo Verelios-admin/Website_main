@@ -36,8 +36,9 @@ export const metadata: Metadata = {
     default: 'Website, App & Software Developers in Kanpur | Verelios Labs',
     template: '%s | Verelios Labs',
   },
+  // ~150 chars so Google shows it in full (was 192, which truncated the CTA).
   description:
-    'Website, app & custom software developers in Govind Nagar, Kanpur — serving Kanpur and all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup, no upfront payment.',
+    'Website, app & software developers in Govind Nagar, Kanpur — serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup.',
   keywords: [
     // Primary intent
     'website development agency India',
@@ -117,7 +118,8 @@ export const metadata: Metadata = {
   // at the homepage. Each page now declares its OWN canonical via its metadata
   // (and the homepage declares its own in app/page.tsx).
   openGraph: {
-    title: 'Website & App Development Agency India | Verelios Labs',
+    // Aligned with the <title> so search and social show a consistent name.
+    title: 'Website, App & Software Developers in Kanpur | Verelios Labs',
     description:
       'Custom websites, mobile apps & software — idea to launch in under 3 weeks. Free 48-hour mockup. No upfront payment. Built with React, Next.js & React Native.',
     url: SITE_URL,
@@ -184,6 +186,10 @@ export const metadata: Metadata = {
 // only appears on the page whose content it describes.
 // ============================================================
 
+// Google Business Profile — included in Organization sameAs so Google ties this
+// website entity to the verified GBP listing (strongest entity/local signal).
+const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
@@ -230,7 +236,7 @@ const orgJsonLd = {
     postalCode: '208006',
     addressCountry: 'IN',
   },
-  sameAs: SOCIAL_LINKS,
+  sameAs: [...SOCIAL_LINKS, GBP_URL],
   foundingDate: '2024',
   areaServed: { '@type': 'Country', name: 'India' },
   knowsAbout: [
@@ -248,14 +254,9 @@ const websiteJsonLd = {
   name: 'Verelios Labs',
   publisher: { '@id': `${SITE_URL}/#organization` },
   inLanguage: 'en-IN',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: `${SITE_URL}/?q={search_term_string}`,
-    },
-    'query-input': 'required name=search_term_string',
-  },
+  // NOTE: SearchAction (Sitelinks Search Box) removed — the site has no on-page
+  // search that consumes ?q=, so declaring it was inaccurate. Re-add only if a
+  // real site search is built.
 };
 
 export default function RootLayout({

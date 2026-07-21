@@ -223,7 +223,7 @@ export default function CustomSoftwarePage() {
 
         <ClosingCta
           heading="Ready to replace those spreadsheets?"
-          body="Tell us what your team currently does manually. We'll come back with a free 48-hour mockup of the system and a fixed quote."
+          body="Tell us what your team currently does manually. We'll set up a free technical scoping call to map the system, then follow up with a fixed quote."
         />
       </SubPageLayout>
     </>

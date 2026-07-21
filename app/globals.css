@@ -307,12 +307,15 @@ hr.hair {
   content: '';
   position: absolute;
   top: 0;
-  left: -40%;
+  left: 0;
   width: 35%;
   height: 100%;
   z-index: 0;
   background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4) 50%, transparent);
-  transform: skewX(-18deg);
+  /* Animated via transform (GPU-composited) rather than `left`, which forced
+     a main-thread layout on every frame. */
+  transform: translateX(-140%) skewX(-18deg);
+  will-change: transform;
   pointer-events: none;
   animation: btn-shine 4.2s ease-in-out infinite;
 }
@@ -326,8 +329,8 @@ hr.hair {
   text-decoration: none;
 }
 @keyframes btn-shine {
-  0%, 70%, 100% { left: -40%; }
-  85%           { left: 130%; }
+  0%, 70%, 100% { transform: translateX(-140%) skewX(-18deg); }
+  85%           { transform: translateX(420%) skewX(-18deg); }
 }
 
 .cta-arrow {
@@ -391,17 +394,26 @@ hr.hair {
 
 /* Tiny pulsing dot — used as a "live" indicator next to button labels */
 .cta-live-dot {
+  position: relative;
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #34d399;
-  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+}
+/* The pulsing ring is a separate layer animated with transform + opacity
+   (GPU-composited) instead of an animated box-shadow (main-thread paint). */
+.cta-live-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.6);
   animation: cta-live 2s ease-in-out infinite;
 }
 @keyframes cta-live {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
-  50%      { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+  0%   { transform: scale(1);    opacity: 0.6; }
+  100% { transform: scale(2.75); opacity: 0; }
 }
 
 /* Cards */

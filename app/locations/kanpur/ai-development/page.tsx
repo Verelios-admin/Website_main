@@ -74,7 +74,7 @@ const localBusinessJsonLd = {
     addressCountry: 'IN',
   },
   geo: { '@type': 'GeoCoordinates', latitude: '26.4382', longitude: '80.3010' },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -103,19 +103,9 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody: r.body,
-  })),
+  // NOTE: aggregateRating + review markup removed — self-authored review schema
+  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
+  // testimonials only. Re-add rating schema only from a verified GBP source.
 };
 
 const serviceJsonLd = {
@@ -241,7 +231,7 @@ export default function KanpurAiDevelopmentPage() {
             <Prose>
               <h2>The AI development company in Kanpur that actually builds it here</h2>
               <p>
-                Most &ldquo;AI companies in Kanpur&rdquo; you&apos;ll find online aren&apos;t in Kanpur at all — they&apos;re Delhi or Bengaluru firms running the same template page across sixty cities, with &ldquo;Kanpur&rdquo; swapped in. <strong>Verelios Labs is different: we&apos;re a real AI development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and watch your AI agent or chatbot work before you pay for the full build. For a Kanpur manufacturer, trader, clinic, school or shop, that local presence is the difference between an AI project you hope goes well and one you can actually steer.
+                Here&apos;s the awkward truth about &ldquo;AI companies in Kanpur&rdquo;: search for one and you&apos;ll mostly meet firms sitting in Delhi or Bengaluru, quietly cloning a single landing page across dozens of cities and dropping &ldquo;Kanpur&rdquo; into the blanks. <strong>Verelios Labs is different: we&apos;re a real AI development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and watch your AI agent or chatbot work before you pay for the full build. For a Kanpur manufacturer, trader, clinic, school or shop, that local presence is the difference between an AI project you hope goes well and one you can actually steer.
               </p>
               <p>
                 Being local doesn&apos;t mean behind the curve. We build on the same modern AI stack the best product teams in the world use — large language models, retrieval-augmented generation (RAG), fine-tuned machine-learning models, computer vision and agent frameworks — and we hand you code and models you own outright. Kanpur pricing, world-class AI engineering.

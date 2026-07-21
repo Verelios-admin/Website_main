@@ -42,6 +42,10 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/` },
 };
 
+// Verelios Labs' Google Business Profile — added to sameAs so Google can tie
+// this website entity to the verified GBP listing (strongest entity signal).
+const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
@@ -57,7 +61,8 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
-  priceRange: '₹49,999 – ₹3,00,000+',
+  // Google expects a short tier value here, not a formatted range string.
+  priceRange: '₹₹₹',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '126/58 G Block, Govind Nagar',
@@ -73,7 +78,7 @@ const localBusinessJsonLd = {
     latitude: '26.4382',
     longitude: '80.3010',
   },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -100,59 +105,13 @@ const localBusinessJsonLd = {
     { '@type': 'City',    name: 'Hyderabad' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
-  sameAs: SOCIAL_LINKS,
+  sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE_URL}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating:  '5',
-    worstRating: '1',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Rajesh M.' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Delivered our website in just 2.5 weeks and we saw double the inquiries within the first month. Did not expect this level of quality at this price point.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Priya S.' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'They built our website and a mobile app at the same time. Conversions jumped 40% after launch. Very professional team.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Amit Patel' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'The news application handles thousands of daily readers without performance issues. Best tech team we have worked with.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Neha Gupta' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Delivered my e-commerce store in 18 days. Free mockup in 48 hours convinced me. Online sales have tripled since launch.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Vikram Singh' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Built our patient booking system and clinic management app. Milestone-based payment made it risk-free. WhatsApp support is incredibly responsive.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Ananya Krishnan' },
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Site loads in under 2 seconds and bounce rate dropped by 60%. Free SEO setup helped us rank on the first page for our key terms.',
-    },
-  ],
+  // NOTE: aggregateRating + review markup intentionally removed. Google forbids
+  // a business marking up reviews it authored about itself, and doing so risks a
+  // manual action that strips ALL rich results site-wide. Re-add ONLY when the
+  // rating/reviews are pulled from a verified third-party source (e.g. the
+  // Google Business Profile review API) with real reviewer names and dates.
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Web & App Development Services',
@@ -230,54 +189,11 @@ const localBusinessJsonLd = {
   },
 };
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE_URL },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/#services` },
-    { '@type': 'ListItem', position: 3, name: 'Work',     item: `${SITE_URL}/#work` },
-    { '@type': 'ListItem', position: 4, name: 'Process',  item: `${SITE_URL}/#process` },
-    { '@type': 'ListItem', position: 5, name: 'Pricing',  item: `${SITE_URL}/#pricing` },
-    { '@type': 'ListItem', position: 6, name: 'FAQ',      item: `${SITE_URL}/#faq` },
-    { '@type': 'ListItem', position: 7, name: 'Contact',  item: `${SITE_URL}/#contact` },
-  ],
-};
-
-const howToJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'How Verelios Labs builds your website or app in 3 weeks',
-  description:
-    'A four-step process from first message to live launch — consultation, free 48-hour mockup, build with daily WhatsApp updates, and launch + 7-day support.',
-  totalTime: 'P21D',
-  step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Free consultation',
-      text: 'Tell us about your project on WhatsApp or a quick call. We understand your goals, audience and timeline — no commitment needed.',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Free mockup in 48 hours',
-      text: 'We design a visual mockup or prototype within 48 hours. You review, give feedback and approve before we write a single line of code.',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Development with daily updates',
-      text: 'We build with daily WhatsApp updates. Progress in real time, change requests at any milestone.',
-    },
-    {
-      '@type': 'HowToStep',
-      position: 4,
-      name: 'Launch + 7 days of free support',
-      text: 'We deploy live, handle all the technical setup, and stick around for seven days of free post-launch support.',
-    },
-  ],
-};
+// NOTE: The homepage BreadcrumbList (anchor-based: #services, #work, …) and the
+// HowTo block were removed. Anchors aren't a real page hierarchy, so Google
+// ignores/flags that breadcrumb; HowTo rich results were retired by Google in
+// Sept 2023, so that markup earned nothing. The 4-step process stays as visible
+// on-page content. Genuine URL-hierarchy breadcrumbs live on the sub-pages.
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -372,14 +288,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
       <script
         type="application/ld+json"

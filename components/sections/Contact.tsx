@@ -6,6 +6,11 @@ import { useGsap } from '@/hooks/useGsap';
 import { useToast } from '@/hooks/use-toast';
 import { trackMetaLead } from '@/components/MetaPixel';
 import { trackGoogleAdsLead, resetLeadConversionGuard, trackWhatsAppClick } from '@/lib/gtag';
+import { LocalMap } from '@/components/sub-page/LocalMap';
+
+// Google Business Profile — the "read our Google reviews" link + map tie the
+// homepage to the verified GBP listing (entity + local-trust signal).
+const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 
 const COUNTRY_CODES = [
   { code: '+91',  flag: '\u{1F1EE}\u{1F1F3}', country: 'IN' },
@@ -285,6 +290,37 @@ export function Contact() {
                 Reply time
               </div>
               <span style={{ color: '#fff', fontSize: 16 }}>Usually under an hour</span>
+            </div>
+          </div>
+
+          {/* Visit us — physical address, Google reviews link and an embedded
+              map. Ties the homepage to the verified Google Business Profile. */}
+          <div style={{ marginTop: 32 }}>
+            <div
+              style={{
+                fontSize: 12,
+                color: 'rgba(255,255,255,0.5)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                marginBottom: 8,
+              }}
+            >
+              Visit us in Kanpur
+            </div>
+            <address style={{ fontStyle: 'normal', color: 'rgba(255,255,255,0.8)', fontSize: 15, lineHeight: 1.6 }}>
+              126/58 G Block, Govind Nagar<br />
+              Kanpur, Uttar Pradesh 208006
+            </address>
+            <a
+              href={GBP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-block', marginTop: 8, color: 'var(--color-primary-on-dark)', fontSize: 14, fontWeight: 500, textDecoration: 'none' }}
+            >
+              Read our reviews on Google →
+            </a>
+            <div style={{ marginTop: 16 }}>
+              <LocalMap />
             </div>
           </div>
         </div>

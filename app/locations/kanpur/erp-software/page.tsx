@@ -72,7 +72,7 @@ const localBusinessJsonLd = {
     addressCountry: 'IN',
   },
   geo: { '@type': 'GeoCoordinates', latitude: '26.4382', longitude: '80.3010' },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -100,19 +100,9 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody: r.body,
-  })),
+  // NOTE: aggregateRating + review markup removed — self-authored review schema
+  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
+  // testimonials only. Re-add rating schema only from a verified GBP source.
 };
 
 const serviceJsonLd = {
@@ -235,7 +225,7 @@ export default function KanpurErpSoftwarePage() {
             <Prose>
               <h2>The ERP software company in Kanpur that fits your workflow, not the other way round</h2>
               <p>
-                Off-the-shelf ERP forces your business to work the way the software wants. <strong>Verelios Labs is a custom ERP software company based in Govind Nagar, Kanpur</strong> — we build the ERP around how your Kanpur factory, trading house or distributor actually runs. And because we&apos;re local, you can sit with us, walk us through your shop floor, and point at exactly what needs to change. No support ticket to another country; a team you can visit.
+                Most off-the-shelf ERP is built to make your business bend around the software, instead of the other way round. <strong>Verelios Labs is a custom ERP software company based in Govind Nagar, Kanpur</strong> — we build the ERP around how your Kanpur factory, trading house or distributor actually runs. And because we&apos;re local, you can sit with us, walk us through your shop floor, and point at exactly what needs to change. No support ticket to another country; a team you can visit.
               </p>
               <p>
                 A lot of Kanpur businesses — especially in leather, textiles, engineering, FMCG, chemicals and trading — still run on a patchwork of Tally, Excel and registers. We pull inventory, production, purchase, sales, accounting, reporting and payroll into one system that matches your reality, integrates with Tally and the GST portal, and hands you code you own outright.

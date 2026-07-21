@@ -71,7 +71,7 @@ const localBusinessJsonLd = {
     addressCountry: 'IN',
   },
   geo: { '@type': 'GeoCoordinates', latitude: '26.4382', longitude: '80.3010' },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -100,19 +100,9 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody: r.body,
-  })),
+  // NOTE: aggregateRating + review markup removed — self-authored review schema
+  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
+  // testimonials only. Re-add rating schema only from a verified GBP source.
 };
 
 const serviceJsonLd = {
@@ -235,7 +225,7 @@ export default function KanpurMobileAppDevelopmentPage() {
             <Prose>
               <h2>The app development company in Kanpur that builds it locally</h2>
               <p>
-                Search &ldquo;app development company in Kanpur&rdquo; and most of the top results are studios in Lucknow, Delhi or Noida running a template page for your city. <strong>Verelios Labs is a real mobile app development company based in Govind Nagar, Kanpur.</strong> You can visit our office, meet the developers building your app, and steer it in person. For a Kanpur retailer, service business, clinic or startup, that local presence turns an app project from a gamble into a partnership.
+                The catch with hiring an &ldquo;app development company in Kanpur&rdquo; is that most of the names topping Google are actually run out of metros like Bengaluru, Delhi or Noida, aiming at your city from a distance. <strong>Verelios Labs is a real mobile app development company based in Govind Nagar, Kanpur.</strong> You can visit our office, meet the developers building your app, and steer it in person. For a Kanpur retailer, service business, clinic or startup, that local presence turns an app project from a gamble into a partnership.
               </p>
               <p>
                 Local doesn&apos;t mean limited. We build on <strong>React Native and Flutter</strong>, so one codebase becomes both an iOS and an Android app — near the cost and timeline of one. Modern, fast, and yours to own, with the code on your own accounts. Kanpur pricing, world-class engineering.

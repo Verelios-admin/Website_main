@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description:
     'Honest guides on custom website & app development in India — pricing, timelines, stack choices and how to pick an agency. Written by the Verelios Labs team.',
   alternates: { canonical: `${SITE}/blog` },
+  // Own Open Graph so sharing /blog no longer shows the homepage card.
+  openGraph: {
+    title: 'Blog — Web & App Development Insights | Verelios Labs',
+    description:
+      'Honest guides on custom website & app development in India — pricing, timelines, stack choices and how to pick an agency.',
+    url: `${SITE}/blog`,
+    type: 'website',
+    locale: 'en_IN',
+    siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs Blog' }],
+  },
 };
 
 const blogJsonLd = {

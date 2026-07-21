@@ -72,7 +72,7 @@ const localBusinessJsonLd = {
     addressCountry: 'IN',
   },
   geo: { '@type': 'GeoCoordinates', latitude: '26.4382', longitude: '80.3010' },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=Verelios+Labs+Govind+Nagar+Kanpur',
+  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -101,19 +101,9 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '42',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody: r.body,
-  })),
+  // NOTE: aggregateRating + review markup removed — self-authored review schema
+  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
+  // testimonials only. Re-add rating schema only from a verified GBP source.
 };
 
 const serviceJsonLd = {
@@ -236,7 +226,7 @@ export default function KanpurWebsiteDevelopmentPage() {
             <Prose>
               <h2>The website development company in Kanpur that builds it locally</h2>
               <p>
-                Plenty of the &ldquo;website development companies in Kanpur&rdquo; that show up on Google are out-of-town agencies running a template page with &ldquo;Kanpur&rdquo; dropped in. <strong>Verelios Labs is a real website development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and point at the exact section you want changed. For a Kanpur shop, factory, clinic, school or startup, meeting the people building your website in person is the difference between hoping it goes well and watching it go well.
+                Run a search for a &ldquo;website development company in Kanpur&rdquo; and most of what ranks is an agency that has never set foot in the city — a generic page with &ldquo;Kanpur&rdquo; find-and-replaced into it. <strong>Verelios Labs is a real website development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and point at the exact section you want changed. For a Kanpur shop, factory, clinic, school or startup, meeting the people building your website in person is the difference between hoping it goes well and watching it go well.
               </p>
               <p>
                 Local doesn&apos;t mean basic. We hand-code every site on a modern stack — <strong>React, Next.js and TypeScript</strong> — server-rendered for SEO, tuned for Core Web Vitals, and shipped with a working contact form, WhatsApp integration and analytics from day one. You own the code and it lives on your own hosting. Kanpur pricing, world-class engineering.

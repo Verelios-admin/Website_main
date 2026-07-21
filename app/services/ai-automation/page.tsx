@@ -219,7 +219,7 @@ export default function AIAutomationPage() {
 
         <ClosingCta
           heading="What could you automate first?"
-          body="Tell us about one task your team repeats every day. We'll come back with a free 48-hour plan of how to automate it and a fixed quote."
+          body="Tell us about one task your team repeats every day. We'll set up a free automation scoping call to map how to automate it, then follow up with a fixed quote."
         />
       </SubPageLayout>
     </>
