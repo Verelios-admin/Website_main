@@ -170,8 +170,8 @@ export const metadata: Metadata = {
   other: {
     'geo.region':    'IN-UP',
     'geo.placename': 'Kanpur, Uttar Pradesh',
-    'geo.position':  '26.4382;80.3010',
-    'ICBM':          '26.4382, 80.3010',
+    'geo.position':  '26.447437;80.306051',
+    'ICBM':          '26.447437, 80.306051',
     'apple-mobile-web-app-capable':        'yes',
     'mobile-web-app-capable':              'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',

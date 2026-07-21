@@ -72,11 +72,10 @@ const localBusinessJsonLd = {
     addressCountry: 'IN',
   },
   geo: {
-    // Govind Nagar, Kanpur. Replace with the exact lat/long of your Google
-    // Business Profile map pin if you want pinpoint accuracy.
+    // Exact Google Business Profile pin (Govind Nagar, Kanpur).
     '@type': 'GeoCoordinates',
-    latitude: '26.4382',
-    longitude: '80.3010',
+    latitude: '26.447437',
+    longitude: '80.306051',
   },
   hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [

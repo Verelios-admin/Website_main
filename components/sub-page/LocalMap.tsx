@@ -6,8 +6,9 @@
 // map → copy the src="https://www.google.com/maps/embed?pb=..." URL). That
 // pins the map to your VERIFIED listing rather than an address search.
 
-const MAP_QUERY = '126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006';
-const MAP_SRC = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
+// Exact Google Business Profile pin coordinates — drops the marker precisely on
+// the Govind Nagar office rather than geocoding an address string.
+const MAP_SRC = 'https://maps.google.com/maps?q=26.447437,80.306051&z=16&output=embed';
 
 export function LocalMap({ title = 'Verelios Labs office location — Govind Nagar, Kanpur' }: { title?: string }) {
   return (
