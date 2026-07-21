@@ -73,7 +73,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Custom ERP Software', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -141,7 +141,7 @@ export default function ERPPage() {
           lead="Verelios Labs builds custom ERP software for Indian businesses — inventory, manufacturing, procurement, accounting, HR, payroll and reporting in one system tailored to your workflow. Full-stack TypeScript, you own the code, launched in 6–12 weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'Custom ERP Software', href: URL_PATH },
           ]}
         />

@@ -72,7 +72,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Web Hosting & Maintenance', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -140,7 +140,7 @@ export default function WebHostingPage() {
           lead="Verelios Labs offers fully managed web hosting and maintenance for Indian businesses — 99.9% uptime, daily backups, free SSL, security patches and speed monitoring, with a real human on WhatsApp when you need one. Quoted per project, no lock-in."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'Web Hosting & Maintenance', href: URL_PATH },
           ]}
           ctaLabel="Get a hosting quote"

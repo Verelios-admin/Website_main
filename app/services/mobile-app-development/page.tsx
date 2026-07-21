@@ -76,7 +76,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Custom Mobile App Development', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -144,7 +144,7 @@ export default function MobileAppDevelopmentPage() {
           lead="Verelios Labs is a team of app developers in Govind Nagar, Kanpur, building custom mobile apps for local Kanpur businesses and founders across India — one React Native or Flutter codebase, shipped to the App Store and Play Store in three to five weeks. Free 48-hour mockup, no upfront payment."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'Mobile App Development', href: URL_PATH },
           ]}
         />

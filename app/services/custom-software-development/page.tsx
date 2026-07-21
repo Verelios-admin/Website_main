@@ -75,7 +75,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Custom Software Development', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -135,7 +135,7 @@ export default function CustomSoftwarePage() {
           lead="Verelios Labs is a team of custom software developers in Govind Nagar, Kanpur, building ERPs, CRMs, admin dashboards, internal tools and APIs for local Kanpur businesses and founders across India. Tailored to your workflow, not someone else's template. Launched in 4–8 weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'Custom Software Development', href: URL_PATH },
           ]}
         />

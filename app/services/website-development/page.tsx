@@ -76,7 +76,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Custom Website Development', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -136,7 +136,7 @@ export default function WebsiteDevelopmentPage() {
           lead="Verelios Labs is a team of website developers in Govind Nagar, Kanpur, building custom React and Next.js sites for local Kanpur businesses and founders across India. Free 48-hour mockup, milestone-based payment, launched in under three weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'Website Development', href: URL_PATH },
           ]}
         />

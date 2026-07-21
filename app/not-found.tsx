@@ -1,5 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
+
+// Distinct title + noindex so the 404 doesn't inherit the homepage's title/
+// robots. (The HTTP 404 status already prevents indexing; this is for
+// cleanliness and crawler tools that read the meta rather than the status.)
+export const metadata: Metadata = {
+  title: 'Page Not Found | Verelios Labs',
+  robots: { index: false, follow: true },
+};
 
 // Custom 404. Replacing Next's built-in not-found removes the default
 // "404: This page could not be found" <title> that was rendering ALONGSIDE the

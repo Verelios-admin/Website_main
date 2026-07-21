@@ -73,7 +73,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'AI Automation', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -133,7 +133,7 @@ export default function AIAutomationPage() {
           lead="Verelios Labs builds custom AI automation for Indian businesses — workflow automation, AI chatbots, document processing, lead automation and LLM integrations. Built on the tools you already use, launched in 2–6 weeks."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'AI Automation', href: URL_PATH },
           ]}
         />

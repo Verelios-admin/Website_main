@@ -64,7 +64,7 @@ const localBusinessJsonLd = {
   url: `${SITE}${URL_PATH}`,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
-  priceRange: '₹49,999 – ₹10,00,000+',
+  priceRange: '₹₹₹',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '126/58 G Block, Govind Nagar',

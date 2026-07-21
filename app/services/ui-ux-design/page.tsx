@@ -63,7 +63,7 @@ const breadcrumbJsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'UI/UX Design', item: `${SITE}${URL_PATH}` },
   ],
 };
@@ -115,7 +115,7 @@ export default function UiUxDesignPage() {
           lead="Verelios Labs designs interfaces for websites, mobile apps and internal tools — research, wireframes, prototypes, visual design and a design system you can hand to your engineering team. Figma mockup in 48 hours."
           breadcrumbs={[
             { label: 'Home', href: '/' },
-            { label: 'Services', href: '/#services' },
+            { label: 'Services', href: '/services' },
             { label: 'UI/UX Design', href: URL_PATH },
           ]}
         />
