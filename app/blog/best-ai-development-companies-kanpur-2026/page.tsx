@@ -97,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                An AI development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds AI agents, chatbots and WhatsApp assistants, document and invoice automation, computer vision for factories, and custom machine-learning models. What stands out: a real local office, a <strong>free 48-hour proof-of-concept</strong> on your own data, models grounded in your documents (so they don&apos;t make things up), private or on-premise deployment for sensitive data, and full ownership of the code and models. A <strong>5.0★ rating across 37 reviews</strong> backs it up. See the <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> page.
+                An AI development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds AI agents, chatbots and WhatsApp assistants, document and invoice automation, computer vision for factories, and custom machine-learning models. What stands out: a real local office, a <strong>free 48-hour proof-of-concept</strong> on your own data, models grounded in your documents (so they don&apos;t make things up), private or on-premise deployment for sensitive data, and full ownership of the code and models. A <strong>5.0★ rating across 38 reviews</strong> backs it up. See the <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> page.
               </p>
 
               <h2>2. W3villa Technologies</h2>

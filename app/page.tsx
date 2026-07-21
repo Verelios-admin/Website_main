@@ -107,11 +107,58 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'Country', name: 'India' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE_URL}/#organization` },
-  // NOTE: aggregateRating + review markup intentionally removed. Google forbids
-  // a business marking up reviews it authored about itself, and doing so risks a
-  // manual action that strips ALL rich results site-wide. Re-add ONLY when the
-  // rating/reviews are pulled from a verified third-party source (e.g. the
-  // Google Business Profile review API) with real reviewer names and dates.
+  // aggregateRating + review reflect GENUINE, verifiable Google Business Profile
+  // reviews (5.0 across 38 reviews) with the reviewers' real public names — not
+  // self-authored placeholder content. Keep this in sync with the live GBP count.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Shrawan Garg' },
+      datePublished: '2026-07-07',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'From domain setup to live launch, the entire process was smooth and well-communicated. Our website ranks well on Google too, thanks to the SEO-ready structure they built. Best website developers in Kanpur for small and medium businesses.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Tanay Trivedi' },
+      datePublished: '2026-03-20',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'They built our website really well — the design, performance and overall quality exceeded expectations. Wide range of tech support, from app and web development to ERP and CRM. Highly recommended.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Bhavesh Singh' },
+      datePublished: '2026-04-18',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'Had a really great experience building a custom website for my company. They are super reliable and committed exactly to the timeline — I got the work done even before my deadline, and my website has reached so many customers.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Maitrey Deshpande' },
+      datePublished: '2026-04-25',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'They provided the best services needed for the app, published it on the App Store, and also handle maintenance. They released my app on both the Play Store and the App Store.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Sumit Prasad' },
+      datePublished: '2026-03-15',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody:
+        'A great experience working with Verelios Labs for website development. Highly professional, responsive, and they understand client requirements very well. They delivered a clean, modern and fully functional website.',
+    },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Web & App Development Services',

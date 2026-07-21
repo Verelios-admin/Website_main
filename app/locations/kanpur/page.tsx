@@ -54,6 +54,22 @@ export const metadata: Metadata = {
   },
 };
 
+// Visible client testimonials, also wrapped in Review schema below. Sourced from
+// Verelios Labs' verified Google Business Profile (5.0★, 38 reviews). Declared
+// before localBusinessJsonLd because .map runs when that object is evaluated.
+const CLIENT_TESTIMONIALS = [
+  {
+    author: 'Shrawan Garg',
+    body:
+      'From domain setup to live launch, the entire process was smooth and well-communicated. Our website ranks well on Google too, thanks to the SEO-ready structure they built. Best website developers in Kanpur for small and medium businesses.',
+  },
+  {
+    author: 'Bhavesh Singh',
+    body:
+      'Had a really great experience building a custom website for my company. They are super reliable and committed exactly to the timeline — I got the work done even before my deadline, and my website has reached so many customers.',
+  },
+];
+
 // Page-specific LocalBusiness schema for the Kanpur landing page. Uses its own
 // @id (distinct from the homepage #localbusiness) so it describes THIS page.
 const localBusinessJsonLd = {
@@ -108,26 +124,20 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  // NOTE: aggregateRating + review markup intentionally removed — Google forbids
-  // self-authored review markup and it risks a site-wide manual action. Re-add
-  // only from a verified GBP review source. The quotes below stay as visible
-  // on-page testimonials (no schema wrapper).
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: CLIENT_TESTIMONIALS.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: r.body,
+  })),
 };
-
-// Visible client testimonials (plain content, NOT review schema). Rendered on
-// the page as social proof only.
-const CLIENT_TESTIMONIALS = [
-  {
-    author: 'Rajesh M.',
-    body:
-      'Delivered our website in just 2.5 weeks and we saw double the inquiries within the first month. Being able to meet the team in Kanpur made it much easier to trust.',
-  },
-  {
-    author: 'Priya S.',
-    body:
-      'They built our website and a mobile app at the same time. Conversions jumped 40% after launch. A genuinely professional software team right here in Kanpur.',
-  },
-];
 
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
@@ -256,7 +266,7 @@ export default function KanpurLocationPage() {
                   Rated 5.0 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  37 client reviews<br />
+                  38 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
@@ -287,7 +297,7 @@ export default function KanpurLocationPage() {
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
               <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 37 verified client reviews</span>
+              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 38 verified client reviews</span>
             </div>
 
             <div
@@ -347,7 +357,7 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 5.0★</strong> across 37 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 5.0★</strong> across 38 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

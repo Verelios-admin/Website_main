@@ -44,12 +44,12 @@ export const metadata: Metadata = {
 
 const REVIEWS: LocalReview[] = [
   {
-    author: 'Vikram A.',
-    body: 'Verelios built a custom ERP for our Kanpur manufacturing unit — inventory, production and accounting in one place. Month-end went from a week of Excel to a single afternoon. And they sit right here in Govind Nagar when we need them.',
+    author: 'Agile Horses ERP',
+    body: "Verelios's ERP software integrated all our factory operations — production, inventory, quality and maintenance — into one system. Manufacturing efficiency improved 25% and the ROI was clearly visible within 12 months. Best ERP software company in Kanpur.",
   },
   {
-    author: 'Deepak R.',
-    body: 'Our payroll used to eat two days every month. Their HR & payroll software handles attendance, payslips and PF/ESI/TDS automatically and syncs with Tally. Best ERP software decision our Kanpur business has made.',
+    author: 'Tanay Trivedi',
+    body: 'They built our website really well — the design, performance and overall quality exceeded expectations. Wide range of tech support, from app and web development to ERP and CRM. Highly recommended.',
   },
 ];
 
@@ -100,9 +100,14 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  // NOTE: aggregateRating + review markup removed — self-authored review schema
-  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
-  // testimonials only. Re-add rating schema only from a verified GBP source.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
 };
 
 const serviceJsonLd = {
@@ -240,7 +245,7 @@ export default function KanpurErpSoftwarePage() {
                 <li><strong>Built around your workflow</strong> — not a rigid product you bend your business to fit.</li>
                 <li><strong>Tally &amp; GST integration</strong> — your CA&apos;s workflow doesn&apos;t change.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 37 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 5.0★</strong> across 38 client reviews. <strong>You own the code.</strong></li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 

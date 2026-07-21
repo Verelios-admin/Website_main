@@ -43,12 +43,12 @@ export const metadata: Metadata = {
 
 const REVIEWS: LocalReview[] = [
   {
-    author: 'Priya S.',
-    body: 'Verelios built our website and a mobile app at the same time. Conversions jumped 40% after launch. A genuinely professional app development team right here in Kanpur we could actually meet.',
+    author: 'Maitrey Deshpande',
+    body: 'They provided the best services needed for the app, published it on the App Store, and also handle maintenance. They released my app on both the Play Store and the App Store.',
   },
   {
-    author: 'Imran H.',
-    body: 'They shipped our Android and iOS app from one codebase in about a month and got it live on both stores. Clear WhatsApp updates every day. Easily the best app development company in Kanpur we spoke to.',
+    author: 'Tanay Trivedi',
+    body: 'They built our website really well — the design, performance and overall quality exceeded expectations. Wide range of tech support, from app and web development to ERP and CRM. Highly recommended.',
   },
 ];
 
@@ -100,9 +100,14 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  // NOTE: aggregateRating + review markup removed — self-authored review schema
-  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
-  // testimonials only. Re-add rating schema only from a verified GBP source.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
 };
 
 const serviceJsonLd = {
@@ -240,7 +245,7 @@ export default function KanpurMobileAppDevelopmentPage() {
                 <li><strong>Free 48-hour mockup</strong> — see your app designed before you pay a rupee.</li>
                 <li><strong>One codebase, both stores</strong> — iOS and Android together, not billed twice.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 37 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 5.0★</strong> across 38 client reviews. <strong>You own the code.</strong></li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 

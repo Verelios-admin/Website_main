@@ -44,12 +44,12 @@ export const metadata: Metadata = {
 
 const REVIEWS: LocalReview[] = [
   {
-    author: 'Rajesh M.',
-    body: 'Verelios delivered our website in just 2.5 weeks and we saw double the enquiries within the first month. Being able to meet the team here in Kanpur made it much easier to trust the process.',
+    author: 'Shrawan Garg',
+    body: 'From domain setup to live launch, the entire process was smooth and well-communicated. Our website ranks well on Google too, thanks to the SEO-ready structure they built. Best website developers in Kanpur for small and medium businesses.',
   },
   {
-    author: 'Sana K.',
-    body: 'Best website development company in Kanpur we could have picked. They redesigned our site, it loads instantly, and it finally ranks on Google. The free mockup before paying sealed it for us.',
+    author: 'Sumit Prasad',
+    body: 'A great experience working with Verelios Labs for website development. Highly professional, responsive, and they understand client requirements very well. They delivered a clean, modern and fully functional website.',
   },
 ];
 
@@ -101,9 +101,14 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  // NOTE: aggregateRating + review markup removed — self-authored review schema
-  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
-  // testimonials only. Re-add rating schema only from a verified GBP source.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
 };
 
 const serviceJsonLd = {
@@ -240,7 +245,7 @@ export default function KanpurWebsiteDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a freelancer who disappears after launch.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website designed before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 37 client reviews, with work you can click through.</li>
+                <li><strong>Rated 5.0★</strong> across 38 client reviews, with work you can click through.</li>
                 <li><strong>You own everything</strong> — source code, hosting and domain on your own accounts. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

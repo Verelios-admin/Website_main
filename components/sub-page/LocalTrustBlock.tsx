@@ -67,7 +67,7 @@ export function LocalTrustBlock({
                 Rated 5.0 ★
               </div>
               <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                37 client reviews<br />
+                38 client reviews<br />
                 <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                   See us on Google →
                 </a>
@@ -87,7 +87,7 @@ export function LocalTrustBlock({
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
             <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 37 verified client reviews</span>
+            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 38 verified client reviews</span>
           </div>
 
           <div

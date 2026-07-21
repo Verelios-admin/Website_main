@@ -45,12 +45,12 @@ export const metadata: Metadata = {
 
 const REVIEWS: LocalReview[] = [
   {
-    author: 'Aman T.',
-    body: 'Verelios built a WhatsApp AI assistant for our Kanpur trading business that answers customer queries and logs orders overnight. Enquiries we used to miss are now captured automatically. Being able to sit with the team in Govind Nagar made the whole thing painless.',
+    author: 'Tanay Trivedi',
+    body: 'They built our website really well — the design, performance and overall quality exceeded expectations. Wide range of tech support, from app and web development to ERP and CRM. Highly recommended.',
   },
   {
-    author: 'Neha G.',
-    body: 'They automated our invoice and document processing with a custom AI model. What took two staff a full day now runs in minutes. A genuinely capable AI development team right here in Kanpur, not a call centre in another city.',
+    author: 'Sumit Prasad',
+    body: 'A great experience working with Verelios Labs for website development. Highly professional, responsive, and they understand client requirements very well. They delivered a clean, modern and fully functional website.',
   },
 ];
 
@@ -103,9 +103,14 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  // NOTE: aggregateRating + review markup removed — self-authored review schema
-  // risks a site-wide manual action. The REVIEWS below stay as visible on-page
-  // testimonials only. Re-add rating schema only from a verified GBP source.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '38',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
 };
 
 const serviceJsonLd = {
@@ -248,7 +253,7 @@ export default function KanpurAiDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real AI team in Govind Nagar, not a remote template company that vanishes after launch.</li>
                 <li><strong>Free 48-hour proof-of-concept</strong> — see your AI agent or chatbot working on your own data before you pay a rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see it work.</li>
-                <li><strong>Rated 5.0★</strong> across 37 client reviews, with AI work you can actually try.</li>
+                <li><strong>Rated 5.0★</strong> across 38 client reviews, with AI work you can actually try.</li>
                 <li><strong>You own everything</strong> — the code, the models and the data stay yours, deployable on your own infrastructure. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

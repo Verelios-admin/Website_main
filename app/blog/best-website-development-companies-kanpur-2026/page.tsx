@@ -97,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                A website development company based in <strong>Govind Nagar, Kanpur</strong>, Verelios Labs builds fast, SEO-ready websites on a modern React and Next.js stack. What sets it apart locally: a real office you can visit, a <strong>free 48-hour mockup</strong> before you pay, milestone-based payments (30/30/40), a <strong>5.0★ rating across 37 reviews</strong>, and a firm rule that you own your code and hosting outright. Sites ship in 7–21 days with on-page SEO built in. Best for businesses that want world-class engineering, local accountability and no lock-in. See the <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> page for details.
+                A website development company based in <strong>Govind Nagar, Kanpur</strong>, Verelios Labs builds fast, SEO-ready websites on a modern React and Next.js stack. What sets it apart locally: a real office you can visit, a <strong>free 48-hour mockup</strong> before you pay, milestone-based payments (30/30/40), a <strong>5.0★ rating across 38 reviews</strong>, and a firm rule that you own your code and hosting outright. Sites ship in 7–21 days with on-page SEO built in. Best for businesses that want world-class engineering, local accountability and no lock-in. See the <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> page for details.
               </p>
 
               <h2>2. Riveyra Infotech</h2>

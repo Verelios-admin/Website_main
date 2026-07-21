@@ -97,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                An ERP software company in <strong>Govind Nagar, Kanpur</strong> that builds <strong>custom ERP</strong> around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting, reporting and HR &amp; payroll, with <strong>Tally and GST integration</strong>. Rather than forcing you into a rigid product, Verelios maps the system to your process, delivers module by module, and lets you own the code. Add a real local office, a <strong>5.0★ rating across 37 reviews</strong>, and on-site shop-floor discovery, and it&apos;s a strong fit for Kanpur&apos;s manufacturers and traders. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
+                An ERP software company in <strong>Govind Nagar, Kanpur</strong> that builds <strong>custom ERP</strong> around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting, reporting and HR &amp; payroll, with <strong>Tally and GST integration</strong>. Rather than forcing you into a rigid product, Verelios maps the system to your process, delivers module by module, and lets you own the code. Add a real local office, a <strong>5.0★ rating across 38 reviews</strong>, and on-site shop-floor discovery, and it&apos;s a strong fit for Kanpur&apos;s manufacturers and traders. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
               </p>
 
               <h2>2. SigmaIT Software Designers</h2>

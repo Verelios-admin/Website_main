@@ -97,7 +97,7 @@ export default function Post() {
 
               <h2>1. Verelios Labs</h2>
               <p>
-                A mobile app development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds iOS and Android apps from a single <strong>React Native or Flutter codebase</strong> — so you get both platforms for close to the cost and time of one. Highlights: a real office you can visit, a <strong>free 48-hour mockup</strong>, milestone payments, a <strong>5.0★ rating across 37 reviews</strong>, full store submission handled for you, and code and developer accounts you own. Apps typically ship to both stores in 3–5 weeks. See the <Link href="/locations/kanpur/mobile-app-development">mobile app development in Kanpur</Link> page.
+                A mobile app development company in <strong>Govind Nagar, Kanpur</strong>, Verelios builds iOS and Android apps from a single <strong>React Native or Flutter codebase</strong> — so you get both platforms for close to the cost and time of one. Highlights: a real office you can visit, a <strong>free 48-hour mockup</strong>, milestone payments, a <strong>5.0★ rating across 38 reviews</strong>, full store submission handled for you, and code and developer accounts you own. Apps typically ship to both stores in 3–5 weeks. See the <Link href="/locations/kanpur/mobile-app-development">mobile app development in Kanpur</Link> page.
               </p>
 
               <h2>2. Encoders</h2>
