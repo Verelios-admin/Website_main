@@ -50,7 +50,9 @@ const COLS = [
   {
     head: 'Studio',
     links: [
-      ['About', '/#about'],
+      // Real /about page, not the homepage anchor — it carries the founder bio and
+      // the verifiable client list that the homepage section only gestures at.
+      ['About Verelios Labs', '/about'],
       ['Portfolio', '/#work'],
       ['Process', '/#process'],
       ['Pricing', '/#pricing'],

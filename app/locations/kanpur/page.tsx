@@ -22,26 +22,8 @@ const SOCIAL_LINKS = [
 export const metadata: Metadata = {
   title: 'Software Company in Kanpur — Web, App, ERP & Payroll',
   description:
-    'Verelios Labs is a software company in Govind Nagar, Kanpur building websites, mobile apps, custom ERP and payroll software for Kanpur businesses. Free 48-hour mockup, milestone payments, meet us in person. Rated 5.0★.',
+    'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP & payroll software. Free 48-hour mockup. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'software company in Kanpur',
-    'software companies in Kanpur',
-    'tech companies in Kanpur',
-    'IT company in Kanpur',
-    'website development company in Kanpur',
-    'app development company in Kanpur',
-    'custom software developers in Kanpur',
-    'ERP software company in Kanpur',
-    'ERP Kanpur',
-    'payroll software in Kanpur',
-    'HR and payroll software Kanpur',
-    'software company in Govind Nagar Kanpur',
-    'web developers in Govind Nagar Kanpur',
-    'Verelios Labs Kanpur',
-    'Verelios Labs Kanpur reviews',
-    'best software company Kanpur',
-  ],
   openGraph: {
     title: 'Software Company in Kanpur — Web, App, ERP & Payroll | Verelios Labs',
     description:
@@ -54,9 +36,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Visible client testimonials, also wrapped in Review schema below. Sourced from
-// Verelios Labs' verified Google Business Profile (5.0★, 38 reviews). Declared
-// before localBusinessJsonLd because .map runs when that object is evaluated.
+// Visible client testimonials — on-page social proof only, NOT wrapped in Review
+// schema (see the note on localBusinessJsonLd below). Sourced from Verelios Labs'
+// verified Google Business Profile (5.0★, 38 reviews).
 const CLIENT_TESTIMONIALS = [
   {
     author: 'Shrawan Garg',
@@ -70,18 +52,23 @@ const CLIENT_TESTIMONIALS = [
   },
 ];
 
-// Page-specific LocalBusiness schema for the Kanpur landing page. Uses its own
-// @id (distinct from the homepage #localbusiness) so it describes THIS page.
+// LocalBusiness schema for the Kanpur landing page. Uses the SAME @id as the
+// homepage node (`${SITE}/#localbusiness`) because it describes the SAME real
+// business — one entity, declared on the two pages that are genuinely about it,
+// rather than six parallel entities with six different @ids. The identifying
+// fields (name, url, telephone, address, geo) are kept identical to the homepage
+// so there is nothing for Google to reconcile; this page only contributes the
+// richer Kanpur-neighbourhood areaServed detail.
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  '@id': `${SITE}${URL_PATH}#localbusiness`,
+  '@id': `${SITE}/#localbusiness`,
   name: 'Verelios Labs',
   alternateName: ['Verelios', 'Verelios Labs Kanpur'],
-  url: `${SITE}${URL_PATH}`,
+  url: SITE,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
-  priceRange: '₹₹₹',
+  priceRange: '₹49,999–₹5,00,000+',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '126/58 G Block, Govind Nagar',
@@ -124,19 +111,9 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'City', name: 'Kanpur' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '38',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: CLIENT_TESTIMONIALS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody: r.body,
-  })),
+  // aggregateRating + review deliberately omitted — self-authored review markup
+  // about our own business is ineligible for Google's star rich result and risks
+  // a manual action. See the longer note in app/page.tsx. Do not re-add.
 };
 
 const breadcrumbJsonLd = {

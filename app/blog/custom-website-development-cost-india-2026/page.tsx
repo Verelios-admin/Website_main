@@ -37,16 +37,9 @@ const articleJsonLd = {
   dateModified: `${PUBLISHED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
-  wordCount: 1480,
   articleSection: 'Pricing',
   keywords: 'custom website development cost India, website development pricing India, web development cost 2026, custom website budget',
-  author: {
-    '@type': 'Person',
-    name: 'Sahil Chauhan',
-    jobTitle: 'Founder & CEO',
-    worksFor: { '@id': `${SITE}/#organization` },
-    url: SITE,
-  },
+  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -88,7 +81,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 The honest short answer: a <strong>custom website in India in 2026 costs between ₹15,000 and ₹5,00,000+</strong>, depending on what&apos;s on the page and what&apos;s behind it. The longer answer — which is what most founders actually need — is below.
               </p>

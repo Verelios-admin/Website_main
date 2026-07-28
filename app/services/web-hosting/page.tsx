@@ -3,33 +3,17 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/web-hosting';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Managed Web Hosting & Website Maintenance — 99.9% Uptime, No Lock-In',
+  title: 'Managed Web Hosting & Website Maintenance',
   description:
-    'Never worry about your website going down again. Fully managed hosting & maintenance for Indian businesses — 99.9% uptime, daily backups, free SSL, security patches and a real human on WhatsApp. From ₹3,000/mo, no lock-in.',
+    'Fully managed web hosting & maintenance for Indian businesses — 99.9% uptime, daily backups, free SSL and a real human on WhatsApp. From ₹3,000/mo.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'managed web hosting India',
-    'website hosting company India',
-    'web hosting and maintenance India',
-    'managed website hosting',
-    'website maintenance services India',
-    'Next.js hosting India',
-    'business website hosting India',
-    'managed cloud hosting India',
-    'website hosting company Kanpur',
-    'web hosting Kanpur',
-    'website maintenance Kanpur',
-    'WordPress maintenance India',
-    'website uptime monitoring India',
-    'SSL and backup hosting India',
-    'fast web hosting for business',
-  ],
   openGraph: {
     title: 'Managed Web Hosting & Website Maintenance — 99.9% Uptime | Verelios Labs',
     description:
@@ -50,14 +34,7 @@ const serviceJsonLd = {
   name: 'Managed Web Hosting & Maintenance',
   description:
     'Fully managed web hosting and website maintenance for Indian businesses — uptime monitoring, daily backups, SSL, security patches, speed optimisation and ongoing support. Hosted on modern cloud infrastructure, quoted per project.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
@@ -226,6 +203,9 @@ export default function WebHostingPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="web-hosting" />
 

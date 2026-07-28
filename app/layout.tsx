@@ -39,77 +39,22 @@ export const metadata: Metadata = {
   // ~150 chars so Google shows it in full (was 192, which truncated the CTA).
   description:
     'Website, app & software developers in Govind Nagar, Kanpur — serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup.',
-  keywords: [
-    // Primary intent
-    'website development agency India',
-    'app development agency India',
-    'website and app development company',
-    'best website development company India',
-    'best app development company India',
-    'top web development agency India',
-    'top mobile app development company India',
-    // Tech-stack intent
-    'React development agency India',
-    'Next.js development agency',
-    'React Native app development India',
-    'Flutter app development India',
-    'Node.js development company India',
-    'TypeScript developer India',
-    // Outcome / commercial intent
-    'hire web developer India',
-    'hire app developer India',
-    'custom website design India',
-    'ecommerce website development India',
-    'startup app development company',
-    'website redesign services India',
-    'conversion-optimized website',
-    'SEO website development',
-    // AI automation intent
-    'AI automation company India',
-    'AI automation agency India',
-    'custom AI automation services',
-    'business process automation India',
-    'AI chatbot development India',
-    'workflow automation India',
-    'LLM integration India',
-    // Local intent
-    'website development company Pune',
-    'website development company Mumbai',
-    'website development company Delhi',
-    'website development company Bangalore',
-    'website development company Hyderabad',
-    // Local intent — Kanpur / Govind Nagar (our home base)
-    'website developers in Kanpur',
-    'app developers in Kanpur',
-    'custom software developers in Kanpur',
-    'website developers in Govind Nagar Kanpur',
-    'app developers in Govind Nagar Kanpur',
-    'software developers in Govind Nagar Kanpur',
-    'web development company in Govind Nagar Kanpur',
-    'website development company in Kanpur',
-    'app development company Kanpur',
-    'custom software development company Kanpur',
-    'AI automation company Kanpur',
-    'software company Kanpur',
-    'web design company Kanpur',
-    'website developers near me Kanpur',
-    'web development company Lucknow',
-    'website development Uttar Pradesh',
-    // Brand
-    'Verelios',
-    'Verelios Labs',
-  ],
   authors: [{ name: 'Verelios Labs', url: SITE_URL }],
   creator: 'Verelios Labs',
   publisher: 'Verelios Labs',
   applicationName: 'Verelios Labs',
   category: 'Website & app development agency',
+  // favicon.svg is a genuine 577-byte vector mark. It used to be a 512x512 PNG
+  // with an .svg extension (77KB) fetched at High priority on every page load,
+  // which competed with real above-the-fold content for bandwidth. The raster
+  // entries below are correctly sized for their purpose rather than pointing a
+  // 512px master at a 32px slot.
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/logo.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/logo.png',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     shortcut: '/favicon.svg',
   },
   manifest: '/site.webmanifest',

@@ -143,6 +143,14 @@ button { font: inherit; }
   .tile-pad-tight { padding: 48px 22px; }
 }
 
+/* Sub-page hero. Owns its top padding in CSS rather than as an inline style,
+   because the responsive `.tile` overrides below use the `padding` SHORTHAND with
+   `!important` — and an !important author rule beats an inline style, so an inline
+   paddingTop was silently collapsed to 56px on phones. The combined fixed header
+   is 100px tall (36px contact bar + 64px nav), so anything under that put the
+   breadcrumb behind the blurred header. Keep every value here above 100px. */
+.tile-hero { padding-top: 168px; }
+
 .wrap {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -730,6 +738,8 @@ hr.hair {
 @media (max-width: 640px) {
   .tile { padding: 56px 18px !important; }
   .tile-pad-tight { padding: 40px 18px !important; }
+  /* Must clear the 100px fixed header — see the .tile-hero note above. */
+  .tile-hero { padding-top: 124px !important; }
 
   .section-head {
     margin-bottom: 36px !important;
@@ -774,6 +784,197 @@ hr.hair {
 /* Very small phones */
 @media (max-width: 380px) {
   .tile { padding: 48px 14px !important; }
+  .tile-hero { padding-top: 118px !important; }
   .card { padding: 18px !important; }
   .stat-num { font-size: 28px !important; }
 }
+
+
+/* ============================================================
+   HERO (homepage)
+   Moved here out of a <style jsx> block in components/sections/Hero.tsx.
+
+   Why: styled-jsx inside a client component is NOT extracted into the build's
+   stylesheet in the App Router — the hero's entire CSS was being injected by
+   JavaScript at hydration instead. The server-rendered HTML painted with only
+   the inline style attributes, then every one of these rules landed at ~197ms
+   and moved the layout: at 768px wide the hero grid jumped from 704x1186 at
+   top 152 to 720x1026 at top 124, measuring CLS 0.2166 (a Core Web Vitals
+   failure; the threshold is 0.1). It also meant visitors without JavaScript
+   never got the responsive hero at all.
+
+   Living in globals.css makes it a render-blocking stylesheet applied at first
+   paint, so there is nothing left to shift. Selectors were :global() in the
+   original block, so they are unchanged apart from unwrapping.
+   ============================================================ */
+.hero-section .hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ===== CSS-driven entrance — runs at first paint, no layout shift =====
+   These use 'backwards' fill-mode so the element renders in the start
+   keyframe state during the delay window (invisible / translated), then
+   animates into the natural state. No CLS because there's no late
+   opacity-1 → opacity-0 snap from a deferred JS callback. */
+@keyframes hero-fade-rise {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0,    0); }
+}
+@keyframes hero-scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* .hero-eyebrow and .hero-lead are deliberately NOT animated. The lead
+   paragraph is this page's LCP element, and the "backwards" fill-mode
+   holds an animated element in its start keyframe (opacity: 0) through
+   the delay window — so gating it behind a 0.45s delay meant LCP paint
+   had to wait for the CSS + hydration chain, measuring 9.08s on
+   throttled mobile. Above-the-fold text now paints with the HTML; the
+   entrance animation starts at the CTA row, below the LCP candidate.
+   Do not add an animation (or animation-delay) to these two selectors.
+   NOTE: no backticks in comments inside this styled-jsx template — a
+   backtick terminates the template literal and breaks the build. */
+.hero-section .hero-cta > * {
+  animation: hero-fade-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.hero-section .hero-cta > *:nth-child(1) { animation-delay: 0.7s; }
+.hero-section .hero-cta > *:nth-child(2) { animation-delay: 0.8s; }
+
+.hero-section .hero-stat {
+  animation: hero-fade-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.hero-section .hero-stat:nth-child(1) { animation-delay: 0.95s; }
+.hero-section .hero-stat:nth-child(2) { animation-delay: 1.05s; }
+.hero-section .hero-stat:nth-child(3) { animation-delay: 1.15s; }
+.hero-section .hero-stat:nth-child(4) { animation-delay: 1.25s; }
+
+.hero-section .hero-scene {
+  animation: hero-scale-in 1.1s 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.hero-section .device-laptop,
+.hero-section .device-phone {
+  animation: hero-fade 0.9s 0.7s ease-out backwards;
+}
+.hero-section .hero-card {
+  animation: hero-fade 0.8s ease-out backwards;
+}
+.hero-section .hero-card-1 { animation-delay: 0.95s; }
+.hero-section .hero-card-2 { animation-delay: 1.05s; }
+.hero-section .hero-card-3 { animation-delay: 1.15s; }
+.hero-section .hero-card-4 { animation-delay: 1.25s; }
+
+.hero-section .hero-watermark {
+  animation: hero-fade 1.6s 0.9s ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section .hero-cta > *,
+  .hero-section .hero-stat,
+  .hero-section .hero-scene,
+  .hero-section .device-laptop,
+  .hero-section .device-phone,
+  .hero-section .hero-card,
+  .hero-section .hero-watermark {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+/* Tablet — stack copy above scene, keep cards visible but contained */
+@media (max-width: 980px) {
+  .hero-section {
+    /* Clear both fixed bars: contact bar (--tcb-h) + 64px nav + gap. */
+    padding-top: calc(var(--tcb-h, 36px) + 88px) !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .hero-section .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    align-items: stretch;
+    min-height: auto;
+  }
+  .hero-section .hero-scene {
+    justify-self: center !important;
+    max-width: 380px !important;
+  }
+  .hero-section .hero-stats {
+    gap: 28px !important;
+  }
+  /* Pull floating cards inside the visible area */
+  .hero-section .hero-card-1 { left: 0 !important; right: auto !important; }
+  .hero-section .hero-card-2 { right: 0 !important; left: auto !important; }
+  .hero-section .hero-card-3 { left: 0 !important; right: auto !important; }
+  .hero-section .hero-card-4 { right: 0 !important; left: auto !important; }
+}
+
+/* Phone — hide decorative chips, shrink scene, switch stats to 2-up grid */
+@media (max-width: 640px) {
+  .hero-section {
+    /* Clear both fixed bars: contact bar (--tcb-h, fixed 36px) + nav + gap. */
+    padding-top: calc(var(--tcb-h, 36px) + 80px) !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .hero-section .hero-scene {
+    max-width: 320px !important;
+  }
+  /* Decorative floating chips contain redundant info — hide on phones
+     so the laptop+phone composition has room to breathe. */
+  .hero-section .hero-card {
+    display: none !important;
+  }
+  /* Stats: 2-up grid, smaller numbers */
+  .hero-section .hero-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 18px !important;
+    margin-top: 40px !important;
+  }
+  .hero-section .hero-stat > div:first-child {
+    font-size: 28px !important;
+  }
+  .hero-section .hero-stat > div:last-child {
+    font-size: 11px !important;
+    letter-spacing: 0.03em !important;
+  }
+  /* Lead + buttons: tighter spacing on phones */
+  .hero-section .hero-lead {
+    margin-top: 20px !important;
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+  }
+  .hero-section .hero-cta {
+    margin-top: 26px !important;
+    gap: 10px !important;
+  }
+  .hero-section .hero-cta > a {
+    padding: 12px 18px !important;
+    font-size: 14px !important;
+  }
+  .hero-section .hero-watermark {
+    font-size: clamp(56px, 20vw, 100px) !important;
+    margin-top: 40px !important;
+  }
+}
+
+/* Very small phones (≤ 380px) — extra compact */
+@media (max-width: 380px) {
+  .hero-section .hero-scene {
+    max-width: 280px !important;
+  }
+  .hero-section .hero-stat > div:first-child {
+    font-size: 24px !important;
+  }
+}
+      

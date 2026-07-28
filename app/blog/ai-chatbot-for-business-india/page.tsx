@@ -14,13 +14,6 @@ export const metadata: Metadata = {
   description:
     'A straight guide to AI chatbots for Indian businesses — what a good one actually does, what it costs to build and run, where it goes wrong, and how to know if you need one.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'AI chatbot for business India',
-    'AI chatbot development India',
-    'WhatsApp chatbot India',
-    'customer support automation India',
-    'AI chatbot cost India',
-  ],
   openGraph: {
     title: 'Should Your Business Get an AI Chatbot? (India, 2026) | Verelios Labs',
     description:
@@ -44,10 +37,9 @@ const articleJsonLd = {
   dateModified: `${PUBLISHED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
-  wordCount: 1300,
   articleSection: 'AI Automation',
   keywords: 'AI chatbot for business India, AI chatbot development India, WhatsApp chatbot India, AI chatbot cost India',
-  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
+  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -89,7 +81,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Every business owner has been pitched an AI chatbot in the last year. Some need one; many don&apos;t. The difference comes down to whether you&apos;re answering the same questions over and over, and losing customers when you&apos;re slow to reply. Here&apos;s an honest look at what a modern chatbot does, what it costs, and how to decide. A chatbot is just one slice of the bigger picture &mdash; for everything else worth automating, see our broader <a href="/blog/ai-automation-for-indian-businesses-2026">guide to AI automation for Indian businesses</a>.
               </p>
@@ -134,13 +126,103 @@ export default function Post() {
                 You probably do if: you answer the same handful of questions repeatedly, enquiries come in outside working hours, or you lose leads because no one replied in time. You probably don&apos;t (yet) if: your volume is low, every enquiry is genuinely different, or your real bottleneck is fulfilment rather than first response. Be honest here — a chatbot fixes a response-speed problem, not a demand problem.
               </p>
 
+              <h2>What to measure once it is live</h2>
+              <p>
+                Most chatbot dashboards lead with the wrong number. &ldquo;Conversations
+                handled&rdquo; feels impressive and tells you almost nothing — a bot that
+                answered 500 messages badly scores well on it. Four numbers actually matter:
+              </p>
+              <ul>
+                <li>
+                  <strong>Containment rate</strong> — the share of conversations resolved
+                  without a human. Somewhere between 50% and 70% is healthy for routine
+                  enquiries. Much higher and it is probably refusing to hand off.
+                </li>
+                <li>
+                  <strong>Handoff quality</strong> — when it does escalate, does the human
+                  receive the full context, or does the customer have to repeat themselves?
+                </li>
+                <li>
+                  <strong>First-response time</strong> — the metric the bot exists to fix.
+                  Compare the month before launch with the month after.
+                </li>
+                <li>
+                  <strong>Enquiry-to-conversation rate</strong> — the commercial one. Did more
+                  enquiries turn into real conversations because someone replied in time?
+                </li>
+              </ul>
+              <p>
+                Read the failed conversations weekly for the first month. That transcript log is
+                the most useful document a chatbot produces — it tells you exactly which
+                questions your business has never properly answered anywhere.
+              </p>
+
+              <h2>A worked example: a Kanpur jeweller</h2>
+              <p>
+                Concrete numbers help more than principles, so here is the shape of a typical
+                small-retail case. A jewellery shop gets roughly 40 enquiries a week across
+                Instagram DMs, WhatsApp and a website form. Around 30 of those are the same four
+                questions: are you open today, do you make custom pieces, what is the making
+                charge, and do you buy old gold. The remaining ten are real conversations about
+                specific pieces.
+              </p>
+              <p>
+                The 30 routine messages are not hard, but they arrive at 9pm and on Sundays, and
+                a customer who waits four hours for &ldquo;yes, we do custom work&rdquo; has
+                usually messaged two competitors in the meantime. A grounded bot answers those
+                instantly from the shop&apos;s own price list and policy sheet, and routes the
+                other ten to the owner with the conversation history attached. Nothing about the
+                ten changes — those were always going to need a person. What changes is that the
+                person now sees them within minutes instead of after wading through thirty
+                &ldquo;what time do you close&rdquo; messages.
+              </p>
+              <p>
+                Build cost for that scope lands near the bottom of the range above, because the
+                knowledge base is small and there is no inventory integration. The monthly
+                running cost at 160 conversations is modest. The number worth tracking is not
+                messages handled — it is how many of the ten real enquiries convert now that
+                they get answered the same evening.
+              </p>
+
+              <h2>Hindi, Hinglish, and how customers actually type</h2>
+              <p>
+                This matters more in India than most vendors admit. Your customers will not type
+                clean English. They will type Hinglish in Roman script, switch mid-sentence, use
+                &ldquo;rate kya hai&rdquo; and &ldquo;kitne din lagenge&rdquo;, and abbreviate
+                heavily. Modern language models handle this far better than the keyword-matching
+                bots of a few years ago, but it has to be tested rather than assumed.
+              </p>
+              <p>
+                The practical test before you sign off on any chatbot: collect twenty real
+                messages your customers have actually sent — copy them verbatim out of WhatsApp,
+                typos and all — and check the bot answers all twenty correctly. If a vendor
+                demos only with tidy, well-formed questions they wrote themselves, you have
+                learned nothing about how it will behave on Monday.
+              </p>
+
+              <h2>What you are responsible for after launch</h2>
+              <p>
+                A chatbot is not a one-time purchase, and treating it as one is the most common
+                reason they quietly stop working. Someone has to own three things: refreshing
+                the knowledge when prices or policies change, reading the conversations where
+                the bot failed or handed off, and deciding what to add to its knowledge as a
+                result. That is perhaps an hour a month once things settle, but it is not zero.
+              </p>
+              <p>
+                Ask any vendor how you update the bot&apos;s knowledge yourself, without them.
+                If the honest answer is &ldquo;raise a ticket with us&rdquo;, you have bought a
+                dependency rather than a tool. You should be able to edit a document and have
+                the bot pick it up.
+              </p>
+
               <h2>How a chatbot project runs</h2>
               <ol>
                 <li><strong>Gather knowledge.</strong> We collect your FAQs, pricing, policies and catalogue — whatever the bot should know.</li>
                 <li><strong>Build &amp; ground.</strong> The bot is set up to answer only from that material, with a clear handoff path to a human.</li>
-                <li><strong>Test on real questions.</strong> We run it against the questions your customers actually ask and tune the answers.</li>
+                <li><strong>Test on real questions.</strong> We run it against the questions your customers actually ask — including the messy Hinglish ones — and tune the answers.</li>
                 <li><strong>Launch on your channel(s).</strong> Website, WhatsApp, or both.</li>
                 <li><strong>Tune for 30 days.</strong> Real conversations reveal gaps; we close them.</li>
+                <li><strong>Hand over the controls.</strong> You get the document that feeds the bot&apos;s knowledge, so you can correct a price without waiting on us.</li>
               </ol>
 
               <hr />

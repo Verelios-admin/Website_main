@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/custom-software-development';
@@ -13,25 +14,6 @@ export const metadata: Metadata = {
   description:
     'Custom software development for Indian businesses — ERPs, CRMs, dashboards, internal tools and APIs. Full-stack TypeScript, launched in 4–8 weeks.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'custom software development company',
-    'custom software development company India',
-    'ERP development India',
-    'CRM development India',
-    'custom CRM development',
-    'custom ERP development',
-    'internal tools development',
-    'admin dashboard development',
-    'workflow automation India',
-    'API development services India',
-    'SaaS development India',
-    'enterprise software India',
-    'business process automation India',
-    'custom software developers in Kanpur',
-    'software development company in Kanpur',
-    'custom software developers in Govind Nagar Kanpur',
-    'software developers Kanpur Uttar Pradesh',
-  ],
   openGraph: {
     title: 'Custom Software Development Company in India | Verelios Labs',
     description:
@@ -52,20 +34,12 @@ const serviceJsonLd = {
   name: 'Custom Software Development',
   description:
     'Custom business software for Indian companies — ERPs, CRMs, admin dashboards, automation, APIs and internal tools. Full-stack TypeScript, end-to-end ownership.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '99999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -198,6 +172,42 @@ export default function CustomSoftwarePage() {
                 Custom software starts at <strong>₹99,999</strong> for a focused single-purpose tool (think: a custom inventory dashboard, or a 5-screen lead-management system). Larger systems (full ERP, CRM with multiple modules) land between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40).
               </p>
 
+              <h2>When you should not build custom software</h2>
+              <p>
+                We turn down this work fairly often, so it is worth stating plainly. If an
+                off-the-shelf product already does 80% of what you need and the missing 20% is
+                a convenience rather than a constraint, buy the product. If the process you
+                want to automate is still changing every month, wait until it settles — you
+                will pay twice to build it now. If only one person in the company will ever use
+                it, a well-built spreadsheet is usually the honest answer.
+              </p>
+              <p>
+                Custom software earns its cost in three situations: the process is genuinely
+                specific to how your business competes, so no product models it; you are paying
+                per-seat SaaS fees that now exceed a one-time build; or you are stitching three
+                tools together by hand and the manual step in the middle is where errors come
+                from. If your situation is one of those, the maths usually works within a year.
+              </p>
+
+              <h2>Working with us from outside India</h2>
+              <p>
+                Roughly speaking, our build cost lands between a third and half of a comparable
+                UK, US or Gulf agency quote, and that gap is where most of our overseas
+                enquiries come from. If you are outside India, three things usually matter more
+                to you than price: who owns the code, how communication works across time
+                zones, and what happens if it goes wrong.
+              </p>
+              <p>
+                On ownership: the repository is yours from the first commit, hosted under your
+                organisation if you prefer. On timezones: we are on IST (UTC+5:30) and hold a
+                daily written update rather than requiring a live call, with a two to four hour
+                working overlap with the UK and the Gulf, and an early-morning overlap with the
+                US East Coast. On risk: the 30/30/40 milestone structure means you are never
+                more than one stage out of pocket, and the free 48-hour mockup means you see
+                actual work before paying anything at all. We invoice in INR; most overseas
+                clients pay by international transfer or Wise.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>Why is custom software cheaper than SaaS over time?</h3>
               <p>
@@ -218,6 +228,9 @@ export default function CustomSoftwarePage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="custom-software-development" />
 

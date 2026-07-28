@@ -10,25 +10,10 @@ const URL_PATH = '/locations/kanpur/mobile-app-development';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Mobile App Development Company in Kanpur — iOS & Android Apps',
+  title: 'Mobile App Development Company in Kanpur',
   description:
-    'Verelios Labs is a mobile app development company in Govind Nagar, Kanpur building iOS & Android apps for Kanpur businesses from one codebase. Free 48-hour mockup, milestone payments, meet us in person. From ₹99,999. Rated 5.0★.',
+    'Verelios Labs — a mobile app development company in Govind Nagar, Kanpur building iOS & Android apps from one codebase. From ₹99,999. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'mobile app development company in Kanpur',
-    'app development company in Kanpur',
-    'app developers in Kanpur',
-    'mobile app developers in Kanpur',
-    'android app development Kanpur',
-    'iOS app development Kanpur',
-    'React Native app development Kanpur',
-    'Flutter app development Kanpur',
-    'ecommerce app development Kanpur',
-    'best app development company in Kanpur',
-    'app development company in Govind Nagar Kanpur',
-    'affordable app development Kanpur',
-    'Verelios Labs Kanpur',
-  ],
   openGraph: {
     title: 'Mobile App Development Company in Kanpur — iOS & Android | Verelios Labs',
     description:
@@ -52,63 +37,12 @@ const REVIEWS: LocalReview[] = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${SITE}${URL_PATH}#localbusiness`,
-  name: 'Verelios Labs',
-  alternateName: ['Verelios', 'Verelios Labs Kanpur', 'Verelios Labs App Development Kanpur'],
-  url: `${SITE}${URL_PATH}`,
-  telephone: '+91-8299522798',
-  email: 'contact@verelios.com',
-  priceRange: '₹₹₹',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
-    addressLocality: 'Kanpur',
-    addressRegion: 'Uttar Pradesh',
-    postalCode: '208006',
-    addressCountry: 'IN',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: '26.447437', longitude: '80.306051' },
-  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    },
-  ],
-  image: `${SITE}/logo.webp`,
-  logo: `${SITE}/logo.webp`,
-  description:
-    'Mobile app development company in Govind Nagar, Kanpur — building iOS and Android apps from one React Native / Flutter codebase for businesses across Kanpur and India. Free 48-hour mockup, milestone-based payment.',
-  areaServed: [
-    { '@type': 'City', name: 'Kanpur' },
-    { '@type': 'Place', name: 'Govind Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kakadeo, Kanpur' },
-    { '@type': 'Place', name: 'Swaroop Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kidwai Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kalyanpur, Kanpur' },
-    { '@type': 'Place', name: 'Civil Lines, Kanpur' },
-    { '@type': 'Place', name: 'Panki, Kanpur' },
-    { '@type': 'Place', name: 'Barra, Kanpur' },
-    { '@type': 'City', name: 'Lucknow' },
-    { '@type': 'State', name: 'Uttar Pradesh' },
-  ],
-  serviceArea: { '@type': 'City', name: 'Kanpur' },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
-  parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '38',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
-};
+// NOTE: this page deliberately declares NO ProfessionalService/LocalBusiness node.
+// The single canonical business entity lives on the homepage as
+// `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
+// parallel copy here (with its own @id, NAP and self-rating) fragmented one real
+// business into six schema entities and multiplied the same 38 reviews six-fold.
+// Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -118,13 +52,12 @@ const serviceJsonLd = {
   name: 'Mobile App Development Company in Kanpur',
   description:
     'Custom iOS and Android app development in Kanpur — built from one React Native or Flutter codebase for Kanpur businesses. Live on both app stores in 3–5 weeks. From ₹99,999. You own the code.',
-  provider: { '@id': `${SITE}${URL_PATH}#localbusiness` },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '99999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -205,7 +138,6 @@ const KANPUR_AREAS = [
 export default function KanpurMobileAppDevelopmentPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

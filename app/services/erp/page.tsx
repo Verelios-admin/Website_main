@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/erp';
@@ -13,23 +14,6 @@ export const metadata: Metadata = {
   description:
     'Custom ERP software built around your workflow — inventory, manufacturing, accounting, HR, payroll and reporting in one system. Full-stack TypeScript, you own the code, launched in 6–12 weeks.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'custom ERP software',
-    'custom ERP software India',
-    'ERP software development company India',
-    'ERP development company India',
-    'custom ERP development',
-    'ERP software for small business India',
-    'manufacturing ERP software India',
-    'inventory management ERP',
-    'ERP software company Kanpur',
-    'ERP software Kanpur',
-    'custom ERP developers India',
-    'ERP vs SAP alternative India',
-    'GST ERP software India',
-    'Tally integration ERP',
-    'payroll and HR ERP India',
-  ],
   openGraph: {
     title: 'Custom ERP Software Development Company in India | Verelios Labs',
     description:
@@ -50,20 +34,12 @@ const serviceJsonLd = {
   name: 'Custom ERP Software Development',
   description:
     'Custom ERP software for Indian businesses — inventory, manufacturing, procurement, accounting, HR, payroll and reporting built into one system tailored to your workflow. Full-stack TypeScript, end-to-end ownership.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '99999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -238,6 +214,9 @@ export default function ERPPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="erp" />
 

@@ -133,7 +133,14 @@ export function Navigation() {
               background: 'transparent',
               border: 0,
               cursor: 'pointer',
-              padding: 4,
+              // 44x44 minimum hit area. The icon stays 22px; the box around it is
+              // padded out to meet the accessible touch-target floor. This is the
+              // primary navigation control on phones and used to be only 30x30.
+              minWidth: 44,
+              minHeight: 44,
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 11,
               color: 'inherit',
               display: 'none',
             }}
@@ -181,6 +188,14 @@ export function Navigation() {
 
       <style jsx>{`
         :global(.topnav-cta-short) { display: none; }
+        /* Reserve the button's width so it cannot resize after the webfont's
+           metrics settle. Without this the CTA measured 311px then snapped to
+           172px a few hundred ms after paint, which was a contributing source of
+           a 0.217 CLS on the homepage at 768px width. */
+        :global(.topnav-cta) {
+          min-width: 190px;
+          justify-content: center;
+        }
         @media (max-width: 820px) {
           :global(.topnav-links)      { display: none !important; }
           :global(.topnav-burger)     { display: inline-flex !important; }
@@ -189,6 +204,7 @@ export function Navigation() {
           :global(.topnav-cta) {
             padding: 7px 13px !important;
             font-size: 13px !important;
+            min-width: 158px !important;
           }
         }
         /* On phones the logo + inline CTA + burger collide. The burger menu

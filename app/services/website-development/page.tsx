@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/website-development';
@@ -13,26 +14,6 @@ export const metadata: Metadata = {
   description:
     'India\'s fastest custom website development company. React + Next.js websites built to convert, shipped in under 3 weeks. Free 48-hour mockup. No upfront payment.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'custom website development company',
-    'custom website development company India',
-    'website development services India',
-    'React website development',
-    'Next.js website development',
-    'business website development India',
-    'website development Pune',
-    'website development Mumbai',
-    'website development Bangalore',
-    'website development Delhi',
-    'website redesign services India',
-    'conversion-optimized website',
-    'fast website development',
-    'website developer near me',
-    'website developers in Kanpur',
-    'website development company in Kanpur',
-    'website developers in Govind Nagar Kanpur',
-    'web design company Kanpur Uttar Pradesh',
-  ],
   openGraph: {
     title: 'Custom Website Development Company in India | Verelios Labs',
     description:
@@ -53,20 +34,12 @@ const serviceJsonLd = {
   name: 'Custom Website Development',
   description:
     'Custom responsive websites built with React, Next.js and TypeScript for Indian businesses. SEO-optimised, mobile-first, conversion-focused. From idea to launch in under 3 weeks.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '49999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -242,6 +215,9 @@ export default function WebsiteDevelopmentPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="website-development" />
 

@@ -1,5 +1,5 @@
 {
-  "name": "Verelios Labs — Website & App Development Agency in India",
+  "name": "Verelios Labs \u2014 Website & App Development Agency in India",
   "short_name": "Verelios Labs",
   "description": "India's fastest website & app development agency. Custom sites, mobile apps & software launched in 3 weeks.",
   "start_url": "/",
@@ -9,9 +9,28 @@
   "background_color": "#0a0a0c",
   "theme_color": "#0a0a0c",
   "lang": "en-IN",
-  "categories": ["business", "productivity", "developer"],
+  "categories": [
+    "business",
+    "productivity",
+    "developer"
+  ],
   "icons": [
-    { "src": "/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/favicon.svg", "sizes": "any",  "type": "image/svg+xml" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
   ]
 }

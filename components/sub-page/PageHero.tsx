@@ -21,9 +21,12 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="tile"
+      // paddingTop lives in globals.css under .tile-hero, NOT inline — the
+      // responsive .tile overrides use `padding` shorthand with !important, which
+      // beats an inline style and used to collapse this to 56px on phones, hiding
+      // the breadcrumb behind the 100px fixed header.
+      className="tile tile-hero"
       style={{
-        paddingTop: 168,
         paddingBottom: 56,
         position: 'relative',
         overflow: 'hidden',

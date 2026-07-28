@@ -14,13 +14,6 @@ export const metadata: Metadata = {
   description:
     'A practical, no-hype guide to AI automation for Indian businesses — what is worth automating first, what it actually costs in INR, and how to tell if a process is ready.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'AI automation for business India',
-    'AI automation cost India',
-    'business process automation India',
-    'workflow automation India',
-    'AI for small business India',
-  ],
   openGraph: {
     title: 'AI Automation for Indian Businesses (2026) | Verelios Labs',
     description:
@@ -44,10 +37,9 @@ const articleJsonLd = {
   dateModified: `${PUBLISHED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
-  wordCount: 1400,
   articleSection: 'AI Automation',
   keywords: 'AI automation for business India, AI automation cost India, workflow automation India, business process automation',
-  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
+  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -89,7 +81,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 &quot;AI automation&quot; has become a phrase people use to sell almost anything. Stripped of the hype, it means one simple thing: getting software — sometimes with a language model attached — to do repetitive work your team currently does by hand. The useful question isn&apos;t &quot;should we use AI?&quot; It&apos;s &quot;which specific task in my business is costing me hours every week, and can a machine do it reliably?&quot; This guide answers that for Indian small and mid-sized businesses.
               </p>
@@ -144,6 +136,61 @@ export default function Post() {
               <h2>A note on your data</h2>
               <p>
                 Before you send business data anywhere, ask two questions: where does it go, and is it used to train someone&apos;s model? For sensitive data you can use models that don&apos;t train on your inputs, or run open models so nothing leaves your own infrastructure. Any serious build should sign a mutual NDA and be able to explain the data path in one paragraph.
+              </p>
+
+              <h2>Three automations that reliably pay off, with numbers</h2>
+              <p>
+                Rather than list everything possible, here are three we have actually built more
+                than once, with the shape of the economics. Treat the figures as typical rather
+                than quoted — your volumes will differ.
+              </p>
+              <p>
+                <strong>1. Enquiry triage and routing.</strong> Incoming messages across WhatsApp,
+                email and a website form get read, classified (new enquiry, existing customer,
+                supplier, irrelevant), summarised in one line, and pushed to the right person with
+                a suggested reply. A business fielding 200 enquiries a month typically has someone
+                spending 45–60 minutes a day just sorting them. That is around 20 hours a month
+                recovered, and the second-order gain is bigger: genuine enquiries stop being
+                buried under noise and get answered the same day.
+              </p>
+              <p>
+                <strong>2. Invoice and purchase-order data entry.</strong> Supplier invoices arrive
+                as PDFs, images and photographs of paper. A model extracts line items, totals, GST
+                numbers and dates, and writes them into Tally or your accounting system, flagging
+                anything it is unsure about for a human to confirm. Businesses processing 300
+                invoices a month often have a person on this near full-time. Accuracy matters more
+                than speed here, which is why the flag-for-review step is not optional — you want
+                the automation to be visibly unsure rather than confidently wrong.
+              </p>
+              <p>
+                <strong>3. Quotation drafting.</strong> A salesperson describes the requirement in
+                a sentence; the system produces a first-draft quotation using your current rate
+                card, standard terms and past similar jobs, ready to edit and send. This turns a
+                40-minute task into a 5-minute one. It works because a draft that is 80% right and
+                instantly available beats a perfect document that takes until tomorrow.
+              </p>
+              <p>
+                What these three share is the profile from the section above: high frequency,
+                clear rules, a written record already existing, and a cheap failure mode. None of
+                them replaces a person. Each removes the part of a person&apos;s day that produces
+                nothing.
+              </p>
+
+              <h2>What usually goes wrong</h2>
+              <p>
+                The failures we see are rarely technical. In rough order of frequency: the process
+                being automated was never written down, so the automation encodes one
+                person&apos;s undocumented habits and breaks when they change. Or nobody agreed
+                what &ldquo;correct&rdquo; looks like, so there is no way to tell whether it is
+                working. Or it was launched as a hard switchover instead of running alongside the
+                manual process for a fortnight, so the first error destroyed everyone&apos;s trust
+                in it. Or — most often — it automated the loudest complaint rather than the
+                costliest task.
+              </p>
+              <p>
+                All four are avoidable at the scoping stage, which is why we push for a written
+                description of the current process before quoting. If nobody can write down how
+                the task is done today, that is the actual first deliverable.
               </p>
 
               <h2>Where to start</h2>

@@ -6,7 +6,10 @@ import { Navigation } from '@/components/Navigation';
 // robots. (The HTTP 404 status already prevents indexing; this is for
 // cleanliness and crawler tools that read the meta rather than the status.)
 export const metadata: Metadata = {
-  title: 'Page Not Found | Verelios Labs',
+  // No "| Verelios Labs" suffix here — the root layout's title template
+  // (`%s | Verelios Labs`) appends it. Including it manually rendered
+  // "Page Not Found | Verelios Labs | Verelios Labs".
+  title: 'Page Not Found',
   robots: { index: false, follow: true },
 };
 

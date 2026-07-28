@@ -3,7 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /api/
 
 # Common crawlers — explicit allow for clarity
 User-agent: Googlebot

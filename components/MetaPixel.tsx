@@ -42,15 +42,19 @@ export function MetaPixel() {
           `,
         }}
       />
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: 'none' }}
-          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
-      </noscript>
+      {/* The no-JS tracking pixel is emitted as raw HTML rather than JSX on
+          purpose. As a JSX <img> it was the first image element in document
+          order, so Next's image-preload heuristic emitted
+          `<link rel="preload" as="image">` for it into <head> — a High-priority
+          fetch for an invisible 1x1 tracking pixel, competing with real
+          above-the-fold content for bandwidth on the critical path. Written as a
+          string it never reaches that heuristic, and the pixel still works
+          exactly as before for visitors without JavaScript. */}
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: `<img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1"/>`,
+        }}
+      />
     </>
   );
 }

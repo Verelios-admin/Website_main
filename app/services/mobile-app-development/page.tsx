@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/mobile-app-development';
@@ -13,26 +14,6 @@ export const metadata: Metadata = {
   description:
     'Custom iOS + Android app development from a single React Native or Flutter codebase. Shipped to both stores in 3–5 weeks. Free 48-hour mockup. No upfront payment.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'custom app development company',
-    'custom mobile app development company India',
-    'mobile app development services India',
-    'React Native app development India',
-    'Flutter app development India',
-    'iOS app development India',
-    'Android app development India',
-    'app development company Pune',
-    'app development company Mumbai',
-    'app development company Bangalore',
-    'cross platform app development',
-    'startup app development India',
-    'hire app developer India',
-    'app developer near me',
-    'app developers in Kanpur',
-    'app development company in Kanpur',
-    'app developers in Govind Nagar Kanpur',
-    'mobile app developers Kanpur Uttar Pradesh',
-  ],
   openGraph: {
     title: 'Custom Mobile App Development Company in India | Verelios Labs',
     description:
@@ -53,20 +34,12 @@ const serviceJsonLd = {
   name: 'Custom Mobile App Development',
   description:
     'Cross-platform iOS and Android apps built with React Native or Flutter, plus a backend in Node.js. Shipped to App Store and Play Store in 3–5 weeks.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '99999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -247,6 +220,9 @@ export default function MobileAppDevelopmentPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="mobile-app-development" />
 

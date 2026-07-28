@@ -15,13 +15,6 @@ export const metadata: Metadata = {
   description:
     'An honest, up-to-date roundup of the best ERP software companies in Kanpur in 2026 — who builds custom ERP, inventory and payroll systems for local factories and traders, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'best ERP software company in Kanpur',
-    'top ERP companies in Kanpur',
-    'ERP software companies in Kanpur',
-    'custom ERP software Kanpur',
-    'payroll software in Kanpur',
-  ],
   openGraph: {
     title: 'Best ERP Software Companies in Kanpur (2026) | Verelios Labs',
     description:
@@ -45,10 +38,9 @@ const articleJsonLd = {
   dateModified: `${PUBLISHED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
-  wordCount: 1650,
   articleSection: 'ERP Software',
   keywords: 'best ERP software company in Kanpur, top ERP companies in Kanpur',
-  author: { '@type': 'Person', name: 'Sahil Chauhan', jobTitle: 'Founder & CEO', worksFor: { '@id': `${SITE}/#organization` }, url: SITE },
+  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: { '@type': 'ImageObject', url: `${SITE}/logo.webp`, width: 1200, height: 630 },
@@ -85,7 +77,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By Sahil Chauhan · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
               <p>
                 Kanpur&apos;s economy runs on leather, textiles, engineering, FMCG, chemicals and trade — and the units that stay in control of stock, production and month-end accounts almost always run on a proper ERP rather than a pile of spreadsheets. Choosing the right ERP company locally is a big decision. Here&apos;s an honest roundup for 2026.
               </p>
@@ -95,6 +87,15 @@ export default function Post() {
                   <strong>A note on who&apos;s writing this:</strong> Verelios Labs publishes this roundup, and we include ourselves in it. We are not an independent or neutral reviewer, so please treat this as an informed insider&apos;s view rather than a detached audit — and compare the options for yourself before you decide.
                 </p>
               </div>
+              <p>
+                <strong>How the other companies here were researched:</strong> everything we say
+                about a firm other than ourselves comes from that company&apos;s own public
+                website and public listings, read in July 2026. We have not worked with them, we
+                have not audited their code, and we do not invent review counts, prices or
+                project details for them. Where we do not know something, the entry says less
+                rather than guessing. Company details change, so verify anything that matters to
+                your decision directly with the firm before you act on it.
+              </p>
               <p>
                 The options below are listed with Verelios first because we publish the page; the order is <em>not</em> a scored ranking of one firm above another. Every entry — ours included — is described against the same practical criteria we&apos;d use if we were the ones choosing an ERP partner in Kanpur:
               </p>

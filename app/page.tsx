@@ -61,8 +61,10 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
-  // Google expects a short tier value here, not a formatted range string.
-  priceRange: '₹₹₹',
+  // Google accepts either a normalised number of currency signs OR a numerical
+  // range. A repeated ₹ glyph is neither convention, so use the real range that
+  // matches the visible pricing copy.
+  priceRange: '₹49,999–₹5,00,000+',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '126/58 G Block, Govind Nagar',
@@ -106,66 +108,32 @@ const localBusinessJsonLd = {
   serviceArea: { '@type': 'Country', name: 'India' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
   parentOrganization: { '@id': `${SITE_URL}/#organization` },
-  // aggregateRating + review reflect GENUINE, verifiable Google Business Profile
-  // reviews (5.0 across 38 reviews) with the reviewers' real public names — not
-  // self-authored placeholder content. Keep this in sync with the live GBP count.
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '38',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Shrawan Garg' },
-      datePublished: '2026-07-07',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'From domain setup to live launch, the entire process was smooth and well-communicated. Our website ranks well on Google too, thanks to the SEO-ready structure they built. Best website developers in Kanpur for small and medium businesses.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Tanay Trivedi' },
-      datePublished: '2026-03-20',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'They built our website really well — the design, performance and overall quality exceeded expectations. Wide range of tech support, from app and web development to ERP and CRM. Highly recommended.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Bhavesh Singh' },
-      datePublished: '2026-04-18',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'Had a really great experience building a custom website for my company. They are super reliable and committed exactly to the timeline — I got the work done even before my deadline, and my website has reached so many customers.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Maitrey Deshpande' },
-      datePublished: '2026-04-25',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'They provided the best services needed for the app, published it on the App Store, and also handle maintenance. They released my app on both the Play Store and the App Store.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Sumit Prasad' },
-      datePublished: '2026-03-15',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody:
-        'A great experience working with Verelios Labs for website development. Highly professional, responsive, and they understand client requirements very well. They delivered a clean, modern and fully functional website.',
-    },
-  ],
+  // NOTE: aggregateRating + review are deliberately ABSENT here, and must not be
+  // re-added. Google's review-snippet policy forbids "self-serving" reviews — a
+  // business marking up ratings of ITSELF on its OWN site is ineligible for the
+  // star rich result no matter how genuine the underlying reviews are. Our 38
+  // Google reviews are real, but authoring the JSON-LD about ourselves is the
+  // separate violation, and repeating it across sibling URLs is the pattern the
+  // spam guidelines describe as reviews-markup abuse (GSC already raised a
+  // "Review has multiple aggregate ratings" error on this property once).
+  // The visible star rating and testimonials stay on the page — they work as
+  // social proof without the markup. If a rating rich result is ever wanted, the
+  // only compliant route is a third-party platform's official embed.
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Web & App Development Services',
     itemListElement: [
       {
+        // "From ₹49,999" is what the page shows, so declare a floor via
+        // priceSpecification rather than a bare `price` (which asserts an exact
+        // figure the business does not actually claim).
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '49999',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: '49999',
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Business Website Development',
@@ -178,7 +146,11 @@ const localBusinessJsonLd = {
       {
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '99999',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: '99999',
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Mobile App Development',
@@ -191,7 +163,11 @@ const localBusinessJsonLd = {
       {
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '99999',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: '99999',
+        },
         itemOffered: {
           '@type': 'Service',
           name: 'Custom Software Development',

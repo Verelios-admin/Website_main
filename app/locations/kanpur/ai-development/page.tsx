@@ -10,27 +10,10 @@ const URL_PATH = '/locations/kanpur/ai-development';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'AI Development Company in Kanpur — AI Agents, Chatbots & Automation',
+  title: 'AI Development Company in Kanpur',
   description:
-    'Verelios Labs is an AI development company in Govind Nagar, Kanpur building AI agents, chatbots, machine learning models and workflow automation for Kanpur businesses. Free 48-hour proof-of-concept, milestone payments, meet us in person. Rated 5.0★.',
+    'Verelios Labs builds AI agents, chatbots, ML models & workflow automation in Govind Nagar, Kanpur. Free 48-hour proof-of-concept. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'AI development company in Kanpur',
-    'AI development company Kanpur',
-    'artificial intelligence company in Kanpur',
-    'AI agent development Kanpur',
-    'AI chatbot development Kanpur',
-    'machine learning company Kanpur',
-    'generative AI development Kanpur',
-    'AI automation company in Kanpur',
-    'AI software development Kanpur',
-    'AI consulting Kanpur',
-    'WhatsApp chatbot Kanpur',
-    'AI development company in Govind Nagar Kanpur',
-    'best AI company in Kanpur',
-    'AI developers in Kanpur',
-    'Verelios Labs Kanpur',
-  ],
   openGraph: {
     title: 'AI Development Company in Kanpur — Agents, Chatbots & Automation | Verelios Labs',
     description:
@@ -55,63 +38,12 @@ const REVIEWS: LocalReview[] = [
 ];
 
 // Page-specific LocalBusiness schema for this Kanpur AI landing page.
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${SITE}${URL_PATH}#localbusiness`,
-  name: 'Verelios Labs',
-  alternateName: ['Verelios', 'Verelios Labs Kanpur', 'Verelios Labs AI Development Kanpur'],
-  url: `${SITE}${URL_PATH}`,
-  telephone: '+91-8299522798',
-  email: 'contact@verelios.com',
-  priceRange: '₹₹₹',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
-    addressLocality: 'Kanpur',
-    addressRegion: 'Uttar Pradesh',
-    postalCode: '208006',
-    addressCountry: 'IN',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: '26.447437', longitude: '80.306051' },
-  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    },
-  ],
-  image: `${SITE}/logo.webp`,
-  logo: `${SITE}/logo.webp`,
-  description:
-    'AI development company in Govind Nagar, Kanpur — building AI agents, chatbots, machine learning models and workflow automation for businesses across Kanpur and India. Free 48-hour proof-of-concept, milestone-based payment.',
-  areaServed: [
-    { '@type': 'City', name: 'Kanpur' },
-    { '@type': 'Place', name: 'Govind Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kakadeo, Kanpur' },
-    { '@type': 'Place', name: 'Swaroop Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kidwai Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Kalyanpur, Kanpur' },
-    { '@type': 'Place', name: 'Civil Lines, Kanpur' },
-    { '@type': 'Place', name: 'Panki, Kanpur' },
-    { '@type': 'Place', name: 'Barra, Kanpur' },
-    { '@type': 'City', name: 'Lucknow' },
-    { '@type': 'State', name: 'Uttar Pradesh' },
-  ],
-  serviceArea: { '@type': 'City', name: 'Kanpur' },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
-  parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '38',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
-};
+// NOTE: this page deliberately declares NO ProfessionalService/LocalBusiness node.
+// The single canonical business entity lives on the homepage as
+// `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
+// parallel copy here (with its own @id, NAP and self-rating) fragmented one real
+// business into six schema entities and multiplied the same 38 reviews six-fold.
+// Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -121,13 +53,12 @@ const serviceJsonLd = {
   name: 'AI Development Company in Kanpur',
   description:
     'Custom AI development in Kanpur — AI agents, chatbots, generative AI, machine learning models, computer vision and workflow automation, built for Kanpur businesses on a modern stack. You own the code.',
-  provider: { '@id': `${SITE}${URL_PATH}#localbusiness` },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '49999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -211,7 +142,6 @@ const KANPUR_AREAS = [
 export default function KanpurAiDevelopmentPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

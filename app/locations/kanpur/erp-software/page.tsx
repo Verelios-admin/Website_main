@@ -10,26 +10,10 @@ const URL_PATH = '/locations/kanpur/erp-software';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'ERP Software Company in Kanpur — Custom ERP & Payroll Software',
+  title: 'ERP Software Company in Kanpur',
   description:
-    'Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, manufacturing, accounting, HR & payroll in one system for Kanpur factories and traders. Tally & GST integration, meet us in person. Rated 5.0★.',
+    'Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, accounting, HR & payroll in one system, with Tally & GST. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'ERP software company in Kanpur',
-    'ERP software in Kanpur',
-    'ERP Kanpur',
-    'custom ERP software Kanpur',
-    'manufacturing ERP Kanpur',
-    'inventory management software Kanpur',
-    'payroll software in Kanpur',
-    'HR and payroll software Kanpur',
-    'accounting software Kanpur',
-    'ERP for leather industry Kanpur',
-    'ERP for textile industry Kanpur',
-    'best ERP company in Kanpur',
-    'ERP software company in Govind Nagar Kanpur',
-    'Verelios Labs Kanpur',
-  ],
   openGraph: {
     title: 'ERP Software Company in Kanpur — Custom ERP & Payroll | Verelios Labs',
     description:
@@ -53,62 +37,12 @@ const REVIEWS: LocalReview[] = [
   },
 ];
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${SITE}${URL_PATH}#localbusiness`,
-  name: 'Verelios Labs',
-  alternateName: ['Verelios', 'Verelios Labs Kanpur', 'Verelios Labs ERP Software Kanpur'],
-  url: `${SITE}${URL_PATH}`,
-  telephone: '+91-8299522798',
-  email: 'contact@verelios.com',
-  priceRange: '₹₹₹',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
-    addressLocality: 'Kanpur',
-    addressRegion: 'Uttar Pradesh',
-    postalCode: '208006',
-    addressCountry: 'IN',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: '26.447437', longitude: '80.306051' },
-  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
-    },
-  ],
-  image: `${SITE}/logo.webp`,
-  logo: `${SITE}/logo.webp`,
-  description:
-    'ERP software company in Govind Nagar, Kanpur — building custom ERP, inventory, manufacturing, accounting and HR & payroll software for businesses across Kanpur and India. Tally and GST integration.',
-  areaServed: [
-    { '@type': 'City', name: 'Kanpur' },
-    { '@type': 'Place', name: 'Govind Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Panki, Kanpur' },
-    { '@type': 'Place', name: 'Jajmau, Kanpur' },
-    { '@type': 'Place', name: 'Dada Nagar, Kanpur' },
-    { '@type': 'Place', name: 'Fazalganj, Kanpur' },
-    { '@type': 'Place', name: 'Kakadeo, Kanpur' },
-    { '@type': 'Place', name: 'Swaroop Nagar, Kanpur' },
-    { '@type': 'City', name: 'Lucknow' },
-    { '@type': 'State', name: 'Uttar Pradesh' },
-  ],
-  serviceArea: { '@type': 'City', name: 'Kanpur' },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
-  parentOrganization: { '@id': `${SITE}/#organization` },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '38',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: REVIEWS.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }, reviewBody: r.body })),
-};
+// NOTE: this page deliberately declares NO ProfessionalService/LocalBusiness node.
+// The single canonical business entity lives on the homepage as
+// `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
+// parallel copy here (with its own @id, NAP and self-rating) fragmented one real
+// business into six schema entities and multiplied the same 38 reviews six-fold.
+// Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -118,13 +52,12 @@ const serviceJsonLd = {
   name: 'ERP Software Company in Kanpur',
   description:
     'Custom ERP software development in Kanpur — inventory, manufacturing, purchase, sales, accounting, reporting and HR & payroll in one system, with Tally and GST integration. Built for Kanpur factories and traders. You own the code.',
-  provider: { '@id': `${SITE}${URL_PATH}#localbusiness` },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '99999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -205,7 +138,6 @@ const KANPUR_AREAS = [
 export default function KanpurErpSoftwarePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/ui-ux-design';
@@ -13,20 +14,6 @@ export const metadata: Metadata = {
   description:
     'Conversion-focused UI/UX design for Indian businesses. Research, wireframes, prototypes and design systems. Figma mockup in 48 hours, no upfront payment.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'UI UX design services India',
-    'UI UX design company India',
-    'website design services India',
-    'app UI design India',
-    'product design India',
-    'Figma design India',
-    'design system India',
-    'conversion-focused design',
-    'startup design agency India',
-    'UI UX design Pune',
-    'UI UX design Mumbai',
-    'UI UX design Bangalore',
-  ],
   openGraph: {
     title: 'UI/UX Design Services in India | Verelios Labs',
     description:
@@ -47,14 +34,7 @@ const serviceJsonLd = {
   name: 'UI/UX Design Services',
   description:
     'User research, wireframing, prototyping, visual design and design systems for Indian web and mobile products. Conversion-focused, hand-off-ready Figma files.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
 };
 
@@ -168,6 +148,35 @@ export default function UiUxDesignPage() {
                 A focused design engagement (5–8 screens, design system, prototype) starts at <strong>₹40,000</strong>. Larger product systems (20+ screens, multiple flows, advanced components) land between <strong>₹1,00,000 and ₹3,00,000</strong>.
               </p>
 
+              <h2>How we decide what to change</h2>
+              <p>
+                Design opinions are cheap, so we try to argue from evidence rather than taste.
+                Before redesigning anything that already exists, we look at four things: where
+                people leave (analytics drop-off by screen), what they try to do that the
+                interface makes hard (support messages and sales objections are the richest
+                source), how the three closest competitors solve the same screen, and what the
+                page has to achieve commercially. That produces a short list of screens worth
+                the money, which is usually far shorter than the client expected.
+              </p>
+              <p>
+                On a brand-new product there is no analytics data, so we substitute the closest
+                thing available: the actual words your customers use. We ask for five real
+                enquiry messages or sales calls and design the first screen around answering
+                the objection that appears most often. It is a better brief than any moodboard.
+              </p>
+
+              <h2>What good looks like on an Indian mobile connection</h2>
+              <p>
+                A design that only looks good on a designer&apos;s monitor is a liability here.
+                Most of your visitors arrive on a mid-range Android phone on 4G, so we design
+                for that first and let the desktop layout follow. In practice that means text
+                that stays readable at 15–16px without zooming, tap targets no smaller than
+                44×44 pixels, hero sections that communicate the offer before any image loads,
+                and no layout that jumps around while the page settles. These are not
+                aesthetic preferences — each one is a measurable failure mode we test for
+                before handing over.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What does "conversion-focused" actually mean?</h3>
               <p>
@@ -184,6 +193,9 @@ export default function UiUxDesignPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="ui-ux-design" />
 

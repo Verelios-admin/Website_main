@@ -13,16 +13,6 @@ export const metadata: Metadata = {
   description:
     'Verelios Labs services: website development, mobile apps, custom software, UI/UX design, AI automation, ERP software and managed hosting. Built in 3 weeks, free 48-hour mockup.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'web development services India',
-    'app development services India',
-    'custom software development services',
-    'UI UX design services India',
-    'AI automation services India',
-    'ERP software development India',
-    'managed web hosting India',
-    'Verelios Labs services',
-  ],
   openGraph: {
     title: 'Our Services | Verelios Labs',
     description:
@@ -152,12 +142,74 @@ export default function ServicesHubPage() {
             </div>
 
             <Prose>
-              <p style={{ marginTop: 32 }}>
-                Not sure which service you need? Tell us what you&apos;re trying to
-                achieve and we&apos;ll recommend the right approach — and send a free
-                48-hour mockup so you can see it before committing. Based in Govind
-                Nagar, Kanpur, we work with local businesses in person and founders
-                across India remotely.
+              <h2 style={{ marginTop: 40 }}>Which one do you actually need?</h2>
+              <p>
+                Most people arrive here knowing the problem but not the label for the
+                solution. A rough guide:
+              </p>
+              <ul>
+                <li>
+                  <strong>You need to be found and taken seriously.</strong> That is a{' '}
+                  <Link href="/services/website-development">website</Link>. If you sell
+                  products online it is the same build with payments and inventory added.
+                </li>
+                <li>
+                  <strong>Customers need something on their phone, repeatedly.</strong>{' '}
+                  That is a <Link href="/services/mobile-app-development">mobile app</Link>.
+                  If they would use it once a year, a website is the cheaper right answer —
+                  we will tell you so.
+                </li>
+                <li>
+                  <strong>Your team runs the business in spreadsheets and WhatsApp.</strong>{' '}
+                  That is <Link href="/services/custom-software-development">custom software</Link>{' '}
+                  — or, if it covers inventory, production, accounts and payroll together,{' '}
+                  <Link href="/services/erp">ERP</Link>.
+                </li>
+                <li>
+                  <strong>Someone spends hours a day on the same repetitive task.</strong>{' '}
+                  That is <Link href="/services/ai-automation">AI automation</Link>.
+                </li>
+                <li>
+                  <strong>You have the product but it feels amateur.</strong> That is{' '}
+                  <Link href="/services/ui-ux-design">UI/UX design</Link>.
+                </li>
+                <li>
+                  <strong>Your existing site is slow, breaking, or nobody maintains it.</strong>{' '}
+                  That is <Link href="/services/web-hosting">hosting &amp; maintenance</Link>.
+                </li>
+              </ul>
+
+              <h2>What things cost</h2>
+              <p>
+                Starting prices, so you can size a budget before talking to us. Final quotes
+                are fixed and given upfront — we do not bill by the hour, and we do not
+                revise the number mid-project.
+              </p>
+              <ul>
+                <li><strong>Business website</strong> — from ₹49,999, live in 7–14 days</li>
+                <li><strong>E-commerce store</strong> — from ₹99,999, 3–4 weeks</li>
+                <li><strong>Mobile app (iOS + Android)</strong> — from ₹99,999, 3–5 weeks</li>
+                <li><strong>Custom software / dashboards</strong> — from ₹99,999, scoped per project</li>
+                <li><strong>ERP or HR &amp; payroll</strong> — from ₹99,999, 4–8 weeks</li>
+                <li><strong>UI/UX design only</strong> — from ₹40,000</li>
+                <li><strong>Hosting &amp; maintenance</strong> — monthly, no lock-in</li>
+              </ul>
+
+              <h2>What every engagement includes</h2>
+              <p>
+                Whichever service you pick, the terms are the same. A free mockup within 48
+                hours before any payment. No upfront money — billing is split 30% at design
+                sign-off, 30% at build, 40% on launch. Full code and repository handover, so
+                you are never locked into us to make a change. One person reachable on
+                WhatsApp rather than a ticket queue. And a week of free fixes after launch.
+              </p>
+              <p>
+                Still not sure? Describe what you are trying to achieve in two lines and we
+                will tell you which of the above it is — including when the answer is
+                &ldquo;you do not need this yet&rdquo;. We are based in Govind Nagar, Kanpur,
+                and work with local businesses in person and with founders across India
+                remotely. See <Link href="/about">who we are</Link> and the client sites we
+                have shipped.
               </p>
             </Prose>
           </div>

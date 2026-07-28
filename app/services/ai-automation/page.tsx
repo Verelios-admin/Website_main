@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
 
 const URL_PATH = '/services/ai-automation';
@@ -13,23 +14,6 @@ export const metadata: Metadata = {
   description:
     'Custom AI automation for Indian businesses — workflow automation, AI chatbots, document processing, lead automation and AI integrations. Built on your stack, launched in 2–6 weeks.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
-  keywords: [
-    'AI automation company India',
-    'AI automation agency India',
-    'custom AI automation services',
-    'custom AI automation India',
-    'business process automation India',
-    'workflow automation India',
-    'AI chatbot development India',
-    'AI agent development India',
-    'AI integration services India',
-    'custom GPT development India',
-    'LLM integration India',
-    'RAG application development India',
-    'Make / n8n automation India',
-    'lead automation India',
-    'document processing automation India',
-  ],
   openGraph: {
     title: 'AI Automation Company in India | Verelios Labs',
     description:
@@ -50,20 +34,12 @@ const serviceJsonLd = {
   name: 'Custom AI Automation',
   description:
     'Custom AI automation for Indian businesses — workflow automation, AI chatbots and assistants, document processing, lead automation, and LLM integrations. Built on a modern TypeScript stack, end-to-end ownership.',
-  provider: {
-    '@type': 'ProfessionalService',
-    name: 'Verelios Labs',
-    url: SITE,
-    telephone: '+91-8299522798',
-    email: 'contact@verelios.com',
-    areaServed: { '@type': 'Country', name: 'India' },
-  },
+  provider: { '@id': `${SITE}/#localbusiness` },
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    price: '49999',
-    priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -214,6 +190,9 @@ export default function AIAutomationPage() {
             </Prose>
           </div>
         </section>
+
+        <TrustStrip />
+
 
         <RelatedServices exclude="ai-automation" />
 

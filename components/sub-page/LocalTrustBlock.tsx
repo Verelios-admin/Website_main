@@ -17,9 +17,13 @@ export interface LocalReview {
 
 /**
  * Reusable local-trust block for Kanpur landing pages: address / hours / rating
- * card plus a grid of visible client reviews. The `reviews` array passed here is
- * the SAME array a page feeds into its Review schema, so the two can never drift
- * (Google requires review markup to mirror content users can actually see).
+ * card plus a grid of visible client reviews.
+ *
+ * These quotes are visible social proof ONLY — they are deliberately not wrapped
+ * in Review/AggregateRating JSON-LD. Self-authored review markup about our own
+ * business is ineligible for Google's star rich result and risks a manual action,
+ * so the ratings live here as content a human reads, and the authoritative version
+ * stays on the Google Business Profile we link to.
  */
 export function LocalTrustBlock({
   reviews,
