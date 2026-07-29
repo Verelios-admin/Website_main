@@ -213,13 +213,6 @@ export default function BlogIndexPage() {
 
         <ClosingCta heading="Got a project in mind?" />
 
-        <style>{`
-          .blog-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(41,151,255,0.4) !important;
-            background: rgba(41,151,255,0.05) !important;
-          }
-        `}</style>
       </SubPageLayout>
     </>
   );

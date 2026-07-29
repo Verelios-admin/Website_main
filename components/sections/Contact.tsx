@@ -657,7 +657,7 @@ export function Contact() {
               >
                 {submitting ? 'Sending…' : 'Get my free 48-hour mockup'}
               </button>
-              <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: 11, lineHeight: 1.5 }}>
+              <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, lineHeight: 1.5 }}>
                 By submitting, you consent to receive non-marketing updates from Verelios Labs. We don&apos;t spam.
               </div>
             </form>

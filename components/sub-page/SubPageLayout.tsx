@@ -8,6 +8,7 @@ import { Footer } from '@/components/sections/Footer';
 export function SubPageLayout({ children }: { children: React.ReactNode }) {
   return (
     <main
+      id="main-content"
       style={{
         minHeight: '100vh',
         background:

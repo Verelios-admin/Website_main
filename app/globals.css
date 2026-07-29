@@ -36,7 +36,7 @@
   --color-body-on-dark:      #ffffff;
   --color-body-muted:        #cccccc;
   --color-ink-muted-80:      #333333;
-  --color-ink-muted-48:      #7a7a7a;
+  --color-ink-muted-48:      #6f6f6f;  /* WCAG AA: 5.03 on white, 4.62 on parchment. Do not lighten past this. */
 
   /* Hairlines */
   --color-divider-soft:      rgba(0, 0, 0, 0.04);
@@ -1445,3 +1445,113 @@ hr.hair {
   .testimonial-grid { grid-template-columns: 1fr !important; }
 }
       
+
+
+/* ============================================================
+   PLAIN <style> BLOCKS MOVED OUT OF COMPONENTS
+   ============================================================
+   These four were raw <style>{`...`}</style> tags rendered inside components, so
+   the earlier styled-jsx sweep did not match them.
+
+   They caused real React hydration failures on every sub-page (errors #418, #423
+   and #425 — "text content did not match"). The Prose block contains
+   font-family: ui-monospace, "SF Mono", Menlo, monospace — and the server
+   serialised those double quotes as &quot; while the client re-rendered them as
+   raw ", so the <style> tag's text content differed between server and client.
+   React then discarded the server HTML and re-rendered the document on the
+   client, on every page using SubPageLayout.
+
+   Consequence of the fix: hydration is clean, and the CSS is no longer duplicated
+   into the HTML of every single page.
+
+   Keep component CSS in this file. Inline <style> tags containing quotes are a
+   hydration hazard in a server-rendered app.
+   ============================================================ */
+
+/* --- from components/sub-page/Prose.tsx --- */
+.prose-on-dark h2 {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 56px 0 18px;
+}
+.prose-on-dark h3 {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 24px);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 36px 0 12px;
+}
+.prose-on-dark p { margin: 0 0 18px; }
+.prose-on-dark ul, .prose-on-dark ol {
+  padding-left: 22px;
+  margin: 0 0 22px;
+}
+.prose-on-dark li { margin: 0 0 10px; }
+.prose-on-dark li::marker { color: rgba(41,151,255,0.7); }
+.prose-on-dark strong { color: #fff; font-weight: 600; }
+.prose-on-dark a {
+  color: #2997ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.prose-on-dark a:hover { color: #7cc1ff; }
+.prose-on-dark blockquote {
+  border-left: 3px solid rgba(41,151,255,0.5);
+  margin: 24px 0;
+  padding: 6px 18px;
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+}
+.prose-on-dark hr {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 40px 0;
+}
+.prose-on-dark code {
+  background: rgba(41,151,255,0.12);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+  color: #7cc1ff;
+}
+.prose-on-dark .callout {
+  background: rgba(41,151,255,0.07);
+  border: 1px solid rgba(41,151,255,0.22);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 28px 0;
+}
+.prose-on-dark .callout p:last-child { margin-bottom: 0; }
+      
+
+/* --- from components/sub-page/RelatedServices.tsx --- */
+.related-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(41,151,255,0.35) !important;
+  background: rgba(41,151,255,0.05) !important;
+}
+      
+
+/* --- from components/sections/Footer.tsx --- */
+@media (max-width: 880px) {
+  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr !important; }
+}
+      
+
+/* --- from app/blog/page.tsx --- */
+  .blog-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(41,151,255,0.4) !important;
+    background: rgba(41,151,255,0.05) !important;
+  }

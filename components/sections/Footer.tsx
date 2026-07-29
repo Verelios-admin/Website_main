@@ -84,7 +84,7 @@ const COLS = [
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ background: 'var(--color-canvas-parchment)', padding: '64px 32px 32px' }}>
+    <footer style={{ background: 'var(--color-canvas-parchment)', color: 'var(--color-ink)', padding: '64px 32px 32px' }}>
       <div className="wrap">
         <div
           className="footer-grid"
@@ -231,14 +231,6 @@ export function Footer() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 880px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 560px) {
-          .footer-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </footer>
   );
 }

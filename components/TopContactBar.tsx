@@ -67,7 +67,7 @@ export function TopContactBar() {
         <a
           href="tel:+918299522798"
           className="tcb-item"
-          aria-label="Call Verelios Labs in India (primary)"
+          aria-label="+91 82995 22798 — call Verelios Labs (primary)"
         >
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
           <span>+91 82995 22798</span>
@@ -76,7 +76,7 @@ export function TopContactBar() {
         <a
           href="tel:+918471094125"
           className="tcb-item tcb-hidden-sm"
-          aria-label="Call Verelios Labs in India (secondary)"
+          aria-label="+91 84710 94125 — call Verelios Labs (secondary)"
         >
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
           <span>+91 84710 94125</span>
@@ -85,7 +85,7 @@ export function TopContactBar() {
         <a
           href="mailto:contact@verelios.com"
           className="tcb-item"
-          aria-label="Email Verelios Labs"
+          aria-label="contact@verelios.com — email Verelios Labs"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="3" y="5" width="18" height="14" rx="2" />

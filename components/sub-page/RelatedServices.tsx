@@ -126,13 +126,6 @@ export function RelatedServices({ exclude }: { exclude: string }) {
         </div>
       </div>
 
-      <style>{`
-        .related-card:hover {
-          transform: translateY(-3px);
-          border-color: rgba(41,151,255,0.35) !important;
-          background: rgba(41,151,255,0.05) !important;
-        }
-      `}</style>
     </section>
   );
 }

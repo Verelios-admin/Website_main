@@ -41,7 +41,7 @@ const PROJECTS: Project[] = [
     href: 'https://supersquad.club/',
     surface: 'Web',
     chips: ['Retreats', 'Bookings', 'Community'],
-    accent: '#f43f5e',
+    accent: '#ff476a',
     accentBg: 'rgba(244,63,94,0.16)',
   },
   {
@@ -113,7 +113,7 @@ const PROJECTS: Project[] = [
     href: 'https://www.puneaijobs.com/',
     surface: 'Web · AI',
     chips: ['AI', 'Smart filters', 'Career platform'],
-    accent: '#8b5cf6',
+    accent: '#a86fff',
     accentBg: 'rgba(139,92,246,0.16)',
   },
   {

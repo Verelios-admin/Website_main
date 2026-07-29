@@ -266,7 +266,7 @@ export default function RootLayout({
           }}
         />
 
-        <a href="#home" className="skip-to-content">Skip to main content</a>
+        <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
         <TopContactBar />
         {children}

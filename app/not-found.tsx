@@ -35,7 +35,7 @@ export default function NotFound() {
     <>
       <Navigation />
       <main
-        id="home"
+        id="main-content"
         style={{
           minHeight: '70vh',
           display: 'flex',

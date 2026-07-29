@@ -12,7 +12,7 @@ const TESTIMONIALS = [
     name: 'Shrawan Garg',
     role: 'Verified Google review',
     tag: 'Website development',
-    color: '#3b82f6',
+    color: '#3473da',
   },
   {
     quote:
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     name: 'Tanay Trivedi',
     role: 'Verified Google review',
     tag: 'Website + tech',
-    color: '#8b5cf6',
+    color: '#8558ec',
   },
   {
     quote:
@@ -28,7 +28,7 @@ const TESTIMONIALS = [
     name: 'Bhavesh Singh',
     role: 'Verified Google review',
     tag: 'Custom website',
-    color: '#06b6d4',
+    color: '#048196',
   },
   {
     quote:
@@ -36,7 +36,7 @@ const TESTIMONIALS = [
     name: 'Maitrey Deshpande',
     role: 'Verified Google review',
     tag: 'Mobile app',
-    color: '#ec4899',
+    color: '#cd3e85',
   },
   {
     quote:
@@ -44,7 +44,7 @@ const TESTIMONIALS = [
     name: 'Agile Horses ERP',
     role: 'Verified Google review',
     tag: 'ERP software',
-    color: '#f59e0b',
+    color: '#a46907',
   },
   {
     quote:
@@ -52,7 +52,7 @@ const TESTIMONIALS = [
     name: 'Sumit Prasad',
     role: 'Verified Google review',
     tag: 'Website development',
-    color: '#10b981',
+    color: '#0b875e',
   },
 ];
 

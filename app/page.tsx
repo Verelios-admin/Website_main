@@ -306,7 +306,7 @@ const faqJsonLd = {
 
 export default function Home() {
   return (
-    <main id="home">
+    <main id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
