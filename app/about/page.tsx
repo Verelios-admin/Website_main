@@ -120,7 +120,9 @@ export default function AboutPage() {
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
                 ten projects — websites, mobile apps, a custom ERP, and AI automation — for clients
                 in Kanpur and across India, and we hold a 5.0 rating from 38 reviews on our Google
-                Business Profile.
+                Business Profile. Nine of those projects are listed further down this page, eight of
+                them with a live link you can open; the rest are under NDA or have since been handed
+                to the client&apos;s own team, so we do not claim them publicly.
               </p>
               <p>
                 We are deliberately small. You are not handed to an account manager and then to a
@@ -133,9 +135,8 @@ export default function AboutPage() {
                 Sahil founded Verelios Labs in 2024 and leads delivery on every project. He does the
                 initial scoping call, writes the technical plan, and is the person on WhatsApp when
                 something needs a decision. He also writes every article on{' '}
-                <a href="/blog">this site&apos;s blog</a> — the pricing guides, the agency-selection
-                guides, and the Kanpur company round-ups are all his, not outsourced or
-                AI-generated filler.
+                <a href="/blog">this site&apos;s blog</a> — the pricing guides, the
+                agency-selection guides and the Kanpur company round-ups are all his.
               </p>
               <p>
                 His working position, in one line: most agencies in this market are slow because they
@@ -199,6 +200,24 @@ export default function AboutPage() {
                   are on us for the first week after launch.
                 </li>
               </ul>
+
+              <h2>Why not just hire a freelancer?</h2>
+              <p>
+                It is a fair question, and for some projects a good freelancer is the right answer.
+                The practical difference is what happens if something goes wrong. Verelios Labs
+                works from an office in Govind Nagar, Kanpur that you can walk into, bills in three
+                fixed milestones rather than one lump sum, hands over the full source-code
+                repository at the end, and has a public review history under its own name. There is
+                no single laptop the project depends on, and no situation where the person holding
+                your code stops replying.
+              </p>
+              <p>
+                If you want the accountability of a company with an address, a phone number and
+                reviews you can read, rather than a person you know only by a handle, that is the
+                distinction. If your job is small and well-defined and you already trust the
+                individual, a freelancer will likely be cheaper — we would rather say so than take
+                the work.
+              </p>
 
               <h2>What we build with</h2>
               <p>

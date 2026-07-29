@@ -66,7 +66,7 @@ const faqJsonLd = {
       name: 'Why is custom software cheaper than SaaS over time?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A 50-seat Salesforce subscription costs roughly ₹1,50,000/month (~₹18,00,000/year). A custom CRM with similar features costs ₹3,00,000 once + ₹5,000/month hosting. After year one, you\'ve broken even. After year five, you\'ve saved ₹85,00,000.',
+        text: 'A 50-seat Salesforce subscription costs roughly ₹1,50,000/month (~₹18,00,000/year). A custom CRM with similar features costs ₹3,00,000 once, plus ₹5,000/month hosting. That is a ₹1,45,000 monthly difference, so the build pays for itself in about two months. Over five years the SaaS route costs roughly ₹84,00,000 more.',
       },
     },
     {
@@ -192,9 +192,11 @@ export default function CustomSoftwarePage() {
 
               <h2>Working with us from outside India</h2>
               <p>
-                Roughly speaking, our build cost lands between a third and half of a comparable
-                UK, US or Gulf agency quote, and that gap is where most of our overseas
-                enquiries come from. If you are outside India, three things usually matter more
+                Our build cost is typically well below a comparable UK, US or Gulf agency quote, and
+                that gap is where most of our overseas enquiries come from. We are not going to put a
+                precise multiple on that, because it depends entirely on who you are comparing us
+                with — ask us for a fixed quote and compare it against the one you already have. If
+                you are outside India, three things usually matter more
                 to you than price: who owns the code, how communication works across time
                 zones, and what happens if it goes wrong.
               </p>
@@ -212,7 +214,7 @@ export default function CustomSoftwarePage() {
               <h2>Frequently asked questions</h2>
               <h3>Why is custom software cheaper than SaaS over time?</h3>
               <p>
-                A 50-seat Salesforce subscription costs roughly ₹1,50,000/month (~₹18,00,000/year). A custom CRM with similar features costs ₹3,00,000 once + ₹5,000/month hosting. After year one, you&apos;ve broken even. After year five, you&apos;ve saved ₹85,00,000.
+                A 50-seat Salesforce subscription costs roughly ₹1,50,000/month (~₹18,00,000/year). A custom CRM with similar features costs ₹3,00,000 once, plus ₹5,000/month hosting. That is a ₹1,45,000 monthly difference, so the build pays for itself in about two months. Over five years the SaaS route costs roughly ₹84,00,000 more.
               </p>
               <h3>Will we be locked in to you for maintenance?</h3>
               <p>

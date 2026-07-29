@@ -81,7 +81,10 @@ export function LocalTrustBlock({
         </div>
       </section>
 
-      {/* Client reviews — mirrored 1:1 by the Review schema on the page. */}
+      {/* Client reviews — visible content only. There is deliberately no Review or
+          AggregateRating JSON-LD anywhere on this site; see the note on the
+          component above. The authoritative version of these ratings lives on the
+          linked Google Business Profile. */}
       <section className="tile" style={{ paddingTop: 8, paddingBottom: 24 }}>
         <div className="wrap" style={{ maxWidth: 900, margin: '0 auto' }}>
           <Prose>

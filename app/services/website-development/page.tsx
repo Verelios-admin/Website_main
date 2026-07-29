@@ -13,7 +13,7 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'Custom Website Development Company in India',
   description:
-    'India\'s fastest custom website development company. React + Next.js websites built to convert, shipped in under 3 weeks. Free 48-hour mockup. No upfront payment.',
+    'Custom website development company in India. React and Next.js websites built to convert, shipped in under 3 weeks. Free 48-hour mockup. No upfront payment.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Custom Website Development Company in India | Verelios Labs',

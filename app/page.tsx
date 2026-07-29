@@ -91,7 +91,7 @@ const localBusinessJsonLd = {
   image: `${SITE_URL}/logo.webp`,
   logo:  `${SITE_URL}/logo.webp`,
   description:
-    'India\'s fastest website & app development agency. Custom websites, mobile apps & software — from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
+    'Software agency in Govind Nagar, Kanpur serving clients across India — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
   areaServed: [
     // Home base — Kanpur + Uttar Pradesh.
     { '@type': 'City',    name: 'Kanpur' },

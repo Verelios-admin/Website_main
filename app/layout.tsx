@@ -157,7 +157,7 @@ const orgJsonLd = {
   },
   image: `${SITE_URL}/logo.webp`,
   description:
-    'India\'s fastest website & app development agency — custom websites, mobile apps & software launched in 3 weeks. Free 48-hour mockup. No upfront payment.',
+    'Software agency in Govind Nagar, Kanpur — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment, no upfront cost.',
   contactPoint: [
     {
       '@type': 'ContactPoint',

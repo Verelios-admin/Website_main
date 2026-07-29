@@ -183,6 +183,18 @@ export default function ERPPage() {
                 <li><strong>Documentation</strong> — user guide, deployment guide and API docs.</li>
               </ul>
 
+              <h2>ERP we have actually shipped</h2>
+              <p>
+                We built and run the ERP behind{' '}
+                <a href="https://www.envirofluent.com/" target="_blank" rel="noopener noreferrer">
+                  Envirofluent
+                </a>
+                , a manufacturer — covering the operational side a packaged product handled badly
+                for them. It is a live system, not a case-study mockup, and it is the clearest
+                answer we can give to &ldquo;have you done this before&rdquo;. The rest of the work
+                we can show publicly is listed on <a href="/about">our about page</a>, with links.
+              </p>
+
               <h2>Pricing for custom ERP software in India</h2>
               <p>
                 A focused single-module ERP starts at <strong>₹99,999</strong>. A full multi-module system — inventory, manufacturing, sales, accounting, HR and reporting — typically lands between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40). We always show the monthly hosting cost before you commit, so there are no surprises after launch. For CRMs, dashboards and other internal tools, see our broader <a href="/services/custom-software-development">custom software development</a> service.
