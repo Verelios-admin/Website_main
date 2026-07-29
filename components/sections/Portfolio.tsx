@@ -110,7 +110,11 @@ const PROJECTS: Project[] = [
     title: 'PuneAIJobs',
     tagline: 'An AI-powered job aggregator with smart scraping and intent filters.',
     metric: '10,000+ job listings aggregated at launch',
-    href: 'https://www.puneaijobs.com/',
+    // href intentionally null: https://www.puneaijobs.com/ returns HTTP 500 (a
+    // Next.js error page) on both www and apex, verified across repeated checks on
+    // 2026-07-29. Sending visitors from a portfolio "View live" link to a server
+    // error is worse than showing no link. Restore the href once the site is back.
+    href: null,
     surface: 'Web · AI',
     chips: ['AI', 'Smart filters', 'Career platform'],
     accent: '#a86fff',

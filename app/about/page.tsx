@@ -12,12 +12,12 @@ const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 export const metadata: Metadata = {
   title: 'About Verelios Labs — Who We Are and How to Verify Us',
   description:
-    'Verelios Labs is a software team in Govind Nagar, Kanpur, founded in 2024 by Sahil Chauhan. Nine live client projects you can open and check, milestone payments, and code you own.',
+    'Verelios Labs is a software team in Govind Nagar, Kanpur, founded in 2024 by Sahil Chauhan. Seven live client projects you can open and check, milestone payments, and code you own.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'About Verelios Labs — Who We Are and How to Verify Us',
     description:
-      'A software team in Govind Nagar, Kanpur. Founded 2024 by Sahil Chauhan. Nine live client projects you can open and check for yourself.',
+      'A software team in Govind Nagar, Kanpur. Founded 2024 by Sahil Chauhan. Seven live client projects you can open and check for yourself.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -88,7 +88,9 @@ const PROJECTS: { name: string; what: string; href: string | null }[] = [
   { name: 'Serene Homes', what: 'Real-estate developer site', href: 'https://www.serenehomes.co.in/' },
   { name: 'RMPD Jewellers', what: 'Jewellery retail site', href: 'https://www.rmpdjewellers.com/' },
   { name: 'Envirofluent ERP', what: 'Custom ERP for a manufacturer', href: 'https://www.envirofluent.com/' },
-  { name: 'PuneAIJobs', what: 'Niche job board', href: 'https://www.puneaijobs.com/' },
+  // Link removed: the site currently returns HTTP 500. This page invites people to
+  // click through and verify, so a dead link here is actively counterproductive.
+  { name: 'PuneAIJobs', what: 'Niche job board (site currently offline)', href: null },
   { name: 'MyBiniyog', what: 'Web + mobile investment product', href: 'https://www.mybiniyog.com/' },
   { name: 'News & Media', what: 'Publisher site (under NDA)', href: null },
 ];
@@ -104,7 +106,7 @@ export default function AboutPage() {
           eyebrow="About · Verelios Labs"
           title="A small software team in Kanpur"
           highlight="you can actually check up on."
-          lead="Verelios Labs was founded in 2024 and works out of Govind Nagar, Kanpur. We build websites, mobile apps, ERP and AI automation for businesses across India. Everything on this page is verifiable — the office, the reviews, and nine client sites you can open right now."
+          lead="Verelios Labs was founded in 2024 and works out of Govind Nagar, Kanpur. We build websites, mobile apps, ERP and AI automation for businesses across India. Everything on this page is verifiable — the office, the reviews, and seven client sites you can open right now."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'About', href: URL_PATH },
@@ -120,8 +122,8 @@ export default function AboutPage() {
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
                 ten projects — websites, mobile apps, a custom ERP, and AI automation — for clients
                 in Kanpur and across India, and we hold a 5.0 rating from 38 reviews on our Google
-                Business Profile. Nine of those projects are listed further down this page, eight of
-                them with a live link you can open; the rest are under NDA or have since been handed
+                Business Profile. Nine of those projects are listed further down this page, seven of
+                them with a live link you can open right now; the rest are under NDA or have since been handed
                 to the client&apos;s own team, so we do not claim them publicly.
               </p>
               <p>
@@ -152,8 +154,8 @@ export default function AboutPage() {
 
               <h2>Work you can open and check</h2>
               <p>
-                The fastest way to judge a development team is to look at what it has shipped. These
-                are live sites — click through and form your own view:
+                The fastest way to judge a development team is to look at what it has shipped. Most of
+                these are live — click through and form your own view:
               </p>
               <ul>
                 {PROJECTS.map((p) => (
