@@ -186,35 +186,6 @@ export function Navigation() {
         </div>
       )}
 
-      <style jsx>{`
-        :global(.topnav-cta-short) { display: none; }
-        /* Reserve the button's width so it cannot resize after the webfont's
-           metrics settle. Without this the CTA measured 311px then snapped to
-           172px a few hundred ms after paint, which was a contributing source of
-           a 0.217 CLS on the homepage at 768px width. */
-        :global(.topnav-cta) {
-          min-width: 190px;
-          justify-content: center;
-        }
-        @media (max-width: 820px) {
-          :global(.topnav-links)      { display: none !important; }
-          :global(.topnav-burger)     { display: inline-flex !important; }
-          :global(.topnav-cta-full)   { display: none !important; }
-          :global(.topnav-cta-short)  { display: inline !important; }
-          :global(.topnav-cta) {
-            padding: 7px 13px !important;
-            font-size: 13px !important;
-            min-width: 158px !important;
-          }
-        }
-        /* On phones the logo + inline CTA + burger collide. The burger menu
-           and the persistent bottom "Get quote" bar already expose the CTA,
-           so drop the redundant inline pill here and let the logo + burger
-           sit at opposite ends with clean spacing. */
-        @media (max-width: 480px) {
-          :global(.topnav-cta) { display: none !important; }
-        }
-      `}</style>
     </>
   );
 }

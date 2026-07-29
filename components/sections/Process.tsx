@@ -172,17 +172,6 @@ export function Process() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          :global(.process-grid) { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 600px) {
-          :global(.process-grid) { grid-template-columns: 1fr !important; }
-          /* The horizontal connector line is meaningless when steps stack
-             vertically — hide it on phones. */
-          :global(.process-line) { display: none !important; }
-        }
-      `}</style>
     </section>
   );
 }

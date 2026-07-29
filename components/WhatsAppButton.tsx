@@ -82,60 +82,6 @@ export function WhatsAppButton() {
         </svg>
         <span className="wa-float-label">Chat on WhatsApp</span>
       </span>
-      <style jsx>{`
-        :global(.wa-float) {
-          text-decoration: none;
-          display: inline-block;
-          transition: visibility 0s linear 0s;
-        }
-        :global(.wa-float[style*="visibility: hidden"]) {
-          transition: visibility 0s linear 0.3s;
-        }
-        :global(.wa-float .wa-float-bubble) {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 12px 18px 12px 14px;
-          background: linear-gradient(135deg, #25D366 0%, #1eb358 55%, #128C7E 100%);
-          color: #fff;
-          border-radius: 9999px;
-          font-weight: 500;
-          font-size: 14px;
-          letter-spacing: -0.01em;
-          box-shadow:
-            0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
-            0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
-            0 14px 38px -10px rgba(37, 211, 102, 0.55);
-          position: relative;
-          isolation: isolate;
-        }
-        :global(.wa-float .wa-float-bubble)::before {
-          content: '';
-          position: absolute;
-          inset: -3px;
-          border-radius: inherit;
-          background: radial-gradient(60% 60% at 30% 30%, rgba(37, 211, 102, 0.35), transparent 70%);
-          filter: blur(8px);
-          z-index: -1;
-          opacity: 0.7;
-        }
-        :global(.wa-float):hover .wa-float-bubble {
-          filter: brightness(1.06);
-          transform: translateY(-1px);
-          transition: transform 220ms ease, filter 220ms ease;
-        }
-        @media (max-width: 640px) {
-          :global(.wa-float) { right: 16px !important; bottom: 80px !important; }
-          :global(.wa-float .wa-float-bubble) {
-            padding: 12px !important;
-            gap: 0 !important;
-            width: 52px;
-            height: 52px;
-            justify-content: center;
-          }
-          :global(.wa-float .wa-float-label) { display: none !important; }
-        }
-      `}</style>
     </a>
   );
 }

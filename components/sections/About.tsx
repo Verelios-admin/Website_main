@@ -222,11 +222,6 @@ export function About() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 880px) {
-          :global(.why-stats) { grid-template-columns: 1fr 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

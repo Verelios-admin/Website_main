@@ -978,3 +978,470 @@ hr.hair {
   }
 }
       
+
+
+/* ============================================================
+   COMPONENT CSS MOVED OUT OF styled-jsx
+   ============================================================
+   Every block below used to live in a <style jsx> tag inside a client
+   component. In the App Router those are NOT extracted into the build's
+   stylesheet — they are injected by JavaScript at hydration. Measured on the
+   shipped build: `topnav-links` and `topnav-burger` appeared in the HTML with
+   ZERO matching rules in out/_next/static/css/*.css.
+
+   The practical consequences were:
+     • The nav's responsive collapse only happened after hydration, so the
+       DESKTOP nav rendered at phone width on first paint and without JS —
+       visibly overlapping the logo (confirmed in a JS-disabled screenshot).
+     • Same latent problem for the contact bar, sticky CTA, WhatsApp button and
+       every section's responsive rules.
+     • The identical bug in the hero block measured CLS 0.2166 at 768px.
+
+   All of these selectors were already :global() in the original blocks, so
+   unwrapping them changes nothing about what they match — it only moves them
+   into a render-blocking stylesheet that applies at first paint.
+
+   Do not move layout CSS back into <style jsx>. Animation-only CSS is fine
+   there; anything that changes geometry is not.
+   ============================================================ */
+
+/* --- from components/Navigation.tsx --- */
+.topnav-cta-short { display: none; }
+/* Reserve the button's width so it cannot resize after the webfont's
+   metrics settle. Without this the CTA measured 311px then snapped to
+   172px a few hundred ms after paint, which was a contributing source of
+   a 0.217 CLS on the homepage at 768px width. */
+.topnav-cta {
+  min-width: 190px;
+  justify-content: center;
+}
+@media (max-width: 820px) {
+  .topnav-links      { display: none !important; }
+  .topnav-burger     { display: inline-flex !important; }
+  .topnav-cta-full   { display: none !important; }
+  .topnav-cta-short  { display: inline !important; }
+  .topnav-cta {
+    padding: 7px 13px !important;
+    font-size: 13px !important;
+    min-width: 158px !important;
+  }
+}
+/* On phones the logo + inline CTA + burger collide. The burger menu
+   and the persistent bottom "Get quote" bar already expose the CTA,
+   so drop the redundant inline pill here and let the logo + burger
+   sit at opposite ends with clean spacing. */
+@media (max-width: 480px) {
+  .topnav-cta { display: none !important; }
+}
+      
+
+/* --- from components/TopContactBar.tsx --- */
+.tcb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.tcb-item:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.tcb-flag {
+  font-size: 14px;
+  line-height: 1;
+}
+.tcb-sep {
+  color: rgba(255,255,255,0.18);
+}
+@keyframes tcb-live {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+  50%      { box-shadow: 0 0 0 5px rgba(52,211,153,0); }
+}
+@media (max-width: 760px) {
+  .top-contact-bar { font-size: 12px !important; }
+  .top-contact-bar .wrap { gap: 14px !important; padding: 8px 16px !important; }
+  .tcb-hidden-sm { display: none !important; }
+}
+@media (max-width: 460px) {
+  .top-contact-bar .wrap { gap: 10px !important; }
+  .tcb-sep { display: none; }
+}
+      
+
+/* --- from components/StickyCTA.tsx --- */
+@keyframes cta-slide {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (max-width: 560px) {
+  .sticky-cta-inner {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+  }
+  .sticky-cta-tail { display: none; }
+  .sticky-cta-text p { font-size: 13px !important; }
+}
+@media (max-width: 380px) {
+  .sticky-cta-text p { font-size: 12px !important; }
+}
+      
+
+/* --- from components/WhatsAppButton.tsx --- */
+.wa-float {
+  text-decoration: none;
+  display: inline-block;
+  transition: visibility 0s linear 0s;
+}
+.wa-float[style*="visibility: hidden"] {
+  transition: visibility 0s linear 0.3s;
+}
+.wa-float .wa-float-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px 12px 14px;
+  background: linear-gradient(135deg, #25D366 0%, #1eb358 55%, #128C7E 100%);
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.22) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.18) inset,
+    0 14px 38px -10px rgba(37, 211, 102, 0.55);
+  position: relative;
+  isolation: isolate;
+}
+.wa-float .wa-float-bubble::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: radial-gradient(60% 60% at 30% 30%, rgba(37, 211, 102, 0.35), transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
+  opacity: 0.7;
+}
+.wa-float:hover .wa-float-bubble {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  transition: transform 220ms ease, filter 220ms ease;
+}
+@media (max-width: 640px) {
+  .wa-float { right: 16px !important; bottom: 80px !important; }
+  .wa-float .wa-float-bubble {
+    padding: 12px !important;
+    gap: 0 !important;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+  }
+  .wa-float .wa-float-label { display: none !important; }
+}
+      
+
+/* --- from components/sections/About.tsx --- */
+@media (max-width: 880px) {
+  .why-stats { grid-template-columns: 1fr 1fr !important; }
+}
+      
+
+/* --- from components/sections/Contact.tsx --- */
+@media (max-width: 980px) {
+  .contact-wrap { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 720px) {
+  .contact-meta { grid-template-columns: 1fr 1fr !important; }
+}
+      
+
+/* --- from components/sections/FAQ.tsx --- */
+@media (max-width: 880px) {
+  .faq-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+      
+
+/* --- from components/sections/Industries.tsx --- */
+@media (max-width: 980px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 560px) {
+  .industries-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+      
+
+/* --- from components/sections/Portfolio.tsx --- */
+@media (max-width: 880px) {
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .more-work-card {
+    justify-content: center !important;
+    text-align: center;
+    padding: 26px 24px !important;
+  }
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px -30px rgba(0, 0, 0, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ===== Inner mockup animations =====
+   Cards fade in via GSAP scrollTrigger on the outer .project-card,
+   so inner content stays fully visible at rest. Only specific
+   elements get continuous "alive" animations below. */
+
+/* Map pins on Serene Homes — soft scale pulse */
+@keyframes pm-pin-pulse {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%      { transform: scale(1.18); opacity: 0.82; }
+}
+.pm-pin {
+  animation: pm-pin-pulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Sparkline drawing-in once when card enters view */
+@keyframes pm-spark-draw {
+  from { stroke-dasharray: 0 800; }
+  to   { stroke-dasharray: 800 0; }
+}
+.pm-spark {
+  animation: pm-spark-draw 2.4s ease-out 0.3s both;
+}
+
+/* ERP bar chart bars grow up once on first appearance */
+@keyframes pm-bar-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.pm-bar {
+  animation: pm-bar-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--delay, 0s);
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+/* Active tab indicator slides across continuously */
+@keyframes pm-tab-shift {
+  0%, 100% { transform: translateX(0); }
+  25%, 60% { transform: translateX(60px); }
+}
+.pm-tab {
+  animation: pm-tab-shift 4.4s ease-in-out infinite;
+}
+
+/* Featured / LIVE badge gentle pulse */
+@keyframes pm-soft-pulse {
+  0%, 100% { opacity: 1;   }
+  50%      { opacity: 0.6; }
+}
+.pm-featured-badge,
+.pm-pulse {
+  animation: pm-soft-pulse 2.2s ease-in-out infinite;
+}
+
+/* Faster blink — for LIVE dots and "recording" indicators */
+@keyframes pm-blink {
+  0%, 60%, 100% { opacity: 1; }
+  70%, 90%      { opacity: 0.15; }
+}
+.pm-blink {
+  animation: pm-blink 1.5s ease-in-out infinite;
+}
+
+/* Light shimmer sweep — for product thumbnails / hero strips */
+@keyframes pm-shimmer {
+  0%, 100% { opacity: 0; transform: translateX(-30%); }
+  40%, 50% { opacity: 0.55; }
+  90%      { opacity: 0; transform: translateX(80%); }
+}
+.pm-shimmer {
+  animation: pm-shimmer 3.6s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Soft scale breathe */
+@keyframes pm-breathe {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%      { transform: scale(1.06); opacity: 0.9; }
+}
+.pm-breathe {
+  animation: pm-breathe 3.2s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Gentle Y bob — for floating elements */
+@keyframes pm-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+.pm-bob {
+  animation: pm-bob 3.6s ease-in-out infinite;
+}
+
+/* Highlight rotates through 3 list items (Pune / Rivali / News) */
+@keyframes pm-highlight-3 {
+  0%, 26%   { transform: translateY(0);     opacity: 1; }
+  33%, 60%  { transform: translateY(42px);  opacity: 1; }
+  67%, 93%  { transform: translateY(84px);  opacity: 1; }
+  100%      { transform: translateY(0);     opacity: 1; }
+}
+.pm-highlight-3 {
+  animation: pm-highlight-3 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+/* Variant with smaller step (38px) for Pune job rows */
+@keyframes pm-highlight-3-sm {
+  0%, 26%   { transform: translateY(0);     opacity: 1; }
+  33%, 60%  { transform: translateY(38px);  opacity: 1; }
+  67%, 93%  { transform: translateY(76px);  opacity: 1; }
+  100%      { transform: translateY(0);     opacity: 1; }
+}
+.pm-highlight-3-sm {
+  animation: pm-highlight-3-sm 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+/* Wider step (46px) for News & RMPD card spacing */
+@keyframes pm-highlight-3-md {
+  0%, 26%   { transform: translateY(0);     opacity: 1; }
+  33%, 60%  { transform: translateY(52px);  opacity: 1; }
+  67%, 93%  { transform: translateY(104px); opacity: 1; }
+  100%      { transform: translateY(0);     opacity: 1; }
+}
+.pm-highlight-3-md {
+  animation: pm-highlight-3-md 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* 4-step horizontal highlight for KPI tiles (EPP) */
+@keyframes pm-highlight-4-h {
+  0%, 18%   { transform: translateX(0);    }
+  25%, 43%  { transform: translateX(108px);}
+  50%, 68%  { transform: translateX(216px);}
+  75%, 93%  { transform: translateX(324px);}
+  100%      { transform: translateX(0);    }
+}
+.pm-highlight-4-h {
+  animation: pm-highlight-4-h 7s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* 3-step horizontal highlight (Rivali property row) */
+@keyframes pm-highlight-3-h {
+  0%, 26%   { transform: translateX(0);    }
+  33%, 60%  { transform: translateX(140px);}
+  67%, 93%  { transform: translateX(280px);}
+  100%      { transform: translateX(0);    }
+}
+.pm-highlight-3-h {
+  animation: pm-highlight-3-h 6.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Map line drawing between Serene pins */
+@keyframes pm-line-draw {
+  0%        { stroke-dasharray: 0 600; }
+  50%       { stroke-dasharray: 600 0; }
+  100%      { stroke-dasharray: 0 600; stroke-dashoffset: -600; }
+}
+.pm-line {
+  animation: pm-line-draw 5s ease-in-out infinite;
+}
+
+/* Pulsing ring around a focal point (radar-style) */
+@keyframes pm-ring {
+  0%   { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0;   }
+}
+.pm-ring {
+  animation: pm-ring 2.4s ease-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Conviction dots filling sequentially (Biniyog) */
+@keyframes pm-fill-step {
+  0%, 100% { opacity: 0.18; }
+  10%, 90% { opacity: 1; }
+}
+.pm-fill-1 { animation: pm-fill-step 4s ease-in-out infinite; animation-delay: 0.0s; }
+.pm-fill-2 { animation: pm-fill-step 4s ease-in-out infinite; animation-delay: 0.4s; }
+.pm-fill-3 { animation: pm-fill-step 4s ease-in-out infinite; animation-delay: 0.8s; }
+.pm-fill-4 { animation: pm-fill-step 4s ease-in-out infinite; animation-delay: 1.2s; }
+
+/* Optional fade-in stagger when paired with GSAP — disabled by default,
+   we let the GSAP scrollTrigger drive entrance. */
+.pm-fade { /* no-op — content stays visible */ }
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-pin,
+  .pm-spark,
+  .pm-bar,
+  .pm-tab,
+  .pm-featured-badge,
+  .pm-pulse,
+  .pm-blink,
+  .pm-shimmer,
+  .pm-breathe,
+  .pm-bob,
+  .pm-highlight-3,
+  .pm-highlight-3-sm,
+  .pm-highlight-3-md,
+  .pm-highlight-4-h,
+  .pm-line,
+  .pm-ring,
+  .pm-fill-1,
+  .pm-fill-2,
+  .pm-fill-3,
+  .pm-fill-4 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+      
+
+/* --- from components/sections/Process.tsx --- */
+@media (max-width: 980px) {
+  .process-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 600px) {
+  .process-grid { grid-template-columns: 1fr !important; }
+  /* The horizontal connector line is meaningless when steps stack
+     vertically — hide it on phones. */
+  .process-line { display: none !important; }
+}
+      
+
+/* --- from components/sections/Studio.tsx --- */
+@media (max-width: 980px) {
+  .studio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+      
+
+/* --- from components/sections/Testimonials.tsx --- */
+@media (max-width: 980px) {
+  .testimonial-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 600px) {
+  .testimonial-grid { grid-template-columns: 1fr !important; }
+}
+      

@@ -665,14 +665,6 @@ export function Contact() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          :global(.contact-wrap) { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 720px) {
-          :global(.contact-meta) { grid-template-columns: 1fr 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

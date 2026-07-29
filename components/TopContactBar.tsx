@@ -110,40 +110,6 @@ export function TopContactBar() {
         </span>
       </div>
 
-      <style jsx>{`
-        :global(.tcb-item) {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: inherit;
-          text-decoration: none;
-          transition: color 180ms ease;
-        }
-        :global(.tcb-item:hover) {
-          color: #fff;
-          text-decoration: none;
-        }
-        :global(.tcb-flag) {
-          font-size: 14px;
-          line-height: 1;
-        }
-        :global(.tcb-sep) {
-          color: rgba(255,255,255,0.18);
-        }
-        @keyframes tcb-live {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
-          50%      { box-shadow: 0 0 0 5px rgba(52,211,153,0); }
-        }
-        @media (max-width: 760px) {
-          :global(.top-contact-bar) { font-size: 12px !important; }
-          :global(.top-contact-bar .wrap) { gap: 14px !important; padding: 8px 16px !important; }
-          :global(.tcb-hidden-sm) { display: none !important; }
-        }
-        @media (max-width: 460px) {
-          :global(.top-contact-bar .wrap) { gap: 10px !important; }
-          :global(.tcb-sep) { display: none; }
-        }
-      `}</style>
     </div>
   );
 }

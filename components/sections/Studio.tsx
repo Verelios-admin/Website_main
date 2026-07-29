@@ -243,14 +243,6 @@ export function Studio() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          :global(.studio-grid) {
-            grid-template-columns: 1fr !important;
-            gap: 36px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

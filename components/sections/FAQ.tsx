@@ -141,14 +141,6 @@ export function FAQ() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 880px) {
-          :global(.faq-wrap) {
-            grid-template-columns: 1fr !important;
-            gap: 36px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

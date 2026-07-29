@@ -222,14 +222,6 @@ export function Testimonials() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          :global(.testimonial-grid) { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 600px) {
-          :global(.testimonial-grid) { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

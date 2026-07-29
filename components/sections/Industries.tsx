@@ -159,18 +159,6 @@ export function Industries() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          :global(.industries-grid) {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 560px) {
-          :global(.industries-grid) {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

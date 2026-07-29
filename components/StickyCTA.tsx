@@ -110,23 +110,6 @@ export function StickyCTA() {
           </button>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes cta-slide {
-          from { transform: translateY(100%); opacity: 0; }
-          to   { transform: translateY(0);    opacity: 1; }
-        }
-        @media (max-width: 560px) {
-          :global(.sticky-cta-inner) {
-            padding: 10px 14px !important;
-            gap: 8px !important;
-          }
-          :global(.sticky-cta-tail) { display: none; }
-          :global(.sticky-cta-text) p { font-size: 13px !important; }
-        }
-        @media (max-width: 380px) {
-          :global(.sticky-cta-text) p { font-size: 12px !important; }
-        }
-      `}</style>
     </div>
   );
 }
