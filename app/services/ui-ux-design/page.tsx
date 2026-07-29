@@ -5,6 +5,7 @@ import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/services/ui-ux-design';
 const SITE = 'https://www.verelios.com';
@@ -34,7 +35,7 @@ const serviceJsonLd = {
   name: 'UI/UX Design Services',
   description:
     'User research, wireframing, prototyping, visual design and design systems for Indian web and mobile products. Conversion-focused, hand-off-ready Figma files.',
-  provider: { '@id': `${SITE}/#localbusiness` },
+  provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'Country', name: 'India' },
 };
 
@@ -42,7 +43,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'UI/UX Design', item: `${SITE}${URL_PATH}` },
   ],

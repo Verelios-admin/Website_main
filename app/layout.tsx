@@ -148,10 +148,12 @@ const orgJsonLd = {
   name: 'Verelios Labs',
   url: SITE_URL,
   logo: {
+    // Must match the real dimensions of public/logo.webp, which is 1200x630.
+    // It previously declared 512x512, describing a square file that never existed.
     '@type': 'ImageObject',
     url:    `${SITE_URL}/logo.webp`,
-    width:  '512',
-    height: '512',
+    width:  '1200',
+    height: '630',
   },
   image: `${SITE_URL}/logo.webp`,
   description:

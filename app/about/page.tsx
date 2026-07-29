@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/about';
 const SITE = 'https://www.verelios.com';
@@ -65,14 +66,14 @@ const aboutPageJsonLd = {
   description:
     'Who Verelios Labs is, what it has shipped, how it works, and how to independently verify all of it.',
   mainEntity: { '@id': `${SITE}/#organization` },
-  about: { '@id': `${SITE}/#localbusiness` },
+  about: LOCAL_BUSINESS_REF,
 };
 
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE}${URL_PATH}` },
   ],
 };

@@ -5,6 +5,7 @@ import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/services/web-hosting';
 const SITE = 'https://www.verelios.com';
@@ -34,7 +35,7 @@ const serviceJsonLd = {
   name: 'Managed Web Hosting & Maintenance',
   description:
     'Fully managed web hosting and website maintenance for Indian businesses — uptime monitoring, daily backups, SSL, security patches, speed optimisation and ongoing support. Hosted on modern cloud infrastructure, quoted per project.',
-  provider: { '@id': `${SITE}/#localbusiness` },
+  provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
@@ -48,7 +49,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Web Hosting & Maintenance', item: `${SITE}${URL_PATH}` },
   ],

@@ -120,7 +120,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations/kanpur` },
     { '@type': 'ListItem', position: 3, name: 'Kanpur', item: `${SITE}${URL_PATH}` },
   ],

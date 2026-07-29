@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { AUTHOR_REF } from '@/lib/schema';
 
 const SLUG = 'how-to-choose-web-development-agency-india';
 const URL_PATH = `/blog/${SLUG}`;
@@ -39,7 +40,7 @@ const articleJsonLd = {
   isAccessibleForFree: true,
   articleSection: 'Hiring',
   keywords: 'how to choose web development agency India, best web development agency India, hire web development company',
-  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
+  author: AUTHOR_REF,
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -54,7 +55,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
     { '@type': 'ListItem', position: 3, name: 'How to Choose a Web Development Agency in India', item: `${SITE}${URL_PATH}` },
   ],

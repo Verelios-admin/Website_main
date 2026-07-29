@@ -3,6 +3,7 @@ import { SubPageLayout } from '@/components/sub-page/SubPageLayout';
 import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
+import { AUTHOR_REF } from '@/lib/schema';
 
 const SLUG = 'custom-website-development-cost-india-2026';
 const URL_PATH = `/blog/${SLUG}`;
@@ -39,7 +40,7 @@ const articleJsonLd = {
   isAccessibleForFree: true,
   articleSection: 'Pricing',
   keywords: 'custom website development cost India, website development pricing India, web development cost 2026, custom website budget',
-  author: { '@id': `${SITE}/#sahil-chauhan` },  // canonical Person node lives on /about
+  author: AUTHOR_REF,
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: {
@@ -54,7 +55,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
     { '@type': 'ListItem', position: 3, name: 'Custom Website Development Cost in India (2026 Guide)', item: `${SITE}${URL_PATH}` },
   ],

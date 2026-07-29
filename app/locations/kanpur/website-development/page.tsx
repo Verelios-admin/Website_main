@@ -5,6 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { LocalTrustBlock, GBP_URL, SOCIAL_LINKS, LocalReview } from '@/components/sub-page/LocalTrustBlock';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/locations/kanpur/website-development';
 const SITE = 'https://www.verelios.com';
@@ -52,7 +53,7 @@ const serviceJsonLd = {
   name: 'Website Development Company in Kanpur',
   description:
     'Custom website design and development in Kanpur — fast, mobile-first, SEO-ready React and Next.js websites and e-commerce stores for Kanpur businesses. From ₹49,999. You own the code.',
-  provider: { '@id': `${SITE}/#localbusiness` },
+  provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
     '@type': 'Offer',
@@ -66,7 +67,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Kanpur', item: `${SITE}/locations/kanpur` },
     { '@type': 'ListItem', position: 3, name: 'Website Development', item: `${SITE}${URL_PATH}` },
   ],

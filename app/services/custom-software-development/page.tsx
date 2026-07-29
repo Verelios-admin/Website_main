@@ -5,6 +5,7 @@ import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { TrustStrip } from '@/components/sub-page/TrustStrip';
 import { RelatedServices } from '@/components/sub-page/RelatedServices';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/services/custom-software-development';
 const SITE = 'https://www.verelios.com';
@@ -34,7 +35,7 @@ const serviceJsonLd = {
   name: 'Custom Software Development',
   description:
     'Custom business software for Indian companies — ERPs, CRMs, admin dashboards, automation, APIs and internal tools. Full-stack TypeScript, end-to-end ownership.',
-  provider: { '@id': `${SITE}/#localbusiness` },
+  provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'Country', name: 'India' },
   offers: {
     '@type': 'Offer',
@@ -48,7 +49,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home',     item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
     { '@type': 'ListItem', position: 3, name: 'Custom Software Development', item: `${SITE}${URL_PATH}` },
   ],

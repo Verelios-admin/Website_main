@@ -5,6 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { LocalTrustBlock, GBP_URL, SOCIAL_LINKS, LocalReview } from '@/components/sub-page/LocalTrustBlock';
+import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/locations/kanpur/erp-software';
 const SITE = 'https://www.verelios.com';
@@ -52,7 +53,7 @@ const serviceJsonLd = {
   name: 'ERP Software Company in Kanpur',
   description:
     'Custom ERP software development in Kanpur — inventory, manufacturing, purchase, sales, accounting, reporting and HR & payroll in one system, with Tally and GST integration. Built for Kanpur factories and traders. You own the code.',
-  provider: { '@id': `${SITE}/#localbusiness` },
+  provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
     '@type': 'Offer',
@@ -66,7 +67,7 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
     { '@type': 'ListItem', position: 2, name: 'Kanpur', item: `${SITE}/locations/kanpur` },
     { '@type': 'ListItem', position: 3, name: 'ERP Software', item: `${SITE}${URL_PATH}` },
   ],
