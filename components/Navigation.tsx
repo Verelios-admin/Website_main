@@ -97,6 +97,20 @@ export function Navigation() {
               {l.label}
             </button>
           ))}
+          {/* Real route, not a homepage anchor — /about carries the founder bio and
+              the verifiable client list, so it needs a nav entry rather than being
+              reachable only from the footer. */}
+          <a
+            href="/about"
+            style={{
+              color: scrolled ? 'var(--color-ink-muted-80)' : 'rgba(255,255,255,0.75)',
+              textDecoration: 'none',
+              fontSize: 14,
+              transition: 'color 240ms ease',
+            }}
+          >
+            About
+          </a>
         </nav>
 
         <div style={{ flex: 1 }} />
@@ -180,6 +194,19 @@ export function Navigation() {
               {l.label}
             </button>
           ))}
+          <a
+            href="/about"
+            onClick={() => setOpen(false)}
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 28, fontWeight: 500,
+              letterSpacing: '-0.02em',
+              color: '#fff',
+              textDecoration: 'none',
+            }}
+          >
+            About
+          </a>
           <button onClick={() => { trackCtaClick('Mobile menu — Get a free mockup'); go('contact'); }} className="btn-pill press" style={{ marginTop: 12 }}>
             Get a free mockup
           </button>
