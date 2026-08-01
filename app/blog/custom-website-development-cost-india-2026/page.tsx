@@ -11,7 +11,7 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: 'Custom Website Development Cost in India (2026 Guide)',
+  title: 'Website Development Cost in India (2026)',
   description:
     'How much does custom website development cost in India in 2026? Honest ranges by project type, what drives prices up, and what to expect at each budget tier.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

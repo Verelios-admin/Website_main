@@ -20,7 +20,7 @@ const SOCIAL_LINKS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Software Company in Kanpur — Web, App, ERP & Payroll',
+  title: 'Software Company in Kanpur — Web, App & ERP',
   description:
     'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP & payroll software. Free 48-hour mockup. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

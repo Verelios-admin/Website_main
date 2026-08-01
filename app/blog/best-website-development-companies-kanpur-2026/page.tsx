@@ -12,9 +12,9 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-07-17';
 
 export const metadata: Metadata = {
-  title: 'Best Website Development Companies in Kanpur (2026)',
+  title: 'Best Website Development Companies in Kanpur',
   description:
-    'An honest, up-to-date roundup of the best website development companies in Kanpur in 2026 — who they are, what they do well, and how to choose the right one for your business.',
+    'An honest, up-to-date roundup of the best website development companies in Kanpur in 2026 — who they are, what they do well, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Best Website Development Companies in Kanpur (2026) | Verelios Labs',

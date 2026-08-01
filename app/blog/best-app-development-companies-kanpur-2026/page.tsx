@@ -12,9 +12,9 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-07-17';
 
 export const metadata: Metadata = {
-  title: 'Best Mobile App Development Companies in Kanpur (2026)',
+  title: 'Best App Development Companies in Kanpur',
   description:
-    'An honest, up-to-date roundup of the best mobile app development companies in Kanpur in 2026 — who builds iOS and Android apps well, and how to pick the right partner.',
+    'An honest, up-to-date roundup of the best mobile app development companies in Kanpur in 2026 — who builds iOS and Android apps well, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Best Mobile App Development Companies in Kanpur (2026) | Verelios Labs',

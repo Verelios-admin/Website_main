@@ -12,9 +12,9 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-07-17';
 
 export const metadata: Metadata = {
-  title: 'Best AI Development Companies in Kanpur (2026)',
+  title: 'Best AI Development Companies in Kanpur',
   description:
-    'An honest, up-to-date roundup of the best AI development companies in Kanpur in 2026 — who actually builds AI agents, chatbots and machine learning locally, and how to choose.',
+    'An honest, up-to-date roundup of the best AI development companies in Kanpur in 2026 — who builds AI agents and chatbots locally, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Best AI Development Companies in Kanpur (2026) | Verelios Labs',

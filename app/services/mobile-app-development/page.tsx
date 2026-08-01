@@ -11,9 +11,9 @@ const URL_PATH = '/services/mobile-app-development';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Custom Mobile App Development Company in India',
+  title: 'Mobile App Development Company in India',
   description:
-    'Custom iOS + Android app development from a single React Native or Flutter codebase. Shipped to both stores in 3–5 weeks. Free 48-hour mockup. No upfront payment.',
+    'Custom iOS + Android apps from one React Native or Flutter codebase. Shipped to both stores in 3–5 weeks. Free 48-hour mockup, no upfront payment.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Custom Mobile App Development Company in India | Verelios Labs',

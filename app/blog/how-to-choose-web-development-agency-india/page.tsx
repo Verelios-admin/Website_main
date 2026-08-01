@@ -11,7 +11,7 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: 'How to Choose a Web Development Agency in India',
+  title: 'How to Choose a Web Development Agency',
   description:
     'Ten questions that separate good agencies from cheap ones. Red flags to watch for, green flags worth paying more for, and the trade-offs that matter.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

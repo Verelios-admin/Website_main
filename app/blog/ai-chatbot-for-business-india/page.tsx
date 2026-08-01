@@ -11,9 +11,9 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: 'Should Your Business Get an AI Chatbot? (India, 2026)',
+  title: 'AI Chatbots for Business in India (2026)',
   description:
-    'A straight guide to AI chatbots for Indian businesses — what a good one actually does, what it costs to build and run, where it goes wrong, and how to know if you need one.',
+    'A straight guide to AI chatbots for Indian businesses — what a good one does, what it costs to build and run, and how to know if you need one.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Should Your Business Get an AI Chatbot? (India, 2026) | Verelios Labs',

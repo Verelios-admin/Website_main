@@ -13,7 +13,7 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'AI Automation Company in India',
   description:
-    'Custom AI automation for Indian businesses — workflow automation, AI chatbots, document processing, lead automation and AI integrations. Built on your stack, launched in 2–6 weeks.',
+    'AI automation for Indian businesses — workflow automation, AI chatbots, document processing and integrations. Built on your stack, live in 2–6 weeks.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'AI Automation Company in India | Verelios Labs',

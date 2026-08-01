@@ -10,12 +10,12 @@ const SITE = 'https://www.verelios.com';
 const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 
 export const metadata: Metadata = {
-  title: 'About Verelios Labs — Who We Are and How to Verify Us',
+  title: 'About Us — Kanpur Software Team',
   description:
-    'Verelios Labs is a software team in Govind Nagar, Kanpur, founded in 2024 by Sahil Chauhan. Seven live client projects you can open and check, milestone payments, and code you own.',
+    'A software team in Govind Nagar, Kanpur, founded 2024 by Sahil Chauhan. Seven live projects you can open and check, milestone payments, code you own.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
-    title: 'About Verelios Labs — Who We Are and How to Verify Us',
+    title: 'About Us — Kanpur Software Team',
     description:
       'A software team in Govind Nagar, Kanpur. Founded 2024 by Sahil Chauhan. Seven live client projects you can open and check for yourself.',
     url: `${SITE}${URL_PATH}`,

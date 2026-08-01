@@ -14,7 +14,7 @@ const PUBLISHED = '2026-07-17';
 export const metadata: Metadata = {
   title: 'Best ERP Software Companies in Kanpur (2026)',
   description:
-    'An honest, up-to-date roundup of the best ERP software companies in Kanpur in 2026 — who builds custom ERP, inventory and payroll systems for local factories and traders, and how to choose.',
+    'An honest, up-to-date roundup of the best ERP software companies in Kanpur in 2026 — who builds custom ERP and payroll systems, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Best ERP Software Companies in Kanpur (2026) | Verelios Labs',

@@ -11,9 +11,9 @@ const URL_PATH = '/services/erp';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Custom ERP Software Development Company in India',
+  title: 'ERP Software Development Company in India',
   description:
-    'Custom ERP software built around your workflow — inventory, manufacturing, accounting, HR, payroll and reporting in one system. Full-stack TypeScript, you own the code, launched in 6–12 weeks.',
+    'Custom ERP software built around your workflow — inventory, manufacturing, accounting, HR, payroll and reporting in one system. You own the code.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Custom ERP Software Development Company in India | Verelios Labs',

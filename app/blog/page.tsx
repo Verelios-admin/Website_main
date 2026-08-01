@@ -7,7 +7,7 @@ import { ClosingCta } from '@/components/sub-page/ClosingCta';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Blog — Web & App Development Insights for Indian Founders',
+  title: 'Web & App Development Blog — India',
   description:
     'Honest guides on custom website & app development in India — pricing, timelines, stack choices and how to pick an agency. Written by the Verelios Labs team.',
   alternates: { canonical: `${SITE}/blog` },

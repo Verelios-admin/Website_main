@@ -11,9 +11,9 @@ const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: 'AI Automation for Indian Businesses (2026): What to Automate & What It Costs',
+  title: 'AI Automation for Indian Businesses (2026)',
   description:
-    'A practical, no-hype guide to AI automation for Indian businesses — what is worth automating first, what it actually costs in INR, and how to tell if a process is ready.',
+    'A practical, no-hype guide to AI automation for Indian businesses — what to automate first, what it costs in INR, and if a process is ready.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'AI Automation for Indian Businesses (2026) | Verelios Labs',

@@ -9,9 +9,9 @@ const URL_PATH = '/services';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Our Services — Web, App, Software, AI, ERP & Hosting',
+  title: 'Services — Web, App, Software, AI & ERP',
   description:
-    'Verelios Labs services: website development, mobile apps, custom software, UI/UX design, AI automation, ERP software and managed hosting. Built in 3 weeks, free 48-hour mockup.',
+    'Website development, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting. Idea to launch in 3 weeks, free 48-hour mockup.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Our Services | Verelios Labs',
