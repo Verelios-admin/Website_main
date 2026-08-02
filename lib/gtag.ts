@@ -104,3 +104,14 @@ export function trackWhatsAppClick(label: string) {
     value: 1,
   });
 }
+
+/** Phone-call (tel:) link clicks. Fired globally by CallClickTracker for every
+ *  tel: link on the site, so calls are captured as a GA4 event you can import
+ *  into Google Ads as a conversion (previously call clicks were untracked). */
+export function trackCallClick(label: string) {
+  sendGtagEvent('call_click', {
+    event_category: 'Contact',
+    event_label: label,
+    value: 1,
+  });
+}

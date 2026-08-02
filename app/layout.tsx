@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/MetaPixel';
 import { TopContactBar } from '@/components/TopContactBar';
+import { CallClickTracker } from '@/components/CallClickTracker';
 import { JsonLdDedupe } from '@/components/JsonLdDedupe';
 
 const inter = Inter({
@@ -268,6 +269,7 @@ export default function RootLayout({
 
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
+        <CallClickTracker />
         <TopContactBar />
         {children}
       </body>
