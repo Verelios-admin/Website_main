@@ -156,7 +156,7 @@ export function Studio() {
               }}
             >
               <div className="studio-stat">
-                <div className="stat-num" style={{ fontSize: 32 }}>10+</div>
+                <div className="stat-num" style={{ fontSize: 32 }}>50+</div>
                 <div
                   style={{
                     fontSize: 12,

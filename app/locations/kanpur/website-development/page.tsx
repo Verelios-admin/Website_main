@@ -42,7 +42,7 @@ const REVIEWS: LocalReview[] = [
 // The single canonical business entity lives on the homepage as
 // `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
 // parallel copy here (with its own @id, NAP and self-rating) fragmented one real
-// business into six schema entities and multiplied the same 38 reviews six-fold.
+// business into six schema entities and multiplied the same 53 reviews six-fold.
 // Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
@@ -177,7 +177,7 @@ export default function KanpurWebsiteDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a freelancer who disappears after launch.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website designed before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 38 client reviews, with work you can click through.</li>
+                <li><strong>Rated 5.0★</strong> across 53 client reviews, with work you can click through.</li>
                 <li><strong>You own everything</strong> — source code, hosting and domain on your own accounts. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

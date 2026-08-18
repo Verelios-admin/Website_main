@@ -793,7 +793,7 @@ export function Hero() {
                 Shipping
               </div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14, marginTop: 2 }}>
-                10+ projects live
+                50+ projects live
               </div>
             </div>
           </div>

@@ -18,8 +18,8 @@ export const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
  */
 export function TrustStrip() {
   const items: { label: string; value: string; href?: string; external?: boolean }[] = [
-    { label: 'Client rating', value: '5.0 ★ from 38 reviews', href: GBP_URL, external: true },
-    { label: 'Projects delivered', value: '10+ across India', href: '/about' },
+    { label: 'Client rating', value: '5.0 ★ from 53 reviews', href: GBP_URL, external: true },
+    { label: 'Projects delivered', value: '50+ across India', href: '/about' },
     { label: 'Average delivery', value: 'Under 3 weeks' },
     { label: 'Payment', value: 'Nothing upfront · 30/30/40' },
   ];

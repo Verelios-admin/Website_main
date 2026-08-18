@@ -38,6 +38,10 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/services/custom-software-development', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/services/ai-automation', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/services/erp', lastmod: '2026-07-28', priority: 0.8 },
+  { path: '/services/hrms-payroll-software', lastmod: '2026-08-18', priority: 0.9 },
+  { path: '/services/billing-inventory-software', lastmod: '2026-08-18', priority: 0.9 },
+  { path: '/services/crm-software-development', lastmod: '2026-08-18', priority: 0.8 },
+  { path: '/services/ecommerce-development', lastmod: '2026-08-18', priority: 0.8 },
   { path: '/services/web-hosting', lastmod: '2026-07-28', priority: 0.7 },
   { path: '/services/ui-ux-design', lastmod: '2026-07-28', priority: 0.7 },
 
@@ -47,6 +51,10 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/locations/kanpur/ai-development', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/locations/kanpur/erp-software', lastmod: '2026-07-28', priority: 0.8 },
+  // Both of these already rank #1 in the Kanpur local pack with no landing page
+  // behind them — hence priority 0.9, matching the other proven local intents.
+  { path: '/locations/kanpur/hrms-payroll-software', lastmod: '2026-08-18', priority: 0.9 },
+  { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-08-18', priority: 0.9 },
 
   // Blog. lastmod = the post's own publish date, because the prose has not been
   // rewritten since; keep each of these in step with the PUBLISHED constant in the

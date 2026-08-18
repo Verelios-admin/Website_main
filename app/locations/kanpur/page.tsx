@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 // Visible client testimonials — on-page social proof only, NOT wrapped in Review
 // schema (see the note on localBusinessJsonLd below). Sourced from Verelios Labs'
-// verified Google Business Profile (5.0★, 38 reviews).
+// verified Google Business Profile (5.0★, 53 reviews).
 const CLIENT_TESTIMONIALS = [
   {
     author: 'Shrawan Garg',
@@ -91,6 +91,10 @@ const localBusinessJsonLd = {
       closes: '23:59',
     },
   ],
+  // Kept identical to the homepage node, and to the opening date on the verified
+  // Google Business Profile. Each static page has to stand alone, so identifying
+  // fields are repeated rather than referenced.
+  foundingDate: '2025-01',
   image: `${SITE}/logo.webp`,
   logo: `${SITE}/logo.webp`,
   description:
@@ -144,7 +148,7 @@ const faqJsonLd = {
       name: 'What software services do you offer in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We build websites, mobile apps, custom software, ERP systems, HR & payroll software, and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.',
+        text: 'We build websites, e-commerce stores, mobile apps, custom software, ERP systems, HRMS and payroll software, GST billing and inventory software, CRM systems and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.',
       },
     },
     {
@@ -179,7 +183,8 @@ const LOCAL_SERVICES = [
   { title: 'Mobile app development in Kanpur', desc: 'iOS & Android apps from one codebase, shipped to both stores in 3–5 weeks.', href: '/locations/kanpur/mobile-app-development' },
   { title: 'AI development in Kanpur', desc: 'AI agents, chatbots, machine learning and workflow automation that take busywork off your team.', href: '/locations/kanpur/ai-development' },
   { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
-  { title: 'HR & payroll software', desc: 'Attendance, salary structures, payslips and PF / ESI / TDS — built into your custom software.', href: '/locations/kanpur/erp-software' },
+  { title: 'HRMS & payroll software in Kanpur', desc: 'Biometric attendance, shifts, payslips and automatic PF / ESI / TDS — including contract and piece-rate workers.', href: '/locations/kanpur/hrms-payroll-software' },
+  { title: 'Billing & inventory software in Kanpur', desc: 'Fast GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops.', href: '/locations/kanpur/billing-inventory-software' },
   { title: 'Web hosting & maintenance', desc: 'Managed hosting with 99.9% uptime, backups, SSL and a human on WhatsApp.', href: '/services/web-hosting' },
 ];
 
@@ -243,7 +248,7 @@ export default function KanpurLocationPage() {
                   Rated 5.0 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  38 client reviews<br />
+                  53 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
@@ -334,7 +339,7 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 5.0★</strong> across 38 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 5.0★</strong> across 53 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

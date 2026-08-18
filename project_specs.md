@@ -16,9 +16,85 @@ software. The site explains services, shows work/process/pricing, and drives con
 
 ## Pages and user flows (all public)
 - `/` — Homepage (Hero, Services, Industries, Portfolio, Process, About, Studio, Pricing, Testimonials, FAQ, Contact, Footer)
-- `/services/website-development`, `/services/mobile-app-development`, `/services/custom-software-development`, `/services/ui-ux-design`
-- `/blog`, plus three articles
+- `/services` — hub, plus one page per service:
+  `website-development`, `mobile-app-development`, `custom-software-development`, `ui-ux-design`,
+  `ai-automation`, `erp`, `web-hosting`, `ecommerce-development`, `hrms-payroll-software`,
+  `billing-inventory-software`, `crm-software-development`
+- `/locations/kanpur` — hub, plus one page per local intent:
+  `website-development`, `mobile-app-development`, `ai-development`, `erp-software`,
+  `hrms-payroll-software`, `billing-inventory-software`
+- `/about`, `/blog` plus nine articles
 - `/privacy-policy`, `/terms-of-service`, `/cookie-policy`
+
+### Phase 6 — Landing pages for queries we already rank for ✓ COMPLETED 2026-08-18 (build-verified: 38 routes, 31 sitemap URLs, every internal link resolves)
+
+Driven by a measured rank scan of 17 commercial Kanpur queries, not guesswork. The
+finding: relevance is strong and prominence is weak, so we rank #1 on narrow product
+queries and 10th–14th or nowhere on head terms.
+
+Two queries — **"billing and inventory software in kanpur"** and **"hrms and payroll
+software in kanpur"** — were already **#1 in the local pack with no landing page behind
+them**, so that traffic was arriving on a homepage that never mentioned what was
+searched for. Those two pages were the highest-return work available and needed no
+ranking improvement at all.
+
+New pages, each with Service + BreadcrumbList + FAQPage schema mirroring the visible
+FAQ verbatim, matching the established `SubPageLayout` / `PageHero` / `Prose` pattern:
+
+| Page | Why | Rank at build time |
+|---|---|---|
+| `/services/hrms-payroll-software` | ranked #1, no page | 1 |
+| `/services/billing-inventory-software` | ranked #1, no page | 1 |
+| `/services/crm-software-development` | close to top 3 | 7 |
+| `/services/ecommerce-development` | not ranking at all | — |
+| `/locations/kanpur/hrms-payroll-software` | local intent for a #1 query | 1 |
+| `/locations/kanpur/billing-inventory-software` | local intent for a #1 query | 1 |
+
+Supporting changes:
+- `RelatedServices` now shows a **rotating window of 6** of the 11 services instead of
+  all of them. A fixed `.slice(0, 6)` would have orphaned whatever sat at the bottom of
+  the array; rotating by the current page's index keeps the grid tight *and* gives every
+  service inbound internal links from roughly half the others.
+- Stale **"38 client reviews"** corrected to **53** in all nine user-facing places
+  (`TrustStrip`, `LocalTrustBlock`, `Testimonials`, `/about`, and four Kanpur pages).
+  The Google Business Profile is the source of truth and had moved on.
+- `/services` hub and `/locations/kanpur` hub updated; the Kanpur "HR & payroll" card
+  previously pointed at `erp-software` as a placeholder and now has a real destination.
+
+Known constraint: a full `next build` cannot run in a network-restricted sandbox because
+`next/font/google` fetches Inter from `fonts.googleapis.com` at build time. Verification
+was done by building an isolated copy with the font call stubbed — the repo itself is
+untouched, and `tsc --noEmit` passes against it directly.
+
+### Phase 7 — Reconcile the site against the Google Business Profile ✓ COMPLETED 2026-08-18
+
+GBP is the source of truth for NAP, hours, rating and categories. Re-read live before
+editing: **5.0 from 53 reviews**, 126/58 G Block Govind Nagar Kanpur 208006,
++91 82995 22798, open 24 hours, primary category Software company.
+
+Mismatches found and fixed:
+
+- **Contradictory project count.** Hero and `TrustStrip` said "10+ projects", `Studio`
+  said "10+ projects shipped", while `Portfolio` said "50+ clients" — on the same site.
+  Aligned to **50+** everywhere (owner-confirmed; corroborated by 53 GBP reviews).
+- **Review count** was 38 in nine user-facing places and in six code comments. Now 53
+  throughout. This is the field most likely to drift again — GBP is authoritative.
+- **`foundingDate` added** as `2025-01` to both `#localbusiness` nodes, matching the GBP
+  opening date. NOTE: `app/layout.tsx` still declares `foundingDate: '2024'` on the
+  separate `#organization` node. Those are different entities so it is not strictly a
+  conflict (company formed, premises opened later), but it is unverified — confirm the
+  incorporation date and make them agree or deliberately differ.
+- **`additionalType` added** mirroring the four GBP categories (Software company,
+  Web Designer, Marketing agency, Internet marketing service) so the entity Google
+  builds from the site agrees with the one it builds from the GBP.
+- **Bangalore on-site claim removed.** The `areaServed` comment asserted Bangalore was
+  "served on-site too". There is one office, in Govind Nagar. Kanpur is the only physical
+  location; everywhere else is remote, matching how the GBP service area is set. Added
+  Maharashtra (in the GBP service area), dropped Hyderabad (not in it).
+
+Verified after rebuild: single `#localbusiness` @id sitewide, one street address, one
+postal code, one set of opening hours, zero `aggregateRating` nodes (self-serving review
+markup stays out), and zero occurrences of any stale count across all 38 pages.
 
 ## Data models / storage
 None — static content. Contact form posts out (no DB writes on this site).

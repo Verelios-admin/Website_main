@@ -52,9 +52,29 @@ const SERVICES = [
     href: '/services/ai-automation',
   },
   {
+    title: 'E-commerce Development',
+    desc: 'Online stores with catalogue, cart, Razorpay & UPI, COD, delivery tracking and GST invoicing. From ₹99,999, live in 3–4 weeks.',
+    href: '/services/ecommerce-development',
+  },
+  {
     title: 'ERP Software',
     desc: 'Custom ERP — inventory, manufacturing, accounting, reporting plus HR & payroll — with Tally and GST integration.',
     href: '/services/erp',
+  },
+  {
+    title: 'HRMS & Payroll Software',
+    desc: 'Attendance, shifts, leave, payslips and automatic PF, ESI & TDS. A one-time build, not a per-employee subscription.',
+    href: '/services/hrms-payroll-software',
+  },
+  {
+    title: 'Billing & Inventory Software',
+    desc: 'GST invoicing, live stock across godowns, e-way bills and barcode scanning — with a counter that keeps working offline.',
+    href: '/services/billing-inventory-software',
+  },
+  {
+    title: 'Custom CRM Software',
+    desc: 'Leads, follow-ups, quotations and deals in one pipeline, with WhatsApp Business API and real revenue reporting.',
+    href: '/services/crm-software-development',
   },
   {
     title: 'Web Hosting & Maintenance',
@@ -160,10 +180,27 @@ export default function ServicesHubPage() {
                   we will tell you so.
                 </li>
                 <li>
+                  <strong>You sell products online, or want to.</strong> That is{' '}
+                  <Link href="/services/ecommerce-development">e-commerce development</Link> — the
+                  same build as a website with catalogue, payments, shipping and stock added.
+                </li>
+                <li>
                   <strong>Your team runs the business in spreadsheets and WhatsApp.</strong>{' '}
                   That is <Link href="/services/custom-software-development">custom software</Link>{' '}
                   — or, if it covers inventory, production, accounts and payroll together,{' '}
                   <Link href="/services/erp">ERP</Link>.
+                </li>
+                <li>
+                  <strong>Payroll takes three days and a spreadsheet every month.</strong> That is{' '}
+                  <Link href="/services/hrms-payroll-software">HRMS &amp; payroll software</Link>.
+                </li>
+                <li>
+                  <strong>Stock in the system never matches stock on the shelf.</strong> That is{' '}
+                  <Link href="/services/billing-inventory-software">billing &amp; inventory software</Link>.
+                </li>
+                <li>
+                  <strong>Enquiries come in and quietly go cold.</strong> That is a{' '}
+                  <Link href="/services/crm-software-development">custom CRM</Link>.
                 </li>
                 <li>
                   <strong>Someone spends hours a day on the same repetitive task.</strong>{' '}
