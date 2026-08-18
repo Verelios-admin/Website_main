@@ -40,8 +40,12 @@ const COLS = [
     links: [
       ['Website development', '/services/website-development'],
       ['Mobile app development', '/services/mobile-app-development'],
+      ['E-commerce development', '/services/ecommerce-development'],
       ['Custom software', '/services/custom-software-development'],
       ['Custom ERP software', '/services/erp'],
+      ['HRMS & payroll software', '/services/hrms-payroll-software'],
+      ['Billing & inventory software', '/services/billing-inventory-software'],
+      ['Custom CRM software', '/services/crm-software-development'],
       ['AI automation', '/services/ai-automation'],
       ['Web hosting & maintenance', '/services/web-hosting'],
       ['UI/UX design', '/services/ui-ux-design'],
@@ -68,6 +72,8 @@ const COLS = [
       ['App development in Kanpur', '/locations/kanpur/mobile-app-development'],
       ['AI development in Kanpur', '/locations/kanpur/ai-development'],
       ['ERP software in Kanpur', '/locations/kanpur/erp-software'],
+      ['HRMS & payroll in Kanpur', '/locations/kanpur/hrms-payroll-software'],
+      ['Billing software in Kanpur', '/locations/kanpur/billing-inventory-software'],
     ],
   },
   {
