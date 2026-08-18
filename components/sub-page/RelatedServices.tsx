@@ -26,6 +26,30 @@ const ALL_SERVICES = [
     accent: '#14b8a6',
   },
   {
+    slug: 'hrms-payroll-software',
+    title: 'HRMS & Payroll Software',
+    blurb: 'Attendance, shifts, payslips and automatic PF, ESI & TDS. One-time build, not per employee per month.',
+    accent: '#8b5cf6',
+  },
+  {
+    slug: 'billing-inventory-software',
+    title: 'Billing & Inventory Software',
+    blurb: 'GST invoicing, live stock across godowns, e-way bills and barcode scanning. Works offline at the counter.',
+    accent: '#f97316',
+  },
+  {
+    slug: 'crm-software-development',
+    title: 'Custom CRM Software',
+    blurb: 'Leads, follow-ups and quotations in one pipeline, with WhatsApp built in. No more forgotten enquiries.',
+    accent: '#0ea5e9',
+  },
+  {
+    slug: 'ecommerce-development',
+    title: 'E-commerce Development',
+    blurb: 'Online stores with catalogue, UPI & COD, delivery tracking and SEO from day one. From ₹99,999.',
+    accent: '#10b981',
+  },
+  {
     slug: 'ai-automation',
     title: 'AI Automation',
     blurb: 'Workflow automation, AI chatbots and document processing that take the repetitive work off your team.',
@@ -45,8 +69,19 @@ const ALL_SERVICES = [
   },
 ];
 
+/** How many cards to show. The full list is now 11 services — rendering all of
+ *  them turned this into a wall of cards, so we show a window instead. */
+const VISIBLE = 6;
+
 export function RelatedServices({ exclude }: { exclude: string }) {
-  const items = ALL_SERVICES.filter((s) => s.slug !== exclude);
+  // Rotate the window based on where the current page sits in the list, rather
+  // than always slicing from the top. Two reasons: every service page then shows
+  // a different six, and — more importantly — each service still receives inbound
+  // internal links from roughly half the others. A fixed `.slice(0, 6)` would
+  // have orphaned whatever sat at the bottom of the array.
+  const pool = ALL_SERVICES.filter((s) => s.slug !== exclude);
+  const start = Math.max(0, ALL_SERVICES.findIndex((s) => s.slug === exclude));
+  const items = Array.from({ length: Math.min(VISIBLE, pool.length) }, (_, i) => pool[(start + i) % pool.length]);
   return (
     <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
       <div className="wrap" style={{ maxWidth: 1100, margin: '0 auto' }}>

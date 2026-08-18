@@ -71,7 +71,7 @@ export function LocalTrustBlock({
                 Rated 5.0 ★
               </div>
               <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                38 client reviews<br />
+                53 client reviews<br />
                 <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                   See us on Google →
                 </a>

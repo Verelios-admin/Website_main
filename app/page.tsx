@@ -92,18 +92,34 @@ const localBusinessJsonLd = {
   logo:  `${SITE_URL}/logo.webp`,
   description:
     'Software agency in Govind Nagar, Kanpur serving clients across India — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
+  // Opening date as recorded on the verified Google Business Profile. Keeping the
+  // two in step matters: conflicting founding dates between the GBP and the site
+  // weaken entity consolidation rather than strengthening it.
+  foundingDate: '2025-01',
+  // Mirrors the four categories on the verified Google Business Profile —
+  // Software company (primary), Web Designer, Marketing agency and Internet
+  // marketing service. Declaring them here means the entity Google builds from
+  // the site agrees with the entity it builds from the GBP.
+  additionalType: [
+    'https://www.wikidata.org/wiki/Q1058914',  // software company
+    'https://www.wikidata.org/wiki/Q1141149',  // web design
+    'https://www.wikidata.org/wiki/Q5266500',  // digital marketing
+  ],
   areaServed: [
-    // Home base — Kanpur + Uttar Pradesh.
+    // Home base — Kanpur + Uttar Pradesh. Only Kanpur is a physical location; the
+    // ONE office is 126/58 G Block, Govind Nagar. Everywhere else on this list is
+    // served remotely, which is also how the GBP service area is set. Do not
+    // reintroduce an on-site claim for any other city — the GBP description
+    // previously implied a second Bangalore office and it was not accurate.
     { '@type': 'City',    name: 'Kanpur' },
     { '@type': 'City',    name: 'Lucknow' },
     { '@type': 'State',   name: 'Uttar Pradesh' },
-    // Bangalore — served on-site too — plus clients across the rest of India.
+    { '@type': 'State',   name: 'Maharashtra' },
     { '@type': 'City',    name: 'Bangalore' },
     { '@type': 'Country', name: 'India' },
     { '@type': 'City',    name: 'Pune' },
     { '@type': 'City',    name: 'Mumbai' },
     { '@type': 'City',    name: 'Delhi' },
-    { '@type': 'City',    name: 'Hyderabad' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
@@ -111,7 +127,7 @@ const localBusinessJsonLd = {
   // NOTE: aggregateRating + review are deliberately ABSENT here, and must not be
   // re-added. Google's review-snippet policy forbids "self-serving" reviews — a
   // business marking up ratings of ITSELF on its OWN site is ineligible for the
-  // star rich result no matter how genuine the underlying reviews are. Our 38
+  // star rich result no matter how genuine the underlying reviews are. Our 53
   // Google reviews are real, but authoring the JSON-LD about ourselves is the
   // separate violation, and repeating it across sibling URLs is the pattern the
   // spam guidelines describe as reviews-markup abuse (GSC already raised a

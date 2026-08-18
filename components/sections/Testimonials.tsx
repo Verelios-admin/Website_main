@@ -3,7 +3,7 @@
 import { useGsap } from '@/hooks/useGsap';
 
 // Real, verified 5★ Google reviews (from the Verelios Labs Google Business
-// Profile — 5.0 across 38 reviews). Text lightly trimmed for length; names are
+// Profile — 5.0 across 53 reviews). Text lightly trimmed for length; names are
 // the reviewers' real public names.
 const TESTIMONIALS = [
   {
@@ -145,7 +145,7 @@ export function Testimonials() {
               5.0 / 5.0
             </div>
             <div style={{ color: 'var(--color-ink-muted-48)', fontSize: 13, marginTop: 6 }}>
-              5.0 average rating from 38 Google reviews
+              5.0 average rating from 53 Google reviews
             </div>
           </div>
         </div>
