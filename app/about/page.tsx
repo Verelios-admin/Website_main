@@ -12,7 +12,7 @@ const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 export const metadata: Metadata = {
   title: 'About Us — Kanpur Software Team',
   description:
-    'A software team in Govind Nagar, Kanpur, founded 2024 by Sahil Chauhan. Seven live projects you can open and check, milestone payments, code you own.',
+    'A software team in Govind Nagar, Kanpur, founded 2024 by Sahil Chauhan. 50+ projects delivered, seven you can open and check. You own the code.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'About Us — Kanpur Software Team',
@@ -120,11 +120,14 @@ export default function AboutPage() {
               <p>
                 Verelios Labs is a software studio at 126/58 G Block, Govind Nagar, Kanpur, Uttar
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
-                ten projects — websites, mobile apps, a custom ERP, and AI automation — for clients
-                in Kanpur and across India, and we hold a 5.0 rating from 53 reviews on our Google
-                Business Profile. Nine of those projects are listed further down this page, seven of
-                them with a live link you can open right now; the rest are under NDA or have since been handed
-                to the client&apos;s own team, so we do not claim them publicly.
+                fifty projects — websites, mobile apps, e-commerce stores, custom ERP, billing and
+                payroll systems, and AI automation — for clients in Kanpur and across India, and we
+                hold a 5.0 rating from 53 reviews on our Google Business Profile. Nine of them are
+                listed further down this page, seven with a live link you can open right now. We
+                deliberately publish only the handful we can point you at: the rest are under NDA,
+                are internal systems with no public URL, or have since been handed to the
+                client&apos;s own team, and we would rather show you seven you can verify than fifty
+                you cannot.
               </p>
               <p>
                 We are deliberately small. You are not handed to an account manager and then to a
@@ -236,7 +239,7 @@ export default function AboutPage() {
               </p>
               <ul>
                 <li>
-                  <strong>The reviews.</strong> Read all 38 on our{' '}
+                  <strong>The reviews.</strong> Read all 53 on our{' '}
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer">
                     Google Business Profile
                   </a>

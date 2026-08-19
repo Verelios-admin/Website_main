@@ -94,7 +94,7 @@ export function LocalTrustBlock({
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
             <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 38 verified client reviews</span>
+            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 53 verified client reviews</span>
           </div>
 
           <div
