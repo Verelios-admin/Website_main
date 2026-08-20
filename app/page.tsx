@@ -92,10 +92,13 @@ const localBusinessJsonLd = {
   logo:  `${SITE_URL}/logo.webp`,
   description:
     'Software agency in Govind Nagar, Kanpur serving clients across India — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
-  // Opening date as recorded on the verified Google Business Profile. Keeping the
-  // two in step matters: conflicting founding dates between the GBP and the site
-  // weaken entity consolidation rather than strengthening it.
-  foundingDate: '2025-01',
+  // 2024 — confirmed by the owner against the verified Google Business Profile.
+  // Must stay identical to the Organization node in app/layout.tsx, which renders
+  // on EVERY page: when the two disagree, this page ships two conflicting
+  // foundingDate values in its own structured data, which weakens entity
+  // consolidation rather than strengthening it. /about and public/llms.txt also
+  // say 2024. Change all of them together or none of them.
+  foundingDate: '2024',
   // Mirrors the four categories on the verified Google Business Profile —
   // Software company (primary), Web Designer, Marketing agency and Internet
   // marketing service. Declaring them here means the entity Google builds from
