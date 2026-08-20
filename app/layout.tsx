@@ -222,6 +222,17 @@ export default function RootLayout({
           now come from the Metadata API; the scripts below render in <body>,
           which Next hydrates cleanly. */}
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript). Must be the first thing inside <body>.
+            Only fires for visitors with JavaScript disabled; harmless otherwise. */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KQ48CLVM"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
         {/* Safety net: strips any exact-duplicate JSON-LD the client might still
             add on hydration, so Google's renderer only ever sees one of each.
             See components/JsonLdDedupe.tsx. */}
@@ -243,6 +254,30 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+
+        {/* Google Tag Manager — container GTM-KQ48CLVM.
+            Added to run the Leadfeeder / Dealfront company-identification tag,
+            which resolves a visitor's IP to a COMPANY (not a person) and is why
+            this container exists at all.
+
+            ⚠️  DO NOT add GA4 (G-96F7T65XWE) or Google Ads (AW-18037984640) tags
+            inside this container. Both already load directly below, so adding
+            them in GTM as well double-counts every pageview and every lead
+            conversion — which quietly corrupts the Ads conversion data the
+            bidding relies on. GTM is here for third-party tags only; anything
+            Google-owned stays hardcoded where it is.
+
+            `afterInteractive` rather than the `lazyOnload` used below: a visit
+            has to be recorded before the visitor leaves, and lazyOnload waits
+            for window.load. If PageSpeed mobile drops noticeably, this is the
+            first thing to move back to lazyOnload. */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KQ48CLVM');`}
+        </Script>
 
         {/* Google Analytics 4 + Google Ads conversion tracking.
             lazyOnload defers these past the LCP/TBT measurement window. */}
