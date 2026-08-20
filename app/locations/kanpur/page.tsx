@@ -91,10 +91,10 @@ const localBusinessJsonLd = {
       closes: '23:59',
     },
   ],
-  // Kept identical to the homepage node, and to the opening date on the verified
-  // Google Business Profile. Each static page has to stand alone, so identifying
-  // fields are repeated rather than referenced.
-  foundingDate: '2025-01',
+  // Kept identical to the homepage node and to the Organization node in
+  // app/layout.tsx. Each static page has to stand alone, so identifying fields
+  // are repeated rather than referenced.
+  foundingDate: '2024',
   image: `${SITE}/logo.webp`,
   logo: `${SITE}/logo.webp`,
   description:
