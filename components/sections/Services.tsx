@@ -3,24 +3,58 @@
 import Link from 'next/link';
 import { useGsap } from '@/hooks/useGsap';
 
+// Mirrors the eleven real service pages under /services, in roughly the order a
+// prospect encounters them. Every card links to a page that exists — the old list
+// had two cards pointing at /#contact and silently omitted ERP, e-commerce, HRMS,
+// billing and CRM, which are the highest-value things we actually rank for.
 const SERVICES = [
   {
-    title: 'App development',
-    body: 'Native iOS and Android apps, or cross-platform from a single React Native / Flutter codebase. Shipped to both stores.',
-    bullets: ['iOS & Android', 'React Native', 'Flutter', 'Native modules'],
-    href: '/services/mobile-app-development',
-  },
-  {
     title: 'Web development',
-    body: 'Responsive, fast, scalable web apps with the same stack the best product teams use. Built to convert, not just to look pretty.',
-    bullets: ['React & Next.js', 'Full-stack', 'Progressive web apps', 'E-commerce'],
+    body: 'Responsive, fast, scalable sites with the same stack the best product teams use. Built to convert, not just to look pretty.',
+    bullets: ['React & Next.js', 'Full-stack', 'Progressive web apps', 'SEO-ready'],
     href: '/services/website-development',
   },
   {
+    title: 'App development',
+    body: 'Native iOS and Android apps, or cross-platform from a single React Native / Flutter codebase. Shipped to both stores.',
+    bullets: ['iOS & Android', 'React Native', 'Flutter', 'Store submission'],
+    href: '/services/mobile-app-development',
+  },
+  {
+    title: 'E-commerce',
+    body: 'Online stores with catalogue, cart, UPI and cash on delivery, delivery tracking and GST invoicing — SEO built in from day one.',
+    bullets: ['Razorpay & UPI', 'COD with OTP', 'Shiprocket & Delhivery', 'GST invoicing'],
+    href: '/services/ecommerce-development',
+  },
+  {
     title: 'Custom software',
-    body: "Internal tools, CRMs, ERPs, dashboards — tailored to your workflow, not someone else's idea of one.",
+    body: "Internal tools, dashboards and platforms — tailored to your workflow, not someone else's idea of one.",
     bullets: ['Enterprise solutions', 'API development', 'System integration', 'Cloud architecture'],
     href: '/services/custom-software-development',
+  },
+  {
+    title: 'ERP software',
+    body: 'Inventory, manufacturing, procurement, accounting and reporting in one system built around how your business already runs.',
+    bullets: ['Tally & GST sync', 'Production tracking', 'Multi-godown stock', 'You own the code'],
+    href: '/services/erp',
+  },
+  {
+    title: 'HRMS & payroll',
+    body: 'Attendance, shifts, leave, payslips and automatic PF, ESI and TDS — including contract and piece-rate workers.',
+    bullets: ['Biometric integration', 'Shift & overtime rules', 'ECR & ESI exports', 'Employee self-service'],
+    href: '/services/hrms-payroll-software',
+  },
+  {
+    title: 'Billing & inventory',
+    body: 'Fast GST billing with live stock across godowns, e-way bills and barcode scanning — and a counter that keeps working offline.',
+    bullets: ['E-invoice & e-way bill', 'Batch & expiry', 'Barcode scanning', 'Offline-first counter'],
+    href: '/services/billing-inventory-software',
+  },
+  {
+    title: 'CRM software',
+    body: 'Leads, follow-ups, quotations and deals in one pipeline, with WhatsApp built in so enquiries stop going cold.',
+    bullets: ['WhatsApp Business API', 'Quotation builder', 'Field sales tracking', 'Source-wise ROI'],
+    href: '/services/crm-software-development',
   },
   {
     title: 'AI automation',
@@ -35,16 +69,10 @@ const SERVICES = [
     href: '/services/ui-ux-design',
   },
   {
-    title: 'Performance',
-    body: 'Make what you already have faster. Speed audits, refactors, SEO setup, and analytics that tell you what to fix next.',
-    bullets: ['Speed optimization', 'SEO enhancement', 'Code refactoring', 'Analytics setup'],
-    href: '/#contact',
-  },
-  {
-    title: 'Maintenance & support',
-    body: 'Ongoing care so your product keeps shipping. Bug fixes, feature updates, security patches, and a human on WhatsApp.',
-    bullets: ['24/7 monitoring', 'Security updates', 'Bug fixes', 'Feature updates'],
-    href: '/#contact',
+    title: 'Hosting, maintenance & performance',
+    body: 'Managed hosting plus ongoing care — speed audits, security patches, backups, bug fixes and a human on WhatsApp.',
+    bullets: ['99.9% uptime', 'Daily backups', 'Speed optimisation', 'No lock-in'],
+    href: '/services/web-hosting',
   },
 ];
 
@@ -81,8 +109,12 @@ export function Services() {
       <div className="wrap">
         <div className="section-head">
           <div className="eyebrow">What we do</div>
+          {/* No count in the heading on purpose. "Seven practices" was left behind
+              the moment the service list grew, the same way "38 reviews" and
+              "10+ projects" did. Adding a service should not mean remembering to
+              edit a headline. */}
           <h2 className="display-section">
-            Seven practices. <br />
+            Everything we build. <br />
             <span style={{ color: 'var(--color-ink-muted-48)' }}>One team, end-to-end.</span>
           </h2>
           <p className="lead" style={{ marginTop: 6, maxWidth: 640 }}>
@@ -106,7 +138,7 @@ export function Services() {
                   letterSpacing: '-0.01em',
                 }}
               >
-                0{i + 1}
+                {String(i + 1).padStart(2, '0')}
               </div>
               <h3
                 style={{
