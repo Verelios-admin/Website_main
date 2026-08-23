@@ -105,11 +105,23 @@ export function trackWhatsAppClick(label: string) {
   });
 }
 
-/** Phone-call (tel:) link clicks. Fired globally by CallClickTracker for every
- *  tel: link on the site, so calls are captured as a GA4 event you can import
- *  into Google Ads as a conversion (previously call clicks were untracked). */
+/** Phone-call (tel:) link clicks. Fired globally by ContactClickTracker for
+ *  every tel: link on the site, so calls are captured as a GA4 event you can
+ *  import into Google Ads as a conversion (previously call clicks were
+ *  untracked). */
 export function trackCallClick(label: string) {
   sendGtagEvent('call_click', {
+    event_category: 'Contact',
+    event_label: label,
+    value: 1,
+  });
+}
+
+/** Email (mailto:) link clicks. Also fired globally by ContactClickTracker.
+ *  Email links appeared in the top bar, contact section and footer and were
+ *  tracked in none of those places. */
+export function trackEmailClick(label: string) {
+  sendGtagEvent('email_click', {
     event_category: 'Contact',
     event_label: label,
     value: 1,

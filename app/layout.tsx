@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/MetaPixel';
 import { TopContactBar } from '@/components/TopContactBar';
-import { CallClickTracker } from '@/components/CallClickTracker';
+import { ContactClickTracker } from '@/components/ContactClickTracker';
 import { JsonLdDedupe } from '@/components/JsonLdDedupe';
 
 const inter = Inter({
@@ -304,7 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <MetaPixel />
-        <CallClickTracker />
+        <ContactClickTracker />
         <TopContactBar />
         {children}
       </body>

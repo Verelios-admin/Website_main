@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { useGsap } from '@/hooks/useGsap';
 import { useToast } from '@/hooks/use-toast';
 import { trackMetaLead } from '@/components/MetaPixel';
-import { trackGoogleAdsLead, resetLeadConversionGuard, trackWhatsAppClick } from '@/lib/gtag';
+import { trackGoogleAdsLead, resetLeadConversionGuard } from '@/lib/gtag';
 import { LocalMap } from '@/components/sub-page/LocalMap';
 
 // Google Business Profile — the "read our Google reviews" link + map tie the
@@ -220,7 +220,8 @@ export function Contact() {
               href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project."
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => { trackMetaLead(); trackWhatsAppClick('Contact section'); }}
+              onClick={() => trackMetaLead()}
+              data-wa-label="Contact section"
               className="btn-pill btn-wa press"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

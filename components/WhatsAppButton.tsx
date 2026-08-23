@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { trackMetaLead } from '@/components/MetaPixel';
-import { trackWhatsAppClick } from '@/lib/gtag';
 
 export function WhatsAppButton() {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -61,10 +60,11 @@ export function WhatsAppButton() {
       href="https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27m%20interested%20in%20your%20web%2Fapp%20development%20services."
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => {
-        trackMetaLead();
-        trackWhatsAppClick('Floating button');
-      }}
+      // GA4 whatsapp_click is fired globally by ContactClickTracker for every
+      // WhatsApp anchor on the site; data-wa-label gives it a useful name.
+      // Only the Meta Lead is fired here, to keep that number unchanged.
+      onClick={() => trackMetaLead()}
+      data-wa-label="Floating button"
       aria-label="Chat on WhatsApp"
       className="wa-float"
       style={{

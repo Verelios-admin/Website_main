@@ -1156,6 +1156,13 @@ hr.hair {
 @media (max-width: 720px) {
   .contact-meta { grid-template-columns: 1fr 1fr !important; }
 }
+
+/* --- from components/sub-page/InlineLeadForm.tsx ---
+   The name/phone/email/service grid collapses to a single column on phones.
+   Most paid traffic is mobile, so this is the layout that actually matters. */
+@media (max-width: 640px) {
+  .lead-form-grid { grid-template-columns: 1fr !important; }
+}
       
 
 /* --- from components/sections/FAQ.tsx --- */
