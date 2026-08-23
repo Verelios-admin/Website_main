@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+/** Same number and opening message ClosingCta uses, so the thread reads the
+ *  same whichever CTA the visitor tapped. WhatsApp is +91 84710 94125; the
+ *  primary NAP phone (+91 82995 22798) is a different line. */
+const WHATSAPP_URL =
+  'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project.';
+
 interface PageHeroProps {
   eyebrow: string;
   title: string;
@@ -118,13 +124,27 @@ export function PageHero({
         >
           {lead}
         </p>
+        {/* Second CTA is WhatsApp, not the portfolio.
+            On a phone this hero is the whole first screen, and until now the
+            only contact action visible here was the number in the fixed top bar
+            — the floating WhatsApp pill does not appear until 600px of scroll.
+            "See the work" also sent a visitor who arrived on a specific service
+            page back to the homepage, which is the opposite of what a page with
+            commercial intent should do. The portfolio is still linked from the
+            closing CTA and the footer. */}
         <div style={{ marginTop: 32, display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
           <Link href={ctaHref} className="btn-pill press" style={{ fontWeight: 600 }}>
             {ctaLabel}
           </Link>
-          <Link href="/#work" className="btn-pill-ghost on-dark press">
-            See the work
-          </Link>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-pill-ghost on-dark press"
+            data-wa-label="Sub-page hero"
+          >
+            Chat on WhatsApp
+          </a>
         </div>
       </div>
     </section>

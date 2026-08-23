@@ -185,6 +185,7 @@ const LOCAL_SERVICES = [
   { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
   { title: 'HRMS & payroll software in Kanpur', desc: 'Biometric attendance, shifts, payslips and automatic PF / ESI / TDS — including contract and piece-rate workers.', href: '/locations/kanpur/hrms-payroll-software' },
   { title: 'Billing & inventory software in Kanpur', desc: 'Fast GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops.', href: '/locations/kanpur/billing-inventory-software' },
+  { title: 'CRM software in Kanpur', desc: 'Leads, pipeline, quotations, WhatsApp and field sales in one system. One-time build from ₹99,999, not per user per month.', href: '/locations/kanpur/crm-software-development' },
   { title: 'Web hosting & maintenance', desc: 'Managed hosting with 99.9% uptime, backups, SSL and a human on WhatsApp.', href: '/services/web-hosting' },
 ];
 

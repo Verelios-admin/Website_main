@@ -41,7 +41,7 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/services/erp', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/services/hrms-payroll-software', lastmod: '2026-08-18', priority: 0.9 },
   { path: '/services/billing-inventory-software', lastmod: '2026-08-18', priority: 0.9 },
-  { path: '/services/crm-software-development', lastmod: '2026-08-18', priority: 0.8 },
+  { path: '/services/crm-software-development', lastmod: '2026-08-23', priority: 0.8 },
   { path: '/services/ecommerce-development', lastmod: '2026-08-18', priority: 0.8 },
   { path: '/services/web-hosting', lastmod: '2026-07-28', priority: 0.7 },
   { path: '/services/ui-ux-design', lastmod: '2026-07-28', priority: 0.7 },
@@ -56,6 +56,10 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   // behind them — hence priority 0.9, matching the other proven local intents.
   { path: '/locations/kanpur/hrms-payroll-software', lastmod: '2026-08-23', priority: 0.9 },
   { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-08-23', priority: 0.9 },
+  // New 2026-08-23. CRM was the only service with a national page and no Kanpur
+  // twin, while already ranking around #7 for the local query — the same gap
+  // that HRMS and billing had before their pages went in.
+  { path: '/locations/kanpur/crm-software-development', lastmod: '2026-08-23', priority: 0.9 },
 
   // Blog. lastmod = the post's own publish date, because the prose has not been
   // rewritten since; keep each of these in step with the PUBLISHED constant in the

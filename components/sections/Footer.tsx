@@ -78,6 +78,7 @@ const COLS = [
       ['ERP software in Kanpur', '/locations/kanpur/erp-software'],
       ['HRMS & payroll in Kanpur', '/locations/kanpur/hrms-payroll-software'],
       ['Billing software in Kanpur', '/locations/kanpur/billing-inventory-software'],
+      ['CRM software in Kanpur', '/locations/kanpur/crm-software-development'],
     ],
   },
   {
