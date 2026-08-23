@@ -79,11 +79,10 @@ Mismatches found and fixed:
   Aligned to **50+** everywhere (owner-confirmed; corroborated by 53 GBP reviews).
 - **Review count** was 38 in nine user-facing places and in six code comments. Now 53
   throughout. This is the field most likely to drift again — GBP is authoritative.
-- **`foundingDate` added** as `2025-01` to both `#localbusiness` nodes, matching the GBP
-  opening date. NOTE: `app/layout.tsx` still declares `foundingDate: '2024'` on the
-  separate `#organization` node. Those are different entities so it is not strictly a
-  conflict (company formed, premises opened later), but it is unverified — confirm the
-  incorporation date and make them agree or deliberately differ.
+- **`foundingDate`** — RESOLVED 2026-08-20 (commit `a814261`) and re-verified live on
+  2026-08-23: both the `#organization` node and the `#localbusiness` node now declare
+  `2024`, and `/about` and `public/llms.txt` agree. The earlier `2025-01` value and the
+  open question about it are closed. Change all four together or none of them.
 - **`additionalType` added** mirroring the four GBP categories (Software company,
   Web Designer, Marketing agency, Internet marketing service) so the entity Google
   builds from the site agrees with the one it builds from the GBP.
@@ -95,6 +94,79 @@ Mismatches found and fixed:
 Verified after rebuild: single `#localbusiness` @id sitewide, one street address, one
 postal code, one set of opening hours, zero `aggregateRating` nodes (self-serving review
 markup stays out), and zero occurrences of any stale count across all 38 pages.
+
+### Phase 8 — Full SEO audit and remediation ✓ COMPLETED 2026-08-23 (build-verified: 39 routes, 32 sitemap URLs, tsc clean)
+
+Eleven specialists audited the live site (commit `e05f91d`) in parallel. **Health score
+79/100.** Every finding below was verified against the live site before acting; three
+agent findings were **rejected as false** and are recorded here so nobody re-fixes them.
+
+**The central finding: the pages are fine, the link graph is not.** Two specialists
+working independently reached the same conclusion. Technical 90/100, schema 90/100, no
+thin pages, Kanpur pages 95–99.9% unique against their national twins. What is missing is
+prominence: **zero of the seven client sites Verelios built link back** (verified — all 7
+return 200, none contains the string "verelios"), no LinkedIn Company Page, no GoodFirms
+profile, an unclaimed Clutch profile, and a domain only ~9.5 months old. That is why the
+site ranks #1 on narrow product queries and 10th–14th on head terms.
+
+Fixed in code:
+
+| Finding | Fix |
+|---|---|
+| Homepage said custom software from ₹1,49,999; `/services`, the service page and `llms.txt` said ₹99,999 | Owner confirmed **₹1,49,999**; the other three now agree. `/locations/kanpur` lumped "custom software / ERP from ₹99,999" — split, ERP keeps ₹99,999 |
+| `llms.txt` claimed **42** Google reviews | → 53 |
+| `/services` hub had no link from homepage or footer (click-depth 2) | Added to the footer Services column and the homepage services section |
+| 3 of 6 Kanpur pages never linked up to their national service page | Standardised; the other 3 already did |
+| `areaServed` listed Maharashtra, Bangalore, Pune, Mumbai, Delhi with no content behind them | Trimmed to Kanpur, Lucknow, UP, India |
+| `alternateName` "Verelios Web & App Studio" matched neither the site nor the GBP | Removed |
+| `/blog` publisher was a loose Organization copy | References `#organization` |
+| Coordinates and `minPrice` were quoted strings | Numbers |
+| The 6 Kanpur leaf pages showed the address with no "Get directions"; site had **no** review-request path at all | Both added to `LocalTrustBlock`. `REVIEW_URL` still points at the profile — swap in the GBP dashboard's `g.page/r/<id>/review` link |
+| FAQ rows were 354×28px; country-code button 82×33px | FAQ padding moved onto the `<button>` (same look, whole row tappable); country button fills its field at 36×92 |
+| Cost-guide prose rewritten 2026-06-13 but `dateModified` still derived from `PUBLISHED` | Separate `UPDATED` constant |
+| Sub-page heroes had no WhatsApp above the fold on mobile; "See the work" sent visitors back to the homepage | Second CTA is now WhatsApp across ~20 pages |
+| CRM was the only service with no Kanpur twin, while ranking ~#7 | Built `/locations/kanpur/crm-software-development` — 1,792 words, 93.8% unique |
+
+**Rejected as false — do not re-fix:**
+1. *"Google Ads gtag loads twice, once via GTM."* Fetched container `GTM-KQ48CLVM`: it
+   contains **only** the Leadfeeder tag, no `AW-`/`G-`/`GT-` IDs. The guard comment in
+   `app/layout.tsx` is being honoured. Likely a misread of gtm.js + gtag/js as one script twice.
+2. *"Zero of the 11 `/services/*` pages link down to a `/locations/kanpur/*` page."* All
+   six that have a Kanpur twin already linked to it. Only the reverse direction was broken.
+3. *"`RelatedServices` rotation leaves some services under-linked."* Checked by
+   simulation: each of the 11 gets exactly 6 inbound contextual links. Balanced.
+
+**Accepted risk (owner decision 2026-08-23):** the four `best-*-companies-kanpur-2026`
+listicles score Verelios 6/6 with specifics while every competitor gets 0/6 and a
+sentence, under a claim of applying the "same criteria", with no outbound links to any of
+them. The conflict-of-interest disclosure is genuinely honest, but the scoring asymmetry
+is the site's largest helpful-content exposure. Owner chose to leave them as-is.
+
+**Also left as-is by decision:** `sameAs` continues to point at a personal LinkedIn
+profile rather than a Company Page (weaker entity signal, not wrong).
+
+**Owner-side work, highest return first** (nothing in code can substitute):
+1. Ask the 7 client sites for a "Website by Verelios Labs" footer credit. Seven free,
+   perfectly topical links from warm relationships. Re-check with the script in
+   `verelios.com-audit/` in 30 days.
+2. Create a LinkedIn Company Page; create GoodFirms; claim Clutch; check and create
+   IndiaMART / JustDial / Sulekha. Submit this exact string every time so citations match:
+   `Verelios Labs | 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006 | +91 82995 22798 | https://www.verelios.com`
+   Never submit +91 84710 94125 as the primary phone — that is the WhatsApp line.
+3. Connect Search Console + a free Moz key. Several audit questions could only be answered
+   directionally without them: which page Google prefers per query, referring domains, and
+   real field Core Web Vitals.
+
+**Measured, lab only (no Google API key configured, so no CrUX/field data):** homepage
+mobile Lighthouse 96, LCP 2.16s (LCP element is `p.hero-lead` text), CLS 0.000, TBT 120ms
+— up from a previously reported ~50ms. Third-party tags now cost **459ms of main-thread
+time and 792KB, 67% of total page weight** (GTM 285ms, Meta Pixel 157ms, Leadfeeder 15ms).
+Still "Good", but the trend has one direction. Service, location, blog and all desktop
+pages were not measured.
+
+**Artifacts:** `verelios.com-audit/` — `FULL-AUDIT-REPORT.md`, `ACTION-PLAN.md`,
+`audit-data.json`, 11 per-specialist findings files, 27 screenshots, and a pre-deploy
+drift baseline (`/seo drift compare` after deploying will show exactly what changed).
 
 ## Data models / storage
 None — static content. Contact form posts out (no DB writes on this site).
@@ -120,7 +192,7 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 - [x] **robots.txt:** added ClaudeBot, anthropic-ai, Claude-Web, Claude-User, Perplexity-User, Amazonbot, Meta-ExternalAgent, FacebookBot, cohere-ai.
 - [x] **FAQPage JSON-LD:** added to all 4 service pages (homepage already had it). Cost blog post deferred — it has descriptive headings, not a clean Q&A block.
 - [x] **Bonus:** "Pune-based" → "Kanpur-based" on website-development page (false-claim fix; owner confirmed Kanpur).
-- [~] **app/sitemap.ts:** deferred — the existing static `public/sitemap.xml` already lists all pages; refreshed `lastmod` to 2026-06-16 for the 6 changed pages. (Deleting the static file to switch to `app/sitemap.ts` would need your OK per the "ask before deleting" rule; we'll do it when adding the AI/local pages.)
+- [x] **app/sitemap.ts:** DONE — migrated 2026-07-28 (commit `3486f85`). `public/sitemap.xml` no longer exists; the sitemap is generated at build time from the `PAGES` list in `app/sitemap.ts`, where adding a route is one typed line and a typo is a build error. ~~deferred~~ (this line said "deferred" until 2026-08-23; it was stale by three weeks.)
 
 ### Phase 2 — Local SEO (Kanpur) ✓ COMPLETED 2026-06-16 (build-verified). Real NAP: **Verelios Labs, 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006 · +91 8299522798 (primary) · open 24 hours, daily**. WhatsApp remains +91 8471094125. GBP verified (5.0 from 42 reviews).
 - [x] "Pune-based" → "Kanpur-based" (website-development page).
@@ -134,7 +206,10 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 ### Phase 3 — AI automation service page (net-new content). DONE = `/services/ai-automation` live, wired into nav/footer/related, with Service + Breadcrumb + FAQPage schema. *(Needs owner data: what AI automation you actually offer + starting price.)*
 
 ### Phase 4 — GEO + content clusters (ongoing). 
-- [ ] `llms.txt`: add "Last updated", founding year, expanded FAQs, unified pricing.
+- [~] `llms.txt`: "Last updated", founding year and unified pricing are all DONE
+  (verified live 2026-08-23; the review count was corrected 42 → 53 and the custom-software
+  floor set to ₹1,49,999 on 2026-08-23). Still outstanding: **expanded FAQs** — llms.txt
+  carries four generic questions while the service pages carry richer, price-bearing ones.
 - [ ] Blog cluster: Kanpur-local pricing post, AI-automation-for-SMBs, AI chatbot/WhatsApp, "Next.js vs WordPress", "get your business on Google in India". Each links up to a service page + cross-links pillars.
 - [ ] (Ask before adding a top-level `/locations` folder per CLAUDE.md) Kanpur + Lucknow local landing pages.
 
