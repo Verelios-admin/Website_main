@@ -40,7 +40,7 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: 49999 },
     availability: 'https://schema.org/InStock',
   },
 };

@@ -4,6 +4,21 @@ import { Prose } from '@/components/sub-page/Prose';
 // and as a sameAs signal in the LocalBusiness structured data.
 export const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 
+/**
+ * Where "leave a review" points.
+ *
+ * TODO(owner): replace with the dedicated review link from the Google Business
+ * Profile dashboard — it looks like `https://g.page/r/<id>/review` and opens the
+ * write-a-review box directly. This currently falls back to the profile itself,
+ * which works but costs the reviewer an extra tap, and every extra tap loses
+ * some share of the people who were willing.
+ */
+export const REVIEW_URL = GBP_URL;
+
+/** Same destination coordinates LocalMap uses — kept in step with it. */
+const DIRECTIONS_URL =
+  'https://www.google.com/maps/dir/?api=1&destination=26.447437,80.306051';
+
 export const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
@@ -54,7 +69,19 @@ export function LocalTrustBlock({
               </div>
               <address style={{ fontStyle: 'normal', fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
                 126/58 G Block, Govind Nagar<br />
-                Kanpur, Uttar Pradesh 208006
+                Kanpur, Uttar Pradesh 208006<br />
+                {/* The six Kanpur leaf pages show the address but had no way to
+                    act on it — LocalMap (which carries this link) renders only on
+                    the hub and the homepage. A visitor reading a Kanpur service
+                    page is exactly the person most likely to want directions. */}
+                <a
+                  href={DIRECTIONS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#2997ff', textDecoration: 'none' }}
+                >
+                  Get directions →
+                </a>
               </address>
             </div>
             <div>
@@ -127,7 +154,7 @@ export function LocalTrustBlock({
             ))}
           </div>
 
-          <div style={{ marginTop: 20 }}>
+          <div style={{ marginTop: 20, display: 'flex', flexWrap: 'wrap', gap: '10px 28px' }}>
             <a
               href={GBP_URL}
               target="_blank"
@@ -135,6 +162,18 @@ export function LocalTrustBlock({
               style={{ color: '#2997ff', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
             >
               Read all our reviews on Google →
+            </a>
+            {/* Until now the site had no route for a happy client to leave a
+                review — 53 reviews arrived with no prompt from the website at
+                all. Review count and recency are local ranking signals, so the
+                asking should not be left entirely to memory. */}
+            <a
+              href={REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#2997ff', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
+            >
+              Worked with us? Leave a review →
             </a>
           </div>
         </div>

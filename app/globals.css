@@ -514,15 +514,18 @@ hr.hair {
 }
 
 /* FAQ accordion */
+/* The row's vertical padding lives on the <button>, not on .faq-item. Visually
+   identical, but it makes the whole row the tap target instead of just the
+   28px-tall line of text — under the 44px minimum a thumb needs. */
 .faq-item {
   border-top: 1px solid var(--color-hairline);
-  padding: 22px 0;
 }
 .faq-item:last-child { border-bottom: 1px solid var(--color-hairline); }
 .faq-q {
   display: flex; align-items: center; justify-content: space-between;
   width: 100%;
-  background: transparent; border: 0; padding: 0;
+  min-height: 44px;
+  background: transparent; border: 0; padding: 22px 0;
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 500;
@@ -543,6 +546,8 @@ hr.hair {
 .faq-a.open {
   max-height: 480px;
   padding-top: 14px;
+  /* Restores the gap .faq-item's padding used to provide below an open answer. */
+  padding-bottom: 22px;
 }
 
 /* Process step */
@@ -769,8 +774,8 @@ hr.hair {
   .price-card { padding: 24px !important; }
 
   /* FAQ */
-  .faq-item { padding: 18px 0 !important; }
-  .faq-q { font-size: 17px !important; }
+  .faq-q { font-size: 17px !important; padding: 18px 0 !important; }
+  .faq-a.open { padding-bottom: 18px !important; }
   .faq-a { font-size: 15px !important; }
 
   /* Buttons sit comfortably under text */
@@ -1155,6 +1160,13 @@ hr.hair {
 }
 @media (max-width: 720px) {
   .contact-meta { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* --- from components/sub-page/InlineLeadForm.tsx ---
+   The name/phone/email/service grid collapses to a single column on phones.
+   Most paid traffic is mobile, so this is the layout that actually matters. */
+@media (max-width: 640px) {
+  .lead-form-grid { grid-template-columns: 1fr !important; }
 }
       
 

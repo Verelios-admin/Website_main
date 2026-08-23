@@ -59,7 +59,7 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: 49999 },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -296,7 +296,7 @@ export default function KanpurAiDevelopmentPage() {
 
             <Prose>
               <p style={{ marginTop: 24 }}>
-                We also serve clients in Lucknow, Unnao and across Uttar Pradesh — and founders all over India. Not in Kanpur? Everything we do works remotely too, with the same free 48-hour proof-of-concept and milestone payments. Prefer to start with something simpler? See our <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> and <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
+                We also serve clients in Lucknow, Unnao and across Uttar Pradesh — and founders all over India. Not in Kanpur? Everything we do works remotely too, with the same free 48-hour proof-of-concept and milestone payments. See our national <Link href="/services/ai-automation">AI automation</Link> page for the full capability. Prefer to start with something simpler? See our <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> and <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
               </p>
 
               <h2>Frequently asked questions</h2>

@@ -40,7 +40,7 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: 149999 },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -170,7 +170,7 @@ export default function CustomSoftwarePage() {
 
               <h2>Pricing for custom software development in India</h2>
               <p>
-                Custom software starts at <strong>₹99,999</strong> for a focused single-purpose tool (think: a custom inventory dashboard, or a 5-screen lead-management system). Larger systems (full ERP, CRM with multiple modules) land between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40).
+                Custom software starts at <strong>₹1,49,999</strong> for a focused single-purpose tool (think: a custom inventory dashboard, or a 5-screen lead-management system). Larger systems (full ERP, CRM with multiple modules) land between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40).
               </p>
 
               <h2>When you should not build custom software</h2>

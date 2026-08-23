@@ -40,7 +40,7 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '99999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: 99999 },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -173,6 +173,9 @@ export default function CrmSoftwareDevelopmentPage() {
               <h2>Pricing for custom CRM software in India</h2>
               <p>
                 A focused CRM covering leads, pipeline, follow-ups and quotations starts at <strong>₹99,999</strong>. Adding WhatsApp Business API, call-log capture, field-sales tracking, targets and ERP integration typically takes it to <strong>₹1,50,000–₹4,00,000</strong>, with a fixed quote up front and milestone payments (30/30/40). For dashboards and internal tools beyond sales, see <a href="/services/custom-software-development">custom software development</a>.
+              </p>
+              <p>
+                Based in Kanpur? See our dedicated <a href="/locations/kanpur/crm-software-development">CRM software company in Kanpur</a> page — we build for local traders, manufacturers and field-sales teams, and can sit with your salespeople before we design anything.
               </p>
 
               <h2>Frequently asked questions</h2>

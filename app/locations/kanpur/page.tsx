@@ -79,8 +79,8 @@ const localBusinessJsonLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '26.447437',
-    longitude: '80.306051',
+    latitude: 26.447437,
+    longitude: 80.306051,
   },
   hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
@@ -172,7 +172,7 @@ const faqJsonLd = {
       name: 'How much does it cost and how do payments work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Websites start at ₹49,999, mobile apps at ₹99,999, and custom software / ERP from ₹99,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.',
+        text: 'Websites start at ₹49,999, mobile apps at ₹99,999, ERP from ₹99,999 and custom software from ₹1,49,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.',
       },
     },
   ],
@@ -185,6 +185,7 @@ const LOCAL_SERVICES = [
   { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
   { title: 'HRMS & payroll software in Kanpur', desc: 'Biometric attendance, shifts, payslips and automatic PF / ESI / TDS — including contract and piece-rate workers.', href: '/locations/kanpur/hrms-payroll-software' },
   { title: 'Billing & inventory software in Kanpur', desc: 'Fast GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops.', href: '/locations/kanpur/billing-inventory-software' },
+  { title: 'CRM software in Kanpur', desc: 'Leads, pipeline, quotations, WhatsApp and field sales in one system. One-time build from ₹99,999, not per user per month.', href: '/locations/kanpur/crm-software-development' },
   { title: 'Web hosting & maintenance', desc: 'Managed hosting with 99.9% uptime, backups, SSL and a human on WhatsApp.', href: '/services/web-hosting' },
 ];
 
@@ -439,7 +440,7 @@ export default function KanpurLocationPage() {
               </p>
               <h3>How much does it cost and how do payments work?</h3>
               <p>
-                Websites start at ₹49,999, mobile apps at ₹99,999, and custom software / ERP from ₹99,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.
+                Websites start at ₹49,999, mobile apps at ₹99,999, ERP from ₹99,999 and custom software from ₹1,49,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.
               </p>
             </Prose>
           </div>

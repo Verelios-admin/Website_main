@@ -2,7 +2,7 @@
 
 > Verelios Labs is a website, app and AI-automation agency based in Kanpur, India. We build custom websites, cross-platform mobile apps, and software, taking projects from idea to launch in under 3 weeks. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone-based payment, so there is no large upfront cost.
 
-Last updated: 2026-06-16
+Last updated: 2026-08-23
 
 ## Key facts
 
@@ -13,12 +13,12 @@ Last updated: 2026-06-16
 - **Delivery speed:** Idea to launch in under 3 weeks; simple websites in 7–10 days
 - **Free mockup:** A visual mockup or prototype within 48 hours, before any commitment
 - **Payment:** Milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. No hidden charges.
-- **Pricing range:** ₹49,999 to ₹3,00,000+ depending on scope (websites from ₹49,999, mobile apps from ₹99,999, custom software from ₹99,999)
+- **Pricing range:** ₹49,999 to ₹3,00,000+ depending on scope (websites from ₹49,999, mobile apps from ₹99,999, custom software from ₹1,49,999)
 - **Post-launch:** 7 days of free support, then optional monthly maintenance
 - **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel/AWS
 - **Contact:** contact@verelios.com · WhatsApp +91 8471094125
 - **Hours:** Open 24 hours, every day (IST)
-- **Rating:** 5.0 stars from 42 Google reviews
+- **Rating:** 5.0 stars from 53 Google reviews
 - **Founded:** 2024
 
 ## Services

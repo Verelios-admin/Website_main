@@ -57,7 +57,10 @@ const localBusinessJsonLd = {
   '@type': 'ProfessionalService',
   '@id':   `${SITE_URL}/#localbusiness`,
   name: 'Verelios Labs',
-  alternateName: ['Verelios', 'Verelios Web & App Studio'],
+  // "Verelios Web & App Studio" was dropped 2026-08-23: it appears nowhere in
+  // visible copy and does not match the Google Business Profile, so it worked
+  // against the name-matching it was meant to help.
+  alternateName: ['Verelios'],
   url: SITE_URL,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
@@ -76,8 +79,8 @@ const localBusinessJsonLd = {
   geo: {
     // Exact Google Business Profile pin (Govind Nagar, Kanpur).
     '@type': 'GeoCoordinates',
-    latitude: '26.447437',
-    longitude: '80.306051',
+    latitude: 26.447437,
+    longitude: 80.306051,
   },
   hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
@@ -114,15 +117,16 @@ const localBusinessJsonLd = {
     // served remotely, which is also how the GBP service area is set. Do not
     // reintroduce an on-site claim for any other city — the GBP description
     // previously implied a second Bangalore office and it was not accurate.
+    //
+    // Trimmed 2026-08-23: Maharashtra, Bangalore, Pune, Mumbai and Delhi were
+    // listed as peers of Kanpur with no page, no client story and no content
+    // behind any of them. Claiming a service area the site cannot substantiate
+    // dilutes the local signal that Kanpur actually earns. India already covers
+    // remote work everywhere; name a city here only once a page backs it.
     { '@type': 'City',    name: 'Kanpur' },
     { '@type': 'City',    name: 'Lucknow' },
     { '@type': 'State',   name: 'Uttar Pradesh' },
-    { '@type': 'State',   name: 'Maharashtra' },
-    { '@type': 'City',    name: 'Bangalore' },
     { '@type': 'Country', name: 'India' },
-    { '@type': 'City',    name: 'Pune' },
-    { '@type': 'City',    name: 'Mumbai' },
-    { '@type': 'City',    name: 'Delhi' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
@@ -138,24 +142,32 @@ const localBusinessJsonLd = {
   // The visible star rating and testimonials stay on the page — they work as
   // social proof without the markup. If a rating rich result is ever wanted, the
   // only compliant route is a third-party platform's official embed.
+  // Mirrors the eleven cards in components/sections/Services.tsx one-for-one, in
+  // the same order. Every Service carries a `url` pointing at its own page, so the
+  // offer and the landing page are one entity rather than two loose facts.
+  //
+  // Price floors are ONLY declared where the service page itself states a
+  // starting figure, and always via priceSpecification.minPrice rather than a bare
+  // `price` (which would assert an exact figure we do not claim). UI/UX quotes per
+  // project and states no floor, so it carries no price at all. Hosting is the one
+  // recurring line, hence unitText MONTH. If a page's stated price changes, change
+  // it here in the same commit.
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Web & App Development Services',
+    name: 'Software Development Services',
     itemListElement: [
       {
-        // "From ₹49,999" is what the page shows, so declare a floor via
-        // priceSpecification rather than a bare `price` (which asserts an exact
-        // figure the business does not actually claim).
         '@type': 'Offer',
         priceCurrency: 'INR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '49999',
+          minPrice: 49999,
         },
         itemOffered: {
           '@type': 'Service',
           name: 'Business Website Development',
+          url: `${SITE_URL}/services/website-development`,
           description:
             'Custom responsive websites built with React & Next.js to convert visitors into customers. SEO-optimised, mobile-first design.',
           provider: { '@id': `${SITE_URL}/#organization` },
@@ -168,13 +180,14 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
           name: 'Mobile App Development',
+          url: `${SITE_URL}/services/mobile-app-development`,
           description:
-            'Cross-platform mobile apps for iOS and Android using React Native & Flutter. From concept to App Store in weeks.',
+            'Cross-platform mobile apps for iOS and Android using React Native & Flutter. From concept to both app stores in weeks.',
           provider: { '@id': `${SITE_URL}/#organization` },
           areaServed: { '@type': 'Country', name: 'India' },
         },
@@ -185,13 +198,122 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'E-commerce Development',
+          url: `${SITE_URL}/services/ecommerce-development`,
+          description:
+            'Online stores with catalogue, cart, Razorpay & UPI, cash on delivery, delivery tracking and GST invoicing. SEO built in from day one.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 149999,
         },
         itemOffered: {
           '@type': 'Service',
           name: 'Custom Software Development',
+          url: `${SITE_URL}/services/custom-software-development`,
           description:
-            'Tailored software solutions including ERP, CRM, APIs and automation tools. Full-stack Node.js & TypeScript.',
+            'Internal tools, dashboards and platforms built around your workflow. Full-stack Node.js & TypeScript, with API development and system integration.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 99999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'ERP Software Development',
+          url: `${SITE_URL}/services/erp`,
+          description:
+            'Custom ERP covering inventory, manufacturing, procurement, accounting and reporting, with Tally and GST integration. You own the code.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 99999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'HRMS & Payroll Software',
+          url: `${SITE_URL}/services/hrms-payroll-software`,
+          description:
+            'Attendance, shifts, leave, payslips and automatic PF, ESI and TDS, including contract and piece-rate workers. A one-time build, not a per-employee subscription.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 99999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Billing & Inventory Software',
+          url: `${SITE_URL}/services/billing-inventory-software`,
+          description:
+            'GST billing with live stock across godowns, e-invoicing, e-way bills, batch and expiry tracking and barcode scanning. The counter keeps working offline.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 99999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'CRM Software Development',
+          url: `${SITE_URL}/services/crm-software-development`,
+          description:
+            'Leads, follow-ups, quotations and deals in one pipeline, with WhatsApp Business API, field sales tracking and source-wise revenue reporting.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
+        },
+      },
+      {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 49999,
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Automation',
+          url: `${SITE_URL}/services/ai-automation`,
+          description:
+            'Workflow automation, AI chatbots, LLM integrations and document processing built on the tools your team already uses.',
           provider: { '@id': `${SITE_URL}/#organization` },
           areaServed: { '@type': 'Country', name: 'India' },
         },
@@ -201,29 +323,30 @@ const localBusinessJsonLd = {
         itemOffered: {
           '@type': 'Service',
           name: 'UI/UX Design',
+          url: `${SITE_URL}/services/ui-ux-design`,
           description:
             'User research, wireframing, prototyping and design systems. Conversion-focused interfaces that delight users.',
           provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
         },
       },
       {
         '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'E-commerce Development',
-          description:
-            'Custom e-commerce websites and apps with secure payments, inventory management and analytics.',
-          provider: { '@id': `${SITE_URL}/#organization` },
+        priceCurrency: 'INR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          priceCurrency: 'INR',
+          minPrice: 3000,
+          unitText: 'MONTH',
         },
-      },
-      {
-        '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Performance Optimization & SEO',
+          name: 'Managed Hosting, Maintenance & Performance',
+          url: `${SITE_URL}/services/web-hosting`,
           description:
-            'Speed audits, refactors, on-page SEO setup, structured data and analytics. Built to rank on Google.',
+            'Managed hosting with 99.9% uptime, daily backups, free SSL and security patches, plus speed audits and ongoing fixes. No lock-in.',
           provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: { '@type': 'Country', name: 'India' },
         },
       },
     ],

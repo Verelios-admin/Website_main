@@ -38,6 +38,10 @@ const COLS = [
   {
     head: 'Services',
     links: [
+      // The hub itself, leading the column the way /locations/kanpur leads the
+      // Kanpur one. Without it the hub had no link from the footer or the
+      // homepage and sat a click deeper than the pages it exists to introduce.
+      ['All services', '/services'],
       ['Website development', '/services/website-development'],
       ['Mobile app development', '/services/mobile-app-development'],
       ['E-commerce development', '/services/ecommerce-development'],
@@ -74,6 +78,7 @@ const COLS = [
       ['ERP software in Kanpur', '/locations/kanpur/erp-software'],
       ['HRMS & payroll in Kanpur', '/locations/kanpur/hrms-payroll-software'],
       ['Billing software in Kanpur', '/locations/kanpur/billing-inventory-software'],
+      ['CRM software in Kanpur', '/locations/kanpur/crm-software-development'],
     ],
   },
   {
