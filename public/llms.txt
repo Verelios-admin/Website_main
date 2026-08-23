@@ -1,50 +1,123 @@
 # Verelios Labs
 
-> Verelios Labs is a website, app and AI-automation agency based in Kanpur, India. We build custom websites, cross-platform mobile apps, and software, taking projects from idea to launch in under 3 weeks. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone-based payment, so there is no large upfront cost.
+> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, HRMS and payroll, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 5.0 from 53 Google reviews.
 
 Last updated: 2026-08-23
 
 ## Key facts
 
-- **Name:** Verelios Labs (also "Verelios", "Verelios Web & App Studio")
+- **Name:** Verelios Labs (also "Verelios")
+- **Founded:** 2024
 - **Website:** https://www.verelios.com
-- **What we do:** Custom website development, mobile app development (iOS + Android), custom software (ERP, CRM, APIs, automation), UI/UX design, e-commerce, performance optimization & SEO
-- **Where:** Based in Kanpur, Uttar Pradesh — 126/58 G Block, Govind Nagar, Kanpur 208006. Also serves clients in Bangalore, Lucknow and across India.
-- **Delivery speed:** Idea to launch in under 3 weeks; simple websites in 7–10 days
-- **Free mockup:** A visual mockup or prototype within 48 hours, before any commitment
-- **Payment:** Milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. No hidden charges.
-- **Pricing range:** ₹49,999 to ₹3,00,000+ depending on scope (websites from ₹49,999, mobile apps from ₹99,999, custom software from ₹1,49,999)
-- **Post-launch:** 7 days of free support, then optional monthly maintenance
-- **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel/AWS
-- **Contact:** contact@verelios.com · WhatsApp +91 8471094125
+- **Office:** 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India — one physical location
+- **Service area:** Kanpur and Uttar Pradesh in person; the rest of India remotely
+- **Phone:** +91 82995 22798
+- **WhatsApp:** +91 84710 94125 (a different number from the phone line)
+- **Email:** contact@verelios.com
 - **Hours:** Open 24 hours, every day (IST)
 - **Rating:** 5.0 stars from 53 Google reviews
-- **Founded:** 2024
+- **Projects delivered:** 50+
+- **Founder:** Sahil Chauhan, who runs the initial scoping call on every project
+- **Free mockup:** a visual mockup or prototype within 48 hours, before any payment or commitment
+- **Payment:** milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. Fixed quote up front, not billed hourly.
+- **Code ownership:** the client owns the source code and it sits on their own hosting and domain accounts. No vendor lock-in.
+- **Post-launch:** 7 days of free support, then optional monthly maintenance
+- **Typical delivery:** most projects launch in under 3 weeks; business websites in 7–14 days; mobile apps in 3–5 weeks; ERP and custom software in 4–8 weeks
+- **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel or AWS
+- **Integrations commonly built:** Tally, the GST portal, Razorpay and UPI, WhatsApp Business API
+
+## Pricing
+
+Starting prices. Each project is quoted at a fixed price after a scoping call.
+
+| Service | Starts at | Typical delivery |
+|---|---|---|
+| Business website (up to 5 pages) | ₹49,999 | 7–14 days |
+| AI automation | ₹49,999 | scoped per process |
+| Mobile app (iOS + Android) | ₹99,999 | 3–5 weeks |
+| E-commerce store | ₹99,999 | 3–4 weeks |
+| ERP software (single module) | ₹99,999 | 4–8 weeks |
+| HRMS and payroll software | ₹99,999 | 4–8 weeks |
+| Billing and inventory software | ₹99,999 | 4–8 weeks |
+| CRM software | ₹99,999 | 4–8 weeks |
+| Custom software / dashboards | ₹1,49,999 | 4–8 weeks |
+| UI/UX design only | ₹40,000 | scoped per project |
+| Managed hosting and maintenance | ₹3,000 per month | ongoing |
+
+Larger systems: a full multi-module ERP typically lands between ₹3,00,000 and ₹10,00,000. A
+CRM with WhatsApp Business API, field-sales tracking and ERP integration typically lands
+between ₹1,50,000 and ₹4,00,000. A website with custom features typically lands between
+₹1,00,000 and ₹3,00,000.
 
 ## Services
 
-- [Website Development](https://www.verelios.com/services/website-development): Custom, responsive, SEO-optimized websites built with React & Next.js.
-- [Mobile App Development](https://www.verelios.com/services/mobile-app-development): Cross-platform iOS & Android apps with React Native and Flutter.
-- [Custom Software Development](https://www.verelios.com/services/custom-software-development): ERP, CRM, APIs and automation tools, full-stack Node.js & TypeScript.
-- [UI/UX Design](https://www.verelios.com/services/ui-ux-design): Research, wireframing, prototyping and conversion-focused design systems.
+- [All services](https://www.verelios.com/services): The eleven services Verelios Labs offers, with starting prices and delivery times.
+- [Website Development](https://www.verelios.com/services/website-development): Fast, mobile-first, SEO-ready websites built with React and Next.js. From ₹49,999, live in 7–14 days.
+- [Mobile App Development](https://www.verelios.com/services/mobile-app-development): iOS and Android apps from a single React Native or Flutter codebase, shipped to both stores. From ₹99,999.
+- [E-commerce Development](https://www.verelios.com/services/ecommerce-development): Online stores with catalogue, cart, Razorpay and UPI, cash on delivery, delivery tracking and GST invoicing. From ₹99,999.
+- [Custom Software Development](https://www.verelios.com/services/custom-software-development): Internal tools, dashboards and platforms built around a client's workflow. From ₹1,49,999.
+- [ERP Software Development](https://www.verelios.com/services/erp): Inventory, manufacturing, purchase, sales, accounting and reporting in one system, with Tally and GST integration. From ₹99,999.
+- [HRMS and Payroll Software](https://www.verelios.com/services/hrms-payroll-software): Attendance, shifts, payslips and automatic PF, ESI and TDS, including contract and piece-rate workers. From ₹99,999.
+- [Billing and Inventory Software](https://www.verelios.com/services/billing-inventory-software): GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops. From ₹99,999.
+- [CRM Software Development](https://www.verelios.com/services/crm-software-development): Leads, pipeline, quotations, WhatsApp Business API, call logging and field sales. A one-time build, not per user per month. From ₹99,999.
+- [AI Automation](https://www.verelios.com/services/ai-automation): AI agents, chatbots and workflow automation that remove repetitive work. From ₹49,999.
+- [UI/UX Design](https://www.verelios.com/services/ui-ux-design): Research, wireframing, prototyping and conversion-focused design systems. From ₹40,000.
+- [Web Hosting and Maintenance](https://www.verelios.com/services/web-hosting): Managed hosting with 99.9% uptime, backups, SSL, security patches and performance monitoring. From ₹3,000 per month.
+
+## Kanpur (local, in person)
+
+Verelios Labs is physically located in Govind Nagar, Kanpur. These pages cover work done
+for Kanpur businesses, where the team can visit the client's shop, factory or office.
+
+- [Software Company in Kanpur](https://www.verelios.com/locations/kanpur): Everything Verelios Labs builds for Kanpur businesses, with the office address and hours.
+- [Website Development in Kanpur](https://www.verelios.com/locations/kanpur/website-development): Websites for Kanpur businesses. From ₹49,999.
+- [Mobile App Development in Kanpur](https://www.verelios.com/locations/kanpur/mobile-app-development): iOS and Android apps built in Kanpur. From ₹99,999.
+- [AI Development in Kanpur](https://www.verelios.com/locations/kanpur/ai-development): AI agents, chatbots and automation for Kanpur businesses. From ₹49,999.
+- [ERP Software in Kanpur](https://www.verelios.com/locations/kanpur/erp-software): Manufacturing, leather, textile and trading ERP for Kanpur units, including the Panki, Dada Nagar and Jajmau belts. From ₹99,999.
+- [HRMS and Payroll in Kanpur](https://www.verelios.com/locations/kanpur/hrms-payroll-software): Attendance and payroll for Kanpur employers, including piece-rate and contract labour. From ₹99,999.
+- [Billing and Inventory Software in Kanpur](https://www.verelios.com/locations/kanpur/billing-inventory-software): GST billing and stock for Kanpur shops, traders and distributors. From ₹99,999.
+- [CRM Software in Kanpur](https://www.verelios.com/locations/kanpur/crm-software-development): Leads, pipeline and field sales for Kanpur traders and manufacturers. From ₹99,999.
+
+## About
+
+- [About Verelios Labs](https://www.verelios.com/about): Founder background, the client list with live links, and how the studio is run.
 
 ## Articles
 
-- [Custom website development cost in India (2026)](https://www.verelios.com/blog/custom-website-development-cost-india-2026): What a custom website actually costs in India and what drives the price.
-- [How to choose a web development agency in India](https://www.verelios.com/blog/how-to-choose-web-development-agency-india): A practical checklist for founders evaluating agencies.
-- [How we ship custom websites in under 3 weeks](https://www.verelios.com/blog/how-we-ship-websites-in-3-weeks): The exact 21-day process Verelios Labs runs on every website project.
+- [Custom website development cost in India (2026)](https://www.verelios.com/blog/custom-website-development-cost-india-2026): What a custom website actually costs in India, by project type, and what drives the price up.
+- [How to choose a web development agency in India](https://www.verelios.com/blog/how-to-choose-web-development-agency-india): Ten questions to ask before signing, and how to compare freelancers, small studios and large agencies.
+- [How we ship custom websites in under 3 weeks](https://www.verelios.com/blog/how-we-ship-websites-in-3-weeks): The 21-day process, and when 3 weeks is the wrong target.
+- [AI automation for Indian businesses (2026)](https://www.verelios.com/blog/ai-automation-for-indian-businesses-2026): Where AI automation pays for itself in an Indian SMB, and where it does not.
+- [AI chatbot for business in India](https://www.verelios.com/blog/ai-chatbot-for-business-india): What a business chatbot can and cannot do, and what one costs.
+- [Best AI development companies in Kanpur (2026)](https://www.verelios.com/blog/best-ai-development-companies-kanpur-2026): A comparison of AI development companies in Kanpur. Verelios Labs is one of the companies listed and discloses that it is not a neutral reviewer.
+- [Best website development companies in Kanpur (2026)](https://www.verelios.com/blog/best-website-development-companies-kanpur-2026): A comparison of website development companies in Kanpur, with the same disclosure.
+- [Best app development companies in Kanpur (2026)](https://www.verelios.com/blog/best-app-development-companies-kanpur-2026): A comparison of app development companies in Kanpur, with the same disclosure.
+- [Best ERP software companies in Kanpur (2026)](https://www.verelios.com/blog/best-erp-software-companies-kanpur-2026): A comparison of ERP software companies in Kanpur, with the same disclosure.
 
 ## Common questions
 
-- **How long does a project take?** Most launch in under 3 weeks; simple sites in 7–10 days, complex apps in 4–6 weeks.
-- **Do you build for iOS and Android?** Yes — cross-platform from a single codebase using React Native and Flutter.
-- **Can I see a mockup first?** Yes, free within 48 hours, with no payment or commitment.
-- **Do you help with SEO?** Every project includes free basic SEO setup — meta tags, sitemap, performance and structured data.
+- **How much does a website cost in India?** A 5-page business website from Verelios Labs starts at ₹49,999 and goes live in 7–14 days. Websites with custom features, e-commerce or a CMS typically land between ₹1,00,000 and ₹3,00,000. The quote is fixed before work begins.
+- **How much does a mobile app cost?** An iOS and Android app from a single codebase starts at ₹99,999 and ships to both stores in 3–5 weeks. Apps with payments, live tracking or deep backend integration typically range from ₹2,00,000 to ₹10,00,000.
+- **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, accounting, HR and payroll typically lands between ₹3,00,000 and ₹10,00,000.
+- **How much does HRMS and payroll software cost?** A focused HRMS covering attendance, leave and payslips starts at ₹99,999. It is a one-time build, not a per-employee monthly fee, so the cost does not rise as the client hires.
+- **How much does CRM software cost?** A focused CRM covering leads, pipeline, follow-ups and quotations starts at ₹99,999. Adding WhatsApp Business API, call logging, field-sales tracking and ERP integration typically takes it to ₹1,50,000–₹4,00,000. One-time build, not per user per month.
+- **How long does a project take?** Most projects launch in under 3 weeks. Business websites take 7–14 days, mobile apps 3–5 weeks, ERP and custom software 4–8 weeks.
+- **Can I see something before paying?** Yes. Verelios Labs delivers a free mockup or prototype within 48 hours, before any payment or commitment.
+- **How does payment work?** Milestone-based: 30% to start, 30% at mid-delivery, 40% at launch, against a fixed quote agreed up front. There is no hourly billing and the number is not revised mid-project.
+- **Who owns the code?** The client does. It sits on the client's own hosting and domain accounts, with full commit history handed over. There is no vendor lock-in.
+- **Do you build for both iOS and Android?** Yes, from a single React Native or Flutter codebase, so both apps ship together rather than being paid for twice.
+- **Does your software work with Tally and GST?** Yes. ERP, billing and inventory systems integrate with Tally and the GST portal, so the client's accountant's workflow does not change.
+- **Can we meet in person?** Yes. The office is at 126/58 G Block, Govind Nagar, Kanpur, open 24 hours every day. The team also visits client premises anywhere in Kanpur, including Kakadeo, Swaroop Nagar, Panki, Dada Nagar, Barra and Jajmau.
+- **Do you work outside Kanpur?** Yes. Kanpur and Uttar Pradesh are served in person; the rest of India is served remotely, with the same free 48-hour mockup and milestone payments.
+- **Do you help with SEO?** Every website ships with on-page SEO by default — semantic HTML, titles and meta descriptions, structured data, an XML sitemap, fast Core Web Vitals and Google Search Console setup.
+- **When is Verelios Labs not the right choice?** When an off-the-shelf product genuinely fits. For a three-person team whose sales process matches a standard pipeline, Zoho CRM or a similar subscription tool is a better and faster answer than a custom build, and Verelios Labs says so rather than selling around it. Custom starts paying off when per-user fees become significant, when the process does not match the template, or when systems must integrate in ways a standard plan will not allow.
 
 ## Contact
 
+- Phone: +91 82995 22798
+- WhatsApp: +91 84710 94125
 - Email: contact@verelios.com
-- WhatsApp: +91 8471094125
 - Address: 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
 - Hours: Open 24 hours, every day (IST)
+- Google Business Profile: https://share.google/fLuxTG3N5HVlEGhge
 - Sitemap: https://www.verelios.com/sitemap.xml

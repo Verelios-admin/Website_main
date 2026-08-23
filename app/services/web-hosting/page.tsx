@@ -40,6 +40,16 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
+    // The page states "From ₹3,000/mo" and the homepage OfferCatalog already
+    // declares that figure for this service. Declaring it here too keeps the
+    // two in agreement — a floor via minPrice, never a bare `price`, because
+    // hosting is quoted per setup and no exact figure is claimed.
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      priceCurrency: 'INR',
+      minPrice: 3000,
+      unitText: 'MONTH',
+    },
     availability: 'https://schema.org/InStock',
     url: `${SITE}${URL_PATH}`,
   },

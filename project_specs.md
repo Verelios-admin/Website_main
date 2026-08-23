@@ -127,14 +127,36 @@ Fixed in code:
 | Sub-page heroes had no WhatsApp above the fold on mobile; "See the work" sent visitors back to the homepage | Second CTA is now WhatsApp across ~20 pages |
 | CRM was the only service with no Kanpur twin, while ranking ~#7 | Built `/locations/kanpur/crm-software-development` — 1,792 words, 93.8% unique |
 
+**CORRECTED 2026-08-23 (same day): finding #1 below was rejected in error and is REAL.**
+Once the PageSpeed API key was configured, Google's own network log for the live homepage
+showed `gtag/js?id=AW-18037984640` fetched **twice** — once bare (the direct load in
+`app/layout.tsx`) and once carrying `&gtm=4e68j0h1`, which only appears when the GTM
+container fetches it. `gtag/js?id=G-96F7T65XWE&cx=c&gtm=…` is fetched by the container too,
+on top of `app/layout.tsx` calling `gtag('config','G-96F7T65XWE')` directly.
+
+Why the original rejection was wrong: it grepped `gtm.js` for literal `AW-`/`G-` strings.
+That is not a valid test — GTM resolves tag IDs at runtime from container config, so they
+never appear as plain text in the container script. The agent was right; the rejection
+rested on a test that could not have detected the problem.
+
+Cost, measured: 149.7 KiB duplicate Ads + 184.4 KiB duplicate GA4 = **334 KiB and roughly
+300–400ms of main-thread time**, plus double-counted pageviews and Ads conversions — which
+is exactly what the guard comment in `app/layout.tsx:262-268` was written to prevent.
+**Fix is in the GTM UI, not the code:** delete the GA4 and Google Ads tags from container
+`GTM-KQ48CLVM`, leaving only Leadfeeder. `app/layout.tsx` already loads one `gtag.js` and
+configures both IDs from it, so nothing is lost.
+
 **Rejected as false — do not re-fix:**
-1. *"Google Ads gtag loads twice, once via GTM."* Fetched container `GTM-KQ48CLVM`: it
-   contains **only** the Leadfeeder tag, no `AW-`/`G-`/`GT-` IDs. The guard comment in
-   `app/layout.tsx` is being honoured. Likely a misread of gtm.js + gtag/js as one script twice.
-2. *"Zero of the 11 `/services/*` pages link down to a `/locations/kanpur/*` page."* All
+1. *"Zero of the 11 `/services/*` pages link down to a `/locations/kanpur/*` page."* All
    six that have a Kanpur twin already linked to it. Only the reverse direction was broken.
-3. *"`RelatedServices` rotation leaves some services under-linked."* Checked by
+2. *"`RelatedServices` rotation leaves some services under-linked."* Checked by
    simulation: each of the 11 gets exactly 6 inbound contextual links. Balanced.
+
+**Lesson recorded:** verify a "this loads twice" claim against an actual network log, not
+against the source of a script that resolves its config at runtime. PageSpeed also reports
+**79 (and 69 on a second run)** for mobile where a local Lighthouse run with devtools
+throttling reported 97 — Google's simulated throttling is the number that matters, and the
+local figure was flattering. Both numbers were labelled lab data, but only one is Google's.
 
 **Accepted risk (owner decision 2026-08-23):** the four `best-*-companies-kanpur-2026`
 listicles score Verelios 6/6 with specifics while every competitor gets 0/6 and a
