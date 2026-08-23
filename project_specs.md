@@ -127,24 +127,53 @@ Fixed in code:
 | Sub-page heroes had no WhatsApp above the fold on mobile; "See the work" sent visitors back to the homepage | Second CTA is now WhatsApp across ~20 pages |
 | CRM was the only service with no Kanpur twin, while ranking ~#7 | Built `/locations/kanpur/crm-software-development` — 1,792 words, 93.8% unique |
 
-**CORRECTED 2026-08-23 (same day): finding #1 below was rejected in error and is REAL.**
-Once the PageSpeed API key was configured, Google's own network log for the live homepage
-showed `gtag/js?id=AW-18037984640` fetched **twice** — once bare (the direct load in
-`app/layout.tsx`) and once carrying `&gtm=4e68j0h1`, which only appears when the GTM
-container fetches it. `gtag/js?id=G-96F7T65XWE&cx=c&gtm=…` is fetched by the container too,
-on top of `app/layout.tsx` calling `gtag('config','G-96F7T65XWE')` directly.
+**RESOLVED 2026-08-23 after two wrong turns. There is NO duplicate-tag
+misconfiguration. Nothing to fix in Google Tag Manager.**
 
-Why the original rejection was wrong: it grepped `gtm.js` for literal `AW-`/`G-` strings.
-That is not a valid test — GTM resolves tag IDs at runtime from container config, so they
-never appear as plain text in the container script. The agent was right; the rejection
-rested on a test that could not have detected the problem.
+The sequence, recorded because the reasoning error is the useful part:
 
-Cost, measured: 149.7 KiB duplicate Ads + 184.4 KiB duplicate GA4 = **334 KiB and roughly
-300–400ms of main-thread time**, plus double-counted pageviews and Ads conversions — which
-is exactly what the guard comment in `app/layout.tsx:262-268` was written to prevent.
-**Fix is in the GTM UI, not the code:** delete the GA4 and Google Ads tags from container
-`GTM-KQ48CLVM`, leaving only Leadfeeder. `app/layout.tsx` already loads one `gtag.js` and
-configures both IDs from it, so nothing is lost.
+1. An agent reported "Google Ads gtag loads twice, once via GTM." It was rejected
+   after grepping `gtm.js` for literal `AW-`/`G-` strings. That test is invalid —
+   GTM resolves tag IDs at runtime — so the rejection was right by luck, not method.
+2. With the PageSpeed API key configured, Google's network log showed
+   `gtag/js?id=AW-18037984640&cx=c&gtm=4e68j0h1`. The `gtm=` parameter was read as
+   proof the GTM container fetched it, and the rejection was reversed. **That reading
+   was wrong:** `gtm=` in a `gtag/js` URL is gtag.js's own version string, not evidence
+   of Google Tag Manager.
+3. The owner's screenshot of container `GTM-KQ48CLVM` settles it: it holds exactly
+   **one** tag — "Leadfeeder Website Tracker", Custom HTML, All Pages. No GA4 tag, no
+   Ads tag. The guard comment at `app/layout.tsx:262-268` is being honoured.
+
+What actually happens: `app/layout.tsx:285` loads `gtag/js?id=AW-18037984640` once,
+then `gtag('config', …)` for two destination IDs (AW-18037984640 and G-96F7T65XWE),
+and gtag.js fetches a per-destination config for each. That is documented Google tag
+behaviour, not duplication anyone introduced, and it cannot be removed without
+removing the tag.
+
+**Lesson:** never conclude "this loads twice" from a URL parameter. Confirm against
+the actual configuration surface — here, the container's own Tags list.
+
+**What IS real about performance** (all measured, none of it a misconfiguration):
+PageSpeed mobile is **79, and 69 on a re-run**, where a local Lighthouse run with
+devtools throttling reported 97 — Google's simulated throttling is the number that
+counts and the local figure was flattering. Third-party scripts total **~790 KiB and
+~460ms of main thread**: Google tag ~450 KiB, Meta Pixel ~180 KiB, GTM + Leadfeeder
+~124 KiB. Unused JavaScript is 369 KiB, essentially all of it tracking. This is not a
+bug to fix; it is a decision about how many tracking stacks the business needs to run
+at once. Meta Pixel is the most questionable line if Facebook ads are not active.
+
+**CrUX field data:** verelios.com returns `NOT_FOUND` — too little real traffic to be
+sampled. So Core Web Vitals currently cost nothing in ranking terms, and speed work is
+pre-emptive rather than remedial. Competitors' field data (public, pulled 2026-08-23):
+sigmasoftwares.org LCP 3982ms / INP 272ms / **CLS 0.74 (poor)**, vyaparinfotech.com LCP
+4144ms (poor), webguard.in LCP 2702ms. **Not one competitor passes Core Web Vitals on
+real phones.**
+
+**Leadfeeder:** working, but its beacon to `tr.lfeeder.com` logs a console error in
+PageSpeed's environment, and its payload carries `gaTrackingIds: []` / `gaMeasurementIds:
+[]` — it cannot see the Google tag because Leadfeeder runs `afterInteractive` while gtag
+runs `lazyOnload`. Company identification still works; GA-to-Leadfeeder correlation does
+not. Only worth changing if that correlation is actually used.
 
 **Rejected as false — do not re-fix:**
 1. *"Zero of the 11 `/services/*` pages link down to a `/locations/kanpur/*` page."* All

@@ -1,90 +1,49 @@
 # What to do next — in order
 
-Four tasks. Roughly 2 hours total, spread over a week. Task 1 is the only one with
-any risk attached, and it is reversible in two clicks.
+Two tasks left, about 75 minutes. Both are off-site — nothing on the website needs
+changing. Tasks 1 and 2 are done or cancelled; they're kept below so the record of what
+happened stays intact.
 
 ---
 
-# TASK 1 — Remove the duplicate tracking tags (15 min)
+# ~~TASK 1 — Remove the duplicate tracking tags~~ — CANCELLED
 
-**What's wrong:** your site loads Google Ads twice and Google Analytics twice. Every
-visitor downloads the same 334 KB of tracking code twice over, and your conversions may
-be counted twice — which quietly corrupts the numbers your ad bidding relies on.
+**Do not do this. There is nothing to fix.** I was wrong, and you were right to send
+the screenshot first.
 
-**Why it happened:** the tags are set up in **two places at once** — in your website's code
-*and* inside Google Tag Manager. The code was written expecting Tag Manager to hold only
-Leadfeeder. Someone later added Analytics and Ads there too.
+Your Tag Manager container holds exactly one tag — "Leadfeeder Website Tracker". There
+is no Google Analytics tag and no Google Ads tag in there to delete. Your website's code
+is set up correctly and Tag Manager is doing only the job it was added for.
 
-**What we're doing:** removing them from Tag Manager, keeping the ones in the code.
+**What I got wrong:** Google's network log showed a request ending `&gtm=4e68j0h1`, and I
+read that `gtm=` as proof Tag Manager had fetched it. It isn't — that parameter is part of
+Google's own tag script versioning and appears whether or not Tag Manager is involved.
+Your screenshot settled it in five seconds where my reasoning had gone in circles.
 
-> **Safety net:** Tag Manager saves a version every time you publish. If anything looks
-> wrong afterwards, you click back to the previous version and you're exactly where you
-> started. Nothing here is permanent.
+**What is actually happening:** your site loads Google's tag once, then asks it to report
+to two destinations (Google Ads and Analytics). Google's script then fetches a small
+config for each destination. That is simply how it works, and it can't be removed without
+removing the tracking itself.
 
-### Step 1 — Open your container
-
-1. Go to **https://tagmanager.google.com**
-2. Sign in with the account that owns the site's tracking
-3. Click the container **`GTM-KQ48CLVM`**
-
-### Step 2 — Write down what's there (do not skip this)
-
-1. Left menu → **Tags**
-2. You'll see a list. **Screenshot it**, or write down every tag name and its Type.
-
-Send me that screenshot before deleting anything. Here's why: I can see from outside that
-Analytics and Ads are loading from Tag Manager, but I **cannot see whether someone also
-built a conversion or event in there** that your website code doesn't have. If they did,
-deleting blindly would lose that tracking. Two minutes of checking avoids that.
-
-If you'd rather not wait, the rule is: only touch tags that are purely *loading* Analytics
-or Ads. Leave anything that looks like it's tracking a specific action (a form submit, a
-button click, a purchase).
-
-### Step 3 — Remove the two duplicates
-
-Find the tags whose **Type** is one of:
-
-- `Google Tag` or `Google Analytics: GA4 Configuration` — with ID **`G-96F7T65XWE`**
-- `Google Ads Conversion Tracking`, `Google Ads Remarketing`, or `Google Tag` — with ID **`AW-18037984640`**
-
-For each one: click it → the **⋮** menu (top right) → **Delete**.
-
-**Keep everything else.** In particular keep the **Leadfeeder / Dealfront** tag — it's a
-Custom HTML tag and it's the entire reason this container exists.
-
-### Step 4 — Publish
-
-1. Blue **Submit** button, top right
-2. Version name: `Remove duplicate GA4 + Ads tags`
-3. Click **Publish**
-
-### Step 5 — Tell me
-
-I'll re-run Google's speed test and confirm the duplicates are gone. Expect your mobile
-score to move up from 79 toward the high 80s.
-
-### If something looks broken
-
-Tag Manager → **Versions** (left menu) → find the version before yours → **⋮** →
-**Publish**. You're back to how it was, immediately.
+This is the second time I drew the wrong conclusion here. The lesson, which I've written
+into the project notes: check the actual settings screen before telling anyone to delete
+something.
 
 ---
 
-# TASK 2 — Turn on one more API (3 min)
+# ~~TASK 2 — Turn on one more API~~ — DONE
 
-Your key works, but only one of the two APIs is switched on. The second one is the
-important one: it shows how fast your site is **on your real visitors' phones**, not on a
-test machine. Right now it returns "403 Forbidden", which means "not enabled".
+Chrome UX Report API is enabled and the key restriction is fixed. Both APIs now work.
 
-1. Go to **https://console.cloud.google.com**
-2. Top of the page, check the project dropdown says **`verelios-seo`** (the project you
-   made). If not, switch to it.
-3. In the search bar at the top, type **`Chrome UX Report API`**
-4. Click the result, then click the blue **Enable** button
-5. Tell me — no need to send anything, the key you already gave me will just start working
+**Result:** `verelios.com` returns "no data" — your site doesn't yet have enough real
+visitors for Google to publish a sample. That's a traffic fact, not a speed fault, and it
+means Core Web Vitals currently cost you nothing in rankings. Worth re-checking in 2–3
+months.
 
-That's it. Same key, one switch.
+**Useful side effect:** the same API exposed your competitors' real-user data. Not one of
+them passes Core Web Vitals on real phones. sigmasoftwares.org — the site ranking #1 for
+your main keyword — has a layout-shift score of **0.74**, where anything above 0.25 counts
+as poor. Yours measures 0. See COMPETITOR_ANALYSIS.md.
 
 ---
 
@@ -189,12 +148,12 @@ Depth in Kanpur beats breadth you can't back up.
 
 | # | Task | Time | Who |
 |---|---|---|---|
-| 1 | Delete duplicate GA4 + Ads tags in Tag Manager | 15 min | You (send me the Tags screenshot first) |
 | 2 | Enable Chrome UX Report API | 3 min | You |
 | 3 | Seven client footer credits | 30 min | You |
 | 4 | LinkedIn, Clutch, GoodFirms, IndiaMART, JustDial, Sulekha | 45 min | You |
 
-Everything on the website itself is done. All four of these are outside the code, which is
-why they're yours and not mine.
+Everything on the website itself is done and deployed. What's left is entirely off-site,
+which is why it's yours rather than mine.
 
-**Start with Task 2** — it's three minutes and unblocks me. Then Task 1.
+**Start with the client credits.** They're the highest-value item on this list and the one
+nobody else can do for you.
