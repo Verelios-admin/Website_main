@@ -21,7 +21,16 @@ export function PageHero({
   title,
   highlight,
   lead,
-  ctaHref = '/#contact',
+  // Scroll to the form at the bottom of THIS page (the #enquire anchor on
+  // ClosingCta) rather than sending the visitor to the homepage.
+  //
+  // This used to default to '/#contact', which made sense when the homepage
+  // held the only form on the site. Now every service and location page has
+  // its own form, so bouncing someone to the homepage costs the page context,
+  // the pre-selected service, and — for paid traffic — a click you already
+  // paid for. The hero CTA is the most-clicked element on these pages, so
+  // this one default matters more than it looks.
+  ctaHref = '#enquire',
   ctaLabel = 'Get a free 48-hour mockup',
   breadcrumbs,
 }: PageHeroProps) {
@@ -133,9 +142,19 @@ export function PageHero({
             commercial intent should do. The portfolio is still linked from the
             closing CTA and the footer. */}
         <div style={{ marginTop: 32, display: 'inline-flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Link href={ctaHref} className="btn-pill press" style={{ fontWeight: 600 }}>
-            {ctaLabel}
-          </Link>
+          {/* Same-page hash targets use a plain anchor: native browser scrolling
+              is reliable and needs no JS, whereas next/link routes hash-only
+              hrefs through the router, which is unnecessary here and has awkward
+              edge cases with scroll restoration. Real routes still get Link. */}
+          {ctaHref.startsWith('#') ? (
+            <a href={ctaHref} className="btn-pill press" style={{ fontWeight: 600 }}>
+              {ctaLabel}
+            </a>
+          ) : (
+            <Link href={ctaHref} className="btn-pill press" style={{ fontWeight: 600 }}>
+              {ctaLabel}
+            </Link>
+          )}
           <a
             href={WHATSAPP_URL}
             target="_blank"
