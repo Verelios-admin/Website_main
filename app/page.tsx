@@ -57,7 +57,10 @@ const localBusinessJsonLd = {
   '@type': 'ProfessionalService',
   '@id':   `${SITE_URL}/#localbusiness`,
   name: 'Verelios Labs',
-  alternateName: ['Verelios', 'Verelios Web & App Studio'],
+  // "Verelios Web & App Studio" was dropped 2026-08-23: it appears nowhere in
+  // visible copy and does not match the Google Business Profile, so it worked
+  // against the name-matching it was meant to help.
+  alternateName: ['Verelios'],
   url: SITE_URL,
   telephone: '+91-8299522798',
   email: 'contact@verelios.com',
@@ -76,8 +79,8 @@ const localBusinessJsonLd = {
   geo: {
     // Exact Google Business Profile pin (Govind Nagar, Kanpur).
     '@type': 'GeoCoordinates',
-    latitude: '26.447437',
-    longitude: '80.306051',
+    latitude: 26.447437,
+    longitude: 80.306051,
   },
   hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
@@ -114,15 +117,16 @@ const localBusinessJsonLd = {
     // served remotely, which is also how the GBP service area is set. Do not
     // reintroduce an on-site claim for any other city — the GBP description
     // previously implied a second Bangalore office and it was not accurate.
+    //
+    // Trimmed 2026-08-23: Maharashtra, Bangalore, Pune, Mumbai and Delhi were
+    // listed as peers of Kanpur with no page, no client story and no content
+    // behind any of them. Claiming a service area the site cannot substantiate
+    // dilutes the local signal that Kanpur actually earns. India already covers
+    // remote work everywhere; name a city here only once a page backs it.
     { '@type': 'City',    name: 'Kanpur' },
     { '@type': 'City',    name: 'Lucknow' },
     { '@type': 'State',   name: 'Uttar Pradesh' },
-    { '@type': 'State',   name: 'Maharashtra' },
-    { '@type': 'City',    name: 'Bangalore' },
     { '@type': 'Country', name: 'India' },
-    { '@type': 'City',    name: 'Pune' },
-    { '@type': 'City',    name: 'Mumbai' },
-    { '@type': 'City',    name: 'Delhi' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
   sameAs: [...SOCIAL_LINKS, GBP_URL],
@@ -158,7 +162,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '49999',
+          minPrice: 49999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -176,7 +180,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -194,7 +198,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -212,7 +216,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 149999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -230,7 +234,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -248,7 +252,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -266,7 +270,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -284,7 +288,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '99999',
+          minPrice: 99999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -302,7 +306,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '49999',
+          minPrice: 49999,
         },
         itemOffered: {
           '@type': 'Service',
@@ -332,7 +336,7 @@ const localBusinessJsonLd = {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           priceCurrency: 'INR',
-          minPrice: '3000',
+          minPrice: 3000,
           unitText: 'MONTH',
         },
         itemOffered: {

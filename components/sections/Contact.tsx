@@ -446,7 +446,16 @@ export function Contact() {
                       background: 'rgba(255,255,255,0.06)',
                       border: '1px solid rgba(255,255,255,0.14)',
                       borderRadius: 'var(--radius-pill)',
-                      padding: '6px 10px',
+                      // Was 82x33. It sits inside a 44px-tall field, so it
+                      // cannot reach the 44px comfort target without making the
+                      // field taller; 36x92 fills the field instead, which is
+                      // well clear of the 24px WCAG 2.2 AA minimum and a much
+                      // easier thumb target on the only form on the homepage.
+                      minHeight: 36,
+                      minWidth: 92,
+                      boxSizing: 'border-box',
+                      justifyContent: 'center',
+                      padding: '6px 12px',
                       color: '#fff',
                       fontSize: 13,
                       cursor: 'pointer',
@@ -494,7 +503,11 @@ export function Contact() {
                               background: 'transparent',
                               border: 0,
                               color: '#fff',
-                              padding: '8px 10px',
+                              // Matches the trigger: these are the actual
+                              // country choices and were ~34px on a phone.
+                              padding: '10px 10px',
+                              minHeight: 44,
+                              boxSizing: 'border-box',
                               borderRadius: 'var(--radius-sm)',
                               cursor: 'pointer',
                               fontSize: 14,

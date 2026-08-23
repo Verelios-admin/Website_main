@@ -58,7 +58,7 @@ const serviceJsonLd = {
   offers: {
     '@type': 'Offer',
     priceCurrency: 'INR',
-    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: '49999' },
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'INR', minPrice: 49999 },
     availability: 'https://schema.org/InStock',
   },
 };
@@ -270,7 +270,7 @@ export default function KanpurWebsiteDevelopmentPage() {
 
             <Prose>
               <p style={{ marginTop: 24 }}>
-                We also serve Lucknow, Unnao and the rest of Uttar Pradesh, and founders across India. Need more than a website? See our <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> and <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
+                We also serve Lucknow, Unnao and the rest of Uttar Pradesh, and founders across India. See our national <Link href="/services/website-development">website development</Link> page for the full capability. Need more than a website? See our <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> and <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
               </p>
 
               <h2>Frequently asked questions</h2>

@@ -226,7 +226,7 @@ export default function ServicesHubPage() {
                 <li><strong>Business website</strong> — from ₹49,999, live in 7–14 days</li>
                 <li><strong>E-commerce store</strong> — from ₹99,999, 3–4 weeks</li>
                 <li><strong>Mobile app (iOS + Android)</strong> — from ₹99,999, 3–5 weeks</li>
-                <li><strong>Custom software / dashboards</strong> — from ₹99,999, scoped per project</li>
+                <li><strong>Custom software / dashboards</strong> — from ₹1,49,999, scoped per project</li>
                 <li><strong>ERP or HR &amp; payroll</strong> — from ₹99,999, 4–8 weeks</li>
                 <li><strong>UI/UX design only</strong> — from ₹40,000</li>
                 <li><strong>Hosting &amp; maintenance</strong> — monthly, no lock-in</li>

@@ -203,7 +203,17 @@ export function Services() {
           ))}
         </div>
 
+        {/* The hub link belongs here rather than in the nav: the nav item
+            "Services" scrolls to this section, so the hub page itself had no
+            route in from the homepage at all and sat a click deeper than the
+            eleven pages it introduces. */}
         <div style={{ textAlign: 'center', marginTop: 48 }}>
+          <a href="/services" className="link-arrow">
+            Compare all eleven services <span className="arrow">→</span>
+          </a>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 16 }}>
           <span style={{ color: 'var(--color-ink-muted-48)', fontSize: 14 }}>
             Don&apos;t see what you need?
           </span>{' '}

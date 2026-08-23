@@ -28,14 +28,15 @@ const SITE = 'https://www.verelios.com';
 
 /** Date each page's content last meaningfully changed (Asia/Kolkata calendar day). */
 const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
-  // Core — schema, hero rendering and metadata substantively reworked 2026-07-28.
-  { path: '/', lastmod: '2026-07-28', priority: 1.0 },
+  // Core — schema, hero rendering and metadata substantively reworked 2026-07-28;
+  // 2026-08-23 added the services-hub link and corrected the entity/offer schema.
+  { path: '/', lastmod: '2026-08-23', priority: 1.0 },
 
   // Service pages (national intent: "… in India").
-  { path: '/services', lastmod: '2026-07-28', priority: 0.8 },
+  { path: '/services', lastmod: '2026-08-23', priority: 0.8 },
   { path: '/services/website-development', lastmod: '2026-07-28', priority: 0.9 },
   { path: '/services/mobile-app-development', lastmod: '2026-07-28', priority: 0.9 },
-  { path: '/services/custom-software-development', lastmod: '2026-07-28', priority: 0.8 },
+  { path: '/services/custom-software-development', lastmod: '2026-08-23', priority: 0.8 },
   { path: '/services/ai-automation', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/services/erp', lastmod: '2026-07-28', priority: 0.8 },
   { path: '/services/hrms-payroll-software', lastmod: '2026-08-18', priority: 0.9 },
@@ -46,15 +47,15 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/services/ui-ux-design', lastmod: '2026-07-28', priority: 0.7 },
 
   // Location pages (local intent: "… in Kanpur").
-  { path: '/locations/kanpur', lastmod: '2026-07-28', priority: 0.9 },
-  { path: '/locations/kanpur/website-development', lastmod: '2026-07-28', priority: 0.9 },
-  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-07-28', priority: 0.8 },
-  { path: '/locations/kanpur/ai-development', lastmod: '2026-07-28', priority: 0.8 },
-  { path: '/locations/kanpur/erp-software', lastmod: '2026-07-28', priority: 0.8 },
+  { path: '/locations/kanpur', lastmod: '2026-08-23', priority: 0.9 },
+  { path: '/locations/kanpur/website-development', lastmod: '2026-08-23', priority: 0.9 },
+  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-08-23', priority: 0.8 },
+  { path: '/locations/kanpur/ai-development', lastmod: '2026-08-23', priority: 0.8 },
+  { path: '/locations/kanpur/erp-software', lastmod: '2026-08-23', priority: 0.8 },
   // Both of these already rank #1 in the Kanpur local pack with no landing page
   // behind them — hence priority 0.9, matching the other proven local intents.
-  { path: '/locations/kanpur/hrms-payroll-software', lastmod: '2026-08-18', priority: 0.9 },
-  { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-08-18', priority: 0.9 },
+  { path: '/locations/kanpur/hrms-payroll-software', lastmod: '2026-08-23', priority: 0.9 },
+  { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-08-23', priority: 0.9 },
 
   // Blog. lastmod = the post's own publish date, because the prose has not been
   // rewritten since; keep each of these in step with the PUBLISHED constant in the
@@ -66,7 +67,9 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/blog/best-erp-software-companies-kanpur-2026', lastmod: '2026-07-17', priority: 0.7 },
   { path: '/blog/ai-automation-for-indian-businesses-2026', lastmod: '2026-06-26', priority: 0.6 },
   { path: '/blog/ai-chatbot-for-business-india', lastmod: '2026-06-26', priority: 0.6 },
-  { path: '/blog/custom-website-development-cost-india-2026', lastmod: '2026-05-26', priority: 0.7 },
+  // Prose rewritten 2026-06-13 to align every figure with the ₹49,999 floor,
+  // so lastmod tracks that rather than the original publish date.
+  { path: '/blog/custom-website-development-cost-india-2026', lastmod: '2026-06-13', priority: 0.7 },
   { path: '/blog/how-to-choose-web-development-agency-india', lastmod: '2026-05-26', priority: 0.6 },
   { path: '/blog/how-we-ship-websites-in-3-weeks', lastmod: '2026-05-26', priority: 0.6 },
 

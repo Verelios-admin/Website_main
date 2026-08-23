@@ -30,7 +30,10 @@ const blogJsonLd = {
   '@id': `${SITE}/blog#blog`,
   url: `${SITE}/blog`,
   name: 'Verelios Labs Blog',
-  publisher: { '@type': 'Organization', name: 'Verelios Labs', url: SITE },
+  // Reference the one canonical Organization node rather than redeclaring a
+  // bare copy of it — every other page (including all nine blog posts) points
+  // at #organization, and a loose duplicate here reads as a second entity.
+  publisher: { '@id': `${SITE}/#organization` },
 };
 
 const breadcrumbJsonLd = {

@@ -9,6 +9,12 @@ const SLUG = 'custom-website-development-cost-india-2026';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
+// The prose was rewritten on 2026-06-13 (commit 07a0059) to align every figure
+// in this post with the ₹49,999 floor. datePublished was reused for
+// dateModified, so the post claimed it had not changed since May — on a pricing
+// guide, where recency is the whole value proposition, that undersells it.
+// Bump this whenever the numbers or the argument change; leave PUBLISHED alone.
+const UPDATED = '2026-06-13';
 
 export const metadata: Metadata = {
   title: 'Website Development Cost in India (2026)',
@@ -35,7 +41,7 @@ const articleJsonLd = {
   description:
     'How much does custom website development cost in India in 2026? Honest ranges by project type, what drives prices up, and what to expect at each budget tier.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
-  dateModified: `${PUBLISHED}T00:00:00+05:30`,
+  dateModified: `${UPDATED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
   articleSection: 'Pricing',

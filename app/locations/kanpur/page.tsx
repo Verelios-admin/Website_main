@@ -79,8 +79,8 @@ const localBusinessJsonLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '26.447437',
-    longitude: '80.306051',
+    latitude: 26.447437,
+    longitude: 80.306051,
   },
   hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
   openingHoursSpecification: [
@@ -172,7 +172,7 @@ const faqJsonLd = {
       name: 'How much does it cost and how do payments work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Websites start at ₹49,999, mobile apps at ₹99,999, and custom software / ERP from ₹99,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.',
+        text: 'Websites start at ₹49,999, mobile apps at ₹99,999, ERP from ₹99,999 and custom software from ₹1,49,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.',
       },
     },
   ],
@@ -439,7 +439,7 @@ export default function KanpurLocationPage() {
               </p>
               <h3>How much does it cost and how do payments work?</h3>
               <p>
-                Websites start at ₹49,999, mobile apps at ₹99,999, and custom software / ERP from ₹99,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.
+                Websites start at ₹49,999, mobile apps at ₹99,999, ERP from ₹99,999 and custom software from ₹1,49,999. We work on milestone payments — 30% to start, 30% at mid-delivery, 40% at launch — with a fixed quote up front and a free 48-hour mockup before you commit.
               </p>
             </Prose>
           </div>
