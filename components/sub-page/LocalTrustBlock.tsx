@@ -7,13 +7,15 @@ export const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
 /**
  * Where "leave a review" points.
  *
- * TODO(owner): replace with the dedicated review link from the Google Business
- * Profile dashboard — it looks like `https://g.page/r/<id>/review` and opens the
- * write-a-review box directly. This currently falls back to the profile itself,
- * which works but costs the reviewer an extra tap, and every extra tap loses
- * some share of the people who were willing.
+ * The Google Business Profile's own "Ask for reviews" short link. It opens the
+ * write-a-review box directly, rather than the profile page where the reviewer
+ * still has to find the button — every extra tap loses some share of the people
+ * who were willing.
+ *
+ * Distinct from GBP_URL, which points at the profile for READING reviews. Keep
+ * both: they serve opposite directions of the same relationship.
  */
-export const REVIEW_URL = GBP_URL;
+export const REVIEW_URL = 'https://g.page/r/CSnAeGueeOXNEBM/review';
 
 /** Same destination coordinates LocalMap uses — kept in step with it. */
 const DIRECTIONS_URL =
