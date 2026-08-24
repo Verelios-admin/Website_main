@@ -201,6 +201,7 @@ export default function UiUxDesignPage() {
         <RelatedServices exclude="ui-ux-design" />
 
         <ClosingCta
+          defaultService="UI/UX Design"
           heading="Start with a free 48-hour mockup"
           body="Send us a two-line description of the product. We'll come back with a designed homepage / key screen in 48 hours, free, no commitment."
         />

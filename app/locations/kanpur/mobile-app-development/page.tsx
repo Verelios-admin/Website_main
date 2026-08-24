@@ -299,6 +299,7 @@ export default function KanpurMobileAppDevelopmentPage() {
         </section>
 
         <ClosingCta
+          defaultService="Mobile App (iOS/Android)"
           heading="Let's build your app, in Kanpur."
           body="Tell us in two lines what your app should do and who it's for. We'll send a free 48-hour mockup and a fixed quote — and you're welcome to visit our Govind Nagar office any day."
         />

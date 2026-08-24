@@ -234,6 +234,7 @@ export default function ERPPage() {
         <RelatedServices exclude="erp" />
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Ready to run your business on one system?"
           body="Tell us what your team currently juggles across Tally, Excel and WhatsApp. We'll set up a free ERP scoping call to map your systems, then follow up with a fixed quote."
         />

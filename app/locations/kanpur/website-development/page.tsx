@@ -299,6 +299,7 @@ export default function KanpurWebsiteDevelopmentPage() {
         </section>
 
         <ClosingCta
+          defaultService="Business Website"
           heading="Let's build your website, in Kanpur."
           body="Tell us in two lines what you want to build and who it's for. We'll send a free 48-hour mockup and a fixed quote — and you're welcome to visit our Govind Nagar office any day."
         />

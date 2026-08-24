@@ -283,6 +283,7 @@ export default function KanpurBillingInventoryPage() {
         </section>
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Come and see it bill."
           body="Tell us what you sell and how many locations you hold stock in. We'll visit your counter in Kanpur, show you the billing screen running, and send a fixed quote — no upfront payment."
         />

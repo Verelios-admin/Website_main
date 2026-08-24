@@ -283,6 +283,7 @@ export default function KanpurHrmsPayrollPage() {
         </section>
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Let's fix payroll, in Kanpur."
           body="Tell us your headcount, how many shifts you run and whether you have contract labour. We'll come to your unit, map your rules, and send a fixed quote — visit our Govind Nagar office any day."
         />

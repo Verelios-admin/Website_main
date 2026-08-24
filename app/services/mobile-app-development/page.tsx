@@ -228,6 +228,7 @@ export default function MobileAppDevelopmentPage() {
         <RelatedServices exclude="mobile-app-development" />
 
         <ClosingCta
+          defaultService="Mobile App (iOS/Android)"
           heading="Ready to ship your app?"
           body="Tell us in two lines what app you want to build. We'll send a free mockup of 3–5 key screens within 48 hours — no commitment, no upfront payment."
         />

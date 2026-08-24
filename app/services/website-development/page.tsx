@@ -223,6 +223,7 @@ export default function WebsiteDevelopmentPage() {
         <RelatedServices exclude="website-development" />
 
         <ClosingCta
+          defaultService="Business Website"
           heading="Ready to ship your website?"
           body="Tell us in two lines what you want to build. We'll send you a free 48-hour mockup and a fixed quote — no commitment, no upfront payment."
         />

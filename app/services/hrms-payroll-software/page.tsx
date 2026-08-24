@@ -223,6 +223,7 @@ export default function HrmsPayrollSoftwarePage() {
         <RelatedServices exclude="hrms-payroll-software" />
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Stop closing payroll in a spreadsheet."
           body="Tell us your headcount, shift pattern and how salary is calculated today. We'll set up a free scoping call to map your rules, then follow up with a fixed quote."
         />

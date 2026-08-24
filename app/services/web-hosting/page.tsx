@@ -221,6 +221,7 @@ export default function WebHostingPage() {
         <RelatedServices exclude="web-hosting" />
 
         <ClosingCta
+          defaultService="Other"
           heading="Want hosting you can forget about?"
           body="Tell us about your current site and hosting. We'll audit it for free and send a clear monthly quote to host and maintain it — with no lock-in."
           primaryLabel="Get a hosting quote"

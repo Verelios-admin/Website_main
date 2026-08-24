@@ -238,6 +238,7 @@ export default function CustomSoftwarePage() {
         <RelatedServices exclude="custom-software-development" />
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Ready to replace those spreadsheets?"
           body="Tell us what your team currently does manually. We'll set up a free technical scoping call to map the system, then follow up with a fixed quote."
         />

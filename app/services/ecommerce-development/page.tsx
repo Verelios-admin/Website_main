@@ -209,6 +209,7 @@ export default function EcommerceDevelopmentPage() {
         <RelatedServices exclude="ecommerce-development" />
 
         <ClosingCta
+          defaultService="E-commerce Website"
           heading="Ready to sell online properly?"
           body="Tell us what you sell and roughly how many products. We'll send a free 48-hour mockup of your storefront and a fixed quote — no upfront payment."
         />

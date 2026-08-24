@@ -284,6 +284,7 @@ export default function KanpurErpSoftwarePage() {
         </section>
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Let's build your ERP, in Kanpur."
           body="Tell us what your business makes or moves, and where the spreadsheets hurt most. We'll come see your operation, scope the right modules, and send a fixed quote — visit our Govind Nagar office any day."
         />

@@ -298,6 +298,7 @@ export default function KanpurCrmSoftwarePage() {
         </section>
 
         <ClosingCta
+          defaultService="Custom Software / CRM / ERP"
           heading="Let's fix your pipeline, in Kanpur."
           body="Tell us how enquiries reach you today and where leads go cold. We'll sit with your sales team, map the real pipeline, and send a fixed quote — visit our Govind Nagar office any day."
         />
