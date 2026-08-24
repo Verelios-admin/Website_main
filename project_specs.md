@@ -219,6 +219,41 @@ pages were not measured.
 `audit-data.json`, 11 per-specialist findings files, 27 screenshots, and a pre-deploy
 drift baseline (`/seo drift compare` after deploying will show exactly what changed).
 
+### Phase 9 — Lead capture on the pages that earn the traffic ✓ COMPLETED 2026-08-24 (build-verified: 39 routes, tsc clean, confirmed live on all 18 pages; owner confirmed a test submission from a sub-page reached Make.com)
+
+Two changes, both on the path between a visitor arriving and an enquiry being sent.
+
+**Hero CTA now scrolls to the form on the same page.** `PageHero`'s `ctaHref`
+defaulted to `/#contact`, which was correct when the homepage held the only form on
+the site. It no longer does — every service and location page carries its own
+`InlineLeadForm` inside `ClosingCta`. Sending someone who landed on `/services/erp`
+back to the homepage cost the page context, the pre-selected service and the
+per-page source attribution, and for paid traffic discarded a click already bought.
+Same-page hash targets now render a plain `<a>` rather than `next/link`: native
+scrolling needs no JS and behaves predictably, while routing a hash-only href
+through the router buys nothing and interacts awkwardly with scroll restoration.
+Verified all 31 `PageHero` pages also render `ClosingCta` (which carries
+`id="enquire"`), so there is no page where the new default becomes a dead anchor.
+
+**Service type pre-selected on 18 service and location pages.** Each now passes
+`defaultService` to `ClosingCta`. The prop is typed `(typeof SERVICE_TYPES)[number]`,
+so every value is compiler-checked against the real list. Hubs, `/about` and the blog
+posts deliberately keep no default — on a page that has not established what the
+visitor wants, a pre-filled answer is a guess that degrades the lead data rather than
+improving it.
+
+`web-hosting` maps to **"Other"** because `SERVICE_TYPES` has no hosting entry. Left
+that way on purpose: the Make.com automation keys off these exact strings, so widening
+the list is a change to make deliberately on both sides, not as a side effect. Revisit
+if hosting enquiries turn out to be worth distinguishing.
+
+Verification note worth keeping: the first "it's live" check for the pre-selection was a
+**false positive** — a loose regex matched the option text anywhere on the line rather
+than whether it carried `selected`. The live page was still serving the previous build.
+Re-checked by parsing the `closing-service` `<select>` and reading which option actually
+holds `selected`. When confirming a deploy, assert on the specific attribute, not on the
+presence of a string.
+
 ## Data models / storage
 None — static content. Contact form posts out (no DB writes on this site).
 
