@@ -185,7 +185,29 @@ export default function BillingInventorySoftwarePage() {
 
               <h2>Pricing for billing &amp; inventory software in India</h2>
               <p>
-                A single-location billing and stock system starts at <strong>₹99,999</strong>. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bills and Tally sync typically lands between <strong>₹1,50,000 and ₹5,00,000</strong>, with a fixed quote up front and milestone payments (30/30/40). If you also need production, HR and accounting in the same system, that is our <a href="/services/erp">custom ERP software</a> service — billing and inventory is usually its first module.
+                Fixed quote up front and milestone payments (30/30/40). It is a one-time build, not a per-user monthly licence, so adding a counter or a staff member does not raise the bill.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Tier</th><th>Price</th><th>What it covers</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Single location</td>
+                      <td className="price">from ₹99,999</td>
+                      <td>Billing and stock for one shop, counter or godown</td>
+                    </tr>
+                    <tr>
+                      <td>Multi-godown</td>
+                      <td className="price">₹1,50,000 – ₹5,00,000</td>
+                      <td>Batch and expiry tracking, barcode scanning, e-way bill generation and Tally sync. Final figure depends on the number of locations and integrations</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                If you also need production, HR and accounting in the same system, that is our <a href="/services/erp">custom ERP software</a> service — billing and inventory is usually its first module.
               </p>
               <p>
                 Based in Kanpur? See our dedicated <a href="/locations/kanpur/billing-inventory-software">billing &amp; inventory software company in Kanpur</a> page — we can come to your shop or godown and watch how you bill before quoting.

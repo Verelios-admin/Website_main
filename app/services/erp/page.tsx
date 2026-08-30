@@ -197,7 +197,29 @@ export default function ERPPage() {
 
               <h2>Pricing for custom ERP software in India</h2>
               <p>
-                A focused single-module ERP starts at <strong>₹99,999</strong>. A full multi-module system — inventory, manufacturing, sales, accounting, HR and reporting — typically lands between <strong>₹3,00,000 and ₹10,00,000</strong>, with a fixed quote up-front and milestone payments (30/30/40). We always show the monthly hosting cost before you commit, so there are no surprises after launch. For CRMs, dashboards and other internal tools, see our broader <a href="/services/custom-software-development">custom software development</a> service.
+                Fixed quote up front, milestone payments (30/30/40), and the monthly hosting cost shown before you commit — so no figure appears after launch that you had not planned for.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Tier</th><th>Price</th><th>What it covers</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Single-module ERP</td>
+                      <td className="price">from ₹99,999</td>
+                      <td>One focused module — for example inventory plus purchase, or production tracking</td>
+                    </tr>
+                    <tr>
+                      <td>Multi-module ERP</td>
+                      <td className="price">₹3,00,000 – ₹10,00,000</td>
+                      <td>Inventory, manufacturing, sales, accounting, HR and reporting in one system. Final figure depends on the number of modules and integrations</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                For CRMs, dashboards and other internal tools, see our broader <a href="/services/custom-software-development">custom software development</a> service.
               </p>
               <p>
                 Based in Kanpur? See our dedicated <a href="/locations/kanpur/erp-software">ERP software company in Kanpur</a> page — we build manufacturing, leather, textile and trading ERP for local units and can visit your shop floor.

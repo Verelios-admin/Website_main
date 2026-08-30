@@ -185,8 +185,27 @@ export default function MobileAppDevelopmentPage() {
 
               <h2>Pricing for custom mobile app development in India</h2>
               <p>
-                Our base mobile-app tier starts at <strong>₹99,999</strong> and covers a 5–8 screen app with onboarding, auth, a core flow, push notifications, and submission to both stores. Apps with more screens, advanced backends, real-time features, or external integrations land between <strong>₹1,50,000 and ₹5,00,000</strong> depending on scope. Quoted up-front, no surprises.
+                Quoted up front, with no figure appearing later that you had not planned for.
               </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Tier</th><th>Price</th><th>What it covers</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Base app</td>
+                      <td className="price">from ₹99,999</td>
+                      <td>A 5–8 screen app with onboarding, authentication, a core flow, push notifications, and submission to both stores</td>
+                    </tr>
+                    <tr>
+                      <td>Larger build</td>
+                      <td className="price">₹1,50,000 – ₹5,00,000</td>
+                      <td>More screens, advanced backends, real-time features or external integrations. Final figure depends on scope</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div className="callout">
                 <p>
                   <strong>Two-line message → fixed quote in 48 hours.</strong> Send us what you want to build and who it&apos;s for — we&apos;ll come back with a written quote, mockup, and delivery date.

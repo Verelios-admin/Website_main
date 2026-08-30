@@ -164,11 +164,32 @@ export default function WebsiteDevelopmentPage() {
 
               <h2>Pricing for custom website development in India</h2>
               <p>
-                Our base business-website tier starts at <strong>₹49,999</strong> and covers up to 5 pages (Home, About, Services, Contact, plus one more), mobile-responsive design, contact form with WhatsApp integration, SEO setup, free domain &amp; hosting setup assistance, and 7 days of post-launch support.
+                Every project gets a fixed quote with a timeline before any work begins — never an hourly rate that grows as the project does.
               </p>
-              <p>
-                More complex projects — e-commerce, real estate, custom CMS, integrations — range from <strong>₹1,00,000 to ₹3,00,000+</strong> depending on scope. We share a fixed quote with a timeline before any work begins.
-              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Tier</th><th>Price</th><th>What it covers</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Business website</td>
+                      <td className="price">from ₹49,999</td>
+                      <td>Up to 5 pages (Home, About, Services, Contact, plus one more), mobile-responsive design, contact form with WhatsApp integration, SEO setup, free domain &amp; hosting setup assistance, and 7 days of post-launch support</td>
+                    </tr>
+                    <tr>
+                      <td>Complex build</td>
+                      <td className="price">₹1,00,000 – ₹3,00,000+</td>
+                      <td>E-commerce, real estate portals, custom CMS and third-party integrations. Final figure depends on scope and is fixed before work starts</td>
+                    </tr>
+                    <tr>
+                      <td>Maintenance</td>
+                      <td className="price">from ₹3,000/month</td>
+                      <td>Optional after the free first 7 days — bug fixes, content updates, security patches and performance monitoring</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div className="callout">
                 <p>
                   <strong>Get a fixed quote in 48 hours.</strong> Send us a 2-line message — what you want to build, who it&apos;s for — and we&apos;ll come back with a written quote, a sample mockup, and a delivery date.

@@ -164,6 +164,48 @@ export default function HrmsPayrollSoftwarePage() {
               <p>
                 A custom build is a one-time cost. After roughly year two it is almost always cheaper than the subscription it replaced, and it does not get more expensive as you grow.
               </p>
+              {/* Same comparison the prose above makes, in a form a reader can scan and an
+                  answer engine can extract. Every row restates a claim already on this page —
+                  no new assertion about any named product. */}
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th></th><th>Packaged HR subscription</th><th>Custom build</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cost model</td>
+                      <td>Per employee, per month, for as long as you use it</td>
+                      <td>One-time build cost, quoted up front</td>
+                    </tr>
+                    <tr>
+                      <td>As you grow</td>
+                      <td>Bill rises with every person you hire</td>
+                      <td>Cost does not change as headcount grows</td>
+                    </tr>
+                    <tr>
+                      <td>Break-even</td>
+                      <td>—</td>
+                      <td>Usually cheaper than the subscription it replaced by around year two</td>
+                    </tr>
+                    <tr>
+                      <td>Policy fit</td>
+                      <td>Strong when your policies resemble the ones the product was designed around</td>
+                      <td>Encodes the rules you actually run, including the ones nobody wrote down</td>
+                    </tr>
+                    <tr>
+                      <td>Edge cases</td>
+                      <td>Contract and piece-rate workers, multi-unit shift patterns and custom incentive formulas are where teams end up exporting to Excel</td>
+                      <td>Built into the system, so the monthly Excel step disappears</td>
+                    </tr>
+                    <tr>
+                      <td>Where salary data sits</td>
+                      <td>The vendor&apos;s multi-tenant platform</td>
+                      <td>Your own hosting account, with the source code in your GitHub organisation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <h2>How a payroll project runs</h2>
               <ol>
@@ -187,7 +229,29 @@ export default function HrmsPayrollSoftwarePage() {
 
               <h2>Pricing for HRMS &amp; payroll software in India</h2>
               <p>
-                A focused HRMS covering attendance, leave and payslips starts at <strong>₹99,999</strong>. A full system adding shift rostering, biometric integration, statutory filing exports, self-service and reimbursements typically lands between <strong>₹2,00,000 and ₹6,00,000</strong>, with a fixed quote up front and milestone payments (30/30/40). If you also need inventory, production and accounting in the same system, that is our <a href="/services/erp">custom ERP software</a> service — HR and payroll is usually built as one module of it.
+                Fixed quote up front and milestone payments (30/30/40). It is a one-time build, not a per-employee monthly subscription, so the cost does not rise every time you hire.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Tier</th><th>Price</th><th>What it covers</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Focused HRMS</td>
+                      <td className="price">from ₹99,999</td>
+                      <td>Attendance, leave and payslips</td>
+                    </tr>
+                    <tr>
+                      <td>Full system</td>
+                      <td className="price">₹2,00,000 – ₹6,00,000</td>
+                      <td>Adds shift rostering, biometric integration, statutory filing exports, employee self-service and reimbursements. Final figure depends on how many headcount rules and integrations it has to encode</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                If you also need inventory, production and accounting in the same system, that is our <a href="/services/erp">custom ERP software</a> service — HR and payroll is usually built as one module of it.
               </p>
               <p>
                 Based in Kanpur? See our dedicated <a href="/locations/kanpur/hrms-payroll-software">HRMS &amp; payroll software company in Kanpur</a> page — we can visit your unit and map your shift and wage rules in person.
