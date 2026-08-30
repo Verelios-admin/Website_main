@@ -258,6 +258,10 @@ export default function KanpurErpSoftwarePage() {
                 We also serve Lucknow, Unnao and the rest of Uttar Pradesh, and businesses across India. See our national <Link href="/services/erp">custom ERP software</Link> page for the full capability, or the <Link href="/locations/kanpur">software company in Kanpur</Link> overview for everything we build locally.
               </p>
 
+              <p>
+                Before you decide, our guide to the <a href="/blog/best-erp-software-companies-kanpur-2026">best ERP software companies in Kanpur</a> sets out the local alternatives and what each is good at.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does custom ERP software cost in Kanpur?</h3>
               <p>

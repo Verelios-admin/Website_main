@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+export const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 /**
  * Compact trust strip for the national /services/* pages.

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — How to Choose a Web Development Agency in India' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -82,7 +83,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time></p>
               <p>
                 There are hundreds of agencies in India that will build you a website. Picking the wrong one costs you 2–6 months of delay and 1.5–3× the price you actually should have paid — so it helps to know <a href="/blog/custom-website-development-cost-india-2026">what custom website development actually costs in India</a> before you start comparing quotes. Here are the questions that separate the ones who&apos;ll ship from the ones who won&apos;t.
               </p>

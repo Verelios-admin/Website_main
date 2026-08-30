@@ -171,6 +171,10 @@ export default function AIAutomationPage() {
                 Based in Kanpur and want to meet in person? See our dedicated <a href="/locations/kanpur/ai-development">AI development company in Kanpur</a> page — a real AI team in Govind Nagar you can sit across from.
               </p>
 
+              <p>
+                Weighing us against other options? We wrote an open comparison of the <a href="/blog/best-ai-development-companies-kanpur-2026">best AI development companies in Kanpur</a>, including where we are and aren&apos;t the right fit.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What kinds of AI automation do you build?</h3>
               <p>

@@ -72,15 +72,9 @@ export function TopContactBar() {
           <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
           <span>+91 82995 22798</span>
         </a>
-        <span className="tcb-sep tcb-hidden-sm" aria-hidden="true">·</span>
-        <a
-          href="tel:+918471094125"
-          className="tcb-item tcb-hidden-sm"
-          aria-label="+91 84710 94125 — call Verelios Labs (secondary)"
-        >
-          <span aria-hidden="true" className="tcb-flag">🇮🇳</span>
-          <span>+91 84710 94125</span>
-        </a>
+        {/* No second phone number here. +91 84710 94125 is the WhatsApp line —
+            it reaches WhatsApp via wa.me links elsewhere on the site and must not
+            be offered as a call, which would dial a number that may not answer. */}
         <span className="tcb-sep" aria-hidden="true">·</span>
         <a
           href="mailto:contact@verelios.com"

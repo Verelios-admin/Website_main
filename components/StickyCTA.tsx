@@ -98,10 +98,17 @@ export function StickyCTA() {
             }}
             aria-label="Dismiss banner"
             style={{
+              // 44x44 is the touch-target floor. The icon stays 16px — the button
+              // grows around it, so the look is unchanged and the tap area is not.
               background: 'transparent',
               border: 0,
               color: 'rgba(255,255,255,0.6)',
-              padding: 6,
+              width: 44,
+              height: 44,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0,
               cursor: 'pointer',
               flexShrink: 0,
             }}

@@ -327,7 +327,12 @@ export function Hero() {
             className="hero-headline display-hero"
             style={{ marginTop: 28, color: '#fff', fontWeight: 600 }}
           >
-            <Word>Idea</Word>{' '}<Word>to</Word>{' '}<Word>launch</Word>
+            {/* The {' '} before <br /> is deliberate. Words are separated by real
+                space text nodes so the headline extracts as "Idea to launch in three
+                weeks." — but a line break carries no whitespace of its own, so
+                without this space a plain-text extractor reads "launchin". The
+                trailing space collapses at the line end, so nothing moves visually. */}
+            <Word>Idea</Word>{' '}<Word>to</Word>{' '}<Word>launch</Word>{' '}
             <br />
             <Word>in</Word>{' '}<Word accent>three weeks.</Word>
           </h1>

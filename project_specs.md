@@ -254,6 +254,114 @@ Re-checked by parsing the `closing-service` `<select>` and reading which option 
 holds `selected`. When confirming a deploy, assert on the specific attribute, not on the
 presence of a string.
 
+### Phase 10 — Second full SEO audit + remediation ✓ COMPLETED 2026-08-30 (build-verified: 39 routes, 32 sitemap URLs, `tsc --noEmit` clean, full `next build` clean)
+
+Eleven specialists re-audited the live site one week after Phase 8. **Health score 79 → 83.**
+Nothing regressed: the drift check against the 2026-08-23 baseline came back clean on all 17
+rules, with title, canonical, robots, H1 and schema byte-identical. A fresh baseline was
+captured as **id 3, 2026-08-30T16:49:35Z**.
+
+Scores: Technical 89, Content 84, On-Page 92, Schema 90, Performance 72, AI Search 65,
+Images 60. Supplementary: Sitemap 90, Drift 96, Visual 81, Local 65, SXO 60, Backlinks 8.
+
+**Three things changed the picture, all new information rather than new defects.**
+
+**1. Core Web Vitals started counting.** On 2026-08-23 CrUX returned `NOT_FOUND` — too little
+traffic to sample — so speed work was pre-emptive. As of the 2026-08-01→28 window the origin
+qualifies: **LCP 2,051ms (Good), CLS 0.00 (Good), FCP 1,988ms (NI), TTFB 1,058ms (NI)**. CrUX
+History shows 21 straight null weeks through 2026-08-22, then a qualifying snapshot. Phone-only,
+desktop-only and every individual URL still return insufficient traffic, so this is one blended
+number. Lab mobile is 72–83 with LCP 3.8–4.6s; field and lab measure different things and
+neither cancels the other. New: field TTFB 1,058ms vs lab 2–8ms, and inner pages carry ~798KB
+of third-party JS vs ~648KB on the homepage.
+
+**2. The `sameAs` profiles contradict the site's own NAP.** Phase 7 removed the false Bangalore
+on-site claim from the website — and the website is clean, re-verified. But all three linked
+profiles still assert it: Facebook title "VereliosLabs | Bangalore", Instagram bio "Offices in
+Bangalore (HSR Layout) and Kanpur", and the LinkedIn Company Page "additional office in
+Bangalore" plus "Founded: 2025" against the site's 2024. The correction was made in one place
+and not the other three. **The LinkedIn Company Page now exists** (`linkedin.com/company/verelios-labs`),
+closing a Phase 8 gap — but `app/layout.tsx:140` still points at the personal profile.
+
+**3. Still 0 of 7 client sites link back**, one week after the ask. Re-verified per-site. The
+passive request has measurably failed; escalate to sending ready-to-paste HTML.
+
+**One genuinely new code-level defect**, confirmed in source: the WhatsApp-only number
+`+91 84710 94125` is published sitewide as a voice contact — `tel:` links in
+`components/TopContactBar.tsx:77-82` and `components/sections/Contact.tsx:260-261`, a schema
+`ContactPoint` tagged `"customer service"` at `app/layout.tsx:171-176`, and as "Phone:" in
+`app/cookie-policy/page.tsx:149`. Structured `ContactPoint` data and `tel:` links are what
+citation aggregators harvest, so fix this **before** creating any directory listing.
+
+**SXO verdict — which battles are winnable** (read backwards from 10 live SERPs):
+- `[service] company in kanpur` → 7/7 and 8/9 results are single-agency service pages. The
+  Kanpur location pages are **already the correct shape**. Losing on tenure claims a 10-month
+  domain cannot out-argue. **Do not write more content at these pages.**
+- Generic `software company in kanpur` → 5/7 and 6/7 are listicles/directories. Four listicles
+  exist but **not the generic one** — the one ranking opportunity needing no links.
+- National head terms → 4/7 are Clutch/DesignRush/Dribbble. Directory-listing task, not content.
+
+**Confirmed fixed since Phase 8:** `REVIEW_URL` now points at `g.page/r/CSnAeGueeOXNEBM/review`
+(the direct write-review link, not the profile); "Get directions" live on the hub and all 7
+Kanpur leaf pages; `llms.txt` accurate with no build drift; fact consistency held across all 32
+pages (53 reviews, 5.0, 50+, 2024, all three prices) — the metric that drifted twice did not.
+
+**Also new:** zero content imagery sitewide — all 32 pages carry exactly 3 `<img>` tags (2 logos,
+1 tracking pixel). This is simultaneously the Images score, the largest GEO gap (multi-modal
+20/100), and a conversion problem for a business whose pitch is "come sit across the table".
+None of 100 FAQ answers reach the 134–167-word citation band (range 17–88, mean 46). Nine blog
+posts have no `og:image` and share one generic schema image.
+
+**Rejected / unchanged — do not re-fix:**
+1. No duplicate GTM tag. Re-confirmed a third time. A `gtm=` parameter in a `gtag/js` URL is
+   gtag.js's own version string.
+2. Do **not** add `AggregateRating`/`Review` schema. An agent flagged its absence as a gap; it
+   is a deliberate, correct decision — self-serving review markup is rich-result ineligible and
+   carries manual-action risk.
+3. The four listicles' scoring asymmetry is unchanged, not worse. Still owner-accepted. Do not
+   add `ItemList` markup until even-handedness is fixed, or it amplifies the exposure.
+
+**Could not be determined:** indexation and query data (needs Search Console); referring domains
+and DA/PA (needs a free Moz key); Clutch/GoodFirms/IndiaMART/JustDial/Sulekha status (Cloudflare
+and bot blocks — recorded as *unchecked*, not absent); real-user INP (too few interactions).
+
+**Fixed in code (all build-verified against `out/`):**
+
+| Finding | Fix |
+|---|---|
+| WhatsApp-only number published as a voice contact | Second `ContactPoint` deleted from `app/layout.tsx`; `tel:` links removed from `TopContactBar` and `Contact`; cookie-policy now labels it "WhatsApp:" not "Phone:". Every `wa.me` link untouched. Verified: zero `tel:+918471094125` in `out/`, exactly one `ContactPoint` |
+| `share.google` short link in `sameAs` + `hasMap` | Resolved the real place via the `g.page` review link → feature id `0x399c4769908507f9:0xcde5789e6b78c029` → **canonical `https://maps.google.com/?cid=14836397169245208617`** (verified 200). Swapped in 8 files / 10 occurrences; now on 73 output pages, zero `share.google` left |
+| `additionalType` carried 3 of the GBP's 4 categories | Added `Q9592701` (marketing agency) — **QID verified on Wikidata before use**, not guessed. All four GBP categories now mirrored |
+| `/locations/kanpur` breadcrumb had a phantom "Locations" step pointing at its own URL | Removed. There is no `/locations` hub page; the JSON-LD now mirrors the visible 2-step breadcrumb exactly |
+| 9 blog posts had no `og:image` | Added to all 9 with per-article `alt`. Stopgap asset is `/logo.webp` (already 1200×630) — real per-article cards are still the better fix and remain open |
+| No visible publish/update date in blog body text | Added to all 9 bylines as semantic `<time>`; the cost guide correctly renders its separate `UPDATED` date. Verified with a real HTML parser: renders as `datetime` (React emits `dateTime`, which HTML parsing lowercases — checked, not assumed) |
+| `StickyCTA` dismiss button ~28×28px | Now 44×44 via flex centring; the icon stays 16px so the look is unchanged |
+| Sub-page WhatsApp CTA was a plain ghost pill vs the homepage's green branded one | `PageHero` now uses `btn-pill btn-wa` with the WhatsApp mark, matching the homepage across ~20 pages |
+| Homepage H1 extracted as `launchin` across the `<br />` | Added `{' '}` before the break. Extraction now reads "Idea to launch in three weeks." The rest of the run-together string was a **naive-extractor artifact, not a defect** — the rendered HTML always had real space text nodes between the word spans |
+| 5 blog posts were near-orphans (1 inbound link, `/blog` index only) | Contextual in-body links added from 9 topically matched pages. **All five went 1 → 3 inbound**, now linked from the service and Kanpur pages that target the same query cluster |
+
+**Deliberately NOT done, with reasons:**
+
+- **LinkedIn `sameAs` swap held back.** The Company Page exists, but fetching it live confirmed
+  it says **"Founded: 2025"** (site says 2024) and lists **Bangalore** as a second location.
+  Pointing Google's entity resolver at a document asserting facts the site contradicts is worse
+  than the weaker personal-profile link. `app/layout.tsx` carries the swap instruction inline —
+  **change that one line once the platform text is fixed.**
+- **FAQ answer expansion not attempted.** All 100 answers are 17–88 words against a 134–167-word
+  citation band. Expanding them rewrites customer-facing claims and each answer must stay verbatim
+  in both the visible copy and the `FAQPage` schema. That is the owner's voice and the owner's
+  claims to make, not a mechanical fix.
+- **No imagery added** — needs real photographs that do not exist yet.
+
+**Note:** `npm run build` runs a `postbuild` IndexNow submission, so both builds this session
+pushed the 32 URLs to IndexNow (HTTP 200). Harmless — the URL set is unchanged — but it is an
+outward-facing side effect of building.
+
+**Artifacts:** `verelios.com-audit-2026-08-30/` — `FULL-AUDIT-REPORT.md`, `ACTION-PLAN.md`,
+`audit-data.json`, 13 per-specialist findings, rendered HTML for all 32 pages, 20 screenshots,
+60 raw performance captures. PDF generation unavailable (WeasyPrint needs pango/cairo system
+libs, not installed). Report also published as an artifact for sharing.
+
 ## Data models / storage
 None — static content. Contact form posts out (no DB writes on this site).
 

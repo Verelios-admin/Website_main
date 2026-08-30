@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Best ERP Software Companies in Kanpur' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -78,7 +79,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-07-17">17 July 2026</time></p>
               <p>
                 Kanpur&apos;s economy runs on leather, textiles, engineering, FMCG, chemicals and trade — and the units that stay in control of stock, production and month-end accounts almost always run on a proper ERP rather than a pile of spreadsheets. Choosing the right ERP company locally is a big decision. Here&apos;s an honest roundup for 2026.
               </p>

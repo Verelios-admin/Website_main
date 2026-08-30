@@ -203,6 +203,10 @@ export default function ERPPage() {
                 Based in Kanpur? See our dedicated <a href="/locations/kanpur/erp-software">ERP software company in Kanpur</a> page — we build manufacturing, leather, textile and trading ERP for local units and can visit your shop floor.
               </p>
 
+              <p>
+                Looking at other vendors too? See our comparison of the <a href="/blog/best-erp-software-companies-kanpur-2026">best ERP software companies in Kanpur</a>, including the off-the-shelf systems worth considering before a custom build.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What is custom ERP software and how is it different from SAP or Tally?</h3>
               <p>

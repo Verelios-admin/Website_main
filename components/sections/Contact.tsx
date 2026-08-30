@@ -10,7 +10,7 @@ import { LocalMap } from '@/components/sub-page/LocalMap';
 
 // Google Business Profile — the "read our Google reviews" link + map tie the
 // homepage to the verified GBP listing (entity + local-trust signal).
-const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 const COUNTRY_CODES = [
   { code: '+91',  flag: '\u{1F1EE}\u{1F1F3}', country: 'IN' },
@@ -253,12 +253,11 @@ export function Contact() {
               >
                 Phone (IN)
               </div>
+              {/* One number under "Phone". The WhatsApp line (+91 84710 94125) is
+                  reachable through the wa.me button above and is deliberately not
+                  offered here as a call. */}
               <a href="tel:+918299522798" style={{ color: '#fff', fontSize: 16, textDecoration: 'none' }}>
                 +91 82995 22798
-              </a>
-              <br />
-              <a href="tel:+918471094125" style={{ color: '#fff', fontSize: 16, textDecoration: 'none' }}>
-                +91 84710 94125
               </a>
             </div>
             <div>

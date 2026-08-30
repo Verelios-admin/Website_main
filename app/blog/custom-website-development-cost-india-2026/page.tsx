@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Custom Website Development Cost in India' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -88,7 +89,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time> · Updated <time dateTime="2026-06-13">13 June 2026</time></p>
               <p>
                 The honest short answer: a <strong>custom website in India in 2026 costs between ₹15,000 and ₹5,00,000+</strong>, depending on what&apos;s on the page and what&apos;s behind it. The longer answer — which is what most founders actually need — is below.
               </p>
@@ -224,7 +225,7 @@ export default function Post() {
                 <li><strong>They refuse to give a fixed quote.</strong> "Time and materials" is fine for very large projects, but on websites under ₹3 lakh it usually means the price will inflate.</li>
                 <li><strong>They quote in hours, not deliverables.</strong> You don&apos;t want to pay for hours — you want to pay for a website.</li>
                 <li><strong>They charge "consulting fees" before showing any work.</strong> A reputable agency will give you a free 15-minute scoping call and a free mockup.</li>
-                <li><strong>They don&apos;t commit to a delivery date.</strong> Vague timelines = projects that drag for months.</li>
+                <li><strong>They don&apos;t commit to a delivery date.</strong> Vague timelines = projects that drag for months. Ask any agency to walk you through their actual schedule — here is <a href="/blog/how-we-ship-websites-in-3-weeks">how we ship a website in three weeks</a>, week by week, so you can hold ours to it.</li>
                 <li><strong>They don&apos;t let you own the code.</strong> If the contract doesn&apos;t explicitly transfer IP to you, walk away.</li>
               </ul>
 

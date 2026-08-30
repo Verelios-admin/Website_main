@@ -134,8 +134,23 @@ export const metadata: Metadata = {
 
 // Google Business Profile — included in Organization sameAs so Google ties this
 // website entity to the verified GBP listing (strongest entity/local signal).
-const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
+// Google builds ONE entity out of every profile listed here, so a sameAs target
+// that contradicts the NAP above actively works against the local signal.
+//
+// Verified live 2026-08-30: the LinkedIn Company Page
+// (https://www.linkedin.com/company/verelios-labs) now exists — but it says
+// "Founded: 2025" against this site's 2024, and lists Bangalore as a second
+// location. The Facebook Page title reads "VereliosLabs | Bangalore" and the
+// Instagram bio says "Offices in Bangalore (HSR Layout) and Kanpur". There is one
+// office, in Govind Nagar; the Bangalore claim was removed from this site in
+// Phase 7 and was never corrected on the platforms.
+//
+// SWAP THE LINKEDIN URL BELOW to the Company Page once its text is fixed. A
+// Company Page is the stronger entity signal than a personal profile, but only
+// once it stops asserting a founding year and an office the business doesn't have.
+// Fix the platforms first, then change this one line.
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
@@ -159,18 +174,15 @@ const orgJsonLd = {
   image: `${SITE_URL}/logo.webp`,
   description:
     'Software agency in Govind Nagar, Kanpur — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment, no upfront cost.',
+  // ONE ContactPoint only. +91 84710 94125 is the WhatsApp line and must never
+  // be published as a voice contact: ContactPoint and tel: links are exactly what
+  // citation aggregators harvest, and a second number fragments NAP consistency
+  // across the directory listings. WhatsApp is reachable via wa.me links only.
   contactPoint: [
     {
       '@type': 'ContactPoint',
       telephone: '+91-8299522798',
       contactType: 'sales',
-      areaServed: 'IN',
-      availableLanguage: ['English', 'Hindi'],
-    },
-    {
-      '@type': 'ContactPoint',
-      telephone: '+91-8471094125',
-      contactType: 'customer service',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi'],
     },

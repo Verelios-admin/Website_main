@@ -196,6 +196,10 @@ export default function WebsiteDevelopmentPage() {
                 Based in Kanpur and want to meet in person? See our dedicated <a href="/locations/kanpur/website-development">website development company in Kanpur</a> page — we&apos;re a real team in Govind Nagar you can sit across from.
               </p>
 
+              <p>
+                Two things worth reading before you choose anyone: our comparison of the <a href="/blog/best-website-development-companies-kanpur-2026">best website development companies in Kanpur</a>, and a walkthrough of <a href="/blog/how-we-ship-websites-in-3-weeks">how we actually ship a website in three weeks</a> so you can judge the timeline for yourself.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does custom website development cost in India?</h3>
               <p>

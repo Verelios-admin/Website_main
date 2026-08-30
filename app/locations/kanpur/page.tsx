@@ -11,7 +11,7 @@ const SITE = 'https://www.verelios.com';
 
 // Verelios Labs' Google Business Profile — used for the "view on Google" link
 // and as a sameAs signal in the LocalBusiness structured data.
-const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
@@ -82,7 +82,7 @@ const localBusinessJsonLd = {
     latitude: 26.447437,
     longitude: 80.306051,
   },
-  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
+  hasMap: 'https://maps.google.com/?cid=14836397169245208617',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -123,10 +123,12 @@ const localBusinessJsonLd = {
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
+  // Two steps, mirroring the visible breadcrumb exactly. There used to be a
+  // "Locations" step between them pointing at this same URL — there is no
+  // /locations hub page, so it was a phantom level that duplicated its own child.
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations/kanpur` },
-    { '@type': 'ListItem', position: 3, name: 'Kanpur', item: `${SITE}${URL_PATH}` },
+    { '@type': 'ListItem', position: 2, name: 'Kanpur', item: `${SITE}${URL_PATH}` },
   ],
 };
 

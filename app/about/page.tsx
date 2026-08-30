@@ -7,7 +7,7 @@ import { LOCAL_BUSINESS_REF } from '@/lib/schema';
 
 const URL_PATH = '/about';
 const SITE = 'https://www.verelios.com';
-const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 export const metadata: Metadata = {
   title: 'About Us — Kanpur Software Team',

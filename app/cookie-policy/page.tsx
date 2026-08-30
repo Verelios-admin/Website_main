@@ -146,7 +146,8 @@ export default function CookiePolicyPage() {
             </h2>
             <p>
               Verelios Labs<br />
-              Phone: +91 8299522798, +91 8471094125<br />
+              Phone: +91 8299522798<br />
+              WhatsApp: +91 8471094125<br />
               Email:{" "}
               <a
                 href="mailto:contact@verelios.com"

@@ -2,7 +2,7 @@ import { Prose } from '@/components/sub-page/Prose';
 
 // Verelios Labs' Google Business Profile — used for the "view on Google" link
 // and as a sameAs signal in the LocalBusiness structured data.
-export const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+export const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 /**
  * Where "leave a review" points.

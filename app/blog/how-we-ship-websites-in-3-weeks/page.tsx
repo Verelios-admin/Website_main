@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — How We Ship Websites in Three Weeks' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -82,7 +83,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time></p>
               <p>
                 Most agencies in India take 8–12 weeks to build a custom website. We average 14–21 days. Same scope, same quality, same React + Next.js stack. The difference isn&apos;t speed of typing — it&apos;s the process.
               </p>

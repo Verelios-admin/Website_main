@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — AI Chatbots for Business in India' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -82,7 +83,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-06-26">26 June 2026</time></p>
               <p>
                 Every business owner has been pitched an AI chatbot in the last year. Some need one; many don&apos;t. The difference comes down to whether you&apos;re answering the same questions over and over, and losing customers when you&apos;re slow to reply. Here&apos;s an honest look at what a modern chatbot does, what it costs, and how to decide. A chatbot is just one slice of the bigger picture &mdash; for everything else worth automating, see our broader <a href="/blog/ai-automation-for-indian-businesses-2026">guide to AI automation for Indian businesses</a>.
               </p>

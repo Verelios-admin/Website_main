@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 // Verelios Labs' Google Business Profile — added to sameAs so Google can tie
 // this website entity to the verified GBP listing (strongest entity signal).
-const GBP_URL = 'https://share.google/fLuxTG3N5HVlEGhge';
+const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
 const SOCIAL_LINKS = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
@@ -82,7 +82,7 @@ const localBusinessJsonLd = {
     latitude: 26.447437,
     longitude: 80.306051,
   },
-  hasMap: 'https://share.google/fLuxTG3N5HVlEGhge',
+  hasMap: 'https://maps.google.com/?cid=14836397169245208617',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -105,11 +105,13 @@ const localBusinessJsonLd = {
   // Mirrors the four categories on the verified Google Business Profile —
   // Software company (primary), Web Designer, Marketing agency and Internet
   // marketing service. Declaring them here means the entity Google builds from
-  // the site agrees with the entity it builds from the GBP.
+  // the site agrees with the entity it builds from the GBP. Order follows the
+  // GBP, primary category first.
   additionalType: [
-    'https://www.wikidata.org/wiki/Q1058914',  // software company
-    'https://www.wikidata.org/wiki/Q1141149',  // web design
-    'https://www.wikidata.org/wiki/Q5266500',  // digital marketing
+    'https://www.wikidata.org/wiki/Q1058914',  // software company        → GBP "Software company" (primary)
+    'https://www.wikidata.org/wiki/Q1141149',  // web design              → GBP "Web Designer"
+    'https://www.wikidata.org/wiki/Q9592701',  // marketing agency        → GBP "Marketing agency"
+    'https://www.wikidata.org/wiki/Q5266500',  // digital marketing       → GBP "Internet marketing service"
   ],
   areaServed: [
     // Home base — Kanpur + Uttar Pradesh. Only Kanpur is a physical location; the

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'en_IN',
     siteName: 'Verelios Labs',
+    images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Best Website Development Companies in Kanpur' }],
     publishedTime: `${PUBLISHED}T00:00:00.000Z`,
   },
 };
@@ -78,7 +79,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs</p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-07-17">17 July 2026</time></p>
               <p>
                 Kanpur has a healthy crop of website development companies in 2026 — from decade-old IT firms to newer, engineering-first studios. This roundup covers the ones we think are genuinely worth talking to, what each is known for, and the questions that separate a good partner from a cheap one.
               </p>
