@@ -14,7 +14,7 @@ const PUBLISHED = '2026-05-26';
 // dateModified, so the post claimed it had not changed since May — on a pricing
 // guide, where recency is the whole value proposition, that undersells it.
 // Bump this whenever the numbers or the argument change; leave PUBLISHED alone.
-const UPDATED = '2026-06-13';
+const UPDATED = '2026-08-30';
 
 export const metadata: Metadata = {
   title: 'Website Development Cost in India (2026)',
@@ -89,22 +89,45 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time> · Updated <time dateTime="2026-06-13">13 June 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time> · Updated <time dateTime="2026-08-30">30 August 2026</time></p>
               <p>
                 The honest short answer: a <strong>custom website in India in 2026 costs between ₹15,000 and ₹5,00,000+</strong>, depending on what&apos;s on the page and what&apos;s behind it. The longer answer — which is what most founders actually need — is below.
               </p>
 
-              <div className="callout">
-                <p>
-                  <strong>TL;DR ranges (2026 prices):</strong>
-                </p>
-                <ul>
-                  <li><strong>Simple business website (5–8 pages):</strong> ₹15,000 – ₹50,000</li>
-                  <li><strong>E-commerce store:</strong> ₹50,000 – ₹2,00,000</li>
-                  <li><strong>Real estate / listings platform:</strong> ₹75,000 – ₹3,00,000</li>
-                  <li><strong>Custom SaaS / web app:</strong> ₹1,50,000 – ₹6,00,000+</li>
-                  <li><strong>News / editorial platform:</strong> ₹50,000 – ₹2,50,000</li>
-                </ul>
+              <p><strong>The ranges, by project type (2026 prices):</strong></p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Project type</th><th>Typical range</th><th>What drives it to the top of the range</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Simple business website</td>
+                      <td className="price">₹15,000 – ₹50,000</td>
+                      <td>Custom design rather than a theme; 5–8 unique screens instead of 3</td>
+                    </tr>
+                    <tr>
+                      <td>E-commerce store</td>
+                      <td className="price">₹50,000 – ₹2,00,000</td>
+                      <td>Payment gateway, inventory, order management and a real admin panel</td>
+                    </tr>
+                    <tr>
+                      <td>Real estate / listings</td>
+                      <td className="price">₹75,000 – ₹3,00,000</td>
+                      <td>Search and filtering, map integration, per-listing pages, enquiry routing</td>
+                    </tr>
+                    <tr>
+                      <td>News / editorial</td>
+                      <td className="price">₹50,000 – ₹2,50,000</td>
+                      <td>A CMS your team can actually use, plus ad slots and reader-engagement tooling</td>
+                    </tr>
+                    <tr>
+                      <td>Custom SaaS / web app</td>
+                      <td className="price">₹1,50,000 – ₹6,00,000+</td>
+                      <td>User accounts, dashboards, permissions, billing, and a backend built from scratch</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               <h2>What you actually pay for</h2>
@@ -208,13 +231,13 @@ export default function Post() {
 
               <h2>What we charge (and why)</h2>
               <p>
-                At Verelios Labs, our base website tier starts at <strong>₹49,999</strong> for a 5-page custom-coded site. That isn&apos;t a template you could buy for ₹10,000 — it&apos;s a hand-built, conversion-focused site that ships in 7–14 days, is engineered to load fast and rank, and is yours to own outright. We&apos;ve built ~50 sites on the same stack (Next.js, Tailwind, Vercel), so we move fast without cutting corners.
+                At Verelios Labs, our base website tier starts at <strong>₹49,999</strong> for a 5-page custom-coded site. That isn&apos;t a template you could buy for ₹10,000 — it&apos;s a hand-built, conversion-focused site that ships in 7–14 days, is engineered to load fast and rank, and is yours to own outright. We have built 50+ projects on the same stack (Next.js, Tailwind, Vercel), so we move fast without cutting corners.
               </p>
               <p>
                 We price on the outcome and the speed, not on hours — and we don&apos;t compete on being the cheapest. If a quote sounds too good to be true, it usually means a templated build, surprise add-ons later, or code you never actually own.
               </p>
               <p>
-                For bigger projects (e-commerce, real estate, custom platforms) we charge between <strong>₹1,00,000 and ₹3,00,000+</strong> with a fixed quote up-front and milestone payments. See <a href="/services/website-development">our website development page</a> for the full breakdown, or <a href="/#contact">request a quote</a> directly.
+                For bigger projects (e-commerce, real estate, custom platforms) we charge between <strong>₹1,00,000 and ₹3,00,000+</strong> with a fixed quote up-front and milestone payments. See <a href="/services/website-development">our website development page</a> for the full breakdown, or <a href="#enquire">request a quote</a> directly.
               </p>
 
               <h2>How to spot agencies that will overcharge you</h2>
@@ -247,7 +270,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Want a fixed quote for your project?</strong> Send us a two-line message describing what you want to build. We&apos;ll send a free 48-hour mockup and a written quote — no commitment, no upfront payment. <a href="/#contact">Start here</a>.
+                <strong>Want a fixed quote for your project?</strong> Send us a two-line message describing what you want to build. We&apos;ll send a free 48-hour mockup and a written quote — no commitment, no upfront payment. <a href="#enquire">Start here</a>.
               </p>
             </Prose>
           </div>

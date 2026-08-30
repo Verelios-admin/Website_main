@@ -185,7 +185,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Curious what AI could do for your business?</strong> Explore <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link>, our full <Link href="/locations/kanpur">software services in Kanpur</Link>, or <Link href="/#contact">send a two-line message</Link> for a free proof-of-concept.
+                <strong>Curious what AI could do for your business?</strong> Explore <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link>, our full <Link href="/locations/kanpur">software services in Kanpur</Link>, or <a href="#enquire">send a two-line message</a> for a free proof-of-concept.
               </p>
             </Prose>
           </div>

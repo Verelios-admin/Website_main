@@ -9,6 +9,10 @@ const SLUG = 'how-we-ship-websites-in-3-weeks';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
+// Bump whenever the substance changes; leave PUBLISHED alone. Content under
+// three months old is materially more likely to be cited, so a stale dateModified
+// on a still-accurate guide costs visibility for no reason.
+const UPDATED = '2026-08-30';
 
 export const metadata: Metadata = {
   title: 'Custom Website Development in Under 3 Weeks',
@@ -36,7 +40,7 @@ const articleJsonLd = {
   description:
     'The exact 21-day process Verelios Labs runs on every website project — tools, tight feedback loops, and the principle that "no" is a feature.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
-  dateModified: `${PUBLISHED}T00:00:00+05:30`,
+  dateModified: `${UPDATED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
   articleSection: 'Process',
@@ -83,7 +87,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time> · Updated <time dateTime="2026-08-30">30 August 2026</time></p>
               <p>
                 Most agencies in India take 8–12 weeks to build a custom website. We average 14–21 days. Same scope, same quality, same React + Next.js stack. The difference isn&apos;t speed of typing — it&apos;s the process.
               </p>
@@ -92,6 +96,56 @@ export default function Post() {
               </p>
 
               <h2>The 21-day timeline</h2>
+              <p>
+                The whole schedule on one screen, before the detail. Every stage below has a named
+                deliverable and a decision you make — there is no week where the site is simply
+                &ldquo;in progress&rdquo; and you are waiting to hear back.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Days</th><th>Stage</th><th>What you get</th><th>What you do</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Day 1</td>
+                      <td>Scoping call</td>
+                      <td>Free 15-minute call, then a one-pager listing every page and what each is for</td>
+                      <td>Answer three questions: what the business does, who visits, what one action they should take</td>
+                    </tr>
+                    <tr>
+                      <td>Day 2–3</td>
+                      <td>Mockup</td>
+                      <td>Free 48-hour homepage design in Figma — real copy, real layout, no placeholder text</td>
+                      <td>Approve, or ask for changes. Usually 1–2 rounds</td>
+                    </tr>
+                    <tr>
+                      <td>Day 4–14</td>
+                      <td>Build</td>
+                      <td>Staging site on a public Vercel URL, plus a 30-second walkthrough video each day</td>
+                      <td>Sign off daily, or send a screenshot with arrows on it</td>
+                    </tr>
+                    <tr>
+                      <td>Day 15–18</td>
+                      <td>Review &amp; content</td>
+                      <td>Final review pass and your real content loaded in</td>
+                      <td>Supply remaining copy and images; final sign-off</td>
+                    </tr>
+                    <tr>
+                      <td>Day 19</td>
+                      <td>Launch</td>
+                      <td>Site live on your domain</td>
+                      <td>Nothing — this one is on us</td>
+                    </tr>
+                    <tr>
+                      <td>Day 20–26</td>
+                      <td>Post-launch</td>
+                      <td>Free support window for the fixes that only surface once real visitors arrive</td>
+                      <td>Tell us what you find</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <h3>Day 1 — free 15-minute scoping call</h3>
               <p>
                 Almost always on WhatsApp or Google Meet. We ask three things: <strong>what does the business do</strong>, <strong>who is the visitor</strong>, and <strong>what one action do you want them to take</strong>. We turn that into a one-pager listing every page on the site and what each page is for.
@@ -194,7 +248,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>If you&apos;re scoping a website project</strong> — send us a two-line description. We&apos;ll come back in 48 hours with a free mockup, a fixed quote, and a delivery date. <a href="/#contact">Start here</a>.
+                <strong>If you&apos;re scoping a website project</strong> — send us a two-line description. We&apos;ll come back in 48 hours with a free mockup, a fixed quote, and a delivery date. <a href="#enquire">Start here</a>.
               </p>
             </Prose>
           </div>

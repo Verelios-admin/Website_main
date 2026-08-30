@@ -190,7 +190,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Thinking about an ERP?</strong> Explore <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link>, our national <Link href="/services/erp">custom ERP</Link> capability, or <Link href="/#contact">send a two-line message</Link> for a free consultation.
+                <strong>Thinking about an ERP?</strong> Explore <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link>, our national <Link href="/services/erp">custom ERP</Link> capability, or <a href="#enquire">send a two-line message</a> for a free consultation.
               </p>
             </Prose>
           </div>

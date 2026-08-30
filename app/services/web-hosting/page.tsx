@@ -187,7 +187,7 @@ export default function WebHostingPage() {
 
               <h2>Pricing for managed hosting &amp; maintenance in India</h2>
               <p>
-                We quote per project rather than selling one-size-fits-all plans, because a simple business site and a high-traffic store have very different needs. The monthly figure depends on your traffic, how many sites or apps you run, and how much maintenance you want included. <a href="/#contact">Tell us your setup</a> and we&apos;ll send a clear monthly price with no hidden charges.
+                We quote per project rather than selling one-size-fits-all plans, because a simple business site and a high-traffic store have very different needs. The monthly figure depends on your traffic, how many sites or apps you run, and how much maintenance you want included. <a href="#enquire">Tell us your setup</a> and we&apos;ll send a clear monthly price with no hidden charges.
               </p>
 
               <h2>Frequently asked questions</h2>

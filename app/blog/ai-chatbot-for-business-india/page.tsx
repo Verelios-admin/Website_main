@@ -230,7 +230,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Wondering if a chatbot is right for your business?</strong> Tell us the questions your team answers most, and we&apos;ll tell you honestly whether a bot helps — and what it would cost. <a href="/services/ai-automation">See our AI automation work</a> or <a href="/#contact">send us a two-line message</a>.
+                <strong>Wondering if a chatbot is right for your business?</strong> Tell us the questions your team answers most, and we&apos;ll tell you honestly whether a bot helps — and what it would cost. <a href="/services/ai-automation">See our AI automation work</a> or <a href="#enquire">send us a two-line message</a>.
               </p>
             </Prose>
           </div>

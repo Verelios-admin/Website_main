@@ -207,7 +207,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Not sure what to automate first?</strong> Tell us about one task your team repeats every day and we&apos;ll come back with a free plan of how to automate it and a fixed quote. <a href="/services/ai-automation">See how our AI automation work runs</a>, or <a href="/#contact">send us a two-line message</a>.
+                <strong>Not sure what to automate first?</strong> Tell us about one task your team repeats every day and we&apos;ll come back with a free plan of how to automate it and a fixed quote. <a href="/services/ai-automation">See how our AI automation work runs</a>, or <a href="#enquire">send us a two-line message</a>.
               </p>
             </Prose>
           </div>

@@ -185,7 +185,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Want to see what we&apos;d build for you?</strong> Explore <Link href="/locations/kanpur/website-development">website development in Kanpur</Link>, our other <Link href="/locations/kanpur">software services in Kanpur</Link>, or <Link href="/#contact">send a two-line message</Link> for a free 48-hour mockup.
+                <strong>Want to see what we&apos;d build for you?</strong> Explore <Link href="/locations/kanpur/website-development">website development in Kanpur</Link>, our other <Link href="/locations/kanpur">software services in Kanpur</Link>, or <a href="#enquire">send a two-line message</a> for a free 48-hour mockup.
               </p>
             </Prose>
           </div>

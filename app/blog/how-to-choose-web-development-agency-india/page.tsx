@@ -9,6 +9,10 @@ const SLUG = 'how-to-choose-web-development-agency-india';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-05-26';
+// Bump whenever the substance changes; leave PUBLISHED alone. Content under
+// three months old is materially more likely to be cited, so a stale dateModified
+// on a still-accurate guide costs visibility for no reason.
+const UPDATED = '2026-08-30';
 
 export const metadata: Metadata = {
   title: 'How to Choose a Web Development Agency',
@@ -36,7 +40,7 @@ const articleJsonLd = {
   description:
     'Ten questions that separate good agencies from cheap ones. The red flags, the green flags, and the trade-offs that matter.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
-  dateModified: `${PUBLISHED}T00:00:00+05:30`,
+  dateModified: `${UPDATED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
   articleSection: 'Hiring',
@@ -83,7 +87,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-05-26">26 May 2026</time> · Updated <time dateTime="2026-08-30">30 August 2026</time></p>
               <p>
                 There are hundreds of agencies in India that will build you a website. Picking the wrong one costs you 2–6 months of delay and 1.5–3× the price you actually should have paid — so it helps to know <a href="/blog/custom-website-development-cost-india-2026">what custom website development actually costs in India</a> before you start comparing quotes. Here are the questions that separate the ones who&apos;ll ship from the ones who won&apos;t.
               </p>
@@ -140,6 +144,57 @@ export default function Post() {
                 A good agency will happily connect you with 1–2 past clients for a 10-minute reference call. If they refuse — or only have written testimonials with no contact info — that&apos;s a red flag.
               </p>
 
+              <h2>The signals side by side</h2>
+              <p>
+                Before the detail, here is the short version — the things worth walking away over,
+                against the things worth paying more for. Each row is expanded in the two sections
+                that follow.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Area</th><th>Walk away if…</th><th>Pay more for…</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Before you commit</td>
+                      <td>They want free spec work, or design-then-decide</td>
+                      <td>A free 48-hour mockup with no commitment attached</td>
+                    </tr>
+                    <tr>
+                      <td>Pricing</td>
+                      <td>&ldquo;Lifetime maintenance free&rdquo;, or cash to avoid GST</td>
+                      <td>A fixed quote with milestone payments</td>
+                    </tr>
+                    <tr>
+                      <td>Paperwork</td>
+                      <td>No GST number on the invoice</td>
+                      <td>Post-launch support written into the contract</td>
+                    </tr>
+                    <tr>
+                      <td>Proof of work</td>
+                      <td>Portfolio links that do not load</td>
+                      <td>Experience with someone in your industry</td>
+                    </tr>
+                    <tr>
+                      <td>Visibility during the build</td>
+                      <td>You only see the site when it is finished</td>
+                      <td>A public preview link from day one and daily updates</td>
+                    </tr>
+                    <tr>
+                      <td>What you end up owning</td>
+                      <td>One person doing everything, with no handover plan</td>
+                      <td>Source code in your own GitHub from day one</td>
+                    </tr>
+                    <tr>
+                      <td>Quality bar</td>
+                      <td>No measurable standard offered</td>
+                      <td>PageSpeed scores included in the deliverable</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <h2>Red flags (run, don&apos;t walk)</h2>
               <ul>
                 <li><strong>"We&apos;ll send the design, then write code if you like it."</strong> No production-shipping agency works for free up front beyond a 1-hour scoping call + a small free mockup.</li>
@@ -195,7 +250,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>If you&apos;re currently shortlisting agencies</strong> — we hit every green flag on this list. <a href="/#contact">Send us a two-line message</a> and we&apos;ll show you a free 48-hour mockup, a fixed quote, and a delivery date. No commitment.
+                <strong>If you&apos;re currently shortlisting agencies</strong> — we hit every green flag on this list. <a href="#enquire">Send us a two-line message</a> and we&apos;ll show you a free 48-hour mockup, a fixed quote, and a delivery date. No commitment.
               </p>
             </Prose>
           </div>

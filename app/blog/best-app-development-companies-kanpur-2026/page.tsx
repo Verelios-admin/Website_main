@@ -185,7 +185,7 @@ export default function Post() {
               <hr />
 
               <p>
-                <strong>Thinking about an app?</strong> Explore <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link>, our full <Link href="/locations/kanpur">software services in Kanpur</Link>, or <Link href="/#contact">send a two-line message</Link> for a free 48-hour mockup.
+                <strong>Thinking about an app?</strong> Explore <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link>, our full <Link href="/locations/kanpur">software services in Kanpur</Link>, or <a href="#enquire">send a two-line message</a> for a free 48-hour mockup.
               </p>
             </Prose>
           </div>
