@@ -362,6 +362,61 @@ outward-facing side effect of building.
 60 raw performance captures. PDF generation unavailable (WeasyPrint needs pango/cairo system
 libs, not installed). Report also published as an artifact for sharing.
 
+### Phase 11 — GEO / AI-search pass ✓ COMPLETED 2026-08-30 (build-verified: 39 routes, tsc clean; deployed)
+
+A dedicated GEO analysis measured the **live** site. **Score 58/100** — deliberately lower than the
+65 the audit's GEO specialist reported earlier the same day, and the difference is method, not
+regression: that pass sampled the 100 FAQ answers, this one measured **every one of 2,344 text
+blocks across all 32 pages**.
+
+**The finding.** Of 2,344 blocks, exactly **one** fell in the 134–167 word range AI assistants
+preferentially quote, and **no block anywhere on the site exceeded 134 words** (median 9, mean 16.6).
+The facts were already specific and correct; they were just spread across short paragraphs, so an
+assistant had nothing self-contained to lift and attribute.
+
+**Fixed:** expanded the lead cost answer on the six highest-intent pages —
+`services/hrms-payroll-software` (64→148), `services/billing-inventory-software` (56→138),
+`services/website-development` (35→145), `services/erp` (54→144),
+`locations/kanpur/hrms-payroll-software` (55→138),
+`locations/kanpur/billing-inventory-software` (50→140). The two Kanpur pages and their national
+twins already rank #1 for their product queries, so they are where a citation is actually reachable.
+
+**No new claims were invented.** Every added sentence consolidates a fact already stated elsewhere
+on the same page; each page was grepped first for which of those facts it actually carries (source
+code / GitHub / hosting / 30-day support / Tally / GST / 48-hour mockup all differ by page).
+
+**Both surfaces updated together** — visible copy and `FAQPage` schema now match verbatim, verified
+against the built output at 100% similarity on all six. On `/services/erp` the two had **already
+drifted apart** before this change (schema listed the ERP modules, the visible paragraph did not),
+so that page's schema was rewritten from the visible answer rather than patched.
+
+Also named `OAI-SearchBot` explicitly in `robots.txt` — already allowed by the wildcard, but it is
+the crawler behind ChatGPT's *search citations* (GPTBot is the training crawler).
+
+**Measured effect on built output:** blocks in the 134–167 band **1 → 7**, longest block sitewide
+**134 → 148**, blocks over 100 words **15 → 21**.
+
+**Still open, in value order:** front-loading (the expanded answers sit in the FAQ at the page foot,
+not the first 30% where ~44% of citations originate); **zero `<table>` elements across all 32 pages**
+despite four comparison listicles and tiered pricing; zero content imagery or video (multi-modal
+scores 5/100, and YouTube is the single strongest citation correlate at ~0.737); `Person.sameAs` is
+absent; and a refresh cycle — 7 of 9 posts are under 90 days (~3x more citable) but two have crossed
+and the cost guide crosses 2026-09-11.
+
+**Recorded so it is not re-litigated:** `llms.txt` is accurate and byte-identical to the repo, but
+Google's own AI optimization guide states it is **ignored** by Google Search including AI features.
+Keep it for non-Google assistants; never count it as a Google lever. RSL 1.0 is absent and that is
+fine. No Wikipedia/Wikidata entity exists and **pursuing one is not worth it** — a 10-month-old
+local agency will not pass notability.
+
+**IndexNow was already fully working** under key `a3f8c1e9…` (file live, `postbuild` submits 32 URLs,
+HTTP 200 every build). Bing Webmaster Tools offers a key-generation button regardless of existing
+setup, so a second key (`10f6f0fd…`) was generated and correctly discarded — it was never needed.
+Bing's site property already spans the `www` hostname.
+
+**Artifact:** `verelios.com-audit-2026-08-30/GEO-ANALYSIS.md` — full 10-section analysis with
+platform-by-platform breakdown, crawler matrix, passage measurements and recency table.
+
 ## Data models / storage
 None — static content. Contact form posts out (no DB writes on this site).
 
