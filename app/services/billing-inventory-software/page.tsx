@@ -66,7 +66,7 @@ const faqJsonLd = {
       name: 'How much does custom billing and inventory software cost in India?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A single-location billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bill generation and Tally sync typically lands between ₹1,50,000 and ₹5,00,000 depending on the number of locations and integrations. It is a one-time build with a fixed quote and milestone payments (30/30/40), not a per-user monthly licence.',
+        text: 'A single-location billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bill generation and Tally sync typically lands between ₹1,50,000 and ₹5,00,000, depending on the number of locations and integrations. It is a one-time build with a fixed quote agreed before any code is written, paid in milestones of 30/30/40, not a per-user monthly licence that grows with every extra counter and every new hire. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account, and 30 days of support after go-live is included. GST-compliant invoicing, e-way bill generation and Tally synchronisation are built into the system rather than sold as add-on modules, so the quoted figure is the figure you actually pay.',
       },
     },
     {
@@ -194,7 +194,7 @@ export default function BillingInventorySoftwarePage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom billing and inventory software cost in India?</h3>
               <p>
-                A single-location billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bill generation and Tally sync typically lands between ₹1,50,000 and ₹5,00,000 depending on the number of locations and integrations. It is a one-time build with a fixed quote and milestone payments (30/30/40), not a per-user monthly licence.
+                A single-location billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bill generation and Tally sync typically lands between ₹1,50,000 and ₹5,00,000, depending on the number of locations and integrations. It is a one-time build with a fixed quote agreed before any code is written, paid in milestones of 30/30/40, not a per-user monthly licence that grows with every extra counter and every new hire. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account, and 30 days of support after go-live is included. GST-compliant invoicing, e-way bill generation and Tally synchronisation are built into the system rather than sold as add-on modules, so the quoted figure is the figure you actually pay.
               </p>
               <h3>Is the invoicing GST compliant, and does it generate e-way bills?</h3>
               <p>

@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'How much does HRMS and payroll software cost in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rosters, biometric integration, PF / ESI / TDS exports and employee self-service typically ranges from ₹2,00,000 to ₹6,00,000 depending on headcount rules. We scope it in person at your unit and give a fixed quote before any work begins.',
+        text: 'A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rosters, biometric integration, PF / ESI / TDS exports and employee self-service typically ranges from ₹2,00,000 to ₹6,00,000, depending on how many headcount rules it has to encode. Because we are based in Govind Nagar, we scope it in person at your unit — walking the floor, watching a shift change, reading the muster roll you actually keep — and give a fixed quote before any work begins. It is a one-time build rather than a per-employee monthly subscription, so the cost does not rise every time you hire someone new. You own the finished system outright, and it runs on your own hosting account rather than a shared database, which matters a great deal when the data inside it is salaries.',
       },
     },
     {
@@ -260,7 +260,7 @@ export default function KanpurHrmsPayrollPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does HRMS and payroll software cost in Kanpur?</h3>
               <p>
-                A focused HRMS covering attendance, leave and payslips starts at <strong>₹99,999</strong>. A full system adding shift rosters, biometric integration, PF / ESI / TDS exports and employee self-service typically ranges from <strong>₹2,00,000 to ₹6,00,000</strong> depending on headcount rules. We scope it in person at your unit and give a fixed quote before any work begins.
+                A focused HRMS covering attendance, leave and payslips starts at <strong>₹99,999</strong>. A full system adding shift rosters, biometric integration, PF / ESI / TDS exports and employee self-service typically ranges from <strong>₹2,00,000 to ₹6,00,000</strong>, depending on how many headcount rules it has to encode. Because we are based in Govind Nagar, we scope it in person at your unit — walking the floor, watching a shift change, reading the muster roll you actually keep — and give a fixed quote before any work begins. It is a one-time build rather than a per-employee monthly subscription, so the cost does not rise every time you hire someone new. You own the finished system outright, and it runs on your own hosting account rather than a shared database, which matters a great deal when the data inside it is salaries.
               </p>
               <h3>Can you connect it to our existing biometric machine?</h3>
               <p>

@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'How much does billing and inventory software cost in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A single-counter billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bills and Tally sync typically ranges from ₹1,50,000 to ₹5,00,000. We come to your shop or godown, watch how you bill today, and give a fixed quote before any work begins.',
+        text: 'A single-counter billing and stock system starts at ₹99,999. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bills and Tally sync typically ranges from ₹1,50,000 to ₹5,00,000, depending on how many locations you run. Because we are based in Govind Nagar, we come to your shop or godown, watch how you bill today, and give a fixed quote before any work begins. It is a one-time build rather than a per-user monthly licence, so adding a counter or a staff member does not raise the bill. GST-compliant invoicing, e-way bill generation and Tally synchronisation are built into the system rather than sold as add-ons. You own the finished software outright, and 30 days of support after go-live is included, because the real questions only arrive in the first genuinely busy week, not during the calm of a demo.',
       },
     },
     {
@@ -260,7 +260,7 @@ export default function KanpurBillingInventoryPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does billing and inventory software cost in Kanpur?</h3>
               <p>
-                A single-counter billing and stock system starts at <strong>₹99,999</strong>. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bills and Tally sync typically ranges from <strong>₹1,50,000 to ₹5,00,000</strong>. We come to your shop or godown, watch how you bill today, and give a fixed quote before any work begins.
+                A single-counter billing and stock system starts at <strong>₹99,999</strong>. Multi-godown inventory with batch and expiry tracking, barcode scanning, e-way bills and Tally sync typically ranges from <strong>₹1,50,000 to ₹5,00,000</strong>, depending on how many locations you run. Because we are based in Govind Nagar, we come to your shop or godown, watch how you bill today, and give a fixed quote before any work begins. It is a one-time build rather than a per-user monthly licence, so adding a counter or a staff member does not raise the bill. GST-compliant invoicing, e-way bill generation and Tally synchronisation are built into the system rather than sold as add-ons. You own the finished software outright, and 30 days of support after go-live is included, because the real questions only arrive in the first genuinely busy week, not during the calm of a demo.
               </p>
               <h3>Will it work with Tally, or do we have to leave it?</h3>
               <p>

@@ -21,6 +21,12 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+# OAI-SearchBot is the crawler behind ChatGPT's *search citations*; GPTBot above
+# is the training crawler. Both are allowed by the wildcard, but naming this one
+# explicitly keeps the intent clear.
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 

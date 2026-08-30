@@ -66,7 +66,7 @@ const faqJsonLd = {
       name: 'How much does custom HRMS and payroll software cost in India?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rostering, biometric integration, PF / ESI / TDS filing exports, employee self-service and reimbursement workflows typically lands between ₹2,00,000 and ₹6,00,000 depending on headcount rules and integrations. It is a one-time build with a fixed quote up front and milestone payments (30/30/40) — not a per-employee monthly subscription.',
+        text: 'A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rostering, biometric integration, PF / ESI / TDS filing exports, employee self-service and reimbursement workflows typically lands between ₹2,00,000 and ₹6,00,000, depending on how many headcount rules and integrations it has to encode. It is a one-time build with a fixed quote agreed before any code is written, paid in milestones of 30/30/40 — not a per-employee monthly subscription that grows every time you hire. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared multi-tenant database, and 30 days of support after go-live is included. Measured against a per-employee subscription, a custom build is usually cheaper by about year two, and it does not get more expensive as headcount grows.',
       },
     },
     {
@@ -196,7 +196,7 @@ export default function HrmsPayrollSoftwarePage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom HRMS and payroll software cost in India?</h3>
               <p>
-                A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rostering, biometric integration, PF / ESI / TDS filing exports, employee self-service and reimbursement workflows typically lands between ₹2,00,000 and ₹6,00,000 depending on headcount rules and integrations. It is a one-time build with a fixed quote up front and milestone payments (30/30/40) — not a per-employee monthly subscription.
+                A focused HRMS covering attendance, leave and payslips starts at ₹99,999. A full system adding shift rostering, biometric integration, PF / ESI / TDS filing exports, employee self-service and reimbursement workflows typically lands between ₹2,00,000 and ₹6,00,000, depending on how many headcount rules and integrations it has to encode. It is a one-time build with a fixed quote agreed before any code is written, paid in milestones of 30/30/40 — not a per-employee monthly subscription that grows every time you hire. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared multi-tenant database, and 30 days of support after go-live is included. Measured against a per-employee subscription, a custom build is usually cheaper by about year two, and it does not get more expensive as headcount grows.
               </p>
               <h3>Does the payroll software calculate PF, ESI, TDS and professional tax automatically?</h3>
               <p>

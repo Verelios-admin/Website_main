@@ -66,7 +66,7 @@ const faqJsonLd = {
       name: 'How much does custom website development cost in India?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A simple business website with 5 pages starts at ₹49,999. A more involved site (custom CMS, multilingual, complex search, payments) typically lands between ₹1,00,000 and ₹3,00,000. We quote each project after a 15-minute scoping call.',
+        text: 'A simple business website with five pages starts at ₹49,999. A more involved site — custom CMS, multilingual content, complex search or online payments — typically lands between ₹1,00,000 and ₹3,00,000. We quote each project after a 15-minute scoping call, and that quote is fixed before any work begins rather than billed by the hour. Most websites ship in 7 to 21 days: a static five-page site can be done in a week, while a custom e-commerce or property platform runs closer to four to six weeks. Before you commit to anything we build a free mockup within 48 hours, so you judge the actual design rather than a proposal document. Domain and hosting setup are handled for you, the first seven days after launch are free, and ongoing maintenance covering bug fixes, content updates, security patches and performance monitoring starts at ₹3,000 a month.',
       },
     },
     {
@@ -203,7 +203,7 @@ export default function WebsiteDevelopmentPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom website development cost in India?</h3>
               <p>
-                A simple business website with 5 pages starts at <strong>₹49,999</strong>. A more involved site (custom CMS, multilingual, complex search, payments) typically lands between <strong>₹1,00,000 and ₹3,00,000</strong>. We quote each project after a 15-minute scoping call.
+                A simple business website with five pages starts at <strong>₹49,999</strong>. A more involved site — custom CMS, multilingual content, complex search or online payments — typically lands between <strong>₹1,00,000 and ₹3,00,000</strong>. We quote each project after a 15-minute scoping call, and that quote is fixed before any work begins rather than billed by the hour. Most websites ship in 7 to 21 days: a static five-page site can be done in a week, while a custom e-commerce or property platform runs closer to four to six weeks. Before you commit to anything we build a free mockup within 48 hours, so you judge the actual design rather than a proposal document. Domain and hosting setup are handled for you, the first seven days after launch are free, and ongoing maintenance covering bug fixes, content updates, security patches and performance monitoring starts at ₹3,000 a month.
               </p>
               <h3>How long does it take to build a custom website?</h3>
               <p>
