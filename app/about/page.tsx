@@ -121,7 +121,7 @@ export default function AboutPage() {
                 Verelios Labs is a software studio at 126/58 G Block, Govind Nagar, Kanpur, Uttar
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
                 fifty projects — websites, mobile apps, e-commerce stores, custom ERP, billing and
-                payroll systems, and AI automation — for clients in Kanpur and across India, and we
+                CRM systems, and AI automation — for clients in Kanpur and across India, and we
                 hold a 5.0 rating from 53 reviews on our Google Business Profile. Nine of them are
                 listed further down this page, seven with a live link you can open right now. We
                 deliberately publish only the handful we can point you at: the rest are under NDA,

@@ -22,12 +22,12 @@ const SOCIAL_LINKS = [
 export const metadata: Metadata = {
   title: 'Software Company in Kanpur — Web, App & ERP',
   description:
-    'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP & payroll software. Free 48-hour mockup. Rated 5.0★.',
+    'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP, CRM & billing software. Free 48-hour mockup. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
-    title: 'Software Company in Kanpur — Web, App, ERP & Payroll | Verelios Labs',
+    title: 'Software Company in Kanpur — Web, App, ERP & CRM | Verelios Labs',
     description:
-      'Websites, mobile apps, custom ERP and payroll software built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. Rated 5.0★.',
+      'Websites, mobile apps, custom ERP, CRM and billing software built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. Rated 5.0★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -98,7 +98,7 @@ const localBusinessJsonLd = {
   image: `${SITE}/logo.webp`,
   logo: `${SITE}/logo.webp`,
   description:
-    'Software company in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP and payroll software for businesses across Kanpur and India. Free 48-hour mockup, milestone-based payment.',
+    'Software company in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP, CRM and billing software for businesses across Kanpur and India. Free 48-hour mockup, milestone-based payment.',
   areaServed: [
     { '@type': 'City', name: 'Kanpur' },
     { '@type': 'Place', name: 'Govind Nagar, Kanpur' },
@@ -150,15 +150,15 @@ const faqJsonLd = {
       name: 'What software services do you offer in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We build websites, e-commerce stores, mobile apps, custom software, ERP systems, HRMS and payroll software, GST billing and inventory software, CRM systems and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.',
+        text: 'We build websites, e-commerce stores, mobile apps, custom software, ERP systems, GST billing and inventory software, CRM systems and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do you build ERP and payroll software for Kanpur businesses?',
+      name: 'Do you build ERP software for Kanpur businesses?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We build custom ERP software — inventory, manufacturing, accounting and reporting — and HR & payroll systems with attendance, salary structures, payslips and PF / ESI / TDS calculations, tailored to how your Kanpur business actually runs. It integrates with Tally and the GST portal.',
+        text: 'Yes. We build custom ERP software — inventory, manufacturing, purchase, sales, accounting and reporting — tailored to how your Kanpur business actually runs. It integrates with Tally and the GST portal.',
       },
     },
     {
@@ -185,7 +185,6 @@ const LOCAL_SERVICES = [
   { title: 'Mobile app development in Kanpur', desc: 'iOS & Android apps from one codebase, shipped to both stores in 3–5 weeks.', href: '/locations/kanpur/mobile-app-development' },
   { title: 'AI development in Kanpur', desc: 'AI agents, chatbots, machine learning and workflow automation that take busywork off your team.', href: '/locations/kanpur/ai-development' },
   { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
-  { title: 'HRMS & payroll software in Kanpur', desc: 'Biometric attendance, shifts, payslips and automatic PF / ESI / TDS — including contract and piece-rate workers.', href: '/locations/kanpur/hrms-payroll-software' },
   { title: 'Billing & inventory software in Kanpur', desc: 'Fast GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops.', href: '/locations/kanpur/billing-inventory-software' },
   { title: 'CRM software in Kanpur', desc: 'Leads, pipeline, quotations, WhatsApp and field sales in one system. One-time build from ₹99,999, not per user per month.', href: '/locations/kanpur/crm-software-development' },
   { title: 'Web hosting & maintenance', desc: 'Managed hosting with 99.9% uptime, backups, SSL and a human on WhatsApp.', href: '/services/web-hosting' },
@@ -207,7 +206,7 @@ export default function KanpurLocationPage() {
           eyebrow="Software company · Kanpur"
           title="A software company in Kanpur"
           highlight="you can actually sit across from."
-          lead="Verelios Labs is a software company based in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP and HR & payroll software for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. Rated 5.0★ by our clients."
+          lead="Verelios Labs is a software company based in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP, CRM and billing software for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. Rated 5.0★ by our clients."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Kanpur', href: URL_PATH },
@@ -389,9 +388,9 @@ export default function KanpurLocationPage() {
             </div>
 
             <Prose>
-              <h2>ERP &amp; payroll software, built in Kanpur</h2>
+              <h2>ERP software, built in Kanpur</h2>
               <p>
-                A lot of Kanpur businesses — especially in manufacturing, leather, textiles, trading and distribution — are still run on a patchwork of Tally, Excel and registers. We build <a href="/locations/kanpur/erp-software">custom ERP software in Kanpur</a> that pulls inventory, production, purchase, sales, accounting and reporting into one system that matches how you actually work. Add <strong>HR &amp; payroll</strong> — attendance, salary structures, payslips, and PF / ESI / TDS calculations — and month-end stops being a week-long spreadsheet marathon. It integrates cleanly with Tally and the GST portal, so your CA&apos;s workflow doesn&apos;t change.
+                A lot of Kanpur businesses — especially in manufacturing, leather, textiles, trading and distribution — are still run on a patchwork of Tally, Excel and registers. We build <a href="/locations/kanpur/erp-software">custom ERP software in Kanpur</a> that pulls inventory, production, purchase, sales, accounting and reporting into one system that matches how you actually work. Month-end stops being a week-long spreadsheet marathon, and it integrates cleanly with Tally and the GST portal, so your CA&apos;s workflow doesn&apos;t change.
               </p>
 
               <h2>Areas we serve across Kanpur</h2>
@@ -430,11 +429,11 @@ export default function KanpurLocationPage() {
               </p>
               <h3>What software services do you offer in Kanpur?</h3>
               <p>
-                We build websites, mobile apps, custom software, ERP systems, HR &amp; payroll software, and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.
+                We build websites, mobile apps, custom software, ERP systems, CRM and billing software, and AI automation for Kanpur businesses — plus managed web hosting and maintenance. Everything is custom-built on a modern stack (React, Next.js, Node.js, TypeScript) and you own the code.
               </p>
-              <h3>Do you build ERP and payroll software for Kanpur businesses?</h3>
+              <h3>Do you build ERP software for Kanpur businesses?</h3>
               <p>
-                Yes. We build custom ERP software — inventory, manufacturing, accounting and reporting — and HR &amp; payroll systems with attendance, salary structures, payslips and PF / ESI / TDS calculations, tailored to how your Kanpur business actually runs. It integrates with Tally and the GST portal.
+                Yes. We build custom ERP software — inventory, manufacturing, purchase, sales, accounting and reporting — tailored to how your Kanpur business actually runs. It integrates with Tally and the GST portal.
               </p>
               <h3>Can we meet the team in person in Kanpur?</h3>
               <p>
@@ -450,7 +449,7 @@ export default function KanpurLocationPage() {
 
         <ClosingCta
           heading="Let's build it together, in Kanpur."
-          body="Tell us what you need — a website, an app, an ERP or payroll system. We'll send a free 48-hour mockup and a fixed quote, and you're welcome to visit our Govind Nagar office any day — we're open 24 hours."
+          body="Tell us what you need — a website, an app, an ERP or a custom system. We'll send a free 48-hour mockup and a fixed quote, and you're welcome to visit our Govind Nagar office any day — we're open 24 hours."
         />
       </SubPageLayout>
     </>

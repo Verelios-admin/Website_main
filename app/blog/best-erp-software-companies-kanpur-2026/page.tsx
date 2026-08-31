@@ -14,7 +14,7 @@ const PUBLISHED = '2026-07-17';
 export const metadata: Metadata = {
   title: 'Best ERP Software Companies in Kanpur (2026)',
   description:
-    'An honest, up-to-date roundup of the best ERP software companies in Kanpur in 2026 — who builds custom ERP and payroll systems, and how to choose.',
+    'An honest, up-to-date roundup of the best ERP software companies in Kanpur in 2026 — who builds custom ERP systems, and how to choose.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Best ERP Software Companies in Kanpur (2026) | Verelios Labs',
@@ -117,7 +117,7 @@ export default function Post() {
 
               <h3>Verelios Labs</h3>
               <p>
-                Measured against the criteria above: on <strong>local presence</strong>, a real office in <strong>Govind Nagar, Kanpur</strong> and on-site shop-floor discovery; on <strong>tech stack</strong>, <strong>custom ERP</strong> built around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting, reporting and HR &amp; payroll, with <strong>Tally and GST integration</strong>; on <strong>delivery model</strong>, a module-by-module rollout rather than a rigid all-at-once product; on <strong>code ownership</strong>, code you own; on <strong>pricing</strong>, a fixed quote against an agreed scope; and on <strong>support</strong>, a local team that trains your staff on site. That is the basis for our inclusion — judge it against the options below. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
+                Measured against the criteria above: on <strong>local presence</strong>, a real office in <strong>Govind Nagar, Kanpur</strong> and on-site shop-floor discovery; on <strong>tech stack</strong>, <strong>custom ERP</strong> built around how your unit actually runs — inventory, manufacturing, purchase, sales, accounting and reporting, with <strong>Tally and GST integration</strong>; on <strong>delivery model</strong>, a module-by-module rollout rather than a rigid all-at-once product; on <strong>code ownership</strong>, code you own; on <strong>pricing</strong>, a fixed quote against an agreed scope; and on <strong>support</strong>, a local team that trains your staff on site. That is the basis for our inclusion — judge it against the options below. See the <Link href="/locations/kanpur/erp-software">ERP software in Kanpur</Link> page.
               </p>
 
               <h3>SigmaIT Software Designers</h3>

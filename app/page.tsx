@@ -144,7 +144,7 @@ const localBusinessJsonLd = {
   // The visible star rating and testimonials stay on the page — they work as
   // social proof without the markup. If a rating rich result is ever wanted, the
   // only compliant route is a third-party platform's official embed.
-  // Mirrors the eleven cards in components/sections/Services.tsx one-for-one, in
+  // Mirrors the ten cards in components/sections/Services.tsx one-for-one, in
   // the same order. Every Service carries a `url` pointing at its own page, so the
   // offer and the landing page are one entity rather than two loose facts.
   //
@@ -244,24 +244,6 @@ const localBusinessJsonLd = {
           url: `${SITE_URL}/services/erp`,
           description:
             'Custom ERP covering inventory, manufacturing, procurement, accounting and reporting, with Tally and GST integration. You own the code.',
-          provider: { '@id': `${SITE_URL}/#organization` },
-          areaServed: { '@type': 'Country', name: 'India' },
-        },
-      },
-      {
-        '@type': 'Offer',
-        priceCurrency: 'INR',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          priceCurrency: 'INR',
-          minPrice: 99999,
-        },
-        itemOffered: {
-          '@type': 'Service',
-          name: 'HRMS & Payroll Software',
-          url: `${SITE_URL}/services/hrms-payroll-software`,
-          description:
-            'Attendance, shifts, leave, payslips and automatic PF, ESI and TDS, including contract and piece-rate workers. A one-time build, not a per-employee subscription.',
           provider: { '@id': `${SITE_URL}/#organization` },
           areaServed: { '@type': 'Country', name: 'India' },
         },

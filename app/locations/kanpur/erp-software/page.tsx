@@ -13,12 +13,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'ERP Software Company in Kanpur',
   description:
-    'Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, accounting, HR & payroll in one system, with Tally & GST. Rated 5.0★.',
+    'Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, production and accounting in one system, with Tally & GST. Rated 5.0★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
-    title: 'ERP Software Company in Kanpur — Custom ERP & Payroll | Verelios Labs',
+    title: 'ERP Software Company in Kanpur — Custom ERP Systems | Verelios Labs',
     description:
-      'Custom ERP software — inventory, manufacturing, accounting, HR & payroll — built in Govind Nagar, Kanpur. Tally & GST integration. Meet us in person. Rated 5.0★.',
+      'Custom ERP software — inventory, manufacturing, purchase, sales and accounting — built in Govind Nagar, Kanpur. Tally & GST integration. Meet us in person. Rated 5.0★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -52,7 +52,7 @@ const serviceJsonLd = {
   serviceType: 'ERP Software Development',
   name: 'ERP Software Company in Kanpur',
   description:
-    'Custom ERP software development in Kanpur — inventory, manufacturing, purchase, sales, accounting, reporting and HR & payroll in one system, with Tally and GST integration. Built for Kanpur factories and traders. You own the code.',
+    'Custom ERP software development in Kanpur — inventory, manufacturing, purchase, sales, accounting and reporting in one system, with Tally and GST integration. Built for Kanpur factories and traders. You own the code.',
   provider: LOCAL_BUSINESS_REF,
   areaServed: { '@type': 'City', name: 'Kanpur' },
   offers: {
@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'How much does custom ERP software cost in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom ERP for a Kanpur business starts at ₹99,999 for a focused module set. A full ERP covering inventory, manufacturing, accounting, HR and payroll typically ranges from ₹2,50,000 to ₹10,00,000+ depending on complexity. We scope it module by module and give you a fixed quote before any work begins.',
+        text: 'A custom ERP for a Kanpur business starts at ₹99,999 for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from ₹2,50,000 to ₹10,00,000+ depending on complexity. We scope it module by module and give you a fixed quote before any work begins.',
       },
     },
     {
@@ -103,14 +103,6 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
-      name: 'Do you build HR and payroll software too?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. We build HR & payroll software with attendance, salary structures, payslips and automatic PF, ESI and TDS calculations, built into the same system so month-end payroll stops being a spreadsheet marathon.',
-      },
-    },
-    {
-      '@type': 'Question',
       name: 'Can we meet the ERP team in person in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -126,7 +118,6 @@ const ERP_MODULES = [
   ['Purchase & vendors', 'Purchase orders, vendor management, GRN and payables in one flow.'],
   ['Sales & billing', 'Quotations, invoices, GST billing, receivables and customer ledgers.'],
   ['Accounting & finance', 'Ledgers, P&L, balance sheet and reports, syncing cleanly with Tally.'],
-  ['HR & payroll', 'Attendance, salary structures, payslips and automatic PF / ESI / TDS.'],
   ['Reporting & dashboards', 'Live dashboards and MIS reports so owners see the whole business at a glance.'],
   ['GST & compliance', 'GST-ready invoicing and returns support, integrated with the GST portal.'],
 ];
@@ -147,7 +138,7 @@ export default function KanpurErpSoftwarePage() {
           eyebrow="ERP software · Kanpur"
           title="An ERP software company in Kanpur"
           highlight="built around how you actually run."
-          lead="Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, manufacturing, accounting, and HR & payroll in one system for local factories and traders. Tally & GST integration, milestone payments, and a team you can meet in person. Rated 5.0★."
+          lead="Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, manufacturing, purchase, sales and accounting in one system for local factories and traders. Tally & GST integration, milestone payments, and a team you can meet in person. Rated 5.0★."
           ctaLabel="Get a free ERP consultation"
           breadcrumbs={[
             { label: 'Home', href: '/' },
@@ -166,12 +157,12 @@ export default function KanpurErpSoftwarePage() {
                 Most off-the-shelf ERP is built to make your business bend around the software, instead of the other way round. <strong>Verelios Labs is a custom ERP software company based in Govind Nagar, Kanpur</strong> — we build the ERP around how your Kanpur factory, trading house or distributor actually runs. And because we&apos;re local, you can sit with us, walk us through your shop floor, and point at exactly what needs to change. No support ticket to another country; a team you can visit.
               </p>
               <p>
-                A lot of Kanpur businesses — especially in leather, textiles, engineering, FMCG, chemicals and trading — still run on a patchwork of Tally, Excel and registers. We pull inventory, production, purchase, sales, accounting, reporting and payroll into one system that matches your reality, integrates with Tally and the GST portal, and hands you code you own outright.
+                A lot of Kanpur businesses — especially in leather, textiles, engineering, FMCG, chemicals and trading — still run on a patchwork of Tally, Excel and registers. We pull inventory, production, purchase, sales, accounting and reporting into one system that matches your reality, integrates with Tally and the GST portal, and hands you code you own outright.
               </p>
 
               <h2>Why your Kanpur business needs a custom ERP</h2>
               <p>
-                When your business runs on separate spreadsheets and registers, information gets stale the moment it&apos;s written down. Stock counts don&apos;t match reality, month-end takes a week, and the owner is the only one who knows the full picture. A custom ERP fixes that: one source of truth, updated live, visible to the people who need it. For Kanpur&apos;s manufacturers and traders, that means fewer stockouts, faster billing, cleaner GST returns and payroll that runs itself.
+                When your business runs on separate spreadsheets and registers, information gets stale the moment it&apos;s written down. Stock counts don&apos;t match reality, month-end takes a week, and the owner is the only one who knows the full picture. A custom ERP fixes that: one source of truth, updated live, visible to the people who need it. For Kanpur&apos;s manufacturers and traders, that means fewer stockouts, faster billing and cleaner GST returns.
               </p>
               <ul>
                 <li><strong>Meet us in person</strong> — a real ERP team in Govind Nagar you can bring onto your shop floor.</li>
@@ -265,7 +256,7 @@ export default function KanpurErpSoftwarePage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom ERP software cost in Kanpur?</h3>
               <p>
-                A custom ERP for a Kanpur business starts at <strong>₹99,999</strong> for a focused module set. A full ERP covering inventory, manufacturing, accounting, HR and payroll typically ranges from <strong>₹2,50,000 to ₹10,00,000+</strong> depending on complexity. We scope it module by module and give you a fixed quote before any work begins.
+                A custom ERP for a Kanpur business starts at <strong>₹99,999</strong> for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from <strong>₹2,50,000 to ₹10,00,000+</strong> depending on complexity. We scope it module by module and give you a fixed quote before any work begins.
               </p>
               <h3>Does your ERP integrate with Tally and GST?</h3>
               <p>
@@ -274,10 +265,6 @@ export default function KanpurErpSoftwarePage() {
               <h3>Can you build ERP for Kanpur&apos;s leather, textile and manufacturing units?</h3>
               <p>
                 Yes — that&apos;s exactly the kind of work we do. We build manufacturing ERP for Kanpur&apos;s leather, textile, engineering, FMCG and chemical units, covering raw material, production, batch tracking, wastage, purchase, sales and reporting, tailored to how your unit actually runs.
-              </p>
-              <h3>Do you build HR and payroll software too?</h3>
-              <p>
-                Yes. We build HR &amp; payroll software with attendance, salary structures, payslips and automatic PF, ESI and TDS calculations, built into the same system so month-end payroll stops being a spreadsheet marathon.
               </p>
               <h3>Can we meet the ERP team in person in Kanpur?</h3>
               <p>
@@ -288,7 +275,7 @@ export default function KanpurErpSoftwarePage() {
         </section>
 
         <ClosingCta
-          defaultService="Custom Software / CRM / ERP"
+          defaultService="ERP Software"
           heading="Let's build your ERP, in Kanpur."
           body="Tell us what your business makes or moves, and where the spreadsheets hurt most. We'll come see your operation, scope the right modules, and send a fixed quote — visit our Govind Nagar office any day."
         />

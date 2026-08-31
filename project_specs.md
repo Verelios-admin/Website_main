@@ -18,11 +18,11 @@ software. The site explains services, shows work/process/pricing, and drives con
 - `/` — Homepage (Hero, Services, Industries, Portfolio, Process, About, Studio, Pricing, Testimonials, FAQ, Contact, Footer)
 - `/services` — hub, plus one page per service:
   `website-development`, `mobile-app-development`, `custom-software-development`, `ui-ux-design`,
-  `ai-automation`, `erp`, `web-hosting`, `ecommerce-development`, `hrms-payroll-software`,
+  `ai-automation`, `erp`, `web-hosting`, `ecommerce-development`,
   `billing-inventory-software`, `crm-software-development`
 - `/locations/kanpur` — hub, plus one page per local intent:
   `website-development`, `mobile-app-development`, `ai-development`, `erp-software`,
-  `hrms-payroll-software`, `billing-inventory-software`
+  `billing-inventory-software`, `crm-software-development`
 - `/about`, `/blog` plus nine articles
 - `/privacy-policy`, `/terms-of-service`, `/cookie-policy`
 
@@ -485,3 +485,72 @@ already earns Kanpur impressions, but has ZERO local optimization and even says 
 2. Are the 10 reviews / 6 testimonials from real, verifiable clients?
 3. True mobile-app starting price — ₹99,999 or ₹49,999?
 4. What AI-automation services do you offer, and starting price?
+
+---
+
+### Phase 12 — HRMS withdrawn, lead value wired to Google Ads ✓ COMPLETED 2026-08-31 (build-verified: 37 routes, 30 sitemap URLs, tsc clean)
+
+**Why:** HRMS and payroll is no longer a service we sell, and the ads were still
+paying for it. Separately, every form submit reported the same flat conversion
+value to Google Ads, so a ₹50k website enquiry and a ₹5L ERP enquiry looked
+identical to the bidding algorithm.
+
+**Pages removed**
+
+| Route | Disposition |
+|---|---|
+| `/services/hrms-payroll-software` | deleted → 301 to `/services/erp` |
+| `/locations/kanpur/hrms-payroll-software` | deleted → 301 to `/locations/kanpur/erp-software` |
+
+Redirects live in `vercel.json` (`redirects` key) because `output: 'export'`
+means `next.config.js` redirects are not applied. The Kanpur page was ranking
+#1 in the local pack, so the 301 exists to pass that equity to the ERP page
+rather than dropping it into a 404.
+
+HRMS was also stripped from: the homepage `Offer` schema, `/services` hub,
+`/locations/kanpur` hub (card, FAQ, FAQPage schema, hero and closing copy),
+both ERP pages (HR & payroll removed as a listed module), the ERP Kanpur blog
+post, `Footer`, `Services`, `RelatedServices`, `sitemap.ts`, `/about` and
+`public/llms.txt`. Verified: zero occurrences of `hrms` or `payroll` remain in
+`app/`, `components/`, `lib/` or `public/`.
+
+**No pricing or delivery timelines were changed anywhere.** Lead qualification
+is handled at the ad-campaign level instead — see `GOOGLE_ADS_ACTION_PLAN.md`.
+
+**Lead value now reaches Google Ads** (`lib/gtag.ts`)
+
+`trackGoogleAdsLead` previously sent `value: 1.0` on every conversion. It now
+maps the declared budget band to a rupee figure via `leadValueFor()` and sends
+that as the conversion value, so a value-based bid strategy has something real
+to optimise against. Figures are the conservative end of each band; an
+unstated budget scores lowest. The GA4 `generate_lead` event was also passing
+the budget *string* into GA4's numeric `value` field, where GA4 silently
+discarded it — it now sends a number, with the band kept as `budget_band`.
+
+**Form service options** (`Contact.tsx`, `InlineLeadForm.tsx`)
+
+Reordered high-value first and split the single `Custom Software / CRM / ERP`
+option into `ERP Software`, `CRM Software`, `Billing & Inventory Software` and
+`Custom Software / Internal Tools`, closing the gap flagged in
+`google-ads-campaign-spec.md` — an ERP lead and a CRM lead used to arrive
+indistinguishable. Every landing page's `defaultService` was remapped to match.
+Website options are unchanged and still available, just lower in the list.
+
+**Leftovers caught on review before the push** — the removal itself was clean (zero
+`hrms`/`payroll` occurrences in `app/`, `components/`, `lib/`, `public/`), but four
+places still counted eleven services:
+
+- `components/sections/Services.tsx` — **visible homepage copy** read "Compare all
+  eleven services". Now "ten". Two comments in the same file updated with it.
+- `components/sub-page/RelatedServices.tsx` — window comment said "now 11 services".
+- `app/page.tsx` — comment claiming it mirrors "the eleven cards".
+- `public/llms.txt` — "The eleven services Verelios Labs offers", and the file's own
+  `Last updated:` line still said 2026-08-23 while its contents had changed. Both fixed.
+
+**Re-verified after the removal, not assumed:** `RelatedServices` rotation is still
+perfectly balanced at 10 services — simulated all 10 pages, every service receives
+exactly **6** inbound contextual links, so no service was orphaned by dropping one from
+the array. All 16 `defaultService` props type-check against the new `SERVICE_TYPES`
+union, and all five budget-band strings in `LEAD_VALUE_BY_BUDGET` match both forms
+byte-for-byte (en-dash included) — if they had not, every lead would have silently
+fallen through to the ₹40,000 fallback and the whole value change would have been inert.

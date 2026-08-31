@@ -243,7 +243,7 @@ export default function BillingInventorySoftwarePage() {
         <RelatedServices exclude="billing-inventory-software" />
 
         <ClosingCta
-          defaultService="Custom Software / CRM / ERP"
+          defaultService="Billing & Inventory Software"
           heading="Make the invoice move the stock."
           body="Tell us how you bill today and how many locations you hold stock in. We'll set up a free scoping call, then follow up with a fixed quote."
         />

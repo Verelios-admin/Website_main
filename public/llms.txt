@@ -1,8 +1,8 @@
 # Verelios Labs
 
-> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, HRMS and payroll, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 5.0 from 53 Google reviews.
+> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 5.0 from 53 Google reviews.
 
-Last updated: 2026-08-23
+Last updated: 2026-08-31
 
 ## Key facts
 
@@ -37,7 +37,6 @@ Starting prices. Each project is quoted at a fixed price after a scoping call.
 | Mobile app (iOS + Android) | ₹99,999 | 3–5 weeks |
 | E-commerce store | ₹99,999 | 3–4 weeks |
 | ERP software (single module) | ₹99,999 | 4–8 weeks |
-| HRMS and payroll software | ₹99,999 | 4–8 weeks |
 | Billing and inventory software | ₹99,999 | 4–8 weeks |
 | CRM software | ₹99,999 | 4–8 weeks |
 | Custom software / dashboards | ₹1,49,999 | 4–8 weeks |
@@ -51,13 +50,12 @@ between ₹1,50,000 and ₹4,00,000. A website with custom features typically la
 
 ## Services
 
-- [All services](https://www.verelios.com/services): The eleven services Verelios Labs offers, with starting prices and delivery times.
+- [All services](https://www.verelios.com/services): The ten services Verelios Labs offers, with starting prices and delivery times.
 - [Website Development](https://www.verelios.com/services/website-development): Fast, mobile-first, SEO-ready websites built with React and Next.js. From ₹49,999, live in 7–14 days.
 - [Mobile App Development](https://www.verelios.com/services/mobile-app-development): iOS and Android apps from a single React Native or Flutter codebase, shipped to both stores. From ₹99,999.
 - [E-commerce Development](https://www.verelios.com/services/ecommerce-development): Online stores with catalogue, cart, Razorpay and UPI, cash on delivery, delivery tracking and GST invoicing. From ₹99,999.
 - [Custom Software Development](https://www.verelios.com/services/custom-software-development): Internal tools, dashboards and platforms built around a client's workflow. From ₹1,49,999.
 - [ERP Software Development](https://www.verelios.com/services/erp): Inventory, manufacturing, purchase, sales, accounting and reporting in one system, with Tally and GST integration. From ₹99,999.
-- [HRMS and Payroll Software](https://www.verelios.com/services/hrms-payroll-software): Attendance, shifts, payslips and automatic PF, ESI and TDS, including contract and piece-rate workers. From ₹99,999.
 - [Billing and Inventory Software](https://www.verelios.com/services/billing-inventory-software): GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops. From ₹99,999.
 - [CRM Software Development](https://www.verelios.com/services/crm-software-development): Leads, pipeline, quotations, WhatsApp Business API, call logging and field sales. A one-time build, not per user per month. From ₹99,999.
 - [AI Automation](https://www.verelios.com/services/ai-automation): AI agents, chatbots and workflow automation that remove repetitive work. From ₹49,999.
@@ -74,7 +72,6 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - [Mobile App Development in Kanpur](https://www.verelios.com/locations/kanpur/mobile-app-development): iOS and Android apps built in Kanpur. From ₹99,999.
 - [AI Development in Kanpur](https://www.verelios.com/locations/kanpur/ai-development): AI agents, chatbots and automation for Kanpur businesses. From ₹49,999.
 - [ERP Software in Kanpur](https://www.verelios.com/locations/kanpur/erp-software): Manufacturing, leather, textile and trading ERP for Kanpur units, including the Panki, Dada Nagar and Jajmau belts. From ₹99,999.
-- [HRMS and Payroll in Kanpur](https://www.verelios.com/locations/kanpur/hrms-payroll-software): Attendance and payroll for Kanpur employers, including piece-rate and contract labour. From ₹99,999.
 - [Billing and Inventory Software in Kanpur](https://www.verelios.com/locations/kanpur/billing-inventory-software): GST billing and stock for Kanpur shops, traders and distributors. From ₹99,999.
 - [CRM Software in Kanpur](https://www.verelios.com/locations/kanpur/crm-software-development): Leads, pipeline and field sales for Kanpur traders and manufacturers. From ₹99,999.
 
@@ -98,8 +95,7 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 
 - **How much does a website cost in India?** A 5-page business website from Verelios Labs starts at ₹49,999 and goes live in 7–14 days. Websites with custom features, e-commerce or a CMS typically land between ₹1,00,000 and ₹3,00,000. The quote is fixed before work begins.
 - **How much does a mobile app cost?** An iOS and Android app from a single codebase starts at ₹99,999 and ships to both stores in 3–5 weeks. Apps with payments, live tracking or deep backend integration typically range from ₹2,00,000 to ₹10,00,000.
-- **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, accounting, HR and payroll typically lands between ₹3,00,000 and ₹10,00,000.
-- **How much does HRMS and payroll software cost?** A focused HRMS covering attendance, leave and payslips starts at ₹99,999. It is a one-time build, not a per-employee monthly fee, so the cost does not rise as the client hires.
+- **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, purchase, sales and accounting typically lands between ₹3,00,000 and ₹10,00,000.
 - **How much does CRM software cost?** A focused CRM covering leads, pipeline, follow-ups and quotations starts at ₹99,999. Adding WhatsApp Business API, call logging, field-sales tracking and ERP integration typically takes it to ₹1,50,000–₹4,00,000. One-time build, not per user per month.
 - **How long does a project take?** Most projects launch in under 3 weeks. Business websites take 7–14 days, mobile apps 3–5 weeks, ERP and custom software 4–8 weeks.
 - **Can I see something before paying?** Yes. Verelios Labs delivers a free mockup or prototype within 48 hours, before any payment or commitment.

@@ -33,13 +33,18 @@ const LEAD_WEBHOOK = 'https://hook.us2.make.com/sqedcdetgz0wvevhfem1z0e6mcitx6m9
 // forever if Make is slow or unreachable.
 const SUBMIT_TIMEOUT_MS = 15000;
 
+// Ordered high-value first, split by system type — see the note in
+// components/sections/Contact.tsx.
 export const SERVICE_TYPES = [
-  'Business Website',
-  'E-commerce Website',
+  'ERP Software',
+  'CRM Software',
+  'Billing & Inventory Software',
+  'Custom Software / Internal Tools',
   'Mobile App (iOS/Android)',
-  'Custom Software / CRM / ERP',
-  'UI/UX Design',
+  'E-commerce Website',
+  'Business Website',
   'Website Redesign',
+  'UI/UX Design',
   'Other',
 ] as const;
 

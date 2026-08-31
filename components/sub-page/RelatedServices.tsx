@@ -22,14 +22,8 @@ const ALL_SERVICES = [
   {
     slug: 'erp',
     title: 'Custom ERP Software',
-    blurb: 'Inventory, manufacturing, accounting, HR & payroll in one system built around your workflow. You own the code.',
+    blurb: 'Inventory, manufacturing, procurement, accounting and reporting in one system built around your workflow. You own the code.',
     accent: '#14b8a6',
-  },
-  {
-    slug: 'hrms-payroll-software',
-    title: 'HRMS & Payroll Software',
-    blurb: 'Attendance, shifts, payslips and automatic PF, ESI & TDS. One-time build, not per employee per month.',
-    accent: '#8b5cf6',
   },
   {
     slug: 'billing-inventory-software',
@@ -69,7 +63,7 @@ const ALL_SERVICES = [
   },
 ];
 
-/** How many cards to show. The full list is now 11 services — rendering all of
+/** How many cards to show. The full list is now 10 services — rendering all of
  *  them turned this into a wall of cards, so we show a window instead. */
 const VISIBLE = 6;
 

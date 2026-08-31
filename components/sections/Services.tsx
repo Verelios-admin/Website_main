@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { useGsap } from '@/hooks/useGsap';
 
-// Mirrors the eleven real service pages under /services, in roughly the order a
+// Mirrors the ten real service pages under /services, in roughly the order a
 // prospect encounters them. Every card links to a page that exists — the old list
-// had two cards pointing at /#contact and silently omitted ERP, e-commerce, HRMS,
+// had two cards pointing at /#contact and silently omitted ERP, e-commerce,
 // billing and CRM, which are the highest-value things we actually rank for.
 const SERVICES = [
   {
@@ -37,12 +37,6 @@ const SERVICES = [
     body: 'Inventory, manufacturing, procurement, accounting and reporting in one system built around how your business already runs.',
     bullets: ['Tally & GST sync', 'Production tracking', 'Multi-godown stock', 'You own the code'],
     href: '/services/erp',
-  },
-  {
-    title: 'HRMS & payroll',
-    body: 'Attendance, shifts, leave, payslips and automatic PF, ESI and TDS — including contract and piece-rate workers.',
-    bullets: ['Biometric integration', 'Shift & overtime rules', 'ECR & ESI exports', 'Employee self-service'],
-    href: '/services/hrms-payroll-software',
   },
   {
     title: 'Billing & inventory',
@@ -206,10 +200,10 @@ export function Services() {
         {/* The hub link belongs here rather than in the nav: the nav item
             "Services" scrolls to this section, so the hub page itself had no
             route in from the homepage at all and sat a click deeper than the
-            eleven pages it introduces. */}
+            ten pages it introduces. */}
         <div style={{ textAlign: 'center', marginTop: 48 }}>
           <a href="/services" className="link-arrow">
-            Compare all eleven services <span className="arrow">→</span>
+            Compare all ten services <span className="arrow">→</span>
           </a>
         </div>
 

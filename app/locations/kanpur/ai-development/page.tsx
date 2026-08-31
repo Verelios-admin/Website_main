@@ -329,7 +329,7 @@ export default function KanpurAiDevelopmentPage() {
         </section>
 
         <ClosingCta
-          defaultService="Custom Software / CRM / ERP"
+          defaultService="Custom Software / Internal Tools"
           heading="Let's build your AI, in Kanpur."
           body="Tell us the one task you'd most like to take off your team's plate. We'll tell you honestly whether AI is the right fit, build a free 48-hour proof-of-concept, and send a fixed quote — and you're welcome to visit our Govind Nagar office any day."
         />

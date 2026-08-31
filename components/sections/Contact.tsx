@@ -30,13 +30,21 @@ const COUNTRY_CODES = [
   { code: '+65',  flag: '\u{1F1F8}\u{1F1EC}', country: 'SG' },
 ];
 
+// Ordered high-value first, and split by system type. The old single
+// 'Custom Software / CRM / ERP' option meant an ERP enquiry and a CRM enquiry
+// arrived looking identical, so neither the inbox nor Google Ads could tell
+// which ad group actually produced which kind of lead. Website work stays
+// available for organic visitors, just further down the list.
 const SERVICE_TYPES = [
-  'Business Website',
-  'E-commerce Website',
+  'ERP Software',
+  'CRM Software',
+  'Billing & Inventory Software',
+  'Custom Software / Internal Tools',
   'Mobile App (iOS/Android)',
-  'Custom Software / CRM / ERP',
-  'UI/UX Design',
+  'E-commerce Website',
+  'Business Website',
   'Website Redesign',
+  'UI/UX Design',
   'Other',
 ];
 const BUDGETS = [

@@ -58,13 +58,8 @@ const SERVICES = [
   },
   {
     title: 'ERP Software',
-    desc: 'Custom ERP — inventory, manufacturing, accounting, reporting plus HR & payroll — with Tally and GST integration.',
+    desc: 'Custom ERP — inventory, manufacturing, procurement, accounting and reporting — with Tally and GST integration.',
     href: '/services/erp',
-  },
-  {
-    title: 'HRMS & Payroll Software',
-    desc: 'Attendance, shifts, leave, payslips and automatic PF, ESI & TDS. A one-time build, not a per-employee subscription.',
-    href: '/services/hrms-payroll-software',
   },
   {
     title: 'Billing & Inventory Software',
@@ -187,12 +182,8 @@ export default function ServicesHubPage() {
                 <li>
                   <strong>Your team runs the business in spreadsheets and WhatsApp.</strong>{' '}
                   That is <Link href="/services/custom-software-development">custom software</Link>{' '}
-                  — or, if it covers inventory, production, accounts and payroll together,{' '}
-                  <Link href="/services/erp">ERP</Link>.
-                </li>
-                <li>
-                  <strong>Payroll takes three days and a spreadsheet every month.</strong> That is{' '}
-                  <Link href="/services/hrms-payroll-software">HRMS &amp; payroll software</Link>.
+                  — or, if it covers inventory, production, purchase, sales and accounts
+                  together, <Link href="/services/erp">ERP</Link>.
                 </li>
                 <li>
                   <strong>Stock in the system never matches stock on the shelf.</strong> That is{' '}
@@ -227,7 +218,7 @@ export default function ServicesHubPage() {
                 <li><strong>E-commerce store</strong> — from ₹99,999, 3–4 weeks</li>
                 <li><strong>Mobile app (iOS + Android)</strong> — from ₹99,999, 3–5 weeks</li>
                 <li><strong>Custom software / dashboards</strong> — from ₹1,49,999, scoped per project</li>
-                <li><strong>ERP or HR &amp; payroll</strong> — from ₹99,999, 4–8 weeks</li>
+                <li><strong>Custom ERP</strong> — from ₹99,999, 4–8 weeks</li>
                 <li><strong>UI/UX design only</strong> — from ₹40,000</li>
                 <li><strong>Hosting &amp; maintenance</strong> — monthly, no lock-in</li>
               </ul>

@@ -1,5 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/services/hrms-payroll-software",
+      "destination": "/services/erp",
+      "permanent": true
+    },
+    {
+      "source": "/locations/kanpur/hrms-payroll-software",
+      "destination": "/locations/kanpur/erp-software",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

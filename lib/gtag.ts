@@ -3,6 +3,36 @@
 // AW-18037984640 = global Google tag ID; lFtBCOjnxJscEICbl5lD = conversion label.
 const AW_SEND_TO = 'AW-18037984640/lFtBCOjnxJscEICbl5lD';
 
+// ---------------------------------------------------------------------------
+// Lead value, in rupees, by declared budget band.
+//
+// Why this exists: every form submit used to report the same `value: 1.0`, so
+// Google Ads saw a ₹50k website enquiry and a ₹5L ERP enquiry as identical and
+// bid the same for both. Reporting a real rupee figure lets a value-based bid
+// strategy (Maximise conversion value / tROAS) chase the enquiries that are
+// actually worth winning, and quietly stop paying for the ones that aren't.
+//
+// Figures are the conservative end of each band, not the midpoint — better to
+// under-claim than to teach Ads to overbid. "Not sure yet" is deliberately
+// scored low: an unqualified enquiry is worth less than a stated budget, and
+// scoring it high would undo the whole point.
+// ---------------------------------------------------------------------------
+const LEAD_VALUE_BY_BUDGET: Record<string, number> = {
+  '₹50,000 – ₹1,00,000': 50000,
+  '₹1,00,000 – ₹3,00,000': 100000,
+  '₹3,00,000 – ₹5,00,000': 300000,
+  '₹5,00,000+': 500000,
+  'Not sure yet': 40000,
+};
+
+// Used when the budget field is missing or doesn't match a known band.
+const LEAD_VALUE_FALLBACK = 40000;
+
+export function leadValueFor(budget?: string): number {
+  if (!budget) return LEAD_VALUE_FALLBACK;
+  return LEAD_VALUE_BY_BUDGET[budget] ?? LEAD_VALUE_FALLBACK;
+}
+
 // Guard so a single submission can't fire the conversion twice (retries /
 // re-renders). Reset via resetLeadConversionGuard() when the form is reset for
 // a brand-new submission.
@@ -35,11 +65,17 @@ export function trackGoogleAdsLead(data: LeadData = {}) {
     // Mark fired before sending so a queued retry can never double-count.
     leadConversionFired = true;
 
-    // GA4 lead event (analytics only — not the Ads conversion).
+    const value = leadValueFor(data.budget);
+
+    // GA4 lead event (analytics only — not the Ads conversion). GA4 expects
+    // `value` to be numeric; it was previously being handed the budget string,
+    // which GA4 silently discards, so lead value never appeared in reporting.
     gtag('event', 'generate_lead', {
       event_category: 'Contact Form',
       event_label: data.service || 'General',
-      value: data.budget || 'Not specified',
+      currency: 'INR',
+      value,
+      budget_band: data.budget || 'Not specified',
     });
 
     // Enhanced Conversions: normalized first-party data. gtag.js SHA-256-hashes
@@ -51,10 +87,11 @@ export function trackGoogleAdsLead(data: LeadData = {}) {
       gtag('set', 'user_data', userData);
     }
 
-    // The Google Ads conversion itself.
+    // The Google Ads conversion itself, now carrying a real rupee value so
+    // value-based bidding has something to optimise against.
     gtag('event', 'conversion', {
       send_to: AW_SEND_TO,
-      value: 1.0,
+      value,
       currency: 'INR',
     });
   };
