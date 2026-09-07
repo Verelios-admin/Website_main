@@ -1,6 +1,7 @@
 'use client';
 
 import { useGsap } from '@/hooks/useGsap';
+import { GBP_RATING } from '@/lib/schema';
 
 /**
  * First-person "Studio" section. Real-business sites have a section like this
@@ -184,7 +185,7 @@ export function Studio() {
                 </div>
               </div>
               <div className="studio-stat">
-                <div className="stat-num" style={{ fontSize: 32 }}>5.0★</div>
+                <div className="stat-num" style={{ fontSize: 32 }}>{GBP_RATING}★</div>
                 <div
                   style={{
                     fontSize: 12,

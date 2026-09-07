@@ -30,39 +30,47 @@ const SITE = 'https://www.verelios.com';
 const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   // Core — schema, hero rendering and metadata substantively reworked 2026-07-28;
   // 2026-08-23 added the services-hub link and corrected the entity/offer schema.
-  { path: '/', lastmod: '2026-08-23', priority: 1.0 },
+  { path: '/', lastmod: '2026-09-07', priority: 1.0 },
 
   // Service pages (national intent: "… in India").
   { path: '/services', lastmod: '2026-08-23', priority: 0.8 },
-  { path: '/services/website-development', lastmod: '2026-07-28', priority: 0.9 },
-  { path: '/services/mobile-app-development', lastmod: '2026-07-28', priority: 0.9 },
-  { path: '/services/custom-software-development', lastmod: '2026-08-23', priority: 0.8 },
-  { path: '/services/ai-automation', lastmod: '2026-07-28', priority: 0.8 },
-  { path: '/services/erp', lastmod: '2026-07-28', priority: 0.8 },
-  { path: '/services/billing-inventory-software', lastmod: '2026-08-18', priority: 0.9 },
-  { path: '/services/crm-software-development', lastmod: '2026-08-23', priority: 0.8 },
-  { path: '/services/ecommerce-development', lastmod: '2026-08-18', priority: 0.8 },
-  { path: '/services/web-hosting', lastmod: '2026-07-28', priority: 0.7 },
-  { path: '/services/ui-ux-design', lastmod: '2026-07-28', priority: 0.7 },
+  { path: '/services/website-development', lastmod: '2026-09-07', priority: 0.9 },
+  { path: '/services/mobile-app-development', lastmod: '2026-09-07', priority: 0.9 },
+  { path: '/services/custom-software-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/services/ai-automation', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/services/erp', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/services/billing-inventory-software', lastmod: '2026-09-07', priority: 0.9 },
+  { path: '/services/crm-software-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/services/ecommerce-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/services/web-hosting', lastmod: '2026-09-07', priority: 0.7 },
+  { path: '/services/ui-ux-design', lastmod: '2026-09-07', priority: 0.7 },
 
   // Location pages (local intent: "… in Kanpur").
-  { path: '/locations/kanpur', lastmod: '2026-08-23', priority: 0.9 },
-  { path: '/locations/kanpur/website-development', lastmod: '2026-08-23', priority: 0.9 },
-  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-08-23', priority: 0.8 },
-  { path: '/locations/kanpur/ai-development', lastmod: '2026-08-23', priority: 0.8 },
-  { path: '/locations/kanpur/erp-software', lastmod: '2026-08-23', priority: 0.8 },
+  { path: '/locations/kanpur', lastmod: '2026-09-07', priority: 0.9 },
+  { path: '/locations/kanpur/website-development', lastmod: '2026-09-07', priority: 0.9 },
+  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/locations/kanpur/ai-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/locations/kanpur/erp-software', lastmod: '2026-09-07', priority: 0.8 },
   // Already ranks #1 in the Kanpur local pack — hence priority 0.9, matching
   // the other proven local intents.
-  { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-08-23', priority: 0.9 },
+  { path: '/locations/kanpur/billing-inventory-software', lastmod: '2026-09-07', priority: 0.9 },
   // New 2026-08-23. CRM was the only service with a national page and no Kanpur
   // twin, while already ranking around #7 for the local query — the same gap
   // that billing had before its page went in.
-  { path: '/locations/kanpur/crm-software-development', lastmod: '2026-08-23', priority: 0.9 },
+  { path: '/locations/kanpur/crm-software-development', lastmod: '2026-09-07', priority: 0.9 },
 
   // Blog. lastmod = the post's own publish date, because the prose has not been
   // rewritten since; keep each of these in step with the PUBLISHED constant in the
   // matching app/blog/<slug>/page.tsx and the `posts` array in app/blog/page.tsx.
   { path: '/blog', lastmod: '2026-07-28', priority: 0.7 },
+  // New 2026-09-07. Two national cost guides (highest search volume in our
+  // space) plus three Kanpur-local guides, which is where this domain can
+  // realistically rank today. Priority 0.7 matches the other cost guide.
+  { path: '/blog/erp-software-cost-india-2026', lastmod: '2026-09-07', priority: 0.7 },
+  { path: '/blog/mobile-app-development-cost-india-2026', lastmod: '2026-09-07', priority: 0.7 },
+  { path: '/blog/tally-to-custom-erp-kanpur-factories', lastmod: '2026-09-07', priority: 0.7 },
+  { path: '/blog/gst-billing-software-kanpur-traders', lastmod: '2026-09-07', priority: 0.7 },
+  { path: '/blog/why-businesses-lose-enquiries-crm-kanpur', lastmod: '2026-09-07', priority: 0.7 },
   { path: '/blog/best-ai-development-companies-kanpur-2026', lastmod: '2026-07-17', priority: 0.7 },
   { path: '/blog/best-website-development-companies-kanpur-2026', lastmod: '2026-07-17', priority: 0.7 },
   { path: '/blog/best-app-development-companies-kanpur-2026', lastmod: '2026-07-17', priority: 0.7 },
@@ -76,7 +84,7 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/blog/how-we-ship-websites-in-3-weeks', lastmod: '2026-05-26', priority: 0.6 },
 
   // About — author/company credentials page (E-E-A-T).
-  { path: '/about', lastmod: '2026-07-28', priority: 0.7 },
+  { path: '/about', lastmod: '2026-09-07', priority: 0.7 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

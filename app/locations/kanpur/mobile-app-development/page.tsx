@@ -13,12 +13,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'Mobile App Development Company in Kanpur',
   description:
-    'Verelios Labs — a mobile app development company in Govind Nagar, Kanpur building iOS & Android apps from one codebase. From ₹99,999. Rated 5.0★.',
+    'Verelios Labs — a mobile app development company in Govind Nagar, Kanpur building iOS & Android apps from one codebase. From ₹99,999. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Mobile App Development Company in Kanpur — iOS & Android | Verelios Labs',
     description:
-      'iOS & Android apps from one codebase, built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. From ₹99,999. Rated 5.0★.',
+      'iOS & Android apps from one codebase, built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. From ₹99,999. Rated 4.9★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -42,7 +42,7 @@ const REVIEWS: LocalReview[] = [
 // The single canonical business entity lives on the homepage as
 // `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
 // parallel copy here (with its own @id, NAP and self-rating) fragmented one real
-// business into six schema entities and multiplied the same 53 reviews six-fold.
+// business into six schema entities and multiplied the same 56 reviews six-fold.
 // Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
@@ -147,7 +147,7 @@ export default function KanpurMobileAppDevelopmentPage() {
           eyebrow="App development · Kanpur"
           title="A mobile app development company in Kanpur"
           highlight="you can actually sit across from."
-          lead="Verelios Labs is a mobile app development company based in Govind Nagar, Kanpur — building iOS and Android apps from one codebase for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. From ₹99,999. Rated 5.0★."
+          lead="Verelios Labs is a mobile app development company based in Govind Nagar, Kanpur — building iOS and Android apps from one codebase for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. From ₹99,999. Rated 4.9★."
           ctaLabel="Get a free 48-hour mockup"
           breadcrumbs={[
             { label: 'Home', href: '/' },
@@ -178,7 +178,7 @@ export default function KanpurMobileAppDevelopmentPage() {
                 <li><strong>Free 48-hour mockup</strong> — see your app designed before you pay a rupee.</li>
                 <li><strong>One codebase, both stores</strong> — iOS and Android together, not billed twice.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 53 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 4.9★</strong> across 56 client reviews. <strong>You own the code.</strong></li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 

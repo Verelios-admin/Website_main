@@ -5,6 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { LocalMap } from '@/components/sub-page/LocalMap';
+import { GBP_RATING } from '@/lib/schema';
 
 const URL_PATH = '/locations/kanpur';
 const SITE = 'https://www.verelios.com';
@@ -22,12 +23,12 @@ const SOCIAL_LINKS = [
 export const metadata: Metadata = {
   title: 'Software Company in Kanpur — Web, App & ERP',
   description:
-    'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP, CRM & billing software. Free 48-hour mockup. Rated 5.0★.',
+    'Verelios Labs — a software company in Govind Nagar, Kanpur building websites, mobile apps, ERP, CRM & billing software. Free 48-hour mockup. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Software Company in Kanpur — Web, App, ERP & CRM | Verelios Labs',
     description:
-      'Websites, mobile apps, custom ERP, CRM and billing software built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. Rated 5.0★.',
+      'Websites, mobile apps, custom ERP, CRM and billing software built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. Rated 4.9★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 // Visible client testimonials — on-page social proof only, NOT wrapped in Review
 // schema (see the note on localBusinessJsonLd below). Sourced from Verelios Labs'
-// verified Google Business Profile (5.0★, 53 reviews).
+// verified Google Business Profile (4.9★, 56 reviews).
 const CLIENT_TESTIMONIALS = [
   {
     author: 'Shrawan Garg',
@@ -206,7 +207,7 @@ export default function KanpurLocationPage() {
           eyebrow="Software company · Kanpur"
           title="A software company in Kanpur"
           highlight="you can actually sit across from."
-          lead="Verelios Labs is a software company based in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP, CRM and billing software for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. Rated 5.0★ by our clients."
+          lead="Verelios Labs is a software company based in Govind Nagar, Kanpur — building websites, mobile apps, custom ERP, CRM and billing software for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. Rated 4.9★ by our clients."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Kanpur', href: URL_PATH },
@@ -247,10 +248,10 @@ export default function KanpurLocationPage() {
               </div>
               <div>
                 <div style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', fontWeight: 600, marginBottom: 8 }}>
-                  Rated 5.0 ★
+                  Rated 4.9 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  53 client reviews<br />
+                  56 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
@@ -279,9 +280,9 @@ export default function KanpurLocationPage() {
             </Prose>
 
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>{GBP_RATING}</span>
               <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 53 verified client reviews</span>
+              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 56 verified client reviews</span>
             </div>
 
             <div
@@ -341,7 +342,7 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 5.0★</strong> across 53 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 4.9★</strong> across 56 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

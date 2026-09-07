@@ -13,12 +13,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'Billing & Inventory Software Company in Kanpur',
   description:
-    'Custom GST billing and inventory software built in Govind Nagar, Kanpur — fast invoicing, live stock, e-way bills, barcode and Tally sync. Rated 5.0★.',
+    'Custom GST billing and inventory software built in Govind Nagar, Kanpur — fast invoicing, live stock, e-way bills, barcode and Tally sync. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Billing & Inventory Software Company in Kanpur | Verelios Labs',
     description:
-      'GST invoicing, live stock across godowns, e-way bills, barcode scanning and Tally sync — built in Govind Nagar, Kanpur. Meet us in person. Rated 5.0★.',
+      'GST invoicing, live stock across godowns, e-way bills, barcode scanning and Tally sync — built in Govind Nagar, Kanpur. Meet us in person. Rated 4.9★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -147,7 +147,7 @@ export default function KanpurBillingInventoryPage() {
           eyebrow="Billing & inventory software · Kanpur"
           title="Billing software in Kanpur"
           highlight="fast enough for your counter."
-          lead="Verelios Labs builds custom GST billing and inventory software in Govind Nagar, Kanpur — fast invoicing, live stock across godowns, e-way bills, barcode scanning and Tally sync. We come and watch how you bill before we quote. Rated 5.0★."
+          lead="Verelios Labs builds custom GST billing and inventory software in Govind Nagar, Kanpur — fast invoicing, live stock across godowns, e-way bills, barcode scanning and Tally sync. We come and watch how you bill before we quote. Rated 4.9★."
           ctaLabel="Get a free billing demo"
           breadcrumbs={[
             { label: 'Home', href: '/' },
@@ -176,7 +176,7 @@ export default function KanpurBillingInventoryPage() {
                 <li><strong>Tally stays</strong> — we sync to it rather than forcing your CA to change.</li>
                 <li><strong>Party-wise rates and schemes</strong> built in, so staff stop overriding prices manually.</li>
                 <li><strong>Meet us in person</strong> — a real team in Govind Nagar, at your shop within the hour.</li>
-                <li><strong>Rated 5.0★</strong> across 53 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 4.9★</strong> across 56 client reviews. <strong>You own the code.</strong></li>
               </ul>
 
               <h2>What we build into a Kanpur billing system</h2>

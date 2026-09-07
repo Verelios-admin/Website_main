@@ -136,7 +136,7 @@ const localBusinessJsonLd = {
   // NOTE: aggregateRating + review are deliberately ABSENT here, and must not be
   // re-added. Google's review-snippet policy forbids "self-serving" reviews — a
   // business marking up ratings of ITSELF on its OWN site is ineligible for the
-  // star rich result no matter how genuine the underlying reviews are. Our 53
+  // star rich result no matter how genuine the underlying reviews are. Our 56
   // Google reviews are real, but authoring the JSON-LD about ourselves is the
   // separate violation, and repeating it across sibling URLs is the pattern the
   // spam guidelines describe as reviews-markup abuse (GSC already raised a

@@ -122,7 +122,7 @@ export default function AboutPage() {
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
                 fifty projects — websites, mobile apps, e-commerce stores, custom ERP, billing and
                 CRM systems, and AI automation — for clients in Kanpur and across India, and we
-                hold a 5.0 rating from 53 reviews on our Google Business Profile. Nine of them are
+                hold a 4.9 rating from 56 reviews on our Google Business Profile. Nine of them are
                 listed further down this page, seven with a live link you can open right now. We
                 deliberately publish only the handful we can point you at: the rest are under NDA,
                 are internal systems with no public URL, or have since been handed to the
@@ -239,7 +239,7 @@ export default function AboutPage() {
               </p>
               <ul>
                 <li>
-                  <strong>The reviews.</strong> Read all 53 on our{' '}
+                  <strong>The reviews.</strong> Read all 56 on our{' '}
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer">
                     Google Business Profile
                   </a>

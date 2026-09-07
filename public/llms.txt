@@ -1,6 +1,6 @@
 # Verelios Labs
 
-> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 5.0 from 53 Google reviews.
+> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 4.9 from 56 Google reviews.
 
 Last updated: 2026-08-31
 
@@ -15,7 +15,7 @@ Last updated: 2026-08-31
 - **WhatsApp:** +91 84710 94125 (a different number from the phone line)
 - **Email:** contact@verelios.com
 - **Hours:** Open 24 hours, every day (IST)
-- **Rating:** 5.0 stars from 53 Google reviews
+- **Rating:** 4.9 stars from 56 Google reviews
 - **Projects delivered:** 50+
 - **Founder:** Sahil Chauhan, who runs the initial scoping call on every project
 - **Free mockup:** a visual mockup or prototype within 48 hours, before any payment or commitment
@@ -86,6 +86,11 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - [How we ship custom websites in under 3 weeks](https://www.verelios.com/blog/how-we-ship-websites-in-3-weeks): The 21-day process, and when 3 weeks is the wrong target.
 - [AI automation for Indian businesses (2026)](https://www.verelios.com/blog/ai-automation-for-indian-businesses-2026): Where AI automation pays for itself in an Indian SMB, and where it does not.
 - [AI chatbot for business in India](https://www.verelios.com/blog/ai-chatbot-for-business-india): What a business chatbot can and cannot do, and what one costs.
+- [ERP software cost in India (2026)](https://www.verelios.com/blog/erp-software-cost-india-2026): What ERP costs an Indian SME, subscription versus custom build, the implementation costs most quotes leave out, and the break-even maths.
+- [Mobile app development cost in India (2026)](https://www.verelios.com/blog/mobile-app-development-cost-india-2026): Cost ranges by app complexity, why cross-platform cuts 30–40% off the bill, the running costs a quote omits, and why the same app gets quoted at five times the price.
+- [Tally to custom ERP: how Kanpur factories move](https://www.verelios.com/blog/tally-to-custom-erp-kanpur-factories): The signs a factory has outgrown Tally, what a migration actually involves, and why most units should stay on Tally.
+- [GST billing software for Kanpur traders](https://www.verelios.com/blog/gst-billing-software-kanpur-traders): What matters at a real billing counter rather than in a demo — billing when the internet drops, ready-made versus custom, and what each costs.
+- [Why businesses lose enquiries — and what a CRM fixes](https://www.verelios.com/blog/why-businesses-lose-enquiries-crm-kanpur): Where leads leak in a small business, what a CRM genuinely fixes, what it does not, and a free test to run before buying one.
 - [Best AI development companies in Kanpur (2026)](https://www.verelios.com/blog/best-ai-development-companies-kanpur-2026): A comparison of AI development companies in Kanpur. Verelios Labs is one of the companies listed and discloses that it is not a neutral reviewer.
 - [Best website development companies in Kanpur (2026)](https://www.verelios.com/blog/best-website-development-companies-kanpur-2026): A comparison of website development companies in Kanpur, with the same disclosure.
 - [Best app development companies in Kanpur (2026)](https://www.verelios.com/blog/best-app-development-companies-kanpur-2026): A comparison of app development companies in Kanpur, with the same disclosure.

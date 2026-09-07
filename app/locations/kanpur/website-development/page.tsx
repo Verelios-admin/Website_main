@@ -13,12 +13,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'Website Development Company in Kanpur',
   description:
-    'Verelios Labs — a website development company in Govind Nagar, Kanpur building fast, SEO-ready React & Next.js sites. From ₹49,999. Rated 5.0★.',
+    'Verelios Labs — a website development company in Govind Nagar, Kanpur building fast, SEO-ready React & Next.js sites. From ₹49,999. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Website Development Company in Kanpur — Web Design & Development | Verelios Labs',
     description:
-      'Fast, SEO-ready React & Next.js websites built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. From ₹49,999. Rated 5.0★.',
+      'Fast, SEO-ready React & Next.js websites built in Govind Nagar, Kanpur. Free 48-hour mockup, milestone payments, meet us in person. From ₹49,999. Rated 4.9★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -42,7 +42,7 @@ const REVIEWS: LocalReview[] = [
 // The single canonical business entity lives on the homepage as
 // `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
 // parallel copy here (with its own @id, NAP and self-rating) fragmented one real
-// business into six schema entities and multiplied the same 53 reviews six-fold.
+// business into six schema entities and multiplied the same 56 reviews six-fold.
 // Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
@@ -147,7 +147,7 @@ export default function KanpurWebsiteDevelopmentPage() {
           eyebrow="Website development · Kanpur"
           title="A website development company in Kanpur"
           highlight="you can actually sit across from."
-          lead="Verelios Labs is a website development company based in Govind Nagar, Kanpur — building fast, SEO-ready React and Next.js websites and e-commerce stores for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. From ₹49,999. Rated 5.0★."
+          lead="Verelios Labs is a website development company based in Govind Nagar, Kanpur — building fast, SEO-ready React and Next.js websites and e-commerce stores for local businesses. Free 48-hour mockup, milestone payments, and a team you can meet in person. From ₹49,999. Rated 4.9★."
           ctaLabel="Get a free 48-hour mockup"
           breadcrumbs={[
             { label: 'Home', href: '/' },
@@ -177,7 +177,7 @@ export default function KanpurWebsiteDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a freelancer who disappears after launch.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website designed before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 53 client reviews, with work you can click through.</li>
+                <li><strong>Rated 4.9★</strong> across 56 client reviews, with work you can click through.</li>
                 <li><strong>You own everything</strong> — source code, hosting and domain on your own accounts. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

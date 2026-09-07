@@ -47,6 +47,46 @@ const breadcrumbJsonLd = {
 
 const posts = [
   {
+    slug: 'erp-software-cost-india-2026',
+    title: 'ERP software cost in India (2026)',
+    excerpt:
+      'Subscription or custom build — what ERP actually costs an Indian SME, the implementation costs nobody quotes, and the break-even maths worth doing before you sign.',
+    readTime: '9 min read',
+    date: '2026-09-07',
+  },
+  {
+    slug: 'mobile-app-development-cost-india-2026',
+    title: 'Mobile app development cost in India (2026)',
+    excerpt:
+      'Honest ranges by complexity, why cross-platform cuts 30–40% off the bill, the running costs that never make it into a quote, and why the same app gets quoted at 5x.',
+    readTime: '8 min read',
+    date: '2026-09-07',
+  },
+  {
+    slug: 'tally-to-custom-erp-kanpur-factories',
+    title: 'Tally to custom ERP: how Kanpur factories move',
+    excerpt:
+      'Tally is good software and most units should stay on it. The specific signs you have outgrown it, what migration really involves, and the step nobody should skip.',
+    readTime: '9 min read',
+    date: '2026-09-07',
+  },
+  {
+    slug: 'gst-billing-software-kanpur-traders',
+    title: 'GST billing software for Kanpur traders',
+    excerpt:
+      'What matters at a real counter rather than in a demo — the offline problem, ready-made vs custom, what each costs, and five questions for any vendor.',
+    readTime: '7 min read',
+    date: '2026-09-07',
+  },
+  {
+    slug: 'why-businesses-lose-enquiries-crm-kanpur',
+    title: 'Why businesses lose enquiries — and what a CRM fixes',
+    excerpt:
+      'Most deals are lost to forgetting, not to price. Where leads leak, what a CRM genuinely fixes, what it will not, and the free test to run before you buy one.',
+    readTime: '7 min read',
+    date: '2026-09-07',
+  },
+  {
     slug: 'best-ai-development-companies-kanpur-2026',
     title: 'Best AI development companies in Kanpur (2026)',
     excerpt:

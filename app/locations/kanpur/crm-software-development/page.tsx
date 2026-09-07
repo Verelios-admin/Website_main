@@ -13,12 +13,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'CRM Software Company in Kanpur',
   description:
-    'Verelios Labs builds custom CRM software in Govind Nagar, Kanpur — leads, pipeline, WhatsApp and field sales in one system. From ₹99,999. Rated 5.0★.',
+    'Verelios Labs builds custom CRM software in Govind Nagar, Kanpur — leads, pipeline, WhatsApp and field sales in one system. From ₹99,999. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'CRM Software Company in Kanpur — Custom CRM & WhatsApp | Verelios Labs',
     description:
-      'Custom CRM software — leads, pipeline, quotations, WhatsApp Business API and field sales — built in Govind Nagar, Kanpur. One-time build, not per user per month. Rated 5.0★.',
+      'Custom CRM software — leads, pipeline, quotations, WhatsApp Business API and field sales — built in Govind Nagar, Kanpur. One-time build, not per user per month. Rated 4.9★.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -48,7 +48,7 @@ const REVIEWS: LocalReview[] = [
 // The single canonical business entity lives on the homepage as
 // `${SITE}/#localbusiness`; every other page references it by @id. Declaring a
 // parallel copy here (with its own @id, NAP and self-rating) would fragment one
-// real business into several schema entities and multiply the same 53 reviews.
+// real business into several schema entities and multiply the same 56 reviews.
 // Reference the canonical @id instead of re-declaring.
 
 const serviceJsonLd = {
@@ -156,7 +156,7 @@ export default function KanpurCrmSoftwarePage() {
           eyebrow="CRM software · Kanpur"
           title="A CRM software company in Kanpur"
           highlight="that fits how your team actually sells."
-          lead="Verelios Labs builds custom CRM software in Govind Nagar, Kanpur — leads, pipeline, quotations, WhatsApp and field sales in one system. One-time build from ₹99,999, not per user per month. Milestone payments, and a team you can meet in person. Rated 5.0★."
+          lead="Verelios Labs builds custom CRM software in Govind Nagar, Kanpur — leads, pipeline, quotations, WhatsApp and field sales in one system. One-time build from ₹99,999, not per user per month. Milestone payments, and a team you can meet in person. Rated 4.9★."
           ctaLabel="Get a free CRM consultation"
           breadcrumbs={[
             { label: 'Home', href: '/' },
@@ -188,7 +188,7 @@ export default function KanpurCrmSoftwarePage() {
                 <li><strong>WhatsApp-first</strong> — because that is where Kanpur enquiries actually arrive.</li>
                 <li><strong>One-time build</strong> — not per user per month; hiring does not raise the bill.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 5.0★</strong> across 53 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 4.9★</strong> across 56 client reviews. <strong>You own the code.</strong></li>
               </ul>
 
               <h2>What we build into a Kanpur CRM</h2>

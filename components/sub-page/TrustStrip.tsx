@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GBP_RATING, GBP_REVIEW_COUNT } from '@/lib/schema';
 
 export const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
@@ -18,7 +19,7 @@ export const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
  */
 export function TrustStrip() {
   const items: { label: string; value: string; href?: string; external?: boolean }[] = [
-    { label: 'Client rating', value: '5.0 ★ from 53 reviews', href: GBP_URL, external: true },
+    { label: 'Client rating', value: `${GBP_RATING} ★ from ${GBP_REVIEW_COUNT} reviews`, href: GBP_URL, external: true },
     { label: 'Projects delivered', value: '50+ across India', href: '/about' },
     { label: 'Average delivery', value: 'Under 3 weeks' },
     { label: 'Payment', value: 'Nothing upfront · 30/30/40' },

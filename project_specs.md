@@ -554,3 +554,68 @@ the array. All 16 `defaultService` props type-check against the new `SERVICE_TYP
 union, and all five budget-band strings in `LEAD_VALUE_BY_BUDGET` match both forms
 byte-for-byte (en-dash included) — if they had not, every lead would have silently
 fallen through to the ₹40,000 fallback and the whole value change would have been inert.
+
+---
+
+## Phase 9 — Rating corrected, sitemap freshness, five new posts ✓ 2026-09-07
+
+**Google Business Profile rating changed.** A text-less one-star from a
+one-review account landed 7 Sep, taking the profile from 5.0/53 reviews to
+**4.9/56**. The site asserted "Rated 5.0★" and "53 client reviews" in 43 places,
+all of them now false.
+
+Every instance corrected, and the two figures moved into `lib/schema.ts` as
+`GBP_RATING` / `GBP_REVIEW_COUNT`. `TrustStrip`, `LocalTrustBlock`,
+`Testimonials`, `Studio` and `/locations/kanpur` now import them. This had
+already been hand-fixed once (38 → 53 across nine places), which is exactly why
+it went stale again — hence the constants. Page-level metadata strings still
+hold literals; the comment above the constants carries the grep to find them.
+
+No `aggregateRating` markup exists anywhere on the site and none was added —
+self-serving review markup risks a manual action, and Search Console correctly
+reports 0 review snippets.
+
+**Sitemap `lastmod`.** Bumped to 2026-09-07 for the 19 routes whose *visible*
+content actually changed — computed by walking each page's import tree and
+testing it against the four changed trust components, not by blanket-stamping
+today's date. The 11 blog and hub entries kept their existing dates, preserving
+the documented convention that blog `lastmod` tracks the prose, not the footer.
+
+**Five new blog posts** (`/blog`, sitemap priority 0.7, 35 sitemap URLs total):
+
+| Slug | Angle |
+|---|---|
+| `erp-software-cost-india-2026` | national cost guide, subscription vs build break-even |
+| `mobile-app-development-cost-india-2026` | national cost guide, complexity tiers |
+| `tally-to-custom-erp-kanpur-factories` | local, migration process |
+| `gst-billing-software-kanpur-traders` | local, counter realities |
+| `why-businesses-lose-enquiries-crm-kanpur` | local, CRM decision |
+
+Split 2 national / 3 local deliberately: the domain took 118 clicks in three
+months and cannot compete for "ERP cost in India" this year, but already ranks
+3–7 on Kanpur terms. Each post links to at least one of the four never-crawled
+`/services/*` pages, adding fresh crawl paths.
+
+**Search Console findings that are NOT code problems** — documented in
+`SEO_ACTION_SEPT_2026.md` so nobody wastes time on them: the four uncrawled
+service pages are not an internal-linking issue (9 inbound links and homepage-
+linked, vs an indexed peer with 3), `robots.txt` and robots meta are clean, the
+Kanpur CRM "duplicate" page is only 2.5% verbatim-identical to its national
+twin, and the three "page with redirect" entries are just www/HTTPS
+canonicalisation.
+
+**`public/llms.txt` was the one file the sweep missed.** It asserted the rating
+twice in prose — outside the JSX the grep covered — so the file AI crawlers read
+still said 5.0 from 53 while every rendered page said 4.9 from 56. Corrected, and
+the five new posts added to its `## Articles` list, which had also been left at
+nine. This file is plain prose with no imports, so it cannot consume the new
+constants: it has to be edited by hand whenever the rating moves. Check it first
+next time.
+
+Verified: `npm run build` clean on 2026-09-07 — 42 static pages, 35 sitemap URLs,
+all five new posts present in the export, zero stale rating strings anywhere in
+`out/`. Dev server returned 200 on the homepage, `/blog`, two new posts,
+`/locations/kanpur`, `/about` and `/llms.txt` with no console errors. 14 blog
+posts all registered in the index, the sitemap and `llms.txt`, no HRMS references
+anywhere.
+

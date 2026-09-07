@@ -31,6 +31,21 @@
 
 export const SITE = 'https://www.verelios.com';
 
+/**
+ * Google Business Profile rating, as displayed on the profile itself.
+ *
+ * This is a live number and it WILL drift — it has already gone 38 -> 53 -> 56
+ * reviews, and 5.0 -> 4.9 after a single text-less one-star arrived on
+ * 7 Sep 2026. Import these two constants rather than typing the figures, so the
+ * next change is one edit instead of a hunt through forty-odd strings.
+ *
+ * To refresh: open the profile, read the headline rating, update here, then
+ *   grep -rn "5\.0\|53 review" app components
+ * to confirm nothing has been hardcoded behind your back.
+ */
+export const GBP_RATING = '4.9';
+export const GBP_REVIEW_COUNT = 56;
+
 export const POSTAL_ADDRESS = {
   '@type': 'PostalAddress',
   streetAddress: '126/58 G Block, Govind Nagar',

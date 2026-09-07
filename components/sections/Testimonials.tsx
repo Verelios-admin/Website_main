@@ -1,9 +1,11 @@
 'use client';
 
 import { useGsap } from '@/hooks/useGsap';
+import { GBP_RATING, GBP_REVIEW_COUNT } from '@/lib/schema';
 
 // Real, verified 5★ Google reviews (from the Verelios Labs Google Business
-// Profile — 5.0 across 53 reviews). Text lightly trimmed for length; names are
+// Profile — see GBP_RATING / GBP_REVIEW_COUNT in lib/schema.ts). Text lightly
+// trimmed for length; names are
 // the reviewers' real public names.
 const TESTIMONIALS = [
   {
@@ -142,10 +144,10 @@ export function Testimonials() {
                 lineHeight: 1.0,
               }}
             >
-              5.0 / 5.0
+              {GBP_RATING} / 5.0
             </div>
             <div style={{ color: 'var(--color-ink-muted-48)', fontSize: 13, marginTop: 6 }}>
-              5.0 average rating from 53 Google reviews
+              {GBP_RATING} average rating from {GBP_REVIEW_COUNT} Google reviews
             </div>
           </div>
         </div>

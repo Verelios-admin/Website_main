@@ -1,4 +1,5 @@
 import { Prose } from '@/components/sub-page/Prose';
+import { GBP_RATING, GBP_REVIEW_COUNT } from '@/lib/schema';
 
 // Verelios Labs' Google Business Profile — used for the "view on Google" link
 // and as a sameAs signal in the LocalBusiness structured data.
@@ -97,10 +98,10 @@ export function LocalTrustBlock({
             </div>
             <div>
               <div style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', fontWeight: 600, marginBottom: 8 }}>
-                Rated 5.0 ★
+                Rated {GBP_RATING} ★
               </div>
               <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                53 client reviews<br />
+                {GBP_REVIEW_COUNT} client reviews<br />
                 <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                   See us on Google →
                 </a>
@@ -121,9 +122,9 @@ export function LocalTrustBlock({
           </Prose>
 
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>5.0</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>{GBP_RATING}</span>
             <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 53 verified client reviews</span>
+            <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from {GBP_REVIEW_COUNT} verified client reviews</span>
           </div>
 
           <div
@@ -166,7 +167,7 @@ export function LocalTrustBlock({
               Read all our reviews on Google →
             </a>
             {/* Until now the site had no route for a happy client to leave a
-                review — 53 reviews arrived with no prompt from the website at
+                review — 56 reviews arrived with no prompt from the website at
                 all. Review count and recency are local ranking signals, so the
                 asking should not be left entirely to memory. */}
             <a
