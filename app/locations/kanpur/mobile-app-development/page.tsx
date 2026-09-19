@@ -161,6 +161,16 @@ export default function KanpurMobileAppDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is a mobile app development company based in Govind Nagar, Kanpur, building iOS and Android apps from one codebase for local businesses. Most of the names topping Google for app development in Kanpur are run out of Bengaluru, Delhi or Noida; this is a team you can visit. Apps are built on React Native or Flutter, so one codebase becomes both an iOS and an Android app at close to the cost and timeline of one. The work covers e-commerce and retail apps with payments and order tracking, on-demand and delivery apps with live tracking, field-force and inventory apps, and clinic booking apps. A build runs from discovery to a free mockup of the key screens within 48 hours, then development with a live test build and daily WhatsApp updates, testing on real devices, and submission to both stores. A focused app starts at ₹99,999.
+                </p>
+              </div>
+
               <h2>The app development company in Kanpur that builds it locally</h2>
               <p>
                 The catch with hiring an &ldquo;app development company in Kanpur&rdquo; is that most of the names topping Google are actually run out of metros like Bengaluru, Delhi or Noida, aiming at your city from a distance. <strong>Verelios Labs is a real mobile app development company based in Govind Nagar, Kanpur.</strong> You can visit our office, meet the developers building your app, and steer it in person. For a Kanpur retailer, service business, clinic or startup, that local presence turns an app project from a gamble into a partnership.

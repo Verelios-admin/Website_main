@@ -114,6 +114,49 @@ export default function Post() {
               </p>
 
               <h2>The options worth knowing</h2>
+              {/* Summary table added 2026-09-19. A comparison post with no comparison
+                  table gives an AI assistant nothing liftable for a "best X in Kanpur"
+                  query. Every cell paraphrases this page&apos;s own copy below — per the
+                  stated rule, no prices, review counts or project details are invented
+                  for anyone else. */}
+              <p>
+                The short version, before the detail below. Each ERP company is described
+                only as it publicly presents itself.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Company</th><th>What they are</th><th>Best if you want</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Verelios Labs</td>
+                      <td>Custom ERP built around how the unit actually runs — inventory, manufacturing, purchase, sales, accounting and reporting, with Tally and GST integration</td>
+                      <td>A system that fits your process rather than the reverse, code you own, and on-site shop-floor discovery in Kanpur</td>
+                    </tr>
+                    <tr>
+                      <td>SigmaIT Software Designers</td>
+                      <td>A well-known Kanpur software and web firm building business software alongside its web and app services</td>
+                      <td>ERP-style software from an established local name with a broad service menu</td>
+                    </tr>
+                    <tr>
+                      <td>Panacia Softwares</td>
+                      <td>A long-running Kanpur IT service provider offering software and CMS development</td>
+                      <td>An affordable, straightforward business system from a local team</td>
+                    </tr>
+                    <tr>
+                      <td>Riveyra Infotech</td>
+                      <td>A large Kanpur IT company with the team size to take on bigger software and ERP-style builds</td>
+                      <td>Scale, with marketing and support bundled under one roof</td>
+                    </tr>
+                    <tr>
+                      <td>Tally partners &amp; packaged ERP resellers</td>
+                      <td>Resellers of Tally and off-the-shelf ERP — SAP Business One, Zoho, Marg and similar</td>
+                      <td>A standard product that already fits your workflow closely, accepting limited customisation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <h3>Verelios Labs</h3>
               <p>

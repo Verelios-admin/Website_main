@@ -118,6 +118,15 @@ export default function CustomSoftwarePage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is a team of custom software developers in Govind Nagar, Kanpur, building ERPs, CRMs, admin dashboards, internal tools and APIs for businesses in Kanpur and founders across India, all in full-stack TypeScript. The work replaces the parts of a business currently held together by spreadsheets and WhatsApp: manufacturing and operations systems, lead and pipeline tools, KPI dashboards with role-based access, scheduled jobs, and integrations with Razorpay, Tally, Zoho and the GST APIs. A project runs from a week of discovery shadowing the people who will use the system, through Figma mockups of the key screens, to a staging build the team can test daily, a pilot with a small group, and full rollout around week eight, with 30 days of support included after launch. Custom software starts at ₹1,49,999 for a focused single-purpose tool. The source code sits in a GitHub repository under the client&apos;s own organisation.
+                </p>
+              </div>
+
               <h2>What we build</h2>
               <p>
                 We design and build internal software that automates the parts of your business currently held together by spreadsheets and WhatsApp. Everything is full-stack TypeScript — Next.js for the admin UI, Node.js / TypeScript backend, Postgres or MongoDB for data, deployed on your account so you own everything.

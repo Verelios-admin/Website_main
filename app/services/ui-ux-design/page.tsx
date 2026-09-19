@@ -104,6 +104,15 @@ export default function UiUxDesignPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs designs interfaces for websites, mobile apps and internal tools — research, wireframes, prototypes, visual design and a design system an engineering team can build from without ambiguity. Every project starts from one question: what action should a user take. A typical engagement runs one to three days of discovery, two to four days of wireframes, four to seven days of visual design in Figma, one to two days of clickable prototype and two to three days building the design system, then iterates until sign-off. What is handed over is a Figma file covering every screen and every state — empty, loading, error and success — design tokens for colour, type, spacing, radius and shadow exportable to CSS or Tailwind, a component library with auto-layout and variants, a shareable clickable prototype, and a hand-off document with interaction notes, breakpoints and motion specs. A focused engagement of five to eight screens starts at ₹40,000.
+                </p>
+              </div>
+
               <h2>What we design</h2>
               <p>
                 Every project starts with one question: what action do you want a user to take? Every screen, every component, every line of microcopy is designed in service of that. We don&apos;t do "decorate it nicely" work — we do work that measurably moves conversion, retention, or task-completion.

@@ -114,6 +114,24 @@ export function Services() {
           <p className="lead" style={{ marginTop: 6, maxWidth: 640 }}>
             Comprehensive digital work — designed, engineered, and launched by the same people from first message to live release.
           </p>
+          {/* Front-loaded answer block. The homepage is the entity page for this
+              business, and until 2026-09-19 its longest paragraph in the first
+              third was 33 words — nothing an AI assistant could lift and
+              attribute. Every fact here already appears further down the
+              homepage (Pricing, Process, Hero, About). Keep it 134–167 words. */}
+          <p className="key-answer-light">
+            Verelios Labs is a Govind Nagar, Kanpur–based studio of website, app and custom
+            software developers, working with businesses in Kanpur and founders across India
+            who need to move now rather than next quarter. The work spans custom websites,
+            cross-platform iOS and Android apps, e-commerce stores, ERP, billing and inventory,
+            CRM software, AI automation, UI/UX design and managed hosting. Every engagement
+            opens the same way: a free mockup within 48 hours, before any payment or
+            commitment. Payment is then milestone-based — 30% to start, 30% at mid-delivery,
+            40% at launch — so it lands as the work does. Websites typically start at ₹49,999
+            and go live in 7–14 days; mobile apps start at ₹99,999 and ship to both stores in
+            3–5 weeks. Most projects go from kickoff to launch in under three weeks, and the
+            client owns the code.
+          </p>
         </div>
 
         <div className="six-up">

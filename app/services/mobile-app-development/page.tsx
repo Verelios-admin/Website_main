@@ -126,6 +126,15 @@ export default function MobileAppDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is a team of app developers in Govind Nagar, Kanpur, building custom iOS and Android apps for local businesses and founders across India from a single codebase — React Native when a web product shares the code, Flutter when the build is mobile-only or graphics-heavy. Every app includes custom UI/UX design rather than a template, a Node.js backend with Postgres or MongoDB on the client&apos;s own account, push notifications, phone-OTP, Google and Apple sign-in, Razorpay or Stripe payments, and submission to both the App Store and Play Store including handling rejections. A project runs from a 15-minute call on day one to a clickable Figma mockup of three to five screens by day four, then a TestFlight or internal-track build every other day so the app can be used on a real phone while it is being built. Most apps reach both stores in 3&ndash;5 weeks.
+                </p>
+              </div>
+
               <h2>What we build</h2>
               <p>
                 We build production mobile apps for both <strong>iOS and Android from a single codebase</strong>, using either React Native (when you want maximum overlap with a web product) or Flutter (when you want the tightest native performance and a single design system). We&apos;ve shipped trading apps, news apps, real-estate apps, advisory platforms, and ERP companions — full list on our <a href="/#work">portfolio</a>.

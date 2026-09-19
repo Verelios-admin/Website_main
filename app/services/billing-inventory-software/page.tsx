@@ -126,6 +126,15 @@ export default function BillingInventorySoftwarePage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Custom billing and inventory software makes the invoice the thing that moves the stock, so billing and stock agree without anyone walking to the godown to check. Verelios Labs builds it for Indian shops, distributors and manufacturers from Govind Nagar, Kanpur. GST invoicing carries HSN and SAC codes, the correct CGST, SGST and IGST split by place of supply, and GSTIN validation, with IRN, QR and e-way bills raised through the government APIs. Stock updates in real time across godowns and counters the moment a bill is raised, with batch, serial and expiry tracking for pharma, food and chemicals. The billing screen is keyboard-first, because a counter is judged on how fast a trained person can raise a bill with a customer waiting. A single-location system ships in 4 to 6 weeks; multi-location with batch tracking and integrations takes 8 to 12 weeks. It is a one-time build, not a per-user licence.
+                </p>
+              </div>
+
               <h2>The problem is almost never the billing</h2>
               <p>
                 Nearly every business we talk to can produce an invoice. What they cannot do is answer &ldquo;how much of this item do we actually have, right now, across all locations&rdquo; without someone walking to the godown. Billing software and stock reality drift apart because sales, purchase, returns and damages get recorded in different places, at different times, by different people.

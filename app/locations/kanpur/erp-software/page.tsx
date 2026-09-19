@@ -152,6 +152,16 @@ export default function KanpurErpSoftwarePage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs builds custom ERP software in Govind Nagar, Kanpur — inventory, manufacturing, purchase, sales and accounting in one system for local factories and traders. Many Kanpur businesses, especially in leather, textiles, engineering, FMCG, chemicals and trading, still run on a patchwork of Tally, Excel and registers, where information goes stale the moment it is written down and month-end takes a week. Modules are built only as they are needed: real-time stock across godowns with batch and lot tracking, bill of materials and work orders for the factories, purchase orders and vendor management, GST billing and receivables, ledgers that sync cleanly with Tally, and live dashboards for the owner. A project starts with shop-floor discovery at the unit itself, then a fixed quote, phased delivery, Tally and GST integration, and on-site migration and training in Kanpur. A focused module set starts at ₹99,999.
+                </p>
+              </div>
+
               <h2>The ERP software company in Kanpur that fits your workflow, not the other way round</h2>
               <p>
                 Most off-the-shelf ERP is built to make your business bend around the software, instead of the other way round. <strong>Verelios Labs is a custom ERP software company based in Govind Nagar, Kanpur</strong> — we build the ERP around how your Kanpur factory, trading house or distributor actually runs. And because we&apos;re local, you can sit with us, walk us through your shop floor, and point at exactly what needs to change. No support ticket to another country; a team you can visit.

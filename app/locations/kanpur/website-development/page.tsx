@@ -161,6 +161,16 @@ export default function KanpurWebsiteDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is a website development company based in Govind Nagar, Kanpur, building fast, SEO-ready React and Next.js websites and e-commerce stores for local businesses. Most of what ranks for a Kanpur website search is an agency that has never set foot in the city, with the city name substituted into a generic page; this is a team you can visit. Sites are hand-coded in React, Next.js and TypeScript, server-rendered for search, tuned for Core Web Vitals, and shipped with a working contact form and WhatsApp. A build runs from a free consultation on day one to a designed homepage mockup within 48 hours, before any payment, then daily WhatsApp updates against a live preview link, and launch on the client&apos;s own domain between day 19 and day 21. A five-page business website starts at ₹49,999 and most go live in 7&ndash;21 days.
+                </p>
+              </div>
+
               <h2>The website development company in Kanpur that builds it locally</h2>
               <p>
                 Run a search for a &ldquo;website development company in Kanpur&rdquo; and most of what ranks is an agency that has never set foot in the city — a generic page with &ldquo;Kanpur&rdquo; find-and-replaced into it. <strong>Verelios Labs is a real website development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and point at the exact section you want changed. For a Kanpur shop, factory, clinic, school or startup, meeting the people building your website in person is the difference between hoping it goes well and watching it go well.

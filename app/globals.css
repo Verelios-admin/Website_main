@@ -1587,6 +1587,55 @@ hr.hair {
   margin: 28px 0;
 }
 .prose-on-dark .callout p:last-child { margin-bottom: 0; }
+
+/* Front-loaded answer block — the self-contained 134–167 word passage that AI
+   assistants quote. It sits in the FIRST THIRD of the page deliberately: ~44% of
+   AI citations come from there, and until 2026-09-19 every citable passage on
+   this site sat at 60–65% depth inside the FAQ, where that never reached it.
+
+   Visually this is the page's opening statement, not a banner — a quiet raised
+   surface with a single accent rule. Layout lives here, never in <style jsx>. */
+.prose-on-dark .key-answer {
+  margin: 0 0 36px;
+  padding: 22px 26px 22px 28px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-left: 2px solid var(--color-primary-on-dark, #2997ff);
+  border-radius: 4px 14px 14px 4px;
+}
+.prose-on-dark .key-answer > p {
+  margin: 0;
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: rgba(255,255,255,0.86);
+}
+.prose-on-dark .key-answer > p + p { margin-top: 14px; }
+.prose-on-dark .key-answer strong { color: #fff; font-weight: 600; }
+
+/* Light-background twin of .key-answer, for the homepage, which is built from
+   section components on a light canvas rather than a .prose-on-dark wrapper. */
+.key-answer-light {
+  margin: 26px 0 0;
+  padding: 20px 24px 20px 26px;
+  max-width: 720px;
+  background: var(--color-surface-pearl, #fafafc);
+  border: 1px solid var(--color-divider-soft, rgba(0,0,0,0.06));
+  border-left: 2px solid var(--color-primary, #0066cc);
+  border-radius: 4px 12px 12px 4px;
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.62;
+  color: var(--color-body, #1d1d1f);
+  letter-spacing: -0.005em;
+}
+.key-answer-light strong { font-weight: 600; }
+@media (max-width: 560px) {
+  .key-answer-light { padding: 18px 18px 18px 20px; font-size: 15.5px; }
+}
+@media (max-width: 560px) {
+  .prose-on-dark .key-answer { padding: 18px 18px 18px 20px; }
+  .prose-on-dark .key-answer > p { font-size: 16.5px; line-height: 1.6; }
+}
       
 
 /* --- from components/sub-page/RelatedServices.tsx --- */

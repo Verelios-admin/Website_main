@@ -619,3 +619,88 @@ all five new posts present in the export, zero stale rating strings anywhere in
 posts all registered in the index, the sitemap and `llms.txt`, no HRMS references
 anywhere.
 
+
+---
+
+## Phase 13 — GEO remediation: front-loading, comparison tables, entity graph ✓ 2026-09-19
+
+A fresh GEO pass measured the **live** site — all 35 sitemap URLs, 1,944 text blocks,
+41,353 words — and scored it **62/100**, up from 58 on 2026-08-30. Artifact:
+`verelios.com-audit-2026-09-19/GEO-ANALYSIS.md`.
+
+**The finding, and why the score had barely moved.** Phase 11 built six 134–167 word
+citable blocks and then left them in the FAQ at the page foot. Measured live, four of the
+site's five citable blocks sat at **60–65% page depth**, while the top third of every
+commercial page topped out at 54–96 words and the homepage at **33**. Since roughly 44%
+of AI citations originate in the first 30% of a page, the work Phase 11 did was sitting
+where that traffic never reached it. Everything else Phase 11 flagged had either been
+fixed (tables 0 → 14, recency now 14/14 posts under 90 days) or needs the owner.
+
+**Fixed — front-loading (the main change).** A `.key-answer` block now sits immediately
+below the intro on **17 pages**: all 10 service pages, all 6 Kanpur location pages, and
+the homepage. Measured in the built output, citable blocks went **5 → 22** and
+front-loaded ones **1 → 18**, every new block landing at **2–9% depth**.
+
+The Phase 11 discipline held: **no new claims were invented.** Each page was read first
+and its block consolidates only facts that page already carries — which differ page by
+page, so the ₹3,000/month maintenance figure was deliberately left out of
+`/services/web-hosting` (that page quotes per project and never states it). The GBP
+rating was deliberately **excluded** from every block: Phase 9 moved it into constants
+precisely because hardcoded copies go stale, and a front-loaded block is exactly the kind
+of prose the next rating change would miss.
+
+On the four pages that already had a citable FAQ answer, the new top block was written to
+a different question and verified against the FAQ text at **2–4% similarity**, so the page
+gains a second citable passage rather than a near-duplicate.
+
+**Fixed — comparison tables on the four listicles.** Phase 11 flagged zero tables
+sitewide; commit `24c163c` added them to the service pages and never reached the four
+"Best X companies in Kanpur" posts, which are *literally* comparison content — five
+vendors each under H3s, no table. Each now opens its comparison section with a
+Company / What they are / Best if you want table. Every cell paraphrases that page's own
+copy, honouring the rule stated on the pages themselves: no prices, review counts or
+project details invented for anyone else. Sitewide tables **14 → 18**.
+
+**Fixed — entity graph.** `SOCIAL_LINKS` was duplicated across four files
+(`layout`, homepage, Kanpur hub, `LocalTrustBlock`) — the same drift `lib/schema.ts`
+exists to prevent. Consolidated into `SOCIAL_PROFILES` there, with the exclusion rationale
+moved alongside it, and **GoodFirms added**: `goodfirms.co/company/verelios-labs` is
+owner-confirmed, Google indexes it, and its "Founded 2024" matches the site. The LinkedIn
+Company Page stays excluded for the documented reason (asserts Founded 2025 and a
+Bangalore office).
+
+**Fixed — snippet directives on the generic robots tag.** `max-snippet:-1`,
+`max-image-preview:large` and `max-video-preview:-1` were set only under `googleBot`, so
+Googlebot was always covered but Bing — and therefore Copilot — read the generic tag and
+ran under a default snippet cap. Now on both.
+
+**Still open, and all of it needs the owner, in value order:**
+
+1. **Multi-modal scores 8/100 and is now the single largest drag.** There is no content
+   imagery and no video on any of the 38 built pages — the only `<img>` is the logo mark
+   and the Meta Pixel. YouTube is the strongest known citation correlate (~0.737) and
+   there is no channel. Three or four 60–90 second screen recordings of software already
+   shipped would move multi-modal *and* the strongest brand-mention signal at once. This
+   cannot be done from the repo; it needs real recordings.
+2. **`Person.sameAs` is still absent.** Deliberately not guessed: the
+   `linkedin.com/in/verelios-…` profile in `SOCIAL_PROFILES` is the **Verelios Labs**
+   account, per `verelios-linkedin-SKILL.md`, not Sahil Chauhan's personal profile. Adding
+   the brand account to the Person node would assert a false identity. Needs the personal
+   profile URL from the owner.
+3. **`twitter:site`/`twitter:creator` claim `@verelioslabs` with no matching URL in
+   `sameAs`.** X returns HTTP 200 for handles that do not exist, so existence could not be
+   verified from here. Either add the URL to `SOCIAL_PROFILES` or drop the two meta tags.
+4. **Zero Reddit presence**, which is 46.7% of Perplexity's citations.
+5. **Recency needs a cycle, not a one-off.** All 14 posts are under 90 days today, but the
+   two AI posts cross on **2026-09-24** and the four listicles on **2026-10-15**.
+
+**Re-scored after the changes: 62 → 70/100.** Citability 48 → 77, structure 85 → 89,
+authority 61 → 63, technical 97 → 98, multi-modal unchanged at 8.
+
+**Verified 2026-09-19:** `tsc --noEmit` clean; `next build` clean — 42 static pages, 35
+sitemap URLs, unchanged from before; dev server returned 200 on the homepage, three
+service pages, two Kanpur pages, two listicles and `/about` with no runtime errors;
+built output re-measured to confirm 22 citable blocks, 18 of them front-loaded, 18 tables;
+screenshots checked at 1280px and 390px, with **no horizontal overflow on any page**.
+`next build` was run directly rather than `npm run build`, so the `postbuild` IndexNow
+submission did **not** fire on an undeployed change — run `npm run indexnow` after deploy.

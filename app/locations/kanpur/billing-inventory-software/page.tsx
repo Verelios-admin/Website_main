@@ -161,6 +161,16 @@ export default function KanpurBillingInventoryPage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Billing software is judged at the counter, not in a demo: the only test that matters is how fast a trained person can raise a bill with three customers waiting. Verelios Labs builds custom GST billing and inventory software in Govind Nagar, Kanpur, and comes to stand at the counter and in the godown before quoting. The billing screen is keyboard-first — item, quantity, rate, save — and keeps working when the internet drops, storing invoices locally and syncing when the connection returns. Stock updates across godowns and counters the moment a bill is raised, with FIFO and FEFO issue and expiry alerts for pharma, food and chemical stock, barcode scanning at billing and goods receipt, and IRN, QR codes and e-way bills raised through the government APIs. Tally stays: vouchers sync both ways, so the CA&apos;s workflow does not change.
+                </p>
+              </div>
+
               <h2>Billing software is judged at the counter, not in a demo</h2>
               <p>
                 Every billing product looks fine in a presentation. The only test that matters is how fast a trained person can raise a bill with three customers waiting at Naveen Market on a Saturday evening. If the software is slower than the bill book it replaced, your staff will quietly go back to the bill book — and we have seen that happen to plenty of expensive systems.

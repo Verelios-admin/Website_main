@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
+import { SOCIAL_PROFILES } from '@/lib/schema';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/sections/Hero';
 
@@ -45,12 +46,6 @@ export const metadata: Metadata = {
 // Verelios Labs' Google Business Profile — added to sameAs so Google can tie
 // this website entity to the verified GBP listing (strongest entity signal).
 const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
-
-const SOCIAL_LINKS = [
-  'https://www.linkedin.com/in/verelios-4a1483387/',
-  'https://www.facebook.com/profile.php?id=61585021269687',
-  'https://www.instagram.com/verelioslabs/',
-];
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
@@ -131,7 +126,7 @@ const localBusinessJsonLd = {
     { '@type': 'Country', name: 'India' },
   ],
   serviceArea: { '@type': 'Country', name: 'India' },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
+  sameAs: [...SOCIAL_PROFILES, GBP_URL],
   parentOrganization: { '@id': `${SITE_URL}/#organization` },
   // NOTE: aggregateRating + review are deliberately ABSENT here, and must not be
   // re-added. Google's review-snippet policy forbids "self-serving" reviews — a

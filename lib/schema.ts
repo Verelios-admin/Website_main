@@ -81,3 +81,33 @@ export const AUTHOR_REF = {
   url: `${SITE}/about`,
   jobTitle: 'Founder & CEO',
 } as const;
+
+/**
+ * Every off-site profile that represents this business, as `Organization.sameAs`.
+ *
+ * Google builds ONE entity out of every profile listed here, so a target that
+ * contradicts the NAP above actively works against the local signal. This list
+ * lived in four separate files until 2026-09-19 (layout, homepage, the Kanpur hub
+ * and LocalTrustBlock) — the same drift this file exists to prevent. Import it.
+ *
+ * DELIBERATELY EXCLUDED, verified live 2026-08-30 — do not "fix" by adding:
+ *   https://www.linkedin.com/company/verelios-labs — a Company Page is the stronger
+ *   entity signal than a personal profile, but it says "Founded: 2025" against this
+ *   site's 2024 and lists Bangalore as a second location. The Facebook Page title
+ *   reads "VereliosLabs | Bangalore" and the Instagram bio says "Offices in Bangalore
+ *   (HSR Layout) and Kanpur". There is one office, in Govind Nagar; the Bangalore
+ *   claim was removed from this site in Phase 7 and was never corrected on the
+ *   platforms. Fix the platforms first, then swap the LinkedIn URL below.
+ *
+ * GoodFirms added 2026-09-19: owner-confirmed, and the profile's "Founded 2024"
+ * matches this site. It is the only third-party directory Google indexes for the
+ * brand, and directories of this class are what AI assistants lean on for
+ * "best agency in X" answers. Re-check its Locations tab if the Bangalore claim
+ * ever spreads there.
+ */
+export const SOCIAL_PROFILES = [
+  'https://www.linkedin.com/in/verelios-4a1483387/',
+  'https://www.facebook.com/profile.php?id=61585021269687',
+  'https://www.instagram.com/verelioslabs/',
+  'https://www.goodfirms.co/company/verelios-labs',
+] as const;

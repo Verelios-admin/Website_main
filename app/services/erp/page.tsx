@@ -126,6 +126,15 @@ export default function ERPPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Custom ERP software is one system that runs the back office of a business — stock, production, purchases, sales, accounts and reporting — built around the way the business already works instead of a packaged product&apos;s template. Verelios Labs builds custom ERP from Govind Nagar, Kanpur, for manufacturers, distributors, traders and service businesses across Kanpur, Uttar Pradesh and the rest of India. Modules are built in the order they are needed: inventory and warehouse, manufacturing, procurement, sales and order management, accounting with GST and two-way Tally sync, and the dashboards an owner checks each morning. A single-module system ships in 6&ndash;8 weeks and a multi-module rollout in 10&ndash;16 weeks, module by module, so finished parts go live while the rest is still being built. What is delivered is owned outright: the full source code sits in a GitHub repository under the client&apos;s organisation and the system runs on the client&apos;s own hosting account.
+                </p>
+              </div>
+
               <h2>What a custom ERP actually is</h2>
               <p>
                 An ERP — Enterprise Resource Planning — is the single system that runs the back office of your business: what you have in stock, what you&apos;re making, what you&apos;ve bought and sold, who you owe and who owes you. Most Indian businesses run this across a stack of disconnected tools — Tally for accounts, Excel for inventory, WhatsApp for the shop floor, a diary for purchase orders. A custom ERP pulls all of that into <strong>one system that matches your workflow</strong>, instead of forcing your team to bend around a product someone else designed.

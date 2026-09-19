@@ -165,6 +165,16 @@ export default function KanpurAiDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is an AI development company based in Govind Nagar, Kanpur, building AI agents, chatbots, machine-learning models and workflow automation for local businesses. Search for an AI company in Kanpur and most of the names are firms sitting in Delhi or Bengaluru running one page across dozens of cities; this is a team you can visit. The work covers chatbots and WhatsApp assistants trained on a business&apos;s own catalogue, pricing and FAQs, answering in Hindi or English; agents that complete multi-step tasks; document and invoice automation that pushes data into an ERP or Tally; computer-vision inspection for manufacturing, leather and textile units; demand forecasting; and voice assistants for routine calls. Models are grounded in the client&apos;s own documents through retrieval, so answers come from real information rather than being invented. A focused chatbot or automation starts at ₹49,999 and typically ships in 2&ndash;4 weeks.
+                </p>
+              </div>
+
               <h2>The AI development company in Kanpur that actually builds it here</h2>
               <p>
                 Here&apos;s the awkward truth about &ldquo;AI companies in Kanpur&rdquo;: search for one and you&apos;ll mostly meet firms sitting in Delhi or Bengaluru, quietly cloning a single landing page across dozens of cities and dropping &ldquo;Kanpur&rdquo; into the blanks. <strong>Verelios Labs is different: we&apos;re a real AI development company based in Govind Nagar, Kanpur.</strong> You can visit our office, sit across the table, and watch your AI agent or chatbot work before you pay for the full build. For a Kanpur manufacturer, trader, clinic, school or shop, that local presence is the difference between an AI project you hope goes well and one you can actually steer.

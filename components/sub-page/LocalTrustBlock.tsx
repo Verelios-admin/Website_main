@@ -22,11 +22,9 @@ export const REVIEW_URL = 'https://g.page/r/CSnAeGueeOXNEBM/review';
 const DIRECTIONS_URL =
   'https://www.google.com/maps/dir/?api=1&destination=26.447437,80.306051';
 
-export const SOCIAL_LINKS = [
-  'https://www.linkedin.com/in/verelios-4a1483387/',
-  'https://www.facebook.com/profile.php?id=61585021269687',
-  'https://www.instagram.com/verelioslabs/',
-];
+// Single source of truth is lib/schema.ts; re-exported under the old name so the
+// four Kanpur pages importing it from here keep working.
+export { SOCIAL_PROFILES as SOCIAL_LINKS } from '@/lib/schema';
 
 export interface LocalReview {
   author: string;

@@ -126,6 +126,15 @@ export default function CrmSoftwareDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Custom CRM software puts every lead, follow-up, quotation and deal into one pipeline that a sales team will actually open each morning. Verelios Labs builds CRMs the opposite way round from most: the salesperson gets something useful first — calls logged without typing, follow-ups queued automatically, branded quotations generated in one click — and management reporting falls out of that rather than being paid for with extra data entry. Leads arrive from website forms, WhatsApp, IndiaMART, Facebook and Google lead forms and phone calls, each with its source recorded. Pricing starts at ₹99,999 for a focused build covering leads, pipeline, follow-ups and quotations, which ships in five to seven weeks. With the WhatsApp Business API, call-log capture, field-sales tracking, targets and ERP integration it runs to ₹1,50,000&ndash;₹4,00,000 over eight to twelve weeks. It is a one-time build the client owns, not a per-user monthly licence.
+                </p>
+              </div>
+
               <h2>Most CRMs fail for the same reason</h2>
               <p>
                 They are bought to give management visibility, and they make the salesperson&apos;s day harder. Data entry goes up, nothing they do gets easier, so within two months the real pipeline moves back into a personal notebook and a WhatsApp thread, and the CRM holds a fiction.

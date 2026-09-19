@@ -126,6 +126,15 @@ export default function EcommerceDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Selling online in India is mostly logistics — the storefront is the easy part. Verelios Labs builds custom e-commerce websites from Govind Nagar, Kanpur, with that reality designed in: catalogue and variants carrying per-variant stock, pricing and images; fast search and filters; a short checkout with guest checkout and pincode-based serviceability; payments through Razorpay, Cashfree, PayU, Instamojo or Stripe plus native UPI and cash on delivery with OTP verification to cut fake orders; and shipping through Shiprocket, Delhivery, Blue Dart, DTDC or India Post with automatic AWB generation and live tracking. GST-compliant tax invoices are generated per order with correct state-wise splits and HSN codes. Stores ship server-rendered so product pages are crawlable, with Product and Offer structured data. A custom online store starts at ₹99,999 and goes live in 3 to 4 weeks. For a simple catalogue and a launch next week, Shopify is the better answer and we say so.
+                </p>
+              </div>
+
               <h2>Selling online in India is mostly logistics</h2>
               <p>
                 The storefront is the easy part. What decides whether an Indian e-commerce business works is everything behind it: cash on delivery and the return rate that comes with it, shipping partners and AWB tracking, GST invoicing per state, stock that has to stay honest across an online store and a physical counter, and customers who want to be updated on WhatsApp rather than email.

@@ -137,6 +137,15 @@ export default function WebHostingPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Managed web hosting means the servers, backups, certificates and updates are somebody else&apos;s job. Verelios Labs runs fully managed hosting and maintenance for Indian businesses from Govind Nagar, Kanpur — for the sites and apps it builds, and for existing ones taken over from elsewhere, whether WordPress, React and Next.js, static sites or custom apps. Included: fast cloud hosting behind a global CDN so pages load quickly in Kanpur, across India and abroad; a 99.9% uptime target with monitoring that alerts the team the moment anything goes down; a free auto-renewing SSL certificate; daily automated backups with quick restore; security patches; Core Web Vitals monitoring so performance regressions are caught before they affect Google rankings; and small content changes sent over WhatsApp. Hosting can run on infrastructure Verelios manages or on the client&apos;s own Vercel, AWS, DigitalOcean or Hostinger account, so there is no lock-in.
+                </p>
+              </div>
+
               <h2>Hosting you never have to think about</h2>
               <p>
                 Most business owners don&apos;t want a hosting control panel — they want their site to be fast, secure, and simply <em>up</em>. That&apos;s what managed hosting means: we run the servers, the backups, the SSL and the updates, and you get on with your business. If something breaks at 2am, it&apos;s our problem, not yours — and you&apos;ll usually hear it&apos;s already fixed on WhatsApp before you&apos;ve even noticed.

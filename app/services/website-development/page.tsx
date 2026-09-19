@@ -118,6 +118,15 @@ export default function WebsiteDevelopmentPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  Verelios Labs is a team of website developers in Govind Nagar, Kanpur, building custom React and Next.js websites for businesses in Kanpur and founders across India. Every site is hand-coded in React, Next.js and TypeScript, server-rendered so it can rank, and tuned for Core Web Vitals rather than assembled from a page-builder template. A project runs to a fixed sequence: a 15-minute call on day one, a designed homepage mockup within 48 hours before any code is written or any payment is made, then daily WhatsApp updates against a live preview link, real content and integrations, and launch on the client&apos;s own domain between day 19 and day 21. Most sites go live in 7&ndash;21 days. Payment is milestone-based — 30% to start, 30% at mid-delivery, 40% at launch — and the first 7 days after launch are free support. The client owns the source code, hosting and domain.
+                </p>
+              </div>
+
               <h2>What we build</h2>
               <p>
                 We build custom websites for Indian businesses that need to move faster than a typical agency timeline allows. Every site is hand-coded in <strong>React + Next.js + TypeScript</strong>, server-rendered for SEO, optimised for Core Web Vitals, and shipped with a working contact form, analytics, and Google Search Console set up on day one.

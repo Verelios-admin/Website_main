@@ -118,6 +118,15 @@ export default function AIAutomationPage() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  AI automation removes the work a machine should be doing — copying data between apps, answering the same questions, reading invoices, chasing leads. Verelios Labs builds it for Indian businesses from Govind Nagar, Kanpur: workflow automation that connects the tools a team already uses, AI chatbots trained on the business&apos;s own content for a website or WhatsApp, document and data processing that reads invoices, forms and PDFs and drops the fields into an existing system, lead capture and routing, LLM features inside a product that already exists, and scheduled reporting and alerts. The stack is chosen for cost and reliability rather than fashion — sometimes a no-code tool like Make, n8n or Zapier, sometimes custom Node.js and TypeScript calling a model API. A focused automation, one workflow or one bot, starts at ₹49,999 and usually ships in one to two weeks. Automations run on the client&apos;s own accounts and cloud, under a mutual NDA.
+                </p>
+              </div>
+
               <h2>What we automate</h2>
               <p>
                 Most businesses lose hours every day to work that a machine should be doing — copying data between apps, answering the same questions, reading invoices, chasing leads. We build automations that quietly take that work off your team&apos;s plate, on the tools you already use.

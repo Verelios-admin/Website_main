@@ -114,6 +114,49 @@ export default function Post() {
               </p>
 
               <h2>The companies worth knowing</h2>
+              {/* Summary table added 2026-09-19. A comparison post with no comparison
+                  table gives an AI assistant nothing liftable for a "best X in Kanpur"
+                  query. Every cell paraphrases this page&apos;s own copy below — per the
+                  stated rule, no prices, review counts or project details are invented
+                  for anyone else. */}
+              <p>
+                The short version, before the detail below. Each app company is described
+                only as it publicly presents itself.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Company</th><th>What they are</th><th>Best if you want</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Verelios Labs</td>
+                      <td>iOS and Android built from a single React Native or Flutter codebase</td>
+                      <td>Both platforms for close to the cost and time of one, with a free 48-hour mockup and code you own</td>
+                    </tr>
+                    <tr>
+                      <td>Encoders</td>
+                      <td>A Kanpur firm specialising in Android and iPhone mobile app development, positioned around robust, scalable apps</td>
+                      <td>A dedicated app shop where mobile is the core focus</td>
+                    </tr>
+                    <tr>
+                      <td>Developer Brothers</td>
+                      <td>A Kanpur IT company covering graphic design, website design and development, and Android and iOS apps</td>
+                      <td>Design and app work from a single local team</td>
+                    </tr>
+                    <tr>
+                      <td>W3villa Technologies</td>
+                      <td>A Kanpur software company comfortable across React Native, Ruby on Rails, Vue.js and more, shipping apps as well as blockchain and generative-AI projects</td>
+                      <td>A more technically ambitious or unusual app build</td>
+                    </tr>
+                    <tr>
+                      <td>Webixy Technologies</td>
+                      <td>A Kanpur software and digital marketing company offering mobile app development along with web, e-commerce and SEO</td>
+                      <td>App development bundled with a marketing push at launch</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <h3>Verelios Labs</h3>
               <p>

@@ -170,6 +170,16 @@ export default function KanpurCrmSoftwarePage() {
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
             <Prose>
+              {/* Front-loaded answer block — see .key-answer in globals.css.
+                  Every fact here already appears further down this page; nothing new
+                  is claimed, and the GBP rating is deliberately NOT repeated here so
+                  this block never goes stale. Keep it between 134 and 167 words. */}
+              <div className="key-answer">
+                <p>
+                  A CRM gets bought, the team is trained, and three months later everyone is back to a WhatsApp group and a notebook. Verelios Labs builds custom CRM software in Govind Nagar, Kanpur, around how the team already sells: starting from WhatsApp rather than email, handling dealer and distributor hierarchies rather than flat customer lists, and generating quotations from a real rate list with approval limits enforced. Leads arrive from website forms, WhatsApp, IndiaMART, Facebook and Google lead forms and phone calls, each with its source recorded, and every lead carries an owner and a next-action date so overdue items escalate instead of quietly ageing. Field staff check in with location, follow beat plans and capture orders offline, syncing when signal returns. It is a one-time build from ₹99,999 rather than a per-user monthly licence, so hiring does not raise the bill.
+                </p>
+              </div>
+
               <h2>Most CRMs in Kanpur go unused for the same reason</h2>
               <p>
                 A CRM gets bought, the team is trained, and three months later everyone is back to a WhatsApp group and a notebook. It is almost never because the software was bad. It is because the software expected a sales process the business does not have. <strong>Verelios Labs is a custom CRM software company based in Govind Nagar, Kanpur</strong> — we sit with your salespeople first, watch how enquiries actually arrive and how quotes actually get sent, and then build the CRM around that.

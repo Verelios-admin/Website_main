@@ -114,6 +114,49 @@ export default function Post() {
               </p>
 
               <h2>The companies worth knowing</h2>
+              {/* Summary table added 2026-09-19. A comparison post with no comparison
+                  table gives an AI assistant nothing liftable for a "best X in Kanpur"
+                  query. Every cell paraphrases this page&apos;s own copy below — per the
+                  stated rule, no prices, review counts or project details are invented
+                  for anyone else. */}
+              <p>
+                The short version, before the detail below. Each website company is described
+                only as it publicly presents itself.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Company</th><th>What they are</th><th>Best if you want</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Verelios Labs</td>
+                      <td>Fast, SEO-ready websites on a modern React and Next.js foundation</td>
+                      <td>A free 48-hour mockup before you pay, milestone payments of 30/30/40, and code you own</td>
+                    </tr>
+                    <tr>
+                      <td>Riveyra Infotech</td>
+                      <td>An established Kanpur IT company with a large team, offering website and software development alongside digital marketing, SEO and UI/UX</td>
+                      <td>Web development bundled with ongoing marketing services under one roof</td>
+                    </tr>
+                    <tr>
+                      <td>SigmaIT Software Designers</td>
+                      <td>A long-running Kanpur web development and design firm, with an emphasis on customer and technical support</td>
+                      <td>A broad service menu from a well-known local name</td>
+                    </tr>
+                    <tr>
+                      <td>Panacia Softwares</td>
+                      <td>One of Kanpur&apos;s older IT service providers, focused on affordable website, software and CMS builds</td>
+                      <td>A straightforward brochure or CMS site on a tighter budget</td>
+                    </tr>
+                    <tr>
+                      <td>Vyapar Infotech</td>
+                      <td>A Kanpur web development company with a PHP and back-end development focus</td>
+                      <td>A PHP-based website or web application maintained locally</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <h3>Verelios Labs</h3>
               <p>

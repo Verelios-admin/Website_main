@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { SOCIAL_PROFILES } from '@/lib/schema';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/MetaPixel';
@@ -94,6 +95,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     nocache: false,
+    // These three also belong on the GENERIC robots tag, not only under googleBot.
+    // Googlebot honours its own tag, so Google was always covered — but Bing (and
+    // therefore Copilot) reads the generic tag and supports max-snippet, so it was
+    // running under a default snippet cap while Google was not. Unlimited snippet
+    // length is what makes a passage long enough for an AI answer to quote.
+    'max-video-preview': -1,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
     googleBot: {
       index: true,
       follow: true,
@@ -136,26 +145,8 @@ export const metadata: Metadata = {
 // website entity to the verified GBP listing (strongest entity/local signal).
 const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
-// Google builds ONE entity out of every profile listed here, so a sameAs target
-// that contradicts the NAP above actively works against the local signal.
-//
-// Verified live 2026-08-30: the LinkedIn Company Page
-// (https://www.linkedin.com/company/verelios-labs) now exists — but it says
-// "Founded: 2025" against this site's 2024, and lists Bangalore as a second
-// location. The Facebook Page title reads "VereliosLabs | Bangalore" and the
-// Instagram bio says "Offices in Bangalore (HSR Layout) and Kanpur". There is one
-// office, in Govind Nagar; the Bangalore claim was removed from this site in
-// Phase 7 and was never corrected on the platforms.
-//
-// SWAP THE LINKEDIN URL BELOW to the Company Page once its text is fixed. A
-// Company Page is the stronger entity signal than a personal profile, but only
-// once it stops asserting a founding year and an office the business doesn't have.
-// Fix the platforms first, then change this one line.
-const SOCIAL_LINKS = [
-  'https://www.linkedin.com/in/verelios-4a1483387/',
-  'https://www.facebook.com/profile.php?id=61585021269687',
-  'https://www.instagram.com/verelioslabs/',
-];
+// The sameAs list — including which profiles are deliberately EXCLUDED and why —
+// lives in lib/schema.ts. Read the comment there before changing it.
 
 const orgJsonLd = {
   '@context': 'https://schema.org',
@@ -196,7 +187,7 @@ const orgJsonLd = {
     postalCode: '208006',
     addressCountry: 'IN',
   },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
+  sameAs: [...SOCIAL_PROFILES, GBP_URL],
   foundingDate: '2024',
   areaServed: { '@type': 'Country', name: 'India' },
   knowsAbout: [

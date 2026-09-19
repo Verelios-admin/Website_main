@@ -5,7 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { LocalMap } from '@/components/sub-page/LocalMap';
-import { GBP_RATING } from '@/lib/schema';
+import { GBP_RATING, SOCIAL_PROFILES } from '@/lib/schema';
 
 const URL_PATH = '/locations/kanpur';
 const SITE = 'https://www.verelios.com';
@@ -14,11 +14,6 @@ const SITE = 'https://www.verelios.com';
 // and as a sameAs signal in the LocalBusiness structured data.
 const GBP_URL = 'https://maps.google.com/?cid=14836397169245208617';
 
-const SOCIAL_LINKS = [
-  'https://www.linkedin.com/in/verelios-4a1483387/',
-  'https://www.facebook.com/profile.php?id=61585021269687',
-  'https://www.instagram.com/verelioslabs/',
-];
 
 export const metadata: Metadata = {
   title: 'Software Company in Kanpur — Web, App & ERP',
@@ -114,7 +109,7 @@ const localBusinessJsonLd = {
     { '@type': 'State', name: 'Uttar Pradesh' },
   ],
   serviceArea: { '@type': 'City', name: 'Kanpur' },
-  sameAs: [...SOCIAL_LINKS, GBP_URL],
+  sameAs: [...SOCIAL_PROFILES, GBP_URL],
   parentOrganization: { '@id': `${SITE}/#organization` },
   // aggregateRating + review deliberately omitted — self-authored review markup
   // about our own business is ineligible for Google's star rich result and risks
