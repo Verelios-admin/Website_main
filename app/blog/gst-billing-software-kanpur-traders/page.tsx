@@ -12,7 +12,10 @@ const PUBLISHED = '2026-09-07';
 const UPDATED = '2026-09-07';
 
 export const metadata: Metadata = {
-  title: 'GST Billing Software for Kanpur Traders (2026)',
+  // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
+  // suffix this ran past the ~60 chars Google displays, so the brand was
+  // pushed out of the SERP anyway — dropping it keeps the keywords instead.
+  title: { absolute: 'GST Billing Software for Kanpur Traders (2026)' },
   description:
     'Choosing GST billing software in Kanpur — what actually matters at a busy counter, ready-made vs custom, and the offline problem nobody mentions in the demo.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

@@ -12,7 +12,10 @@ const PUBLISHED = '2026-09-07';
 const UPDATED = '2026-09-07';
 
 export const metadata: Metadata = {
-  title: 'Why Businesses Lose Enquiries — and What a CRM Fixes',
+  // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
+  // suffix this ran past the ~60 chars Google displays, so the brand was
+  // pushed out of the SERP anyway — dropping it keeps the keywords instead.
+  title: { absolute: 'Why Businesses Lose Enquiries — and What a CRM Fixes' },
   description:
     'Most Kanpur businesses lose more enquiries to forgetting than to price. Where leads actually leak, what a CRM does and does not fix, and what one costs.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

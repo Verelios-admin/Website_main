@@ -11,7 +11,10 @@ const URL_PATH = '/services/billing-inventory-software';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Billing & Inventory Software Development in India',
+  // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
+  // suffix this ran past the ~60 chars Google displays, so the brand was
+  // pushed out of the SERP anyway — dropping it keeps the keywords instead.
+  title: { absolute: 'Billing & Inventory Software Development in India' },
   description:
     'Custom GST billing and inventory software — fast invoicing, live stock, e-way bills, barcode scanning and reports your CA accepts. You own the code.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

@@ -11,7 +11,10 @@ const URL_PATH = '/locations/kanpur/billing-inventory-software';
 const SITE = 'https://www.verelios.com';
 
 export const metadata: Metadata = {
-  title: 'Billing & Inventory Software Company in Kanpur',
+  // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
+  // suffix this ran past the ~60 chars Google displays, so the brand was
+  // pushed out of the SERP anyway — dropping it keeps the keywords instead.
+  title: { absolute: 'Billing & Inventory Software Company in Kanpur' },
   description:
     'Custom GST billing and inventory software built in Govind Nagar, Kanpur — fast invoicing, live stock, e-way bills, barcode and Tally sync. Rated 4.9★.',
   alternates: { canonical: `${SITE}${URL_PATH}` },

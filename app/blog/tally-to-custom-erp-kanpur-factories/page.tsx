@@ -12,9 +12,12 @@ const PUBLISHED = '2026-09-07';
 const UPDATED = '2026-09-07';
 
 export const metadata: Metadata = {
-  title: 'Tally to Custom ERP: How Kanpur Factories Move (2026)',
+  // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
+  // suffix this ran past the ~60 chars Google displays, so the brand was
+  // pushed out of the SERP anyway — dropping it keeps the keywords instead.
+  title: { absolute: 'Tally to Custom ERP: How Kanpur Factories Move (2026)' },
   description:
-    'When Tally and Excel stop being enough for a Kanpur manufacturing unit — the warning signs, what the migration actually involves, and how to switch without losing a month.',
+    'When Tally and Excel stop being enough for a Kanpur factory — the warning signs, what a migration involves, and how to switch without losing a month.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Tally to Custom ERP: How Kanpur Factories Make the Move | Verelios Labs',
