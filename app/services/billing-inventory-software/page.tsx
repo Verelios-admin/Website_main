@@ -225,6 +225,10 @@ export default function BillingInventorySoftwarePage() {
                 Based in Kanpur? See our dedicated <a href="/locations/kanpur/billing-inventory-software">billing &amp; inventory software company in Kanpur</a> page — we can come to your shop or godown and watch how you bill before quoting.
               </p>
 
+              <p>
+                Before you pick a package, read <a href="/blog/gst-billing-software-kanpur-traders">how to choose GST billing software</a> — written for Kanpur traders, but the checklist applies to any shop or distributor.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does custom billing and inventory software cost in India?</h3>
               <p>

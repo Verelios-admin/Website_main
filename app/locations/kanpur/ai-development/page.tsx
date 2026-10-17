@@ -313,6 +313,10 @@ export default function KanpurAiDevelopmentPage() {
                 Still shortlisting? Our rundown of the <a href="/blog/best-ai-development-companies-kanpur-2026">best AI development companies in Kanpur</a> lays out who else works locally and what to ask each of them.
               </p>
 
+              <p>
+                New to automation? Start with our <a href="/blog/ai-automation-for-indian-businesses-2026">practical guide to AI automation for Indian businesses</a> — what to automate first, what it costs in INR, and how to tell whether a process is ready.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does AI development cost in Kanpur?</h3>
               <p>

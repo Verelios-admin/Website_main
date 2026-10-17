@@ -229,6 +229,10 @@ export default function MobileAppDevelopmentPage() {
                 Comparing agencies first? Read our breakdown of the <a href="/blog/best-app-development-companies-kanpur-2026">best app development companies in Kanpur</a> before you commit to anyone.
               </p>
 
+              <p>
+                For a fuller price breakdown, see <a href="/blog/mobile-app-development-cost-india-2026">what an Android or iOS app costs in India in 2026</a>, including why cross-platform builds cost less.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does it cost to develop a custom mobile app in India?</h3>
               <p>

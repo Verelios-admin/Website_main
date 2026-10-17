@@ -282,6 +282,10 @@ export default function KanpurCrmSoftwarePage() {
                 We also serve Lucknow, Unnao and the rest of Uttar Pradesh, and businesses across India. See our national <Link href="/services/crm-software-development">custom CRM software</Link> page for the full capability, the <Link href="/services/erp">custom ERP software</Link> page if you need inventory and accounting in the same system, or the <Link href="/locations/kanpur">software company in Kanpur</Link> overview for everything we build locally.
               </p>
 
+              <p>
+                Not sure a CRM is the fix? We wrote about <a href="/blog/why-businesses-lose-enquiries-crm-kanpur">why businesses lose enquiries</a> — where leads actually leak, what a CRM does and does not fix, and what one costs.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does custom CRM software cost in Kanpur?</h3>
               <p>

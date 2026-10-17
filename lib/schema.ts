@@ -104,10 +104,16 @@ export const AUTHOR_REF = {
  * brand, and directories of this class are what AI assistants lean on for
  * "best agency in X" answers. Re-check its Locations tab if the Bangalore claim
  * ever spreads there.
+ *
+ * X added 2026-10-17: @Verelioslabs is the owner's account (checked logged in), its
+ * posts link to verelios.com and it makes no Bangalore claim. This also backs the
+ * twitter:site / twitter:creator handle in app/layout.tsx, which Phase 13 flagged
+ * as asserting a handle with no matching sameAs URL.
  */
 export const SOCIAL_PROFILES = [
   'https://www.linkedin.com/in/verelios-4a1483387/',
   'https://www.facebook.com/profile.php?id=61585021269687',
   'https://www.instagram.com/verelioslabs/',
   'https://www.goodfirms.co/company/verelios-labs',
+  'https://x.com/Verelioslabs',
 ] as const;

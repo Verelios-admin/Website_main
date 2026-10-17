@@ -237,6 +237,10 @@ export default function ERPPage() {
                 Looking at other vendors too? See our comparison of the <a href="/blog/best-erp-software-companies-kanpur-2026">best ERP software companies in Kanpur</a>, including the off-the-shelf systems worth considering before a custom build.
               </p>
 
+              <p>
+                For numbers before a conversation, read <a href="/blog/erp-software-cost-india-2026">what ERP software costs in India in 2026</a>, including the implementation costs that rarely make it into a quote. Running on Tally today? See <a href="/blog/tally-to-custom-erp-kanpur-factories">how factories move from Tally to a custom ERP</a>.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What is custom ERP software and how is it different from SAP or Tally?</h3>
               <p>

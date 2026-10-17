@@ -192,9 +192,9 @@ export default function KanpurWebsiteDevelopmentPage() {
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
 
-              <h2>Website development services we offer in Kanpur</h2>
+              <h2>Website design and development services in Kanpur</h2>
               <p>
-                Whatever your Kanpur business needs to put online, here&apos;s what we build:
+                Whatever your Kanpur business needs to put online, from website design to a full web application, here&apos;s what we build:
               </p>
             </Prose>
 
@@ -227,6 +227,43 @@ export default function KanpurWebsiteDevelopmentPage() {
             </div>
 
             <Prose>
+              <h2>Static, dynamic, WordPress or custom: which website does your Kanpur business need?</h2>
+              <p>
+                Most website enquiries we get in Kanpur use one of these four words. Here is what each one means in practice, so you can ask for the right thing and compare quotes fairly.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Website type</th><th>What it is</th><th>Best for</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Static website</td>
+                      <td>A fixed set of pages that change only when a developer edits them. The fastest to load and the cheapest to run.</td>
+                      <td>Shops, clinics, factories and consultants who need a credible five-page site that ranks and brings enquiries</td>
+                    </tr>
+                    <tr>
+                      <td>Dynamic website</td>
+                      <td>Pages built from a database, so products, listings or articles can change without touching code.</td>
+                      <td>Businesses that add products, properties, courses or blog posts every week</td>
+                    </tr>
+                    <tr>
+                      <td>WordPress website</td>
+                      <td>A dynamic site on WordPress, with a familiar admin panel your staff can use to edit pages themselves.</td>
+                      <td>Teams that specifically want WordPress so they can manage content without a developer</td>
+                    </tr>
+                    <tr>
+                      <td>Custom-coded (React / Next.js)</td>
+                      <td>Hand-coded and server-rendered, with no theme or plugin weight slowing it down. Our default, and what this site runs on.</td>
+                      <td>Businesses that care most about speed, Google rankings and room to add features later</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Not sure which fits? Tell us what the site needs to do and we will recommend one in the free consultation — the 48-hour mockup comes before any payment either way. A five-page business website starts at <strong>₹49,999</strong>; e-commerce stores and web applications typically run <strong>₹1,00,000 to ₹3,00,000+</strong>.
+              </p>
+
               <h2>How we build a website in Kanpur, step by step</h2>
               <ol>
                 <li><strong>Day 1 — free consultation.</strong> A short call or WhatsApp chat, or a coffee at our Govind Nagar office, to understand your business, audience and goal.</li>

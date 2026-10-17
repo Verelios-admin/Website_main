@@ -47,8 +47,8 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
 
   // Location pages (local intent: "… in Kanpur").
   { path: '/locations/kanpur', lastmod: '2026-09-07', priority: 0.9 },
-  { path: '/locations/kanpur/website-development', lastmod: '2026-09-07', priority: 0.9 },
-  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-09-07', priority: 0.8 },
+  { path: '/locations/kanpur/website-development', lastmod: '2026-10-17', priority: 0.9 },
+  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-10-17', priority: 0.8 },
   { path: '/locations/kanpur/ai-development', lastmod: '2026-09-07', priority: 0.8 },
   { path: '/locations/kanpur/erp-software', lastmod: '2026-09-07', priority: 0.8 },
   // Already ranks #1 in the Kanpur local pack — hence priority 0.9, matching
