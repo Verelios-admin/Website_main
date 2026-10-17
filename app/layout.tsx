@@ -39,8 +39,12 @@ export const metadata: Metadata = {
     template: '%s | Verelios Labs',
   },
   // ~150 chars so Google shows it in full (was 192, which truncated the CTA).
+  // 2026-10-17: leads with "software company in Kanpur" — the homepage's biggest
+  // non-brand query in Search Console (286 impressions / 90 days at position ~9,
+  // 2.8% CTR). Google bolds matching words in the snippet, which lifts CTR; the
+  // description is not a ranking factor, so this cannot cost position.
   description:
-    'Website, app & software developers in Govind Nagar, Kanpur — serving all of India. Custom sites, apps & software launched in 3 weeks. Free 48-hour mockup.',
+    'Verelios Labs: software company in Kanpur building websites, mobile apps & custom software for businesses across India. Free 48-hour mockup.',
   authors: [{ name: 'Verelios Labs', url: SITE_URL }],
   creator: 'Verelios Labs',
   publisher: 'Verelios Labs',

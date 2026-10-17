@@ -704,3 +704,67 @@ built output re-measured to confirm 22 citable blocks, 18 of them front-loaded, 
 screenshots checked at 1280px and 390px, with **no horizontal overflow on any page**.
 `next build` was run directly rather than `npm run build`, so the `postbuild` IndexNow
 submission did **not** fire on an undeployed change — run `npm run indexnow` after deploy.
+
+## Phase 14 — Search Console + RelateSEO pass ✓ 2026-10-17 (build-verified: tsc clean, `next build` clean — 42 static pages, 35 sitemap URLs, 0 broken internal links, 1 canonical per page, all JSON-LD parses)
+
+**Inputs.** Search Console (90 days to 2026-10-14): 126 clicks, 7.46K impressions,
+avg position 10.8. Indexing: 25 indexed, 18 not. RelateSEO (rankingCoach) task list,
+subpage map and profile tuning.
+
+**What Search Console showed**
+- `/locations/kanpur/website-development` carries the most non-brand demand (2,273
+  impressions, position 14.9). Its weakest queries are the ones the page never names:
+  web design / website designing (pos 19–40), static website (32), dynamic website (29),
+  WordPress website (50).
+- `/locations/kanpur/mobile-app-development` sits at position 5.9; Android, iOS, React
+  Native and "hybrid" app queries rank 5–8.
+- **Discovered – currently not indexed (9):** `/services/website-development`,
+  `/services/mobile-app-development`, `/services/custom-software-development`,
+  `/services/ui-ux-design` and all five 2026-09-07 posts. The five posts were linked only
+  from `/blog`.
+- **Crawled – not indexed:** `/blog/ai-automation-for-indian-businesses-2026` (one inbound link).
+- **Duplicate without user-selected canonical:** `/locations/kanpur/crm-software-development`.
+  URL Inspection (last crawl 2026-08-26) shows Google picked **https://www.747live.bet/** as
+  canonical — a scraper copying the page. The live page self-canonicals correctly; it
+  needs Request Indexing, not a code change.
+- Redirect (4) and noindex (2) entries are intentional (apex/http → www, HRMS 301,
+  legal pages).
+
+**Changed**
+1. Internal links from the indexed money pages to every orphaned post (10 one-sentence
+   additions, one per page, Kanpur and national versions worded differently):
+   ERP ×2 → ERP cost + Tally-to-ERP; billing ×2 → GST billing; CRM ×2 → lost enquiries;
+   mobile ×2 → app cost; AI ×2 → AI automation guide.
+2. `/locations/kanpur/website-development`: new "Static, dynamic, WordPress or custom"
+   section with a comparison table; services H2 now "Website design and development
+   services in Kanpur". WordPress is owner-stated on the GBP ("We build on WordPress or a
+   custom admin panel"); prices reuse figures already on the page.
+3. `/locations/kanpur/mobile-app-development`: new "Android, iOS, React Native or
+   Flutter" section with a table and a "hybrid app" explanation; prices/timelines reuse
+   the page's own figures.
+4. Homepage meta description leads with "software company in Kanpur" (largest non-brand
+   homepage query, pos ~9, 2.8% CTR). Title untouched.
+5. `https://x.com/Verelioslabs` added to `SOCIAL_PROFILES` (owner account, verified logged
+   in, no Bangalore claim) — closes the Phase 13 open item on `twitter:site` — and an X
+   icon added to the footer.
+6. Sitemap lastmod → 2026-10-17 for the two Kanpur pages that gained sections only.
+
+**Deliberately NOT done (would risk current results)**
+- RelateSEO keyword-stuffing tasks (forcing "website development company, software
+  development company, mobile app development company" into the homepage title/H tags).
+  The homepage ranks 1.4–1.5 for the brand and ~9 for "software company in Kanpur".
+- RelateSEO backlink tasks (myelectrikbike.com, tablighkotasemarang.id,
+  sequoiaaclothing.com, officetoday.in …) — irrelevant/foreign sites, a spam-link risk.
+- New thin pages for android / ios / flutter / react native — would cannibalise the
+  mobile page while the national mobile page is not yet indexed. Covered as sections.
+- RelateSEO "AI SEO Optimizer" rewrites.
+- RelateSEO alt-text task: every `<img>` already has alt text.
+
+**Owner actions**
+- Deploy (push to `main`), then `npm run indexnow`.
+- GSC → URL Inspection → Request Indexing: the 4 service pages, 5 posts, the AI post,
+  and `/locations/kanpur/crm-software-development` (scraper canonical).
+- NAP: Google Business Profile now shows "126 /103 1, Nand Lal Chauraha"; this site,
+  Facebook and the schema say "126/58 G Block". Pick one and make all match.
+- GBP still lists "HRMS and Payroll Software" as a service though HRMS was withdrawn in
+  Phase 12; several GBP service descriptions show "?" where an em dash was lost.

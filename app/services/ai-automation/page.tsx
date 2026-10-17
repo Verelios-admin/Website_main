@@ -184,6 +184,10 @@ export default function AIAutomationPage() {
                 Weighing us against other options? We wrote an open comparison of the <a href="/blog/best-ai-development-companies-kanpur-2026">best AI development companies in Kanpur</a>, including where we are and aren&apos;t the right fit.
               </p>
 
+              <p>
+                If you are still deciding what to automate, our <a href="/blog/ai-automation-for-indian-businesses-2026">no-hype guide to AI automation in India</a> walks through where it pays back first.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What kinds of AI automation do you build?</h3>
               <p>

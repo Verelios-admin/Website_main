@@ -225,6 +225,43 @@ export default function KanpurMobileAppDevelopmentPage() {
             </div>
 
             <Prose>
+              <h2>Android, iOS, React Native or Flutter: what to ask for</h2>
+              <p>
+                Searches for app development in Kanpur split across these four terms, and most quotes do not explain the difference. In short: Android and iOS are the two app stores, while React Native and Flutter are the two ways we build one codebase that ships to both.
+              </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Option</th><th>What you get</th><th>Best if</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Android app</td>
+                      <td>An app on Google Play. Android runs on the large majority of phones in India, so this is where most local customers, dealers and field staff are.</td>
+                      <td>Your users are mainly in Kanpur and Uttar Pradesh, or the app is for your own team</td>
+                    </tr>
+                    <tr>
+                      <td>iOS app</td>
+                      <td>An app on Apple&apos;s App Store for iPhone and iPad, including the App Store review, which we handle for you.</td>
+                      <td>You sell to customers who mostly use iPhones, or need a presence on both stores</td>
+                    </tr>
+                    <tr>
+                      <td>React Native (iOS + Android)</td>
+                      <td>One codebase that ships as both an Android and an iOS app, at close to the cost and timeline of one.</td>
+                      <td>You want both stores now, with a web dashboard or admin panel built on the same skills later</td>
+                    </tr>
+                    <tr>
+                      <td>Flutter (iOS + Android)</td>
+                      <td>Google&apos;s toolkit for the same goal: one codebase, both stores, a consistent look on every device.</td>
+                      <td>The app is heavy on custom visuals and animation, or your team already works in Flutter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Asked for a &ldquo;hybrid app&rdquo;? Today that means a cross-platform app built in React Native or Flutter, not the slow web-view apps the term used to describe. Whichever you choose, we build from one codebase, so adding the second store later is a small step rather than a rebuild. A focused iOS + Android app starts at <strong>₹99,999</strong> and is usually live on both stores in 3–5 weeks.
+              </p>
+
               <h2>How we build an app in Kanpur, step by step</h2>
               <ol>
                 <li><strong>Discovery.</strong> We sit with you — at our Govind Nagar office or yours — to map the app&apos;s core job and who uses it.</li>
@@ -285,6 +322,10 @@ export default function KanpurMobileAppDevelopmentPage() {
 
               <p>
                 If you are still drawing up a shortlist, our guide to the <a href="/blog/best-app-development-companies-kanpur-2026">best app development companies in Kanpur</a> covers the local options and how to judge them.
+              </p>
+
+              <p>
+                Budgeting first? Our <a href="/blog/mobile-app-development-cost-india-2026">mobile app development cost guide for India</a> gives 2026 ranges by complexity and the running costs most quotes leave out.
               </p>
 
               <h2>Frequently asked questions</h2>

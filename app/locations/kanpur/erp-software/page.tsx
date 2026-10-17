@@ -263,6 +263,10 @@ export default function KanpurErpSoftwarePage() {
                 Before you decide, our guide to the <a href="/blog/best-erp-software-companies-kanpur-2026">best ERP software companies in Kanpur</a> sets out the local alternatives and what each is good at.
               </p>
 
+              <p>
+                Working out the budget? Our <a href="/blog/erp-software-cost-india-2026">ERP software cost guide for 2026</a> compares subscription and custom builds, and <a href="/blog/tally-to-custom-erp-kanpur-factories">moving a Kanpur factory from Tally to a custom ERP</a> covers the warning signs and what the switch involves.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>How much does custom ERP software cost in Kanpur?</h3>
               <p>
