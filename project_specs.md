@@ -768,3 +768,11 @@ subpage map and profile tuning.
   Facebook and the schema say "126/58 G Block". Pick one and make all match.
 - GBP still lists "HRMS and Payroll Software" as a service though HRMS was withdrawn in
   Phase 12; several GBP service descriptions show "?" where an em dash was lost.
+
+### Phase 14b — homepage entity sentence ✓ 2026-10-17 (tsc clean, `next build` clean)
+The homepage key-answer block (`components/sections/Services.tsx`) now opens "Verelios Labs
+is a software company in Kanpur: a Govind Nagar studio of website, app and custom software
+developers…". "software company in Kanpur" is the homepage's largest non-brand Search
+Console query (pos ~9) and RelateSEO's top homepage task, yet the phrase appeared nowhere in
+the homepage body. One sentence reworded, no new claims; block is 142 words (limit 134–167).
+Title and H1 untouched.
