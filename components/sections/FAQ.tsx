@@ -38,7 +38,7 @@ const FAQS = [
   },
   {
     q: 'Where in Kanpur is Verelios Labs located?',
-    a: 'We\'re based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We\'re open 24 hours, every day, and you\'re welcome to meet us in person or talk over WhatsApp before starting a project.',
+    a: 'We\'re based at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We\'re open 24 hours, every day, and you\'re welcome to meet us in person or talk over WhatsApp before starting a project.',
   },
   {
     q: 'Do you work with local businesses in Kanpur?',

@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Custom Website Development Cost in India' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${UPDATED}T00:00:00+05:30`,
   },
 };
 
@@ -247,7 +248,7 @@ export default function Post() {
               <ul>
                 <li><strong>They refuse to give a fixed quote.</strong> "Time and materials" is fine for very large projects, but on websites under ₹3 lakh it usually means the price will inflate.</li>
                 <li><strong>They quote in hours, not deliverables.</strong> You don&apos;t want to pay for hours — you want to pay for a website.</li>
-                <li><strong>They charge "consulting fees" before showing any work.</strong> A reputable agency will give you a free 15-minute scoping call and a free mockup.</li>
+                <li><strong>They bill a discovery fee before showing any work.</strong> For a website, a reputable agency will give you a free 15-minute scoping call and a free mockup.</li>
                 <li><strong>They don&apos;t commit to a delivery date.</strong> Vague timelines = projects that drag for months. Ask any agency to walk you through their actual schedule — here is <a href="/blog/how-we-ship-websites-in-3-weeks">how we ship a website in three weeks</a>, week by week, so you can hold ours to it.</li>
                 <li><strong>They don&apos;t let you own the code.</strong> If the contract doesn&apos;t explicitly transfer IP to you, walk away.</li>
               </ul>

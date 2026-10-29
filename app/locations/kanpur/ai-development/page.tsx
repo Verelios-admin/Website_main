@@ -160,7 +160,7 @@ export default function KanpurAiDevelopmentPage() {
           ]}
         />
 
-        <LocalTrustBlock reviews={REVIEWS} heading="What our Kanpur AI clients say" />
+        <LocalTrustBlock reviews={REVIEWS} heading="What Kanpur clients say about working with us" />
 
         <section className="tile" style={{ paddingTop: 16, paddingBottom: 40 }}>
           <div className="wrap" style={{ maxWidth: 820, margin: '0 auto' }}>
@@ -194,7 +194,7 @@ export default function KanpurAiDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real AI team in Govind Nagar, not a remote template company that vanishes after launch.</li>
                 <li><strong>Free 48-hour proof-of-concept</strong> — see your AI agent or chatbot working on your own data before you pay a rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see it work.</li>
-                <li><strong>Rated 4.9★</strong> across 56 client reviews, with AI work you can actually try.</li>
+                <li><strong>Rated 4.9★</strong> across 57 client reviews, with AI work you can actually try.</li>
                 <li><strong>You own everything</strong> — the code, the models and the data stay yours, deployable on your own infrastructure. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
@@ -306,7 +306,7 @@ export default function KanpurAiDevelopmentPage() {
 
             <Prose>
               <p style={{ marginTop: 24 }}>
-                We also serve clients in Lucknow, Unnao and across Uttar Pradesh — and founders all over India. Not in Kanpur? Everything we do works remotely too, with the same free 48-hour proof-of-concept and milestone payments. See our national <Link href="/services/ai-automation">AI automation</Link> page for the full capability. Prefer to start with something simpler? See our <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> and <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
+                We also serve clients in Lucknow, Unnao and across Uttar Pradesh — and founders all over India. Not in Kanpur? Everything we do works remotely too, with the same free 48-hour proof-of-concept and milestone payments. See our national <Link href="/services/ai-automation">AI automation</Link> page for the full capability, or start with <Link href="/locations/kanpur/ai-consulting">AI consulting in Kanpur</Link> if you first want to know where AI would pay off. Prefer to start with something simpler? See our <Link href="/locations/kanpur/website-development">website development in Kanpur</Link> and <Link href="/locations/kanpur/mobile-app-development">app development in Kanpur</Link> pages, or the full <Link href="/locations/kanpur">software company in Kanpur</Link> overview.
               </p>
 
               <p>
@@ -343,7 +343,7 @@ export default function KanpurAiDevelopmentPage() {
         </section>
 
         <ClosingCta
-          defaultService="Custom Software / Internal Tools"
+          defaultService="AI Automation / Chatbot"
           heading="Let's build your AI, in Kanpur."
           body="Tell us the one task you'd most like to take off your team's plate. We'll tell you honestly whether AI is the right fit, build a free 48-hour proof-of-concept, and send a fixed quote — and you're welcome to visit our Govind Nagar office any day."
         />

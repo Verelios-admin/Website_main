@@ -21,8 +21,8 @@ import { useState } from 'react';
 
 // Exact Google Business Profile pin coordinates — drops the marker precisely on
 // the Govind Nagar office rather than geocoding an address string.
-const MAP_SRC = 'https://maps.google.com/maps?q=26.447437,80.306051&z=16&output=embed';
-const DIRECTIONS_URL = 'https://www.google.com/maps/dir/?api=1&destination=26.447437,80.306051';
+const MAP_SRC = 'https://maps.google.com/maps?q=26.450440,80.304540&z=16&output=embed';
+const DIRECTIONS_URL = 'https://www.google.com/maps/dir/?api=1&destination=26.450440,80.304540';
 
 export function LocalMap({
   title = 'Verelios Labs office location — Govind Nagar, Kanpur',
@@ -84,7 +84,7 @@ export function LocalMap({
           </svg>
 
           <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.92)', fontWeight: 600 }}>
-            126/58 G Block, Govind Nagar
+            126/103-1, Nand Lal Chauraha, B Block, Govind Nagar
           </div>
           <div style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.62)' }}>
             Kanpur, Uttar Pradesh 208006

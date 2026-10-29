@@ -67,7 +67,7 @@ const localBusinessJsonLd = {
   priceRange: '₹49,999–₹5,00,000+',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
+    streetAddress: '126/103-1, Nand Lal Chauraha, B Block, Govind Nagar',
     addressLocality: 'Kanpur',
     addressRegion: 'Uttar Pradesh',
     postalCode: '208006',
@@ -75,8 +75,8 @@ const localBusinessJsonLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 26.447437,
-    longitude: 80.306051,
+    latitude: 26.450440,
+    longitude: 80.304540,
   },
   hasMap: 'https://maps.google.com/?cid=14836397169245208617',
   openingHoursSpecification: [
@@ -138,7 +138,7 @@ const faqJsonLd = {
       name: 'Where is Verelios Labs located in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.',
+        text: 'We are at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.',
       },
     },
     {
@@ -179,6 +179,7 @@ const faqJsonLd = {
 const LOCAL_SERVICES = [
   { title: 'Website development in Kanpur', desc: 'Fast, conversion-focused sites for Kanpur businesses. From ₹49,999, live in 7–14 days.', href: '/locations/kanpur/website-development' },
   { title: 'Mobile app development in Kanpur', desc: 'iOS & Android apps from one codebase, shipped to both stores in 3–5 weeks.', href: '/locations/kanpur/mobile-app-development' },
+  { title: 'AI consulting in Kanpur', desc: 'Not sure where AI pays off? A free first consultation, a workflow audit and a written AI roadmap before anything is built.', href: '/locations/kanpur/ai-consulting' },
   { title: 'AI development in Kanpur', desc: 'AI agents, chatbots, machine learning and workflow automation that take busywork off your team.', href: '/locations/kanpur/ai-development' },
   { title: 'ERP software in Kanpur', desc: 'Inventory, manufacturing, accounting & reporting in one system built around your workflow.', href: '/locations/kanpur/erp-software' },
   { title: 'Billing & inventory software in Kanpur', desc: 'Fast GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops.', href: '/locations/kanpur/billing-inventory-software' },
@@ -228,7 +229,7 @@ export default function KanpurLocationPage() {
                   Visit us
                 </div>
                 <address style={{ fontStyle: 'normal', fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  126/58 G Block, Govind Nagar<br />
+                  126/103-1, Nand Lal Chauraha, B Block, Govind Nagar<br />
                   Kanpur, Uttar Pradesh 208006
                 </address>
               </div>
@@ -246,7 +247,7 @@ export default function KanpurLocationPage() {
                   Rated 4.9 ★
                 </div>
                 <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                  56 client reviews<br />
+                  57 client reviews<br />
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#2997ff', textDecoration: 'none' }}>
                     See us on Google →
                   </a>
@@ -277,7 +278,7 @@ export default function KanpurLocationPage() {
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: '4px 0 22px' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 700, lineHeight: 1, color: '#fff' }}>{GBP_RATING}</span>
               <span aria-hidden="true" style={{ color: '#f5a623', fontSize: 20, letterSpacing: 3 }}>★★★★★</span>
-              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 56 verified client reviews</span>
+              <span style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)' }}>from 57 verified client reviews</span>
             </div>
 
             <div
@@ -337,7 +338,7 @@ export default function KanpurLocationPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a remote freelancer who disappears.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website or app before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch. You pay as you see progress.</li>
-                <li><strong>Rated 4.9★</strong> across 56 client reviews, with work you can actually click through.</li>
+                <li><strong>Rated 4.9★</strong> across 57 client reviews, with work you can actually click through.</li>
                 <li><strong>You own everything</strong> — source code in your GitHub, hosting on your account, no lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>
@@ -421,7 +422,7 @@ export default function KanpurLocationPage() {
               <h2>Frequently asked questions</h2>
               <h3>Where is Verelios Labs located in Kanpur?</h3>
               <p>
-                We are at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.
+                We are at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours a day, every day, and you are welcome to visit us in person or talk over WhatsApp before starting a project.
               </p>
               <h3>What software services do you offer in Kanpur?</h3>
               <p>

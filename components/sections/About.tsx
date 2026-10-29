@@ -198,7 +198,7 @@ export function About() {
               maxWidth: 760,
             }}
           >
-            We&apos;re based at 126/58 G Block, Govind Nagar, Kanpur — and we work with local
+            We&apos;re based at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur — and we work with local
             businesses across the city, from Govind Nagar and Kakadeo to Swaroop Nagar, Civil Lines
             and Kidwai Nagar. If you&apos;re searching for website developers, app developers or
             custom software developers in Kanpur, you can meet us in person, talk over WhatsApp, or

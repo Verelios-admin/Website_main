@@ -28,7 +28,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — How to Choose a Web Development Agency in India' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${UPDATED}T00:00:00+05:30`,
   },
 };
 

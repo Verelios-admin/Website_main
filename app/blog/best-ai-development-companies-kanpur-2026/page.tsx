@@ -10,6 +10,9 @@ const SLUG = 'best-ai-development-companies-kanpur-2026';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-07-17';
+// Phase 16 refresh: repeated paragraph removed, ItemList schema, AI consulting
+// vs development section. Other firms' details are still as read in July 2026.
+const MODIFIED = '2026-10-28';
 
 export const metadata: Metadata = {
   title: 'Best AI Development Companies in Kanpur',
@@ -25,7 +28,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Best AI Development Companies in Kanpur' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${MODIFIED}T00:00:00+05:30`,
   },
 };
 
@@ -37,7 +41,7 @@ const articleJsonLd = {
   description:
     'An honest roundup of the best AI development companies in Kanpur in 2026 and how to choose the right one.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
-  dateModified: `${PUBLISHED}T00:00:00+05:30`,
+  dateModified: `${MODIFIED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
   articleSection: 'AI Development',
@@ -46,6 +50,22 @@ const articleJsonLd = {
   publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: `${SITE}${URL_PATH}`,
   image: { '@type': 'ImageObject', url: `${SITE}/logo.webp`, width: 1200, height: 630 },
+};
+
+// ItemList of the companies in the summary table, in page order. Names only for
+// the other firms: their URLs were not re-verified for this refresh.
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'AI development companies in Kanpur (2026)',
+  itemListOrder: 'https://schema.org/ItemListUnordered',
+  numberOfItems: 4,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, item: { '@type': 'Organization', name: 'Verelios Labs', url: SITE } },
+    { '@type': 'ListItem', position: 2, item: { '@type': 'Organization', name: 'W3villa Technologies' } },
+    { '@type': 'ListItem', position: 3, item: { '@type': 'Organization', name: 'Cotocus Technologies' } },
+    { '@type': 'ListItem', position: 4, item: { '@type': 'Organization', name: 'Riveyra Infotech' } },
+  ],
 };
 
 const breadcrumbJsonLd = {
@@ -63,6 +83,7 @@ export default function Post() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <SubPageLayout>
         <PageHero
           eyebrow="AI development · 7 min read"
@@ -79,7 +100,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-07-17">17 July 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-07-17">17 July 2026</time> · Updated <time dateTime="2026-10-28">28 October 2026</time></p>
               <p>
                 AI development is the newest corner of Kanpur&apos;s tech scene, and it&apos;s still thin — many of the &ldquo;AI companies in Kanpur&rdquo; you&apos;ll find online are actually out-of-town firms running a template page for the city. That makes choosing well both harder and more important. Here&apos;s an honest roundup of who is genuinely building AI for Kanpur businesses in 2026.
               </p>
@@ -109,10 +130,6 @@ export default function Post() {
                 <li><strong>Pricing transparency</strong> — are quotes clear and scoped, or vague and open-ended?</li>
                 <li><strong>Support</strong> — who maintains and re-tunes the system as your data and needs change?</li>
               </ul>
-              <p>
-                Where we describe the other firms, we stick to what they publicly say they do — we don&apos;t invent review counts, prices or project details for them. Verify anything that matters to you before signing.
-              </p>
-
               <h2>The companies worth knowing</h2>
               {/* Summary table added 2026-09-19. A comparison post with no comparison
                   table gives an AI assistant nothing liftable for a "best X in Kanpur"
@@ -155,7 +172,7 @@ export default function Post() {
 
               <h3>Verelios Labs</h3>
               <p>
-                Measured against the criteria above: on <strong>local presence</strong>, a real office in <strong>Govind Nagar, Kanpur</strong> you can visit; on <strong>tech stack</strong>, AI agents, chatbots and WhatsApp assistants, document and invoice automation, computer vision for factories, and custom machine-learning models; on <strong>delivery model</strong>, a <strong>free 48-hour proof-of-concept</strong> on your own data before you pay; on <strong>code ownership</strong>, full ownership of the code and models with private or on-premise deployment for sensitive data; on <strong>pricing</strong>, a scoped quote; and on <strong>support</strong>, a local team that re-tunes models as your data changes and grounds them in your documents so they don&apos;t make things up. That is the basis for our inclusion — judge it against the firms below. See the <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> page.
+                Measured against the criteria above: on <strong>local presence</strong>, a real office in <strong>Govind Nagar, Kanpur</strong> you can visit; on <strong>tech stack</strong>, AI agents, chatbots and WhatsApp assistants, document and invoice automation, computer vision for factories, and custom machine-learning models; on <strong>delivery model</strong>, a <strong>free 48-hour proof-of-concept</strong> on your own data before you pay; on <strong>code ownership</strong>, full ownership of the code and models with private or on-premise deployment for sensitive data; on <strong>pricing</strong>, a scoped quote; and on <strong>support</strong>, a local team that re-tunes models as your data changes and grounds them in your documents so they don&apos;t make things up. We also offer <strong>AI consulting</strong>: a free first consultation and a one-page plan before anything is built. That is the basis for our inclusion — judge it against the firms below. See the <Link href="/locations/kanpur/ai-development">AI development in Kanpur</Link> and <Link href="/locations/kanpur/ai-consulting">AI consulting in Kanpur</Link> pages.
               </p>
 
               <h3>W3villa Technologies</h3>
@@ -178,6 +195,11 @@ export default function Post() {
                 Several top search results for &ldquo;AI development company in Kanpur&rdquo; are large firms based in Delhi, Noida or Bengaluru running the same page across dozens of cities. They can do good work — but you won&apos;t be able to walk into their office, and you&apos;ll be one city among sixty. For many Kanpur businesses, a local team you can sit with is worth more than a big-city logo.
               </p>
 
+              <h2>AI consulting or AI development: which do you need?</h2>
+              <p>
+                Many Kanpur businesses searching for an &ldquo;AI company&rdquo; actually need advice first. <strong>AI consulting</strong> answers <em>where</em> AI pays off: someone maps how your work is done today, shortlists the tasks worth automating, estimates build and running costs, and says plainly what to leave alone. <strong>AI development</strong> is building the chosen thing: the chatbot, the invoice reader, the agent. If you can already name the task, go straight to development and ask for a proof-of-concept. If you cannot, start with a short consultation, and prefer a firm that will also build what it recommends, so the advice is tied to something that has to work.
+              </p>
+
               <h2>How to choose an AI development company in Kanpur</h2>
               <p>
                 AI is the field where marketing runs furthest ahead of substance, so choosing well is mostly about separating people who build from people who resell. Here&apos;s the guidance we&apos;d give a friend, whichever firm they pick.
@@ -195,7 +217,7 @@ export default function Post() {
 
               <h3>Local vs remote, and data privacy</h3>
               <p>
-                Many top search results for &ldquo;AI company in Kanpur&rdquo; are firms in Delhi, Noida or Bengaluru running a template page — capable, but with no local office and you as one city among many. A local team you can sit with is easier to hold accountable, especially for something as iterative as an AI project. Data privacy deserves special attention here: understand where your data and documents are processed, whether anything sensitive leaves your control, and whether private or on-premise deployment is an option if you handle confidential information.
+                As noted above, many top results are out-of-town firms. A local team you can sit with is easier to hold accountable, especially for something as iterative as an AI project. Data privacy deserves special attention here: understand where your data and documents are processed, whether anything sensitive leaves your control, and whether private or on-premise deployment is an option if you handle confidential information.
               </p>
 
               <h3>Proof first, and realistic expectations</h3>

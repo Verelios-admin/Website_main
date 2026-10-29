@@ -28,7 +28,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — How We Ship Websites in Three Weeks' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${UPDATED}T00:00:00+05:30`,
   },
 };
 
@@ -221,7 +222,7 @@ export default function Post() {
 
               <h2>What we don&apos;t do (and why)</h2>
               <ul>
-                <li><strong>Long pre-engagement consulting.</strong> A 15-minute scoping call is enough to write a good brief. Multi-meeting workshops at ₹10k/hour are theatre.</li>
+                <li><strong>Weeks of paid workshops before any work.</strong> For a website, a 15-minute scoping call is enough to write a good brief. Multi-meeting workshops billed at ₹10k/hour are theatre.</li>
                 <li><strong>Account managers.</strong> Founders talk directly to the people writing the code. Adds 0 overhead, removes a layer of telephone-game.</li>
                 <li><strong>Daily standups with the client.</strong> A 30-second WhatsApp video is more honest than a Zoom meeting.</li>
                 <li><strong>Project tracking software for the client to log in to.</strong> Jira / Asana / Monday adds friction for everyone. WhatsApp + a Google Doc is enough.</li>

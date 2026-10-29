@@ -44,11 +44,11 @@ export const SITE = 'https://www.verelios.com';
  * to confirm nothing has been hardcoded behind your back.
  */
 export const GBP_RATING = '4.9';
-export const GBP_REVIEW_COUNT = 56;
+export const GBP_REVIEW_COUNT = 57;
 
 export const POSTAL_ADDRESS = {
   '@type': 'PostalAddress',
-  streetAddress: '126/58 G Block, Govind Nagar',
+  streetAddress: '126/103-1, Nand Lal Chauraha, B Block, Govind Nagar',
   addressLocality: 'Kanpur',
   addressRegion: 'Uttar Pradesh',
   postalCode: '208006',

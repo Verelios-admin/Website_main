@@ -118,6 +118,22 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
+      name: 'Can the CRM pull in our IndiaMART and Justdial enquiries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually, yes. IndiaMART offers an API to paid sellers that lets enquiries flow straight into the CRM, and Justdial enquiries arrive by email and SMS, which the CRM can read and turn into leads. Each one is tagged with its source, so you can see which listing actually produces business in Kanpur.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can it handle Hindi voice notes and Hinglish messages?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Most Kanpur buyers write in Hinglish and many send voice notes. The CRM keeps the original message on the lead, and an optional AI step transcribes voice notes and pulls out the item, quantity and area, so a rep sees the order instead of a 40-second recording.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Can we meet the CRM team in person in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -198,7 +214,7 @@ export default function KanpurCrmSoftwarePage() {
                 <li><strong>WhatsApp-first</strong> — because that is where Kanpur enquiries actually arrive.</li>
                 <li><strong>One-time build</strong> — not per user per month; hiring does not raise the bill.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 4.9★</strong> across 56 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 4.9★</strong> across 57 client reviews. <strong>You own the code.</strong></li>
               </ul>
 
               <h2>What we build into a Kanpur CRM</h2>
@@ -237,6 +253,18 @@ export default function KanpurCrmSoftwarePage() {
               <h2>CRM for how Kanpur actually sells</h2>
               <p>
                 A <strong>trading and distribution business</strong> in Naveen Market needs dealer hierarchies, credit limits and receivables visible next to the pipeline, because the question is rarely &ldquo;will they buy&rdquo; and usually &ldquo;should we ship before they pay&rdquo;. A <strong>manufacturing unit</strong> in Panki or Dada Nagar needs quotations priced off a live rate list and enquiries routed by product line. A <strong>leather or tannery exporter</strong> in the Jajmau belt needs enquiry-to-sample-to-order tracking with buyer-wise history. A <strong>service business</strong> — clinic, coaching institute, real-estate broker — needs follow-ups that chase themselves, because the cost of a forgotten lead is the whole lead.
+              </p>
+
+              {/* Phase 16: Kanpur-only material. Search Console reported this URL as
+                  "Duplicate without user-selected canonical" (2026-10-28) — Google
+                  treated it as a copy of /services/crm-software-development. This
+                  section and the two local FAQs below exist on this page only. */}
+              <h2>A week in a Kanpur sales team, before and after a CRM</h2>
+              <p>
+                Take a typical Naveen Market distributor with three field reps covering Kidwai Nagar, Barra and Govind Nagar on scooters. <strong>Before:</strong> dealer orders arrive as WhatsApp messages and Hindi voice notes on the owner&apos;s phone; enquiries from IndiaMART and Justdial land in an inbox nobody checks after 7 pm; the reps keep their visit lists in their heads; and in the run-up to Diwali and the wedding season, when orders double, the question &ldquo;who owes us how much?&rdquo; is answered from a Tally printout once a week.
+              </p>
+              <p>
+                <strong>After:</strong> every WhatsApp order, voice note and marketplace enquiry becomes a lead or an order in one list, tagged by area. Each rep opens the day&apos;s beat plan on their phone, checks in at the shop, and books the order on the spot, even where the signal drops. Before a dispatch is approved, the dealer&apos;s credit limit and outstanding balance from Tally sit next to the order. And on Monday morning the owner sees one screen: new enquiries by source, orders by rep, and the ten dealers who usually reorder before a festival and have not yet.
               </p>
 
               <h2>When a custom CRM is the wrong call</h2>
@@ -302,6 +330,14 @@ export default function KanpurCrmSoftwarePage() {
               <h3>Will it work for our field sales team across Kanpur?</h3>
               <p>
                 Yes. Field staff check in with location at customer visits, follow beat plans, and capture orders offline — the data syncs when signal returns, which matters in Panki, Dada Nagar and the Jajmau belt where coverage is patchy. Calls are logged automatically with duration and outcome, so activity is recorded without anyone writing it down.
+              </p>
+              <h3>Can the CRM pull in our IndiaMART and Justdial enquiries?</h3>
+              <p>
+                Usually, yes. IndiaMART offers an API to paid sellers that lets enquiries flow straight into the CRM, and Justdial enquiries arrive by email and SMS, which the CRM can read and turn into leads. Each one is tagged with its source, so you can see which listing actually produces business in Kanpur.
+              </p>
+              <h3>Can it handle Hindi voice notes and Hinglish messages?</h3>
+              <p>
+                Yes. Most Kanpur buyers write in Hinglish and many send voice notes. The CRM keeps the original message on the lead, and an optional AI step transcribes voice notes and pulls out the item, quantity and area, so a rep sees the order instead of a 40-second recording.
               </p>
               <h3>Can we meet the CRM team in person in Kanpur?</h3>
               <p>

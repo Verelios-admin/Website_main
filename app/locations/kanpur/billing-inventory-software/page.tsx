@@ -189,7 +189,7 @@ export default function KanpurBillingInventoryPage() {
                 <li><strong>Tally stays</strong> — we sync to it rather than forcing your CA to change.</li>
                 <li><strong>Party-wise rates and schemes</strong> built in, so staff stop overriding prices manually.</li>
                 <li><strong>Meet us in person</strong> — a real team in Govind Nagar, at your shop within the hour.</li>
-                <li><strong>Rated 4.9★</strong> across 56 client reviews. <strong>You own the code.</strong></li>
+                <li><strong>Rated 4.9★</strong> across 57 client reviews. <strong>You own the code.</strong></li>
               </ul>
 
               <h2>What we build into a Kanpur billing system</h2>

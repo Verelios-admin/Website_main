@@ -40,6 +40,8 @@ export const SERVICE_TYPES = [
   'CRM Software',
   'Billing & Inventory Software',
   'Custom Software / Internal Tools',
+  'AI Consulting',
+  'AI Automation / Chatbot',
   'Mobile App (iOS/Android)',
   'E-commerce Website',
   'Business Website',
