@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   creator: 'Verelios Labs',
   publisher: 'Verelios Labs',
   applicationName: 'Verelios Labs',
-  category: 'Website & app development agency',
+  category: 'Software development and AI consulting',
   // favicon.svg is a genuine 577-byte vector mark. It used to be a 512x512 PNG
   // with an .svg extension (77KB) fetched at High priority on every page load,
   // which competed with real above-the-fold content for bandwidth. The raster
@@ -86,11 +86,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // No site-wide twitter title/description (Phase 16): every page inherited the
+  // same generic "Website & App Development Agency India" card. Without them, X
+  // and other card readers fall back to each page's own og:title/og:description.
   twitter: {
     card: 'summary_large_image',
-    title: 'Website & App Development Agency India | Verelios Labs',
-    description:
-      'Custom websites & apps shipped in under 3 weeks. Free mockup in 48 hours. No upfront payment. 100% satisfaction guaranteed.',
     images: ['/logo.webp'],
     creator: '@verelioslabs',
     site: '@verelioslabs',
@@ -129,8 +129,8 @@ export const metadata: Metadata = {
   other: {
     'geo.region':    'IN-UP',
     'geo.placename': 'Kanpur, Uttar Pradesh',
-    'geo.position':  '26.447437;80.306051',
-    'ICBM':          '26.447437, 80.306051',
+    'geo.position':  '26.450440;80.304540',
+    'ICBM':          '26.450440, 80.304540',
     'apple-mobile-web-app-capable':        'yes',
     'mobile-web-app-capable':              'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -168,7 +168,7 @@ const orgJsonLd = {
   },
   image: `${SITE_URL}/logo.webp`,
   description:
-    'Software agency in Govind Nagar, Kanpur — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment, no upfront cost.',
+    'Software company and AI consultancy in Govind Nagar, Kanpur — custom websites, mobile apps, business software (ERP, CRM, billing) and AI automation, from idea to launch in weeks. Free 48-hour mockup, milestone-based payment, no upfront cost.',
   // ONE ContactPoint only. +91 84710 94125 is the WhatsApp line and must never
   // be published as a voice contact: ContactPoint and tel: links are exactly what
   // citation aggregators harvest, and a second number fragments NAP consistency
@@ -185,7 +185,7 @@ const orgJsonLd = {
   email: 'contact@verelios.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
+    streetAddress: '126/103-1, Nand Lal Chauraha, B Block, Govind Nagar',
     addressLocality: 'Kanpur',
     addressRegion: 'Uttar Pradesh',
     postalCode: '208006',
@@ -194,10 +194,22 @@ const orgJsonLd = {
   sameAs: [...SOCIAL_PROFILES, GBP_URL],
   foundingDate: '2024',
   areaServed: { '@type': 'Country', name: 'India' },
+  // Phase 16: AI terms added — AI assistants read knowsAbout when deciding what a
+  // business is an authority on; it previously listed only web frameworks.
   knowsAbout: [
+    'Artificial intelligence', 'AI consulting', 'Generative AI', 'Large language models',
+    'AI chatbots', 'AI agents', 'Workflow automation', 'Document AI',
+    'ERP software', 'CRM software', 'Website development', 'Mobile app development',
     'React', 'Next.js', 'React Native', 'Node.js', 'TypeScript',
     'Tailwind CSS', 'Flutter', 'Firebase', 'MongoDB', 'PostgreSQL',
   ],
+  // Same @id as the full Person node on /about, so Google merges the two.
+  founder: {
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#sahil-chauhan`,
+    name: 'Sahil Chauhan',
+    url: `${SITE_URL}/about`,
+  },
   slogan: 'From idea to launch in under 3 weeks',
 };
 

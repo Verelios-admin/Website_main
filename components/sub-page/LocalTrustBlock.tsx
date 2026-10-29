@@ -20,7 +20,7 @@ export const REVIEW_URL = 'https://g.page/r/CSnAeGueeOXNEBM/review';
 
 /** Same destination coordinates LocalMap uses — kept in step with it. */
 const DIRECTIONS_URL =
-  'https://www.google.com/maps/dir/?api=1&destination=26.447437,80.306051';
+  'https://www.google.com/maps/dir/?api=1&destination=26.450440,80.304540';
 
 // Single source of truth is lib/schema.ts; re-exported under the old name so the
 // four Kanpur pages importing it from here keep working.
@@ -69,7 +69,7 @@ export function LocalTrustBlock({
                 Visit us in Kanpur
               </div>
               <address style={{ fontStyle: 'normal', fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
-                126/58 G Block, Govind Nagar<br />
+                126/103-1, Nand Lal Chauraha, B Block, Govind Nagar<br />
                 Kanpur, Uttar Pradesh 208006<br />
                 {/* The six Kanpur leaf pages show the address but had no way to
                     act on it — LocalMap (which carries this link) renders only on
@@ -165,7 +165,7 @@ export function LocalTrustBlock({
               Read all our reviews on Google →
             </a>
             {/* Until now the site had no route for a happy client to leave a
-                review — 56 reviews arrived with no prompt from the website at
+                review — 58 reviews arrived with no prompt from the website at
                 all. Review count and recency are local ranking signals, so the
                 asking should not be left entirely to memory. */}
             <a

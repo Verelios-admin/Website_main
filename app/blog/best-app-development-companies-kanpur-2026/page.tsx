@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — Best App Development Companies in Kanpur' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${PUBLISHED}T00:00:00+05:30`,
   },
 };
 

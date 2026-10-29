@@ -187,7 +187,7 @@ export default function KanpurWebsiteDevelopmentPage() {
                 <li><strong>Meet us in person</strong> — a real office in Govind Nagar, not a freelancer who disappears after launch.</li>
                 <li><strong>Free 48-hour mockup</strong> — see your website designed before you pay a single rupee.</li>
                 <li><strong>Milestone payments</strong> — 30% to start, 30% at mid-delivery, 40% at launch.</li>
-                <li><strong>Rated 4.9★</strong> across 56 client reviews, with work you can click through.</li>
+                <li><strong>Rated 4.9★</strong> across 57 client reviews, with work you can click through.</li>
                 <li><strong>You own everything</strong> — source code, hosting and domain on your own accounts. No lock-in.</li>
                 <li><strong>Open 24 hours, every day</strong>, with a real human on WhatsApp.</li>
               </ul>

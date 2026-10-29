@@ -40,6 +40,8 @@ const SERVICE_TYPES = [
   'CRM Software',
   'Billing & Inventory Software',
   'Custom Software / Internal Tools',
+  'AI Consulting',
+  'AI Automation / Chatbot',
   'Mobile App (iOS/Android)',
   'E-commerce Website',
   'Business Website',
@@ -316,7 +318,7 @@ export function Contact() {
               Visit us in Kanpur
             </div>
             <address style={{ fontStyle: 'normal', color: 'rgba(255,255,255,0.8)', fontSize: 15, lineHeight: 1.6 }}>
-              126/58 G Block, Govind Nagar<br />
+              126/103-1, Nand Lal Chauraha, B Block, Govind Nagar<br />
               Kanpur, Uttar Pradesh 208006
             </address>
             <a

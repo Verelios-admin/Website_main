@@ -65,7 +65,7 @@ const localBusinessJsonLd = {
   priceRange: '₹49,999–₹5,00,000+',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
+    streetAddress: '126/103-1, Nand Lal Chauraha, B Block, Govind Nagar',
     addressLocality: 'Kanpur',
     addressRegion: 'Uttar Pradesh',
     postalCode: '208006',
@@ -74,8 +74,8 @@ const localBusinessJsonLd = {
   geo: {
     // Exact Google Business Profile pin (Govind Nagar, Kanpur).
     '@type': 'GeoCoordinates',
-    latitude: 26.447437,
-    longitude: 80.306051,
+    latitude: 26.450440,
+    longitude: 80.304540,
   },
   hasMap: 'https://maps.google.com/?cid=14836397169245208617',
   openingHoursSpecification: [
@@ -89,7 +89,7 @@ const localBusinessJsonLd = {
   image: `${SITE_URL}/logo.webp`,
   logo:  `${SITE_URL}/logo.webp`,
   description:
-    'Software agency in Govind Nagar, Kanpur serving clients across India — custom websites, mobile apps and software from idea to launch in under 3 weeks. Free 48-hour mockup, milestone-based payment.',
+    'Software company and AI consultancy in Govind Nagar, Kanpur, serving clients across India — custom websites, mobile apps, business software and AI automation, from idea to launch in weeks. Free 48-hour mockup, milestone-based payment.',
   // 2024 — confirmed by the owner against the verified Google Business Profile.
   // Must stay identical to the Organization node in app/layout.tsx, which renders
   // on EVERY page: when the two disagree, this page ships two conflicting
@@ -110,7 +110,7 @@ const localBusinessJsonLd = {
   ],
   areaServed: [
     // Home base — Kanpur + Uttar Pradesh. Only Kanpur is a physical location; the
-    // ONE office is 126/58 G Block, Govind Nagar. Everywhere else on this list is
+    // ONE office is 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar. Everywhere else on this list is
     // served remotely, which is also how the GBP service area is set. Do not
     // reintroduce an on-site claim for any other city — the GBP description
     // previously implied a second Bangalore office and it was not accurate.
@@ -131,7 +131,7 @@ const localBusinessJsonLd = {
   // NOTE: aggregateRating + review are deliberately ABSENT here, and must not be
   // re-added. Google's review-snippet policy forbids "self-serving" reviews — a
   // business marking up ratings of ITSELF on its OWN site is ineligible for the
-  // star rich result no matter how genuine the underlying reviews are. Our 56
+  // star rich result no matter how genuine the underlying reviews are. Our 57
   // Google reviews are real, but authoring the JSON-LD about ourselves is the
   // separate violation, and repeating it across sibling URLs is the pattern the
   // spam guidelines describe as reviews-markup abuse (GSC already raised a
@@ -298,6 +298,24 @@ const localBusinessJsonLd = {
         },
       },
       {
+        // Phase 16. The first consultation is free and no consulting fee is
+        // published, so this Offer carries no price; builds that come out of it
+        // are priced under AI Automation above (from ₹49,999).
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Consulting',
+          url: `${SITE_URL}/locations/kanpur/ai-consulting`,
+          description:
+            'AI consulting in Kanpur — workflow audit, AI use-case discovery, ROI estimate and a written roadmap, then the build if it pays off. First consultation free.',
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: [
+            { '@type': 'City', name: 'Kanpur' },
+            { '@type': 'State', name: 'Uttar Pradesh' },
+          ],
+        },
+      },
+      {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
@@ -411,7 +429,7 @@ const faqJsonLd = {
       name: 'Where in Kanpur is Verelios Labs located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We are based at 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours, every day, and you are welcome to meet us in person or talk over WhatsApp before starting a project.',
+        text: 'We are based at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. We are open 24 hours, every day, and you are welcome to meet us in person or talk over WhatsApp before starting a project.',
       },
     },
     {

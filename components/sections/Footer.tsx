@@ -73,6 +73,7 @@ const COLS = [
       ['Software company in Kanpur', '/locations/kanpur'],
       ['Website development in Kanpur', '/locations/kanpur/website-development'],
       ['App development in Kanpur', '/locations/kanpur/mobile-app-development'],
+      ['AI consulting in Kanpur', '/locations/kanpur/ai-consulting'],
       ['AI development in Kanpur', '/locations/kanpur/ai-development'],
       ['ERP software in Kanpur', '/locations/kanpur/erp-software'],
       ['Billing software in Kanpur', '/locations/kanpur/billing-inventory-software'],
@@ -145,7 +146,7 @@ export function Footer() {
               }}
             >
               <strong style={{ fontWeight: 600 }}>Verelios Labs</strong><br />
-              126/58 G Block, Govind Nagar<br />
+              126/103-1, Nand Lal Chauraha, B Block, Govind Nagar<br />
               Kanpur, Uttar Pradesh 208006, India<br />
               <a href="tel:+918299522798" style={{ color: 'inherit', textDecoration: 'none' }}>+91&nbsp;82995&nbsp;22798</a>
               {' · '}

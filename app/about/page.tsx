@@ -49,7 +49,7 @@ const personJsonLd = {
   ],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '126/58 G Block, Govind Nagar',
+    streetAddress: '126/103-1, Nand Lal Chauraha, B Block, Govind Nagar',
     addressLocality: 'Kanpur',
     addressRegion: 'Uttar Pradesh',
     postalCode: '208006',
@@ -118,11 +118,11 @@ export default function AboutPage() {
             <Prose>
               <h2>The short version</h2>
               <p>
-                Verelios Labs is a software studio at 126/58 G Block, Govind Nagar, Kanpur, Uttar
+                Verelios Labs is a software studio at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar
                 Pradesh 208006. It was founded in 2024 by Sahil Chauhan. We have delivered more than
                 fifty projects — websites, mobile apps, e-commerce stores, custom ERP, billing and
                 CRM systems, and AI automation — for clients in Kanpur and across India, and we
-                hold a 4.9 rating from 56 reviews on our Google Business Profile. Nine of them are
+                hold a 4.9 rating from 57 reviews on our Google Business Profile. Nine of them are
                 listed further down this page, seven with a live link you can open right now. We
                 deliberately publish only the handful we can point you at: the rest are under NDA,
                 are internal systems with no public URL, or have since been handed to the
@@ -239,7 +239,7 @@ export default function AboutPage() {
               </p>
               <ul>
                 <li>
-                  <strong>The reviews.</strong> Read all 56 on our{' '}
+                  <strong>The reviews.</strong> Read all 57 on our{' '}
                   <a href={GBP_URL} target="_blank" rel="noopener noreferrer">
                     Google Business Profile
                   </a>
@@ -250,7 +250,7 @@ export default function AboutPage() {
                   not a screenshot or a dead staging URL.
                 </li>
                 <li>
-                  <strong>The office.</strong> 126/58 G Block, Govind Nagar, Kanpur 208006. Call
+                  <strong>The office.</strong> 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur 208006. Call
                   ahead and come in — see{' '}
                   <a href="/locations/kanpur">our Kanpur page</a> for directions.
                 </li>

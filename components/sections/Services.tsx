@@ -120,11 +120,12 @@ export function Services() {
               attribute. Every fact here already appears further down the
               homepage (Pricing, Process, Hero, About). Keep it 134–167 words. */}
           <p className="key-answer-light">
-            Verelios Labs is a software company in Kanpur: a Govind Nagar studio of website,
+            Verelios Labs is a software company and{' '}
+            <a href="/locations/kanpur/ai-consulting" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>AI consultancy in Kanpur</a>: a Govind Nagar studio of website,
             app and custom software developers, working with businesses in Kanpur and founders across India
             who need to move now rather than next quarter. The work spans custom websites,
             cross-platform iOS and Android apps, e-commerce stores, ERP, billing and inventory,
-            CRM software, AI automation, UI/UX design and managed hosting. Every engagement
+            CRM software, AI consulting and automation, UI/UX design and managed hosting. Every engagement
             opens the same way: a free mockup within 48 hours, before any payment or
             commitment. Payment is then milestone-based — 30% to start, 30% at mid-delivery,
             40% at launch — so it lands as the work does. Websites typically start at ₹49,999

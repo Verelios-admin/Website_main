@@ -1,23 +1,24 @@
 # Verelios Labs
 
-> Verelios Labs is a software development company in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps, and business software — ERP, CRM, billing and inventory — plus AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 4.9 from 56 Google reviews.
+> Verelios Labs is a software company and AI consultancy in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps and business software — ERP, CRM, billing and inventory — and offers AI consulting and AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 4.9 from 57 Google reviews.
 
-Last updated: 2026-08-31
+Last updated: 2026-10-28
 
 ## Key facts
 
 - **Name:** Verelios Labs (also "Verelios")
 - **Founded:** 2024
 - **Website:** https://www.verelios.com
-- **Office:** 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India — one physical location
+- **Office:** 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India — one physical location
 - **Service area:** Kanpur and Uttar Pradesh in person; the rest of India remotely
 - **Phone:** +91 82995 22798
 - **WhatsApp:** +91 84710 94125 (a different number from the phone line)
 - **Email:** contact@verelios.com
 - **Hours:** Open 24 hours, every day (IST)
-- **Rating:** 4.9 stars from 56 Google reviews
+- **Rating:** 4.9 stars from 57 Google reviews
 - **Projects delivered:** 50+
 - **Founder:** Sahil Chauhan, who runs the initial scoping call on every project
+- **AI consulting:** free first consultation, a one-page AI plan within 2–3 days, a free 48-hour proof-of-concept, AI builds from ₹49,999
 - **Free mockup:** a visual mockup or prototype within 48 hours, before any payment or commitment
 - **Payment:** milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. Fixed quote up front, not billed hourly.
 - **Code ownership:** the client owns the source code and it sits on their own hosting and domain accounts. No vendor lock-in.
@@ -33,7 +34,8 @@ Starting prices. Each project is quoted at a fixed price after a scoping call.
 | Service | Starts at | Typical delivery |
 |---|---|---|
 | Business website (up to 5 pages) | ₹49,999 | 7–14 days |
-| AI automation | ₹49,999 | scoped per process |
+| AI consulting (first consultation + one-page plan) | Free | plan in 2–3 days |
+| AI automation | ₹49,999 | 2–6 weeks |
 | Mobile app (iOS + Android) | ₹99,999 | 3–5 weeks |
 | E-commerce store | ₹99,999 | 3–4 weeks |
 | ERP software (single module) | ₹99,999 | 4–8 weeks |
@@ -59,6 +61,7 @@ between ₹1,50,000 and ₹4,00,000. A website with custom features typically la
 - [Billing and Inventory Software](https://www.verelios.com/services/billing-inventory-software): GST billing, live stock across godowns, e-way bills and Tally sync. Keeps billing when the internet drops. From ₹99,999.
 - [CRM Software Development](https://www.verelios.com/services/crm-software-development): Leads, pipeline, quotations, WhatsApp Business API, call logging and field sales. A one-time build, not per user per month. From ₹99,999.
 - [AI Automation](https://www.verelios.com/services/ai-automation): AI agents, chatbots and workflow automation that remove repetitive work. From ₹49,999.
+- [AI Consulting in Kanpur](https://www.verelios.com/locations/kanpur/ai-consulting): Free first consultation, a workflow audit and a one-page AI plan, then a free 48-hour proof-of-concept and the build.
 - [UI/UX Design](https://www.verelios.com/services/ui-ux-design): Research, wireframing, prototyping and conversion-focused design systems. From ₹40,000.
 - [Web Hosting and Maintenance](https://www.verelios.com/services/web-hosting): Managed hosting with 99.9% uptime, backups, SSL, security patches and performance monitoring. From ₹3,000 per month.
 
@@ -70,6 +73,7 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - [Software Company in Kanpur](https://www.verelios.com/locations/kanpur): Everything Verelios Labs builds for Kanpur businesses, with the office address and hours.
 - [Website Development in Kanpur](https://www.verelios.com/locations/kanpur/website-development): Websites for Kanpur businesses. From ₹49,999.
 - [Mobile App Development in Kanpur](https://www.verelios.com/locations/kanpur/mobile-app-development): iOS and Android apps built in Kanpur. From ₹99,999.
+- [AI Consulting in Kanpur](https://www.verelios.com/locations/kanpur/ai-consulting): Where AI pays off for a Kanpur business, put on one page before anything is built. First consultation free.
 - [AI Development in Kanpur](https://www.verelios.com/locations/kanpur/ai-development): AI agents, chatbots and automation for Kanpur businesses. From ₹49,999.
 - [ERP Software in Kanpur](https://www.verelios.com/locations/kanpur/erp-software): Manufacturing, leather, textile and trading ERP for Kanpur units, including the Panki, Dada Nagar and Jajmau belts. From ₹99,999.
 - [Billing and Inventory Software in Kanpur](https://www.verelios.com/locations/kanpur/billing-inventory-software): GST billing and stock for Kanpur shops, traders and distributors. From ₹99,999.
@@ -96,8 +100,15 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - [Best app development companies in Kanpur (2026)](https://www.verelios.com/blog/best-app-development-companies-kanpur-2026): A comparison of app development companies in Kanpur, with the same disclosure.
 - [Best ERP software companies in Kanpur (2026)](https://www.verelios.com/blog/best-erp-software-companies-kanpur-2026): A comparison of ERP software companies in Kanpur, with the same disclosure.
 
+## AI consulting in Kanpur
+
+Verelios Labs is an AI consultancy in Govind Nagar, Kanpur. A consultation starts free, in person at the office or on a call, with a walk-through of how the work is done today. Within 2–3 days the client gets a one-page plan: the one or two processes worth automating first, the build cost, the monthly running cost, and where AI will not pay off. A free 48-hour proof-of-concept on the client's own data follows before any commitment. Typical first projects: WhatsApp and website chatbots that answer in Hindi or English, invoice and document processing into Tally or an ERP, lead follow-up and reporting. Builds start at ₹49,999 and usually take 2–6 weeks, paid in milestones of 30% / 30% / 40%; the client owns the code. The same team that gives the advice builds and supports the result.
+
+- Page: https://www.verelios.com/locations/kanpur/ai-consulting
+
 ## Common questions
 
+- **Who offers AI consulting in Kanpur?** Verelios Labs, at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, offers AI consulting with a free first consultation and a one-page AI plan within 2–3 days, then builds the chosen automation from ₹49,999. Phone +91 82995 22798.
 - **How much does a website cost in India?** A 5-page business website from Verelios Labs starts at ₹49,999 and goes live in 7–14 days. Websites with custom features, e-commerce or a CMS typically land between ₹1,00,000 and ₹3,00,000. The quote is fixed before work begins.
 - **How much does a mobile app cost?** An iOS and Android app from a single codebase starts at ₹99,999 and ships to both stores in 3–5 weeks. Apps with payments, live tracking or deep backend integration typically range from ₹2,00,000 to ₹10,00,000.
 - **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, purchase, sales and accounting typically lands between ₹3,00,000 and ₹10,00,000.
@@ -108,7 +119,7 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - **Who owns the code?** The client does. It sits on the client's own hosting and domain accounts, with full commit history handed over. There is no vendor lock-in.
 - **Do you build for both iOS and Android?** Yes, from a single React Native or Flutter codebase, so both apps ship together rather than being paid for twice.
 - **Does your software work with Tally and GST?** Yes. ERP, billing and inventory systems integrate with Tally and the GST portal, so the client's accountant's workflow does not change.
-- **Can we meet in person?** Yes. The office is at 126/58 G Block, Govind Nagar, Kanpur, open 24 hours every day. The team also visits client premises anywhere in Kanpur, including Kakadeo, Swaroop Nagar, Panki, Dada Nagar, Barra and Jajmau.
+- **Can we meet in person?** Yes. The office is at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, open 24 hours every day. The team also visits client premises anywhere in Kanpur, including Kakadeo, Swaroop Nagar, Panki, Dada Nagar, Barra and Jajmau.
 - **Do you work outside Kanpur?** Yes. Kanpur and Uttar Pradesh are served in person; the rest of India is served remotely, with the same free 48-hour mockup and milestone payments.
 - **Do you help with SEO?** Every website ships with on-page SEO by default — semantic HTML, titles and meta descriptions, structured data, an XML sitemap, fast Core Web Vitals and Google Search Console setup.
 - **When is Verelios Labs not the right choice?** When an off-the-shelf product genuinely fits. For a three-person team whose sales process matches a standard pipeline, Zoho CRM or a similar subscription tool is a better and faster answer than a custom build, and Verelios Labs says so rather than selling around it. Custom starts paying off when per-user fees become significant, when the process does not match the template, or when systems must integrate in ways a standard plan will not allow.
@@ -118,7 +129,7 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 - Phone: +91 82995 22798
 - WhatsApp: +91 84710 94125
 - Email: contact@verelios.com
-- Address: 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
+- Address: 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
 - Hours: Open 24 hours, every day (IST)
 - Google Business Profile: https://maps.google.com/?cid=14836397169245208617
 - Sitemap: https://www.verelios.com/sitemap.xml

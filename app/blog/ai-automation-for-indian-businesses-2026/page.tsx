@@ -9,6 +9,9 @@ const SLUG = 'ai-automation-for-indian-businesses-2026';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-06-26';
+// Phase 16 refresh: answer block, cost table, consulting-first section. Search
+// Console had this URL as "Crawled – currently not indexed" on 2026-10-28.
+const MODIFIED = '2026-10-28';
 
 export const metadata: Metadata = {
   title: 'AI Automation for Indian Businesses (2026)',
@@ -24,7 +27,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     siteName: 'Verelios Labs',
     images: [{ url: '/logo.webp', width: 1200, height: 630, alt: 'Verelios Labs — AI Automation for Indian Businesses' }],
-    publishedTime: `${PUBLISHED}T00:00:00.000Z`,
+    publishedTime: `${PUBLISHED}T00:00:00+05:30`,
+    modifiedTime: `${MODIFIED}T00:00:00+05:30`,
   },
 };
 
@@ -36,7 +40,7 @@ const articleJsonLd = {
   description:
     'A practical, no-hype guide to AI automation for Indian businesses — what to automate first, what it costs in INR, and how to tell if a process is ready.',
   datePublished: `${PUBLISHED}T00:00:00+05:30`,
-  dateModified: `${PUBLISHED}T00:00:00+05:30`,
+  dateModified: `${MODIFIED}T00:00:00+05:30`,
   inLanguage: 'en-IN',
   isAccessibleForFree: true,
   articleSection: 'AI Automation',
@@ -83,7 +87,12 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-06-26">26 June 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-06-26">26 June 2026</time> · Updated <time dateTime="2026-10-28">28 October 2026</time></p>
+              <div className="key-answer">
+                <p>
+                  AI automation means getting software, often with a language model attached, to do repetitive work a team currently does by hand: replying to routine enquiries, reading invoices into Tally, following up leads, preparing reports. For an Indian small or mid-sized business the best first automation is frequent, rule-based and cheap to get wrong, because a person checks the output. A focused single automation, one workflow or one chatbot, typically costs ₹49,999 to ₹1,50,000 to build, and a larger AI assistant or multi-system workflow ₹1,50,000 to ₹5,00,000. Running costs are separate: usually a few hundred to a few thousand rupees a month in model and tool usage for a small business. Most well-scoped first automations recover their build cost within a few months from hours saved alone. If it is not obvious which task to start with, a short AI consultation that maps the process first is cheaper than automating the wrong one.
+                </p>
+              </div>
               <p>
                 &quot;AI automation&quot; has become a phrase people use to sell almost anything. Stripped of the hype, it means one simple thing: getting software — sometimes with a language model attached — to do repetitive work your team currently does by hand. The useful question isn&apos;t &quot;should we use AI?&quot; It&apos;s &quot;which specific task in my business is costing me hours every week, and can a machine do it reliably?&quot; This guide answers that for Indian small and mid-sized businesses.
               </p>
@@ -118,6 +127,35 @@ export default function Post() {
               <p>
                 There are two costs to keep separate: the <strong>build</strong> (one-time) and the <strong>running cost</strong> (monthly).
               </p>
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>What you automate</th><th>Typical build cost</th><th>Typical running cost</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>One workflow (lead follow-up, report, app-to-app sync)</td>
+                      <td className="price">₹49,999 – ₹1,00,000</td>
+                      <td>A few hundred rupees a month</td>
+                    </tr>
+                    <tr>
+                      <td>AI chatbot on your website or WhatsApp</td>
+                      <td className="price">₹49,999 – ₹1,50,000</td>
+                      <td>Scales with conversations</td>
+                    </tr>
+                    <tr>
+                      <td>Invoice and document processing into Tally or an ERP</td>
+                      <td className="price">₹49,999 – ₹1,50,000</td>
+                      <td>Scales with pages processed</td>
+                    </tr>
+                    <tr>
+                      <td>AI assistant on your own documents, or a multi-step workflow</td>
+                      <td className="price">₹1,50,000 – ₹5,00,000</td>
+                      <td>A few thousand rupees a month</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <p>
                 For the build, a focused single automation — one workflow or one chatbot — typically runs <strong>₹49,999 to ₹1,50,000</strong> depending on how many systems it touches and how much custom logic it needs. A larger AI assistant that answers from your own documents, or a multi-step workflow spanning several tools, usually lands between <strong>₹1,50,000 and ₹5,00,000</strong>. Anyone quoting a number before understanding your exact process is guessing.
               </p>
@@ -193,6 +231,11 @@ export default function Post() {
                 All four are avoidable at the scoping stage, which is why we push for a written
                 description of the current process before quoting. If nobody can write down how
                 the task is done today, that is the actual first deliverable.
+              </p>
+
+              <h2>AI automation or AI consulting: which do you need first?</h2>
+              <p>
+                If you already know the task (&ldquo;read these 300 invoices a month into Tally&rdquo;), you need automation: a fixed scope, a quote and a build. If you only know that your team is busy and AI might help, start with consulting: an hour spent mapping how the work is done today, then a written shortlist of what is worth automating and what is not. In Kanpur we run that as a free first consultation with a one-page plan in two to three days; see <a href="/locations/kanpur/ai-consulting">AI consulting in Kanpur</a>. Elsewhere in India the same conversation happens on a call.
               </p>
 
               <h2>Where to start</h2>

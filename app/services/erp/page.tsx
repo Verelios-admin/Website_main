@@ -158,7 +158,7 @@ export default function ERPPage() {
 
               <h2>Why custom ERP beats SAP, Oracle, Zoho or a Tally patchwork</h2>
               <p>
-                Packaged ERPs are excellent when your process matches theirs. The trouble starts when it doesn&apos;t — you pay <strong>per user, per month, forever</strong>, spend lakhs on consultants to configure it, and your team still exports to Excel to get the report they actually wanted. A custom ERP inverts that: <strong>the software fits your process, not the other way round</strong>, it&apos;s a one-time build you own, and after year one it usually costs less than the subscription you were paying.
+                Packaged ERPs are excellent when your process matches theirs. The trouble starts when it doesn&apos;t — you pay <strong>per user, per month, forever</strong>, spend lakhs on implementation partners to configure it, and your team still exports to Excel to get the report they actually wanted. A custom ERP inverts that: <strong>the software fits your process, not the other way round</strong>, it&apos;s a one-time build you own, and after year one it usually costs less than the subscription you were paying.
               </p>
               <p>
                 A few signs your business has outgrown its current setup:

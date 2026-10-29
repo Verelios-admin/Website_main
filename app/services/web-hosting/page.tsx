@@ -151,7 +151,7 @@ export default function WebHostingPage() {
                 Most business owners don&apos;t want a hosting control panel — they want their site to be fast, secure, and simply <em>up</em>. That&apos;s what managed hosting means: we run the servers, the backups, the SSL and the updates, and you get on with your business. If something breaks at 2am, it&apos;s our problem, not yours — and you&apos;ll usually hear it&apos;s already fixed on WhatsApp before you&apos;ve even noticed.
               </p>
               <p>
-                We host and maintain the sites and apps we build, and we happily take over existing ones too — whether it&apos;s a five-page business site, an <a href="/services/website-development">e-commerce store</a>, or a custom app.
+                We host and maintain the sites and apps we build, and we happily take over existing ones too — whether it&apos;s a five-page business site, an <a href="/services/ecommerce-development">e-commerce store</a>, or a custom app.
               </p>
 
               <h2>What&apos;s included</h2>
