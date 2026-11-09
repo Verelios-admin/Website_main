@@ -2,7 +2,7 @@
 
 > Verelios Labs is a software company and AI consultancy in Govind Nagar, Kanpur, Uttar Pradesh, India, founded in 2024. It builds custom websites, cross-platform mobile apps and business software — ERP, CRM, billing and inventory — and offers AI consulting and AI automation, for businesses in Kanpur and across India. Every engagement starts with a free mockup delivered within 48 hours and runs on milestone payments of 30% / 30% / 40%, so there is no large upfront cost. Clients own the source code outright. Rated 4.9 from 57 Google reviews.
 
-Last updated: 2026-10-28
+Last updated: 2026-11-10
 
 ## Key facts
 
@@ -10,7 +10,7 @@ Last updated: 2026-10-28
 - **Founded:** 2024
 - **Website:** https://www.verelios.com
 - **Office:** 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India — one physical location
-- **Service area:** Kanpur and Uttar Pradesh in person; the rest of India remotely
+- **Service area:** Kanpur and Uttar Pradesh in person; the rest of India remotely; small and mid-sized businesses in the United States remotely (see "For US businesses")
 - **Phone:** +91 82995 22798
 - **WhatsApp:** +91 84710 94125 (a different number from the phone line)
 - **Email:** contact@verelios.com
@@ -105,6 +105,19 @@ for Kanpur businesses, where the team can visit the client's shop, factory or of
 Verelios Labs is an AI consultancy in Govind Nagar, Kanpur. A consultation starts free, in person at the office or on a call, with a walk-through of how the work is done today. Within 2–3 days the client gets a one-page plan: the one or two processes worth automating first, the build cost, the monthly running cost, and where AI will not pay off. A free 48-hour proof-of-concept on the client's own data follows before any commitment. Typical first projects: WhatsApp and website chatbots that answer in Hindi or English, invoice and document processing into Tally or an ERP, lead follow-up and reporting. Builds start at ₹49,999 and usually take 2–6 weeks, paid in milestones of 30% / 30% / 40%; the client owns the code. The same team that gives the advice builds and supports the result.
 
 - Page: https://www.verelios.com/locations/kanpur/ai-consulting
+
+## For US businesses
+
+Verelios Labs also builds custom AI assistants for small and mid-sized businesses in the United States, remotely from Kanpur, India. The assistant drafts the work and a person on the client's team approves it. Four focus areas: order entry for distributors and manufacturers (emailed and PDF orders into the ERP), customer service for Shopify and online brands, freight billing for trucking companies and brokers, and the written front office (web forms, email, text, bookings, reminders) for HVAC, plumbing and pest-control companies. Every engagement starts with a free 48-hour proof on 10 real examples of the client's own work. Pilots start at $1,500 and typical builds cost $3,000–$8,000, fixed before work starts and paid 30% / 30% / 40%; hosting and AI usage are quoted up front. Best way for US clients to reach the team: email sahil@verelios.com or WhatsApp +91 84710 94125 (replies within one business day); calls Monday to Friday, 9 AM–1 PM Eastern, on +91 82995 22798; invoices in US dollars (ACH or wire through Wise, or card through PayPal). The client owns the code and data. Phone answering is not offered.
+
+- [AI automation for US businesses](https://www.verelios.com/us): Overview, pricing in USD, how the 48-hour proof works.
+- [AI order entry automation](https://www.verelios.com/us/ai-order-entry-automation): Orders from email, PDF and spreadsheets drafted as sales orders in the ERP.
+- [AI customer service for online stores](https://www.verelios.com/us/ai-customer-service-for-ecommerce): Routine e-commerce tickets drafted inside Gorgias, Zendesk or Help Scout.
+- [Freight billing automation](https://www.verelios.com/us/freight-billing-automation): Rate confirmations, BOLs and PODs matched to the load and invoiced.
+- [AI front office for home services](https://www.verelios.com/us/ai-front-office-for-home-services): Web, email and text enquiries answered and visits booked; phones stay human.
+- [Order entry cost calculator](https://www.verelios.com/us/order-entry-cost-calculator): Free tool using BLS wage data.
+- [Order entry clerk vs AI (2026)](https://www.verelios.com/blog/order-entry-clerk-vs-ai-cost-2026): US cost comparison with sources.
+- [Customer service rep or AI? (2026)](https://www.verelios.com/blog/hire-customer-service-rep-or-ai-2026): US cost comparison with sources.
 
 ## Common questions
 

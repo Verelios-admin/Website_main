@@ -23,6 +23,13 @@ const LEAD_VALUE_BY_BUDGET: Record<string, number> = {
   '₹3,00,000 – ₹5,00,000': 300000,
   '₹5,00,000+': 500000,
   'Not sure yet': 40000,
+  // Phase 17 (2026-11-10): USD bands from the US pages (InlineLeadForm
+  // market="us"). Values stay in rupees so Ads keeps one currency; each is the
+  // conservative end of its band at roughly ₹84/$ and rounded down.
+  'Under $2,000': 100000,
+  '$2,000 – $5,000': 165000,
+  '$5,000 – $15,000': 400000,
+  '$15,000+': 1200000,
 };
 
 // Used when the budget field is missing or doesn't match a known band.

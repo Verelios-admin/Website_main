@@ -87,6 +87,9 @@ const COLS = [
       ['Start a project', '/#contact'],
       ['WhatsApp', 'https://wa.me/918471094125'],
       ['Careers', '/#contact'],
+      // Phase 17 (2026-11-10): the US section, linked site-wide.
+      ['For US businesses', '/us'],
+      ['Order entry cost calculator', '/us/order-entry-cost-calculator'],
     ],
   },
 ] as const;

@@ -87,6 +87,17 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/blog/how-to-choose-web-development-agency-india', lastmod: '2026-05-26', priority: 0.6 },
   { path: '/blog/how-we-ship-websites-in-3-weeks', lastmod: '2026-05-26', priority: 0.6 },
 
+  // Phase 17 (2026-11-10): "For US businesses". The only pages written for US
+  // buyers (USD, US hours); everything else targets India.
+  { path: '/us', lastmod: '2026-11-10', priority: 0.9 },
+  { path: '/us/ai-order-entry-automation', lastmod: '2026-11-10', priority: 0.9 },
+  { path: '/us/ai-customer-service-for-ecommerce', lastmod: '2026-11-10', priority: 0.8 },
+  { path: '/us/freight-billing-automation', lastmod: '2026-11-10', priority: 0.8 },
+  { path: '/us/ai-front-office-for-home-services', lastmod: '2026-11-10', priority: 0.8 },
+  { path: '/us/order-entry-cost-calculator', lastmod: '2026-11-10', priority: 0.8 },
+  { path: '/blog/order-entry-clerk-vs-ai-cost-2026', lastmod: '2026-11-10', priority: 0.7 },
+  { path: '/blog/hire-customer-service-rep-or-ai-2026', lastmod: '2026-11-10', priority: 0.7 },
+
   // About — author/company credentials page (E-E-A-T).
   { path: '/about', lastmod: '2026-10-28', priority: 0.7 },
 ];
