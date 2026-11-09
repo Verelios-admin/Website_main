@@ -239,6 +239,11 @@ export default function ServicesHubPage() {
                 remotely. See <Link href="/about">who we are</Link> and the client sites we
                 have shipped.
               </p>
+              <p>
+                Based in the United States? Our <Link href="/us">AI automation for US businesses</Link>{' '}
+                pages have pricing in US dollars, calls in your morning and a free 48-hour proof on
+                your own data.
+              </p>
             </Prose>
           </div>
         </section>

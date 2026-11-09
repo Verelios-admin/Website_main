@@ -58,6 +58,16 @@ const BUDGETS = [
   'Not sure yet',
 ];
 
+// Phase 17 (2026-11-10): USD bands for the "For US businesses" pages. Each
+// string has a matching lead value in lib/gtag.ts LEAD_VALUE_BY_BUDGET.
+const BUDGETS_US = [
+  'Under $2,000',
+  '$2,000 – $5,000',
+  '$5,000 – $15,000',
+  '$15,000+',
+  'Not sure yet',
+];
+
 const inputStyle: React.CSSProperties = {
   width: '100%',
   background: 'rgba(255,255,255,0.05)',
@@ -114,6 +124,10 @@ export interface InlineLeadFormProps {
   submitLabel?: string;
   /** Unique prefix for input ids, so two forms on one page can't collide. */
   idPrefix?: string;
+  /** Which market the page targets. 'in' (default) keeps every existing page
+   *  exactly as it was: +91 phone, rupee budget bands. 'us' switches to a +1
+   *  phone, USD bands and an email fallback (Phase 17). */
+  market?: 'in' | 'us';
 }
 
 export function InlineLeadForm({
@@ -121,7 +135,10 @@ export function InlineLeadForm({
   defaultService,
   submitLabel = 'Get my free 48-hour mockup',
   idPrefix = 'lead',
+  market = 'in',
 }: InlineLeadFormProps) {
+  const isUS = market === 'us';
+  const budgets = isUS ? BUDGETS_US : BUDGETS;
   const pathname = usePathname();
   // e.g. "Verelios Website - /services/erp". Every lead in the Sheet now says
   // exactly which page it came from, which is the only way to tell which ad
@@ -156,6 +173,9 @@ export function InlineLeadForm({
     // because these pages target India. Kept in the same shape the homepage
     // form sends so the downstream automation doesn't need to change.
     const digits = phone.replace(/\D/g, '');
+    // US numbers are often typed with the leading country code; drop it so the
+    // E.164 form below never becomes "+11…".
+    const usDigits = digits.length === 11 && digits.startsWith('1') ? digits.slice(1) : digits;
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), SUBMIT_TIMEOUT_MS);
@@ -168,7 +188,7 @@ export function InlineLeadForm({
         body: JSON.stringify({
           name,
           email,
-          phone: `91 ${phone}`,
+          phone: isUS ? `1 ${phone}` : `91 ${phone}`,
           serviceType: service,
           budgetRange: budget,
           message,
@@ -187,7 +207,7 @@ export function InlineLeadForm({
       trackMetaLead();
       trackGoogleAdsLead({
         email,
-        phone: `+91${digits}`,
+        phone: isUS ? `+1${usDigits}` : `+91${digits}`,
         service,
         budget,
       });
@@ -199,7 +219,9 @@ export function InlineLeadForm({
       // console and in any error reporting that gets added later.
       console.error('[InlineLeadForm] submission failed', err);
       setError(
-        'We could not send that just now. Please try again, or WhatsApp us on +91 84710 94125.',
+        isUS
+          ? 'We could not send that just now. Please try again, or email us at contact@verelios.com.'
+          : 'We could not send that just now. Please try again, or WhatsApp us on +91 84710 94125.',
       );
     } finally {
       clearTimeout(timeout);
@@ -249,8 +271,8 @@ export function InlineLeadForm({
           Thanks {name}, we&apos;ve got it.
         </h3>
         <p style={{ color: 'rgba(255,255,255,0.7)', margin: 0 }}>
-          We&apos;ll reply to <strong style={{ color: '#fff' }}>{email}</strong> — usually within
-          the hour.
+          We&apos;ll reply to <strong style={{ color: '#fff' }}>{email}</strong> —{' '}
+          {isUS ? 'within one business day.' : 'usually within the hour.'}
         </p>
       </div>
     );
@@ -288,7 +310,7 @@ export function InlineLeadForm({
             autoComplete="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="+91 00000 00000"
+            placeholder={isUS ? '+1 (555) 000-0000' : '+91 00000 00000'}
             required
             style={inputStyle}
           />
@@ -344,7 +366,7 @@ export function InlineLeadForm({
           <option value="" disabled style={{ background: '#1d1d1f' }}>
             Select a range
           </option>
-          {BUDGETS.map((b) => (
+          {budgets.map((b) => (
             <option key={b} value={b} style={{ background: '#1d1d1f' }}>
               {b}
             </option>

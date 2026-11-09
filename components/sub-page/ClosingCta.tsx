@@ -22,6 +22,9 @@ interface ClosingCtaProps {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  /** 'us' (Phase 17) switches the form to +1 / USD bands and shows email
+   *  instead of the Indian phone line. Default 'in' renders exactly as before. */
+  market?: 'in' | 'us';
 }
 
 /**
@@ -46,6 +49,7 @@ export function ClosingCta({
   primaryLabel = 'Get a free mockup',
   secondaryHref = WHATSAPP_HREF,
   secondaryLabel = 'Chat on WhatsApp',
+  market = 'in',
 }: ClosingCtaProps) {
   return (
     <section
@@ -116,6 +120,7 @@ export function ClosingCta({
                 defaultService={defaultService}
                 submitLabel={submitLabel}
                 idPrefix="closing"
+                market={market}
               />
             </div>
 
@@ -144,13 +149,23 @@ export function ClosingCta({
               >
                 {secondaryLabel}
               </a>
-              <a
-                href="tel:+918299522798"
-                className="btn-pill-ghost on-dark press"
-                style={{ fontWeight: 600 }}
-              >
-                Call +91 82995 22798
-              </a>
+              {market === 'us' ? (
+                <a
+                  href="mailto:contact@verelios.com"
+                  className="btn-pill-ghost on-dark press"
+                  style={{ fontWeight: 600 }}
+                >
+                  Email contact@verelios.com
+                </a>
+              ) : (
+                <a
+                  href="tel:+918299522798"
+                  className="btn-pill-ghost on-dark press"
+                  style={{ fontWeight: 600 }}
+                >
+                  Call +91 82995 22798
+                </a>
+              )}
             </div>
           </>
         )}

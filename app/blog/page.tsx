@@ -47,6 +47,22 @@ const breadcrumbJsonLd = {
 
 const posts = [
   {
+    slug: 'order-entry-clerk-vs-ai-cost-2026',
+    title: 'Order entry clerk vs AI: the real cost in 2026 (US)',
+    excerpt:
+      'What another order entry clerk really costs a US business, using BLS wage and benefits data, what an AI order assistant costs instead, and a simple way to decide.',
+    readTime: '7 min read',
+    date: '2026-11-10',
+  },
+  {
+    slug: 'hire-customer-service-rep-or-ai-2026',
+    title: 'Hire a customer service rep or use AI? (US, 2026)',
+    excerpt:
+      'BLS wage data for US customer service reps, what an AI assistant costs, which questions each handles best, and a two-week test that tells you which you need.',
+    readTime: '7 min read',
+    date: '2026-11-10',
+  },
+  {
     slug: 'erp-software-cost-india-2026',
     title: 'ERP software cost in India (2026)',
     excerpt:

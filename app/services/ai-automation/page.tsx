@@ -188,6 +188,10 @@ export default function AIAutomationPage() {
                 If you are still deciding what to automate, our <a href="/blog/ai-automation-for-indian-businesses-2026">no-hype guide to AI automation in India</a> walks through where it pays back first.
               </p>
 
+              <p>
+                Running a business in the United States? See <a href="/us">AI automation for US businesses</a>, with pricing in US dollars and calls in US hours.
+              </p>
+
               <h2>Frequently asked questions</h2>
               <h3>What kinds of AI automation do you build?</h3>
               <p>
