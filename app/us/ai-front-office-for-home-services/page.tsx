@@ -7,7 +7,7 @@ import { UsWorkingWithUs } from '@/components/us/UsWorkingWithUs';
 import { UsProof } from '@/components/us/UsProof';
 import { UsMoreLinks } from '@/components/us/UsMoreLinks';
 import { LOCAL_BUSINESS_REF } from '@/lib/schema';
-import { US_PRICING } from '@/lib/us';
+import { US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Niche: HVAC, plumbing, pest control and other home
 // services hiring CSRs, schedulers and dispatchers. Written channels only
@@ -126,7 +126,9 @@ export default function UsHomeServicesPage() {
           title="An AI front office"
           highlight="for HVAC, plumbing and pest control."
           lead="Every web form, email and text answered in minutes, visits proposed from your real schedule, emergencies escalated and reminders sent on time. Your people keep the phones. Test it free on your own past enquiries."
-          ctaLabel="Test it on my enquiries"
+          ctaHref={usMailto('Front office: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: '/us' },
@@ -233,6 +235,7 @@ export default function UsHomeServicesPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Front office: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test it on my enquiries"
           heading="See your enquiries answered in 48 hours."

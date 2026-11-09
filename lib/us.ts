@@ -39,6 +39,19 @@ export const US_PAGES = [
 
 export const US_CALCULATOR_PATH = '/us/order-entry-cost-calculator';
 
+// Blog posts written for US readers. With /us/*, these get the US contact
+// bar (email → WhatsApp → call) instead of the India one.
+export const US_BLOG_PATHS = [
+  '/blog/order-entry-clerk-vs-ai-cost-2026',
+  '/blog/hire-customer-service-rep-or-ai-2026',
+];
+
+export function isUsPath(pathname: string | null | undefined): boolean {
+  if (!pathname) return false;
+  const p = pathname.replace(/\/$/, '');
+  return p === '/us' || p.startsWith('/us/') || US_BLOG_PATHS.includes(p);
+}
+
 export const US_PRICING = {
   pilotFrom: '$1,500',
   buildRange: '$3,000–$8,000',
@@ -65,4 +78,15 @@ export const BLS_SOURCES = {
   ecec: 'https://www.bls.gov/news.release/ecec.nr0.htm',
 };
 
-export const US_CONTACT_EMAIL = 'contact@verelios.com';
+// Contact order for US visitors (owner, 2026-11-10): email first, WhatsApp
+// second, a phone call third.
+export const US_CONTACT_EMAIL = 'sahil@verelios.com';
+export const US_WHATSAPP_DISPLAY = '+91 84710 94125';
+export const US_WHATSAPP_HREF = 'https://wa.me/918471094125?text=Hi%20Sahil%2C%20I%27m%20in%20the%20US%20and%20would%20like%20the%20free%2048-hour%20proof.';
+export const US_PHONE_DISPLAY = '+91 82995 22798';
+export const US_PHONE_HREF = 'tel:+918299522798';
+
+/** mailto: link to Sahil with a subject that says which page it came from. */
+export function usMailto(subject = 'Free 48-hour proof'): string {
+  return `mailto:${US_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+}

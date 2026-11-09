@@ -7,7 +7,7 @@ import { UsWorkingWithUs } from '@/components/us/UsWorkingWithUs';
 import { UsProof } from '@/components/us/UsProof';
 import { UsMoreLinks } from '@/components/us/UsMoreLinks';
 import { LOCAL_BUSINESS_REF } from '@/lib/schema';
-import { US_PRICING } from '@/lib/us';
+import { US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Niche: small carriers, freight brokers and 3PLs hiring
 // billing clerks. The pitch is same-day invoicing from paperwork, approved by a
@@ -126,7 +126,9 @@ export default function UsFreightBillingPage() {
           title="Freight billing automation"
           highlight="for trucking companies and brokers."
           lead="Rate confirmations, BOLs and PODs are matched to the load, the charges are checked, and the invoice is drafted the day the paperwork arrives. Your billing team approves instead of building each one by hand. Test it free on ten of your loads."
-          ctaLabel="Test it on 10 of my loads"
+          ctaHref={usMailto('Freight billing: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: '/us' },
@@ -233,6 +235,7 @@ export default function UsFreightBillingPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Freight billing: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test it on 10 of my loads"
           heading="Send ten loads of paperwork. See the invoices in 48 hours."

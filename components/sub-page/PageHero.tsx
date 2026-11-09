@@ -14,6 +14,8 @@ interface PageHeroProps {
   ctaHref?: string;
   ctaLabel?: string;
   breadcrumbs?: { label: string; href: string }[];
+  /** Override the WhatsApp link (Phase 17: US pages pre-fill a US message). */
+  whatsappHref?: string;
 }
 
 export function PageHero({
@@ -33,6 +35,7 @@ export function PageHero({
   ctaHref = '#enquire',
   ctaLabel = 'Get a free 48-hour mockup',
   breadcrumbs,
+  whatsappHref = WHATSAPP_URL,
 }: PageHeroProps) {
   return (
     <section
@@ -146,7 +149,7 @@ export function PageHero({
               is reliable and needs no JS, whereas next/link routes hash-only
               hrefs through the router, which is unnecessary here and has awkward
               edge cases with scroll restoration. Real routes still get Link. */}
-          {ctaHref.startsWith('#') ? (
+          {/^(#|mailto:|tel:|https?:)/.test(ctaHref) ? (
             <a href={ctaHref} className="btn-pill press" style={{ fontWeight: 600 }}>
               {ctaLabel}
             </a>
@@ -161,7 +164,7 @@ export function PageHero({
               downgraded copy of the homepage. WhatsApp is a primary contact route
               for this business, so it should look like one everywhere. */}
           <a
-            href={WHATSAPP_URL}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-pill btn-wa press"

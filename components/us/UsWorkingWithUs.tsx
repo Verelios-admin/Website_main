@@ -1,5 +1,5 @@
 import { GBP_RATING, GBP_REVIEW_COUNT } from '@/lib/schema';
-import { US_HOURS, US_PRICING } from '@/lib/us';
+import { US_CONTACT_EMAIL, US_HOURS, US_PHONE_DISPLAY, US_PRICING, US_WHATSAPP_DISPLAY } from '@/lib/us';
 
 // Phase 17. The objections a US owner has about hiring a team in India, answered
 // in one block that every US page shares: hours, price, ownership, privacy,
@@ -31,8 +31,8 @@ const pStyle: React.CSSProperties = {
 
 const ITEMS: Array<[string, string]> = [
   [
-    'Calls in your morning',
-    `Your project lead is on calls ${US_HOURS}, and every email gets a reply within one business day.`,
+    'Email or WhatsApp, any time',
+    `Email ${US_CONTACT_EMAIL} or WhatsApp ${US_WHATSAPP_DISPLAY} and you get a reply within one business day. Prefer to talk? Calls ${US_HOURS}, on ${US_PHONE_DISPLAY}.`,
   ],
   [
     'Fixed price, paid in milestones',

@@ -220,7 +220,7 @@ export function InlineLeadForm({
       console.error('[InlineLeadForm] submission failed', err);
       setError(
         isUS
-          ? 'We could not send that just now. Please try again, or email us at contact@verelios.com.'
+          ? 'We could not send that just now. Please email sahil@verelios.com or WhatsApp +91 84710 94125.'
           : 'We could not send that just now. Please try again, or WhatsApp us on +91 84710 94125.',
       );
     } finally {

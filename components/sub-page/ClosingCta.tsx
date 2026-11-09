@@ -1,5 +1,14 @@
 import Link from 'next/link';
 import { InlineLeadForm, SERVICE_TYPES } from '@/components/sub-page/InlineLeadForm';
+import {
+  US_CONTACT_EMAIL,
+  US_HOURS,
+  US_PHONE_DISPLAY,
+  US_PHONE_HREF,
+  US_WHATSAPP_DISPLAY,
+  US_WHATSAPP_HREF,
+  usMailto,
+} from '@/lib/us';
 
 const WHATSAPP_HREF =
   'https://wa.me/918471094125?text=Hi%20Verelios%20Labs!%20I%27d%20like%20to%20discuss%20my%20project.';
@@ -22,9 +31,12 @@ interface ClosingCtaProps {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
-  /** 'us' (Phase 17) switches the form to +1 / USD bands and shows email
-   *  instead of the Indian phone line. Default 'in' renders exactly as before. */
+  /** 'us' (Phase 17) leads with email to Sahil, then WhatsApp, then a call
+   *  (owner's order of preference), with the form as a fallback below. The form
+   *  switches to +1 / USD bands. Default 'in' renders exactly as before. */
   market?: 'in' | 'us';
+  /** US only: subject line for the mailto button, so Sahil can see the page. */
+  mailSubject?: string;
 }
 
 /**
@@ -50,6 +62,7 @@ export function ClosingCta({
   secondaryHref = WHATSAPP_HREF,
   secondaryLabel = 'Chat on WhatsApp',
   market = 'in',
+  mailSubject,
 }: ClosingCtaProps) {
   return (
     <section
@@ -113,6 +126,58 @@ export function ClosingCta({
               </Link>
             )}
           </div>
+        ) : market === 'us' ? (
+          <>
+            <div
+              style={{
+                marginTop: 30,
+                display: 'flex',
+                gap: 12,
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <a href={usMailto(mailSubject)} className="btn-pill press" style={{ fontWeight: 600 }}>
+                Email {US_CONTACT_EMAIL}
+              </a>
+              <a
+                href={US_WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-wa-label="US closing CTA"
+                className="btn-pill btn-wa press"
+                style={{ fontWeight: 600 }}
+              >
+                WhatsApp {US_WHATSAPP_DISPLAY}
+              </a>
+              <a href={US_PHONE_HREF} className="btn-pill-ghost on-dark press" style={{ fontWeight: 600 }}>
+                Call {US_PHONE_DISPLAY}
+              </a>
+            </div>
+            <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.55, color: 'rgba(255,255,255,0.55)' }}>
+              Email and WhatsApp get a reply within one business day. Calls {US_HOURS}.
+            </p>
+
+            <div
+              style={{
+                maxWidth: 620,
+                margin: '30px auto 0',
+                paddingTop: 26,
+                borderTop: '1px solid rgba(255,255,255,0.08)',
+              }}
+            >
+              <p style={{ margin: '0 0 18px', fontSize: 15, color: 'rgba(255,255,255,0.7)' }}>
+                Or leave your details and Sahil will email you.
+              </p>
+              <InlineLeadForm
+                defaultService={defaultService}
+                submitLabel={submitLabel}
+                idPrefix="closing"
+                market="us"
+              />
+            </div>
+          </>
         ) : (
           <>
             <div style={{ maxWidth: 620, margin: '32px auto 0' }}>
@@ -120,7 +185,6 @@ export function ClosingCta({
                 defaultService={defaultService}
                 submitLabel={submitLabel}
                 idPrefix="closing"
-                market={market}
               />
             </div>
 
@@ -149,23 +213,13 @@ export function ClosingCta({
               >
                 {secondaryLabel}
               </a>
-              {market === 'us' ? (
-                <a
-                  href="mailto:contact@verelios.com"
-                  className="btn-pill-ghost on-dark press"
-                  style={{ fontWeight: 600 }}
-                >
-                  Email contact@verelios.com
-                </a>
-              ) : (
-                <a
-                  href="tel:+918299522798"
-                  className="btn-pill-ghost on-dark press"
-                  style={{ fontWeight: 600 }}
-                >
-                  Call +91 82995 22798
-                </a>
-              )}
+              <a
+                href="tel:+918299522798"
+                className="btn-pill-ghost on-dark press"
+                style={{ fontWeight: 600 }}
+              >
+                Call +91 82995 22798
+              </a>
             </div>
           </>
         )}

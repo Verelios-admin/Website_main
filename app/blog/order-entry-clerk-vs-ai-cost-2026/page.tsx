@@ -5,7 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { AUTHOR_REF } from '@/lib/schema';
-import { BLS_SOURCES, US_PRICING } from '@/lib/us';
+import { BLS_SOURCES, US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). US cost article that supports /us/ai-order-entry-automation
 // and the calculator. Figures: BLS OOH order clerks median $46,170 (May 2025);
@@ -76,7 +76,9 @@ export default function Post() {
           title="Order entry clerk vs AI:"
           highlight="the real cost in 2026."
           lead="What another order entry clerk really costs a US business, what an AI order assistant costs instead, what each one does well, and a simple way to decide before you post the job."
-          ctaLabel="Test AI on 10 of my orders"
+          ctaHref={usMailto('Order entry clerk vs AI: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Blog', href: '/blog' },
@@ -156,6 +158,7 @@ export default function Post() {
 
         <ClosingCta
           market="us"
+          mailSubject="Order entry clerk vs AI: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test AI on 10 of my orders"
           heading="See ten of your orders entered in 48 hours."

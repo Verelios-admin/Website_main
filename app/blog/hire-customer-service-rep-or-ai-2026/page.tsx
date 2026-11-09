@@ -5,7 +5,7 @@ import { PageHero } from '@/components/sub-page/PageHero';
 import { Prose } from '@/components/sub-page/Prose';
 import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { AUTHOR_REF } from '@/lib/schema';
-import { BLS_SOURCES, US_PRICING } from '@/lib/us';
+import { BLS_SOURCES, US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). US cost article that supports the e-commerce and
 // home-services pages. Figures: BLS OOH customer service representatives median
@@ -76,7 +76,9 @@ export default function Post() {
           title="Hire a customer service rep,"
           highlight="or use AI? The 2026 cost guide."
           lead="What another customer service rep really costs a US small business, what an AI assistant costs instead, which questions each one handles best, and a two-week test that tells you which you need."
-          ctaLabel="Test AI on my enquiries"
+          ctaHref={usMailto('Customer service rep or AI: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Blog', href: '/blog' },
@@ -150,6 +152,7 @@ export default function Post() {
 
         <ClosingCta
           market="us"
+          mailSubject="Customer service rep or AI: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test AI on my enquiries"
           heading="See your own questions answered in 48 hours."

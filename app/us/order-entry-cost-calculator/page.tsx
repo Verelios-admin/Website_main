@@ -7,7 +7,7 @@ import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { OrderEntryCalculator } from '@/components/us/OrderEntryCalculator';
 import { UsMoreLinks } from '@/components/us/UsMoreLinks';
 import { SITE } from '@/lib/schema';
-import { BLS_SOURCES, US_PRICING } from '@/lib/us';
+import { BLS_SOURCES, US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Free tool page. The worked example in the answer block
 // uses the calculator's own defaults (40 orders × 4 min × 250 days, BLS order
@@ -105,7 +105,9 @@ export default function OrderEntryCalculatorPage() {
           title="Order entry cost calculator:"
           highlight="what manual entry really costs you."
           lead="Enter how many orders your team keys in, how long each one takes and what you pay. See the yearly hours and dollars, and how quickly an AI order assistant would pay for itself. Nothing you type is stored."
-          ctaLabel="Test AI on 10 of my orders"
+          ctaHref={usMailto('Order entry calculator: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: '/us' },
@@ -161,6 +163,7 @@ export default function OrderEntryCalculatorPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Order entry calculator: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test AI on 10 of my orders"
           heading="Find your real number in 48 hours, free."

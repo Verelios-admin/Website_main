@@ -8,7 +8,7 @@ import { UsWorkingWithUs } from '@/components/us/UsWorkingWithUs';
 import { UsProof } from '@/components/us/UsProof';
 import { UsMoreLinks } from '@/components/us/UsMoreLinks';
 import { LOCAL_BUSINESS_REF } from '@/lib/schema';
-import { US_CALCULATOR_PATH, US_PRICING } from '@/lib/us';
+import { US_CALCULATOR_PATH, US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Lead niche: distributors and manufacturers hiring order
 // entry clerks. This is the page the "hiring trigger" cold emails point at.
@@ -126,7 +126,9 @@ export default function UsOrderEntryPage() {
           title="AI order entry automation"
           highlight="for distributors and manufacturers."
           lead="Orders that arrive by email, PDF or spreadsheet become draft sales orders in your ERP, matched to your SKUs and prices. Your team approves each one instead of typing it. Test it free on ten of your real orders."
-          ctaLabel="Test it on 10 of my orders"
+          ctaHref={usMailto('Order entry: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: '/us' },
@@ -239,6 +241,7 @@ export default function UsOrderEntryPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Order entry: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test it on 10 of my orders"
           heading="Send ten real orders. See them entered in 48 hours."

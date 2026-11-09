@@ -8,7 +8,7 @@ import { UsWorkingWithUs } from '@/components/us/UsWorkingWithUs';
 import { UsProof } from '@/components/us/UsProof';
 import { UsMoreLinks } from '@/components/us/UsMoreLinks';
 import { LOCAL_BUSINESS_REF } from '@/lib/schema';
-import { US_PRICING } from '@/lib/us';
+import { US_CONTACT_EMAIL, US_PRICING, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Niche: Shopify / BigCommerce / Amazon brands hiring
 // customer experience associates. Honest about built-in helpdesk AI: we position
@@ -127,7 +127,9 @@ export default function UsEcommerceCxPage() {
           title="AI customer service"
           highlight="for Shopify and online brands."
           lead="Routine tickets answered from your own policies, catalog and order data, inside the helpdesk you already use. Your agents approve the drafts and keep the conversations that need a person. Test it free on your own past tickets."
-          ctaLabel="Test it on my past tickets"
+          ctaHref={usMailto('Customer service: free 48-hour proof')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: '/us' },
@@ -234,6 +236,7 @@ export default function UsEcommerceCxPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Customer service: free 48-hour proof"
           defaultService="AI Automation / Chatbot"
           submitLabel="Test it on my past tickets"
           heading="See your own tickets answered in 48 hours."

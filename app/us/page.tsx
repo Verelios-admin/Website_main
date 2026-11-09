@@ -7,7 +7,7 @@ import { ClosingCta } from '@/components/sub-page/ClosingCta';
 import { UsWorkingWithUs } from '@/components/us/UsWorkingWithUs';
 import { UsProof } from '@/components/us/UsProof';
 import { LOCAL_BUSINESS_REF } from '@/lib/schema';
-import { US_CALCULATOR_PATH, US_HOURS, US_PAGES, US_PRICING } from '@/lib/us';
+import { US_CALCULATOR_PATH, US_CONTACT_EMAIL, US_HOURS, US_PAGES, US_PHONE_DISPLAY, US_PRICING, US_WHATSAPP_DISPLAY, US_WHATSAPP_HREF, usMailto } from '@/lib/us';
 
 // Phase 17 (2026-11-10). Hub for US buyers. Every other page on the site is
 // written for India (₹, Kanpur, +91); this one and the four niche pages under it
@@ -63,8 +63,8 @@ const FAQS: Array<[string, string]> = [
     'A pilot with one workflow is usually live in two to four weeks. A fuller build that connects several systems typically takes four to eight weeks. Both timelines are written into the fixed quote.',
   ],
   [
-    'When can we talk to you?',
-    `Calls are ${US_HOURS}, and every email gets a reply within one business day. Write to contact@verelios.com or use the form on this page.`,
+    'What is the best way to reach you?',
+    `Email ${US_CONTACT_EMAIL} or message us on WhatsApp at ${US_WHATSAPP_DISPLAY}; both get a reply within one business day. If you would rather talk, we take calls ${US_HOURS}, on ${US_PHONE_DISPLAY}.`,
   ],
 ];
 
@@ -129,7 +129,9 @@ export default function UsHubPage() {
           title="AI automation for US small businesses,"
           highlight="without adding headcount."
           lead="Verelios Labs builds AI assistants that take the repetitive typing off your team: order entry, freight billing, customer emails and booking requests. See it work on your own data in 48 hours, free, before you spend a dollar."
-          ctaLabel="Get the free 48-hour proof"
+          ctaHref={usMailto('Free 48-hour proof (US overview)')}
+          ctaLabel={`Email ${US_CONTACT_EMAIL}`}
+          whatsappHref={US_WHATSAPP_HREF}
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'For US businesses', href: URL_PATH },
@@ -142,7 +144,7 @@ export default function UsHubPage() {
               {/* Front-loaded answer block. Keep it between 130 and 170 words. */}
               <div className="key-answer">
                 <p>
-                  Verelios Labs is an AI automation team that builds custom AI assistants for US small and mid-sized businesses. We focus on the jobs owners usually hire for: entering orders from emails and PDFs, billing loads from trucking paperwork, answering customer emails for online stores, and replying to service enquiries for HVAC, plumbing and pest-control companies. The assistant drafts the work and a person on your team approves it, so nothing goes out unchecked. You start with a free 48-hour proof: send ten real examples and see the assistant handle them. A pilot with one workflow live starts at {US_PRICING.pilotFrom}, a typical build costs {US_PRICING.buildRange}, the price is fixed before work starts, and you own the code and data. The team is based in Kanpur, India, and takes calls {US_HOURS}.
+                  Verelios Labs is an AI automation team that builds custom AI assistants for US small and mid-sized businesses. We focus on the jobs owners usually hire for: entering orders from emails and PDFs, billing loads from trucking paperwork, answering customer emails for online stores, and replying to service enquiries for HVAC, plumbing and pest-control companies. The assistant drafts the work and a person on your team approves it, so nothing goes out unchecked. You start with a free 48-hour proof: send ten real examples and see the assistant handle them. A pilot with one workflow live starts at {US_PRICING.pilotFrom}, a typical build costs {US_PRICING.buildRange}, the price is fixed before work starts, and you own the code and data. The team is based in Kanpur, India: email {US_CONTACT_EMAIL} or message us on WhatsApp, and you get a reply within one business day.
                 </p>
               </div>
 
@@ -248,6 +250,7 @@ export default function UsHubPage() {
 
         <ClosingCta
           market="us"
+          mailSubject="Free 48-hour proof (US overview)"
           defaultService="AI Automation / Chatbot"
           submitLabel="Get the free 48-hour proof"
           heading="See it work on your own data in 48 hours."
