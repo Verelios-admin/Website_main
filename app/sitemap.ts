@@ -37,8 +37,10 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
 
   // Service pages (national intent: "… in India").
   { path: '/services', lastmod: '2026-11-19', priority: 0.8 },
-  { path: '/services/website-development', lastmod: '2026-09-07', priority: 0.9 },
-  { path: '/services/mobile-app-development', lastmod: '2026-09-07', priority: 0.9 },
+  // 2026-11-19: simple-site delivery (7–14 days) and larger-app range (₹1,50,000–₹30,00,000)
+  // aligned on these two pages and their Kanpur twins.
+  { path: '/services/website-development', lastmod: '2026-11-19', priority: 0.9 },
+  { path: '/services/mobile-app-development', lastmod: '2026-11-19', priority: 0.9 },
   // 2026-11-19: full multi-module ERP floor aligned to ₹1,50,000 on this page, /services/erp,
   // the Kanpur ERP page and the 2 ERP posts.
   { path: '/services/custom-software-development', lastmod: '2026-11-19', priority: 0.8 },
@@ -52,8 +54,8 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
 
   // Location pages (local intent: "… in Kanpur").
   { path: '/locations/kanpur', lastmod: '2026-10-28', priority: 0.9 },
-  { path: '/locations/kanpur/website-development', lastmod: '2026-10-17', priority: 0.9 },
-  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-10-17', priority: 0.8 },
+  { path: '/locations/kanpur/website-development', lastmod: '2026-11-19', priority: 0.9 },
+  { path: '/locations/kanpur/mobile-app-development', lastmod: '2026-11-19', priority: 0.8 },
   { path: '/locations/kanpur/ai-development', lastmod: '2026-10-28', priority: 0.8 },
   // New 2026-10-28 (Phase 16): the only page targeting "AI consulting/consultancy in Kanpur".
   { path: '/locations/kanpur/ai-consulting', lastmod: '2026-10-28', priority: 0.9 },

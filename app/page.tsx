@@ -367,7 +367,7 @@ const faqJsonLd = {
       name: 'How long does it take to build a website or app?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most projects go from kickoff to launch in under 3 weeks. Simple websites can be done in 7–10 days, while complex apps with custom backends may take 4–6 weeks.',
+        text: 'Most projects go from kickoff to launch in under 3 weeks. Simple websites can be done in 7–14 days, while complex apps with custom backends may take 4–6 weeks.',
       },
     },
     {

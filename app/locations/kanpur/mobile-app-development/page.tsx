@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'How much does mobile app development cost in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A focused iOS + Android app starts at ₹99,999. More complex apps — with payments, live tracking, chat, or deep backend integrations — typically range from ₹2,00,000 to ₹10,00,000+ depending on scope. We give you a fixed quote and a free 48-hour mockup before any work begins.',
+        text: 'A focused iOS + Android app starts at ₹99,999. More complex apps — with payments, live tracking, chat, or deep backend integrations — typically range from ₹1,50,000 to ₹30,00,000 depending on scope. We give you a fixed quote and a free 48-hour mockup before any work begins.',
       },
     },
     {
@@ -331,7 +331,7 @@ export default function KanpurMobileAppDevelopmentPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does mobile app development cost in Kanpur?</h3>
               <p>
-                A focused iOS + Android app starts at <strong>₹99,999</strong>. More complex apps — with payments, live tracking, chat, or deep backend integrations — typically range from <strong>₹2,00,000 to ₹10,00,000+</strong> depending on scope. We give you a fixed quote and a free 48-hour mockup before any work begins.
+                A focused iOS + Android app starts at <strong>₹99,999</strong>. More complex apps — with payments, live tracking, chat, or deep backend integrations — typically range from <strong>₹1,50,000 to ₹30,00,000</strong> depending on scope. We give you a fixed quote and a free 48-hour mockup before any work begins.
               </p>
               <h3>How long does it take to build an app in Kanpur?</h3>
               <p>

@@ -66,7 +66,7 @@ const faqJsonLd = {
       name: 'How much does it cost to develop a custom mobile app in India?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most apps we ship cost between ₹99,999 and ₹5,00,000. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.',
+        text: 'Apps start at ₹99,999, and larger builds typically run ₹1,50,000 to ₹30,00,000. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.',
       },
     },
     {
@@ -209,7 +209,7 @@ export default function MobileAppDevelopmentPage() {
                     </tr>
                     <tr>
                       <td>Larger build</td>
-                      <td className="price">₹1,50,000 – ₹5,00,000</td>
+                      <td className="price">₹1,50,000 – ₹30,00,000</td>
                       <td>More screens, advanced backends, real-time features or external integrations. Final figure depends on scope</td>
                     </tr>
                   </tbody>
@@ -236,7 +236,7 @@ export default function MobileAppDevelopmentPage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does it cost to develop a custom mobile app in India?</h3>
               <p>
-                Most apps we ship cost between <strong>₹99,999 and ₹5,00,000</strong>. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.
+                Apps start at <strong>₹99,999</strong>, and larger builds typically run <strong>₹1,50,000 to ₹30,00,000</strong>. The biggest cost drivers are number of screens, real-time features (chat, live data), payment flows, and backend complexity.
               </p>
               <h3>How long does it take to build an app?</h3>
               <p>

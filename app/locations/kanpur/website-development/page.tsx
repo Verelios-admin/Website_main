@@ -90,7 +90,7 @@ const faqJsonLd = {
       name: 'How long does it take to build a website in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most business websites go live in 7–21 days. A simple site can be ready in a week; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.',
+        text: 'Most websites go live in 7–21 days. A simple business site takes 7–14 days; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.',
       },
     },
     {
@@ -167,7 +167,7 @@ export default function KanpurWebsiteDevelopmentPage() {
                   this block never goes stale. Keep it between 134 and 167 words. */}
               <div className="key-answer">
                 <p>
-                  Verelios Labs is a website development company based in Govind Nagar, Kanpur, building fast, SEO-ready React and Next.js websites and e-commerce stores for local businesses. Most of what ranks for a Kanpur website search is an agency that has never set foot in the city, with the city name substituted into a generic page; this is a team you can visit. Sites are hand-coded in React, Next.js and TypeScript, server-rendered for search, tuned for Core Web Vitals, and shipped with a working contact form and WhatsApp. A build runs from a free consultation on day one to a designed homepage mockup within 48 hours, before any payment, then daily WhatsApp updates against a live preview link, and launch on the client&apos;s own domain between day 19 and day 21. A five-page business website starts at ₹49,999 and most go live in 7&ndash;21 days.
+                  Verelios Labs is a website development company based in Govind Nagar, Kanpur, building fast, SEO-ready React and Next.js websites and e-commerce stores for local businesses. Most of what ranks for a Kanpur website search is an agency that has never set foot in the city, with the city name substituted into a generic page; this is a team you can visit. Sites are hand-coded in React, Next.js and TypeScript, server-rendered for search, tuned for Core Web Vitals, and shipped with a working contact form and WhatsApp. A build runs from a free consultation on day one to a designed homepage mockup within 48 hours, before any payment, then daily WhatsApp updates against a live preview link, and launch on the client&apos;s own domain between day 19 and day 21. A five-page business website starts at ₹49,999 and goes live in 7&ndash;14 days.
                 </p>
               </div>
 
@@ -331,7 +331,7 @@ export default function KanpurWebsiteDevelopmentPage() {
               </p>
               <h3>How long does it take to build a website in Kanpur?</h3>
               <p>
-                Most business websites go live in <strong>7–21 days</strong>. A simple site can be ready in a week; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.
+                Most websites go live in <strong>7–21 days</strong>. A simple business site takes 7–14 days; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.
               </p>
               <h3>Can we meet the website team in person in Kanpur?</h3>
               <p>

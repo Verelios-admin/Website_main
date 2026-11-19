@@ -189,7 +189,7 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <strong>7–21 days to launch.</strong> A straightforward business site goes live in
-                  about a week. E-commerce or a custom platform takes four to six weeks. We tell you
+                  7–14 days. E-commerce or a custom platform takes four to six weeks. We tell you
                   which one you are before you commit.
                 </li>
                 <li>
