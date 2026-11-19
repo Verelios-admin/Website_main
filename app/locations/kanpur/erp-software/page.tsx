@@ -82,7 +82,7 @@ const faqJsonLd = {
       name: 'How much does custom ERP software cost in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom ERP for a Kanpur business starts at ₹99,999 for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from ₹2,50,000 to ₹10,00,000+ depending on complexity. We scope it module by module and give you a fixed quote before any work begins.',
+        text: 'A custom ERP for a Kanpur business starts at ₹99,999 for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from ₹1,50,000 to ₹10,00,000+ depending on complexity. We scope it module by module and give you a fixed quote before any work begins.',
       },
     },
     {
@@ -270,7 +270,7 @@ export default function KanpurErpSoftwarePage() {
               <h2>Frequently asked questions</h2>
               <h3>How much does custom ERP software cost in Kanpur?</h3>
               <p>
-                A custom ERP for a Kanpur business starts at <strong>₹99,999</strong> for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from <strong>₹2,50,000 to ₹10,00,000+</strong> depending on complexity. We scope it module by module and give you a fixed quote before any work begins.
+                A custom ERP for a Kanpur business starts at <strong>₹99,999</strong> for a focused module set. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically ranges from <strong>₹1,50,000 to ₹10,00,000+</strong> depending on complexity. We scope it module by module and give you a fixed quote before any work begins.
               </p>
               <h3>Does your ERP integrate with Tally and GST?</h3>
               <p>

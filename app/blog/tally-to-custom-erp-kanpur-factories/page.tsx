@@ -9,7 +9,8 @@ const SLUG = 'tally-to-custom-erp-kanpur-factories';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-09-07';
-const UPDATED = '2026-09-07';
+// 2026-11-19: full multi-module ERP floor aligned site-wide to ₹1,50,000.
+const UPDATED = '2026-11-19';
 
 export const metadata: Metadata = {
   // `absolute` bypasses the layout's '%s | Verelios Labs' template. With the
@@ -88,7 +89,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-09-07">7 September 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-09-07">7 September 2026</time> · Updated <time dateTime="2026-11-19">19 November 2026</time></p>
 
               <p>
                 Let us start where most articles on this topic do not: <strong>Tally is good software, and most Kanpur units should stay on it.</strong> It handles accounting and GST properly, your CA knows it cold, and there is a consultant on every second street who can fix it. Replacing it because someone said the word &ldquo;ERP&rdquo; at a trade fair is how businesses waste six months.
@@ -163,7 +164,7 @@ export default function Post() {
 
               <h2>What it costs</h2>
               <p>
-                A focused module set — inventory plus purchase, say — starts at <strong>₹99,999</strong>. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically runs <strong>₹2,50,000 to ₹10,00,000+</strong>, depending on how many modules and integrations it carries.
+                A focused module set — inventory plus purchase, say — starts at <strong>₹99,999</strong>. A full ERP covering inventory, manufacturing, purchase, sales and accounting typically runs <strong>₹1,50,000 to ₹10,00,000+</strong>, depending on how many modules and integrations it carries.
               </p>
               <p>
                 Fixed quote before any code, milestone payments of 30/30/40, hosting cost shown up front, and the source code in a repository under your own organisation. For a full comparison of subscription versus build, including the break-even maths, see our <a href="/blog/erp-software-cost-india-2026">guide to ERP software cost in India</a>.

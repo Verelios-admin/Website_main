@@ -229,7 +229,8 @@ export default function ServicesHubPage() {
                 hours before any payment. No upfront money — billing is split 30% at design
                 sign-off, 30% at build, 40% on launch. Full code and repository handover, so
                 you are never locked into us to make a change. One person reachable on
-                WhatsApp rather than a ticket queue. And a week of free fixes after launch.
+                WhatsApp rather than a ticket queue. And free fixes after launch: 7 days for a
+                website or app, 30 days for software.
               </p>
               <p>
                 Still not sure? Describe what you are trying to achieve in two lines and we

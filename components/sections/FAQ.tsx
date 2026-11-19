@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     q: 'What happens after my project launches?',
-    a: 'Every project comes with 7 days of free post-launch support for bug fixes and tweaks. After that, we offer affordable monthly maintenance plans to keep your site secure and updated.',
+    a: 'Websites and mobile apps come with 7 days of free post-launch support for bug fixes and tweaks. Software projects (ERP, CRM, billing and inventory, custom software and AI automation) come with 30 days. After that, we offer affordable monthly maintenance plans to keep everything secure and updated.',
   },
   {
     q: 'Can I see a mockup before committing?',

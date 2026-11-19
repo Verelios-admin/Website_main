@@ -9,7 +9,8 @@ const SLUG = 'erp-software-cost-india-2026';
 const URL_PATH = `/blog/${SLUG}`;
 const SITE = 'https://www.verelios.com';
 const PUBLISHED = '2026-09-07';
-const UPDATED = '2026-09-07';
+// 2026-11-19: full multi-module ERP floor aligned site-wide to ₹1,50,000.
+const UPDATED = '2026-11-19';
 
 export const metadata: Metadata = {
   title: 'ERP Software Cost in India (2026)',
@@ -85,7 +86,7 @@ export default function Post() {
         <section className="tile" style={{ paddingTop: 24, paddingBottom: 64 }}>
           <div className="wrap" style={{ maxWidth: 760, margin: '0 auto' }}>
             <Prose>
-              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-09-07">7 September 2026</time></p>
+              <p style={{ fontFamily: 'var(--font-text)', fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '0 0 8px' }}>By <a href="/about" style={{ color: 'inherit' }}>Sahil Chauhan</a> · Founder &amp; CEO, Verelios Labs · Published <time dateTime="2026-09-07">7 September 2026</time> · Updated <time dateTime="2026-11-19">19 November 2026</time></p>
 
               <p>
                 The short answer: in 2026 an Indian SME will pay <strong>₹3,000 to ₹25,000 per month</strong> for a subscription ERP, or <strong>₹1,00,000 to ₹10,00,000 once</strong> for a custom build. Both numbers are close to meaningless on their own, because the licence fee is rarely the expensive part. What actually decides the bill is how far your process sits from the software&apos;s assumptions.
@@ -197,7 +198,7 @@ export default function Post() {
 
               <h2>What we charge, for reference</h2>
               <p>
-                A focused single-module <a href="/services/erp">custom ERP</a> — inventory plus purchase, say, or production tracking — starts at <strong>₹99,999</strong>. A full multi-module system covering inventory, manufacturing, purchase, sales, accounting and reporting typically lands between <strong>₹3,00,000 and ₹10,00,000</strong>, depending on how many modules and integrations it has to carry.
+                A focused single-module <a href="/services/erp">custom ERP</a> — inventory plus purchase, say, or production tracking — starts at <strong>₹99,999</strong>. A full multi-module system covering inventory, manufacturing, purchase, sales, accounting and reporting typically lands between <strong>₹1,50,000 and ₹10,00,000</strong>, depending on how many modules and integrations it has to carry.
               </p>
               <p>
                 Fixed quote before any code is written, milestone payments of 30/30/40, hosting cost shown up front, and the source code in a repository under your own organisation. If you need something narrower to start with, <a href="/services/billing-inventory-software">billing and inventory</a> or a <a href="/services/crm-software-development">custom CRM</a> is often the better first module — and either can grow into the full system later.

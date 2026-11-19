@@ -24,8 +24,8 @@ const WHYS = [
     icon: '₹',
   },
   {
-    title: '7-day post-launch support',
-    body: 'Bug fixes, copy tweaks, last-mile changes — on us, for the first week after we ship.',
+    title: 'Free post-launch support',
+    body: 'Bug fixes, copy tweaks, last-mile changes — on us for 7 days after a website or app launches, 30 days after software goes live.',
     icon: '✓',
   },
   {

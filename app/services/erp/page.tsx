@@ -74,7 +74,7 @@ const faqJsonLd = {
       name: 'How much does custom ERP software cost in India?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A focused single-module ERP — for example inventory plus purchase, or production tracking — starts at ₹99,999. A full multi-module ERP covering inventory, manufacturing, procurement, sales, accounting and reporting typically lands between ₹3,00,000 and ₹10,00,000, depending on the number of modules and integrations. We give a fixed quote up front with milestone payments of 30/30/40, and always show the monthly hosting cost before you commit, so no figure appears later that you had not planned for. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared tenancy, and 30 days of support after go-live is included. GST filing and Tally synchronisation are built in rather than charged as separate modules, so the quoted figure buys a working system rather than a starting point.',
+        text: 'A focused single-module ERP — for example inventory plus purchase, or production tracking — starts at ₹99,999. A full multi-module ERP covering inventory, manufacturing, procurement, sales, accounting and reporting typically lands between ₹1,50,000 and ₹10,00,000, depending on the number of modules and integrations. We give a fixed quote up front with milestone payments of 30/30/40, and always show the monthly hosting cost before you commit, so no figure appears later that you had not planned for. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared tenancy, and 30 days of support after go-live is included. GST filing and Tally synchronisation are built in rather than charged as separate modules, so the quoted figure buys a working system rather than a starting point.',
       },
     },
     {
@@ -220,7 +220,7 @@ export default function ERPPage() {
                     </tr>
                     <tr>
                       <td>Multi-module ERP</td>
-                      <td className="price">₹3,00,000 – ₹10,00,000</td>
+                      <td className="price">₹1,50,000 – ₹10,00,000</td>
                       <td>Inventory, manufacturing, sales, accounting, HR and reporting in one system. Final figure depends on the number of modules and integrations</td>
                     </tr>
                   </tbody>
@@ -248,7 +248,7 @@ export default function ERPPage() {
               </p>
               <h3>How much does custom ERP software cost in India?</h3>
               <p>
-                A focused single-module ERP — for example inventory plus purchase, or production tracking — starts at ₹99,999. A full multi-module ERP covering inventory, manufacturing, procurement, sales, accounting and reporting typically lands between ₹3,00,000 and ₹10,00,000, depending on the number of modules and integrations. We give a fixed quote up front with milestone payments of 30/30/40, and always show the monthly hosting cost before you commit, so no figure appears later that you had not planned for. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared tenancy, and 30 days of support after go-live is included. GST filing and Tally synchronisation are built in rather than charged as separate modules, so the quoted figure buys a working system rather than a starting point.
+                A focused single-module ERP — for example inventory plus purchase, or production tracking — starts at ₹99,999. A full multi-module ERP covering inventory, manufacturing, procurement, sales, accounting and reporting typically lands between ₹1,50,000 and ₹10,00,000, depending on the number of modules and integrations. We give a fixed quote up front with milestone payments of 30/30/40, and always show the monthly hosting cost before you commit, so no figure appears later that you had not planned for. What you pay for stays yours: the full source code sits in a GitHub repository under your own organisation, the system runs on your own hosting account rather than a shared tenancy, and 30 days of support after go-live is included. GST filing and Tally synchronisation are built in rather than charged as separate modules, so the quoted figure buys a working system rather than a starting point.
               </p>
               <h3>How long does it take to build a custom ERP?</h3>
               <p>

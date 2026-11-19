@@ -201,8 +201,9 @@ export default function AboutPage() {
                   booking a call. We usually reply within the hour.
                 </li>
                 <li>
-                  <strong>A week of fixes included.</strong> Bugs, copy tweaks and last-mile changes
-                  are on us for the first week after launch.
+                  <strong>Free fixes after launch.</strong> Bugs, copy tweaks and last-mile changes
+                  are on us for 7 days after a website or app launches, and 30 days after
+                  software goes live.
                 </li>
               </ul>
 

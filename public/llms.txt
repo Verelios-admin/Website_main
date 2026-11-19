@@ -22,7 +22,7 @@ Last updated: 2026-11-10
 - **Free mockup:** a visual mockup or prototype within 48 hours, before any payment or commitment
 - **Payment:** milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. Fixed quote up front, not billed hourly.
 - **Code ownership:** the client owns the source code and it sits on their own hosting and domain accounts. No vendor lock-in.
-- **Post-launch:** 7 days of free support, then optional monthly maintenance
+- **Post-launch:** free support for 7 days on websites, e-commerce stores and mobile apps, and 30 days on ERP, CRM, billing and inventory, custom software and AI automation; then optional monthly maintenance
 - **Typical delivery:** most projects launch in under 3 weeks; business websites in 7–14 days; mobile apps in 3–5 weeks; ERP and custom software in 4–8 weeks
 - **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel or AWS
 - **Integrations commonly built:** Tally, the GST portal, Razorpay and UPI, WhatsApp Business API
@@ -45,7 +45,7 @@ Starting prices. Each project is quoted at a fixed price after a scoping call.
 | UI/UX design only | ₹40,000 | scoped per project |
 | Managed hosting and maintenance | ₹3,000 per month | ongoing |
 
-Larger systems: a full multi-module ERP typically lands between ₹3,00,000 and ₹10,00,000. A
+Larger systems: a full multi-module ERP typically lands between ₹1,50,000 and ₹10,00,000. A
 CRM with WhatsApp Business API, field-sales tracking and ERP integration typically lands
 between ₹1,50,000 and ₹4,00,000. A website with custom features typically lands between
 ₹1,00,000 and ₹3,00,000.
@@ -124,7 +124,7 @@ Verelios Labs also builds custom AI assistants for small and mid-sized businesse
 - **Who offers AI consulting in Kanpur?** Verelios Labs, at 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, offers AI consulting with a free first consultation and a one-page AI plan within 2–3 days, then builds the chosen automation from ₹49,999. Phone +91 82995 22798.
 - **How much does a website cost in India?** A 5-page business website from Verelios Labs starts at ₹49,999 and goes live in 7–14 days. Websites with custom features, e-commerce or a CMS typically land between ₹1,00,000 and ₹3,00,000. The quote is fixed before work begins.
 - **How much does a mobile app cost?** An iOS and Android app from a single codebase starts at ₹99,999 and ships to both stores in 3–5 weeks. Apps with payments, live tracking or deep backend integration typically range from ₹2,00,000 to ₹10,00,000.
-- **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, purchase, sales and accounting typically lands between ₹3,00,000 and ₹10,00,000.
+- **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, purchase, sales and accounting typically lands between ₹1,50,000 and ₹10,00,000.
 - **How much does CRM software cost?** A focused CRM covering leads, pipeline, follow-ups and quotations starts at ₹99,999. Adding WhatsApp Business API, call logging, field-sales tracking and ERP integration typically takes it to ₹1,50,000–₹4,00,000. One-time build, not per user per month.
 - **How long does a project take?** Most projects launch in under 3 weeks. Business websites take 7–14 days, mobile apps 3–5 weeks, ERP and custom software 4–8 weeks.
 - **Can I see something before paying?** Yes. Verelios Labs delivers a free mockup or prototype within 48 hours, before any payment or commitment.

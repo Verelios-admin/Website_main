@@ -217,7 +217,8 @@ export function Pricing() {
           Every project includes{' '}
           <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>free SEO setup</strong>,{' '}
           <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>speed optimization</strong>, and{' '}
-          <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>7-day post-launch support</strong>.{' '}
+          <strong style={{ color: 'var(--color-ink)', fontWeight: 600 }}>free post-launch support</strong>{' '}
+          (7 days for websites and apps, 30 days for software).{' '}
           <a href="#contact" className="link-arrow">
             Need something custom? Let&apos;s talk <span className="arrow">→</span>
           </a>

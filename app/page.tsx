@@ -399,7 +399,7 @@ const faqJsonLd = {
       name: 'What happens after my project launches?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Every project comes with 7 days of free post-launch support for bug fixes and tweaks. After that, we offer affordable monthly maintenance plans.',
+        text: 'Websites and mobile apps come with 7 days of free post-launch support for bug fixes and tweaks. Software projects (ERP, CRM, billing and inventory, custom software and AI automation) come with 30 days. After that, we offer affordable monthly maintenance plans.',
       },
     },
     {
