@@ -434,7 +434,7 @@ export function Hero() {
           >
             {[
               { value: <><CountUp to={50} startDelay={200} />+</>,     label: 'Projects delivered' },
-              { value: <>&lt;3 wks</>,                                  label: 'Avg. delivery time' },
+              { value: <>≤2 wks</>,                                    label: 'Website delivery' },
               { value: <><CountUp to={48} startDelay={400} /> hrs</>,  label: 'Free mockup' },
               { value: <><CountUp to={100} startDelay={600} />%</>,    label: 'Satisfaction' },
             ].map((s, i) => (

@@ -23,7 +23,7 @@ Last updated: 2026-11-10
 - **Payment:** milestone-based — 30% to start, 30% at mid-delivery, 40% at launch. Fixed quote up front, not billed hourly.
 - **Code ownership:** the client owns the source code and it sits on their own hosting and domain accounts. No vendor lock-in.
 - **Post-launch:** free support for 7 days on websites, e-commerce stores and mobile apps, and 30 days on ERP, CRM, billing and inventory, custom software and AI automation; then optional monthly maintenance
-- **Typical delivery:** most projects launch in under 3 weeks; business websites in 7–14 days; mobile apps in 3–5 weeks; ERP and custom software in 4–8 weeks
+- **Typical delivery:** business websites in 7–14 days; e-commerce stores in 3–4 weeks; mobile apps in 3–5 weeks; ERP and custom software in 4–8 weeks
 - **Tech stack:** React, Next.js, React Native, Flutter, Node.js, TypeScript, Tailwind CSS, Firebase, MongoDB, PostgreSQL, hosted on Vercel or AWS
 - **Integrations commonly built:** Tally, the GST portal, Razorpay and UPI, WhatsApp Business API
 
@@ -126,7 +126,7 @@ Verelios Labs also builds custom AI assistants for small and mid-sized businesse
 - **How much does a mobile app cost?** An iOS and Android app from a single codebase starts at ₹99,999 and ships to both stores in 3–5 weeks. Apps with payments, live tracking or deep backend integration typically range from ₹1,50,000 to ₹30,00,000.
 - **How much does ERP software cost in India?** A single-module ERP starts at ₹99,999. A full system covering inventory, manufacturing, purchase, sales and accounting typically lands between ₹1,50,000 and ₹10,00,000.
 - **How much does CRM software cost?** A focused CRM covering leads, pipeline, follow-ups and quotations starts at ₹99,999. Adding WhatsApp Business API, call logging, field-sales tracking and ERP integration typically takes it to ₹1,50,000–₹4,00,000. One-time build, not per user per month.
-- **How long does a project take?** Most projects launch in under 3 weeks. Business websites take 7–14 days, mobile apps 3–5 weeks, ERP and custom software 4–8 weeks.
+- **How long does a project take?** Business websites take 7–14 days, e-commerce stores 3–4 weeks, mobile apps 3–5 weeks, ERP and custom software 4–8 weeks.
 - **Can I see something before paying?** Yes. Verelios Labs delivers a free mockup or prototype within 48 hours, before any payment or commitment.
 - **How does payment work?** Milestone-based: 30% to start, 30% at mid-delivery, 40% at launch, against a fixed quote agreed up front. There is no hourly billing and the number is not revised mid-project.
 - **Who owns the code?** The client does. It sits on the client's own hosting and domain accounts, with full commit history handed over. There is no vendor lock-in.

@@ -90,7 +90,7 @@ const faqJsonLd = {
       name: 'How long does it take to build a website in Kanpur?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most websites go live in 7–21 days. A simple business site takes 7–14 days; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.',
+        text: 'Most websites go live in 7–21 days. A simple business site takes 7–14 days; an e-commerce store takes 3–4 weeks and a custom platform 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.',
       },
     },
     {
@@ -331,7 +331,7 @@ export default function KanpurWebsiteDevelopmentPage() {
               </p>
               <h3>How long does it take to build a website in Kanpur?</h3>
               <p>
-                Most websites go live in <strong>7–21 days</strong>. A simple business site takes 7–14 days; an e-commerce or custom platform takes 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.
+                Most websites go live in <strong>7–21 days</strong>. A simple business site takes 7–14 days; an e-commerce store takes 3–4 weeks and a custom platform 4–6 weeks. You get daily WhatsApp updates and a live preview link throughout.
               </p>
               <h3>Can we meet the website team in person in Kanpur?</h3>
               <p>

@@ -171,7 +171,7 @@ export function Studio() {
                 </div>
               </div>
               <div className="studio-stat">
-                <div className="stat-num" style={{ fontSize: 32 }}>&lt;3 wks</div>
+                <div className="stat-num" style={{ fontSize: 32 }}>≤2 wks</div>
                 <div
                   style={{
                     fontSize: 12,
@@ -181,7 +181,7 @@ export function Studio() {
                     marginTop: 6,
                   }}
                 >
-                  Average delivery
+                  Website delivery
                 </div>
               </div>
               <div className="studio-stat">

@@ -74,7 +74,7 @@ const faqJsonLd = {
       name: 'How long does it take to build a custom website?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most projects ship in 7–21 days. A static 5-page site takes 7–14 days; a custom e-commerce or real-estate platform might take 4–6 weeks.',
+        text: 'Most projects ship in 7–21 days. A static 5-page site takes 7–14 days; an e-commerce store takes 3–4 weeks; a custom real-estate platform might take 4–6 weeks.',
       },
     },
     {
@@ -237,7 +237,7 @@ export default function WebsiteDevelopmentPage() {
               </p>
               <h3>How long does it take to build a custom website?</h3>
               <p>
-                Most projects ship in <strong>7–21 days</strong>. A static 5-page site takes 7–14 days; a custom e-commerce or real-estate platform might take 4–6 weeks.
+                Most projects ship in <strong>7–21 days</strong>. A static 5-page site takes 7–14 days; an e-commerce store takes 3–4 weeks; a custom real-estate platform might take 4–6 weeks.
               </p>
               <h3>Do you handle hosting and domain?</h3>
               <p>

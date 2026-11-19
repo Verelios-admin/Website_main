@@ -4,8 +4,8 @@ import { useGsap } from '@/hooks/useGsap';
 
 const WHYS = [
   {
-    title: 'Under 3-week delivery',
-    body: 'Most projects go from kickoff to launch in under 21 days. No endless timelines, no scope creep dressed as a feature.',
+    title: 'Fast, clear timelines',
+    body: 'Websites in 7–14 days, apps in 3–5 weeks, software in 4–8 weeks. No endless timelines, no scope creep dressed as a feature.',
     icon: '⏱',
   },
   {
@@ -38,7 +38,7 @@ const WHYS = [
 const STATS = [
   { num: '48 hrs', label: 'Free mockup delivery' },
   { num: '24/7',   label: 'WhatsApp support' },
-  { num: '<3 wks', label: 'Average delivery' },
+  { num: '≤2 wks', label: 'Website delivery' },
   { num: 'EMI',    label: 'Milestone payments' },
 ];
 

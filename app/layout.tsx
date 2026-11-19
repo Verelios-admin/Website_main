@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     // Aligned with the <title> so search and social show a consistent name.
     title: 'Website, App & Software Developers in Kanpur | Verelios Labs',
     description:
-      'Custom websites, mobile apps & software — idea to launch in under 3 weeks. Free 48-hour mockup. No upfront payment. Built with React, Next.js & React Native.',
+      'Custom websites, mobile apps & software — idea to launch in weeks. Free 48-hour mockup. No upfront payment. Built with React, Next.js & React Native.',
     url: SITE_URL,
     type: 'website',
     locale: 'en_IN',

@@ -130,8 +130,8 @@ export function Services() {
             commitment. Payment is then milestone-based — 30% to start, 30% at mid-delivery,
             40% at launch — so it lands as the work does. Websites typically start at ₹49,999
             and go live in 7–14 days; mobile apps start at ₹99,999 and ship to both stores in
-            3–5 weeks. Most projects go from kickoff to launch in under three weeks, and the
-            client owns the code.
+            3–5 weeks. ERP and custom software typically take 4–8 weeks, and the client owns
+            the code.
           </p>
         </div>
 

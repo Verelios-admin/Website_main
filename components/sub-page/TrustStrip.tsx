@@ -21,7 +21,7 @@ export function TrustStrip() {
   const items: { label: string; value: string; href?: string; external?: boolean }[] = [
     { label: 'Client rating', value: `${GBP_RATING} ★ from ${GBP_REVIEW_COUNT} reviews`, href: GBP_URL, external: true },
     { label: 'Projects delivered', value: '50+ across India', href: '/about' },
-    { label: 'Average delivery', value: 'Under 3 weeks' },
+    { label: 'Free mockup', value: 'Within 48 hours' },
     { label: 'Payment', value: 'Nothing upfront · 30/30/40' },
   ];
 

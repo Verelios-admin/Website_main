@@ -11,12 +11,12 @@ const SITE = 'https://www.verelios.com';
 export const metadata: Metadata = {
   title: 'Services — Web, App, Software, AI & ERP',
   description:
-    'Website development, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting. Idea to launch in 3 weeks, free 48-hour mockup.',
+    'Website development, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting. Idea to launch in weeks, free 48-hour mockup.',
   alternates: { canonical: `${SITE}${URL_PATH}` },
   openGraph: {
     title: 'Our Services | Verelios Labs',
     description:
-      'Websites, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting — idea to launch in under 3 weeks. Free 48-hour mockup.',
+      'Websites, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting — idea to launch in weeks. Free 48-hour mockup.',
     url: `${SITE}${URL_PATH}`,
     type: 'website',
     locale: 'en_IN',
@@ -113,7 +113,7 @@ export default function ServicesHubPage() {
           eyebrow="Services"
           title="Everything we build,"
           highlight="from idea to launch."
-          lead="Websites, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting — all built on a modern stack, launched in under 3 weeks, and backed by a free 48-hour mockup before you pay a rupee."
+          lead="Websites, mobile apps, custom software, UI/UX, AI automation, ERP and managed hosting — all built on a modern stack, launched in weeks rather than months, and backed by a free 48-hour mockup before you pay a rupee."
           breadcrumbs={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: URL_PATH },
