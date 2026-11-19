@@ -101,12 +101,14 @@ const localBusinessJsonLd = {
   // Software company (primary), Web Designer, Marketing agency and Internet
   // marketing service. Declaring them here means the entity Google builds from
   // the site agrees with the entity it builds from the GBP. Order follows the
-  // GBP, primary category first.
+  // GBP, primary category first. Every ID was checked against the Wikidata API
+  // on 2026-11-19 (two earlier IDs pointed at the Order of Australia and a
+  // village in Karnataka). Re-check the label before changing any of them.
   additionalType: [
     'https://www.wikidata.org/wiki/Q1058914',  // software company        → GBP "Software company" (primary)
-    'https://www.wikidata.org/wiki/Q1141149',  // web design              → GBP "Web Designer"
+    'https://www.wikidata.org/wiki/Q190637',   // web design              → GBP "Web Designer"
     'https://www.wikidata.org/wiki/Q9592701',  // marketing agency        → GBP "Marketing agency"
-    'https://www.wikidata.org/wiki/Q5266500',  // digital marketing       → GBP "Internet marketing service"
+    'https://www.wikidata.org/wiki/Q1323528',  // digital marketing       → GBP "Internet marketing service"
   ],
   areaServed: [
     // Home base — Kanpur + Uttar Pradesh. Only Kanpur is a physical location; the

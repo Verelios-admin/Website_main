@@ -136,7 +136,7 @@ export default function AIAutomationPage() {
               </p>
               <ul>
                 <li><strong>Workflow automation</strong> — connect the apps you already use (CRM, sheets, email, WhatsApp, payments) so data flows automatically instead of being copied by hand.</li>
-                <li><strong>AI chatbots &amp; assistants</strong> — support and sales bots trained on your own content, on your website or WhatsApp, that actually answer instead of deflecting.</li>
+                <li><strong>AI chatbots &amp; assistants</strong> — support and sales bots trained on your own content, on your website or WhatsApp, that actually answer instead of deflecting. See our <a href="/blog/ai-chatbot-for-business-india">guide to AI chatbots for business</a>.</li>
                 <li><strong>Document &amp; data processing</strong> — read invoices, forms, PDFs and emails, pull out the fields you care about, and drop them into your system.</li>
                 <li><strong>Lead capture &amp; routing</strong> — qualify, tag and route incoming leads to the right person instantly, with follow-ups that fire on their own.</li>
                 <li><strong>LLM features inside your product</strong> — search, summaries, drafting and classification built directly into the app you already have.</li>

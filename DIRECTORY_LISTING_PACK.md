@@ -11,7 +11,7 @@ hurts local ranking. Work top to bottom — the first two matter most.
 
 ```
 Business name:  Verelios Labs
-Address line:   126/58 G Block, Govind Nagar
+Address line:   126/103-1, Nand Lal Chauraha, B Block, Govind Nagar
 City:           Kanpur
 State:          Uttar Pradesh
 PIN:            208006

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import { trackCtaClick } from '@/lib/gtag';
+import { isUsPath, usMailto, US_HUB_PATH } from '@/lib/us';
 
 const links = [
   { id: 'services', label: 'Services' },
@@ -13,11 +14,25 @@ const links = [
   { id: 'faq', label: 'FAQ' },
 ];
 
+// US pages (/us/*, plus the two US cost guides) get their own menu. The India
+// menu sends every click to homepage sections — ₹ pricing and the India enquiry
+// form — which is the wrong place for a US buyer. These are real links into the
+// /us hub's sections (ids live on the hub's H2s), and the CTA emails Sahil,
+// which is the US contact order the owner set on 2026-11-10.
+const usLinks = [
+  { href: `${US_HUB_PATH}#what-we-automate`, label: 'Services' },
+  { href: `${US_HUB_PATH}#proof`, label: 'Work' },
+  { href: `${US_HUB_PATH}#how-it-works`, label: 'Process' },
+  { href: `${US_HUB_PATH}#pricing`, label: 'Pricing' },
+  { href: `${US_HUB_PATH}#faq`, label: 'FAQ' },
+];
+
 export function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const isUS = isUsPath(pathname);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -45,8 +60,8 @@ export function Navigation() {
     <>
       <header className={`topnav ${scrolled ? 'scrolled' : ''}`}>
         <a
-          href="#top"
-          onClick={(e) => { e.preventDefault(); go('top'); }}
+          href={isUS ? US_HUB_PATH : '#top'}
+          onClick={isUS ? undefined : (e) => { e.preventDefault(); go('top'); }}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 10,
             textDecoration: 'none', color: 'inherit',
@@ -79,7 +94,21 @@ export function Navigation() {
             fontSize: 14, letterSpacing: '-0.01em',
           }}
         >
-          {links.map((l) => (
+          {isUS && usLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              style={{
+                color: scrolled ? 'var(--color-ink-muted-80)' : 'rgba(255,255,255,0.75)',
+                textDecoration: 'none',
+                fontSize: 14,
+                transition: 'color 240ms ease',
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+          {!isUS && links.map((l) => (
             <button
               key={l.id}
               onClick={() => go(l.id)}
@@ -116,6 +145,33 @@ export function Navigation() {
         <div style={{ flex: 1 }} />
 
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          {isUS ? (
+            <a
+              href={usMailto('Free 48-hour proof')}
+              onClick={() => trackCtaClick('Nav bar — Email us (US)')}
+              className="btn-pill press topnav-cta"
+              style={{
+                padding: '8px 16px',
+                fontSize: 14,
+                whiteSpace: 'nowrap',
+                gap: 6,
+                textDecoration: 'none',
+              }}
+            >
+              <span className="topnav-cta-full">Email us</span>
+              <span className="topnav-cta-short">Email us</span>
+              <svg
+                width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2.4"
+                strokeLinecap="round" strokeLinejoin="round"
+                aria-hidden="true"
+                style={{ display: 'inline-block' }}
+              >
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          ) : (
           <button
             onClick={() => { trackCtaClick('Nav bar — Get a free mockup'); go('contact'); }}
             className="btn-pill press topnav-cta"
@@ -139,6 +195,7 @@ export function Navigation() {
               <path d="m13 6 6 6-6 6" />
             </svg>
           </button>
+          )}
           <button
             className="topnav-burger press"
             onClick={() => setOpen((v) => !v)}
@@ -177,7 +234,23 @@ export function Navigation() {
             color: '#fff',
           }}
         >
-          {links.map((l) => (
+          {isUS && usLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 28, fontWeight: 500,
+                letterSpacing: '-0.02em',
+                color: '#fff',
+                textDecoration: 'none',
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+          {!isUS && links.map((l) => (
             <button
               key={l.id}
               onClick={() => go(l.id)}
@@ -207,9 +280,20 @@ export function Navigation() {
           >
             About
           </a>
-          <button onClick={() => { trackCtaClick('Mobile menu — Get a free mockup'); go('contact'); }} className="btn-pill press" style={{ marginTop: 12 }}>
-            Get a free mockup
-          </button>
+          {isUS ? (
+            <a
+              href={usMailto('Free 48-hour proof')}
+              onClick={() => { trackCtaClick('Mobile menu — Email us (US)'); setOpen(false); }}
+              className="btn-pill press"
+              style={{ marginTop: 12, textDecoration: 'none' }}
+            >
+              Email us
+            </a>
+          ) : (
+            <button onClick={() => { trackCtaClick('Mobile menu — Get a free mockup'); go('contact'); }} className="btn-pill press" style={{ marginTop: 12 }}>
+              Get a free mockup
+            </button>
+          )}
         </div>
       )}
 

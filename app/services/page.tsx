@@ -242,7 +242,11 @@ export default function ServicesHubPage() {
               <p>
                 Based in the United States? Our <Link href="/us">AI automation for US businesses</Link>{' '}
                 pages have pricing in US dollars, calls in your morning and a free 48-hour proof on
-                your own data.
+                your own data. Each job has its own page:{' '}
+                <Link href="/us/ai-order-entry-automation">AI order entry</Link>,{' '}
+                <Link href="/us/ai-customer-service-for-ecommerce">AI customer service for online stores</Link>,{' '}
+                <Link href="/us/freight-billing-automation">freight billing automation</Link> and the{' '}
+                <Link href="/us/ai-front-office-for-home-services">AI front office for home services</Link>.
               </p>
             </Prose>
           </div>

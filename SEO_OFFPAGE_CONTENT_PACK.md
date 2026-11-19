@@ -7,7 +7,7 @@ one-click use.
 **Canonical details — paste these EXACTLY everywhere:**
 ```
 Name:     Verelios Labs
-Address:  126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
+Address:  126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
 Phone:    +91 82995 22798     (primary)
 WhatsApp: +91 84710 94125
 Email:    contact@verelios.com
@@ -57,7 +57,7 @@ Hours:    Open 24 hours, every day
 ## B) GBP Owner Q&A (post these questions on your profile and answer them)
 
 1. **Q: Where is Verelios Labs located in Kanpur?**
-   A: 126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. Open 24 hours — visit us
+   A: 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006. Open 24 hours — visit us
    or message on WhatsApp anytime.
 2. **Q: What services do you offer?**
    A: Websites, mobile apps, custom software, ERP, HR & payroll, AI automation, and managed

@@ -15,7 +15,7 @@ punctuation — on every directory in Step 2:
 
 ```
 Name:     Verelios Labs
-Address:  126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
+Address:  126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006, India
 Phone:    +91 82995 22798        (primary)
 WhatsApp: +91 84710 94125
 Email:    contact@verelios.com

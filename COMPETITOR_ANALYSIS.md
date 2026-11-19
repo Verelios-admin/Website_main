@@ -41,7 +41,7 @@ what that page actually contains:
 | Prices stated | **none, anywhere** | real floors on every service |
 | Named client testimonials | **none** | named clients + 53 real Google reviews |
 | Star rating shown | **none** | 5.0 |
-| Physical address | **Gomti Nagar, _Lucknow_** | 126/58 G Block, Govind Nagar, **Kanpur** |
+| Physical address | **Gomti Nagar, _Lucknow_** | 126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, **Kanpur** |
 | Mobile PageSpeed | 20 | 69–79 |
 | CLS | 0.685 | 0 |
 | Own copy | "more then 10 years" (sic) | — |

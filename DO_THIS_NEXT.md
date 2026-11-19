@@ -91,7 +91,7 @@ business:
 
 ```
 Verelios Labs
-126/58 G Block, Govind Nagar, Kanpur, Uttar Pradesh 208006
+126/103-1, Nand Lal Chauraha, B Block, Govind Nagar, Kanpur, Uttar Pradesh 208006
 +91 82995 22798
 https://www.verelios.com
 ```

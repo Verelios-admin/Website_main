@@ -63,10 +63,12 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   // 2026-10-28: Kanpur-only walkthrough + local FAQs (GSC flagged it as a duplicate).
   { path: '/locations/kanpur/crm-software-development', lastmod: '2026-10-28', priority: 0.9 },
 
-  // Blog. lastmod = the post's own publish date, because the prose has not been
-  // rewritten since; keep each of these in step with the PUBLISHED constant in the
-  // matching app/blog/<slug>/page.tsx and the `posts` array in app/blog/page.tsx.
-  { path: '/blog', lastmod: '2026-07-28', priority: 0.7 },
+  // Blog. lastmod = the date the post's prose last really changed: its
+  // UPDATED/MODIFIED constant if it has one, otherwise PUBLISHED, in the matching
+  // app/blog/<slug>/page.tsx. Keep it equal to the post's schema dateModified.
+  // 2026-11-19: the hub lists every post, so it changes when a post is added —
+  // newest listed post is 2026-11-10.
+  { path: '/blog', lastmod: '2026-11-10', priority: 0.7 },
   // New 2026-09-07. Two national cost guides (highest search volume in our
   // space) plus three Kanpur-local guides, which is where this domain can
   // realistically rank today. Priority 0.7 matches the other cost guide.
@@ -83,9 +85,11 @@ const PAGES: Array<{ path: string; lastmod: string; priority: number }> = [
   { path: '/blog/ai-chatbot-for-business-india', lastmod: '2026-06-26', priority: 0.6 },
   // Prose rewritten 2026-06-13 to align every figure with the ₹49,999 floor,
   // so lastmod tracks that rather than the original publish date.
-  { path: '/blog/custom-website-development-cost-india-2026', lastmod: '2026-06-13', priority: 0.7 },
-  { path: '/blog/how-to-choose-web-development-agency-india', lastmod: '2026-05-26', priority: 0.6 },
-  { path: '/blog/how-we-ship-websites-in-3-weeks', lastmod: '2026-05-26', priority: 0.6 },
+  // 2026-11-19: these three were edited 2026-08-30 (their dateModified), but
+  // lastmod still showed the older date. Keep lastmod = the prose's last real edit.
+  { path: '/blog/custom-website-development-cost-india-2026', lastmod: '2026-08-30', priority: 0.7 },
+  { path: '/blog/how-to-choose-web-development-agency-india', lastmod: '2026-08-30', priority: 0.6 },
+  { path: '/blog/how-we-ship-websites-in-3-weeks', lastmod: '2026-08-30', priority: 0.6 },
 
   // Phase 17 (2026-11-10): "For US businesses". The only pages written for US
   // buyers (USD, US hours); everything else targets India.

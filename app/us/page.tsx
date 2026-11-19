@@ -148,7 +148,9 @@ export default function UsHubPage() {
                 </p>
               </div>
 
-              <h2>Four jobs we automate for US businesses</h2>
+              {/* Section ids are the targets of the US menu in components/Navigation.tsx.
+                  scrollMarginTop keeps each heading clear of the fixed contact bar + nav. */}
+              <h2 id="what-we-automate" style={{ scrollMarginTop: 120 }}>Four jobs we automate for US businesses</h2>
               <p>
                 Each of these is a role many small businesses hire for every year. The assistant does not replace the person who knows your customers; it removes the hours of retyping and routine replies around them.
               </p>
@@ -178,7 +180,7 @@ export default function UsHubPage() {
             </div>
 
             <Prose>
-              <h2>How it works, step by step</h2>
+              <h2 id="how-it-works" style={{ scrollMarginTop: 120 }}>How it works, step by step</h2>
               <ol>
                 <li><strong>You send ten real examples.</strong> Orders, tickets, invoices or enquiries, exactly as they arrive today. Blank out prices or names if you like.</li>
                 <li><strong>Free 48-hour proof.</strong> We show you the assistant handling them, so you judge the quality on your own data, not a demo.</li>
@@ -219,16 +221,24 @@ export default function UsHubPage() {
                 </table>
               </div>
 
-              <h2>What AI automation costs</h2>
+              <h2 id="pricing" style={{ scrollMarginTop: 120 }}>What AI automation costs</h2>
               <p>
                 <strong>The 48-hour proof is free.</strong> A pilot with one workflow live starts at <strong>{US_PRICING.pilotFrom}</strong>. A typical build that connects your inbox, your main system and an approval screen costs <strong>{US_PRICING.buildRange}</strong>. The price is fixed before work starts and paid in milestones of 30%, 30% and 40%. Hosting and AI usage are quoted up front, usually tens to a few hundred dollars a month for a small business. Want to see what manual order entry costs you first? Try the free <Link href={US_CALCULATOR_PATH}>order entry cost calculator</Link>.
+              </p>
+              <p>
+                For the full numbers behind a hire-or-automate decision, read{' '}
+                <Link href="/blog/order-entry-clerk-vs-ai-cost-2026">Order entry clerk vs AI: the real cost in 2026</Link>{' '}
+                and{' '}
+                <Link href="/blog/hire-customer-service-rep-or-ai-2026">Hire a customer service rep or use AI? The 2026 cost guide</Link>.
               </p>
             </Prose>
 
             <UsWorkingWithUs />
 
             <Prose>
-              <UsProof />
+              <div id="proof" style={{ scrollMarginTop: 120 }}>
+                <UsProof />
+              </div>
 
               <h2>When we are not the right fit</h2>
               <ul>
@@ -237,7 +247,7 @@ export default function UsHubPage() {
                 <li><strong>A standard tool already fits.</strong> If an off-the-shelf product matches your process, buy it. Custom work pays off when your rules and systems do not fit a template.</li>
               </ul>
 
-              <h2>Frequently asked questions</h2>
+              <h2 id="faq" style={{ scrollMarginTop: 120 }}>Frequently asked questions</h2>
               {FAQS.map(([q, a]) => (
                 <div key={q}>
                   <h3>{q}</h3>
